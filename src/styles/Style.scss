@@ -700,9 +700,14 @@ footer {
 }
 
 .overlay-background-video .overlay-gradient-v2 {
+   /* Neutral darkening for text legibility — warm brown + orange glow removed (was too red).
+      Original warm version, uncomment to restore / tune:
+      background:
+         linear-gradient(180deg, rgba(24, 13, 6, 0.52) 0%, rgba(24, 13, 6, 0.3) 26%, rgba(24, 13, 6, 0.3) 60%, rgba(24, 13, 6, 0.62) 100%),
+         radial-gradient(ellipse 80% 60% at 50% 42%, rgba(150, 64, 18, 0.12) 0%, rgba(24, 13, 6, 0.3) 100%);
+   */
    background:
-      linear-gradient(180deg, rgba(24, 13, 6, 0.52) 0%, rgba(24, 13, 6, 0.3) 26%, rgba(24, 13, 6, 0.3) 60%, rgba(24, 13, 6, 0.62) 100%),
-      radial-gradient(ellipse 80% 60% at 50% 42%, rgba(150, 64, 18, 0.12) 0%, rgba(24, 13, 6, 0.3) 100%);
+      linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.28) 26%, rgba(0, 0, 0, 0.28) 60%, rgba(0, 0, 0, 0.6) 100%);
    opacity: 1;
    mix-blend-mode: normal;
 }
@@ -1836,10 +1841,11 @@ footer {
    background: linear-gradient(90deg, #161410 2%, rgba(22, 20, 16, 0) 50%);
 }
 
-/* warm the cool cityscape photo to match the hero / theme */
+/* Warm tint removed (was too red). To restore / tune the warmth, uncomment:
 .section-register-gosim .overlay-background-video img {
    filter: saturate(0.62) sepia(0.2) contrast(1.03);
 }
+*/
 
 .section-register-gosim .row {
    min-height: calc((var(--vh, 1vh) * 90) - (var(--section-padding) * 2));

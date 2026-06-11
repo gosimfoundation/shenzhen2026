@@ -620,8 +620,8 @@ function initFlickitySlider() {
          prevNextButtons: false,
          pageDots: false,
          cellAlign: 'left',
-         selectedAttraction: 0.015,
-         friction: 0.25,
+         selectedAttraction: 0.045,
+         friction: 0.32,
          percentPosition: true,
          freeScroll: false,
          on: {
@@ -640,13 +640,15 @@ function initFlickitySlider() {
       // Flickity instance
       var flkty = flickitySlider.data('flickity');
 
+      // how many cells each arrow click advances (a bit more than one for a longer jump)
+      var cellsPerClick = 2;
       // previous
       var prevButton = sliderThis.find('[data-flickity-control="prev"]').on('click', function () {
-         flickitySlider.flickity('previous');
+         flkty.select(Math.max(flkty.selectedIndex - cellsPerClick, 0));
       });
       // next
       var nextButton = sliderThis.find('[data-flickity-control="next"]').on('click', function () {
-         flickitySlider.flickity('next');
+         flkty.select(Math.min(flkty.selectedIndex + cellsPerClick, flkty.cells.length - 1));
       });
       // Get the amount of columns variable and use to calc last slide
       var inviewColumns = window.getComputedStyle(flickitySliderGroup).getPropertyValue('--columns');

@@ -2,8 +2,7 @@
 // Components
 import Layout from "layouts/LayoutLandingZh.astro"
 import Hero from "components/Hero.astro"
-import Intro from "components/Intro.astro"
-import ConferenceTracks from "components/ConferenceTracks.astro"
+import ProgramSection from "components/ProgramSection.astro"
 import PreviousEvents from "components/PreviousEvents.astro"
 import GetTickets from "components/GetTickets.astro"
 
@@ -40,49 +39,36 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
     note="更多信息，后续更新"
   />
 
-  <div
-    class="section-wrap"
-    id="intro"
-    data-theme-section="light"
-    data-bg-section="lightgray"
-  >
-    <div class="intro-statistics-container" style="">
-      <Intro
-        eyebrow="GOSIM 深圳 2026 / 10月16-17日 / 中国深圳"
-        headlineLines={[
-          "当开源",
-          "遇见中国创新之都",
-        ]}
-        accentLine={0}
-        body="深圳是中国科技创新的心脏——最年轻的人口、最敢闯的创业者，与全球最密集的软硬件产业链彼此交织，成就了不断刷新想象的「深圳速度」。"
-        facetsTitle="大会内容"
-        facets={[
-          {
-            title: "智能体 AI",
-            keywords: ["A2App", "Harness 工程", "边缘 AI", "A2UI", "A2A", "多智能体系统", "MCP"],
-          },
-          {
-            title: "开源机器人",
-            keywords: ["具身智能", "物理 AI", "OpenArm", "自主机器"],
-          },
-          {
-            title: "开源模型",
-            keywords: ["语言", "代码", "视觉", "音频", "视频"],
-          },
-          {
-            title: "Spotlight 与黑客松",
-            keywords: ["Frontier Creators", "机器人挑战", "智能体实战", "现场展示"],
-          },
-        ]}
-      />
-    </div>
-  </div>
-
-  <ConferenceTracks
-    title="大会主题"
-    intro="从开源模型、智能体框架到机器人与边缘 AI，大会议程旨在展示技术栈的下一步走向，让开发者与构建者面对面交流。完整日程即将公布。"
-    viewRouteLabel="查看日程"
-    openLabel="查看日程"
+  <ProgramSection
+    eyebrow="GOSIM 深圳 2026 / 10月16-17日 / 中国深圳"
+    headlineLines={[
+      "当开源",
+      "遇见中国创新之都",
+    ]}
+    accentLine={0}
+    body="深圳是中国科技创新的心脏——最年轻的人口、最敢闯的创业者，与全球最密集的软硬件产业链彼此交织，成就了不断刷新想象的「深圳速度」。"
+    facetsTitle="大会内容"
+    facets={[
+      {
+        title: "智能体 AI",
+        keywords: ["A2App", "Harness 工程", "边缘 AI", "A2UI", "A2A", "多智能体系统", "MCP"],
+      },
+      {
+        title: "开源机器人",
+        keywords: ["具身智能", "物理 AI", "OpenArm", "自主机器"],
+      },
+      {
+        title: "开源模型",
+        keywords: ["语言", "代码", "视觉", "音频", "视频"],
+      },
+      {
+        title: "Spotlight 与黑客松",
+        keywords: ["Frontier Creators", "机器人挑战", "智能体实战", "现场展示"],
+      },
+    ]}
+    tracksTitle="分论坛主题"
+    tracksIntro="从开源模型、智能体框架到机器人与边缘 AI，大会议程旨在展示技术栈的下一步走向，让开发者与构建者面对面交流。完整日程即将公布。"
+    exploreLabel="查看日程"
     enterLabel="了解更多"
     tracks={[
       {
@@ -114,7 +100,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
     highlightsTitle="Spotlight"
     highlights={[
       {
-        title: "GOSIM Spotlight: Frontier Creators",
+        title: "GOSIM Spotlight",
         text: "全球最具潜力的开源 AI 项目现场硬核演示——创作者直接面向全球投资人与技术领袖展示。",
       },
     ]}

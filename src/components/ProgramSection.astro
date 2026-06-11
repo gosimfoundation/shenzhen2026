@@ -1,0 +1,542 @@
+---
+// Homepage program section: editorial headline + scrolling marquee word cloud
+// + horizontal "diagonal-label" accordion of tracks, with an optional Spotlight
+// highlight below. Replaces the former Intro + ConferenceTracks pair.
+interface Facet {
+  title: string;
+  keywords?: string[];
+}
+interface Track {
+  title: string;
+  text: string;
+  link?: string;
+}
+interface Highlight {
+  title: string;
+  text: string;
+  link?: string;
+}
+interface Props {
+  id?: string;
+  eyebrow: string;
+  headlineLines: string[];
+  accentLine?: number;
+  body: string;
+  facetsTitle?: string;
+  facets?: Facet[];
+  tracksTitle: string;
+  tracksIntro: string;
+  tracks: Track[];
+  exploreLabel?: string;
+  highlightsTitle?: string;
+  highlights?: Highlight[];
+  enterLabel?: string;
+}
+
+const {
+  id = "tracks",
+  eyebrow,
+  headlineLines,
+  accentLine = 0,
+  body,
+  facetsTitle = "Across The Program",
+  facets = [],
+  tracksTitle,
+  tracksIntro,
+  tracks,
+  exploreLabel = "Explore track",
+  highlightsTitle,
+  highlights = [],
+  enterLabel = "Enter",
+} = Astro.props;
+
+// Marquee rows: hero term (facet title) → solid orange pill; keywords → outlined.
+const allPills: Array<{ text: string; hero: boolean }> = facets.flatMap((f) => [
+  { text: f.title, hero: true },
+  ...(f.keywords ?? []).map((k) => ({ text: k, hero: false })),
+]);
+const half = Math.ceil(allPills.length / 2);
+const rowA = allPills.slice(0, half);
+const rowB = allPills.slice(half);
+
+const palette = [
+  { from: "#8A7F5C", to: "#A89968" },
+  { from: "#C23A0C", to: "#FF7A3C" },
+  { from: "#6B6450", to: "#B3A878" },
+  { from: "#7C7050", to: "#C9BD8F" },
+  { from: "#8F8259", to: "#FF7A3C" },
+  { from: "#74694C", to: "#D0C49A" },
+  { from: "#A89968", to: "#D0C49A" },
+];
+---
+
+<section class="ps" data-theme-section="dark" data-bg-section="lightgray">
+  <div class="ps-inner">
+    <!-- ── Headline ── -->
+    <div class="ps-head">
+      <p class="ps-eyebrow"><span></span>{eyebrow}</p>
+      <h2 class="ps-title">
+        {headlineLines.map((line, i) => (
+          <span class={i === accentLine ? "is-accent" : ""}>{line}</span>
+        ))}
+      </h2>
+      <p class="ps-body">{body}</p>
+    </div>
+
+    <!-- ── Marquee pill cloud ── -->
+    {allPills.length > 0 && (
+      <div class="ps-marquee" aria-label={facetsTitle}>
+        <span class="ps-marquee-label">{facetsTitle}</span>
+        <div class="ps-mtrack ps-mtrack--l">
+          <div class="ps-mtrack-row">
+            {[...rowA, ...rowA].map((p) => (
+              <span class={p.hero ? "ps-pill is-hero" : "ps-pill"}>{p.text}</span>
+            ))}
+          </div>
+        </div>
+        <div class="ps-mtrack ps-mtrack--r">
+          <div class="ps-mtrack-row">
+            {[...rowB, ...rowB].map((p) => (
+              <span class={p.hero ? "ps-pill is-hero" : "ps-pill"}>{p.text}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- ── Tracks — bento: big stage + small selectable blocks ── -->
+    <div class="ps-tracks-head" id={id}>
+      <h3 class="ps-tracks-title">{tracksTitle}</h3>
+      <p class="ps-tracks-intro">{tracksIntro}</p>
+    </div>
+
+    <div class="ps-accordion">
+      {tracks.map((track, i) => {
+        const accent = palette[i % palette.length];
+        const Tag = track.link ? "a" : "div";
+        return (
+          <Tag
+            class={`ps-panel${i === 0 ? " is-open" : ""}`}
+            href={track.link}
+            style={`--from:${accent.from};--to:${accent.to}`}
+            tabindex="0"
+          >
+            <span class="ps-panel-num">{String(i + 1).padStart(2, "0")}</span>
+            <span class="ps-panel-mini">{track.title}</span>
+            <span class="ps-panel-full">
+              <span class="ps-panel-full-title">{track.title}</span>
+              <span class="ps-panel-full-desc">{track.text}</span>
+            </span>
+          </Tag>
+        );
+      })}
+    </div>
+
+    <!-- ── Spotlight highlight(s) ── -->
+    {highlightsTitle && highlights.length > 0 && (
+      <div class="ps-spotlight">
+        <h3 class="ps-spotlight-label">{highlightsTitle}</h3>
+        <div class="ps-spotlight-grid">
+          {highlights.map((item) => (
+            <article class="ps-spot-card">
+              <span class="ps-spot-badge">{highlightsTitle}</span>
+              <h4 class="ps-spot-title">{item.title}</h4>
+              <p class="ps-spot-text">{item.text}</p>
+              {item.link && (
+                <a
+                  class="ps-spot-link"
+                  href={item.link}
+                  target={item.link.startsWith("http") ? "_blank" : undefined}
+                  rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                >{enterLabel} →</a>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .ps {
+    --orange: #f84a10;
+    --glow: #ff7a3c;
+    --cream: #eae6d2;
+    position: relative;
+    padding: clamp(4rem, 9vw, 8rem) 0;
+    background: radial-gradient(120% 80% at 80% -10%, rgba(248, 74, 16, 0.08), transparent 55%), #141209;
+  }
+  .ps-inner {
+    width: min(100% - 3rem, 78rem);
+    margin-inline: auto;
+    display: grid;
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+
+  /* ── Headline ── */
+  .ps-head {
+    display: grid;
+    gap: 1.6rem;
+    max-width: 60rem;
+  }
+  .ps-eyebrow {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(234, 230, 210, 0.5);
+  }
+  .ps-eyebrow span {
+    width: 2.6rem;
+    height: 1px;
+    background: linear-gradient(90deg, var(--orange), transparent);
+  }
+  .ps-title {
+    margin: 0;
+    font-size: clamp(2.6rem, 1.4rem + 4.6vw, 5.6rem);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    color: var(--cream);
+  }
+  .ps-title span {
+    display: block;
+  }
+  .ps-title .is-accent {
+    background: linear-gradient(92deg, var(--orange), var(--glow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .ps-body {
+    margin: 0;
+    max-width: 46rem;
+    font-size: clamp(1.1rem, 0.96rem + 0.5vw, 1.4rem);
+    line-height: 1.6;
+    color: rgba(234, 230, 210, 0.74);
+  }
+
+  /* ── Marquee pill cloud ── */
+  .ps-marquee {
+    display: grid;
+    gap: 0.9rem;
+    padding: 1.6rem 0 0.4rem;
+    border-top: 1px solid rgba(234, 230, 210, 0.12);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  }
+  .ps-marquee-label {
+    justify-self: center;
+    margin-bottom: 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+  .ps-mtrack {
+    overflow: hidden;
+  }
+  .ps-mtrack-row {
+    display: inline-flex;
+    gap: 0.7rem;
+    white-space: nowrap;
+    will-change: transform;
+  }
+  .ps-mtrack--l .ps-mtrack-row {
+    animation: ps-scroll-l 42s linear infinite;
+  }
+  .ps-mtrack--r .ps-mtrack-row {
+    animation: ps-scroll-r 50s linear infinite;
+  }
+  .ps-marquee:hover .ps-mtrack-row {
+    animation-play-state: paused;
+  }
+  @keyframes ps-scroll-l {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes ps-scroll-r {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+  .ps-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.3rem;
+    border-radius: 999px;
+    border: 1px solid rgba(234, 230, 210, 0.16);
+    background: rgba(234, 230, 210, 0.03);
+    font-size: clamp(1rem, 0.92rem + 0.3vw, 1.25rem);
+    font-weight: 600;
+    color: rgba(234, 230, 210, 0.74);
+  }
+  .ps-pill.is-hero {
+    border-color: transparent;
+    background: linear-gradient(95deg, var(--orange), var(--glow));
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 6px 22px rgba(248, 74, 16, 0.28);
+  }
+
+  /* ── Accordion ── */
+  .ps-tracks-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    scroll-margin-top: 6rem;
+  }
+  .ps-tracks-title {
+    margin: 0;
+    font-size: clamp(2rem, 1.2rem + 3vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+  }
+  .ps-tracks-intro {
+    margin: 0;
+    max-width: 34rem;
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: rgba(234, 230, 210, 0.6);
+  }
+
+  /* ── Hover accordion: blocks grow/shrink, text always horizontal ── */
+  .ps-accordion {
+    display: flex;
+    gap: 0.7rem;
+    height: 27rem;
+    align-items: stretch;
+  }
+  .ps-panel {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(234, 230, 210, 0.12);
+    background:
+      radial-gradient(130% 80% at 50% 120%, color-mix(in srgb, var(--from) 30%, transparent), transparent 60%),
+      linear-gradient(180deg, rgba(34, 31, 22, 0.72), rgba(20, 18, 12, 0.88));
+    text-decoration: none;
+    cursor: pointer;
+    transition: flex-grow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  }
+  .ps-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--from), var(--to));
+    opacity: 0.95;
+  }
+  /* the expanded block (default first, then whatever is hovered/focused) */
+  .ps-panel.is-open {
+    flex-grow: 2.6;
+  }
+  .ps-accordion:hover .ps-panel.is-open:not(:hover) {
+    flex-grow: 1;
+  }
+  .ps-panel:hover,
+  .ps-panel:focus-visible {
+    flex-grow: 2.6;
+    border-color: color-mix(in srgb, var(--to) 55%, transparent);
+    outline: none;
+  }
+
+  .ps-panel-num {
+    position: absolute;
+    top: 1.3rem;
+    left: 1.5rem;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: var(--to);
+    font-variant-numeric: tabular-nums;
+    z-index: 2;
+  }
+
+  /* Collapsed label — shows the FULL title, wrapped (never truncated). Its width
+     is fixed to the viewport (not the animating panel) so it wraps once and never
+     reflows while the panel resizes — no jumping. */
+  .ps-panel-mini {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    width: clamp(6.5rem, 11vw, 9rem);
+    font-size: clamp(1.05rem, 0.92rem + 0.4vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    opacity: 1;
+    transition: opacity 0.25s ease;
+  }
+
+  /* Expanded content — FIXED width (independent of the animating panel width),
+     so its line-wrapping is computed once and never reflows. It only fades in,
+     arriving already at its final position. */
+  .ps-panel-full {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    width: min(22rem, 30vw);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease 0.12s;
+  }
+  .ps-panel-full-title {
+    font-size: clamp(1.45rem, 1.1rem + 1vw, 2rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--cream);
+  }
+  .ps-panel-full-desc {
+    font-size: 0.97rem;
+    line-height: 1.6;
+    color: rgba(234, 230, 210, 0.74);
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* crossfade collapsed label → expanded content on the open/hovered block */
+  .ps-panel.is-open .ps-panel-mini,
+  .ps-panel:hover .ps-panel-mini,
+  .ps-panel:focus-visible .ps-panel-mini {
+    opacity: 0;
+  }
+  .ps-panel.is-open .ps-panel-full,
+  .ps-panel:hover .ps-panel-full,
+  .ps-panel:focus-visible .ps-panel-full {
+    opacity: 1;
+  }
+  .ps-accordion:hover .ps-panel.is-open:not(:hover) .ps-panel-mini {
+    opacity: 1;
+  }
+  .ps-accordion:hover .ps-panel.is-open:not(:hover) .ps-panel-full {
+    opacity: 0;
+  }
+
+  @media (max-width: 980px) {
+    .ps-accordion {
+      flex-direction: column;
+      height: auto;
+    }
+    .ps-panel {
+      flex: none;
+      min-height: 0;
+    }
+    .ps-panel-mini {
+      display: none;
+    }
+    /* on the stacked layout every block shows its full content */
+    .ps-panel-full,
+    .ps-accordion:hover .ps-panel.is-open:not(:hover) .ps-panel-full {
+      position: relative;
+      left: 0;
+      bottom: 0;
+      width: auto;
+      opacity: 1;
+      padding: 3.2rem 1.5rem 1.6rem;
+    }
+    .ps-panel-full-desc {
+      -webkit-line-clamp: unset;
+    }
+  }
+
+  /* ── Spotlight ── */
+  .ps-spotlight {
+    display: grid;
+    gap: 1.4rem;
+  }
+  .ps-spotlight-label {
+    margin: 0;
+    padding-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(234, 230, 210, 0.45);
+    border-bottom: 1px solid rgba(234, 230, 210, 0.1);
+  }
+  .ps-spotlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    gap: 1.25rem;
+  }
+  .ps-spot-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 2rem;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(248, 74, 16, 0.22);
+    background: linear-gradient(135deg, rgba(248, 74, 16, 0.08) 0%, rgba(26, 24, 17, 0.95) 60%);
+  }
+  .ps-spot-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+  .ps-spot-badge::before {
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 6px var(--orange);
+  }
+  .ps-spot-title {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--cream);
+  }
+  .ps-spot-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(234, 230, 210, 0.68);
+    flex: 1;
+  }
+  .ps-spot-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--orange);
+    transition: opacity 0.2s;
+  }
+  .ps-spot-link:hover {
+    opacity: 0.75;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ps-mtrack-row { animation: none; }
+    .ps-panel,
+    .ps-panel-mini,
+    .ps-panel-full { transition: none; }
+  }
+</style>

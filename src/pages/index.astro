@@ -2,8 +2,7 @@
 // Components
 import Layout from "layouts/LayoutLanding.astro"
 import Hero from "components/Hero.astro"
-import Intro from "components/Intro.astro"
-import ConferenceTracks from "components/ConferenceTracks.astro"
+import ProgramSection from "components/ProgramSection.astro"
 import PreviousEvents from "components/PreviousEvents.astro"
 import GetTickets from "components/GetTickets.astro"
 
@@ -40,47 +39,35 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
     note="More info coming soon"
   />
 
-  <div
-    class="section-wrap"
-    id="intro"
-    data-theme-section="light"
-    data-bg-section="lightgray"
-  >
-    <div class="intro-statistics-container" style="">
-      <Intro
-        eyebrow="GOSIM SHENZHEN 2026 / OCTOBER 16-17 / SHENZHEN, CHINA"
-        headlineLines={[
-          "Where Open Source Meets",
-          "China's Capital Of Innovation",
-        ]}
-        accentLine={0}
-        body="Shenzhen is the heart of China's tech innovation — its youthful population and fearless founders, woven together with the world's densest software-and-hardware supply chain, power the relentless 'Shenzhen speed.'"
-        facetsTitle="Across The Program"
-        facets={[
-          {
-            title: "Agentic AI",
-            keywords: ["A2App", "Harness Engineering", "Edge AI", "A2UI", "A2A", "Multi-Agent Systems", "MCP"],
-          },
-          {
-            title: "Open Source Robotics",
-            keywords: ["Embodied AI", "Physical AI", "OpenArm", "Autonomous Machines"],
-          },
-          {
-            title: "Open Source Models",
-            keywords: ["Language", "Code", "Vision", "Audio", "Video"],
-          },
-          {
-            title: "Spotlight & Hackathons",
-            keywords: ["Frontier Creators", "Robotics Challenges", "Agentic Builds", "Live Demos"],
-          },
-        ]}
-      />
-    </div>
-  </div>
-
-  <ConferenceTracks
-    title="Tracks"
-    intro="From open source models and agent frameworks to robotics and edge AI, the program is built to show where the stack is moving next and let developers get close to the people building it. Full schedule coming soon."
+  <ProgramSection
+    eyebrow="GOSIM SHENZHEN 2026 / OCTOBER 16-17 / SHENZHEN, CHINA"
+    headlineLines={[
+      "Where Open Source Meets",
+      "China's Capital Of Innovation",
+    ]}
+    accentLine={0}
+    body="Shenzhen is the heart of China's tech innovation — its youthful population and fearless founders, woven together with the world's densest software-and-hardware supply chain, power the relentless 'Shenzhen speed.'"
+    facetsTitle="Across The Program"
+    facets={[
+      {
+        title: "Agentic AI",
+        keywords: ["A2App", "Harness Engineering", "Edge AI", "A2UI", "A2A", "Multi-Agent Systems", "MCP"],
+      },
+      {
+        title: "Open Source Robotics",
+        keywords: ["Embodied AI", "Physical AI", "OpenArm", "Autonomous Machines"],
+      },
+      {
+        title: "Open Source Models",
+        keywords: ["Language", "Code", "Vision", "Audio", "Video"],
+      },
+      {
+        title: "Spotlight & Hackathons",
+        keywords: ["Frontier Creators", "Robotics Challenges", "Agentic Builds", "Live Demos"],
+      },
+    ]}
+    tracksTitle="Tracks"
+    tracksIntro="From open source models and agent frameworks to robotics and edge AI, the program is built to show where the stack is moving next and let developers get close to the people building it. Full schedule coming soon."
     tracks={[
       {
         title: "Agentic AI Summit",
@@ -111,7 +98,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
     highlightsTitle="Spotlight"
     highlights={[
       {
-        title: "GOSIM Spotlight: Frontier Creators",
+        title: "GOSIM Spotlight",
         text: "Live, hardcore on-stage demos from the world's most promising open-source AI projects — creators pitch directly to global investors and tech visionaries.",
       },
     ]}
