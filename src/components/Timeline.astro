@@ -1,0 +1,277 @@
+---
+export interface Props {
+  events: Array<{
+    date: string;
+    title: string;
+    isoDate: string;
+    type?: "cfp" | "spotlight" | "event";
+  }>;
+  todayLabel?: string;
+}
+
+const {
+  events = [],
+  todayLabel = "Today",
+} = Astro.props;
+
+// Calculate proportional positions (0–100%)
+const timestamps = events.map((e) => new Date(e.isoDate).getTime());
+const minTime = Math.min(...timestamps);
+const maxTime = Math.max(...timestamps);
+const range = maxTime - minTime || 1;
+const positions = timestamps.map((t) => ((t - minTime) / range) * 100);
+
+// Calculate today's position
+const now = Date.now();
+const todayPct = ((now - minTime) / range) * 100;
+const showToday = todayPct >= 0 && todayPct <= 100;
+
+// Find where today falls among events (for mobile DOM order)
+const todayIso = new Date().toISOString().slice(0, 10);
+const todayInsertIndex = events.findIndex((e) => e.isoDate > todayIso);
+// -1 means today is after all events, so insert at end
+
+// Build ordered list of items (events + today marker) for rendering
+type TimelineItem =
+  | { kind: "event"; ev: (typeof events)[0]; index: number; side: string; type: string; position: number; flip: boolean }
+  | { kind: "today" };
+
+const items: TimelineItem[] = [];
+let todayInserted = false;
+
+// Assign sides, flipping to avoid same-side events that are too close (< 8% apart)
+const sides: string[] = [];
+events.forEach((_, i) => {
+  const preferred = i % 2 === 0 ? "above" : "below";
+  if (i === 0) { sides.push(preferred); return; }
+  // Check last assigned side at a close position
+  const tooClose = positions[i] - positions[i - 1] < 8;
+  if (tooClose && sides[i - 1] === preferred) {
+    sides.push(preferred === "above" ? "below" : "above");
+  } else {
+    sides.push(preferred);
+  }
+});
+
+events.forEach((ev, i) => {
+  if (showToday && !todayInserted && todayInsertIndex === i) {
+    items.push({ kind: "today" });
+    todayInserted = true;
+  }
+  const side = sides[i];
+  const t = ev.type || "event";
+  // Flip label to left-of-dot when very close to the next event
+  const flip = i < events.length - 1 && positions[i + 1] - positions[i] < 4;
+  items.push({ kind: "event", ev, index: i, side, type: t, position: positions[i], flip });
+});
+
+if (showToday && !todayInserted) {
+  items.push({ kind: "today" });
+}
+
+const isoDateList = events.map((e) => e.isoDate);
+---
+
+<section
+  class="section section-timeline"
+  id="timeline"
+  data-theme-section="light"
+  data-bg-section="light"
+  data-scroll-section
+>
+  <div class="container">
+    <div class="row">
+    <div class="tl-wrap">
+      <!-- line -->
+      <div class="tl-line"></div>
+
+      {items.map((item) => {
+        if (item.kind === "today") {
+          return (
+            <div class="tl-today"
+              style={`left:${todayPct}%`}
+              data-min={isoDateList[0]}
+              data-max={isoDateList[isoDateList.length - 1]}
+            >
+              <span class="tl-today-text">{todayLabel}</span>
+              <div class="tl-today-needle"></div>
+            </div>
+          );
+        }
+        return (
+          <div class={`tl-ev tl-ev--${item.side} tl-ev--${item.type}${item.flip ? " tl-ev--flip" : ""}`} style={`left:${item.position}%`}>
+            <div class="tl-dot"></div>
+            <div class="tl-info">
+              <h4>{item.ev.date}</h4>
+              <p>{item.ev.title}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .section-timeline {
+    padding-top: calc(var(--section-padding) * 0.5) !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* wrapper — tall enough for labels above & below */
+  .tl-wrap {
+    position: relative;
+    width: 100%;
+    height: 280px;       /* fixed height so abs children have space */
+  }
+
+  /* horizontal line at vertical center */
+  .tl-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #1a1a1a;
+    border-radius: 2px;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  /* each event pin */
+  .tl-ev {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);  /* vertically center the dot on the line */
+    z-index: 2;
+  }
+
+  .tl-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: -10px;   /* center dot on left edge */
+  }
+
+  .tl-ev--cfp .tl-dot      { background: #5e37d4; }
+  .tl-ev--spotlight .tl-dot { background: #078167; }
+  .tl-ev--event .tl-dot     { background: #1a1a1a; }
+
+  /* label block */
+  .tl-info {
+    position: absolute;
+    left: -10px;
+    white-space: nowrap;
+
+    h4 { margin: 0; padding-bottom: 4px; }
+    p  { margin: 0; }
+  }
+
+  .tl-ev--cfp .tl-info      { h4, p { color: #5e37d4; } }
+  .tl-ev--spotlight .tl-info { h4, p { color: #078167; } }
+  .tl-ev--event .tl-info     { h4, p { color: #1a1a1a; } }
+
+  /* above: label sits above dot */
+  .tl-ev--above .tl-info {
+    bottom: 28px;       /* 20px dot + 8px gap */
+  }
+  /* below: label sits below dot */
+  .tl-ev--below .tl-info {
+    top: 28px;
+  }
+
+  /* flipped: label extends LEFT of dot, right-aligned */
+  .tl-ev--flip .tl-info {
+    left: auto;
+    right: 10px;
+    text-align: right;
+  }
+
+  /* ---- today marker ---- */
+  .tl-today {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+  .tl-today-needle {
+    width: 2px;
+    flex: 1;
+    background: #e74c3c;
+    border-radius: 1px;
+  }
+  .tl-today-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #e74c3c;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-bottom: 4px;
+  }
+
+  /* ---- mobile: vertical layout ---- */
+  @media screen and (max-width: 768px) {
+    .tl-wrap {
+      height: auto;
+      padding-left: 2.5rem;
+    }
+
+    .tl-line {
+      top: 0;
+      left: 0;
+      right: auto;
+      width: 4px;
+      height: 100%;
+      transform: none;
+    }
+
+    .tl-ev {
+      position: relative;
+      top: auto;
+      left: auto !important;
+      transform: none;
+      padding: 1.5rem 0;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -2.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: -10px;
+    }
+
+    .tl-info {
+      position: relative !important;
+      left: 0 !important;
+      top: auto !important;
+      bottom: auto !important;
+      white-space: normal;
+    }
+
+    .tl-today {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      left: auto !important;
+      transform: none;
+      flex-direction: row;
+      align-items: center;
+      padding: 0.75rem 0;
+      margin-left: -2.5rem;
+      padding-left: 2.5rem;
+    }
+    .tl-today-needle {
+      width: 24px;
+      height: 3px;
+      flex: none;
+      border-radius: 2px;
+    }
+  }
+</style>

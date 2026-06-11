@@ -1,0 +1,234 @@
+---
+import Button from "components/Button.astro";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  note?: string;
+}
+
+const {
+  title = "Visa Types",
+  subtitle = "Choose the right type of Visa for your visit to Shenzhen.",
+  note = "Visa policies change frequently. Always confirm eligibility with your local Chinese consulate before booking travel.",
+} = Astro.props;
+---
+
+<section
+  class="section section-home-why"
+  data-theme-section="light"
+  data-bg-section="light"
+>
+  <div class="container">
+    <div class="row row-title grid">
+      <div class="col col-title">
+        <h2 class="visa-title">{title}</h2>
+        <p class="p">{subtitle}</p>
+      </div>
+    </div>
+
+    <div class="row visa-grid row-audience grid">
+      <!-- Visa-Free Entry Card -->
+      <div class="col why-reasons visa-card visa-card1">
+        <div class="why-content">
+          <div class="visa-card-number">1</div>
+          <div>
+            <h3 class="h5">Visa-Free Entry</h3>
+            <p class="visa-subtitle">Up to 30 days</p>
+          </div>
+          <ul class="visa-features">
+            <li>Eligible for citizens from 74 countries</li>
+            <li>Applies to tourism, business, family or short conferences</li>
+          </ul>
+          <div class="visa-card-button">
+            <Button
+              text="Learn more"
+              link="#visa-free-entry"
+              openInNewTab={false}
+              class="btn primary sm btn-hover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Visa-Free Transit Card -->
+      <div class="col why-reasons visa-card visa-card1">
+        <div class="why-content">
+          <div class="visa-card-number">2</div>
+          <div>
+            <h3 class="h5">Visa-Free Transit</h3>
+            <p class="visa-subtitle">Up to 10 days / 240 hours</p>
+          </div>
+          <ul class="visa-features">
+            <li>Eligible for citizens from 55 countries</li>
+            <li>
+              Must have confirmed onward travel and meet entry requirements
+            </li>
+          </ul>
+          <div class="visa-card-button">
+            <Button
+              text="Learn more"
+              link="#visa-free-transit"
+              openInNewTab={false}
+              class="btn primary sm btn-hover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Traditional Visa Card -->
+      <div class="col why-reasons visa-card visa-card2">
+        <div class="why-content">
+          <div class="visa-card-number">3</div>
+          <div>
+            <h3 class="h5">Traditional Visa</h3>
+            <p class="visa-subtitle">Length varies</p>
+          </div>
+          <ul class="visa-features">
+            <li>Tourist (L) or Business (F) visa</li>
+            <li>Visa approval processing can take time so plan accordingly!</li>
+          </ul>
+          <div class="visa-card-button">
+            <Button
+              text="Learn more"
+              link="#visa-traditional"
+              openInNewTab={false}
+              class="btn primary sm btn-hover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {
+      note && (
+        <div class="row">
+          <div class="col">
+            <p class="visa-note">
+              <strong>Please Note:</strong> {note}
+            </p>
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .visa-title {
+    margin-bottom: 1rem;
+  }
+  .visa-card {
+    position: relative;
+    border-radius: 8px;
+    padding: 2rem;
+  }
+  .visa-card1 {
+    background: linear-gradient(45deg, rgba(248, 74, 16, 0.12), transparent);
+    border: 1px solid rgba(248, 74, 16, 0.3);
+  }
+  .visa-card2 {
+    background: linear-gradient(45deg, rgba(168, 153, 104, 0.16), transparent);
+    border: 1px solid rgba(168, 153, 104, 0.35);
+  }
+
+  .visa-card-number {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    background: #F84A10;
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .visa-card .why-content h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .visa-subtitle {
+    color: rgba(234, 230, 210, 0.6);
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .visa-features li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .visa-features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_594_1398)'%3E%3Cpath d='M7.07988 9.72012L5.4 11.4L10.8 16.8L22.8 4.8L21.1201 3.12012L10.8 13.3799L7.07988 9.72012ZM21.6 12C21.6 17.2799 17.2798 21.6 12 21.6C6.72017 21.6 2.4 17.2799 2.4 12C2.4 6.72012 6.72012 2.4 12 2.4C12.9 2.4 13.8 2.52012 14.6402 2.76006L16.5 0.9C15.1201 0.3 13.6201 0 12 0C5.4 0 0 5.4 0 12C0 18.6 5.4 24 12 24C18.6 24 24 18.6 24 12H21.6Z' fill='%23FF7A3C'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_594_1398'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .visa-card-button {
+    display: flex;
+  }
+
+  .visa-note {
+    text-align: left;
+    font-size: 0.9rem;
+    color: rgba(234, 230, 210, 0.6);
+    line-height: 1.5;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 920px) {
+    .row-audience.grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .visa-grid {
+      --columns: 1 !important;
+    }
+    .visa-card {
+      padding: 1.5rem;
+    }
+
+    .visa-card .why-content h3 {
+      font-size: 1.35rem;
+    }
+
+    .visa-note {
+      margin-top: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .visa-card {
+      padding: 1rem;
+    }
+
+    .visa-card-number {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .visa-card .why-content h3 {
+      font-size: 1.25rem;
+    }
+  }
+</style>

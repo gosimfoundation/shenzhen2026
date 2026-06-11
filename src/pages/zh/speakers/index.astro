@@ -1,0 +1,30 @@
+---
+// Components
+import Layout from "layouts/LayoutLandingZh.astro";
+import GetTickets from "components/GetTickets.astro";
+import HeroText from "components/HeroText.astro";
+import AllSpeakers from "components/SpeakersZh.astro";
+---
+
+<Layout
+  title="演讲嘉宾 – GOSIM Shenzhen 2026"
+  description="GOSIM Shenzhen 2026 是开源 AI 项目、开发者、研究人员和行业支持者的聚会，旨在分享知识、相互学习和协作。"
+  navBackground="light"
+  pageTransitionName="Speakers"
+>
+  <HeroText title="演讲嘉宾" lightgray />
+
+  <AllSpeakers />
+
+  <GetTickets
+    title="议题征集 CFP进行中"
+    location="中国深圳"
+    date="2026年10月16-17日"
+    text="我们正在寻找开源 AI、机器人、边缘系统与开发者基础设施领域的大胆想法与新声音。欢迎提交议题，登上 GOSIM Shenzhen 2026 的舞台。"
+    ctaButton={{
+      text: "提交议题",
+      link: "https://cfp.gosim.org",
+      openInNewTab: true,
+    }}
+  />
+</Layout>

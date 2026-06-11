@@ -1,0 +1,164 @@
+---
+// Components
+import Button from "components/Button.astro";
+import Logo from "./Logo.astro";
+
+const slug = Astro.url.pathname;
+const isZhPath = slug.startsWith("/zh/");
+const isFrPath = slug.startsWith("/fr/");
+const isHomepage = slug === "/" || slug === "/zh/" || slug === "/fr/";
+const anchorBase = isHomepage ? "" : isZhPath ? "/zh/" : isFrPath ? "/fr/" : "/";
+
+const navGroups = [
+  {
+    label: "Conference",
+    links: [
+      { text: "Tracks", link: `${anchorBase}#tracks` },
+      { text: "Proposals", link: "https://cfp.gosim.org" },
+    ],
+  },
+  {
+    label: "Travel",
+    links: [
+      { text: "General Travel Info", link: "/general-travel/" },
+      { text: "Chinese Visa", link: "/chinese-visa/" },
+    ],
+  },
+  {
+    label: "About",
+    links: [
+      { text: "Code of Conduct", link: "/code-of-conduct/" },
+      { text: "Privacy", link: "/privacy/" },
+    ],
+  },
+];
+---
+
+<footer class="section footer" data-theme-section="dark" data-bg-section="dark">
+  <div class="container">
+    <div class="row row-base">
+      <div class="col col-logo-gosim">
+        <div class="logo">
+          <a href="/" aria-label="Go to homepage" class="logo-click">
+            <Logo />
+          </a>
+        </div>
+        <div class="row footer-socials">
+          <a
+            href="https://mastodon.social/@gosim"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/icon-mastodon.svg"
+              alt="Follow us on Mastodon"
+              width="18"
+              height="18"
+              loading="lazy"
+              style="filter: invert(1);"
+            />
+          </a>
+          <a
+            href="https://x.com/gosimfoundation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/icon-x.svg"
+              alt="Follow us on X (twitter)"
+              width="18"
+              height="18"
+              loading="lazy"
+              style="filter: invert(1);"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/gosim-foundation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/icon-linkedin.svg"
+              alt="Follow us on LinkedIn"
+              width="18"
+              height="18"
+              loading="lazy"
+              style="filter: invert(1);"
+            />
+          </a>
+          <a
+            href="https://bsky.app/profile/gosimfoundation.bsky.social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/icon-bluesky.svg"
+              alt="Follow us on BlueSky"
+              width="18"
+              height="18"
+              loading="lazy"
+              style="filter: invert(1);"
+            />
+          </a>
+          <a
+            href="https://www.youtube.com/@GOSIMFoundation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/icon-youtube.svg"
+              alt="Follow us on Youtube"
+              width="18"
+              height="18"
+              loading="lazy"
+              style="filter: invert(1);"
+            />
+          </a>
+        </div>
+      </div>
+
+      <nav class="col col-sitemap" aria-label="Navigation Footer">
+        {navGroups.map((group) => (
+          <ul>
+            <li class="nav-group-label">{group.label}</li>
+            {group.links.map((loop: any) => (
+              <li
+                class="link link-hover"
+                data-barba-update
+                data-link-status={loop.link === slug ? "active" : "not-active"}
+              >
+                <a
+                  class="link-click"
+                  href={loop.link}
+                  target={loop?.openInNewTab ? "_blank" : "_self"}
+                  rel={loop?.openInNewTab ? "noopener noreferrer" : ""}
+                >
+                  <span>{loop.text}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        ))}
+      </nav>
+
+      <!-- <div class="col col-newsletter">
+        <div class="col-row col-row-title">
+          <h2 class="h4">Stay up to date on all things GOSIM 2026</h2>
+        </div>
+        <div class="col-row col-row-input">
+          <Button
+            link="#"
+            text="Join our newsletter"
+            class="btn primary xl btn-hover"
+          />
+        </div>
+        <div class="col-row col-row-text styled-content">
+          <p>
+            Subscribe to the GOSIM Foundation mailing list to stay in the know.
+          </p>
+        </div>
+      </div> -->
+    </div>
+
+  </div>
+</footer>

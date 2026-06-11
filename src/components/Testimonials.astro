@@ -1,0 +1,230 @@
+---
+interface Props {
+  embedUrns: string[];
+}
+
+const { embedUrns } = Astro.props;
+---
+
+<section class="section section-testimonials" data-theme-section="light" data-bg-section="lightgray" data-scroll-section>
+  <div class="container wide">
+    <div class="testimonials-carousel">
+      <button class="carousel-arrow carousel-prev" aria-label="Previous">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="testimonials-track-wrapper">
+        <div class="testimonials-track">
+          {embedUrns.map((urn, i) => (
+            <div class="embed-wrapper" data-index={i}>
+              <iframe
+                src={`https://www.linkedin.com/embed/feed/update/${urn}`}
+                frameborder="0"
+                allowfullscreen
+                title="LinkedIn embedded post"
+              ></iframe>
+            </div>
+          ))}
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-next" aria-label="Next">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="carousel-dots">
+      {embedUrns.map((_, i) => (
+        <button class={`carousel-dot ${i === 0 ? 'active' : ''}`} data-dot={i} aria-label={`Go to post ${i + 1}`} />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-testimonials {
+    padding-top: calc(var(--section-padding) * 0.3);
+    padding-bottom: calc(var(--section-padding) * 0.3);
+  }
+
+  .testimonials-carousel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .testimonials-track-wrapper {
+    flex: 1;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    border-radius: 12px;
+  }
+
+  .testimonials-track-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonials-track {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .embed-wrapper {
+    flex: 0 0 calc(50% - 0.5rem);
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  .embed-wrapper iframe {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    pointer-events: none;
+  }
+
+  .embed-wrapper.active iframe {
+    pointer-events: auto;
+  }
+
+  .carousel-arrow {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .carousel-arrow:hover {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+  }
+
+  .carousel-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .carousel-arrow svg {
+    color: #333;
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s;
+  }
+
+  .carousel-dot.active {
+    background: rgba(62, 58, 43, 0.16);
+  }
+
+  @media (max-width: 768px) {
+    .carousel-arrow {
+      width: 40px;
+      height: 40px;
+    }
+
+    .carousel-arrow svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .embed-wrapper {
+      flex-basis: 100%;
+    }
+
+    .embed-wrapper iframe {
+      height: 100vh;
+    }
+  }
+</style>
+
+<script>
+  // Click-to-activate iframes
+  document.querySelectorAll('.section-testimonials .embed-wrapper').forEach((wrapper) => {
+    wrapper.addEventListener('click', () => {
+      document.querySelectorAll('.section-testimonials .embed-wrapper.active').forEach((w) => w.classList.remove('active'));
+      wrapper.classList.add('active');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!(e.target as HTMLElement).closest('.section-testimonials .embed-wrapper')) {
+      document.querySelectorAll('.section-testimonials .embed-wrapper.active').forEach((w) => w.classList.remove('active'));
+    }
+  });
+
+  // Carousel: native horizontal scroll with snap, paged by viewport width
+  const section = document.querySelector('.section-testimonials');
+  if (section) {
+    const wrapper = section.querySelector('.testimonials-track-wrapper') as HTMLElement;
+    const prevBtn = section.querySelector('.carousel-prev') as HTMLButtonElement;
+    const nextBtn = section.querySelector('.carousel-next') as HTMLButtonElement;
+    const dots = [...section.querySelectorAll('.carousel-dot')] as HTMLButtonElement[];
+    const cards = [...section.querySelectorAll('.embed-wrapper')] as HTMLElement[];
+
+    const perView = () => Math.max(1, Math.round(wrapper.clientWidth / cards[0].offsetWidth));
+    const pageCount = () => Math.ceil(cards.length / perView());
+    const pageLeft = (i: number) => cards[Math.min(i * perView(), cards.length - 1)].offsetLeft - cards[0].offsetLeft;
+    const currentPage = () => Math.round(wrapper.scrollLeft / (pageLeft(1) || wrapper.clientWidth));
+
+    function update() {
+      const pages = pageCount();
+      const current = Math.min(currentPage(), pages - 1);
+      dots.forEach((d, i) => {
+        d.style.display = i < pages ? '' : 'none';
+        d.classList.toggle('active', i === current);
+      });
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current >= pages - 1;
+    }
+
+    // Smooth scrollTo is unreliable here (the page's scroll libraries interfere), so animate manually
+    function animateScroll(to: number, ms = 350) {
+      const from = wrapper.scrollLeft;
+      const start = performance.now();
+      const ease = (t: number) => 1 - Math.pow(1 - t, 3);
+      function step(now: number) {
+        const t = Math.min(1, (now - start) / ms);
+        wrapper.scrollLeft = from + (to - from) * ease(t);
+        if (t < 1) requestAnimationFrame(step);
+        else update();
+      }
+      requestAnimationFrame(step);
+    }
+
+    const goTo = (i: number) => animateScroll(pageLeft(Math.max(0, Math.min(i, pageCount() - 1))));
+
+    prevBtn.addEventListener('click', () => goTo(currentPage() - 1));
+    nextBtn.addEventListener('click', () => goTo(currentPage() + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+    let raf = 0;
+    wrapper.addEventListener('scroll', () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    update();
+  }
+</script>

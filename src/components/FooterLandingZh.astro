@@ -1,0 +1,155 @@
+---
+// Components
+import Button from "components/Button.astro";
+import Logo from "./Logo.astro";
+
+const slug = Astro.url.pathname;
+const isHomepage = slug === "/" || slug === "/zh/" || slug === "/fr/";
+const anchorBase = isHomepage ? "" : "/zh/";
+
+const navGroups = [
+  {
+    label: "会议",
+    links: [
+      { text: "议题", link: `${anchorBase}#tracks` },
+      { text: "议题征集 CFP", link: "https://cfp.gosim.org" },
+    ],
+  },
+  {
+    label: "关于",
+    links: [
+      { text: "行为准则", link: "/zh/code-of-conduct/" },
+      { text: "隐私政策", link: "/zh/privacy/" },
+    ],
+  },
+];
+---
+
+<footer class="section footer" data-theme-section="dark" data-bg-section="dark">
+  <div class="container">
+    <div class="row row-base">
+      <div class="col col-logo-gosim">
+        <div class="logo">
+          <a href="/zh/" aria-label="前往首页" class="logo-click">
+            <Logo />
+          </a>
+        </div>
+        <div class="row footer-socials">
+          <a
+            href="https://mastodon.social/@gosim"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/icon-mastodon.svg"
+              alt="在Mastodon上关注我们"
+              width="18"
+              height="18"
+              loading="lazy"
+              style="filter: invert(1);"
+            />
+          </a>
+          <a
+            href="https://x.com/gosimfoundation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/icon-x.svg"
+              alt="在X (twitter)上关注我们"
+              width="18"
+              height="18"
+              loading="lazy"
+              style="filter: invert(1);"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/gosim-foundation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/icon-linkedin.svg"
+              alt="在LinkedIn上关注我们"
+              width="18"
+              height="18"
+              loading="lazy"
+              style="filter: invert(1);"
+            />
+          </a>
+          <a
+            href="https://bsky.app/profile/gosimfoundation.bsky.social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/icon-bluesky.svg"
+              alt="在BlueSky上关注我们"
+              width="18"
+              height="18"
+              loading="lazy"
+              style="filter: invert(1);"
+            />
+          </a>
+          <a
+            href="https://www.youtube.com/@GOSIMFoundation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/icons/icon-youtube.svg"
+              alt="在Youtube上关注我们"
+              width="18"
+              height="18"
+              loading="lazy"
+              style="filter: invert(1);"
+            />
+          </a>
+        </div>
+      </div>
+
+      <nav class="col col-sitemap" aria-label="Navigation Footer">
+        {navGroups.map((group) => (
+          <ul>
+            <li class="nav-group-label">{group.label}</li>
+            {group.links.map((loop: any) => (
+              <li
+                class="link link-hover"
+                data-barba-update
+                data-link-status={loop.link === slug ? "active" : "not-active"}
+              >
+                <a
+                  class="link-click"
+                  href={loop.link}
+                  target={loop?.openInNewTab ? "_blank" : "_self"}
+                  rel={loop?.openInNewTab ? "noopener noreferrer" : ""}
+                >
+                  <span>{loop.text}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        ))}
+      </nav>
+
+      <!-- <div class="col col-newsletter">
+        <div class="col-row col-row-title">
+          <h2 class="h4">了解GOSIM 2026的最新动态</h2>
+        </div>
+        <div class="col-row col-row-input">
+          <Button
+            link="#"
+            text="订阅我们的通讯"
+            class="btn primary xl btn-hover"
+          />
+        </div>
+        <div class="col-row col-row-text styled-content">
+          <p>
+            订阅GOSIM基金会邮件列表，随时了解最新信息。
+          </p>
+        </div>
+      </div> -->
+    </div>
+
+  </div>
+</footer>

@@ -1,0 +1,29 @@
+---
+// Components
+import Layout from "layouts/LayoutLandingZh.astro";
+import Content from "markdown/CodeOfConductZh.md";
+---
+
+<Layout
+    title="行为准则 – GOSIM Shenzhen 2026"
+    description="GOSIM Shenzhen 2026 是开源 AI 项目、开发者、研究人员和行业支持者的聚会，旨在分享知识、相互学习和协作。"
+    navBackground="light"
+    pageTransitionName="行为准则"
+>
+    <section
+        class="section speaker-detail-header"
+        data-theme-section="light"
+        data-bg-section="lightgray"
+    >
+        <div class="gradient-circle-wrap">
+            <div class="gradient-circle"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-markdown">
+                    <Content />
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

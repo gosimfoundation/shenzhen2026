@@ -1,0 +1,305 @@
+---
+// Packages
+import { Picture } from "astro:assets";
+
+// Components
+import Button from "components/Button.astro";
+
+interface Props {
+  id?: string;
+  title: string;
+  text: string;
+  text2: string;
+  text3: string;
+  text4: string;
+  validTitle: string;
+  invalidTitle: string;
+  validExample1?: string;
+  validExample2?: string;
+  validExample3?: string;
+  validExample4?: string;
+  invalidExample1?: string;
+  invalidExample2?: string;
+  image: any;
+  imageAlt: string;
+  dataBgSection: string;
+  dataThemeSection: string;
+  ctaButton?: {
+    text: string;
+    link: string;
+    openInNewTab?: boolean;
+  };
+}
+
+const {
+  id = "none",
+  title,
+  text,
+  text2,
+  text3,
+  text4,
+  validTitle = "Valid Transit Examples",
+  invalidTitle = "Invalid Transit Examples",
+  validExample1,
+  validExample2,
+  validExample3,
+  validExample4,
+  invalidExample1,
+  invalidExample2,
+  image,
+  imageAlt,
+  ctaButton,
+  dataBgSection,
+  dataThemeSection,
+} = Astro.props;
+
+// Check if any valid examples are provided
+const hasValidExamples = validExample1 || validExample2 || validExample3 || validExample4;
+
+// Check if any invalid examples are provided
+const hasInvalidExamples = invalidExample1 || invalidExample2;
+---
+
+<section
+  class="section section-register-gosim spotlight-section"
+  id={id}
+  data-theme-section={dataThemeSection}
+  data-bg-section={dataBgSection}
+>
+  <div class="container">
+    <div class="row grid">
+      <div class="col">
+        <div class="col-row col-row-title">
+          <h2 class="custom3">{title}</h2>
+        </div>
+
+        <div class="col-row col-row-text styled-content">
+          <p>
+            {text}
+          </p>
+          <p>
+            {text2}
+          </p>
+          <p>
+            {text3}
+          </p>
+          <p>
+            {text4}
+          </p>
+          <div class="examples">
+            {hasValidExamples && (
+              <div class="visa-example" style="">
+                <div class="">
+                  <h3 class="h5">{validTitle}</h3>
+                  <ul class="visa-list valid-list">
+                    {validExample1 && (
+                      <li>
+                        <svg
+                          width="20"
+                          height="14"
+                          viewBox="0 0 92 66"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M90.075 1.9333C92.6417 4.51102 92.6417 8.69724 90.075 11.275L37.5094 64.0667C34.9428 66.6444 30.7745 66.6444 28.2078 64.0667L1.92502 37.6708C-0.641673 35.0931 -0.641673 30.9069 1.92502 28.3292C4.49171 25.7515 8.65998 25.7514 11.2266 28.3292L32.8689 50.0439L80.7939 1.9333C83.3606 -0.644434 87.5288 -0.644434 90.0955 1.9333H90.075Z"
+                            fill="#56B17C"></path>
+                        </svg>
+                        {validExample1}
+                      </li>
+                    )}
+                    {validExample2 && (
+                      <li>
+                        <svg
+                          width="20"
+                          height="14"
+                          viewBox="0 0 92 66"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M90.075 1.9333C92.6417 4.51102 92.6417 8.69724 90.075 11.275L37.5094 64.0667C34.9428 66.6444 30.7745 66.6444 28.2078 64.0667L1.92502 37.6708C-0.641673 35.0931 -0.641673 30.9069 1.92502 28.3292C4.49171 25.7515 8.65998 25.7514 11.2266 28.3292L32.8689 50.0439L80.7939 1.9333C83.3606 -0.644434 87.5288 -0.644434 90.0955 1.9333H90.075Z"
+                            fill="#56B17C"></path>
+                        </svg>
+                        {validExample2}
+                      </li>
+                    )}
+                    {validExample3 && (
+                      <li>
+                        <svg
+                          width="20"
+                          height="14"
+                          viewBox="0 0 92 66"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M90.075 1.9333C92.6417 4.51102 92.6417 8.69724 90.075 11.275L37.5094 64.0667C34.9428 66.6444 30.7745 66.6444 28.2078 64.0667L1.92502 37.6708C-0.641673 35.0931 -0.641673 30.9069 1.92502 28.3292C4.49171 25.7515 8.65998 25.7514 11.2266 28.3292L32.8689 50.0439L80.7939 1.9333C83.3606 -0.644434 87.5288 -0.644434 90.0955 1.9333H90.075Z"
+                            fill="#56B17C"></path>
+                        </svg>
+                        {validExample3}
+                      </li>
+                    )}
+                    {validExample4 && (
+                      <li>
+                        <svg
+                          width="20"
+                          height="14"
+                          viewBox="0 0 92 66"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M90.075 1.9333C92.6417 4.51102 92.6417 8.69724 90.075 11.275L37.5094 64.0667C34.9428 66.6444 30.7745 66.6444 28.2078 64.0667L1.92502 37.6708C-0.641673 35.0931 -0.641673 30.9069 1.92502 28.3292C4.49171 25.7515 8.65998 25.7514 11.2266 28.3292L32.8689 50.0439L80.7939 1.9333C83.3606 -0.644434 87.5288 -0.644434 90.0955 1.9333H90.075Z"
+                            fill="#56B17C"></path>
+                        </svg>
+                        {validExample4}
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              </div>
+            )}
+            {hasInvalidExamples && (
+              <div class="visa-example" style="">
+                <div class="">
+                  <h3 class="h5">{invalidTitle}</h3>
+                  <ul class="visa-list invalid-list">
+                    {invalidExample1 && (
+                      <li>
+                        <svg
+                          width="17"
+                          height="19"
+                          viewBox="0 0 61 70"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M57.8989 9.73645C59.5761 7.73304 59.309 4.75739 57.2904 3.09279C55.2718 1.42818 52.2737 1.69335 50.5965 3.69677L30.5 27.6345L10.4035 3.69677C8.7263 1.69335 5.72813 1.42819 3.70959 3.0928C1.69104 4.75741 1.42386 7.73304 3.10106 9.73645L24.3108 35L3.10106 60.2636C1.42386 62.267 1.69103 65.2426 3.70959 66.9072C5.72815 68.5718 8.7263 68.3067 10.4035 66.3032L30.5 42.3655L50.5965 66.3032C52.2737 68.3067 55.2718 68.5718 57.2904 66.9072C59.309 65.2426 59.5761 62.267 57.8989 60.2636L36.6892 35L57.8989 9.73645Z"
+                            fill="#EF4136"
+                            stroke="#EF4136"
+                            stroke-width="4"></path>
+                        </svg>
+                        {invalidExample1}
+                      </li>
+                    )}
+                    {invalidExample2 && (
+                      <li>
+                        <svg
+                          width="17"
+                          height="19"
+                          viewBox="0 0 61 70"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M57.8989 9.73645C59.5761 7.73304 59.309 4.75739 57.2904 3.09279C55.2718 1.42818 52.2737 1.69335 50.5965 3.69677L30.5 27.6345L10.4035 3.69677C8.7263 1.69335 5.72813 1.42819 3.70959 3.0928C1.69104 4.75741 1.42386 7.73304 3.10106 9.73645L24.3108 35L3.10106 60.2636C1.42386 62.267 1.69103 65.2426 3.70959 66.9072C5.72815 68.5718 8.7263 68.3067 10.4035 66.3032L30.5 42.3655L50.5965 66.3032C52.2737 68.3067 55.2718 68.5718 57.2904 66.9072C59.309 65.2426 59.5761 62.267 57.8989 60.2636L36.6892 35L57.8989 9.73645Z"
+                            fill="#EF4136"
+                            stroke="#EF4136"
+                            stroke-width="4"></path>
+                        </svg>
+                        {invalidExample2}
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              </div>
+            )}
+            {(hasValidExamples || hasInvalidExamples) && <div class="divider"></div>}
+            <div class="visa-example" style="">
+              <div class="">
+                <h3 class="h5">Resources</h3>
+                <ul class="visa-list">
+                  <li>
+                    <a
+                      href="https://www.china-embassy.org/chn/ls/ls_100000/ls_100000_1.htm"
+                      target="_blank"
+                      class="link"
+                    >
+                      China Visa Info & Appointment
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.china-briefing.com/news/china-visa-free-travel-policies-complete-guide/"
+                      target="_blank"
+                      class="link"
+                    >
+                      China Briefing – Visa-Free Guide
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {
+          ctaButton?.text && (
+            <div class="col-row col-row-btn">
+              <Button
+                text={ctaButton.text}
+                link={ctaButton.link}
+                openInNewTab={ctaButton?.openInNewTab}
+                class="btn primary xl btn-hover"
+              />
+            </div>
+          )
+        }
+      </div>
+
+      {
+        image && (
+          <div class="col">
+            <div class="logo-tiles">
+              <Picture
+                src={image}
+                formats={["webp", "jpg"]}
+                alt={imageAlt}
+                class="hexbadge"
+              />
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .examples {
+    margin-top: 2rem;
+  }
+  .divider {
+    height: 1px;
+    background-color: #bbbbbb;
+    margin-bottom: 1.5rem;
+  }
+  .link {
+    color: #007bff;
+    text-decoration: underline;
+  }
+  .visa-example {
+    background-color:;
+    border: 0px;
+  }
+
+  .visa-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .visa-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .visa-list svg {
+    flex-shrink: 0;
+  }
+  .styled-content ul li::before {
+    display: none;
+  }
+</style>

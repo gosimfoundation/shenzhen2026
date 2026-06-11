@@ -1,0 +1,338 @@
+[
+  {
+    "name": "transformers",
+    "url": "https://github.com/huggingface/transformers",
+    "description": "🤗 Transformers: State-of-the-art Machine Learning for Pytorch, TensorFlow, and JAX.",
+    "avatar": "https://avatars.githubusercontent.com/u/25720743?v=4",
+    "stars": 157.3,
+    "age": 89
+  },
+  {
+    "name": "pytorch",
+    "url": "https://github.com/pytorch/pytorch",
+    "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+    "avatar": "https://avatars.githubusercontent.com/u/21003710?v=4",
+    "stars": 97.9,
+    "age": 115
+  },
+  {
+    "name": "opencv",
+    "url": "https://github.com/opencv/opencv",
+    "description": "Open Source Computer Vision Library",
+    "avatar": "https://avatars.githubusercontent.com/u/2133472?v=4",
+    "stars": 86.4,
+    "age": 164
+  },
+  {
+    "name": "llama.cpp",
+    "url": "https://github.com/ggerganov/llama.cpp",
+    "description": "LLM inference in C/C++",
+    "avatar": "https://avatars.githubusercontent.com/u/1991296?v=4",
+    "stars": 96.5,
+    "age": 36
+  },
+  {
+    "name": "vllm",
+    "url": "https://github.com/vllm-project/vllm",
+    "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
+    "avatar": "https://avatars.githubusercontent.com/u/136984999?v=4",
+    "stars": 71.8,
+    "age": 37
+  },
+  {
+    "name": "servo",
+    "url": "https://github.com/servo/servo",
+    "description": "The Servo Browser Engine",
+    "avatar": "https://avatars.githubusercontent.com/u/2325985?v=4",
+    "stars": 35.9,
+    "age": 169
+  },
+  {
+    "name": "jina",
+    "url": "https://github.com/jina-ai/serve",
+    "description": "Build multimodal AI applications with cloud-native stack. Framework for building and deploying AI services that communicate via gRPC, HTTP and WebSockets.",
+    "avatar": "https://avatars.githubusercontent.com/u/64292193?v=4",
+    "stars": 21.8,
+    "age": 73
+  },
+  {
+    "name": "neo4j",
+    "url": "https://github.com/neo4j/neo4j",
+    "description": "Graphs for Everyone",
+    "avatar": "https://avatars.githubusercontent.com/u/201121?v=4",
+    "stars": 16,
+    "age": 160
+  },
+  {
+    "name": "CopilotKit",
+    "url": "https://github.com/CopilotKit/CopilotKit",
+    "description": "React UI + elegant infrastructure for AI Copilots, in-app AI agents, AI chatbots, and AI-powered Textareas.",
+    "avatar": "https://avatars.githubusercontent.com/u/147615962?v=4",
+    "stars": 29.2,
+    "age": 33
+  },
+  {
+    "name": "LeRobot",
+    "url": "https://github.com/huggingface/lerobot",
+    "description": "🤗 LeRobot: Making AI for Robotics more accessible with end-to-end learning.",
+    "avatar": "https://avatars.githubusercontent.com/u/25720743?v=4",
+    "stars": 22,
+    "age": 26
+  },
+  {
+    "name": "kornia",
+    "url": "https://github.com/kornia/kornia",
+    "description": "Open Source Differentiable Computer Vision Library for PyTorch.",
+    "avatar": "https://avatars.githubusercontent.com/u/53198969?v=4",
+    "stars": 11.1,
+    "age": 91
+  },
+  {
+    "name": "sglang",
+    "url": "https://github.com/sgl-project/sglang",
+    "description": "SGLang is a fast serving framework for large language models and vision language models.",
+    "avatar": "https://avatars.githubusercontent.com/u/147780389?v=4",
+    "stars": 24,
+    "age": 26
+  },
+  {
+    "name": "kubeedge",
+    "url": "https://github.com/kubeedge/kubeedge",
+    "description": "Kubernetes Native Edge Computing Framework (project under CNCF)",
+    "avatar": "https://avatars.githubusercontent.com/u/44980145?v=4",
+    "stars": 7.4,
+    "age": 90
+  },
+  {
+    "name": "CogVLM",
+    "url": "https://github.com/THUDM/CogVLM",
+    "description": "A state-of-the-art open-source visual language model (VLM) from the team behind ChatGLM.",
+    "avatar": "https://avatars.githubusercontent.com/u/18135853?v=4",
+    "stars": 6.7,
+    "age": 30
+  },
+  {
+    "name": "mindspore",
+    "url": "https://github.com/mindspore-ai/mindspore",
+    "description": "MindSpore is a new open source deep learning training/inference framework that could be used for mobile, edge and cloud scenarios.",
+    "avatar": "https://avatars.githubusercontent.com/u/54143604?v=4",
+    "stars": 4.7,
+    "age": 73
+  },
+  {
+    "name": "rapier",
+    "url": "https://github.com/dimforge/rapier",
+    "description": "2D and 3D physics engines focusing on performance, parallelization, and stability.",
+    "avatar": "https://avatars.githubusercontent.com/u/59092675?v=4",
+    "stars": 5.2,
+    "age": 67
+  },
+  {
+    "name": "Volcano",
+    "url": "https://github.com/volcano-sh/volcano",
+    "description": "A cloud-native batch system and scheduler for high-performance computing, project under CNCF.",
+    "avatar": "https://avatars.githubusercontent.com/u/43896033?v=4",
+    "stars": 5.4,
+    "age": 84
+  },
+  {
+    "name": "optimum",
+    "url": "https://github.com/huggingface/optimum",
+    "description": "🚀 Accelerate training and inference of 🤗 Transformers and 🤗 Diffusers with easy-to-use hardware optimization tools.",
+    "avatar": "https://avatars.githubusercontent.com/u/25720743?v=4",
+    "stars": 3.3,
+    "age": 56
+  },
+  {
+    "name": "Nexent",
+    "url": "https://github.com/ModelEngine-Group/nexent",
+    "description": "A zero-code platform for auto-generating agents, supporting powerful agent control, data processing, and MCP tools.",
+    "avatar": "https://avatars.githubusercontent.com/u/161405106?v=4",
+    "stars": 4.2,
+    "age": 11
+  },
+  {
+    "name": "zenoh",
+    "url": "https://github.com/eclipse-zenoh/zenoh",
+    "description": "zenoh unifies data in motion, data in-use, data at rest and computations. It carefully blends traditional pub/sub with geo-distributed storages, queries and computations.",
+    "avatar": "https://avatars.githubusercontent.com/u/60146382?v=4",
+    "stars": 2.5,
+    "age": 74
+  },
+  {
+    "name": "openeuler",
+    "url": "https://github.com/openeuler-mirror/openEuler",
+    "description": "The openEuler community edition source code.",
+    "avatar": "https://avatars.githubusercontent.com/u/68896599?v=4",
+    "stars": 2.1,
+    "age": 74
+  },
+  {
+    "name": "OpenHarmony",
+    "url": "https://github.com/openharmony/docs",
+    "description": "An open-source, distributed operating system for the future of smart devices in all scenarios.",
+    "avatar": "https://avatars.githubusercontent.com/u/64923342?v=4",
+    "stars": 0.2,
+    "age": 55
+  },
+  {
+    "name": "dora",
+    "url": "https://github.com/dora-rs/dora",
+    "description": "DORA (Dataflow-Oriented Robotic Architecture) is middleware designed to streamline and simplify the creation of AI-based robotic applications.",
+    "avatar": "https://avatars.githubusercontent.com/u/99922143?v=4",
+    "stars": 3,
+    "age": 49
+  },
+  {
+    "name": "openloong",
+    "url": "https://github.com/openloong/openloong",
+    "description": "OpenLoong is an open-source control framework for humanoid robots.",
+    "avatar": "https://avatars.githubusercontent.com/u/150650942?v=4",
+    "stars": 1.2,
+    "age": 26
+  },
+  {
+    "name": "5ireChain",
+    "url": "https://github.com/5ire-org/5ire-chain",
+    "description": "A Layer 1 EVM-compatible smart contract platform focused on sustainability and the 5th industrial revolution.",
+    "avatar": "https://avatars.githubusercontent.com/u/88214349?v=4",
+    "stars": 1.2,
+    "age": 34
+  },
+  {
+    "name": "Unitree ROS",
+    "url": "https://github.com/unitreerobotics/unitree_ros",
+    "description": "ROS packages and drivers for integrating and controlling Unitree's quadruped robots.",
+    "avatar": "https://avatars.githubusercontent.com/u/31732098?v=4",
+    "stars": 1.3,
+    "age": 67
+  },
+  {
+    "name": "ModelArts-Lab",
+    "url": "https://github.com/huaweicloud/ModelArts-Lab",
+    "description": "A repository of sample code and tutorials for ModelArts, Huawei's one-stop AI development and management platform.",
+    "avatar": "https://avatars.githubusercontent.com/u/40673062?v=4",
+    "stars": 1,
+    "age": 82
+  },
+  {
+    "name": "OpenGPT-X",
+    "url": "https://github.com/Fraunhofer-IAIS/OpenGPT-X",
+    "description": "OpenGPT-X is a project to train and open source large-scale German language models.",
+    "avatar": "https://avatars.githubusercontent.com/u/8202390?v=4",
+    "stars": 0.6,
+    "age": 44
+  },
+  {
+    "name": "DSDL",
+    "url": "https://github.com/OpenDataLab/dsdl",
+    "description": "A Python library for the Data Science Definition Language, enabling interoperability between data spaces.",
+    "avatar": "https://avatars.githubusercontent.com/u/99341235?v=4",
+    "stars": 0.6,
+    "age": 32
+  },
+  {
+    "name": "universal-resolver",
+    "url": "https://github.com/decentralized-identity/universal-resolver",
+    "description": "A universal resolver for Decentralized Identifiers (DIDs).",
+    "avatar": "https://avatars.githubusercontent.com/u/22786468?v=4",
+    "stars": 0.6,
+    "age": 103
+  },
+  {
+    "name": "Bielik-7B",
+    "url": "https://github.com/speakleash/Bielik-7B-v0.1",
+    "description": "Bielik 7B is a Polish language model based on Mistral 7B.",
+    "avatar": "https://avatars.githubusercontent.com/u/144980641?v=4",
+    "stars": 0.3,
+    "age": 26
+  },
+  {
+    "name": "MickRobot",
+    "url": "https://github.com/RuPingCen/mick_robot_chasiss",
+    "description": "Open source dual-arm humanoid robot chassis project.",
+    "avatar": "https://avatars.githubusercontent.com/u/45145719?v=4",
+    "stars": 0.2,
+    "age": 77
+  },
+  {
+    "name": "retrain-pipelines",
+    "url": "https://github.com/aurelienmorgan/retrain-pipelines",
+    "description": "An MLOps framework for continuous learning.",
+    "avatar": "https://avatars.githubusercontent.com/u/1229705?v=4",
+    "stars": 0,
+    "age": 17
+  },
+  {
+    "name": "Agent Network Protocol",
+    "url": "https://github.com/Agent-Network-Protocol/anp-ts",
+    "description": "The world's first open-source communication protocol designed for intelligent agents.",
+    "avatar": "https://avatars.githubusercontent.com/u/159239854?v=4",
+    "stars": 0.2,
+    "age": 5
+  },
+  {
+    "name": "KTransformers",
+    "url": "https://github.com/K-Transformers/ktranformers",
+    "description": "A highly-optimized framework for large language model inference on a single GPU.",
+    "avatar": "https://avatars.githubusercontent.com/u/154101918?v=4",
+    "stars": 0.2,
+    "age": 6
+  },
+  {
+    "name": "CANN",
+    "url": "https://github.com/ascend/cann",
+    "description": "CANN (Compute Architecture for Neural Networks) is a heterogeneous computing architecture for AI scenarios.",
+    "avatar": "https://avatars.githubusercontent.com/u/74328198?v=4",
+    "stars": 0.2,
+    "age": 33
+  },
+  {
+    "name": "Spring Cloud Huawei",
+    "url": "https://github.com/huaweicloud/spring-cloud-huawei",
+    "description": "A framework that makes it easier and more productive to develop microservices with Spring Cloud in the Huawei Cloud ecosystem.",
+    "avatar": "https://avatars.githubusercontent.com/u/40673062?v=4",
+    "stars": 0.6,
+    "age": 80
+  },
+  {
+    "name": "OpenSeek",
+    "url": "https://github.com/FlagAI-Open/OpenSeek",
+    "description": "OpenSeek aims to unite the global open source community to drive collaborative innovation in algorithms, data and systems to develop next-generation models that surpass DeepSeek.",
+    "avatar": "https://avatars.githubusercontent.com/u/109567851?v=4",
+    "stars": 0.2,
+    "age": 13
+  },
+  {
+    "name": "mooncake",
+    "url": "https://github.com/kocubinski/mooncake",
+    "description": "Mooncake is a tool for backing up and restoring Cosmos SDK application state.",
+    "avatar": "https://avatars.githubusercontent.com/u/1419742?v=4",
+    "stars": 0.1,
+    "age": 60
+  },
+  {
+    "name": "Moxin-LLM",
+    "url": "https://github.com/moxin-org/Moxin-LLM",
+    "description": "Moxin is a family of fully open-source and reproducible LLMs",
+    "avatar": "https://avatars.githubusercontent.com/u/167464495?v=4",
+    "stars": 0.6,
+    "age": 15
+  },
+  {
+    "name": "SongEval",
+    "url": "https://github.com/ASLP-lab/SongEval",
+    "description": "A Benchmark for Chinese Song Comprehension and Generation.",
+    "avatar": "https://avatars.githubusercontent.com/u/110594344?v=4",
+    "stars": 0.3,
+    "age": 10
+  },
+  {
+    "name": "Omni-Infer",
+    "url": "https://github.com/omni-ai-npu/omni-infer",
+    "description": "A suite of inference accelerators designed for the Ascend NPU platform, offering native support and an expanding feature set.",
+    "avatar": "https://avatars.githubusercontent.com/u/172288961?v=4",
+    "stars": 0.1,
+    "age": 9
+  }
+]

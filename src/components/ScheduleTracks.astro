@@ -1,0 +1,2201 @@
+---
+import scheduleData from "json/ScheduleBilingual.json"
+
+interface Props {
+  currentDay?: string
+  lang?: "en" | "zh" | "fr"
+  speakerBasePath?: string
+}
+
+const { lang = "en", speakerBasePath = "/speakers/" } = Astro.props
+
+// Get English text from bilingual objects
+const en = (obj: any): string => {
+  if (!obj) return ""
+  if (typeof obj === "string") return obj
+  return obj.en || obj.zh || ""
+}
+
+// Get text in current language (for UI labels and translated content like break names)
+const loc = (obj: any): string => {
+  if (!obj) return ""
+  if (typeof obj === "string") return obj
+  return obj[lang] || obj.en || obj.zh || ""
+}
+
+const i18n = {
+  en: {
+    conferenceTracks: "Conference Tracks",
+    hackathons: "Spotlight & Hackathons",
+    workshops: "Workshops",
+    overview: "Overview",
+    allTracks: "All Tracks",
+    venue: "Venue",
+    venueMaps: "Our Spaces",
+    sessionsByVenue: "Sessions by Room",
+    floorplan: "Floor Plan",
+    allRooms: "All Rooms",
+    gridLabel: "Room × Time",
+    gridSub: "Grid View",
+    keynotesLabel: "★ Keynotes ★",
+    tbd: "TBD",
+    keynotesTbd: "Keynote speakers will be announced soon.",
+    noSessionsOnDay: (day: string) => `No sessions on ${day} for this track.`,
+    noSessions: "No sessions scheduled for this track.",
+    sessionsScheduledOn: "Sessions are scheduled on:",
+    viewDaySessions: (day: string) => `→ View ${day} sessions`,
+    disclaimer: "Schedule is subject to change.",
+    dayOnly: (day: string) => `${day} only`,
+    tracks: "Tracks",
+    sessionCount: (n: number) => `${n} session${n !== 1 ? "s" : ""}`,
+    typeLabels: { keynote: "Keynote", talk: "Talk", panel: "Panel", break: "Break", workshop: "Workshop", hackathon: "Hackathon" },
+  },
+  zh: {
+    conferenceTracks: "会议议程",
+    hackathons: "Spotlight & Hackathons",
+    workshops: "工作坊",
+    overview: "概览",
+    allTracks: "所有议程",
+    venue: "场地",
+    venueMaps: "Our Spaces",
+    sessionsByVenue: "按房间查看",
+    floorplan: "平面图",
+    allRooms: "所有房间",
+    gridLabel: "房间 × 时间",
+    gridSub: "网格视图",
+    keynotesLabel: "★ Keynotes ★",
+    tbd: "TBD",
+    keynotesTbd: "主旨演讲嘉宾将很快公布。",
+    noSessionsOnDay: (day: string) => `${day} 暂无该议题的会议安排。`,
+    noSessions: "该议题暂无会议安排。",
+    sessionsScheduledOn: "会议安排在：",
+    viewDaySessions: (day: string) => `→ 查看 ${day} 的会议`,
+    disclaimer: "日程安排可能有所变动。",
+    dayOnly: (day: string) => `仅 ${day}`,
+    tracks: "议程",
+    sessionCount: (n: number) => `${n} 场演讲`,
+    typeLabels: { keynote: "Keynote", talk: "演讲", panel: "圆桌", break: "休息", workshop: "工作坊", hackathon: "Hackathon" },
+  },
+  fr: {
+    conferenceTracks: "Conférences",
+    hackathons: "Spotlight & Hackathons",
+    workshops: "Ateliers",
+    overview: "Vue d'ensemble",
+    allTracks: "Tous les tracks",
+    venue: "Lieu",
+    venueMaps: "Nos espaces",
+    sessionsByVenue: "Sessions par salle",
+    floorplan: "Plan",
+    allRooms: "Toutes les salles",
+    gridLabel: "Salle × Horaire",
+    gridSub: "Vue grille",
+    keynotesLabel: "★ Keynotes ★",
+    tbd: "TBD",
+    keynotesTbd: "Les conférenciers seront annoncés prochainement.",
+    noSessionsOnDay: (day: string) => `Aucune session le ${day} pour ce thème.`,
+    noSessions: "Aucune session prévue pour ce thème.",
+    sessionsScheduledOn: "Sessions prévues le :",
+    viewDaySessions: (day: string) => `→ Voir les sessions du ${day}`,
+    disclaimer: "Le programme est susceptible de changer.",
+    dayOnly: (day: string) => `${day} uniquement`,
+    tracks: "Tracks",
+    sessionCount: (n: number) => `${n} session${n !== 1 ? "s" : ""}`,
+    typeLabels: { keynote: "Keynote", talk: "Conférence", panel: "Table ronde", break: "Pause", workshop: "Atelier", hackathon: "Hackathon" },
+  },
+}
+const t = i18n[lang] || i18n.en
+
+const isWorkshop = (id: string) => id.startsWith("ws-")
+const isHackathon = (id: string) => id.startsWith("hackathon-")
+const tracks = scheduleData.categories.filter((c) => !isWorkshop(c.id) && !isHackathon(c.id))
+const hackathons = scheduleData.categories.filter((c) => isHackathon(c.id))
+const workshops = scheduleData.categories.filter((c) => isWorkshop(c.id))
+const allCategories = [...tracks, ...workshops, ...hackathons]
+
+// Collect all keynotes across every category for a given day
+const getKeynotes = (day: string) => {
+  const result: any[] = []
+  for (const cat of allCategories) {
+    const all = (scheduleData.sessions as Record<string, any[]>)[cat.id] || []
+    all.filter((s) => en(s.date) === day && s.type === "keynote").forEach((s) => result.push(s))
+  }
+  // Dedupe by title + timeSlot in case a keynote appears in multiple categories
+  const seen = new Set<string>()
+  return result.filter((s) => {
+    const key = `${s.timeSlot}||${en(s.title)}`
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  }).sort((a, b) => (a.timeSlot || "").localeCompare(b.timeSlot || ""))
+}
+
+// Collect all ceremonies across every category for a given day (same pattern as getKeynotes)
+const getCeremonies = (day: string) => {
+  const result: any[] = []
+  for (const cat of allCategories) {
+    const all = (scheduleData.sessions as Record<string, any[]>)[cat.id] || []
+    all.filter((s) => en(s.date) === day && s.type === "ceremony").forEach((s) => result.push(s))
+  }
+  const seen = new Set<string>()
+  return result.filter((s) => {
+    const key = `${s.timeSlot}||${en(s.title)}`
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  }).sort((a, b) => (a.timeSlot || "").localeCompare(b.timeSlot || ""))
+}
+
+// Get non-keynote, non-ceremony sessions for a specific day + category, sorted by time
+const getSessions = (catId: string, day: string) => {
+  const all = (scheduleData.sessions as Record<string, any[]>)[catId] || []
+  return all
+    .filter((s) => en(s.date) === day && s.type !== "keynote" && s.type !== "ceremony")
+    .sort((a, b) => (a.timeSlot || "").localeCompare(b.timeSlot || ""))
+}
+
+const TRACK_COLORS: Record<string, string> = {
+  "agentic-ai-summit":          "#C23A0C",
+  "open-source-robotics":       "#B3A878",
+  "agentic-ai-on-edge":         "#8A7F5C",
+  "ai-generative-app":          "#7C7050",
+  "open-source-model":          "#8F8259",
+}
+const WORKSHOP_COLOR = "#6B6450"
+const trackColor = (id: string) => TRACK_COLORS[id] || WORKSHOP_COLOR
+
+const TYPE_BG_FG: Record<string, { bg: string; fg: string }> = {
+  keynote:   { bg: "#3F3C2D", fg: "#EAE6D2" },
+  ceremony:  { bg: "#F84A10", fg: "#EAE6D2" },
+  talk:      { bg: "#2A2719", fg: "#8A8266" },
+  panel:     { bg: "#2A2719", fg: "#8A8266" },
+  break:     { bg: "#2A2719", fg: "#9C947C" },
+  workshop:  { bg: "#2A2719", fg: "#8A8266" },
+  hackathon: { bg: "#F84A10", fg: "#EAE6D2" },
+}
+const typeMeta = (type: string) => {
+  const style = TYPE_BG_FG[type] || { bg: "#2A2719", fg: "#8A8266" }
+  const label = (t.typeLabels as Record<string, string>)[type] || type || t.typeLabels.talk
+  return { label, ...style }
+}
+
+const createSlug = (title: string) =>
+  title
+    .toLowerCase()
+    .replace(/[^\w\s\u4e00-\u9fff-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .trim()
+
+const days = scheduleData.days
+const firstDay = en(days[0]?.date)
+const firstCat = allCategories[0]?.id || ""
+
+// Which days each category has at least one (non-keynote) session
+const catDaysMap: Record<string, string[]> = {}
+for (const cat of allCategories) {
+  catDaysMap[cat.id] = days
+    .map((d) => en(d.date))
+    .filter((dayEn) => getSessions(cat.id, dayEn).some(s => s.type !== "break"))
+}
+
+// Short day label for display (e.g. "May 5" → "May 5")
+const dayLabels: Record<string, string> = {}
+for (const d of days) { dayLabels[en(d.date)] = en(d.date) }
+
+// Build room data for room view
+const roomSessionsMap = new Map<string, { room: any, sessions: Map<string, any[]>, primaryColor: string }>()
+
+for (const cat of allCategories) {
+  const catSessions = (scheduleData.sessions as Record<string, any[]>)[cat.id] || []
+  for (const session of catSessions) {
+    const effectiveRoom = session.room || cat.room
+    if (!effectiveRoom) continue
+    const roomKey = en(effectiveRoom)
+    if (!roomKey) continue
+
+    if (!roomSessionsMap.has(roomKey)) {
+      roomSessionsMap.set(roomKey, { room: effectiveRoom, sessions: new Map(), primaryColor: trackColor(cat.id) })
+    }
+    const roomEntry = roomSessionsMap.get(roomKey)!
+    const dayKey = en(session.date)
+    if (!dayKey) continue
+
+    if (!roomEntry.sessions.has(dayKey)) {
+      roomEntry.sessions.set(dayKey, [])
+    }
+    roomEntry.sessions.get(dayKey)!.push({
+      ...session,
+      _trackId: cat.id,
+      _trackName: en(cat.name),
+      _trackColor: trackColor(cat.id),
+    })
+  }
+}
+
+// Sort and dedupe sessions within each room+day
+for (const [, roomEntry] of roomSessionsMap) {
+  for (const [dayKey, sessions] of roomEntry.sessions) {
+    const seen = new Set<string>()
+    const deduped = sessions.filter((s: any) => {
+      if (s.type === "keynote" || s.type === "ceremony") {
+        const key = `${s.timeSlot}||${en(s.title)}`
+        if (seen.has(key)) return false
+        seen.add(key)
+      }
+      return true
+    })
+    deduped.sort((a: any, b: any) => (a.timeSlot || "").localeCompare(b.timeSlot || ""))
+    roomEntry.sessions.set(dayKey, deduped)
+  }
+}
+
+const allRooms = Array.from(roomSessionsMap.entries()).map(([key, data]) => ({
+  key,
+  room: data.room,
+  sessions: data.sessions,
+  primaryColor: data.primaryColor,
+  days: Array.from(data.sessions.keys()).sort(),
+}))
+const firstRoom = allRooms[0]?.key || ""
+
+// ── Grid (Room × Time) view data ──
+// Room columns derive from the schedule data (rooms are TBA until the venue is announced)
+const GRID_ROOM_ORDER = [...new Set(allCategories.map((cat: any) => en(cat.room)).filter(Boolean))]
+const gridRooms = GRID_ROOM_ORDER
+const GRID_SLOT_MINUTES = 5
+const BREAK_BANDS = [
+  { start: "10:00", end: "10:20", label: "Morning Coffee" },
+  { start: "15:00", end: "15:30", label: "Tea Break" },
+]
+
+function timeToMinutes(t: string): number {
+  const [h, m] = t.split(":").map(Number)
+  return h * 60 + m
+}
+function minutesToTime(m: number): string {
+  const hh = String(Math.floor(m / 60)).padStart(2, "0")
+  const mm = String(m % 60).padStart(2, "0")
+  return `${hh}:${mm}`
+}
+
+// Map all categories to their default room (for grid view, we need workshops too)
+const trackRoomMap = new Map<string, string>()
+for (const cat of allCategories) {
+  const roomName = en(cat.room)
+  if (roomName) trackRoomMap.set(cat.id, roomName)
+}
+
+interface GridCell { session: any; trackId: string; trackName: string; trackColor: string; rowSpan: number; slug: string }
+interface GridDay {
+  dayEn: string
+  dayLabel: string
+  timeSlots: string[]
+  placed: Map<string, Map<string, GridCell>>
+  occupied: Map<string, Set<string>>
+  totalRows: number
+}
+
+const gridDays: GridDay[] = days.map(d => {
+  const dayEn = en(d.date)
+  const dayLabel = loc(d.date)
+  let minTime = 24 * 60, maxTime = 0
+
+  type SessionInfo = { session: any; roomKey: string; startMin: number; endMin: number; trackId: string; trackName: string; trackColor: string }
+  const allGridSessions: SessionInfo[] = []
+
+  // All categories — sessions go to their category's designated room
+  for (const cat of allCategories) {
+    const catRoom = trackRoomMap.get(cat.id)
+    if (!catRoom) continue
+    const catSessions = (scheduleData.sessions as Record<string, any[]>)[cat.id] || []
+    for (const s of catSessions) {
+      if (!s.timeSlot) continue
+      if (en(s.date) !== dayEn) continue
+      const isSpecial = s.type === "keynote" || s.type === "ceremony"
+      const sessionRoom = s.room ? en(s.room) : ""
+      const roomKey = sessionRoom || catRoom
+      if (!GRID_ROOM_ORDER.includes(roomKey)) continue
+      const parts = s.timeSlot.split(" - ").map((t: string) => t.trim())
+      if (parts.length !== 2) continue
+      const startMin = timeToMinutes(parts[0])
+      const endMin = timeToMinutes(parts[1])
+      if (startMin < minTime) minTime = startMin
+      if (endMin > maxTime) maxTime = endMin
+      allGridSessions.push({
+        session: { ...s, _trackId: cat.id, _trackName: en(cat.name), _trackColor: trackColor(cat.id) },
+        roomKey, startMin, endMin,
+        trackId: cat.id, trackName: en(cat.name), trackColor: trackColor(cat.id),
+      })
+    }
+  }
+
+  // Snap to 15-min grid for display boundaries
+  minTime = Math.floor(minTime / 15) * 15
+  maxTime = Math.ceil(maxTime / 15) * 15
+
+  const timeSlots: string[] = []
+  for (let t = minTime; t < maxTime; t += GRID_SLOT_MINUTES) {
+    timeSlots.push(minutesToTime(t))
+  }
+
+  const placed = new Map<string, Map<string, GridCell>>()
+  const occupied = new Map<string, Set<string>>()
+  for (const roomKey of gridRooms) {
+    placed.set(roomKey, new Map())
+    occupied.set(roomKey, new Set())
+  }
+
+  // Pass 1: Place all sessions using real durations
+  const seenKeys = new Set<string>()
+  for (const { session, roomKey, startMin, endMin, trackId, trackName, trackColor: tc } of allGridSessions) {
+    const dedupKey = `${roomKey}||${session.timeSlot}||${en(session.title)}`
+    if (seenKeys.has(dedupKey)) continue
+    seenKeys.add(dedupKey)
+    const startSlot = minutesToTime(Math.floor(startMin / GRID_SLOT_MINUTES) * GRID_SLOT_MINUTES)
+    const naturalSlots = Math.max(1, Math.ceil((endMin - startMin) / GRID_SLOT_MINUTES))
+    const slug = createSlug(en(session.title))
+
+    if (placed.get(roomKey)?.has(startSlot)) continue
+    if (occupied.get(roomKey)?.has(startSlot)) continue
+    placed.get(roomKey)!.set(startSlot, {
+      session, trackId, trackName, trackColor: tc, rowSpan: naturalSlots, slug,
+    })
+    const startIdx = timeSlots.indexOf(startSlot)
+    for (let i = 1; i < naturalSlots && startIdx + i < timeSlots.length; i++) {
+      occupied.get(roomKey)!.add(timeSlots[startIdx + i])
+    }
+  }
+
+  // Pass 2: Inflate short sessions for display (skip keynotes/ceremonies to keep timeline accurate)
+  const MIN_ROW_SPAN = 4
+  let maxRowEnd = timeSlots.length
+  for (const roomKey of gridRooms) {
+    const roomPlaced = placed.get(roomKey)!
+    const slots = Array.from(roomPlaced.keys()).sort()
+    let rowShift = 0
+    for (let si = 0; si < slots.length; si++) {
+      const slot = slots[si]
+      const cell = roomPlaced.get(slot)!
+      const ri = timeSlots.indexOf(slot)
+      ;(cell as any).rowOffset = ri + rowShift
+      const isFixed = cell.session.type === "keynote" || cell.session.type === "ceremony"
+      const inflated = isFixed ? cell.rowSpan : Math.max(MIN_ROW_SPAN, cell.rowSpan)
+      const extra = inflated - cell.rowSpan
+      cell.rowSpan = inflated
+      rowShift += extra
+    }
+    const lastSlot = slots[slots.length - 1]
+    if (lastSlot) {
+      const lastCell = roomPlaced.get(lastSlot)!
+      const lastEnd = (lastCell as any).rowOffset + lastCell.rowSpan
+      if (lastEnd > maxRowEnd) maxRowEnd = lastEnd
+    }
+  }
+
+  return { dayEn, dayLabel, timeSlots, placed, occupied, totalRows: maxRowEnd }
+})
+---
+
+<section class="sched-section" data-bg-section="lightgray" data-theme-section="light">
+
+  <!-- Day Tabs -->
+  <div class="sched-day-nav">
+    <div class="day-nav-inner">
+      <div class="day-tabs-track">
+        {days.map((day, i) => (
+          <button class={`sched-day-btn${i === 0 ? " active" : ""}`} data-day={en(day.date)}>
+            <span class="day-label">{loc(day.title)}</span>
+            <span class="day-date">{loc(day.date)}</span>
+          </button>
+        ))}
+        <button class="sched-day-btn" data-view="grid">
+          <span class="day-label">{t.gridLabel}</span>
+          <span class="day-date">{t.gridSub}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sched-container">
+    <div class="sched-body">
+
+      <!-- Left Sidebar -->
+      <aside class="sched-sidebar">
+        <div class="track-group">
+          <p class="track-group-label">{t.conferenceTracks}</p>
+          {tracks.map((cat, i) => {
+            const catDays = catDaysMap[cat.id] || []
+            const dayBadge = catDays.length === days.length ? null : catDays.join(" & ")
+            return (
+              <button
+                class={`sched-track-btn${i === 0 ? " active" : ""}`}
+                data-track={cat.id}
+                data-cat-days={catDays.join(",")}
+                style={`--tc: ${trackColor(cat.id)}`}
+              >
+                <span class="track-dot"></span>
+                <span class="track-info">
+                  <span class="track-name">{loc(cat.name)}</span>
+                  {cat.room && <span class="track-room">{en(cat.room)}</span>}
+                  {dayBadge && <span class="track-day-badge">{t.dayOnly(dayBadge)}</span>}
+                </span>
+              </button>
+            )
+          })}
+        </div>
+
+        <div class="track-group">
+          <p class="track-group-label">{t.workshops}</p>
+          {workshops.map((cat) => {
+            const catDays = catDaysMap[cat.id] || []
+            const dayBadge = catDays.length === days.length ? null : catDays.join(" & ")
+            return (
+            <button
+              class="sched-track-btn"
+              data-track={cat.id}
+              data-cat-days={catDays.join(",")}
+              style={`--tc: ${trackColor(cat.id)}`}
+            >
+              <span class="track-dot"></span>
+              <span class="track-info">
+                <span class="track-name">{loc(cat.name)}</span>
+                {cat.room && <span class="track-room">{en(cat.room)}</span>}
+                {dayBadge && <span class="track-day-badge">{t.dayOnly(dayBadge)}</span>}
+              </span>
+            </button>
+            )
+          })}
+        </div>
+
+        {hackathons.length > 0 && (
+          <div class="track-group">
+            <p class="track-group-label">{t.hackathons}</p>
+            {hackathons.map((cat) => {
+              const catDays = catDaysMap[cat.id] || []
+              const dayBadge = catDays.length === days.length ? null : catDays.join(" & ")
+              return (
+                <button
+                  class="sched-track-btn"
+                  data-track={cat.id}
+                  data-cat-days={catDays.join(",")}
+                  style={`--tc: ${trackColor(cat.id)}`}
+                >
+                  <span class="track-dot"></span>
+                  <span class="track-info">
+                    <span class="track-name">{loc(cat.name)}</span>
+                    {cat.room && <span class="track-room">{en(cat.room)}</span>}
+                    {dayBadge && <span class="track-day-badge">{t.dayOnly(dayBadge)}</span>}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+        )}
+      </aside>
+
+      <!-- Sessions Panel -->
+      <div class="sched-main">
+
+        <!-- Mobile track selector -->
+        <div class="mobile-track-scroll">
+          <div class="mobile-track-inner">
+            <p class="mobile-track-label">{t.tracks}</p>
+            <div class="mobile-track-pills">
+              {allCategories.map((cat, i) => (
+                <button
+                  class={`mobile-track-pill${i === 0 ? " active" : ""}`}
+                  data-track={cat.id}
+                  style={`--tc: ${trackColor(cat.id)}`}
+                >
+                  {loc(cat.name)}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- One panel per day × track combination -->
+        {days.map((day) => {
+          const dayEn = en(day.date)
+          const keynotes = getKeynotes(dayEn)
+          const ceremonies = getCeremonies(dayEn)
+          return allCategories.map((cat) => {
+            const sessions = getSessions(cat.id, dayEn)
+            const firstKeynoteTime = keynotes[0]?.timeSlot || "99:99"
+            const earlyBreaks = sessions.filter(s => (s.timeSlot || "99:99") < firstKeynoteTime)
+            const laterSessions = sessions.filter(s => (s.timeSlot || "99:99") >= firstKeynoteTime)
+            const firstCeremonyStart = ceremonies.length > 0 ? (ceremonies[0]?.timeSlot || "99:99").split(" - ")[0] : "99:99"
+            const preCeremonySessions = laterSessions.filter(s => ((s.timeSlot || "99:99").split(" - ")[0]) < firstCeremonyStart)
+            const postCeremonySessions = laterSessions.filter(s => ((s.timeSlot || "99:99").split(" - ")[0]) >= firstCeremonyStart)
+            const color = trackColor(cat.id)
+            return (
+              <div
+                class="track-panel"
+                data-panel-day={dayEn}
+                data-panel-track={cat.id}
+                style="display:none"
+              >
+                <div class="panel-header" style={`border-left-color: ${color}`}>
+                  <div class="panel-header-left">
+                    <h2 class="panel-title">{loc(cat.name)}</h2>
+                    {cat.room && <span class="panel-room">{en(cat.room)}</span>}
+                  </div>
+                  <span class="panel-count">{t.sessionCount(sessions.filter(s => s.type !== "break").length)}</span>
+                </div>
+
+                {/* Pre-keynote breaks (e.g. Registration) */}
+                {earlyBreaks.length > 0 && (
+                  <div class="session-list">
+                    {earlyBreaks.map((session) => {
+                      const isReg = (session.title as any)?.en === "Registration"
+                      return (
+                        <div class={isReg ? "break-divider registration-divider" : "break-divider"}>
+                          <span class="break-line" />
+                          <span class="break-label">
+                            {session.timeSlot && <span class="break-time">{session.timeSlot}</span>}
+                            {loc(session.title)}
+                          </span>
+                          <span class="break-line" />
+                        </div>
+                      )
+                    })}
+                  </div>
+                )}
+
+                {/* Keynote block */}
+                <div class="keynote-block">
+                  {keynotes.length > 0 ? keynotes.map((kn) => {
+                    const hasSpeakers = kn.speakers && kn.speakers.length > 0
+                    const titleText = loc(kn.title)
+                    const isTitleTbd = !titleText || titleText === "TBD" || titleText === "待定" || titleText === "À confirmer"
+                    const slug = createSlug(en(kn.title))
+                    return (
+                      <a class="session-card keynote-card" href={`/schedule/${slug}/`}>
+                        <div class="session-left">
+                          {kn.timeSlot && <span class="session-time">{kn.timeSlot}</span>}
+                          <span class="type-badge" style="background:#FF7A3C; color:#EAE6D2">{t.keynotesLabel}</span>
+                          {(kn as any).room && (
+                            <span class="special-location-badge keynote-location">
+                              <svg width="10" height="12" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 18.6668C8.12016 18.6653 8.23643 18.624 8.33067 18.5494C8.65067 18.2934 16 12.3307 16 8.00005C16 5.8783 15.1571 3.84346 13.6569 2.34316C12.1566 0.84286 10.1217 0 8 0C5.87827 0 3.84344 0.84286 2.34315 2.34316C0.842855 3.84346 0 5.8783 0 8.00005C0 12.3307 7.34933 18.2934 7.66933 18.5494C7.76357 18.624 7.87984 18.6653 8 18.6668ZM8 4.80003C8.52742 4.80003 9.04299 4.95643 9.48152 5.24945C9.92005 5.54246 10.2618 5.95894 10.4637 6.44622C10.6655 6.93349 10.7183 7.46967 10.6154 7.98696C10.5125 8.50424 10.2586 8.9794 9.88562 9.35234C9.51268 9.72528 9.03752 9.97926 8.52024 10.0822C8.00296 10.185 7.46678 10.1322 6.97951 9.9304C6.49224 9.72857 6.07576 9.38677 5.78275 8.94824C5.48973 8.50971 5.33333 7.99413 5.33333 7.46671C5.33333 6.75946 5.61429 6.08118 6.11438 5.58108C6.61448 5.08098 7.29276 4.80003 8 4.80003Z" fill="currentColor"/></svg>
+                              {en((kn as any).room)}
+                            </span>
+                          )}
+                        </div>
+                        <div class="session-right">
+                          {!isTitleTbd && <h3 class="session-title">{titleText}</h3>}
+                          {hasSpeakers ? (
+                            <div class="speaker-list">
+                              {kn.speakers.map((sp: any) => (
+                                <div class="speaker-row">
+                                  <span class="speaker-name">{sp.name}</span>
+                                  {sp.title && <span class="speaker-role">{sp.title}</span>}
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <span class="keynote-tbd-text">{t.keynotesTbd}</span>
+                          )}
+                        </div>
+                      </a>
+                    )
+                  }) : (
+                    <div class="session-card keynote-card">
+                      <div class="session-left">
+                        <span class="type-badge" style="background:#3F3C2D; color:#EAE6D2">{t.keynotesLabel}</span>
+                      </div>
+                      <div class="session-right">
+                        <span class="keynote-tbd-text">{t.keynotesTbd}</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {laterSessions.length === 0 ? (() => {
+                  const otherDays = (catDaysMap[cat.id] || []).filter(d => d !== dayEn)
+                  return (
+                    <div class="no-sessions">
+                      {otherDays.length > 0 ? (
+                        <>
+                          <p class="no-sessions-msg">{t.noSessionsOnDay(dayEn)}</p>
+                          <p class="no-sessions-hint">{t.sessionsScheduledOn}</p>
+                          <div class="no-sessions-days">
+                            {otherDays.map(d => (
+                              <button class="switch-day-btn" data-switch-day={d}>{t.viewDaySessions(d)}</button>
+                            ))}
+                          </div>
+                        </>
+                      ) : (
+                        <p class="no-sessions-msg">{t.noSessions}</p>
+                      )}
+                    </div>
+                  )
+                })() : (
+                  <div class="session-list">
+                    {preCeremonySessions.map((session) => {
+                      const meta = typeMeta(session.type)
+                      const isBreak = session.type === "break"
+                      const hasContent = !isBreak && session.speakers && session.speakers.length > 0
+                      if (isBreak) {
+                        const isLunch = (session.title as any)?.en === "Lunch" || session.title === "Lunch"
+                        const isRegistration = (session.title as any)?.en === "Registration"
+                        return (
+                          <div class={isLunch ? "break-divider lunch-divider" : isRegistration ? "break-divider registration-divider" : "break-divider"}>
+                            <span class="break-line" />
+                            <span class="break-label">
+                              {session.timeSlot && <span class="break-time">{session.timeSlot}</span>}
+                              {loc(session.title)}
+                            </span>
+                            <span class="break-line" />
+                          </div>
+                        )
+                      }
+                      const slug = createSlug(en(session.title))
+                      return (
+                        <a class="session-card" href={`/schedule/${slug}/`}>
+                          <div class="session-left">
+                            <span class="session-time">{session.timeSlot}</span>
+                            <span class="type-badge" style={`background:${meta.bg}; color:${meta.fg}`}>
+                              {meta.label}
+                            </span>
+                          </div>
+                          <div class="session-right">
+                            <h3 class="session-title">{loc(session.title)}</h3>
+                            {hasContent && (
+                              <div class="speaker-list">
+                                {session.speakers.map((sp: any) => (
+                                  <div class="speaker-row">
+                                    <span class="speaker-name">{sp.name}</span>
+                                    {sp.title && <span class="speaker-role">{sp.title}</span>}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                            {session.signupUrl && (
+                              <span class="signup-link" data-href={session.signupUrl}>Sign Up &rarr;</span>
+                            )}
+                          </div>
+                        </a>
+                      )
+                    })}
+                  </div>
+                )}
+
+                {/* Ceremony block — shown on all tracks, same pattern as keynote block */}
+                {ceremonies.length > 0 && (
+                  <div class="ceremony-block">
+                    {ceremonies.map((cer: any) => {
+                      const slug = createSlug(en(cer.title))
+                      return (
+                        <a class="session-card keynote-card ceremony-card" href={`/schedule/${slug}/`}>
+                          <div class="session-left">
+                            {cer.timeSlot && <span class="session-time">{cer.timeSlot}</span>}
+                            <span class="type-badge" style="background:#FF7A3C; color:#EAE6D2">★ Ceremony ★</span>
+                            {cer.room && (
+                              <span class="special-location-badge keynote-location">
+                                <svg width="10" height="12" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 18.6668C8.12016 18.6653 8.23643 18.624 8.33067 18.5494C8.65067 18.2934 16 12.3307 16 8.00005C16 5.8783 15.1571 3.84346 13.6569 2.34316C12.1566 0.84286 10.1217 0 8 0C5.87827 0 3.84344 0.84286 2.34315 2.34316C0.842855 3.84346 0 5.8783 0 8.00005C0 12.3307 7.34933 18.2934 7.66933 18.5494C7.76357 18.624 7.87984 18.6653 8 18.6668ZM8 4.80003C8.52742 4.80003 9.04299 4.95643 9.48152 5.24945C9.92005 5.54246 10.2618 5.95894 10.4637 6.44622C10.6655 6.93349 10.7183 7.46967 10.6154 7.98696C10.5125 8.50424 10.2586 8.9794 9.88562 9.35234C9.51268 9.72528 9.03752 9.97926 8.52024 10.0822C8.00296 10.185 7.46678 10.1322 6.97951 9.9304C6.49224 9.72857 6.07576 9.38677 5.78275 8.94824C5.48973 8.50971 5.33333 7.99413 5.33333 7.46671C5.33333 6.75946 5.61429 6.08118 6.11438 5.58108C6.61448 5.08098 7.29276 4.80003 8 4.80003Z" fill="currentColor"/></svg>
+                                {en(cer.room)}
+                              </span>
+                            )}
+                          </div>
+                          <div class="session-right">
+                            <h3 class="session-title">{loc(cer.title)}</h3>
+                            {cer.speakers && cer.speakers.length > 0 && (
+                              <div class="speaker-list">
+                                {cer.speakers.map((sp: any) => (
+                                  <div class="speaker-row">
+                                    <span class="speaker-name">{sp.name}</span>
+                                    {sp.title && <span class="speaker-role">{sp.title}</span>}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </a>
+                      )
+                    })}
+                  </div>
+                )}
+
+                {/* Post-ceremony sessions (e.g. Dinner after closing ceremony) */}
+                {postCeremonySessions.length > 0 && (
+                  <div class="session-list">
+                    {postCeremonySessions.map((session) => {
+                      const meta = typeMeta(session.type)
+                      const isBreak = session.type === "break"
+                      const hasContent = !isBreak && session.speakers && session.speakers.length > 0
+                      if (isBreak) {
+                        const isLunch = (session.title as any)?.en === "Lunch" || session.title === "Lunch"
+                        const isRegistration = (session.title as any)?.en === "Registration"
+                        return (
+                          <div class={isLunch ? "break-divider lunch-divider" : isRegistration ? "break-divider registration-divider" : "break-divider"}>
+                            <span class="break-line" />
+                            <span class="break-label">
+                              {session.timeSlot && <span class="break-time">{session.timeSlot}</span>}
+                              {loc(session.title)}
+                            </span>
+                            <span class="break-line" />
+                          </div>
+                        )
+                      }
+                      const slug = createSlug(en(session.title))
+                      return (
+                        <a class="session-card" href={`/schedule/${slug}/`}>
+                          <div class="session-left">
+                            <span class="session-time">{session.timeSlot}</span>
+                            <span class="type-badge" style={`background:${meta.bg}; color:${meta.fg}`}>
+                              {meta.label}
+                            </span>
+                          </div>
+                          <div class="session-right">
+                            <h3 class="session-title">{loc(session.title)}</h3>
+                            {hasContent && (
+                              <div class="speaker-list">
+                                {session.speakers.map((sp: any) => (
+                                  <div class="speaker-row">
+                                    <span class="speaker-name">{sp.name}</span>
+                                    {sp.title && <span class="speaker-role">{sp.title}</span>}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                            {session.signupUrl && (
+                              <span class="signup-link" data-href={session.signupUrl}>Sign Up &rarr;</span>
+                            )}
+                          </div>
+                        </a>
+                      )
+                    })}
+                  </div>
+                )}
+              </div>
+            )
+          })
+        })}
+
+        <p class="disclaimer">{t.disclaimer}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Room view panel (hidden by default) -->
+  <div class="rooms-panel" style="display:none">
+    <div class="room-view-container">
+      <!-- Day sub-tabs for room view -->
+      <div class="room-day-nav">
+        {days.map((day, i) => (
+          <button class={`room-day-btn${i === 0 ? " active" : ""}`} data-room-day={en(day.date)}>
+            {loc(day.date)}
+          </button>
+        ))}
+      </div>
+
+      <div class="room-view-body">
+        <!-- Room sidebar -->
+        <aside class="room-sidebar">
+          <p class="track-group-label">{t.allRooms}</p>
+          {allRooms.map((room, i) => (
+            <button
+              class={`room-btn${i === 0 ? " active" : ""}`}
+              data-room={room.key}
+              style={`--rc: ${room.primaryColor}`}
+              data-room-days={room.days.join(",")}
+            >
+              <span class="room-dot"></span>
+              <span class="room-btn-name">{loc(room.room)}</span>
+            </button>
+          ))}
+        </aside>
+
+        <!-- Mobile room selector -->
+        <div class="mobile-room-scroll">
+          <p class="mobile-track-label">{t.allRooms}</p>
+          <div class="mobile-track-pills">
+            {allRooms.map((room, i) => (
+              <button
+                class={`mobile-track-pill${i === 0 ? " active" : ""}`}
+                data-room={room.key}
+                style={`--tc: ${room.primaryColor}`}
+              >
+                {loc(room.room)}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Room session panels -->
+        <div class="room-main">
+          {days.map((day) =>
+            allRooms.map((room) => {
+              const dayEn = en(day.date)
+              const daySessions = room.sessions.get(dayEn) || []
+              const nonBreakCount = daySessions.filter((s: any) => s.type !== "break").length
+              return (
+                <div
+                  class="room-session-panel"
+                  data-room-panel-day={dayEn}
+                  data-room-panel-room={room.key}
+                  style="display:none"
+                >
+                  <div class="panel-header">
+                    <div class="panel-header-left">
+                      <h2 class="panel-title">{loc(room.room)}</h2>
+                      <span class="panel-room">{dayEn}</span>
+                    </div>
+                    <span class="panel-count">{t.sessionCount(nonBreakCount)}</span>
+                  </div>
+
+                  {daySessions.length === 0 ? (
+                    <div class="no-sessions">
+                      <p class="no-sessions-msg">{t.noSessionsOnDay(dayEn)}</p>
+                    </div>
+                  ) : (
+                    <div class="session-list">
+                      {daySessions.map((session: any) => {
+                        const meta = typeMeta(session.type)
+                        const isBreak = session.type === "break"
+                        if (isBreak) {
+                          const isLunch = en(session.title) === "Lunch"
+                          const isReg = en(session.title) === "Registration"
+                          return (
+                            <div class={isLunch ? "break-divider lunch-divider" : isReg ? "break-divider registration-divider" : "break-divider"}>
+                              <span class="break-line" />
+                              <span class="break-label">
+                                {session.timeSlot && <span class="break-time">{session.timeSlot}</span>}
+                                {loc(session.title)}
+                              </span>
+                              <span class="break-line" />
+                            </div>
+                          )
+                        }
+                        const slug = createSlug(en(session.title))
+                        const isKeynote = session.type === "keynote"
+                        const isCeremony = session.type === "ceremony"
+                        const isSpecial = isKeynote || isCeremony
+                        return (
+                          <a class={`session-card${isSpecial ? " keynote-card" : ""}`} href={`/schedule/${slug}/`}>
+                            <div class="session-left">
+                              <span class="session-time">{session.timeSlot}</span>
+                              <span class="type-badge" style={isSpecial ? "background:#FF7A3C; color:#EAE6D2" : `background:${meta.bg}; color:${meta.fg}`}>
+                                {isSpecial ? (isKeynote ? t.keynotesLabel : "★ Ceremony ★") : meta.label}
+                              </span>
+                            </div>
+                            <div class="session-right">
+                              <h3 class="session-title">{loc(session.title)}</h3>
+                              {session.speakers && session.speakers.length > 0 && (
+                                <div class="speaker-list">
+                                  {session.speakers.map((sp: any) => (
+                                    <div class="speaker-row">
+                                      <span class="speaker-name">{sp.name}</span>
+                                      {sp.title && <span class="speaker-role">{sp.title}</span>}
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                              {session.signupUrl && (
+                                <span class="signup-link" data-href={session.signupUrl}>Sign Up &rarr;</span>
+                              )}
+                              <span class="room-track-badge" style={`--tc: ${session._trackColor}`}>
+                                <span class="room-track-dot"></span>
+                                {session._trackName}
+                              </span>
+                            </div>
+                          </a>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
+              )
+            })
+          )}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Grid (Room × Time) panel -->
+  <div class="grid-panel" style="display:none">
+    <div class="grid-day-tabs">
+      {gridDays.map((gd, di) => (
+        <button class={`grid-day-btn${di === 0 ? " active" : ""}`} data-grid-day={gd.dayEn}>
+          <span class="grid-day-label">{loc(days[di].title)}</span>
+          <span class="grid-day-date">{gd.dayLabel}</span>
+        </button>
+      ))}
+    </div>
+    {gridDays.map((gd, di) => (
+      <div class={`grid-table-wrap${di === 0 ? "" : " hidden"}`} data-grid-panel={gd.dayEn}>
+        <div class="grid-scroll">
+          <div class="tg" style={`--tg-rows: ${gd.totalRows}; height: ${40 + gd.totalRows * 20}px`}>
+            {/* Sticky header row */}
+            <div class="tg-hdr tg-corner">TIME</div>
+            {gridRooms.map((room, ci) => (
+              <div class="tg-hdr" style={`grid-column: ${ci + 2}`}>{room}</div>
+            ))}
+
+            {/* Time labels */}
+            {gd.timeSlots.map((slot, ri) => {
+              const m = parseInt(slot.split(":")[1])
+              const is15 = m % 15 === 0
+              return (
+                <div class={`tg-time${is15 ? "" : " tg-time-minor"}`} style={`grid-row: ${ri + 2}`}>
+                  {is15 ? slot : ""}
+                </div>
+              )
+            })}
+
+            {/* Horizontal grid lines (background layer) */}
+            {gd.timeSlots.map((slot, ri) => {
+              const m = parseInt(slot.split(":")[1])
+              const is15 = m % 15 === 0
+              return (
+                <div
+                  class={`tg-ruler${is15 ? " tg-ruler-major" : ""}`}
+                  style={`grid-row: ${ri + 2}; grid-column: 2 / -1`}
+                />
+              )
+            })}
+
+            {/* Break time bands */}
+            {BREAK_BANDS.map((band) => {
+              const startIdx = gd.timeSlots.indexOf(band.start)
+              const endIdx = gd.timeSlots.indexOf(band.end)
+              if (startIdx < 0 || endIdx < 0) return null
+              const span = endIdx - startIdx
+              return (
+                <div class="tg-break-band" style={`grid-row: ${startIdx + 2} / span ${span}; grid-column: 1 / -1`}>
+                  <span class="tg-break-label">{band.label}</span>
+                </div>
+              )
+            })}
+
+            {/* Session cards */}
+            {gridRooms.map((roomKey, ci) => {
+              const roomPlaced = gd.placed.get(roomKey)
+              if (!roomPlaced) return null
+              return Array.from(roomPlaced.entries()).map(([slotTime, cell]) => {
+                const ri = (cell as any).rowOffset ?? gd.timeSlots.indexOf(slotTime)
+                if (ri < 0) return null
+                const isBreak = cell.session.type === "break"
+                const isKeynote = cell.session.type === "keynote"
+                const isCeremony = cell.session.type === "ceremony"
+                const isSpecial = isKeynote || isCeremony
+                const isHack = isHackathon(cell.trackId)
+                const typeLabel = isKeynote ? "★ KEYNOTE ★" : isCeremony ? "★ CEREMONY ★" : cell.trackName
+                const labelColor = isSpecial ? "#FF7A3C" : cell.trackColor
+                const borderColor = isSpecial ? "#B3A878" : cell.trackColor
+                const schedBase = lang === "en" ? "/schedule" : `/${lang}/schedule`
+                return (
+                  <div class="tg-cell" style={`grid-row: ${ri + 2} / span ${cell.rowSpan}; grid-column: ${ci + 2}`}>
+                    {isBreak ? (
+                      <div class="grid-card grid-card-break">
+                        <div class="grid-card-time">{cell.session.timeSlot}</div>
+                        <div class="grid-card-title">{loc(cell.session.title)}</div>
+                      </div>
+                    ) : isHack ? (
+                      <div class="grid-card grid-card-link" style={`border-left-color: ${borderColor}; cursor: pointer`}
+                        data-grid-hackathon-track={cell.trackId}
+                        data-grid-hackathon-day={gd.dayEn}
+                      >
+                        <div class="grid-card-time">{cell.session.timeSlot}</div>
+                        <div class="grid-card-title">{loc(cell.session.title)}</div>
+                        <div class="grid-card-track" style={`color: ${labelColor}`}>{typeLabel}</div>
+                      </div>
+                    ) : (
+                      <a class={`grid-card grid-card-link${isSpecial ? " grid-card-keynote" : ""}`} href={`${schedBase}/${cell.slug}/`} style={!isSpecial ? `border-left-color: ${borderColor}` : ""}>
+                        <div class="grid-card-time">{cell.session.timeSlot}</div>
+                        <div class="grid-card-title">{loc(cell.session.title)}</div>
+                        {cell.session.speakers?.length > 0 && (
+                          <div class="grid-card-speakers">
+                            {cell.session.speakers.map((sp: any) => typeof sp.name === 'string' ? sp.name : sp.name?.en || '').join("; ")}
+                          </div>
+                        )}
+                        {!isSpecial && (
+                          <div class="grid-card-track" style={`color: ${labelColor}`}>
+                            {typeLabel}
+                          </div>
+                        )}
+                      </a>
+                    )}
+                  </div>
+                )
+              })
+            })}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+</section>
+
+<script define:vars={{ firstDay, firstCat, firstRoom }}>
+  let activeDay = firstDay
+  let activeTrack = firstCat
+  let activeRoomDay = firstDay
+  let activeRoom = firstRoom
+
+  const schedContainer = document.querySelector(".sched-container")
+  const overviewPanel = document.querySelector(".overview-panel")
+  const roomsPanel = document.querySelector(".rooms-panel")
+  const gridPanel = document.querySelector(".grid-panel")
+  const venuePanel = document.querySelector(".venue-panel")
+  const overviewBtn = document.querySelector("[data-view='overview']")
+  const roomsBtn = document.querySelector("[data-view='rooms']")
+  const gridBtn = document.querySelector("[data-view='grid']")
+  const venueBtn = document.querySelector("[data-view='venue']")
+
+  function hideAllPanels() {
+    schedContainer.style.display = "none"
+    if (overviewPanel) overviewPanel.style.display = "none"
+    if (roomsPanel) roomsPanel.style.display = "none"
+    if (gridPanel) gridPanel.style.display = "none"
+    if (venuePanel) venuePanel.style.display = "none"
+  }
+
+  // Tell Lenis to recalculate page height after view switches
+  function refreshScroll() {
+    requestAnimationFrame(() => {
+      if (typeof scroll !== "undefined" && scroll && scroll.resize) {
+        scroll.resize()
+      }
+      if (typeof ScrollTrigger !== "undefined" && ScrollTrigger.refresh) {
+        ScrollTrigger.refresh()
+      }
+    })
+  }
+
+  function setAllTabsInactive() {
+    document.querySelectorAll("[data-day], [data-view]").forEach((btn) => btn.classList.remove("active"))
+  }
+
+  function showOverview() {
+    setAllTabsInactive()
+    overviewBtn.classList.add("active")
+    hideAllPanels()
+    overviewPanel.style.display = "block"
+    refreshScroll()
+  }
+
+  function showRooms() {
+    setAllTabsInactive()
+    roomsBtn.classList.add("active")
+    hideAllPanels()
+    roomsPanel.style.display = "block"
+    showRoomPanel(activeRoomDay, activeRoom)
+    refreshScroll()
+  }
+
+  function showGrid() {
+    setAllTabsInactive()
+    gridBtn.classList.add("active")
+    hideAllPanels()
+    gridPanel.style.display = "block"
+    refreshScroll()
+  }
+
+  function showVenue() {
+    setAllTabsInactive()
+    venueBtn.classList.add("active")
+    hideAllPanels()
+    venuePanel.style.display = "block"
+    refreshScroll()
+  }
+
+  function showRoomPanel(day, room) {
+    activeRoomDay = day
+    activeRoom = room
+
+    document.querySelectorAll("[data-room-day]").forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.roomDay === day)
+    })
+
+    document.querySelectorAll(".room-sidebar [data-room], .mobile-room-scroll [data-room]").forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.room === room)
+      const roomDays = (btn.dataset.roomDays || "").split(",").filter(Boolean)
+      if (roomDays.length > 0) {
+        btn.classList.toggle("off-day", !roomDays.includes(day))
+      }
+    })
+
+    document.querySelectorAll("[data-room-panel-day]").forEach((panel) => {
+      const match = panel.dataset.roomPanelDay === day && panel.dataset.roomPanelRoom === room
+      panel.style.display = match ? "block" : "none"
+    })
+  }
+
+  function show(day, track) {
+    activeDay = day
+    activeTrack = track
+
+    hideAllPanels()
+    schedContainer.style.display = ""
+
+    setAllTabsInactive()
+    document.querySelectorAll("[data-day]").forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.day === day)
+    })
+
+    document.querySelectorAll("[data-track]").forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.track === track)
+      const catDays = (btn.dataset.catDays || "").split(",").filter(Boolean)
+      const hasSessionsOnDay = catDays.length === 0 || catDays.includes(day)
+      btn.classList.toggle("off-day", !hasSessionsOnDay)
+    })
+
+    document.querySelectorAll("[data-panel-day]").forEach((panel) => {
+      const match = panel.dataset.panelDay === day && panel.dataset.panelTrack === track
+      panel.style.display = match ? "block" : "none"
+    })
+    refreshScroll()
+  }
+
+  if (overviewBtn) overviewBtn.addEventListener("click", showOverview)
+  if (roomsBtn) roomsBtn.addEventListener("click", showRooms)
+  if (gridBtn) gridBtn.addEventListener("click", showGrid)
+  if (venueBtn) venueBtn.addEventListener("click", showVenue)
+
+  // Grid day tab switching
+  document.querySelectorAll("[data-grid-day]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("[data-grid-day]").forEach((b) => b.classList.remove("active"))
+      btn.classList.add("active")
+      document.querySelectorAll("[data-grid-panel]").forEach((p) => {
+        p.classList.toggle("hidden", p.dataset.gridPanel !== btn.dataset.gridDay)
+      })
+      refreshScroll()
+    })
+  })
+
+  document.querySelectorAll("[data-day]").forEach((btn) => {
+    btn.addEventListener("click", () => show(btn.dataset.day, activeTrack))
+  })
+
+  document.querySelectorAll("[data-track]").forEach((btn) => {
+    btn.addEventListener("click", () => show(activeDay, btn.dataset.track))
+  })
+
+  document.querySelectorAll("[data-switch-day]").forEach((btn) => {
+    btn.addEventListener("click", () => show(btn.dataset.switchDay, activeTrack))
+  })
+
+  // Room view event listeners
+  document.querySelectorAll("[data-room-day]").forEach((btn) => {
+    btn.addEventListener("click", () => showRoomPanel(btn.dataset.roomDay, activeRoom))
+  })
+
+  document.querySelectorAll("[data-room]").forEach((btn) => {
+    btn.addEventListener("click", () => showRoomPanel(activeRoomDay, btn.dataset.room))
+  })
+
+
+  document.querySelectorAll("[data-overview-track]").forEach((card) => {
+    card.addEventListener("click", () => {
+      const track = card.dataset.overviewTrack
+      const day = card.dataset.overviewDay
+      if (track) show(day || firstDay, track)
+    })
+  })
+
+  document.querySelectorAll("[data-grid-hackathon-track]").forEach((card) => {
+    card.addEventListener("click", () => {
+      const track = card.dataset.gridHackathonTrack
+      const day = card.dataset.gridHackathonDay
+      if (track) show(day || firstDay, track)
+    })
+  })
+
+  document.querySelectorAll(".signup-link[data-href]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      window.open(el.dataset.href, "_blank", "noopener")
+    })
+  })
+
+  const hashTrack = window.location.hash.slice(1)
+  const hashBtn = hashTrack && document.querySelector(`.sched-sidebar [data-track="${hashTrack}"]`)
+  if (hashBtn) {
+    const catDays = (hashBtn.dataset.catDays || "").split(",").filter(Boolean)
+    const targetDay = catDays.includes(firstDay) ? firstDay : (catDays[0] || firstDay)
+    show(targetDay, hashTrack)
+  } else {
+    show(firstDay, firstCat)
+  }
+</script>
+
+<style>
+  .sched-section {
+    background-color: var(--color-lightgray);
+    padding-bottom: 5rem;
+  }
+
+  /* ── Day navigation bar ── */
+  .sched-day-nav {
+    background: var(--color-lightgray);
+    padding: 1rem var(--container-padding) 1rem;
+  }
+
+  .day-nav-inner {
+    max-width: calc(var(--title-size) * 12);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .day-tabs-track {
+    display: inline-flex;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.22);
+    border-radius: 14px;
+    padding: 0.35rem;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  .sched-day-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 2.5rem;
+    gap: 0.15rem;
+    border-radius: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    color: rgba(246, 243, 231, 0.55);
+    min-width: 140px;
+  }
+
+  .sched-day-btn:hover:not(.active) {
+    background: rgba(0, 0, 0, 0.18);
+    color: rgba(246, 243, 231, 0.85);
+  }
+
+  .sched-day-btn.active {
+    background: #3F3C2D;
+    color: #EAE6D2;
+    box-shadow: 0 1px 4px rgba(234, 230, 210, 0.3), inset 0 0 0 1px rgba(248, 74, 16, 0.45);
+  }
+
+  .sched-day-btn.active .day-label {
+    color: #FF7A3C;
+  }
+
+  .day-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(246, 243, 231, 0.6);
+  }
+
+  .day-date {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── Layout container ── */
+  .sched-container {
+    max-width: calc(var(--title-size) * 12);
+    margin: 0 auto;
+    padding: 1.5rem var(--container-padding) 2rem;
+  }
+
+  .sched-body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  /* ── Sidebar ── */
+  .sched-sidebar {
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    align-self: start;
+  }
+
+  .track-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .track-group-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(234, 230, 210, 0.55);
+    margin: 0 0 0.5rem 0.5rem;
+  }
+
+  .sched-track-btn {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.55rem 0.65rem;
+    border-radius: 8px;
+    color: var(--color-text);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    color: var(--color-text);
+    font-family: inherit;
+  }
+
+  .sched-track-btn:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  .sched-track-btn.active {
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--color-heading);
+  }
+
+  .sched-track-btn.active .track-dot {
+    background: var(--tc);
+    transform: scale(1.2);
+  }
+
+  .track-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.18);
+    flex-shrink: 0;
+    margin-top: 5px;
+    transition: background 0.15s, transform 0.15s;
+  }
+
+  .track-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .track-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .track-room {
+    font-size: 0.7rem;
+    color: rgba(234, 230, 210, 0.4);
+  }
+
+  .track-day-badge {
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: #F84A10;
+    background: #201E16;
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    width: fit-content;
+    margin-top: 0.1rem;
+  }
+
+  .sched-track-btn.off-day {
+    opacity: 0.45;
+  }
+
+  .sched-track-btn.off-day .track-day-badge {
+    background: #201E16;
+    color: #F84A10;
+  }
+
+  /* ── Main panel ── */
+  .sched-main {
+    min-height: 500px;
+  }
+
+  .track-panel {}
+
+  .panel-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 0 0.75rem;
+    border-bottom: 2px solid var(--color-lightgray);
+    margin-bottom: 1rem;
+  }
+
+  .panel-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+  }
+
+  .panel-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .panel-room {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(246, 243, 231, 0.6);
+  }
+
+  .panel-count {
+    font-size: 0.75rem;
+    color: rgba(246, 243, 231, 0.6);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── Session list ── */
+  .session-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .session-card {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    align-items: start;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .session-card:hover {
+    background: #201E16;
+  }
+
+
+  /* ── Keynote block ── */
+  .keynote-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  @keyframes keynote-shimmer {
+    0%   { box-shadow: 0 0 0 0 rgba(248, 74, 16, 0.15), 0 1px 4px rgba(0,0,0,0.06); }
+    50%  { box-shadow: 0 0 0 3px rgba(233, 168, 0, 0.25), 0 2px 8px rgba(0,0,0,0.08); }
+    100% { box-shadow: 0 0 0 0 rgba(248, 74, 16, 0.15), 0 1px 4px rgba(0,0,0,0.06); }
+  }
+
+  .keynote-card {
+    border: 1.5px solid rgba(233, 168, 0, 0.4);
+    background: linear-gradient(135deg, #201E16 0%, #201E16 100%);
+    animation: keynote-shimmer 3s ease-in-out infinite;
+  }
+
+  .keynote-card .session-title {
+    color: #C23A0C;
+  }
+
+  .ceremony-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+
+  /* Ceremony cards share the same gold style as keynote cards */
+  .ceremony-card .session-title {
+    color: #C23A0C;
+  }
+
+  /* Location badge on keynote/ceremony cards */
+  .special-location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 0.2rem 0.55rem;
+    margin-top: 0.4rem;
+    width: fit-content;
+  }
+
+  .keynote-location {
+    color: #C23A0C;
+    background: rgba(233, 168, 0, 0.18);
+  }
+
+  .keynote-card:hover {
+    background: #201E16;
+  }
+
+  .keynote-tbd-text {
+    font-size: 0.9rem;
+    color: rgba(234, 230, 210, 0.45);
+    font-style: italic;
+  }
+
+  /* ── Break divider ── */
+  .break-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.4rem 0;
+    margin: 0.2rem 0;
+  }
+
+  .break-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .break-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: rgba(234, 230, 210, 0.6);
+    white-space: nowrap;
+  }
+
+  .break-time {
+    font-variant-numeric: tabular-nums;
+    color: rgba(234, 230, 210, 0.55);
+  }
+
+  /* ── Lunch divider (AM/PM separator) ── */
+  .lunch-divider .break-line {
+    height: 4px;
+    background: rgba(180, 110, 20, 0.45);
+    border-radius: 2px;
+  }
+
+  .lunch-divider .break-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(140, 75, 10, 0.85);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .lunch-divider .break-time {
+    color: rgba(140, 75, 10, 0.6);
+  }
+
+  .session-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding-top: 2px;
+  }
+
+  .session-time {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(234, 230, 210, 0.5);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .type-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 20px;
+    width: fit-content;
+  }
+
+  .session-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .session-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre-line;
+  }
+
+
+  .speaker-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .speaker-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem;
+  }
+
+  .speaker-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(234, 230, 210, 0.75);
+  }
+
+  .speaker-role {
+    font-size: 0.75rem;
+    color: rgba(234, 230, 210, 0.45);
+  }
+
+  .no-sessions {
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: 1.75rem 2rem;
+    text-align: center;
+  }
+
+  .no-sessions-msg {
+    font-size: 0.9rem;
+    color: rgba(234, 230, 210, 0.6);
+    margin: 0 0 0.4rem;
+  }
+
+  .no-sessions-hint {
+    font-size: 0.8rem;
+    color: rgba(234, 230, 210, 0.55);
+    margin: 0 0 0.75rem;
+  }
+
+  .no-sessions-days {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .switch-day-btn {
+    background: #201E16;
+    color: #EAE6D2;
+    border: none;
+    border-radius: 6px;
+    padding: 0.45rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  .switch-day-btn:hover {
+    background: #201E16;
+  }
+
+  .disclaimer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(246, 243, 231, 0.55);
+    margin-top: 2rem;
+  }
+
+  /* ── Mobile track selector ── */
+  .mobile-track-scroll {
+    display: none;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-track-inner {
+    width: 100%;
+  }
+
+  .mobile-track-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(234, 230, 210, 0.55);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .mobile-track-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .mobile-track-pill {
+    white-space: nowrap;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    border: 1.5px solid rgba(234, 230, 210, 0.18);
+    background: var(--color-surface);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color-text);
+    flex-shrink: 0;
+    font-family: inherit;
+  }
+
+  .mobile-track-pill.active {
+    background: var(--tc);
+    border-color: var(--tc);
+    color: #EAE6D2;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .sched-body {
+      grid-template-columns: 1fr;
+    }
+
+    .sched-sidebar {
+      display: none;
+    }
+
+    .mobile-track-scroll {
+      display: block;
+    }
+
+    .session-card {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    .session-left {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .grid-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tg {
+      min-width: 800px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sched-day-btn {
+      padding: 0.5rem 0.8rem;
+      min-width: unset;
+    }
+
+    .day-date {
+      font-size: 0.8rem;
+    }
+
+    .day-label {
+      display: none;
+    }
+  }
+
+  /* ── Venue panel ── */
+  .venue-panel {
+    max-width: calc(var(--title-size) * 12);
+    margin: 0 auto;
+  }
+
+
+  /* ── Room view ── */
+  .room-view-container {
+    max-width: calc(var(--title-size) * 12);
+    margin: 0 auto;
+    padding: 1.5rem var(--container-padding) 2rem;
+  }
+
+  .room-day-nav {
+    display: inline-flex;
+    gap: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  .room-day-btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: rgba(234, 230, 210, 0.4);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .room-day-btn:hover:not(.active) {
+    color: rgba(234, 230, 210, 0.65);
+  }
+
+  .room-day-btn.active {
+    color: var(--color-text);
+    border-bottom-color: var(--color-text);
+  }
+
+  .room-view-body {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .room-sidebar {
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .room-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.55rem 0.65rem;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    color: var(--color-text);
+    font-family: inherit;
+  }
+
+  .room-btn:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  .room-btn.active {
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  .room-btn.active .room-dot {
+    background: var(--rc);
+    transform: scale(1.2);
+  }
+
+  .room-btn.off-day {
+    opacity: 0.45;
+  }
+
+  .room-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.18);
+    flex-shrink: 0;
+    transition: background 0.15s, transform 0.15s;
+  }
+
+  .room-btn-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .room-main {
+    min-height: 400px;
+  }
+
+  .room-track-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(234, 230, 210, 0.55);
+    margin-top: 0.2rem;
+  }
+
+  .room-track-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--tc);
+    flex-shrink: 0;
+  }
+
+  .signup-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(234, 230, 210, 0.5);
+    background: rgba(0, 0, 0, 0.06);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    width: fit-content;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .signup-link:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: rgba(234, 230, 210, 0.7);
+  }
+
+  /* Mobile room view */
+  .mobile-room-scroll {
+    display: none;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .room-view-body {
+      grid-template-columns: 1fr;
+    }
+
+    .room-sidebar {
+      display: none;
+    }
+
+    .mobile-room-scroll {
+      display: block;
+    }
+  }
+
+  /* ── Grid (Room × Time) view — CSS Grid with fixed row heights ── */
+  .grid-panel {
+    padding: 1.5rem 0;
+  }
+  .grid-day-tabs {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding: 0 1.5rem;
+  }
+  .grid-day-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.6rem 2rem;
+    border-radius: 8px;
+    border: 2px solid #3F3C2D;
+    background: #201E16;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .grid-day-btn:hover {
+    border-color: #9C947C;
+    background: #201E16;
+  }
+  .grid-day-btn.active {
+    background: #201E16;
+    color: #EAE6D2;
+    border-color: #EAE6D2;
+  }
+  .grid-day-label {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .grid-day-date {
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0.6;
+  }
+  .grid-day-btn.active .grid-day-date {
+    opacity: 0.7;
+  }
+  .grid-scroll {
+    padding: 0 1rem 4rem;
+  }
+  .grid-table-wrap.hidden {
+    display: none;
+  }
+
+  /* CSS Grid layout: fixed row heights, no content stretching */
+  .tg {
+    display: grid;
+    grid-template-columns: 60px repeat(6, 1fr);
+    grid-template-rows: auto repeat(var(--tg-rows), 20px);
+    width: 100%;
+    min-width: 0;
+    position: relative;
+  }
+
+  /* Sticky header cells */
+  .tg-hdr {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    background: #201E16;
+    color: #EAE6D2;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.6rem 0.35rem;
+    text-align: center;
+    grid-row: 1;
+  }
+  .tg-corner {
+    grid-column: 1;
+    text-align: right;
+    padding-right: 0.75rem;
+  }
+
+  /* Time labels (left column) */
+  .tg-time {
+    grid-column: 1;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(234, 230, 210, 0.45);
+    text-align: right;
+    padding-right: 0.6rem;
+    border-right: 2px solid rgba(0,0,0,0.08);
+    font-variant-numeric: tabular-nums;
+    display: flex;
+    align-items: start;
+    justify-content: flex-end;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    background: #201E16;
+    z-index: 1;
+  }
+  .tg-time-minor {
+    border-top-color: transparent;
+  }
+
+  /* Horizontal grid lines (background layer) */
+  .tg-ruler {
+    border-top: 1px dotted rgba(0,0,0,0.06);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .tg-break-band {
+    background: rgba(248, 74, 16, 0.08);
+    z-index: 1;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tg-break-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: rgba(180, 120, 20, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .tg-ruler-major {
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .tg-cell {
+    padding: 0 2px;
+    overflow: visible;
+    z-index: 2;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  /* Card styles */
+  .grid-card {
+    border-radius: 6px;
+    padding: 0.25rem 0.4rem;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .grid-card-link {
+    text-decoration: none;
+    color: inherit;
+    background: #201E16;
+    border: 1px solid #2A2719;
+    border-left: 3px solid #6F6A58;
+    cursor: pointer;
+  }
+  .grid-card-link:hover {
+    background: #2A2719;
+    border-color: #3F3C2D;
+  }
+  .grid-card-keynote {
+    background: #201E16;
+    border: 1.5px solid #B3A878;
+    border-left: 3px solid #B3A878;
+  }
+  .grid-card-keynote:hover {
+    background: #201E16;
+    border-color: #A89968;
+  }
+  .grid-card-keynote .grid-card-title {
+    color: #C23A0C;
+  }
+  .grid-card-break {
+    background: #201E16;
+    border: 1px dashed #3F3C2D;
+    justify-content: center;
+    align-items: center;
+  }
+  .grid-card-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.25;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .grid-card-break .grid-card-title {
+    font-weight: 500;
+    color: #9C947C;
+    font-size: 0.78rem;
+  }
+  .grid-card-time {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: rgba(234, 230, 210, 0.45);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .grid-card-break .grid-card-time {
+    color: #9C947C;
+  }
+  .grid-card-speakers {
+    font-size: 0.75rem;
+    color: rgba(234, 230, 210, 0.5);
+    line-height: 1.25;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .grid-card-track {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>

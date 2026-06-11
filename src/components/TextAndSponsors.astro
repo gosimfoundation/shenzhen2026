@@ -1,0 +1,260 @@
+---
+// Packages
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+// Components
+import Button from "components/Button.astro";
+
+interface LogoItem {
+  image: string;
+  imageAlt: string;
+  logoClass?: string;
+  url?: string;
+  tag?: string;
+}
+
+interface LogoGroup {
+  label?: string;
+  cols?: number;
+  logos: LogoItem[];
+}
+
+interface Props {
+  id?: string;
+  title: string;
+  text: string;
+  text2: string;
+  logos?: LogoItem[];
+  logoGroups?: LogoGroup[];
+  ctaButton?: {
+    text: string;
+    link: string;
+    openInNewTab?: boolean;
+  };
+}
+
+// Import all sponsors
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "images/sponsors/*.{jpeg,jpg,png,gif}"
+);
+
+const isRemoteImage = (image?: string) => Boolean(image && /^https?:\/\//.test(image));
+
+const { id, title, text, text2, logos, logoGroups, ctaButton } = Astro.props;
+---
+
+<section
+  id={id}
+  class="section section-home-sponsors"
+  data-theme-section="light"
+  data-bg-section="lightgray"
+>
+  <div class="container">
+    <div class="row grid">
+      <div class="col">
+        <div class="col-row col-row-title">
+          <h2>{title}</h2>
+        </div>
+
+        {(logos || logoGroups) && (
+          <>
+            <div class="col-row col-row-text styled-content">
+              <p>{text}</p>
+              <p>{text2}</p>
+            </div>
+
+            {ctaButton?.text && (
+              <div class="col-row col-row-btn">
+                <Button
+                  text={ctaButton.text}
+                  link={ctaButton.link}
+                  openInNewTab={ctaButton?.openInNewTab}
+                  class="btn outline btn-hover xl"
+                />
+              </div>
+            )}
+          </>
+        )}
+      </div>
+
+      <div class="col">
+        {!(logos || logoGroups) && (
+          <>
+            <div class="col-row col-row-text styled-content">
+              <p>{text}</p>
+              <p>{text2}</p>
+            </div>
+
+            {ctaButton?.text && (
+              <div class="col-row col-row-btn">
+                <Button
+                  text={ctaButton.text}
+                  link={ctaButton.link}
+                  openInNewTab={ctaButton?.openInNewTab}
+                  class="btn outline btn-hover xl"
+                />
+              </div>
+            )}
+          </>
+        )}
+        {logoGroups ? (
+          <div class="logo-groups">
+            {logoGroups.map((group) => (
+              <div class="logo-group">
+                {group.label && <span class="logo-group-label">{group.label}</span>}
+                <div class={`logo-tiles${group.cols ? " logo-tiles-grid" : " logo-tiles-row"}`}>
+                  {group.logos.map((loop) => (
+                    <div
+                      class={`single-logo-tile${loop.tag ? " has-tag" : ""}`}
+                      style={group.cols ? `width: calc((100% - 0.75em * ${group.cols - 1}) / ${group.cols})` : undefined}
+                    >
+                      {loop.tag && <span class="logo-tile-tag">{loop.tag}</span>}
+                      <div class={`boxed-logo xll${loop.logoClass ? ` ${loop.logoClass}` : ""}`}>
+                        {loop?.image && (
+                          loop.url ? (
+                            <a href={loop.url} target="_blank" rel="noopener noreferrer" class="logo-link-overlay" aria-label={loop.imageAlt}>
+                              {isRemoteImage(loop.image) ? (
+                                <img class="sponsor-logo-image" src={loop.image} alt={loop.imageAlt} loading="lazy" decoding="async" />
+                              ) : (
+                                <img class="sponsor-logo-image" src={`/images/sponsors/${loop.image}`} alt={loop.imageAlt} loading="lazy" decoding="async" />
+                              )}
+                            </a>
+                          ) : (
+                            isRemoteImage(loop.image) ? (
+                              <img class="sponsor-logo-image" src={loop.image} alt={loop.imageAlt} loading="lazy" decoding="async" />
+                            ) : (
+                              <img class="sponsor-logo-image" src={`/images/sponsors/${loop.image}`} alt={loop.imageAlt} loading="lazy" decoding="async" />
+                            )
+                          )
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="logo-tiles">
+            {
+              logos?.map((loop) => (
+                <div class="single-logo-tile">
+                  <div class="boxed-logo xll">
+                    {loop?.image &&
+                      (loop.url ? (
+                        <a href={loop.url} target="_blank" rel="noopener noreferrer" class="logo-link-overlay" aria-label={loop.imageAlt}>
+                          {isRemoteImage(loop.image) ? (
+                            <img class="sponsor-logo-image" src={loop.image} alt={loop.imageAlt} loading="lazy" decoding="async" />
+                          ) : (
+                            images[`/public/images/sponsors/${loop.image}`] && (
+                              <Picture
+                                src={images[`/public/images/sponsors/${loop.image}`]()}
+                                formats={["webp", "jpg"]}
+                                alt={loop.imageAlt}
+                                widths={[75, 150, 225, 450]}
+                                sizes="(max-width: 480px) 75px, 225px"
+                              />
+                            )
+                          )}
+                        </a>
+                      ) : (
+                        isRemoteImage(loop.image) ? (
+                          <img class="sponsor-logo-image" src={loop.image} alt={loop.imageAlt} loading="lazy" decoding="async" />
+                        ) : (
+                          images[`/public/images/sponsors/${loop.image}`] && (
+                            <Picture
+                              src={images[`/public/images/sponsors/${loop.image}`]()}
+                              formats={["webp", "jpg"]}
+                              alt={loop.imageAlt}
+                              widths={[75, 150, 225, 450]}
+                              sizes="(max-width: 480px) 75px, 225px"
+                            />
+                          )
+                        )
+                      ))}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sponsor-logo-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .single-logo-tile .boxed-logo {
+    border-radius: var(--border-radius);
+  }
+
+  .logo-link-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    width: 100%;
+  }
+
+  .logo-group-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(234, 230, 210, 0.45);
+    margin-bottom: 0.4em;
+    text-align: center;
+  }
+
+  .logo-tiles-row {
+    flex-wrap: nowrap !important;
+  }
+
+  .logo-tiles-row .single-logo-tile {
+    flex: 1 1 0;
+    width: auto !important;
+  }
+
+  .logo-tiles-grid {
+    flex-wrap: wrap !important;
+  }
+
+  .logo-tiles-grid .single-logo-tile {
+    flex: none !important;
+  }
+
+  .single-logo-tile.has-tag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .logo-tile-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #92600a;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+</style>

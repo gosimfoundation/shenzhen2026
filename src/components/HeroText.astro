@@ -1,0 +1,56 @@
+---
+interface Props {
+    title: string;
+    text?: string;
+    lightgray?: boolean;
+}
+
+const { title, text, lightgray } = Astro.props;
+const hasSlot = Astro.slots.has('default');
+const hasRightCol = text || hasSlot;
+---
+
+<section
+    class="section default-header"
+    data-theme-section="light"
+    data-bg-section={lightgray ? 'lightgray' : 'light'}
+    data-scroll-section
+>
+    <div class="gradient-circle-wrap">
+        <div class="gradient-circle" />
+    </div>
+
+    <div class="container">
+        <div class={`row ${hasRightCol ? 'grid' : ''}`}>
+            <div class="border-bottom" />
+
+            <div class="col col-title">
+                <div class="col-row col-row-title">
+                    <h1>{title}</h1>
+                </div>
+            </div>
+
+            {hasRightCol &&
+                <div class="col col-text hero-text-right">
+                    <div class="col-row styled-content">
+                        {text && <p>{text}</p>}
+                        <slot />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .default-header .row.grid {
+        align-items: center;
+    }
+
+    .hero-text-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+</style>

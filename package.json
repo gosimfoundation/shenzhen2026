@@ -1,0 +1,34 @@
+{
+  "name": "shenzhen-2026",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "validate-schedule": "node scripts/validate-schedule.js",
+    "validate-schedule:bilingual": "node scripts/validate-schedule.js src/json/ScheduleBilingual.json",
+    "test-error-handling": "node scripts/test-error-handling.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "update-stars": "node scripts/update-marquee-stars.js",
+    "prebuild": "npm run validate-schedule:bilingual && npm run test"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.12.1",
+    "marked": "^16.2.1",
+    "sass": "^1.85.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.8.0",
+    "@vitest/ui": "^3.2.4",
+    "happy-dom": "^20.0.10",
+    "jsdom": "^26.1.0",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

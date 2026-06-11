@@ -1,0 +1,29 @@
+---
+// Components
+import Layout from "layouts/LayoutLanding.astro"
+import Content from "markdown/Privacy.md"
+---
+
+<Layout
+  title="Privacy – GOSIM Shenzhen 2026"
+  description="GOSIM Shenzhen 2026 is a gathering of open-source AI projects, developers, researchers, and industry sponsors to share knowledge, learn from each other, and collaborate."
+  navBackground="light"
+  pageTransitionName="Privacy"
+>
+  <section
+    class="section speaker-detail-header"
+    data-theme-section="light"
+    data-bg-section="lightgray"
+  >
+    <div class="gradient-circle-wrap">
+      <div class="gradient-circle"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-markdown">
+          <Content />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

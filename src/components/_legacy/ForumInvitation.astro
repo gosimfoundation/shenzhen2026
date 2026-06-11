@@ -1,0 +1,78 @@
+---
+// Packages
+import { Picture } from "astro:assets";
+
+// Components
+import Button from "components/Button.astro";
+
+interface Props {
+  title: string;
+  text: string;  // Can contain HTML content or plain text with line breaks
+  image: any;
+  imageAlt: string;
+  ctaButton?: {
+    text: string;
+    link: string;
+    openInNewTab?: boolean;
+  };
+}
+
+const { title, text, image, imageAlt, ctaButton } = Astro.props;
+
+// Process the text to ensure proper HTML rendering
+const processedText = text
+    .replace(/\n/g, "<br>")  // Convert newlines to <br>
+    .replace(/<br><br>/g, "</p><p>")  // Convert double breaks to paragraphs
+    .replace(/^(.+?)(?=<br|$)/, "<p>$1</p>"); // Wrap first line in <p> if needed
+---
+
+<section
+  class="section section-register-gosim spotlight-section"
+  id="spotlight"
+  data-theme-section="dark"
+  data-bg-section="dark"
+>
+  <div class="container">
+    <div class="row grid">
+      <div class="col">
+        <div class="col-row col-row-title">
+          <h2 class="custom3">{title}</h2>
+        </div>
+
+        <div class="col-row col-row-text">
+          <div class="card-row styled-content">
+            <div set:html={text} />
+          </div>
+        </div>
+
+        {
+          ctaButton?.text && (
+            <div class="col-row col-row-btn">
+              <Button
+                text={ctaButton.text}
+                link={ctaButton.link}
+                openInNewTab={ctaButton?.openInNewTab}
+                class="btn primary xl btn-hover"
+              />
+            </div>
+          )
+        }
+      </div>
+
+      {
+        image && (
+          <div class="col">
+            <div class="logo-tiles">
+              <Picture
+                src={image}
+                formats={["webp", "jpg"]}
+                alt={imageAlt}
+                class="hexbadge"
+              />
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>

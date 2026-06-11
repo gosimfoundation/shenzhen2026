@@ -1,0 +1,139 @@
+---
+// layouts
+import Layout from "layouts/LayoutLanding.astro"
+import HeroText from "components/HeroText.astro"
+
+// components
+import OpenStreetMap from "components/OpenStreetMap.astro"
+
+// --- Page-specific Data ---
+
+// Data for the location section below the map
+const subtitle = "The Venue"
+const title = "To Be Announced"
+const location = "The conference venue will be announced soon — distances and directions will be added here."
+
+// Data for the map markers
+const mapMarkers = [
+  {
+    latitude: 22.639444,
+    longitude: 113.810556,
+    title: "深圳宝安国际机场 Shenzhen Bao'an International Airport (SZX)",
+    highlight: true,
+  },
+  {
+    latitude: 22.610278,
+    longitude: 114.029444,
+    title: "深圳北站 Shenzhen North Railway Station",
+  },
+  {
+    latitude: 22.534167,
+    longitude: 114.063333,
+    title: "福田站 Futian Railway Station",
+  },
+  {
+    latitude: 22.304453,
+    longitude: 114.166233,
+    title: "香港西九龙站 Hong Kong West Kowloon Station",
+  },
+]
+---
+
+<Layout
+  title="General Travel Info – GOSIM Shenzhen 2026"
+  description="Information about traveling to GOSIM Shenzhen 2026"
+>
+  <HeroText title="General Travel Info" text="" lightgray />
+  <section
+    class="section speaker-detail-header"
+    data-theme-section="light"
+    data-bg-section="light"
+  >
+    <div class="container">
+      <h3>Recommended App</h3>
+      <br />
+      Alipay and WeChat are must. Link your credit card to both and you can use them
+      to pay for almost everything, including DIDI (Chinese Uber), subway, bus, bike,
+      and more.
+      <br /><br />
+      <strong
+        >Google Maps WILL NOT work in China. Apple Maps and Amap (Gaode) works
+        BEST.</strong
+      >
+      <br /><br />
+      <h3>Getting to Shenzhen</h3>
+      <br />
+      Shenzhen is a major technology hub in Guangdong Province in Southern China,
+      directly bordering Hong Kong. It is home to one of the world's fastest-moving
+      hardware ecosystems, from Huaqiangbei's electronics markets to global tech
+      headquarters.
+      <br /><br />
+      Shenzhen is served by Shenzhen Bao'an International Airport (SZX), with direct
+      flights to major cities across Asia and a growing number of intercontinental
+      routes. Many international attendees fly into Hong Kong International Airport
+      (HKG), which offers the widest selection of long-haul flights — from there,
+      Shenzhen is reachable by high-speed rail (about 15–20 minutes from Hong Kong
+      West Kowloon to Futian station), cross-border coach, ferry, or metro to the
+      border crossings. Note that entering mainland China from Hong Kong is an
+      international border crossing — make sure your visa situation covers it.
+      <br /><br />
+      Shenzhen is also a major stop on China's high-speed rail network: about 40
+      minutes from Guangzhou and 8 hours from Beijing or Shanghai, arriving at
+      Shenzhen North or Futian station.
+    </div>
+    <br />
+    <div class="container">
+      <h3>Within Shenzhen</h3>
+      <br />
+      You can order a DIDI (Chinese Uber) from Alipay or WeChat mini app to get a
+      ride anywhere in the city.
+      <br /><br />
+      Shenzhen has one of the largest metro networks in the world, with English
+      signage throughout. You can use the Transit Feature in Alipay and present your
+      transit QR code at the fare gate scanner when riding subways and buses.
+
+      <br /><br />
+      <h3>To Venue From ...</h3>
+      <br />
+      The conference venue will be announced soon. Travel times and costs from the
+      airport and railway stations will be added here once the venue is confirmed.
+    </div>
+  </section>
+
+  <section
+    class="section section-big-image"
+    data-theme-section="light"
+    data-bg-section="lightgray"
+  >
+    <div class="container wide" id="general-travel">
+      <div class="row">
+        <div class="col">
+          <OpenStreetMap
+            mapCenter={{ latitude: 22.55, longitude: 114.0 }}
+            mapZoom={10}
+            markers={mapMarkers}
+            height="350px"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="section section-location-info"
+    data-theme-section="light"
+    data-bg-section="lightgray"
+  >
+    <div class="container wide">
+      <div class="row grid">
+        <div class="col col-info">
+          <div class="location-flex">
+            <p>{subtitle}</p>
+            <h2>{title}</h2>
+            <p>{location}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,38 @@
+---
+// Components
+import Layout from "layouts/LayoutLanding.astro";
+import Button from "components/Button.astro";
+---
+
+<Layout
+  title="404 – Page not found"
+  description="Page not found"
+  navBackground="light"
+  pageTransitionName="GOSIM"
+>
+  <main>
+    <section
+      class="section section-home-intro"
+      data-theme-section="light"
+      data-bg-section="light"
+    >
+      <div class="container">
+        <div class="row">
+          <div
+            class="col"
+            style="text-align: center; display: flex; flex-direction: column; gap: 2rem;"
+          >
+            <h1>Page not found</h1>
+
+            <p>The page you were looking for could not be found.</p>
+            <Button
+              text="Back to homepage"
+              link="/"
+              class="btn light xl btn-hover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

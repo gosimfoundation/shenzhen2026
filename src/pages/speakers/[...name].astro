@@ -1,0 +1,551 @@
+---
+// Packages
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+// Components
+import Layout from "layouts/LayoutLanding.astro";
+import speakers from "json/SpeakersCleaned.json";
+import schedule from "json/ScheduleBilingual.json";
+import scheduleForum from "json/Schedule-forum.json";
+
+// Types
+interface Speaker {
+  id: string;
+  name: string;
+  roleOrg: string;
+  bio: string;
+  image?: string;
+  socialLinks?: {
+    website?: string;
+    github?: string;
+    twitter?: string;
+    linkedin?: string;
+    mastodon?: string;
+    [key: string]: string | undefined;
+  };
+}
+
+interface Session {
+  title: string;
+  speakers: { name: string }[];
+  date: string;
+  timeSlot: string;
+  category?: string;
+}
+
+interface schedule {
+  sessions: Record<string, Session[]>;
+}
+
+// Get the speaker name from the route parameter
+export async function getStaticPaths() {
+  return speakers.speakers
+    .filter((speaker: Speaker) => speaker.draft !== true)
+    .map((speaker: Speaker) => ({
+      params: { name: speaker.id },
+      props: { speaker },
+    }));
+}
+
+const { speaker } = Astro.props as { speaker: Speaker };
+
+// Previous/Next speaker navigation
+const allSpeakers = speakers.speakers as Speaker[];
+const currentIndex = allSpeakers.findIndex((s: Speaker) => s.id === speaker.id);
+const prevSpeaker = currentIndex > 0 ? allSpeakers[currentIndex - 1] : allSpeakers[allSpeakers.length - 1];
+const nextSpeaker = currentIndex < allSpeakers.length - 1 ? allSpeakers[currentIndex + 1] : allSpeakers[0];
+
+// For images in public directory, we can reference them directly
+
+// Find speaker's sessions across all categories and forum schedule
+const speakerSessions = [
+  // Get sessions from main schedule (bilingual structure)
+  ...Object.entries(schedule.sessions).reduce(
+    (acc: Session[], [category, sessions]: [string, Session[]]) => {
+      const matchingSessions = sessions
+        .filter((session) =>
+          session.speakers.some((s) => {
+            const sessionSpeakerName = typeof s.name === 'string' ? s.name : s.name?.en;
+            const sessionSpeakerId = s.id;
+            return sessionSpeakerName === speaker.name || sessionSpeakerId === speaker.id;
+          })
+        )
+        .map((session) => {
+          const categoryName = (() => {
+            if ((session as any).type === 'keynote') return 'Keynote'
+            const cat = schedule.categories.find((c) => c.id === category)
+            if (cat?.name) return typeof cat.name === 'string' ? cat.name : (cat.name as any)?.en || category
+            return category
+          })()
+          return {
+            title: typeof session.title === 'string' ? session.title : (session.title as any)?.en || '',
+            speakers: session.speakers.map(s => ({
+              name: typeof s.name === 'string' ? s.name : (s.name as any)?.en || ''
+            })),
+            date: typeof session.date === 'string' ? session.date : (session.date as any)?.en || '',
+            timeSlot: session.timeSlot,
+            category: categoryName,
+          }
+        });
+
+      return [...acc, ...matchingSessions];
+    },
+    []
+  ),
+  // Get sessions from forum schedule
+  ...scheduleForum
+    .filter(
+      (session) =>
+        session.speakers &&
+        session.speakers.some((s) => s.name === speaker.name)
+    )
+    .map((session) => ({
+      title: session.title,
+      speakers: session.speakers,
+      date: session.date,
+      timeSlot: session.timeSlot,
+      category: "Forum",
+    })),
+].filter((session, index, arr) =>
+  arr.findIndex((s) => s.title === session.title && s.timeSlot === session.timeSlot && s.date === session.date) === index
+).sort((a, b) => {
+  const dayA = parseInt(a.date.replace(/\D/g, '')) || 0;
+  const dayB = parseInt(b.date.replace(/\D/g, '')) || 0;
+  if (dayA !== dayB) return dayA - dayB;
+  return (a.timeSlot || '').localeCompare(b.timeSlot || '');
+});
+
+// Detect placeholder speakers (no bio or using generic placeholder image)
+const isPlaceholder = !speaker.bio || speaker.image === "/images/speakers/better_portrait/0-placeholder-person.png";
+
+const mailtoSubject = encodeURIComponent(`[GOSIM Shenzhen 2026] Speaker Profile Submission – ${speaker.name}`);
+const mailtoBody = encodeURIComponent(
+`Dear GOSIM Team,
+
+I would like to submit my speaker profile information for GOSIM Shenzhen 2026.
+
+Name: ${speaker.name}
+Title / Role: [your title and role]
+Organization: [your organization]
+
+Bio (100–300 words):
+[Please write your bio here]
+
+Profile Photo:
+[Please attach a high-resolution headshot – JPG or PNG, minimum 400×400 px]
+
+Social Links (optional):
+Website:
+LinkedIn:
+Twitter / X:
+GitHub:
+
+Thank you,
+${speaker.name}`
+);
+const mailtoHref = `mailto:hzeng@gosim.org?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+// Social links mapping for icons
+const socialIconMap: Record<string, string> = {
+  website: "/icons/icon-website.svg",
+  github: "/icons/icon-github.svg",
+  twitter: "/icons/icon-x.svg",
+  linkedin: "/icons/icon-linkedin.svg",
+  mastodon: "/icons/icon-mastodon.svg",
+};
+---
+
+<Layout
+  title={`${speaker.name} – GOSIM Shenzhen 2026`}
+  description={speaker.roleOrg}
+  navBackground="light"
+  pageTransitionName={speaker.name}
+>
+  <!-- Previous/Next Speaker Navigation -->
+  <div class="speaker-nav-bar" data-theme-section="light" data-bg-section="light">
+    <div class="container">
+      <div class="speaker-nav">
+        <a href={`/speakers/${prevSpeaker.id}/`} class="speaker-nav-btn speaker-nav-prev">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          <div class="speaker-nav-info">
+            <span class="speaker-nav-label">Previous</span>
+            <span class="speaker-nav-name">{prevSpeaker.name}</span>
+          </div>
+        </a>
+        <a href="/speakers/" class="speaker-nav-btn speaker-nav-all">All Speakers</a>
+        <a href={`/speakers/${nextSpeaker.id}/`} class="speaker-nav-btn speaker-nav-next">
+          <div class="speaker-nav-info" style="text-align:right;">
+            <span class="speaker-nav-label">Next</span>
+            <span class="speaker-nav-name">{nextSpeaker.name}</span>
+          </div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section
+    class="section speaker-detail-header"
+    data-theme-section="light"
+    data-bg-section="light"
+  >
+    <div class="gradient-circle-wrap">
+      <div class="gradient-circle"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-speaker">
+          <div class="row-speaker">
+            {
+              speaker?.image && (
+                <>
+                  <button class="speaker-detail-image" id="photo-trigger" aria-label="View full photo">
+                    <img src={speaker.image} alt={speaker.name} />
+                    <div class="photo-zoom-hint">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </div>
+                  </button>
+                  <dialog id="photo-lightbox" aria-label="Full size photo">
+                    <button id="photo-close" aria-label="Close">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                    <img src={speaker.image} alt={speaker.name} />
+                  </dialog>
+                </>
+              )
+            }
+            <div class="speaker-row-meta">
+              <h1 class="h2">{speaker.name}</h1>
+              {(() => {
+                let lastComma = -1, depth = 0;
+                for (let i = 0; i < speaker.roleOrg.length; i++) {
+                  if (speaker.roleOrg[i] === '(') depth++;
+                  else if (speaker.roleOrg[i] === ')') depth--;
+                  else if (speaker.roleOrg[i] === ',' && depth === 0) lastComma = i;
+                }
+                if (lastComma === -1) return <p>{speaker.roleOrg}</p>;
+                const role = speaker.roleOrg.slice(0, lastComma).trim();
+                const company = speaker.roleOrg.slice(lastComma + 1).trim();
+                return <p>{role}<br/><strong>{company}</strong></p>;
+              })()}
+            </div>
+          </div>
+
+          <div class="box-row box-row-tag">
+            <div
+              class="card-tags group-tags social-wrap"
+              style="gap: 1rem; align-items: center;"
+            >
+              {
+                Object.entries(speaker.socialLinks || {})
+                  .filter(
+                    ([_, url]) =>
+                      url && url.trim() !== "" && url !== "undefined"
+                  )
+                  .map(([platform, url]) => (
+                    <a
+                      href={url}
+                      class="social-link"
+                      style="margin: 0;"
+                      social-type={platform}
+                      target="_blank"
+                    >
+                      <img
+                        src={
+                          socialIconMap[platform] ||
+                          "assets/img/icon-website.svg"
+                        }
+                        width="Auto"
+                        height="19"
+                        alt={platform}
+                      />
+                    </a>
+                  ))
+              }
+            </div>
+          </div>
+
+          {speaker.bio && (
+            <div class="box-row box-row-text styled-content">
+              <p set:html={speaker.bio.replace(/\n/g, "<br>")} />
+            </div>
+          )}
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {
+    speakerSessions?.length > 0 && (
+      <section
+        class="section section-agenda-grid speaker-sessions"
+        id="grid"
+        data-theme-section="light"
+        data-bg-section="light"
+        data-scroll-section=""
+      >
+        <div class="container">
+          <div class="row row-list accordion visible">
+            <h2 class="h3">Sessions</h2>
+            <div class="list-group speaker-sessions">
+              <ul class="row row-list">
+                {speakerSessions.map((session) => (
+                  <a
+                    href={`/schedule/${session.title
+                      .toLowerCase()
+                      .replace(/[^\w\s-]/g, "")
+                      .replace(/\s+/g, "-")
+                      .replace(/-+/g, "-")
+                      .trim()}/`}
+                  >
+                    <li class="single-agenda-card single-accordion-item card-hover">
+                      <div class="top">
+                        <div class="left">
+                          <div class="timeslot">
+                            <p class="timedate">{session.date}</p>
+                            <p>{session.timeSlot}</p>
+                          </div>
+                          <h3 class="h5">{session.title}</h3>
+                        </div>
+                        <div class="tracks">
+                          <div class="single-filter">
+                            <span>{session.category}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </a>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {isPlaceholder && (
+    <section data-theme-section="light" data-bg-section="light">
+      <div class="placeholder-notice-wrap">
+        <p class="placeholder-notice">
+          Speaker profile incomplete? <a href="https://cfp.gosim.org" target="_blank">Submit via CFP</a> to have your full profile displayed here.
+        </p>
+      </div>
+    </section>
+  )}
+
+</Layout>
+
+<style>
+  .speaker-detail-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: zoom-in;
+  }
+
+  .speaker-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform 0.3s ease;
+  }
+
+  .speaker-detail-image:hover img {
+    transform: scale(1.04);
+  }
+
+  .photo-zoom-hint {
+    position: absolute;
+    bottom: 8%;
+    right: 8%;
+    background: rgba(62, 58, 43, 0.16);
+    color: #fff;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .speaker-detail-image:hover .photo-zoom-hint {
+    opacity: 1;
+  }
+
+  #photo-lightbox {
+    border: none;
+    background: transparent;
+    padding: 0;
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(62, 58, 43, 0.16);
+  }
+
+  #photo-lightbox::backdrop {
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(4px);
+  }
+
+  #photo-lightbox img {
+    display: block;
+    width: min(80vw, 80vh);
+    height: min(80vw, 80vh);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+  }
+
+  #photo-close {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: rgba(62, 58, 43, 0.16);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .gradient-circle-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .timeslot {
+    width: 8em !important;
+  }
+  @media screen and (max-width: 640px) {
+    .timeslot {
+      width: 100% !important;
+    }
+  }
+
+  .speaker-detail-header {
+    padding-top: 1.5rem !important;
+  }
+
+  /* Speaker Navigation Bar */
+  .speaker-nav-bar {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0.75rem 0;
+    padding-top: calc(var(--nav-bar-height) + 0.75rem);
+  }
+
+  .speaker-nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .speaker-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none !important;
+    color: var(--color-dark) !important;
+    transition: background 0.2s ease;
+    min-width: 0;
+  }
+
+  .speaker-nav-btn:hover {
+    background: #f5f5f0;
+  }
+
+  .speaker-nav-next {
+    justify-content: flex-end;
+  }
+
+  .speaker-nav-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+  }
+
+  .speaker-nav-label {
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .speaker-nav-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .speaker-nav-btn svg {
+    flex-shrink: 0;
+    color: #999;
+  }
+
+  .speaker-nav-all {
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    border: 1px solid #6366f1;
+    color: #6366f1 !important;
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .speaker-nav-all:hover {
+    background: #6366f1;
+    color: #fff !important;
+  }
+
+  @media screen and (max-width: 640px) {
+    .speaker-nav-name {
+      max-width: 120px;
+    }
+  }
+
+  .placeholder-notice-wrap {
+    text-align: center;
+    padding: 2rem 1rem 3rem;
+  }
+
+  .placeholder-notice {
+    font-size: 0.78rem;
+    color: rgba(0, 0, 0, 0.35);
+  }
+
+  .placeholder-notice a {
+    color: rgba(62, 58, 43, 0.16);
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  const trigger = document.getElementById('photo-trigger');
+  const lightbox = document.getElementById('photo-lightbox') as HTMLDialogElement;
+  const closeBtn = document.getElementById('photo-close');
+
+  trigger?.addEventListener('click', () => lightbox?.showModal());
+  closeBtn?.addEventListener('click', () => lightbox?.close());
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.close();
+  });
+</script>

@@ -1,0 +1,86 @@
+---
+// Components
+import Button from "components/Button.astro";
+import OpenStreetMap from "components/OpenStreetMap.astro";
+
+interface Props {
+  subtitle: string;
+  title: string;
+  location: string;
+  image: string;
+  text: string;
+  ctaButton?: {
+    text: string;
+    link: string;
+    openInNewTab?: boolean;
+  };
+}
+
+const { subtitle, title, location, image, text, ctaButton } = Astro.props;
+---
+
+<section
+  class="section section-big-image"
+  data-theme-section="light"
+  data-bg-section="lightgray"
+>
+  <div class="container wide" id="venue">
+    <div class="row">
+      <div class="col">
+        <figure>
+          <div class="overlay playpause">
+            <img src={image} alt={title} class="overlay" loading="lazy" />
+          </div>
+
+          {
+            ctaButton?.text && (
+              <div class="col-row col-row-btn">
+                <Button
+                  text={ctaButton.text}
+                  link={ctaButton.link}
+                  openInNewTab={ctaButton?.openInNewTab}
+                  class="btn light btn-hover xl"
+                />
+              </div>
+            )
+          }
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="section section-location-info"
+  data-theme-section="light"
+  data-bg-section="lightgray"
+>
+  <div class="container wide">
+    <div class="row grid">
+      <div class="border-bottom"></div>
+      <div class="col col-info">
+        <div class="location-flex">
+          <p>{subtitle}</p>
+          <h2>{title}</h2>
+          <p>{location}</p>
+          <div class="col-row">
+            <p>{text}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col col-text styled-content">
+
+        <div class="col-row">
+          <OpenStreetMap
+            latitude={48.8339}
+            longitude={2.3711}
+            zoom={15}
+            markerTitle={title}
+            height="350px"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

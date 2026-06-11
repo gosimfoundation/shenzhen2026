@@ -1,0 +1,102 @@
+---
+// Packages
+import { Picture } from "astro:assets"
+
+// Components
+import Button from "components/Button.astro"
+
+interface Props {
+  id?: string
+  title: string
+  text: string
+  image: any
+  imageAlt: string
+  image2: any
+  dataBgSection: string
+  dataThemeSection: string
+  ctaButton?: {
+    text: string
+    link: string
+    openInNewTab?: boolean
+  }
+}
+
+const {
+  id = "none",
+  title,
+  text,
+  image,
+  imageAlt,
+  image2,
+  ctaButton,
+  dataBgSection,
+  dataThemeSection,
+} = Astro.props
+---
+
+<section
+  class="section section-register-gosim spotlight-section"
+  id={id}
+  data-theme-section={dataThemeSection}
+  data-bg-section={dataBgSection}
+>
+  <div class="container">
+    <div class="row grid">
+      <div class="col">
+        <div class="col-row col-row-title">
+          <h2 class="custom3">{title}</h2>
+        </div>
+
+        <div class="col-row col-row-text styled-content">
+          <p>
+            {text}
+          </p>
+        </div>
+
+        {
+          ctaButton?.text && (
+            <div class="col-row col-row-btn">
+              <Button
+                text={ctaButton.text}
+                link={ctaButton.link}
+                openInNewTab={ctaButton?.openInNewTab}
+                class="btn primary xl btn-hover"
+              />
+            </div>
+          )
+        }
+      </div>
+
+      {
+        (image || image2) && (
+          <div class="col">
+            <div
+              class="logo-tiles"
+              style="display: flex; gap: 1rem; align-items: center; justify-content: center;"
+            >
+              {image && (
+                <Picture
+                  src={image}
+                  formats={["webp", "jpg"]}
+                  alt={imageAlt}
+                  class="hexbadge"
+                  style="width: 480px; height: auto; flex-shrink: 0;"
+                />
+              )}
+              <p style="color: #fff; font-size: 3rem;">+</p>
+              {image2 && (
+                <Picture
+                  src={image2}
+                  formats={["webp", "jpg"]}
+                  alt={imageAlt}
+                  class="hexbadge"
+                  style="width: 240px; height: auto; flex-shrink: 0;"
+                />
+              )}
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>

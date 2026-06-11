@@ -1,0 +1,53 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "name": {
+        "en": "All",
+        "zh": "全部"
+      }
+    },
+    {
+      "id": "host",
+      "name": {
+        "en": "Host",
+        "zh": "主办"
+      }
+    },
+    {
+      "id": "co-organizer",
+      "name": {
+        "en": "Co-organizer",
+        "zh": "承办"
+      }
+    },
+    {
+      "id": "premier-sponsor",
+      "name": {
+        "en": "Premier Sponsor",
+        "zh": "首席赞助商"
+      }
+    },
+    {
+      "id": "sponsor",
+      "name": {
+        "en": "General Sponsor",
+        "zh": "赞助商"
+      }
+    },
+    {
+      "id": "supporting-organizations",
+      "name": {
+        "en": "Supporting Partner",
+        "zh": "支持伙伴"
+      }
+    }
+  ],
+  "partners": [
+    {
+      "category": "host",
+      "image": "gosim.png",
+      "url": "https://gosim.org"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://paris2026.gosim.org/sitemap-index.xml

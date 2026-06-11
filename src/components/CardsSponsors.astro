@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  sponsors: Array<{
+    name: string;
+    image: string;
+  }>;
+}
+
+const { title, sponsors } = Astro.props;
+---
+
+<section
+  class="section section-sponsors"
+  data-theme-section="light"
+  data-bg-section="lightgray"
+>
+  <div class="container">
+    <div class="proud-sponsors">
+      <h5>{title}</h5>
+    </div>
+
+    <div class="proud-sponsors__flex">
+      {
+        sponsors?.map((sponsor) => (
+          <div class="sponsor-card flex flex-col items-center">
+            <img src={sponsor.image} alt={sponsor.name} loading="lazy" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

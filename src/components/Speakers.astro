@@ -1,0 +1,408 @@
+---
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+// Import the speakers data
+import speakersData from "json/SpeakersCleaned.json";
+
+// Filter speakers to only include those where draft is false and id is not "tbd"
+const filteredSpeakers = speakersData.speakers
+  .filter((speaker) => speaker.draft !== true && speaker.id !== "tbd")
+  .sort((a, b) => {
+    const lastName = (name) => name.trim().split(/\s+/).slice(-1)[0].toLowerCase();
+    return lastName(a.name).localeCompare(lastName(b.name));
+  });
+
+// Group categories by their group property (similar to schedule)
+const groupedCategories = {
+  tracks: speakersData.categories.filter(
+    (cat) =>
+      !cat.group &&
+      cat.id !== "all" &&
+      !cat.id.startsWith("ws-") &&
+      cat.id !== "open-for-sdg" &&
+      cat.id !== "forum-aivision" &&
+      cat.id !== "rustchinaconf"
+  ),
+  workshops: speakersData.categories.filter(
+    (cat) => !cat.group && cat.id.startsWith("ws-")
+  ),
+  colocated: speakersData.categories.filter(
+    (cat) =>
+      !cat.group &&
+      (cat.id === "open-for-sdg" ||
+        cat.id === "forum-aivision" ||
+        cat.id === "rustchinaconf")
+  ),
+};
+
+// For images in public directory, we can reference them directly
+---
+
+<div
+  class="filter-container filter-alpha-animate"
+  role="region"
+  aria-label="Speaker filters"
+>
+  <div class="overlay overlay-dark" data-filter-toggle="close">
+    <div
+      class="close"
+      data-filter-toggle="close"
+      role="button"
+      aria-label="Close filters"
+      tabindex="0"
+    >
+      <div class="close-fill"></div>
+      <div class="bar bar-top"></div>
+      <div class="bar bar-bottom"></div>
+    </div>
+  </div>
+  <div class="filter-box">
+    <p>Filter:</p>
+    <div
+      class="filter-group"
+      data-filter-group
+      role="group"
+      aria-label="Speaker category filters"
+    >
+      <!-- All Speakers Button -->
+      <div class="all-speakers-section">
+        <div
+          class="single-filter all-button"
+          data-filter-status="active"
+          data-filter-category="all"
+          data-multiple-select="false"
+          role="button"
+          aria-pressed="true"
+          aria-label="Show all speakers"
+          tabindex="0"
+        >
+          <span>All Speakers</span>
+        </div>
+      </div>
+
+      <!-- Plenary & Tracks Group -->
+      <div class="filter-group-section">
+        <div class="filter-group-header">
+          <h4 class="filter-group-title">PLENARY & TRACKS</h4>
+        </div>
+        <div class="filter-group-tags">
+          {
+            groupedCategories.tracks.map((category) => (
+              <div
+                class="single-filter"
+                data-filter-status="not-active"
+                data-filter-category={category.id}
+                data-multiple-select="false"
+                role="button"
+                aria-pressed="false"
+                aria-label={`Filter by ${category.name}`}
+                tabindex="0"
+              >
+                <span>{category.name}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Workshops Group -->
+      <div class="filter-group-section filter-group-section-full">
+        <div class="filter-group-header">
+          <h4 class="filter-group-title">WORKSHOPS</h4>
+        </div>
+        <div class="filter-group-tags">
+          {
+            groupedCategories.workshops.map((category) => (
+              <div
+                class="single-filter"
+                data-filter-status="not-active"
+                data-filter-category={category.id}
+                data-multiple-select="false"
+                role="button"
+                aria-pressed="false"
+                aria-label={`Filter by ${category.name}`}
+                tabindex="0"
+              >
+                <span>{category.name}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<section
+  class="section section-speakers-grid"
+  id="grid"
+  data-filter-section
+  data-theme-section="light"
+  data-bg-section="lightgray"
+  data-scroll-section
+>
+  <div class="container">
+    <div class="row row-filter">
+      <div class="col">
+        <div class="filter-group" data-filter-group>
+          <div class="filter-layout">
+            <div class="filter-row">
+              <span class="filter-group-label">All</span>
+              <div
+                class="single-filter filter-all"
+                data-filter-status="active"
+                data-filter-category="all"
+                data-multiple-select="false"
+              >
+                <span>All Speakers</span>
+              </div>
+            </div>
+            <div class="filter-row">
+              <span class="filter-group-label">Tracks</span>
+              {
+                groupedCategories.tracks.map((category) => (
+                  <div
+                    class="single-filter"
+                    data-filter-status="not-active"
+                    data-filter-category={category.id}
+                    data-multiple-select="false"
+                  >
+                    <span>{category.name}</span>
+                  </div>
+                ))
+              }
+            </div>
+            <div class="filter-row">
+              <span class="filter-group-label">Workshops</span>
+              {
+                groupedCategories.workshops.map((category) => (
+                  <div
+                    class="single-filter"
+                    data-filter-status="not-active"
+                    data-filter-category={category.id}
+                    data-multiple-select="false"
+                  >
+                    <span>{category.name}</span>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row grid visible speakers-grid" data-filter-grid data-modal-grid>
+      {
+        filteredSpeakers.map((speaker, index) => (
+          <div
+            class="col"
+            data-filter-status="active"
+            data-filter-index={index}
+            data-filter-index-even={index % 2 === 0}
+            data-filter-category={speaker.tags ? speaker.tags.join(" ") : ""}
+          >
+            <a
+              href={`/speakers/${speaker.id}/`}
+              class="single-speakers-card"
+              data-modal-card-status="not-active"
+              data-modal-card-id={speaker.id}
+            >
+              <div class="card-row card-row-image">
+                <div class="card-image">
+                  {speaker?.image && (
+                    <img
+                      src={speaker.image}
+                      alt={speaker.name}
+                      class="overlay speaker-img"
+                      loading="lazy"
+                      style="object-position: center 15% !important;"
+                    />
+                  )}
+                </div>
+              </div>
+              <div class="card-row card-row-info">
+                <h2 class="h5">{speaker.name}</h2>
+                {(() => {
+                  let lastComma = -1, depth = 0;
+                  for (let i = 0; i < speaker.roleOrg.length; i++) {
+                    if (speaker.roleOrg[i] === '(') depth++;
+                    else if (speaker.roleOrg[i] === ')') depth--;
+                    else if (speaker.roleOrg[i] === ',' && depth === 0) lastComma = i;
+                  }
+                  if (lastComma === -1) return <p class="speaker-role">{speaker.roleOrg}</p>;
+                  const role = speaker.roleOrg.slice(0, lastComma).trim();
+                  const company = speaker.roleOrg.slice(lastComma + 1).trim();
+                  return <><p class="speaker-role">{role}</p><p class="speaker-company"><strong>{company}</strong></p></>;
+                })()}
+              </div>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+    <p style="text-align: center; width: 100%; margin: 2rem 0 0; color: #888; font-size: 0.9rem;">
+      This list is being updated. Speakers are subject to change.
+    </p>
+  </div>
+</section>
+
+<style>
+  .card-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    width: 100%;
+  }
+
+  .speaker-img {
+    object-fit: cover !important;
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Filter layout */
+  .filter-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  @media screen and (max-width: 720px) {
+    .filter-group-label {
+      width: 100%;
+      justify-content: flex-start;
+      padding-right: 0;
+    }
+  }
+
+  .filter-all {
+    flex: 1;
+    text-align: center;
+  }
+
+  .filter-all[data-filter-status="active"] {
+    background-color: var(--color-primary) !important;
+    border: 1px solid var(--color-primary) !important;
+  }
+
+  .filter-group-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 5.5rem;
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-right: 0.4rem;
+    white-space: nowrap;
+  }
+
+  /* Reduce gap between filters and speaker grid */
+  .section-speakers-grid :global(.grid) {
+    padding-top: 1.5rem;
+  }
+
+  :global(.speakers-grid) { --columns: 6; }
+  @media screen and (max-width: 1024px) { :global(.speakers-grid) { --columns: 4; } }
+  @media screen and (max-width: 720px)  { :global(.speakers-grid) { --columns: 3; } }
+  @media screen and (max-width: 480px)  { :global(.speakers-grid) { --columns: 2; } }
+
+  /* Fix scrolling issues */
+  html,
+  body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  .main {
+    overflow: visible !important;
+    min-height: 100vh !important;
+  }
+</style>
+
+<script>
+  // Single selection filtering for speakers
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterElements = document.querySelectorAll(
+      "[data-filter-category]"
+    ) as NodeListOf<HTMLElement>;
+    const speakerElements = document.querySelectorAll(
+      "[data-filter-category]:not(.single-filter)"
+    ) as NodeListOf<HTMLElement>;
+    let activeFilter = "all"; // Start with 'all' active
+
+    filterElements.forEach((filter) => {
+      filter.addEventListener("click", function (this: HTMLElement) {
+        const category = this.getAttribute("data-filter-category") || "";
+
+        // Set the new active filter
+        activeFilter = category;
+
+        updateFilterStates();
+        if (activeFilter === "all") {
+          showAllSpeakers();
+        } else {
+          filterSpeakers();
+        }
+      });
+    });
+
+    function updateFilterStates() {
+      filterElements.forEach((filter) => {
+        const category = filter.getAttribute("data-filter-category") || "";
+        const isActive = category === activeFilter;
+
+        filter.setAttribute(
+          "data-filter-status",
+          isActive ? "active" : "not-active"
+        );
+        filter.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    }
+
+    function showAllSpeakers() {
+      speakerElements.forEach((speaker) => {
+        speaker.style.display = "block";
+        speaker.setAttribute("data-filter-status", "active");
+      });
+    }
+
+    function filterSpeakers() {
+      speakerElements.forEach((speaker) => {
+        const speakerCategories =
+          speaker.getAttribute("data-filter-category") || "";
+        const speakerCategoryArray = speakerCategories
+          .split(" ")
+          .filter(Boolean);
+        const shouldShow = speakerCategoryArray.includes(activeFilter);
+
+        speaker.style.display = shouldShow ? "block" : "none";
+        speaker.setAttribute(
+          "data-filter-status",
+          shouldShow ? "active" : "not-active"
+        );
+      });
+    }
+
+    // Initialize filter states and show all speakers by default
+    updateFilterStates();
+    showAllSpeakers();
+  });
+</script>

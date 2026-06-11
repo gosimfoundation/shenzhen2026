@@ -1,0 +1,94 @@
+---
+import projects from "json/Marquee.json";
+---
+
+<section
+    id="projects"
+    class="section section-stats"
+    data-theme-section="light"
+    data-bg-section="light"
+>
+    <div class="container wide">
+        <div class="row">
+            <div class="col col-title">
+                <h2>Past Featured Projects</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="projects-marquee-container">
+            <div class="projects-track">
+                {
+                    projects.map((project) => (
+                        <div class="project-card">
+                            <blockquote>{project.description}</blockquote>
+                            <div class="project-info">
+                                <div class="avatar-container">
+                                    <img
+                                        src={project.avatar}
+                                        alt={project.name}
+                                        class="avatar"
+                                    />
+                                </div>
+                                <div class="project-details">
+                                    <h3>{project.name}</h3>
+                                    <div class="project-stats">
+                                        <span class="stars">★ {project.stars}k <span>stars</span></span>
+                                        <span class="age">
+                                            <img
+                                                src="/icons/month.svg"
+                                                alt="Age in months"
+                                                loading="lazy"
+                                                width="14"
+                                                height="14"
+                                            /> {' '}
+                                            {project.age} {' '}
+                                            <span>months</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+                {
+                    projects.map((project) => (
+                        <div class="project-card">
+                            <blockquote>{project.description}</blockquote>
+                            <div class="project-info">
+                                <div class="avatar-container">
+                                    <img
+                                        src={project.avatar}
+                                        alt={project.name}
+                                        class="avatar"
+                                        loading="lazy"
+                                        width="48"
+                                        height="48"
+                                    />
+                                </div>
+                                <div class="project-details">
+                                    <h3>{project.name}</h3>
+                                    <div class="project-stats">
+                                        <span class="stars">★ {project.stars} <span style="font-size: 0.75rem;">stars</span></span>
+                                        <span class="age">
+                                            <img
+                                                src="/icons/month.svg"
+                                                alt="Age in months"
+                                                loading="lazy"
+                                                width="14"
+                                                height="14"
+                                            /> {' '}
+                                            {project.age} {' '}
+                                            <span style="font-size: 0.75rem;">months</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

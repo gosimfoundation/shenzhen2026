@@ -1,0 +1,112 @@
+--- 
+import Button from "./Button.astro";
+
+interface Props {
+	title: string,
+    description: string,
+    cards?: Array<{
+        title: string,
+        description: string,
+        image: string | string[],
+        link: string,
+        openInNewTab?: boolean,
+    }>,
+    id?: string,
+}
+
+const { title, description, cards, id } = Astro.props;
+const twoCards = cards?.length === 2;
+---
+
+<section
+    id={id}
+    class="section section-home-why"
+    style="padding-bottom: 0;"
+    data-theme-section="light"
+    data-bg-section="lightgray"
+>
+    <div class="container">
+        <div class="row row-title grid">
+            <div class="col col-title">
+                <h2>{title}</h2>
+            </div>
+
+            <div class="col styled-content">
+                <p>{description}</p>
+            </div>
+        </div>
+
+        <div class:list={["row row-audience grid", { "two-cards": twoCards }]}>
+            {cards?.map((loop) => (
+                <div class="col why-reasons">
+                    <div class="card-images">
+                        {Array.isArray(loop.image) ? (
+                            loop.image.map((img) => (
+                                <div class="image-container">
+                                    <img 
+                                        src={img}
+                                        alt={loop.title}
+                                        loading="lazy"
+                                    />
+                                </div>
+                            ))
+                        ) : (
+                            <div class="image-container">
+                                <img 
+                                    src={loop.image}
+                                    alt={loop.title}
+                                    loading="lazy"
+                                />
+                            </div>
+                        )}
+                    </div>
+                    <div class="why-content">
+                        <h3 class="h5">{loop.title}</h3>
+                        <p>{loop.description}</p>
+                        <Button text="Learn More" link={loop.link} class="btn outline" openInNewTab={loop.openInNewTab} />
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .row-audience.two-cards {
+        --columns: 2;
+    }
+    .why-reasons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .why-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .card-images {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    .image-container {
+        min-width: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .image-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 16px;
+    }
+</style>
+

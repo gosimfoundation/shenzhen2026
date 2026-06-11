@@ -1,0 +1,1362 @@
+---
+interface Track {
+  title: string;
+  text: string;
+  link?: string;
+}
+
+type WorkshopTheme = "structured-runtime" | "model-serving" | "open-tooling" | "agentic-build" | "open-compute" | "intelligent-os" | "lunch-learn";
+type HighlightTheme = "frontier-demo" | "robotics-hackathon" | "agentic-hackathon";
+
+interface CardItem {
+  title: string;
+  text: string;
+  image?: string;
+  link?: string;
+  theme?: WorkshopTheme;
+}
+
+interface Props {
+  id?: string;
+  kicker?: string;
+  title: string;
+  intro?: string;
+  tracksTitle?: string;
+  tracks: Track[];
+  workshopsTitle?: string;
+  workshops?: CardItem[];
+  highlightsTitle?: string;
+  highlights?: CardItem[];
+  viewRouteLabel?: string;
+  labLabel?: string;
+  openLabel?: string;
+  enterLabel?: string;
+  titleLink?: string;
+  titleLinkLabel?: string;
+}
+
+const {
+  id = "tracks",
+  kicker = "Track Atlas",
+  title,
+  intro = "A route map for the agentic stack: each line carries a different signal, from embodied systems and open models to edge deployment and new agent runtimes.",
+  tracksTitle,
+  tracks,
+  workshopsTitle,
+  workshops,
+  highlightsTitle,
+  highlights,
+  viewRouteLabel = "View Schedule",
+  labLabel = "Lab",
+  openLabel = "View Schedule",
+  enterLabel = "Enter",
+  titleLink,
+  titleLinkLabel = "View Schedule",
+} = Astro.props;
+
+const routePalette = [
+  { from: "#8A7F5C", to: "#A89968" },
+  { from: "#C23A0C", to: "#FF7A3C" },
+  { from: "#6B6450", to: "#B3A878" },
+  { from: "#7C7050", to: "#C9BD8F" },
+  { from: "#8F8259", to: "#FF7A3C" },
+  { from: "#74694C", to: "#D0C49A" },
+  { from: "#A89968", to: "#D0C49A" },
+];
+
+const signalSets = [
+  ["MCP", "A2A", "Sovereign"],
+  ["Embodied", "Hardware", "OpenArm"],
+  ["Multimodal", "Agents", "Creative"],
+  ["On-device", "Realtime", "Compression"],
+  ["Runtime", "Coordination", "Trust"],
+  ["LLM", "Audio", "Vision"],
+  ["Systems", "Tooling", "Builders"],
+];
+
+const teaserFromText = (text: string) => {
+  const cleaned = text.replace(/\s+/g, " ").trim();
+  if (!cleaned) {
+    return "";
+  }
+
+  const firstSentence = cleaned
+    .split(/(?<=[.!?。])/)
+    .map((part) => part.trim())
+    .filter(Boolean)[0] || cleaned;
+
+  if (firstSentence.length <= 170) {
+    return firstSentence;
+  }
+  return `${firstSentence.slice(0, 167).trim()}...`;
+};
+
+const routeCodeFromTitle = (title: string, index: number) => {
+  const letters = title
+    .replace(/\(.*?\)/g, "")
+    .split(/[^A-Za-z0-9\u4e00-\u9fff]+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => {
+      const ascii = word.match(/[A-Za-z]/);
+      return ascii ? ascii[0].toUpperCase() : word[0];
+    })
+    .join("");
+
+  return `${letters || "R"}${String(index + 1).padStart(2, "0")}`;
+};
+
+const svgToDataUri = (svg: string) =>
+  `data:image/svg+xml,${encodeURIComponent(svg)
+    .replace(/%0A/g, "")
+    .replace(/%20/g, " ")}`;
+
+const workshopBackgroundSvg = (
+  theme: WorkshopTheme,
+  from: string,
+  to: string,
+) => {
+  const sharedDefs = `
+    <defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="${from}" />
+        <stop offset="100%" stop-color="${to}" />
+      </linearGradient>
+      <radialGradient id="glowA" cx="0.22" cy="0.18" r="0.72">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28" />
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="glowB" cx="0.84" cy="0.82" r="0.62">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18" />
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+      </radialGradient>
+      <pattern id="micro" width="36" height="36" patternUnits="userSpaceOnUse">
+        <path d="M0 0H36V36" fill="none" stroke="#ffffff" stroke-opacity="0.08" />
+      </pattern>
+    </defs>
+    <rect width="720" height="960" rx="48" fill="url(#bg)" />
+    <rect width="720" height="960" rx="48" fill="url(#glowA)" />
+    <rect width="720" height="960" rx="48" fill="url(#glowB)" />
+    <rect x="36" y="36" width="648" height="888" rx="40" fill="url(#micro)" opacity="0.52" />
+  `;
+
+  const themeShapes: Record<WorkshopTheme, string> = {
+    "structured-runtime": `
+      <g fill="none" stroke="#ffffff" stroke-opacity="0.34" stroke-width="8" stroke-linecap="round">
+        <path d="M128 248C216 182 330 176 412 246S558 340 608 282" />
+        <path d="M116 616C206 528 310 506 398 564S558 674 610 622" />
+      </g>
+      <g>
+        <circle cx="124" cy="250" r="18" fill="#ffffff" fill-opacity="0.55" />
+        <circle cx="420" cy="246" r="16" fill="#ffffff" fill-opacity="0.42" />
+        <circle cx="608" cy="282" r="14" fill="#ffffff" fill-opacity="0.38" />
+        <circle cx="118" cy="616" r="16" fill="#ffffff" fill-opacity="0.48" />
+        <circle cx="398" cy="564" r="14" fill="#ffffff" fill-opacity="0.36" />
+        <circle cx="610" cy="622" r="18" fill="#ffffff" fill-opacity="0.4" />
+      </g>
+      <g>
+        <rect x="172" y="318" width="378" height="244" rx="34" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.28" />
+        <rect x="204" y="356" width="140" height="56" rx="18" fill="#ffffff" fill-opacity="0.12" />
+        <rect x="362" y="356" width="156" height="56" rx="18" fill="#ffffff" fill-opacity="0.14" />
+        <rect x="204" y="434" width="314" height="22" rx="11" fill="#ffffff" fill-opacity="0.18" />
+        <rect x="204" y="478" width="220" height="22" rx="11" fill="#ffffff" fill-opacity="0.14" />
+        <rect x="438" y="478" width="80" height="22" rx="11" fill="#ffffff" fill-opacity="0.1" />
+      </g>
+    `,
+    "model-serving": `
+      <g fill="#ffffff" fill-opacity="0.1" stroke="#ffffff" stroke-opacity="0.22" stroke-width="6">
+        <path d="M202 244L360 166L518 244L360 322Z" />
+        <path d="M202 244V416L360 494V322Z" />
+        <path d="M518 244V416L360 494V322Z" />
+        <path d="M164 444L322 366L480 444L322 522Z" />
+        <path d="M164 444V616L322 694V522Z" />
+        <path d="M480 444V616L322 694V522Z" />
+      </g>
+      <g fill="none" stroke="#ffffff" stroke-opacity="0.34" stroke-width="10" stroke-linecap="round">
+        <path d="M134 746H586" />
+        <path d="M170 782H550" />
+        <path d="M208 818H512" />
+      </g>
+      <g fill="#ffffff" fill-opacity="0.5">
+        <circle cx="154" cy="746" r="14" />
+        <circle cx="586" cy="746" r="14" />
+        <circle cx="190" cy="782" r="12" />
+        <circle cx="550" cy="782" r="12" />
+      </g>
+    `,
+    "open-tooling": `
+      <g>
+        <rect x="172" y="168" width="376" height="532" rx="40" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6" />
+        <path d="M236 276H482" stroke="#ffffff" stroke-opacity="0.36" stroke-width="16" stroke-linecap="round" />
+        <path d="M236 330H440" stroke="#ffffff" stroke-opacity="0.26" stroke-width="12" stroke-linecap="round" />
+        <path d="M236 384H470" stroke="#ffffff" stroke-opacity="0.18" stroke-width="12" stroke-linecap="round" />
+        <rect x="232" y="472" width="114" height="118" rx="22" fill="#ffffff" fill-opacity="0.14" />
+        <rect x="370" y="472" width="146" height="54" rx="18" fill="#ffffff" fill-opacity="0.12" />
+        <rect x="370" y="544" width="94" height="46" rx="16" fill="#ffffff" fill-opacity="0.1" />
+      </g>
+      <g fill="none" stroke="#ffffff" stroke-opacity="0.32" stroke-width="8" stroke-linecap="round">
+        <path d="M126 746C214 692 272 692 350 742S496 796 602 728" />
+      </g>
+      <g fill="#ffffff" fill-opacity="0.46">
+        <circle cx="128" cy="746" r="16" />
+        <circle cx="350" cy="742" r="14" />
+        <circle cx="602" cy="728" r="16" />
+      </g>
+    `,
+  };
+
+  return svgToDataUri(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" fill="none">
+      ${sharedDefs}
+      ${themeShapes[theme]}
+    </svg>
+  `);
+};
+
+const highlightBackgroundSvg = (
+  theme: HighlightTheme,
+  from: string,
+  to: string,
+) => {
+  const sharedDefs = `
+    <defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="${from}" />
+        <stop offset="100%" stop-color="${to}" />
+      </linearGradient>
+      <radialGradient id="glowA" cx="0.22" cy="0.18" r="0.74">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.24" />
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+      </radialGradient>
+      <radialGradient id="glowB" cx="0.78" cy="0.82" r="0.68">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18" />
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+      </radialGradient>
+      <pattern id="micro" width="34" height="34" patternUnits="userSpaceOnUse">
+        <path d="M0 0H34V34" fill="none" stroke="#ffffff" stroke-opacity="0.08" />
+      </pattern>
+    </defs>
+    <rect width="720" height="960" rx="48" fill="url(#bg)" />
+    <rect width="720" height="960" rx="48" fill="url(#glowA)" />
+    <rect width="720" height="960" rx="48" fill="url(#glowB)" />
+    <rect x="36" y="36" width="648" height="888" rx="40" fill="url(#micro)" opacity="0.5" />
+  `;
+
+  const themeShapes: Record<HighlightTheme, string> = {
+    "frontier-demo": `
+      <g fill="none" stroke="#ffffff" stroke-opacity="0.34" stroke-width="10" stroke-linecap="round">
+        <path d="M140 722L240 466L360 250L480 466L580 722" />
+        <path d="M220 722L300 500L360 386L420 500L500 722" />
+      </g>
+      <g fill="#ffffff" fill-opacity="0.12">
+        <ellipse cx="360" cy="746" rx="212" ry="82" />
+        <rect x="206" y="208" width="308" height="54" rx="27" />
+      </g>
+      <g fill="#ffffff" fill-opacity="0.46">
+        <circle cx="240" cy="466" r="16" />
+        <circle cx="360" cy="250" r="22" />
+        <circle cx="480" cy="466" r="16" />
+      </g>
+    `,
+    "robotics-hackathon": `
+      <g fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M196 706L286 590L360 452L438 330L534 248" />
+        <path d="M164 778H560" />
+      </g>
+      <g fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.26" stroke-width="6">
+        <rect x="298" y="232" width="168" height="86" rx="26" />
+        <rect x="252" y="350" width="160" height="72" rx="24" />
+        <rect x="156" y="760" width="408" height="52" rx="26" />
+      </g>
+      <g fill="#ffffff" fill-opacity="0.48">
+        <circle cx="286" cy="590" r="18" />
+        <circle cx="360" cy="452" r="22" />
+        <circle cx="438" cy="330" r="18" />
+        <circle cx="534" cy="248" r="16" />
+      </g>
+    `,
+    "agentic-hackathon": `
+      <g fill="none" stroke="#ffffff" stroke-opacity="0.32" stroke-width="8" stroke-linecap="round">
+        <path d="M136 238C228 178 312 176 394 234S550 316 594 266" />
+        <path d="M124 626C230 564 304 562 382 620S540 716 602 676" />
+        <path d="M190 396H528" />
+      </g>
+      <g fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.24" stroke-width="6">
+        <rect x="194" y="320" width="132" height="112" rx="28" />
+        <rect x="360" y="320" width="164" height="112" rx="28" />
+        <rect x="242" y="470" width="236" height="90" rx="26" />
+      </g>
+      <g fill="#ffffff" fill-opacity="0.46">
+        <circle cx="136" cy="238" r="16" />
+        <circle cx="394" cy="234" r="18" />
+        <circle cx="594" cy="266" r="14" />
+        <circle cx="124" cy="626" r="16" />
+        <circle cx="382" cy="620" r="18" />
+        <circle cx="602" cy="676" r="14" />
+      </g>
+    `,
+  };
+
+  return svgToDataUri(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 960" fill="none">
+      ${sharedDefs}
+      ${themeShapes[theme]}
+    </svg>
+  `);
+};
+
+const trackCards = tracks.map((track, index) => {
+  const accent = routePalette[index % routePalette.length];
+  const signals = signalSets[index % signalSets.length];
+
+  return {
+    ...track,
+    accent,
+    signals,
+    teaser: teaserFromText(track.text),
+    code: routeCodeFromTitle(track.title, index),
+    anchor: `track-route-${index + 1}`,
+  };
+});
+
+const workshopThemeMeta: Record<
+  WorkshopTheme,
+  { accent: { from: string; to: string } }
+> = {
+  "structured-runtime": {
+    accent: { from: "#8A7F5C", to: "#A89968" },
+  },
+  "model-serving": {
+    accent: { from: "#C23A0C", to: "#FF7A3C" },
+  },
+  "open-tooling": {
+    accent: { from: "#7C7050", to: "#C9BD8F" },
+  },
+  "agentic-build": {
+    accent: { from: "#8A7F5C", to: "#A89968" },
+  },
+  "open-compute": {
+    accent: { from: "#6B6450", to: "#B3A878" },
+  },
+  "intelligent-os": {
+    accent: { from: "#8F8259", to: "#FF7A3C" },
+  },
+  "lunch-learn": {
+    accent: { from: "#A89968", to: "#D0C49A" },
+  },
+};
+
+const inferWorkshopTheme = (item: CardItem): WorkshopTheme => {
+  if (item.theme) {
+    return item.theme;
+  }
+
+  const text = `${item.title} ${item.text}`.toLowerCase();
+  if (text.includes("sglang")) return "structured-runtime";
+  if (text.includes("vllm")) return "model-serving";
+  if (text.includes("agentic app")) return "agentic-build";
+  if (text.includes("open compute") || text.includes("flagos")) return "open-compute";
+  if (text.includes("openharmony")) return "intelligent-os";
+  if (text.includes("lunch") || text.includes("fundamental")) return "lunch-learn";
+  return "open-tooling";
+};
+
+const workshopCards = (workshops || []).map((item, index) => {
+  const theme = inferWorkshopTheme(item);
+  const themeMeta = workshopThemeMeta[theme];
+  return {
+    ...item,
+    theme,
+    accent: themeMeta.accent,
+    background: workshopBackgroundSvg(theme, themeMeta.accent.from, themeMeta.accent.to),
+    code: `WS-${String(index + 1).padStart(2, "0")}`,
+  };
+});
+
+const highlightThemeMeta: Record<
+  HighlightTheme,
+  { accent: { from: string; to: string }; label: string; codePrefix: string }
+> = {
+  "frontier-demo": {
+    accent: { from: "#C23A0C", to: "#FF7A3C" },
+    label: "Spotlight",
+    codePrefix: "SP",
+  },
+  "robotics-hackathon": {
+    accent: { from: "#8A7F5C", to: "#A89968" },
+    label: "Hackathon",
+    codePrefix: "RB",
+  },
+  "agentic-hackathon": {
+    accent: { from: "#7C7050", to: "#C9BD8F" },
+    label: "Hackathon",
+    codePrefix: "AG",
+  },
+};
+
+const inferHighlightTheme = (item: CardItem): HighlightTheme => {
+  const text = `${item.title} ${item.text}`.toLowerCase();
+  if (text.includes("robot") || text.includes("openarm")) {
+    return "robotics-hackathon";
+  }
+  if (text.includes("agent")) {
+    return "agentic-hackathon";
+  }
+  return "frontier-demo";
+};
+
+const highlightCards = (highlights || []).map((item, index) => {
+  const theme = inferHighlightTheme(item);
+  const themeMeta = highlightThemeMeta[theme];
+  return {
+    ...item,
+    theme,
+    accent: themeMeta.accent,
+    badge: themeMeta.label,
+    code: `${themeMeta.codePrefix}-${String(index + 1).padStart(2, "0")}`,
+    background: highlightBackgroundSvg(theme, themeMeta.accent.from, themeMeta.accent.to),
+  };
+});
+---
+
+<section
+  class="section section-track-atlas"
+  id={id}
+  data-theme-section="light"
+  data-bg-section="lightgray"
+  data-scroll-section
+>
+  <div class="track-atlas-noise"></div>
+  <div class="container">
+    <div class="track-atlas-header">
+      <span class="track-atlas-kicker animate-fade-in">{kicker}</span>
+      <div class="track-atlas-title-row animate-fade-in animate-delay-1">
+        <h2 class="track-atlas-title">{title}</h2>
+        {titleLink && (
+          <a href={titleLink} class="track-atlas-title-link">{titleLinkLabel} →</a>
+        )}
+      </div>
+      <p class="track-atlas-intro animate-fade-in animate-delay-2">
+        {intro}
+      </p>
+    </div>
+
+    {tracksTitle && <h3 class="track-section-title animate-fade-in">{tracksTitle}</h3>}
+
+    <div class="track-route-strip animate-fade-in animate-delay-1">
+      {
+        trackCards.map((track) => (
+          <a
+            href={`#${track.anchor}`}
+            class="route-chip"
+            style={`--accent-from:${track.accent.from}; --accent-to:${track.accent.to};`}
+          >
+            <span class="route-chip-code">{track.code}</span>
+            <span class="route-chip-title">{track.title}</span>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="track-route-board">
+      <div class="track-route-spine"></div>
+      {
+        trackCards.map((track, index) => (
+          <article
+            id={track.anchor}
+            class={`track-station animate-slide-up ${index % 2 === 0 ? "is-left" : "is-right"}`}
+            style={`--accent-from:${track.accent.from}; --accent-to:${track.accent.to}; --stagger:${index};`}
+            data-href={track.link || undefined}
+          >
+            <div class="track-stop">
+              <span class="track-stop-dot"></span>
+              <span class="track-stop-code">{track.code}</span>
+            </div>
+
+            <div class="track-panel">
+              <div class="track-panel-top">
+                <span class="track-panel-index">{String(index + 1).padStart(2, "0")}</span>
+                {track.link && <a href={track.link} class="track-visit-link">{viewRouteLabel} &rarr;</a>}
+              </div>
+
+              <h4>{track.title}</h4>
+              <p class="track-teaser">{track.teaser}</p>
+
+              <div class="track-signal-row">
+                {
+                  track.signals.map((signal) => (
+                    <span class="track-signal-pill">{signal}</span>
+                  ))
+                }
+              </div>
+
+              <div class="track-desc-wrap">
+                <p class="track-desc">{track.text}</p>
+              </div>
+
+              <div class="track-panel-footer">
+                <span class="track-scanline"></span>
+                <span class="track-chevron"></span>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    {workshopsTitle && workshopCards.length > 0 && (
+      <>
+        <h3 class="track-section-title animate-fade-in">{workshopsTitle}</h3>
+        <div class="support-grid">
+          {
+            workshopCards.map((item, index) => (
+              <article
+                class="support-card support-card-workshop animate-slide-up"
+                data-workshop-theme={item.theme}
+                data-href={item.link || undefined}
+                style={`--accent-from:${item.accent.from}; --accent-to:${item.accent.to}; --stagger:${index}; --workshop-bg:url('${item.background}');`}
+              >
+                <div class="support-workshop-grid"></div>
+                <div class="support-workshop-vignette"></div>
+                <div class="support-workshop-wash"></div>
+
+                <div class="support-workshop-content">
+                  <div class="support-card-top">
+                    <span class="support-card-label">{labLabel}</span>
+                    <span class="support-card-code">{item.code}</span>
+                  </div>
+
+                  <div class="support-workshop-overlay">
+                    <div class="support-workshop-meta">
+                      <span class="support-workshop-rule"></span>
+                      {item.link && (
+                        <a
+                          href={item.link}
+                          class="support-link"
+                          target={item.link.startsWith("http") ? "_blank" : undefined}
+                          rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                        >
+                          {openLabel} &rarr;
+                        </a>
+                      )}
+                    </div>
+
+                    <h4>{item.title}</h4>
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </>
+    )}
+
+    {highlightsTitle && highlightCards.length > 0 && (
+      <>
+        <h3 class="track-section-title animate-fade-in">{highlightsTitle}</h3>
+        <div class="support-grid support-grid-highlights">
+          {
+            highlightCards.map((item, index) => (
+              <article
+                class="support-card support-card-workshop support-card-highlight-immersive highlight-card animate-slide-up"
+                data-highlight-theme={item.theme}
+                style={`--accent-from:${item.accent.from}; --accent-to:${item.accent.to}; --stagger:${index}; --workshop-bg:url('${item.background}');`}
+              >
+                <div class="support-workshop-grid"></div>
+                <div class="support-workshop-vignette"></div>
+                <div class="support-workshop-wash"></div>
+
+                <div class="support-workshop-content">
+                  <div class="support-card-top">
+                    <span class="support-card-label">{item.badge}</span>
+                    <span class="support-card-code">{item.code}</span>
+                  </div>
+
+                  <div class="support-workshop-overlay">
+                    <div class="support-workshop-meta">
+                      <span class="support-workshop-rule"></span>
+                      {item.link && (
+                        <a
+                          href={item.link}
+                          class="support-link"
+                          target={item.link.startsWith("http") ? "_blank" : undefined}
+                          rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                        >
+                          {enterLabel} &rarr;
+                        </a>
+                      )}
+                    </div>
+                    <h4>{item.title}</h4>
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </>
+    )}
+  </div>
+</section>
+
+<script>
+  function initTrackAtlas() {
+    const targets = document.querySelectorAll(
+      ".section-track-atlas .animate-fade-in, .section-track-atlas .animate-slide-up",
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
+    );
+
+    targets.forEach((target) => observer.observe(target));
+
+    document.querySelectorAll(".section-track-atlas .support-card[data-href]").forEach((card) => {
+      if (card.dataset.initialized === "true") return;
+      card.dataset.initialized = "true";
+      card.style.cursor = "pointer";
+      card.addEventListener("click", (event) => {
+        if (event.target.closest("a")) return;
+        window.location.href = card.dataset.href;
+      });
+    });
+
+    document.querySelectorAll(".section-track-atlas .track-station").forEach((station) => {
+      if (station.dataset.initialized === "true") {
+        return;
+      }
+
+      station.dataset.initialized = "true";
+      station.addEventListener("click", (event) => {
+        if (event.target.closest(".track-visit-link")) {
+          return;
+        }
+        if (station.dataset.href) {
+          window.location.href = station.dataset.href;
+          return;
+        }
+        station.classList.toggle("expanded");
+      });
+    });
+  }
+
+  initTrackAtlas();
+  document.addEventListener("astro:page-load", initTrackAtlas);
+</script>
+
+<style>
+  .section-track-atlas {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #1B1912 0%, #161410 100%);
+  }
+
+  .track-atlas-noise {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(234, 230, 210, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(234, 230, 210, 0.07) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), transparent);
+  }
+
+  .section-track-atlas .container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .track-atlas-header {
+    display: grid;
+    gap: 0.8rem;
+    max-width: 48rem;
+  }
+
+  .track-atlas-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(234, 230, 210, 0.75);
+  }
+
+  .track-atlas-kicker::before {
+    content: "";
+    width: 3rem;
+    height: 1px;
+    background: linear-gradient(90deg, #F84A10, transparent);
+  }
+
+  .track-atlas-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .track-atlas-title {
+    margin: 0;
+    font-size: clamp(2.4rem, 4vw, 4.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    color: #EAE6D2;
+  }
+
+  .track-atlas-title-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #F84A10;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 0.6rem 1.25rem;
+    border: 2px solid #F84A10;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+  }
+
+  .track-atlas-title-link:hover {
+    background: #F84A10;
+    color: #EAE6D2;
+  }
+
+  .track-atlas-intro {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(234, 230, 210, 0.75);
+  }
+
+  .track-section-title {
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(234, 230, 210, 0.8);
+  }
+
+  .track-route-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .route-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    min-height: 3rem;
+    padding: 0.75rem 0.95rem;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 2px solid #0A0908;
+    background: rgba(32, 30, 22, 0.85);
+    box-shadow: 0 14px 24px rgba(234, 230, 210, 0.14);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .route-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 28px rgba(234, 230, 210, 0.14);
+  }
+
+  .route-chip-code {
+    display: inline-grid;
+    place-items: center;
+    min-width: 3rem;
+    height: 2rem;
+    padding: 0 0.55rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+  }
+
+  .route-chip-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: rgba(234, 230, 210, 0.78);
+  }
+
+  .track-route-board {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 3.2rem minmax(0, 1fr);
+    gap: 0.85rem 0.95rem;
+    align-items: start;
+    padding: 0.65rem 0 0.2rem;
+  }
+
+  .track-route-spine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(168, 153, 104, 0.12), rgba(168, 153, 104, 0.35), rgba(168, 153, 104, 0.12));
+  }
+
+  .track-route-spine::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.6));
+    mix-blend-mode: screen;
+  }
+
+  .track-station[data-href] {
+    cursor: pointer;
+  }
+
+  .track-station {
+    position: relative;
+    display: grid;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .track-station.is-left {
+    grid-column: 1 / 2;
+    grid-template-columns: minmax(0, 1fr) 2.8rem;
+  }
+
+  .track-station.is-right {
+    grid-column: 3 / 4;
+    grid-template-columns: 2.8rem minmax(0, 1fr);
+    margin-top: 0.85rem;
+  }
+
+  .track-station::before {
+    content: "";
+    position: absolute;
+    top: 1.55rem;
+    width: clamp(0.9rem, 4vw, 2.2rem);
+    height: 2px;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--accent-from) 38%, transparent), transparent);
+    pointer-events: none;
+  }
+
+  .track-station.is-left::before {
+    right: 1.85rem;
+  }
+
+  .track-station.is-right::before {
+    left: 1.85rem;
+    transform: scaleX(-1);
+  }
+
+  .track-stop {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
+  }
+
+  .track-stop-dot {
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 50%;
+    border: 5px solid rgba(26, 24, 17, 0.9);
+    background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--accent-from) 28%, transparent),
+      0 0 24px color-mix(in srgb, var(--accent-to) 24%, transparent);
+  }
+
+  .track-stop-code {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(234, 230, 210, 0.5);
+  }
+
+  .track-panel {
+    position: relative;
+    display: grid;
+    gap: 0.8rem;
+    padding: 1.2rem 1.25rem;
+    border-radius: 1.7rem;
+    border: 2px solid #0A0908;
+    background:
+      linear-gradient(180deg, rgba(32, 30, 22, 0.95), rgba(26, 24, 17, 0.9)),
+      radial-gradient(circle at top left, color-mix(in srgb, var(--accent-from) 12%, transparent), transparent 55%);
+    box-shadow: 0 24px 50px rgba(234, 230, 210, 0.14);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .track-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(140deg, color-mix(in srgb, var(--accent-from) 28%, transparent), transparent 40%, color-mix(in srgb, var(--accent-to) 18%, transparent));
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .track-panel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 28px 50px rgba(234, 230, 210, 0.14);
+  }
+
+  .track-station.is-left .track-stop {
+    order: 2;
+  }
+
+  .track-station.is-left .track-panel {
+    order: 1;
+  }
+
+  .track-station.is-right .track-stop {
+    order: 1;
+  }
+
+  .track-station.is-right .track-panel {
+    order: 2;
+    grid-column: auto;
+  }
+
+  .track-panel-top,
+  .track-panel-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .track-panel-index {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(234, 230, 210, 0.42);
+  }
+
+  .track-visit-link,
+  .support-link {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(234, 230, 210, 0.62);
+  }
+
+  .track-panel h4,
+  .support-card h4 {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #EAE6D2;
+  }
+
+  .track-teaser,
+  .support-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(234, 230, 210, 0.74);
+  }
+
+  .track-signal-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  .track-signal-pill,
+  .support-card-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(234, 230, 210, 0.75);
+    background: color-mix(in srgb, var(--accent-from) 18%, rgba(28, 26, 19, 0.92));
+    border: 1px solid color-mix(in srgb, var(--accent-from) 30%, transparent);
+  }
+
+  .track-desc-wrap {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .track-station.expanded .track-desc-wrap {
+    max-height: 40rem;
+  }
+
+  .track-desc {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: rgba(234, 230, 210, 0.66);
+  }
+
+  .track-scanline {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--accent-from) 35%, transparent), transparent);
+  }
+
+  .track-chevron {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-right: 2px solid rgba(234, 230, 210, 0.14);
+    border-bottom: 2px solid rgba(168, 153, 104, 0.45);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+
+  .track-station.expanded .track-chevron {
+    transform: rotate(-135deg);
+  }
+
+  .support-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .support-card {
+    display: grid;
+    gap: 0.9rem;
+    padding: 1.3rem;
+    border-radius: 1.5rem;
+    border: 2px solid #0A0908;
+    background:
+      linear-gradient(180deg, rgba(32, 30, 22, 0.95), rgba(26, 24, 17, 0.9)),
+      radial-gradient(circle at top right, color-mix(in srgb, var(--accent-from) 14%, transparent), transparent 55%);
+    box-shadow: 0 22px 38px rgba(234, 230, 210, 0.14);
+  }
+
+  .support-card-workshop {
+    position: relative;
+    display: flex;
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: clamp(18rem, 24vw, 22rem);
+    background-color: color-mix(in srgb, var(--accent-from) 18%, #0f172a);
+    background-image: var(--workshop-bg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .support-card-workshop::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--accent-from) 28%, transparent),
+      rgba(255, 255, 255, 0.32) 38%,
+      color-mix(in srgb, var(--accent-to) 18%, transparent)
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .support-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .support-workshop-grid {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 1.45rem 1.45rem;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 85%);
+    opacity: 0.42;
+    z-index: 1;
+  }
+
+  .support-workshop-vignette {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 18% 16%, color-mix(in srgb, var(--accent-from) 30%, transparent), transparent 32%),
+      radial-gradient(circle at 84% 14%, color-mix(in srgb, var(--accent-to) 28%, transparent), transparent 24%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(2, 6, 23, 0.2) 52%, rgba(2, 6, 23, 0.38));
+    z-index: 2;
+  }
+
+  .support-workshop-wash {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--accent-from) 24%, rgba(255, 255, 255, 0.16)),
+        color-mix(in srgb, var(--accent-to) 22%, rgba(255, 255, 255, 0.1))
+      ),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(2, 6, 23, 0.08) 24%, rgba(2, 6, 23, 0.3) 100%);
+    opacity: 0.72;
+    z-index: 3;
+  }
+
+  .support-workshop-content {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    min-height: inherit;
+    padding: 1rem;
+  }
+
+  .support-card-workshop .support-card-top {
+    position: relative;
+    align-self: start;
+  }
+
+  .support-card-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(248, 250, 252, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
+    box-shadow: 0 12px 22px rgba(234, 230, 210, 0.14);
+  }
+
+  .support-card-workshop .support-card-label {
+    color: rgba(248, 250, 252, 0.82);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.07));
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 12px 22px rgba(234, 230, 210, 0.14);
+  }
+
+  .support-workshop-overlay {
+    position: relative;
+    display: grid;
+    gap: 0.9rem;
+    align-self: start;
+    justify-self: center;
+    width: min(86%, 24rem);
+    margin: 0 auto auto;
+    padding: 1.15rem 1.2rem 1.2rem;
+    border-radius: 1.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.14));
+    box-shadow: 0 18px 36px rgba(234, 230, 210, 0.14);
+  }
+
+  .support-workshop-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .support-workshop-rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.72),
+      color-mix(in srgb, var(--accent-to) 32%, rgba(255, 255, 255, 0.2))
+    );
+  }
+
+  .support-card-workshop .support-workshop-overlay h4,
+  .support-card-workshop .support-workshop-overlay p,
+  .support-card-workshop .support-link {
+    color: rgba(248, 250, 252, 0.96);
+  }
+
+  .support-card-workshop .support-workshop-overlay p {
+    color: rgba(248, 250, 252, 0.88);
+  }
+
+  .support-card-workshop .support-link {
+    text-shadow: 0 1px 2px rgba(2, 6, 23, 0.28);
+  }
+
+  .highlight-card {
+    min-height: 100%;
+  }
+
+  .support-card-highlight-immersive {
+    min-height: clamp(26rem, 36vw, 33rem);
+  }
+
+  .support-card-highlight-immersive .support-workshop-overlay {
+    width: min(88%, 26rem);
+  }
+
+  .animate-fade-in,
+  .animate-slide-up {
+    opacity: 0;
+    transition:
+      opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: calc(0.1s * var(--stagger, 0));
+  }
+
+  .animate-fade-in {
+    transform: translateY(18px);
+  }
+
+  .animate-slide-up {
+    transform: translateY(40px) scale(0.98);
+  }
+
+  .animate-fade-in.is-visible,
+  .animate-slide-up.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .animate-delay-1 {
+    transition-delay: 0.14s;
+  }
+
+  .animate-delay-2 {
+    transition-delay: 0.28s;
+  }
+
+  @media (max-width: 980px) {
+    .track-route-board {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      padding-top: 0.4rem;
+    }
+
+    .track-route-spine {
+      left: 1.15rem;
+      transform: none;
+    }
+
+    .track-station,
+    .track-station.is-left,
+    .track-station.is-right {
+      grid-column: 1 / -1;
+      grid-template-columns: 2.3rem minmax(0, 1fr);
+      margin-top: 0;
+    }
+
+    .track-stop,
+    .track-station.is-left .track-stop,
+    .track-station.is-right .track-stop {
+      order: 1;
+    }
+
+    .track-station.is-left .track-panel,
+    .track-station.is-right .track-panel {
+      order: 2;
+      grid-column: 2 / 3;
+    }
+
+    .track-station::before {
+      display: none;
+    }
+
+    .support-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .track-route-strip {
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      flex-wrap: nowrap;
+    }
+
+    .route-chip {
+      min-width: 15rem;
+    }
+
+    .track-panel {
+      padding: 1.1rem;
+    }
+
+    .track-panel h4 {
+      font-size: 1.25rem;
+    }
+
+    .support-card-workshop {
+      min-height: 17rem;
+    }
+
+    .support-workshop-overlay {
+      width: min(90%, 23rem);
+    }
+
+    .support-card-highlight-immersive {
+      min-height: 24rem;
+    }
+
+    .support-card-highlight-immersive .support-workshop-overlay {
+      width: min(92%, 24rem);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .support-workshop-overlay {
+      width: auto;
+    }
+  }
+</style>

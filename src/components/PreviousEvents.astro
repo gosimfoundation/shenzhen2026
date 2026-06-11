@@ -1,0 +1,168 @@
+---
+// Packages
+import { Picture } from 'astro:assets';
+
+interface Props {
+	id?: string,
+	title: string,
+    events?: Array<{
+        title: string,
+        date: string,
+        description: string,
+        image: any,
+        link: string,
+    }>,
+}
+
+const { id, title, events } = Astro.props;
+---
+
+<section
+    id={id}
+    class="section section-resources-featured"
+    data-theme-section="light"
+    data-bg-section="lightgray"
+>
+    <div class="container wide">
+        <div class="row">
+            <div class="col">
+                <h2>{title}</h2>
+            </div>
+        </div>
+
+        <div
+            class="flickity-slider-group three-col count-3"
+            data-flickity-slider-type="cards"
+        >
+            <div class="carousel-container">
+                <button
+                    class="carousel-arrow carousel-arrow-prev"
+                    data-flickity-control="prev"
+                    aria-label="Previous events"
+                >
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M15 18L9 12L15 6"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <div class="flickity-carousel">
+                {events?.map((loop) => (
+                    <div class="flickity-slide">
+                        <a
+                            href={loop.link}
+                            target="_blank"
+                            class="single-resources-card"
+                        >
+                            <div class="card-row card-row-image">
+                                <div class="card-image">
+                                    {loop?.image &&
+                                        <Picture
+                                            src={loop.image}
+                                            formats={['webp', 'jpg']}
+                                            alt={loop.title}
+                                            widths={[225, 450, 600, 1000]}
+                                            sizes="(max-width: 480px) 55vw, 500px"
+                                        />
+                                    }
+                                </div>
+                            </div>
+                            <div class="card-row card-row-info">
+                                <h3 class="h5">{loop.title}</h3>
+                                <p class="dateb">{loop.date}</p>
+                                <p>{loop.description}</p>
+                            </div>
+                        </a>
+                    </div>
+                ))}
+                </div>
+                <button
+                    class="carousel-arrow carousel-arrow-next"
+                    data-flickity-control="next"
+                    aria-label="Next events"
+                >
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M9 18L15 12L9 6"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+  .carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .carousel-arrow {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .carousel-arrow:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+  }
+
+  .carousel-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .carousel-arrow svg {
+    color: #333;
+  }
+
+  .flickity-carousel {
+    flex: 1;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-arrow {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .carousel-arrow svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+</style>

@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bilingual Schedule Schema",
+  "description": "Schema for validating the unified bilingual schedule format",
+  "type": "object",
+  "required": ["days", "categories", "sessions"],
+  "properties": {
+    "days": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "title", "url"],
+        "properties": {
+          "date": { "$ref": "#/definitions/bilingualText" },
+          "title": { "$ref": "#/definitions/bilingualText" },
+          "url": { "$ref": "#/definitions/bilingualText" }
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "room", "id"],
+        "properties": {
+          "name": { "$ref": "#/definitions/bilingualText" },
+          "room": { "$ref": "#/definitions/bilingualText" },
+          "id": { "type": "string" }
+        }
+      }
+    },
+    "sessions": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z0-9-]+$": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["date", "timeSlot", "title", "content", "speakers"],
+            "properties": {
+              "date": { "$ref": "#/definitions/bilingualText" },
+              "timeSlot": { "type": "string" },
+              "title": { "$ref": "#/definitions/bilingualText" },
+              "content": { "$ref": "#/definitions/bilingualText" },
+              "speakers": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["id", "name", "roleOrg", "tags", "image"],
+                  "properties": {
+                    "id": { "type": "string" },
+                    "name": { "$ref": "#/definitions/bilingualText" },
+                    "roleOrg": { "$ref": "#/definitions/bilingualText" },
+                    "tags": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    },
+                    "image": { "type": "string" }
+                  }
+                }
+              },
+              "category": { "type": "string" },
+              "isSpecialEvent": { "type": "boolean" },
+              "room": { "$ref": "#/definitions/bilingualText" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "bilingualText": {
+      "type": "object",
+      "required": ["en", "zh"],
+      "properties": {
+        "en": { "type": "string" },
+        "zh": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

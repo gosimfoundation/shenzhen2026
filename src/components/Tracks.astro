@@ -1,0 +1,193 @@
+---
+// src/components/Tracks.astro
+
+// 1. Component Imports
+import Button from "components/Button.astro"
+
+// 2. Component Props Interface
+interface Props {
+    id?: string,
+    title: string,
+    tracksTitle?: string,
+    workshopsTitle?: string,
+    coLocatedEventsTitle?: string,
+    tracks?: Array<{
+        title: string,
+        text: string,
+    }>,
+    workshops?: Array<{
+        title: string,
+        text: string,
+    }>,
+    coLocatedEvents?: Array<{
+        title: string,
+        text: string,
+    }>,
+    ctaButton: {
+        text: string,
+        link: string,
+    }
+}
+
+// 3. Get props
+const {
+    id = "none",
+    title,
+    tracksTitle,
+    workshopsTitle,
+    coLocatedEventsTitle,
+    tracks,
+    workshops,
+    coLocatedEvents,
+    ctaButton
+} = Astro.props;
+---
+
+<!-- 4. Component Template (HTML) -->
+<section
+    class="section section-agenda-grid"
+    id={id}
+    data-theme-section="light"
+    data-bg-section="light"
+    data-scroll-section
+>
+    <div class="container">
+        <!-- Main Title -->
+        <div class="row justify-center">
+            <div class="col col-title">
+                <h2>{title}</h2>
+            </div>
+        </div>
+
+        <!-- Section 1: Tracks -->
+        <div class="grid-section">
+            <h3>{tracksTitle}</h3>
+            <div class="grid-container tracks-grid">
+                {tracks?.map((loop) => (
+                    <div class="grid-item">
+                        <h5>{loop.title}</h5>
+                        <p>{loop.text ?? 'Description not available.'}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- Section 2: Workshops -->
+        <div class="grid-section">
+            <h3>{workshopsTitle}</h3>
+            <div class="grid-container workshops-grid">
+                {workshops?.map((loop) => (
+                    <div class="grid-item is-workshop">
+                        <h5>{loop.title}</h5>
+                        <p>{loop.text ?? 'Description not available.'}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- Section 3: Co-Located Events -->
+        <div class="grid-section">
+            <h3>{coLocatedEventsTitle}</h3>
+            <div class="grid-container events-grid">
+                {coLocatedEvents?.map((loop) => (
+                    <div class="grid-item is-event">
+                        <h5>{loop.title}</h5>
+                        <p>{loop.text ?? 'Description not available.'}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+
+        <!-- Call to Action Button -->
+        <div class="row row-custom">
+            <div class="col">
+                <Button
+                    text={ctaButton.text}
+                    link={ctaButton.link}
+                    class="btn outline btn-hover xl"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. Component Styles -->
+<style>
+    .justify-center {
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+    .col-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .grid-section {
+        margin-bottom: 3rem;
+    }
+
+    .grid-section h3 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .grid-container {
+        display: grid;
+        gap: 1rem;
+    }
+    
+    /* Specific grid layouts */
+    .tracks-grid, .workshops-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .events-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .grid-item {
+        padding: 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        background-color: #fafafa;
+    }
+
+    .grid-item h5 {
+        margin: 0 0 0.25rem;
+        font-size: 1rem;
+    }
+
+    .grid-item p {
+        font-size: 0.9rem;
+        margin: 0;
+        color: #555;
+    }
+
+    .grid-item.is-workshop {
+        background-color: #f0f5ff; /* light blue */
+    }
+    
+    .grid-item.is-event {
+        background-color: #f0fff5; /* light green */
+    }
+
+    .row-custom {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    @media (max-width: 992px) {
+        .tracks-grid, .workshops-grid, .events-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 576px) {
+        .tracks-grid, .workshops-grid, .events-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+

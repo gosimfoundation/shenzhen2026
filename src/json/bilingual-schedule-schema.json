@@ -1,0 +1,187 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bilingual Schedule Data Schema",
+  "description": "JSON Schema for validating bilingual schedule data structure",
+  "type": "object",
+  "required": ["days", "categories", "sessions"],
+  "properties": {
+    "days": {
+      "type": "array",
+      "description": "Array of conference days",
+      "items": {
+        "$ref": "#/definitions/BilingualDay"
+      }
+    },
+    "categories": {
+      "type": "array",
+      "description": "Array of session categories",
+      "items": {
+        "$ref": "#/definitions/BilingualCategory"
+      }
+    },
+    "sessions": {
+      "type": "object",
+      "description": "Sessions organized by category ID",
+      "patternProperties": {
+        "^[a-z0-9-]+$": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BilingualSession"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "BilingualText": {
+      "type": "object",
+      "description": "Text object with English, Chinese, and optionally French versions",
+      "properties": {
+        "en": {
+          "type": "string",
+          "description": "English text",
+          "minLength": 1
+        },
+        "zh": {
+          "type": "string",
+          "description": "Chinese text",
+          "minLength": 1
+        },
+        "fr": {
+          "type": "string",
+          "description": "French text"
+        }
+      },
+      "anyOf": [
+        { "required": ["en"] },
+        { "required": ["zh"] }
+      ],
+      "additionalProperties": false
+    },
+    "BilingualDay": {
+      "type": "object",
+      "description": "Conference day information",
+      "required": ["date", "title", "url"],
+      "properties": {
+        "date": {
+          "$ref": "#/definitions/BilingualText",
+          "description": "Date display text"
+        },
+        "title": {
+          "$ref": "#/definitions/BilingualText",
+          "description": "Day title"
+        },
+        "url": {
+          "$ref": "#/definitions/BilingualText",
+          "description": "URL for the day's schedule"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BilingualCategory": {
+      "type": "object",
+      "description": "Session category information",
+      "required": ["name", "room", "id"],
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/BilingualText",
+          "description": "Category name"
+        },
+        "room": {
+          "$ref": "#/definitions/BilingualText",
+          "description": "Room/venue information"
+        },
+        "id": {
+          "type": "string",
+          "description": "Unique category identifier",
+          "pattern": "^[a-z0-9-]+$",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "BilingualSpeaker": {
+      "type": "object",
+      "description": "Speaker information",
+      "required": ["id", "name", "roleOrg", "tags", "image"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique speaker identifier",
+          "pattern": "^[a-z0-9-]+$",
+          "minLength": 1
+        },
+        "name": {
+          "$ref": "#/definitions/BilingualText",
+          "description": "Speaker name"
+        },
+        "roleOrg": {
+          "$ref": "#/definitions/BilingualText",
+          "description": "Speaker role and organization"
+        },
+        "tags": {
+          "type": "array",
+          "description": "Category tags for the speaker",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          }
+        },
+        "image": {
+          "type": "string",
+          "description": "Speaker image filename",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "BilingualSession": {
+      "type": "object",
+      "description": "Session information",
+      "required": ["date", "timeSlot", "title", "content", "speakers"],
+      "properties": {
+        "date": {
+          "$ref": "#/definitions/BilingualText",
+          "description": "Session date"
+        },
+        "timeSlot": {
+          "type": "string",
+          "description": "Time slot for the session",
+          "minLength": 1
+        },
+        "title": {
+          "$ref": "#/definitions/BilingualText",
+          "description": "Session title"
+        },
+        "content": {
+          "$ref": "#/definitions/BilingualText",
+          "description": "Session description/content"
+        },
+        "speakers": {
+          "type": "array",
+          "description": "Array of speakers for this session",
+          "items": {
+            "$ref": "#/definitions/BilingualSpeaker"
+          },
+          "minItems": 1
+        },
+        "category": {
+          "type": "string",
+          "description": "Category ID (optional, usually inferred from parent object)",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "isSpecialEvent": {
+          "type": "boolean",
+          "description": "Whether this is a special event"
+        },
+        "room": {
+          "$ref": "#/definitions/BilingualText",
+          "description": "Room/venue information (optional)"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

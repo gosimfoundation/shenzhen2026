@@ -1,0 +1,251 @@
+---
+// Components
+import Button from "components/Button.astro"
+
+interface Props {
+  date?: string
+  location?: string
+  subtitle?: string
+  description?: string
+  video?: string
+  poster?: string
+  image?: string
+  imageAlt?: string
+  links?: Array<{
+    text: string
+    link: string
+    openInNewTab: boolean
+    class?: string
+  }>
+}
+
+const { date, location, subtitle, description, video, poster, image, imageAlt, links } = Astro.props
+---
+
+<section
+  class="section section-home-header full-height"
+  data-theme-section="dark"
+  data-bg-section="header-home"
+>
+  <div class="overlay overlay-background overlay-background-video">
+    {video ? (
+      <div class="styled-video playpause overlay">
+        <video
+          class="overlay hero-video"
+          preload="auto"
+          autoplay
+          loop
+          muted
+          webkit-playsinline
+          playsinline
+          poster={poster}
+        >
+          <source src={video} type="video/mp4" />
+        </video>
+      </div>
+    ) : (
+      image && <img class="overlay hero-image" src={image} alt={imageAlt || ""} />
+    )}
+    <div class="overlay overlay-gradient-v2"></div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="logo-gosim-scroll">
+        <svg width="500" height="190" viewBox="0 0 85 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gosimGradient" x1="17" y1="0" x2="65" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FFFFFF">
+                <animate attributeName="stop-color" values="#FFFFFF; #C23A0C; #C23A0C; #FFFFFF" keyTimes="0; 0.2; 0.8; 1" dur="6s" repeatCount="indefinite" begin="0.5s" />
+              </stop>
+              <stop offset="50%" stop-color="#FFFFFF">
+                <animate attributeName="stop-color" values="#FFFFFF; #FF7A3C; #FF7A3C; #FFFFFF" keyTimes="0; 0.2; 0.8; 1" dur="6s" repeatCount="indefinite" begin="0.5s" />
+              </stop>
+              <stop offset="100%" stop-color="#FFFFFF">
+                <animate attributeName="stop-color" values="#FFFFFF; #EAE6D2; #EAE6D2; #FFFFFF" keyTimes="0; 0.2; 0.8; 1" dur="6s" repeatCount="indefinite" begin="0.5s" />
+              </stop>
+            </linearGradient>
+          </defs>
+          <!-- GOSIM — animated orange glow gradient -->
+          <path d="M55.9551 13.0001H53.7383V2.94971H55.3159L59.1103 8.41691L62.8775 2.94971H64.4823V13.0001H62.2383V7.68251L59.5047 11.5857H58.6887L55.9551 7.68251V13.0001Z" fill="url(#gosimGradient)"/>
+          <path d="M49.3555 13.0001V2.94971H51.6131V13.0001H49.3555Z" fill="url(#gosimGradient)"/>
+          <path d="M44.0085 13.177C42.4173 13.177 40.9893 12.5378 40.0645 11.3546L41.2885 9.74982C42.0365 10.6338 42.9477 11.0826 44.0221 11.0826C44.7837 11.0826 45.3413 10.729 45.3413 10.1714C45.3413 9.80422 45.0557 9.49142 44.4709 9.23302L43.5732 8.90662C43.002 8.68902 42.5668 8.49862 42.2812 8.34902C41.2068 7.76422 40.6629 6.90742 40.6629 5.80582C40.6629 4.93542 40.9893 4.21462 41.6557 3.64342C42.3221 3.07222 43.1925 2.78662 44.2397 2.78662C45.5725 2.78662 46.7149 3.23542 47.6533 4.11942L46.5381 5.79222C45.9533 5.23462 45.0149 4.89462 44.2669 4.89462C43.5053 4.89462 43.0701 5.23462 43.0701 5.72422C43.0701 6.06422 43.3421 6.36342 43.8861 6.60822L44.8653 7.00262C45.3821 7.20662 45.7629 7.35622 46.0213 7.47862C47.2317 8.02262 47.8301 8.87942 47.8301 10.0354C47.8301 10.9466 47.4765 11.7082 46.7693 12.293C46.0757 12.8778 45.1509 13.177 44.0085 13.177Z" fill="url(#gosimGradient)"/>
+          <path d="M28.9551 7.99535C28.9551 6.54015 29.4583 5.30255 30.4647 4.29615C31.4847 3.27615 32.7223 2.77295 34.2047 2.77295C35.6871 2.77295 36.9247 3.27615 37.9311 4.29615C38.9511 5.30255 39.4543 6.52655 39.4543 7.98175C39.4543 9.43695 38.9511 10.6609 37.9447 11.6673C36.9383 12.6601 35.6871 13.1634 34.1911 13.1634C32.6951 13.1634 31.4439 12.6601 30.4511 11.6673C29.4583 10.6745 28.9551 9.45055 28.9551 7.99535ZM34.2047 10.9465C35.0343 10.9465 35.7279 10.6609 36.2855 10.1033C36.8431 9.53215 37.1287 8.82495 37.1151 7.98175C37.1015 7.12495 36.8159 6.40415 36.2583 5.84655C35.7007 5.27535 35.0071 4.98975 34.2047 4.98975C33.3887 4.98975 32.6951 5.27535 32.1375 5.84655C31.5799 6.41775 31.2943 7.12495 31.2943 7.98175C31.2943 8.82495 31.5799 9.53215 32.1375 10.1033C32.6951 10.6609 33.3887 10.9465 34.2047 10.9465Z" fill="url(#gosimGradient)"/>
+          <path d="M23.2475 13.1497C21.7107 13.1497 20.4459 12.6601 19.4531 11.6945C18.4603 10.7153 17.9707 9.47775 17.9707 7.98175C17.9707 6.47215 18.4875 5.22095 19.5075 4.24175C20.5275 3.26255 21.8059 2.77295 23.3155 2.77295C24.9339 2.77295 26.4027 3.41215 27.3275 4.33695L25.8859 5.96895C25.1515 5.27535 24.2947 4.93535 23.3019 4.93535C22.4179 4.93535 21.6971 5.22095 21.1259 5.80575C20.5547 6.37695 20.2691 7.09775 20.2691 7.95455C20.2691 8.81135 20.5547 9.53215 21.1123 10.1169C21.6699 10.7017 22.4043 11.0009 23.2883 11.0009C24.2675 11.0009 25.2331 10.5929 25.7907 10.0489V8.89295H23.2339V6.96175H27.8307V11.1913C26.5251 12.497 25.0019 13.1497 23.2475 13.1497Z" fill="url(#gosimGradient)"/>
+          <!-- SHENZHEN — pure white, large -->
+          <text
+            x="42.5"
+            y="33"
+            text-anchor="middle"
+            font-family="'Helvetica Neue', Arial, sans-serif"
+            font-size="16"
+            font-weight="700"
+            fill="#FFFFFF"
+            textLength="80"
+            lengthAdjust="spacing"
+          >Shenzhen</text>
+          </svg>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-bottom-box">
+    <div class="container">
+      <div class="hero-content-row">
+        <div class="hero-text-left">
+          {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+          {description && <p class="hero-description">{description}</p>}
+        </div>
+
+        {(date || location) && (
+          <div class="hero-date-block">
+            {date && <p class="hero-date">{date}</p>}
+            {location && <p class="hero-location">{location}</p>}
+          </div>
+        )}
+      </div>
+
+      <div class="btn-home-wrap">
+        {
+          links?.map((loop) => (
+            <Button
+              text={loop.text}
+              link={loop.link}
+              openInNewTab={loop?.openInNewTab}
+              class={loop.class || "btn xl btn-hover fade-in-last"}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .overlay-background-video {
+    opacity: 0.9;
+    z-index: 0;
+  }
+
+  .section-home-header .logo-gosim-scroll {
+    z-index: 3;
+  }
+
+  .hero-bottom-box {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    z-index: 4;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.55rem, 1.2rem + 0.7vw, 2rem);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.18;
+    opacity: 0.98;
+    color: rgba(255, 255, 255, 0.98);
+    margin: 0 0 0.5rem;
+  }
+
+  .hero-description {
+    max-width: 54rem;
+    margin: 0;
+    font-size: clamp(1.18rem, 0.98rem + 0.45vw, 1.45rem);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    opacity: 0.96;
+    color: rgba(255, 255, 255, 0.94);
+  }
+
+  .hero-content-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-text-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-date-block {
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  .hero-date {
+    font-size: clamp(1.55rem, 1.3rem + 0.9vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #fff;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .hero-location {
+    font-size: clamp(0.88rem, 0.78rem + 0.35vw, 1.05rem);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0.4rem 0 0;
+  }
+
+  .section-home-header .logo-gosim-scroll svg {
+    will-change: transform;
+    height: auto;
+  }
+
+  .hero-image,
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .section-home-header .logo-gosim-scroll {
+      width: 100vw;
+      max-width: none;
+    }
+    .section-home-header .logo-gosim-scroll svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-bottom-box {
+      bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.35rem, 1.08rem + 0.9vw, 1.7rem);
+      line-height: 1.22;
+    }
+
+    .hero-description {
+      max-width: 100%;
+      font-size: 1.08rem;
+      line-height: 1.48;
+    }
+
+    .hero-content-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+
+    .hero-date-block {
+      text-align: left;
+    }
+  }
+</style>

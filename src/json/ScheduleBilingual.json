@@ -1,0 +1,81 @@
+{
+  "days": [
+    {
+      "date": {
+        "en": "October 16",
+        "zh": "10月16日"
+      },
+      "title": {
+        "en": "Day 1",
+        "zh": "第一天"
+      },
+      "url": {
+        "en": "/schedule/",
+        "zh": "/zh/schedule/"
+      }
+    },
+    {
+      "date": {
+        "en": "October 17",
+        "zh": "10月17日"
+      },
+      "title": {
+        "en": "Day 2",
+        "zh": "第二天"
+      },
+      "url": {
+        "en": "/schedule/",
+        "zh": "/zh/schedule/"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "agentic-ai-summit",
+      "name": {
+        "en": "Agentic AI Summit",
+        "zh": "智能体 AI 峰会"
+      },
+      "room": "TBA"
+    },
+    {
+      "id": "open-source-robotics",
+      "name": {
+        "en": "Open Source Robotics",
+        "zh": "开源机器人"
+      },
+      "room": "TBA"
+    },
+    {
+      "id": "agentic-ai-on-edge",
+      "name": {
+        "en": "Agentic AI on Edge",
+        "zh": "边缘智能体 AI"
+      },
+      "room": "TBA"
+    },
+    {
+      "id": "ai-generative-app",
+      "name": {
+        "en": "Agentic OS & App",
+        "zh": "智能体操作系统与应用"
+      },
+      "room": "TBA"
+    },
+    {
+      "id": "open-source-model",
+      "name": {
+        "en": "Open Source Models",
+        "zh": "开源模型"
+      },
+      "room": "TBA"
+    }
+  ],
+  "sessions": {
+    "agentic-ai-summit": [],
+    "open-source-robotics": [],
+    "agentic-ai-on-edge": [],
+    "ai-generative-app": [],
+    "open-source-model": []
+  }
+}

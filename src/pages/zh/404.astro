@@ -1,0 +1,40 @@
+---
+// Components
+import Layout from 'layouts/LayoutLandingZh.astro';
+import Button from "components/Button.astro"
+---
+
+<Layout
+	title="404 – 页面未找到"
+	description="页面未找到"
+	navBackground="light"
+	pageTransitionName="GOSIM"
+>
+
+    <main>
+        <section
+            class="section section-home-intro"
+            data-theme-section="light"
+            data-bg-section="light"
+        >
+            <div class="container">
+                <div class="row">
+                    <div class="col" style="text-align: center; display: flex; flex-direction: column; gap: 2rem;">
+
+                        <h1>页面未找到</h1>
+
+                        <p>您查找的页面无法找到。</p>
+                        
+                        <Button
+                            text="返回首页"
+                            link="/zh/"
+                            class="btn light xl btn-hover"
+                        />
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</Layout>

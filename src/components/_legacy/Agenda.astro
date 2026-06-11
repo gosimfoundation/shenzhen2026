@@ -1,0 +1,87 @@
+---
+import { marked } from "astro/runtime/server/markdown";
+
+interface Props {
+  title: string;
+  list?: Array<{
+    title: string;
+    text?: string;
+    markdown?: string;
+  }>;
+}
+
+const { title, list } = Astro.props;
+
+// Convert markdown-like syntax to HTML
+const processedList = list?.map((item) => ({
+  ...item,
+  htmlContent: item.markdown
+    ? item.markdown
+        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\*(.+?)\*(?!\*)/g, "<em>$1</em>")
+        .replace(/### (.+)/g, "<h3>$1</h3>")
+        .replace(/\* (.+)/g, "<li>$1</li>")
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+        .replace(/\n\n/g, "</p><p>")
+        .replace(/(<li>.*<\/li>)/g, "<ul>$1</ul>")
+    : null,
+}));
+---
+
+<section
+  class="section section-agenda-grid"
+  id="grid"
+  data-theme-section="light"
+  data-bg-section="light"
+  data-scroll-section
+>
+  <div class="container">
+    <div class="row row-list accordion visible">
+      <div class="list-group">
+        <div class="row">
+          <div class="col col-title">
+            <h2>{title}</h2>
+          </div>
+        </div>
+
+        <ul class="row row-list">
+          {
+            processedList?.map((loop, i) => (
+              <li
+                class="single-agenda-card single-accordion-item card-hover"
+                data-accordion-status="not-active"
+              >
+                <div class="top" data-accordion-toggle>
+                  <div class="left">
+                    <div class="timeslot">
+                      <p class="h5">{(i + 1).toString().padStart(3, "0")}</p>
+                    </div>
+                    <h3 class="h4">{loop.title}</h3>
+                  </div>
+                  <div class="plus">
+                    <div class="plus-fill" />
+                    <div class="bar bar-top" />
+                    <div class="bar bar-bottom" />
+                  </div>
+                </div>
+                <div class="bottom">
+                  <div class="bottom-wrap">
+                    <div class="bottom-content">
+                      <div class="card-row styled-content">
+                        {loop.htmlContent ? (
+                          <div set:html={loop.htmlContent} />
+                        ) : (
+                          <p>{loop.text}</p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

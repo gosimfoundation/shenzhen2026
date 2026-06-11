@@ -1,0 +1,61 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    noindex?: boolean;
+    pageTransitionName?: string;
+}
+
+const { title, description, noindex, pageTransitionName } = Astro.props;
+
+const newTitle = title || 'GOSIM Shenzhen 2026';
+
+const newDescription = description || 'GOSIM Shenzhen 2026 is a gathering of open-source AI projects, developers, researchers, and industry sponsors to share knowledge, learn from each other, and collaborate.'
+
+const domain = "https://shenzhen2026.gosim.org";
+
+const slug = Astro.url.pathname;
+
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<title>{newTitle}</title>
+<meta name="title" content={newTitle}/>
+<meta property="og:title" content={newTitle}/>
+<meta property="twitter:title" content={newTitle}/>
+
+<meta property="og:site_name" content="GOSIM Shenzhen 2026" />
+<meta property="twitter:card" content="summary_large_image" />
+
+<link rel="canonical" href={`${domain}${slug}`} />
+<meta property="og:url" content={`${domain}${slug}`} />
+<meta property="twitter:url" content={`${domain}${slug}`} />
+
+<link rel="sitemap" href={`${domain}/sitemap-index.xml`} />
+
+<meta property="og:type" content="website" />
+
+{noindex &&
+   <meta name="robots" content="noindex">
+}
+
+<link rel="preload" href="/fonts/inter-v18-latin-500.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+<link rel="icon" href="/images/favicon-gosim.png" type="image/svg+xml">
+
+<meta property="og:image" content="/images/thumbnail.jpg" />
+<meta property="twitter:image" content="/images/thumbnail.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="800" />
+
+<meta name="description" content={newDescription} />
+<meta property="og:description" content={newDescription} />
+<meta property="twitter:description" content={newDescription} />
+
+{pageTransitionName === "Home" &&
+    <link rel="prefetch" href="/videos/shenzhen-hero-poster.jpg" as="image" type="image/jpeg" />
+    <link rel="prefetch" href="/videos/shenzhen-hero-compressed.mp4" as="video" type="video/mp4" />
+}

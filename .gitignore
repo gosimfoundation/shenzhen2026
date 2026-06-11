@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Misc
+cfp-outreach.md
+assets-src/
+docs/
+.claude/

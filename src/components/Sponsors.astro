@@ -1,0 +1,124 @@
+---
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+// Import the partners data
+import sponsorsData from "json/Sponsors.json";
+
+interface Props {
+    lang?: "en" | "zh" | "fr";
+}
+
+const { lang = "en" } = Astro.props;
+
+// Helper to get localized category name
+const getCategoryName = (category: any): string => {
+    if (typeof category.name === "string") return category.name;
+    return category.name[lang] || category.name.en;
+};
+
+// Import all images
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "images/sponsors/*.{jpeg,jpg,png,gif}",
+);
+
+const isRemoteImage = (image?: string): boolean =>
+    Boolean(image && /^https?:\/\//.test(image));
+---
+
+<section
+    class="section section-partners-grid"
+    id="grid"
+    data-filter-section
+    data-theme-section="light"
+    data-bg-section="lightgray"
+>
+    <div class="container">
+        <div class="grid-wrap visible" data-filter-grid>
+            {
+                sponsorsData.categories.map(
+                    (category) =>
+                        category.id !== "all" && (
+                            <div
+                                class="grid-group"
+                                data-filter-status="active"
+                                data-filter-category={category.id}
+                            >
+                                <div class="row">
+                                    <h2 class="h3">{getCategoryName(category)}</h2>
+                                </div>
+                                <div class="row grid">
+                                    {sponsorsData.partners
+                                        .filter(
+                                            (partner) =>
+                                                partner.category ===
+                                                category.id,
+                                        )
+                                        .map((partner) => (
+                                            <div class="col">
+                                                <div class="single-partners-card card-hover">
+                                                    {partner.url && (
+                                                        <a class="sponsor-link-overlay" href={partner.url} target="_blank" rel="noopener noreferrer" aria-label="Sponsor website" />
+                                                    )}
+                                                    <div class="overlay card-fill" />
+                                                    <div class={`card-logo boxed-logo${partner.logoClass ? ` ${partner.logoClass}` : ''}`}>
+                                                        {partner?.image &&
+                                                            (isRemoteImage(partner.image) ? (
+                                                                <img
+                                                                    class="sponsor-logo-image"
+                                                                    src={partner.image}
+                                                                    alt="Sponsor Logo"
+                                                                    loading="lazy"
+                                                                    decoding="async"
+                                                                />
+                                                            ) : (
+                                                                images[
+                                                                    `/public/images/sponsors/${partner.image}`
+                                                                ] && (
+                                                                    <Picture
+                                                                        src={images[
+                                                                            `/public/images/sponsors/${partner.image}`
+                                                                        ]()}
+                                                                        formats={[
+                                                                            "webp",
+                                                                            "jpg",
+                                                                            "png",
+                                                                        ]}
+                                                                        alt="Sponsor Logo"
+                                                                        widths={[
+                                                                            75,
+                                                                            150,
+                                                                            225,
+                                                                            450,
+                                                                        ]}
+                                                                        sizes="(max-width: 480px) 75px, 225px"
+                                                                    />
+                                                                )
+                                                            ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
+                        ),
+                )
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .sponsor-logo-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    .sponsor-link-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        border-radius: inherit;
+    }
+</style>

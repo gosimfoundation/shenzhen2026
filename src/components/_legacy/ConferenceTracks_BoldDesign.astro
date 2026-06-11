@@ -1,0 +1,1030 @@
+---
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Track {
+  title: string;
+  text: string;
+  link?: string;
+}
+
+interface Props {
+  id?: string;
+  title: string;
+  tracksTitle?: string;
+  tracks: Track[];
+  workshopsTitle?: string;
+  workshops?: Array<{ title: string; text: string; image?: string; link?: string }>;
+  highlightsTitle?: string;
+  highlights?: Array<{ title: string; text: string; link?: string }>;
+}
+
+const {
+  id = "tracks",
+  title,
+  tracksTitle,
+  tracks,
+  workshopsTitle,
+  workshops,
+  highlightsTitle,
+  highlights,
+} = Astro.props;
+
+// Import workshop logo images
+const workshopImages = import.meta.glob<{ default: ImageMetadata }>(
+  "/public/images/sponsors/*.{jpeg,jpg,png,gif}",
+  { eager: true }
+);
+
+// 7 maximally distinct hues: red, green, blue, yellow, magenta, cyan, orange
+const colorPalette = [
+  { from: "#dc2626", to: "#ef4444" },   // Red — Agentic AI Summit
+  { from: "#16a34a", to: "#4ade80" },   // Green — Open Source Robotics
+  { from: "#2563eb", to: "#60a5fa" },   // Blue — Agentic App
+  { from: "#ca8a04", to: "#eab308" },   // Yellow — Agentic AI on Edge
+  { from: "#7c3aed", to: "#a78bfa" },   // Violet — AgenticOS
+  { from: "#0891b2", to: "#22d3ee" },   // Cyan — Agentic App
+  { from: "#ea580c", to: "#fb923c" },   // Orange — Open Source Model
+];
+
+// Simple SVG icons for each track (same order as colorPalette)
+const iconPalette = [
+  // Sparkle — Agentic AI Summit
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg>`,
+  // Robot arm — Open Source Robotics
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="18" width="8" height="4" rx="1"/><path d="M12 18v-4"/><path d="M12 14l6-6"/><path d="M18 8l-4-4"/><circle cx="14" cy="4" r="1.5" fill="currentColor"/><circle cx="12" cy="14" r="1.5"/><circle cx="18" cy="8" r="1.5"/></svg>`,
+  // Grid — Agentic App
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>`,
+  // Bolt — Agentic AI on Edge
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+  // Layers — AgenticOS
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+  // Graph/network — Open Source Model
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 7l5 9M17 7l-5 9"/><path d="M7 6h10"/></svg>`,
+];
+
+// Build a color + icon map keyed by track title
+const trackColorMap = new Map<string, { from: string; to: string }>();
+const trackIconMap = new Map<string, string>();
+tracks.forEach((track, i) => {
+  trackColorMap.set(track.title, colorPalette[i % colorPalette.length]);
+  trackIconMap.set(track.title, iconPalette[i % iconPalette.length]);
+});
+---
+
+<section
+  class="section section-conference-tracks"
+  id={id}
+  data-theme-section="light"
+  data-bg-section="lightgray"
+  data-scroll-section
+>
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+  <div class="glow-orb glow-orb-3"></div>
+
+  <!-- Floating ambient particles -->
+  <div class="particles" aria-hidden="true">
+    <span class="particle" style="--px: 8%; --py: 15%; --d: 0s; --sz: 5px; --dur: 7s;"></span>
+    <span class="particle" style="--px: 22%; --py: 60%; --d: -2s; --sz: 4px; --dur: 9s;"></span>
+    <span class="particle" style="--px: 45%; --py: 25%; --d: -4s; --sz: 6px; --dur: 8s;"></span>
+    <span class="particle" style="--px: 65%; --py: 70%; --d: -1s; --sz: 3px; --dur: 10s;"></span>
+    <span class="particle" style="--px: 82%; --py: 35%; --d: -3s; --sz: 5px; --dur: 7.5s;"></span>
+    <span class="particle" style="--px: 35%; --py: 80%; --d: -5s; --sz: 4px; --dur: 8.5s;"></span>
+    <span class="particle" style="--px: 90%; --py: 55%; --d: -2.5s; --sz: 3px; --dur: 9.5s;"></span>
+    <span class="particle" style="--px: 15%; --py: 45%; --d: -6s; --sz: 5px; --dur: 11s;"></span>
+    <span class="particle" style="--px: 55%; --py: 10%; --d: -3.5s; --sz: 4px; --dur: 8s;"></span>
+    <span class="particle" style="--px: 75%; --py: 90%; --d: -1.5s; --sz: 6px; --dur: 7s;"></span>
+  </div>
+
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label animate-fade-in">What to Expect</span>
+      <h2 class="animate-fade-in animate-delay-1">{title}</h2>
+    </div>
+
+    <!-- Tracks Section -->
+    <div class="stacked-section">
+      {tracksTitle && <h3 class="column-title animate-fade-in animate-delay-2">{tracksTitle}</h3>}
+      <div class="tracks-grid">
+        {tracks.map((track, i) => {
+          const color = trackColorMap.get(track.title) || colorPalette[0];
+          const icon = trackIconMap.get(track.title) || iconPalette[0];
+          const cardAttrs = {
+            class: `track-card animate-slide-up${track.link ? ' track-card-link' : ''}`,
+            style: `--accent-from: ${color.from}; --accent-to: ${color.to}; --stagger: ${i};`,
+          };
+          return (
+            <div {...cardAttrs}>
+              <span class="track-number">{String(i + 1).padStart(2, '0')}</span>
+              <div class="track-card-content">
+                <div class="track-icon" set:html={icon} />
+                <h5>{track.title}</h5>
+                <div class="track-desc-wrap">
+                  <p class="track-desc">{track.text}</p>
+                </div>
+                <div class="track-card-bottom">
+                  {track.link && <a href={track.link} class="track-visit-link">View &rarr;</a>}
+                  <span class="track-chevron"></span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- Workshops Section -->
+    {workshops && workshops.length > 0 && (
+      <div class="stacked-section animate-fade-in">
+        {workshopsTitle && <h3 class="column-title">{workshopsTitle}</h3>}
+        <div class="workshops-grid">
+          {workshops.map((item, i) => {
+            const wsColors = [
+              { bg1: "#eef2ff", bg2: "#e0e7ff", bg3: "#ede9fe", accent: "99, 102, 241" },
+              { bg1: "#ecfdf5", bg2: "#d1fae5", bg3: "#a7f3d0", accent: "16, 185, 129" },
+              { bg1: "#fff7ed", bg2: "#ffedd5", bg3: "#fed7aa", accent: "234, 88, 12" },
+              { bg1: "#fdf2f8", bg2: "#fce7f3", bg3: "#fbcfe8", accent: "219, 39, 119" },
+              { bg1: "#f0fdf4", bg2: "#dcfce7", bg3: "#bbf7d0", accent: "22, 163, 74" },
+              { bg1: "#fefce8", bg2: "#fef9c3", bg3: "#fef08a", accent: "202, 138, 4" },
+              { bg1: "#f0f9ff", bg2: "#e0f2fe", bg3: "#bae6fd", accent: "14, 165, 233" },
+            ];
+            const wc = wsColors[i % wsColors.length];
+            const cardStyle = `--stagger: ${i}; --ws-bg1: ${wc.bg1}; --ws-bg2: ${wc.bg2}; --ws-bg3: ${wc.bg3}; --ws-accent: ${wc.accent};`;
+            const imgPath = item.image ? `/public/images/sponsors/${item.image}` : null;
+            const imgMeta = imgPath && workshopImages[imgPath] ? workshopImages[imgPath].default : null;
+            return (
+              <div class="workshop-card animate-slide-up" style={cardStyle}>
+                <div class="workshop-card-inner">
+                  <div class="workshop-glow"></div>
+                  {imgMeta && (
+                    <div class="workshop-logo">
+                      <Picture
+                        src={imgMeta}
+                        formats={["webp", "png"]}
+                        alt={item.title}
+                        widths={[120, 240]}
+                        sizes="120px"
+                      />
+                    </div>
+                  )}
+                  <div class="workshop-content">
+                    <span class="workshop-title">
+                      {item.link ? (
+                        <a href={item.link} class="workshop-title-link" target={item.link.startsWith("http") ? "_blank" : undefined} rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined} onclick="event.stopPropagation();">
+                          {item.title} <span class="highlight-link-arrow">&rarr;</span>
+                        </a>
+                      ) : item.title}
+                    </span>
+                    <p class="workshop-desc">{item.text}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    )}
+
+    <!-- Spotlight & Hackathon Section -->
+    {highlights && highlights.length > 0 && (
+      <div class="stacked-section animate-fade-in">
+        {highlightsTitle && <h3 class="column-title">{highlightsTitle}</h3>}
+        <div class="highlights-grid">
+          {highlights.map((item, i) => {
+            const icons = [
+              // Star — Spotlight
+              `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+              // Robot — Robotics Hackathon
+              `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="10" height="8" rx="2"/><circle cx="10" cy="8" r="1" fill="currentColor"/><circle cx="14" cy="8" r="1" fill="currentColor"/><path d="M9 12v4h6v-4"/><path d="M5 8H3M21 8h-2M10 16v2M14 16v2"/></svg>`,
+              // Code brackets — Agentic Hackathon
+              `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>`,
+            ];
+            const colors = [
+              { from: "#c9a227", to: "#f0d060" },
+              { from: "#7a8a9e", to: "#b8c8d8" },
+              { from: "#6d28d9", to: "#a78bfa" },
+            ];
+            const c = colors[i % colors.length];
+            const cardClass = `highlight-card animate-slide-up`;
+            const cardStyle = `--stagger: ${i}; --hl-from: ${c.from}; --hl-to: ${c.to};`;
+            return (
+              <div class={cardClass} style={cardStyle}>
+                <div class="highlight-outer">
+                  <div class="highlight-inner">
+                    <div class="highlight-icon" set:html={icons[i % icons.length]} />
+                    <span class="highlight-title">{item.link ? <a href={item.link} class="highlight-title-link" target={item.link.startsWith("http") ? "_blank" : undefined} rel={item.link.startsWith("http") ? "noopener noreferrer" : undefined} onclick="event.stopPropagation();">{item.title} <span class="highlight-link-arrow">&rarr;</span></a> : item.title}</span>
+                    <div class="highlight-desc-wrap">
+                      <p class="highlight-desc">{item.text}</p>
+                    </div>
+                    <span class="highlight-chevron"></span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<script>
+  function initTrackAnimations() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    document
+      .querySelectorAll(
+        ".section-conference-tracks .animate-fade-in, .section-conference-tracks .animate-slide-up, .section-conference-tracks .animate-grow-line"
+      )
+      .forEach((el) => observer.observe(el));
+  }
+
+  function initDragScroll() {
+    document.querySelectorAll('.tracks-grid').forEach(function(grid) {
+      let isDown = false;
+      let startX: number;
+      let scrollLeft: number;
+      let hasDragged = false;
+
+      grid.addEventListener('mousedown', function(e: Event) {
+        const me = e as MouseEvent;
+        isDown = true;
+        hasDragged = false;
+        grid.classList.add('dragging');
+        startX = me.pageX - (grid as HTMLElement).offsetLeft;
+        scrollLeft = grid.scrollLeft;
+      });
+
+      grid.addEventListener('mouseleave', function() {
+        isDown = false;
+        grid.classList.remove('dragging');
+      });
+
+      grid.addEventListener('mouseup', function() {
+        isDown = false;
+        grid.classList.remove('dragging');
+      });
+
+      grid.addEventListener('mousemove', function(e: Event) {
+        if (!isDown) return;
+        const me = e as MouseEvent;
+        me.preventDefault();
+        const x = me.pageX - (grid as HTMLElement).offsetLeft;
+        const walk = (x - startX) * 1.5;
+        if (Math.abs(walk) > 4) hasDragged = true;
+        grid.scrollLeft = scrollLeft - walk;
+      });
+
+      // Prevent click on cards after drag
+      grid.addEventListener('click', function(e: Event) {
+        if (hasDragged) {
+          e.stopPropagation();
+          hasDragged = false;
+        }
+      }, true);
+    });
+  }
+
+  function initReadMoreToggles() {
+    document.querySelectorAll('.track-card').forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('.track-visit-link')) return;
+        card.classList.toggle('expanded');
+      });
+    });
+    document.querySelectorAll('.workshop-card').forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('.workshop-title-link')) return;
+        card.classList.toggle('expanded');
+      });
+    });
+    document.querySelectorAll('.highlight-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        card.classList.toggle('expanded');
+      });
+    });
+  }
+
+  // Run on initial load
+  initTrackAnimations();
+  initReadMoreToggles();
+  initDragScroll();
+
+  // Re-run after Astro page transitions
+  document.addEventListener("astro:page-load", function() {
+    initTrackAnimations();
+    initReadMoreToggles();
+    initDragScroll();
+  });
+</script>
+
+<style>
+  .section-conference-tracks {
+    padding-top: var(--section-padding);
+    padding-bottom: calc(var(--section-padding) * 0.5);
+    position: relative;
+    overflow: hidden;
+    background: var(--color-lightgray, #E8EEF4);
+  }
+
+  /* ---- Background glow orbs ---- */
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(8vw);
+    pointer-events: none;
+    animation: orb-drift 12s ease-in-out infinite alternate;
+  }
+
+  .glow-orb-1 {
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, #6366f1, #818cf8, transparent 70%);
+    top: -10vw;
+    left: -10vw;
+    opacity: 0.1;
+  }
+
+  .glow-orb-2 {
+    width: 45vw;
+    height: 45vw;
+    background: radial-gradient(circle, #8b5cf6, #a78bfa, transparent 70%);
+    bottom: -8vw;
+    right: -8vw;
+    opacity: 0.1;
+    animation-delay: -6s;
+  }
+
+  .glow-orb-3 {
+    width: 35vw;
+    height: 35vw;
+    background: radial-gradient(circle, #ec4899, #f472b6, transparent 70%);
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.07;
+    animation-delay: -3s;
+  }
+
+  @keyframes orb-drift {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.06; }
+    100% { transform: translate(4vw, 3vw) scale(1.15); opacity: 0.12; }
+  }
+
+  /* ---- Floating particles ---- */
+  .particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .particle {
+    position: absolute;
+    width: var(--sz);
+    height: var(--sz);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.3));
+    left: var(--px);
+    top: var(--py);
+    animation: particle-drift var(--dur) ease-in-out infinite;
+    animation-delay: var(--d);
+    opacity: 0;
+  }
+
+  @keyframes particle-drift {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.2;
+    }
+    25% {
+      transform: translate(15px, -25px) scale(1.4);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translate(-10px, -40px) scale(1);
+      opacity: 0.3;
+    }
+    75% {
+      transform: translate(20px, -15px) scale(1.6);
+      opacity: 0.6;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---- Ambient keyframes ---- */
+
+  @keyframes card-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes track-float {
+    0%, 100% { transform: translateY(0) rotate(var(--base-rotate, 0deg)); }
+    50% { transform: translateY(-10px) rotate(calc(var(--base-rotate, 0deg) + 1.5deg)); }
+  }
+
+  @keyframes icon-breathe {
+    0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 0px transparent); }
+    50% { transform: scale(1.12) rotate(4deg); filter: drop-shadow(0 0 4px currentColor); }
+  }
+
+  @keyframes accent-flow {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 0% 100%; }
+  }
+
+  @keyframes tint-pulse {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.5; }
+  }
+
+  @keyframes shimmer {
+    0% { left: -50%; }
+    100% { left: 150%; }
+  }
+
+  @keyframes logo-bob {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-3px) rotate(-1.5deg); }
+    66% { transform: translateY(1px) rotate(1deg); }
+  }
+
+  @keyframes workshop-bg-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes highlight-glow-pulse {
+    0%, 100% { box-shadow: 0 4px 20px color-mix(in srgb, var(--hl-from) 8%, transparent); }
+    50% { box-shadow: 0 8px 35px color-mix(in srgb, var(--hl-from) 18%, transparent); }
+  }
+
+  /* ---- Scroll-triggered animations ---- */
+
+  .animate-fade-in {
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.5, 0, 0.25, 1);
+  }
+
+  .animate-fade-in.is-visible {
+    opacity: 1;
+  }
+
+  .animate-delay-1 { transition-delay: 0.12s; }
+  .animate-delay-2 { transition-delay: 0.24s; }
+
+  .animate-slide-up {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.5, 0, 0.25, 1);
+    transition-delay: calc(0.08s * var(--stagger, 0));
+  }
+
+  .animate-slide-up.is-visible {
+    opacity: 1;
+  }
+
+  /* ---- Section header ---- */
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-primary, #2D4E9C);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header h2 {
+    margin: 0;
+  }
+
+  /* ---- Stacked sections layout ---- */
+
+  .stacked-section {
+    margin-bottom: 3rem;
+  }
+
+  .stacked-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .column-title {
+    margin: 0 0 1.25rem;
+    font-size: 1.35em;
+    font-weight: 700;
+    color: var(--color-dark, #1c1d24);
+  }
+
+  /* ======== TRACK CARDS — Scattered Grid ======== */
+
+  .tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    padding: 1rem 0 2rem;
+  }
+
+  .track-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background: linear-gradient(155deg, var(--accent-from), color-mix(in srgb, var(--accent-from) 45%, #0f0f1a));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    box-shadow: 0 4px 24px color-mix(in srgb, var(--accent-from) 20%, transparent);
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    animation: track-float 5s ease-in-out infinite;
+    animation-delay: calc(var(--stagger, 0) * -0.8s);
+  }
+
+  /* Organic offsets and rotations per card */
+  .track-card:nth-child(1) { --base-rotate: -1.5deg; }
+  .track-card:nth-child(2) { --base-rotate: 1deg; margin-top: 2.5rem; }
+  .track-card:nth-child(3) { --base-rotate: -0.8deg; margin-top: 0.75rem; }
+  .track-card:nth-child(4) { --base-rotate: 1.2deg; margin-top: -0.5rem; }
+  .track-card:nth-child(5) { --base-rotate: -1deg; margin-top: 1.5rem; }
+  .track-card:nth-child(6) { --base-rotate: 0.7deg; margin-top: -1rem; }
+
+  /* Light shimmer that breathes across the card */
+  .track-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent 50%, rgba(255,255,255,0.05));
+    animation: tint-pulse 4s ease-in-out infinite;
+    animation-delay: calc(var(--stagger, 0) * -0.6s);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .track-card:hover::before {
+    animation: none;
+    opacity: 1;
+  }
+
+  /* Shimmer sweep on hover */
+  .track-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .track-card:hover::after {
+    animation: shimmer 1s ease forwards;
+  }
+
+  .track-card:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 20px 60px color-mix(in srgb, var(--accent-from) 30%, transparent), 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Large number watermark */
+  .track-number {
+    position: absolute;
+    bottom: -0.15em;
+    right: 0.15em;
+    font-size: 7rem;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+    z-index: 0;
+    transition: color 0.3s ease;
+    user-select: none;
+  }
+
+  .track-card:hover .track-number { color: rgba(255, 255, 255, 0.1); }
+
+  /* Hide legacy accent bars */
+  .track-card-accent { display: none; }
+
+  .track-card-content {
+    padding: 1.75rem 1.5rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+  }
+
+  .track-icon {
+    width: 2rem;
+    height: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    animation: icon-breathe 3s ease-in-out infinite;
+    animation-delay: calc(var(--stagger, 0) * -0.4s);
+  }
+
+  .track-card:hover .track-icon {
+    animation: none;
+    transform: scale(1.3) rotate(8deg);
+    filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.5));
+  }
+
+  .track-icon :global(svg) { width: 100%; height: 100%; }
+
+  .track-card h5 {
+    margin: 0 0 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+
+  .track-desc-wrap {
+    max-height: 4.8em;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    flex: 1;
+  }
+
+  .track-card.expanded .track-desc-wrap { max-height: 40em; }
+
+  .track-desc {
+    margin: 0;
+    font-size: 1.05em;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .track-card:hover .track-desc { color: rgba(255, 255, 255, 0.95); }
+
+  .track-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+  }
+
+  .track-chevron {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .track-chevron::after {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid rgba(255, 255, 255, 0.35);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .track-card.expanded .track-chevron::after { transform: rotate(-135deg); }
+  .track-card:hover .track-chevron::after { border-color: rgba(255, 255, 255, 0.7); }
+
+  .track-visit-link {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.3em 0.8em;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .track-visit-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* ======== WORKSHOP CARDS ======== */
+
+  .workshops-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .workshop-card {
+    animation: card-float 6s ease-in-out infinite;
+    animation-delay: calc(var(--stagger, 0) * -2s);
+  }
+
+  .workshop-card-inner {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(160deg, var(--ws-bg1, #eef2ff), var(--ws-bg2, #e0e7ff) 50%, var(--ws-bg3, #ede9fe));
+    background-size: 200% 200%;
+    animation: workshop-bg-flow 8s ease-in-out infinite;
+    border: 1px solid rgba(var(--ws-accent, 99, 102, 241), 0.18);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 2px 12px rgba(var(--ws-accent, 99, 102, 241), 0.06);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .workshop-glow {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(ellipse, rgba(var(--ws-accent, 99, 102, 241), 0.12), transparent 70%);
+    pointer-events: none;
+    animation: tint-pulse 5s ease-in-out infinite;
+  }
+
+  .workshop-card:hover .workshop-glow {
+    animation: none;
+    opacity: 1;
+    width: 130%;
+  }
+
+  .workshop-card:hover .workshop-card-inner {
+    border-color: rgba(var(--ws-accent, 99, 102, 241), 0.45);
+    box-shadow: 0 16px 48px rgba(var(--ws-accent, 99, 102, 241), 0.22), 0 4px 16px rgba(var(--ws-accent, 99, 102, 241), 0.1);
+  }
+
+  .workshop-logo {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
+    animation: logo-bob 4s ease-in-out infinite;
+    animation-delay: calc(var(--stagger, 0) * -1s);
+  }
+
+  .workshop-card:hover .workshop-logo {
+    animation: none;
+    transform: scale(1.12) rotate(-3deg);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+  }
+
+  .workshop-logo :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .workshop-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .workshop-title {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-dark, #1c1d24);
+    margin-bottom: 0.25rem;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+  }
+
+  .workshop-title-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+  }
+
+  .workshop-title-link:hover {
+    color: #6366f1;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .workshop-desc {
+    margin: 0;
+    font-size: 0.82em;
+    line-height: 1.55;
+    color: rgba(28, 29, 36, 0.55);
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    transition: color 0.3s ease;
+  }
+
+  .workshop-card:hover .workshop-desc { color: rgba(28, 29, 36, 0.8); }
+
+  /* ======== HIGHLIGHT CARDS (Spotlight & Hackathon) ======== */
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .highlight-card {
+    cursor: pointer;
+    animation: card-float 5.5s ease-in-out infinite;
+    animation-delay: calc(var(--stagger, 0) * -1.2s);
+  }
+
+  .highlight-outer {
+    padding: 2px;
+    border-radius: 16px;
+    background: linear-gradient(160deg, var(--hl-from), var(--hl-to) 40%, var(--hl-from) 60%, var(--hl-to));
+    background-size: 200% 200%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 82%, 50% 100%, 0% 82%);
+    animation: gradient-shift 3s ease infinite, highlight-glow-pulse 4s ease-in-out infinite;
+    animation-delay: calc(var(--stagger, 0) * -0.8s);
+  }
+
+  .highlight-card:hover .highlight-outer {
+    box-shadow: 0 16px 50px color-mix(in srgb, var(--hl-from) 25%, transparent);
+  }
+
+  .highlight-inner {
+    background: linear-gradient(170deg, color-mix(in srgb, var(--hl-from) 6%, #fff), color-mix(in srgb, var(--hl-to) 4%, #fff) 80%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 82%, 50% 100%, 0% 82%);
+    border-radius: 14px;
+    padding: 1.75rem 1.5rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: background 0.4s ease;
+  }
+
+  .highlight-card:hover .highlight-inner {
+    background: linear-gradient(170deg, color-mix(in srgb, var(--hl-from) 12%, #fff), color-mix(in srgb, var(--hl-to) 10%, #fff) 80%);
+  }
+
+  /* Icons with continuous ambient animation */
+  .highlight-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.85rem;
+    color: var(--hl-from);
+    animation: icon-breathe 3.5s ease-in-out infinite;
+    animation-delay: calc(var(--stagger, 0) * -0.5s);
+  }
+
+  .highlight-card:hover .highlight-icon {
+    animation: none;
+    transform: scale(1.3) rotate(-8deg);
+    filter: drop-shadow(0 0 12px var(--hl-from));
+  }
+
+  .highlight-icon :global(svg) { width: 100%; height: 100%; }
+
+  .highlight-title {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-dark, #1c1d24);
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-desc-wrap {
+    max-height: 2.4em;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .highlight-card.expanded .highlight-desc-wrap { max-height: 40em; }
+
+  .highlight-desc {
+    margin: 0;
+    font-size: 0.82em;
+    line-height: 1.55;
+    color: rgba(28, 29, 36, 0.55);
+    transition: color 0.3s ease;
+  }
+
+  .highlight-card:hover .highlight-desc { color: rgba(28, 29, 36, 0.8); }
+
+  .highlight-chevron {
+    display: flex;
+    justify-content: center;
+    align-self: stretch;
+    margin-top: 0.5rem;
+  }
+
+  .highlight-chevron::after {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid rgba(28, 29, 36, 0.3);
+    border-bottom: 2px solid rgba(28, 29, 36, 0.3);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .highlight-card.expanded .highlight-chevron::after { transform: rotate(-135deg); }
+  .highlight-card:hover .highlight-chevron::after { border-color: var(--hl-from); }
+
+  .highlight-title-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+  }
+
+  .highlight-title-link:hover {
+    color: var(--hl-from);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .highlight-link-arrow {
+    margin-left: 0.3em;
+    opacity: 0.4;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+
+  .highlight-title-link:hover .highlight-link-arrow {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+
+  /* ---- Responsive ---- */
+
+  @media (max-width: 860px) {
+    .tracks-grid,
+    .workshops-grid,
+    .highlights-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .track-card:nth-child(n) {
+      --base-rotate: 0deg;
+      margin-top: 0;
+      animation-name: card-float;
+    }
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .track-card,
+    .workshop-card,
+    .highlight-card,
+    .track-card::before,
+    .track-card-accent,
+    .track-icon,
+    .workshop-glow,
+    .workshop-logo,
+    .workshop-card-inner,
+    .highlight-outer,
+    .highlight-icon,
+    .glow-orb,
+    .particle {
+      animation: none !important;
+    }
+  }
+</style>

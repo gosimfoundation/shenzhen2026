@@ -1,0 +1,81 @@
+---
+// Packages
+import { Picture } from "astro:assets"
+
+// Components
+import Button from "components/Button.astro"
+
+// Images
+import image from "images/homepage/shenzhen-tower-gold.jpg"
+
+interface Props {
+  title: string
+  location: string
+  date: string
+  text: string
+  ctaButton?: {
+    text: string
+    link: string
+    openInNewTab?: boolean
+  }
+}
+
+const { title, location, date, text, ctaButton } = Astro.props
+
+const slug = Astro.url.pathname
+---
+
+<section
+  class="section section-register-gosim"
+  data-theme-section="dark"
+  data-bg-section="primary"
+  data-page={slug}
+  id={"page" + slug.replaceAll("/", "-") + "register"}
+>
+  <div class="overlay overlay-wrap">
+    <div class="overlay overlay-background overlay-background-video">
+      <div class="styled-video playpause overlay">
+        <Picture
+          src={image}
+          formats={["webp", "jpg"]}
+          alt="Shenzhen"
+          class="overlay"
+        />
+      </div>
+      <div class="overlay overlay-gradient-v2"></div>
+      <div class="overlay overlay-gradient-cover"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="col-row col-row-title">
+          <h2 class="custom3">{title}</h2>
+        </div>
+
+        <div class="col-row col-row-info">
+          <p>{location}</p>
+          <p>{date}</p>
+        </div>
+
+        <div class="col-row col-row-text styled-content">
+          <p>{text}</p>
+        </div>
+
+        {
+          ctaButton?.text && (
+            <div class="col-row col-row-btn">
+              <Button
+                link={ctaButton.link}
+                text={ctaButton.text}
+                openInNewTab={ctaButton?.openInNewTab}
+                class="btn primary xl btn-hover ticket-cta"
+              />
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

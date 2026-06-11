@@ -1,0 +1,135 @@
+---
+// Define the data structures the component accepts
+interface Marker {
+  latitude: number;
+  longitude: number;
+  title: string;
+  highlight?: boolean;
+}
+
+interface Props {
+  // --- For Single Marker Mode
+  latitude?: number;
+  longitude?: number;
+  zoom?: number;
+  markerTitle?: string;
+
+  // --- For Multi-Marker Mode
+  markers?: Marker[];
+  mapCenter?: { latitude: number; longitude: number };
+  mapZoom?: number;
+
+  // --- Common Display Props
+  height?: string;
+  width?: string;
+}
+
+// Get props with sensible defaults for both modes
+const {
+  latitude,
+  longitude,
+  zoom = 15,
+  markerTitle = "Location",
+  markers,
+  mapCenter,
+  mapZoom = 5,
+  height = "400px",
+  width = "100%"
+} = Astro.props;
+
+// Generate a unique ID for each map instance
+const mapId = `map-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+
+<div id={mapId} class="osm-map-container" style={`height: ${height}; width: ${width};`}></div>
+
+<style>
+  .osm-map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #e0e0e0; /* Fallback background */
+  }
+</style>
+
+<script define:vars={{ mapId, latitude, longitude, zoom, markerTitle, markers, mapCenter, mapZoom }}>
+  import('https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js').then(L => {
+    // --- THIS IS THE CORRECTED SECTION ---
+    // Define icons with absolute CDN URLs to prevent 404 errors.
+    const defaultIcon = new L.Icon({
+        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+        iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+        iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
+    });
+
+    const highlightIcon = new L.Icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+        iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
+    });
+    // --- END OF CORRECTION ---
+
+    let map;
+
+    // A. Check if we are in multi-marker mode
+    if (markers && markers.length > 0) {
+      const viewCenter = mapCenter ? [mapCenter.latitude, mapCenter.longitude] : [markers[0].latitude, markers[0].longitude];
+      map = L.map(mapId, { scrollWheelZoom: false }).setView(viewCenter, mapZoom);
+
+      markers.forEach(marker => {
+        const icon = marker.highlight ? highlightIcon : defaultIcon;
+        L.marker([marker.latitude, marker.longitude], { icon })
+          .addTo(map)
+          .bindPopup(`<b>${marker.title}</b>`);
+      });
+
+    // B. Fallback to single-marker mode
+    } else if (latitude !== undefined && longitude !== undefined) {
+      map = L.map(mapId, { scrollWheelZoom: false }).setView([latitude, longitude], zoom);
+      
+      L.marker([latitude, longitude], { icon: defaultIcon })
+        .addTo(map)
+        .bindPopup(`<b>${markerTitle}</b>`)
+        .openPopup();
+
+    // C. Handle case where no data is provided
+    } else {
+      const mapDiv = document.getElementById(mapId);
+      if (mapDiv) mapDiv.innerHTML = "<p style='text-align:center; padding: 2rem;'>Map data not provided.</p>";
+      return;
+    }
+
+    // Add the base map layer to whichever map was initialized
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // --- GESTURE HANDLING ---
+    // Enable scroll wheel zoom only when Ctrl key is pressed
+    const mapContainer = document.getElementById(mapId);
+    if (mapContainer) {
+      mapContainer.addEventListener('wheel', function (e) {
+        if (e.ctrlKey) {
+          map.scrollWheelZoom.enable();
+        } else {
+          map.scrollWheelZoom.disable();
+        }
+      });
+    }
+    // When the mouse leaves the map, disable scroll wheel zoom for safety
+    map.on('mouseout', function () {
+      map.scrollWheelZoom.disable();
+    });
+    // --- END GESTURE HANDLING ---
+
+  }).catch(error => {
+    console.error("Leaflet failed to load.", error);
+    const mapDiv = document.getElementById(mapId);
+    if (mapDiv) mapDiv.innerHTML = "<p style='text-align:center; padding: 2rem; color: red;'>Error: Map could not be loaded.</p>";
+  });
+</script>

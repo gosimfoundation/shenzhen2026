@@ -1,0 +1,134 @@
+---
+import Layout from "layouts/LayoutLanding.astro";
+import HeroText from "components/HeroText.astro";
+import TextAndImageVisa from "components/TextAndImageVisa.astro";
+import TextAndImage from "components/TextAndImage.astro";
+import GetTickets from "components/GetTickets.astro";
+import VisaTypes from "components/VisaTypes.astro";
+
+// Images
+import VisaFree from "images/subpages/visafree.png";
+import VisaFreeTransit from "images/subpages/visafreetransit.png";
+import VisaTraditional from "images/subpages/visa-traditional.png";
+---
+
+<Layout
+  title="Visa Information – GOSIM Shenzhen 2026"
+  description="Information about Chinese visa requirements for GOSIM Shenzhen 2026 attendees"
+  navBackground="light"
+>
+  <HeroText
+    title="China Visa's"
+    text="Most attendees are now eligible for visa-free entry or transit. Some may still need a visa depending on their nationality and travel plans. Please read the updated requirements below and contact your local Chinese embassy or consulate for precise instructions."
+    lightgray
+  />
+  <VisaTypes />
+  <!-- Visa-Free Entry Section -->
+  <section class="" data-theme-section="light" data-bg-section="lightgray">
+    <div class="container">
+      <TextAndImageVisa
+        id="visa-free-entry"
+        title="Visa Free Entry"
+        text="Citizens from 74 countries, including most EU nations, Australia, New Zealand, and several Latin American countries, can now enter China visa-free for up to 30 days. This applies to tourism, business, visiting family/friends, or short conferences."
+        validExample1="France → China → France"
+        validExample2="Singapore → China → Singapore"
+        invalidExample1="USA → China → USA"
+        invalidExample2="UK → China → UK"
+        image={VisaFree}
+        imageAlt="Visa Free Entry"
+        dataBgSection="lightgray"
+        dataThemeSection="lightgray"
+        ctaButton={{
+          text: "",
+          link: "",
+          openInNewTab: true,
+        }}
+      />
+    </div>
+  </section>
+  <section class="" data-theme-section="light" data-bg-section="lightgray">
+    <div class="container">
+      <TextAndImageVisa
+        id="visa-free-transit"
+        title="Visa Free Transit"
+        text="Travelers from 55 countries including the US, Canada, UK, Japan, and many EU states may enter China without a visa if transiting through to a third country."
+        text2="This policy allows stays of up to 240 hours in designated regions — including Shenzhen and the rest of Guangdong Province."
+        text3="You must have confirmed onward travel and meet entry requirements. Note: Hong Kong counts as a third region for transit purposes."
+        validExample1="USA → China → Japan"
+        validExample2="UK → China → USA"
+        invalidExample1="USA → China → USA"
+        invalidExample2="UK → China → UK (round trip)"
+        image={VisaFreeTransit}
+        imageAlt="Visa Free Transit"
+        dataBgSection="lightgray"
+        dataThemeSection="lightgray"
+        ctaButton={{
+          text: "",
+          link: "",
+          openInNewTab: true,
+        }}
+      />
+    </div>
+  </section>
+  <section class="" data-theme-section="light" data-bg-section="lightgray">
+    <div class="container">
+      <TextAndImageVisa
+        id="visa-traditional"
+        title="Traditional Visa Applications"
+        text="If you are not eligible for visa-free entry or transit, or plan to stay longer, you will need to apply for a Chinese visa. Most attendees will apply for a Tourist (L) or Business (F) visa."
+        validTitle="Required Documents"
+        validExample1="Valid passport for at least 6 months with 2 blank pages"
+        validExample2="Completed visa application with a recent passport photo"
+        validExample3="Round-trip flight booking and hotel reservation, or;"
+        validExample4="GOSIM invitation letter"
+        image={VisaTraditional}
+        imageAlt="Traditional Visa Applications"
+        dataBgSection="lightgray"
+        dataThemeSection="lightgray"
+        ctaButton={{
+          text: "",
+          link: "",
+          openInNewTab: true,
+        }}
+      />
+    </div>
+  </section>
+  <TextAndImage
+    id="invitation-letter"
+    title="Invitation Letter"
+    text="After completing your registration, GOSIM can provide an invitation letter to support your visa application. Please email us with your passport name, nationality, and registration confirmation if needed. Allow sufficient time — visa processing may take 7–10 business days or longer."
+    imageAlt="Visa Invitation"
+    dataBgSection="light"
+    dataThemeSection="light"
+    ctaButton={{
+      text: "Request Invitation Letter",
+      link: "mailto:travel@gosim.org",
+      openInNewTab: true,
+    }}
+  />
+  <GetTickets
+    title="Call for Proposals Now Open"
+    location="Shenzhen, China"
+    date="October 16-17, 2026"
+    text="We're looking for bold ideas and fresh voices in open-source AI, robotics, edge systems, and developer infrastructure. Submit a proposal to speak at GOSIM Shenzhen 2026."
+    ctaButton={{
+      text: "Submit a Proposal",
+      link: "https://cfp.gosim.org",
+      openInNewTab: true,
+    }}
+  />
+</Layout>
+<style>
+  .visa-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    width: 60%;
+  }
+  @media (max-width: 768px) {
+    .visa-container {
+      width: 100%;
+    }
+  }
+</style>

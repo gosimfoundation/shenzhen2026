@@ -1,0 +1,196 @@
+---
+// Components
+import Layout from "layouts/LayoutLanding.astro"
+import Hero from "components/Hero.astro"
+import Intro from "components/Intro.astro"
+import ConferenceTracks from "components/ConferenceTracks.astro"
+import PreviousEvents from "components/PreviousEvents.astro"
+import GetTickets from "components/GetTickets.astro"
+
+// Images
+import GosimShanghai from "images/homepage/gosim-shanghai.png"
+import GosimDelft from "images/homepage/gosim-delft.png"
+import GosimBeijing from "images/homepage/gosim-beijing.png"
+import GosimParis from "images/homepage/gosim-paris-min.png"
+import GosimHangzhou from "images/homepage/gosim-hangzhou.png"
+import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
+---
+
+<Layout
+  title="GOSIM Shenzhen 2026"
+  description="GOSIM Shenzhen 2026 — open-source AI, robotics, edge systems, and developer infrastructure. October 16-17, 2026 in Shenzhen, China."
+  navDarkMode={true}
+  navBackground="header-home"
+  pageTransitionName="Home"
+>
+  <Hero
+    date="October 16-17, 2026"
+    location="Shenzhen, China"
+    subtitle="Open Source AI, Robotics & Edge"
+    description="Open-source AI, robotics, edge systems, and developer infrastructure in China's fastest-moving hardware city."
+    video="/videos/shenzhen-hero-compressed.mp4"
+    poster="/videos/shenzhen-hero-poster.jpg"
+    links={[
+      {
+        text: "Call for Proposals",
+        link: "https://cfp.gosim.org",
+        openInNewTab: true,
+      },
+    ]}
+  />
+
+  <div
+    class="section-wrap"
+    id="intro"
+    data-theme-section="light"
+    data-bg-section="lightgray"
+  >
+    <div class="intro-statistics-container" style="">
+      <Intro
+        eyebrow="GOSIM SHENZHEN 2026 / OCTOBER 16-17 / SHENZHEN, CHINA"
+        headlineLines={[
+          "Where Open Source",
+          "Meets The World's",
+          "Hardware Capital —",
+          "At GOSIM, In Shenzhen",
+        ]}
+        accentLine={0}
+        body="Top open source projects, leading developers, and the latest agentic AI, robotics, and edge frontiers — converging in Shenzhen for two days of immersive developer experiences."
+        facetsTitle="Across The Program"
+        facets={[
+          {
+            title: "Agentic AI",
+            text: "A2App, harness engineering, edge AI, A2UI, A2A, multi-agent systems, and MCP.",
+          },
+          {
+            title: "Open Source Robotics",
+            text: "Embodied AI, physical AI, OpenArm, and autonomous machines.",
+          },
+          {
+            title: "Open Source Models",
+            text: "The latest open models across language, code, vision, audio, and video.",
+          },
+          {
+            title: "Spotlight & Hackathons",
+            text: "Frontier Creators, robotics challenges, and agentic builds — hands-on and live on stage.",
+          },
+        ]}
+        signals={[
+          "Foundation Models",
+          "Agent Frameworks",
+          "Embodied AI",
+          "Edge Deployment",
+          "Developer Infrastructure",
+        ]}
+        projectsLabel="Why Shenzhen"
+        projects={[
+          "Huaqiangbei",
+          "Robotics Labs",
+          "Edge Compute",
+          "Factory Floors",
+        ]}
+      />
+    </div>
+  </div>
+
+  <ConferenceTracks
+    kicker="Conference Program"
+    title="Tracks"
+    intro="From open source models and agent frameworks to robotics and edge AI, the program is built to show where the stack is moving next and let developers get close to the people building it. Full schedule coming soon."
+    tracksTitle="Conference Tracks"
+    tracks={[
+      {
+        title: "Agentic AI Summit",
+        text: "The strategy layer of the agentic wave: protocols, software patterns, tooling, and business models. Follow MCP, A2A, sovereign AI, AI-native development, and the emerging playbook for open-source agents.",
+        link: "/schedule/#agentic-ai-summit",
+      },
+      {
+        title: "Open Source Robotics",
+        text: "Where agentic software meets physical systems. Explore open robotics platforms, embodied AI stacks, and hands-on methods for building autonomous machines that can perceive, plan, and act.",
+        link: "/schedule/#open-source-robotics",
+      },
+      {
+        title: "Agentic AI on Edge",
+        text: "On-device AI is experiencing a performance awakening, with agentic AI rapidly infiltrating edge devices. This track focuses on deploying powerful AI models in resource-constrained environments, diving deep into engineering practices for on-device inference acceleration, model compression, and real-time decision-making.",
+        link: "/schedule/#agentic-ai-on-edge",
+      },
+      {
+        title: "Agentic OS & App",
+        text: "As AI agents become the new interface between humans and machines, a new operating system layer is emerging to orchestrate them. This track explores the architecture, frameworks, and platforms powering agentic operating systems and applications — from multi-agent coordination and runtime environments to intent-driven AI-native apps.",
+        link: "/schedule/#ai-generative-app",
+      },
+      {
+        title: "Open Source Models",
+        text: "Open models are advancing quickly across language, vision, audio, and video. This track follows the latest breakthroughs, practical deployments, and the new capabilities emerging from the open model ecosystem.",
+        link: "/schedule/#open-source-model",
+      },
+    ]}
+    highlightsTitle="Spotlight"
+    highlights={[
+      {
+        title: "GOSIM Spotlight: Frontier Creators",
+        text: "Live, hardcore on-stage demos from the world's most promising open-source AI projects — creators pitch directly to global investors and tech visionaries.",
+      },
+    ]}
+  />
+
+  <PreviousEvents
+    title="Previous Events"
+    events={[
+      {
+        title: "GOSIM Paris 2026",
+        date: "May 5–6, 2026",
+        description: "GOSIM Paris 2026 brought the agentic AI convergence to Station F, gathering speakers and open-source builders from around the world for two days of talks and workshops.",
+        image: GosimParis2026,
+        link: "https://paris2026.gosim.org/",
+      },
+      {
+        title: "GOSIM Hangzhou",
+        date: "September 13–14, 2025",
+        description: "GOSIM Hangzhou brought together open-source AI builders and contributors for a full day of talks, workshops, and community connection.",
+        image: GosimHangzhou,
+        link: "https://hangzhou2025.gosim.org/",
+      },
+      {
+        title: "GOSIM AI Paris 2025",
+        date: "May 6–7, 2025",
+        description: "GOSIM AI Paris 2025 united open-source AI pioneers at Station F, bringing together speakers and builders from across the globe.",
+        image: GosimParis,
+        link: "https://paris2025.gosim.org/",
+      },
+      {
+        title: "GOSIM Beijing",
+        date: "October 17–18, 2024",
+        description: "The GOSIM Beijing conference attracted more than 1,700 attendees, making it the largest GOSIM event so far.",
+        image: GosimBeijing,
+        link: "https://china2024.gosim.org/",
+      },
+      {
+        title: "GOSIM Delft",
+        date: "June 6–7, 2024",
+        description: "GOSIM Delft was a two-day event that brought together 1,200 attendees from around the world.",
+        image: GosimDelft,
+        link: "https://europe2024.gosim.org/",
+      },
+      {
+        title: "GOSIM Shanghai",
+        date: "September 23–24, 2023",
+        description: "The GOSIM conference and workshop focused on championing and enhancing open-source contributions.",
+        image: GosimShanghai,
+        link: "https://conference2023.gosim.org/",
+      },
+    ]}
+  />
+
+  <GetTickets
+    title="Call for Proposals Now Open"
+    location="Shenzhen, China"
+    date="October 16-17, 2026"
+    text="We're looking for bold ideas and fresh voices in open-source AI, robotics, edge systems, and developer infrastructure. Submit a proposal to speak at GOSIM Shenzhen 2026."
+    ctaButton={{
+      text: "Submit a Proposal",
+      link: "https://cfp.gosim.org",
+      openInNewTab: true,
+    }}
+  />
+</Layout>

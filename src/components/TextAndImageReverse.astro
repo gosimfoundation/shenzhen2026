@@ -1,0 +1,99 @@
+---
+// Packages
+import { Picture } from "astro:assets";
+
+// Components
+import Button from "components/Button.astro";
+
+interface Props {
+  id?: string;
+  title: string;
+  text: string;
+  image: any;
+  imageAlt: string;
+  dataBgSection: string;
+  dataThemeSection: string;
+  ctaButton?: {
+    text: string;
+    link: string;
+    openInNewTab?: boolean;
+  };
+}
+
+const {
+  id = "none",
+  title,
+  text,
+  image,
+  imageAlt,
+  ctaButton,
+  dataBgSection,
+  dataThemeSection,
+} = Astro.props;
+---
+
+<section
+  class="section section-register-gosim spotlight-section"
+  id={id}
+  data-theme-section={dataThemeSection}
+  data-bg-section={dataBgSection}
+>
+  <div class="container">
+    <div class="row grid">
+      {
+        image && (
+          <div class="col">
+            <div class="logo-tiles">
+              <Picture
+                src={image}
+                formats={["webp", "jpg"]}
+                alt={imageAlt}
+                class="proposals-image"
+              />
+            </div>
+          </div>
+        )
+      }
+      <div class="col">
+        <div class="col-row col-row-title">
+          <h2 class="custom3">{title}</h2>
+        </div>
+
+        <div class="col-row col-row-text styled-content">
+          <p>
+            {text}
+          </p>
+        </div>
+
+        {
+          ctaButton?.text && (
+            <div class="col-row col-row-btn">
+              <Button
+                text={ctaButton.text}
+                link={ctaButton.link}
+                openInNewTab={ctaButton?.openInNewTab}
+                class="btn primary xl btn-hover"
+              />
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .proposals-image {
+    max-width: 500px;
+    border-radius: 20px;
+  }
+  @media screen and (max-width: 1280px) {
+    .proposals-image {
+      max-width: 400px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .proposals-image {
+      max-width: 100%;
+    }
+  }
+</style>

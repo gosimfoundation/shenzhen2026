@@ -1,0 +1,91 @@
+---
+import { marked } from 'marked';
+
+interface BilingualTextData {
+  en: string
+  zh: string
+}
+
+interface Props {
+  text: BilingualTextData | string
+  element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div'
+  className?: string
+  fallback?: string
+  showBothLanguages?: boolean
+  lang?: 'en' | 'zh' | 'fr'
+}
+
+const {
+  text,
+  element = 'span',
+  className = '',
+  fallback = '',
+  lang,
+  showBothLanguages = lang ? false : true
+} = Astro.props
+
+// Helper function to determine language from URL (overridden by lang prop)
+const isChinesePage = lang ? lang === 'zh' : Astro.url.pathname.startsWith('/zh/')
+const isFrenchPage = lang ? lang === 'fr' : Astro.url.pathname.startsWith('/fr/')
+
+// Helper function to get bilingual text content
+const getBilingualContent = (textData: BilingualTextData | string) => {
+  // If text is a simple string, return it as-is
+  if (typeof textData === 'string') {
+    return { displayText: textData, hasTranslations: false }
+  }
+
+  // If text is an object with en/zh properties
+  if (textData && typeof textData === 'object' && ('en' in textData || 'zh' in textData)) {
+    const zhText = textData.zh || ''
+    const enText = textData.en || ''
+    
+    // If both languages are available and we want to show both
+    if (showBothLanguages && zhText && enText) {
+      return { 
+        displayText: { zh: zhText, en: enText }, 
+        hasTranslations: true 
+      }
+    }
+    
+    // If only one language is available, use it
+    if (zhText && !enText) {
+      return { displayText: zhText, hasTranslations: false }
+    }
+    if (enText && !zhText) {
+      return { displayText: enText, hasTranslations: false }
+    }
+    
+    // If both are available but we only want to show one based on current page
+    if (zhText && enText) {
+      const selectedText = isChinesePage ? zhText : (isFrenchPage ? (textData.fr || enText) : enText)
+      return {
+        displayText: selectedText,
+        hasTranslations: false
+      }
+    }
+  }
+  
+  // Fallback if no valid text is found
+  return { displayText: fallback, hasTranslations: false }
+}
+
+const { displayText, hasTranslations } = getBilingualContent(text)
+
+// Generate the CSS class names
+const cssClasses = `bilingual-text ${className}`.trim()
+
+// Create the element tag
+const Element = element
+---
+
+{hasTranslations && typeof displayText === 'object' ? (
+  <Element class={cssClasses}>
+    <div class="zh-text" set:html={marked.parse(displayText.zh, { breaks: true })} />
+    <div class="en-text" set:html={marked.parse(displayText.en, { breaks: true })} />
+  </Element>
+) : (
+  <Element class={cssClasses} set:html={marked.parse(displayText, { breaks: true })} />
+)}
+
+<!-- Styles are now in src/styles/Components.scss -->
