@@ -82,19 +82,25 @@ const rawTerms: Array<{ text: string; tier: keyof typeof TIERS }> = [
   ...ambientWords.map((w) => ({ text: w, tier: "ambient" as const })),
 ];
 
-// Assign deterministic size / opacity / float-delay, then scatter the order pseudo-randomly
+// Assign deterministic size / opacity / float motion, then scatter the order pseudo-randomly
 const cloudTerms = rawTerms
   .map((t, i) => {
     const tier = TIERS[t.tier];
-    const r1 = prand(i * 3 + 1);
-    const r2 = prand(i * 3 + 2);
-    const r3 = prand(i * 3 + 3);
+    const r1 = prand(i * 5 + 1);
+    const r2 = prand(i * 5 + 2);
+    const r3 = prand(i * 5 + 3);
+    const r4 = prand(i * 5 + 4);
+    const r5 = prand(i * 5 + 5);
+    const dur = 5.5 + r3 * 4; // 5.5–9.5s (≈40% slower)
     return {
       ...t,
       size: (tier.sMin + r1 * (tier.sMax - tier.sMin)).toFixed(2),
       op: (tier.oMin + r2 * (tier.oMax - tier.oMin)).toFixed(2),
-      delay: (r1 * 9).toFixed(1),
-      sort: r3,
+      amp: Math.round(11 + r4 * 12), // vertical travel 11–23px
+      ampX: Math.round(7 + r5 * 13), // horizontal drift 7–20px
+      dur: dur.toFixed(1),
+      delay: (r5 * dur).toFixed(1),
+      sort: r4,
     };
   })
   .sort((a, b) => a.sort - b.sort);
@@ -158,7 +164,7 @@ const cloudTerms = rawTerms
                 {cloudTerms.map((term) => (
                   <span
                     class={`fc-word fc-${term.tier}`}
-                    style={`font-size:${term.size}rem; opacity:${term.op}; animation-delay:-${term.delay}s;`}
+                    style={`font-size:${term.size}rem; opacity:${term.op}; --amp:${term.amp}px; --ampX:${term.ampX}px; animation-duration:${term.dur}s; animation-delay:-${term.delay}s;`}
                   >{term.text}</span>
                 ))}
               </div>
@@ -310,7 +316,7 @@ const cloudTerms = rawTerms
   }
 
   .intro-headline-line.is-accent {
-    background: linear-gradient(90deg, #F84A10 0%, #C23A0C 55%, #3F3C2D 100%);
+    background: linear-gradient(90deg, #F84A10 0%, #FF7A3C 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -448,8 +454,10 @@ const cloudTerms = rawTerms
     display: inline-block;
     line-height: 1;
     white-space: nowrap;
-    /* font-size & opacity are set inline per word for the layered depth */
-    animation: fc-float 11s ease-in-out infinite;
+    /* font-size, opacity, --amp, duration & delay are set inline per word */
+    animation-name: fc-float;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
     will-change: transform;
   }
 
@@ -478,9 +486,13 @@ const cloudTerms = rawTerms
     color: #EAE6D2;
   }
 
+  /* gentle elliptical orbit — X and Y peak out of phase so it drifts organically */
   @keyframes fc-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+    0%   { transform: translate(0, 0); }
+    25%  { transform: translate(var(--ampX, 12px), calc(var(--amp, 14px) * -0.5)); }
+    50%  { transform: translate(0, calc(var(--amp, 14px) * -1)); }
+    75%  { transform: translate(calc(var(--ampX, 12px) * -1), calc(var(--amp, 14px) * -0.5)); }
+    100% { transform: translate(0, 0); }
   }
 
   @media (prefers-reduced-motion: reduce) {

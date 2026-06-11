@@ -6,13 +6,6 @@ import HeroText from "components/HeroText.astro"
 // components
 import OpenStreetMap from "components/OpenStreetMap.astro"
 
-// --- Page-specific Data ---
-
-// Data for the location section below the map
-const subtitle = "The Venue"
-const title = "To Be Announced"
-const location = "The conference venue will be announced soon — distances and directions will be added here."
-
 // Data for the map markers
 const mapMarkers = [
   {
@@ -32,9 +25,10 @@ const mapMarkers = [
     title: "福田站 Futian Railway Station",
   },
   {
-    latitude: 22.304453,
-    longitude: 114.166233,
-    title: "香港西九龙站 Hong Kong West Kowloon Station",
+    latitude: 22.308889,
+    longitude: 113.914444,
+    title: "香港国际机场 Hong Kong International Airport (HKG)",
+    highlight: true,
   },
 ]
 ---
@@ -44,96 +38,460 @@ const mapMarkers = [
   description="Information about traveling to GOSIM Shenzhen 2026"
 >
   <HeroText title="General Travel Info" text="" lightgray />
-  <section
-    class="section speaker-detail-header"
-    data-theme-section="light"
-    data-bg-section="light"
-  >
-    <div class="container">
-      <h3>Recommended App</h3>
-      <br />
-      Alipay and WeChat are must. Link your credit card to both and you can use them
-      to pay for almost everything, including DIDI (Chinese Uber), subway, bus, bike,
-      and more.
-      <br /><br />
-      <strong
-        >Google Maps WILL NOT work in China. Apple Maps and Amap (Gaode) works
-        BEST.</strong
-      >
-      <br /><br />
-      <h3>Getting to Shenzhen</h3>
-      <br />
-      Shenzhen is a major technology hub in Guangdong Province in Southern China,
-      directly bordering Hong Kong. It is home to one of the world's fastest-moving
-      hardware ecosystems, from Huaqiangbei's electronics markets to global tech
-      headquarters.
-      <br /><br />
-      Shenzhen is served by Shenzhen Bao'an International Airport (SZX), with direct
-      flights to major cities across Asia and a growing number of intercontinental
-      routes. Many international attendees fly into Hong Kong International Airport
-      (HKG), which offers the widest selection of long-haul flights — from there,
-      Shenzhen is reachable by high-speed rail (about 15–20 minutes from Hong Kong
-      West Kowloon to Futian station), cross-border coach, ferry, or metro to the
-      border crossings. Note that entering mainland China from Hong Kong is an
-      international border crossing — make sure your visa situation covers it.
-      <br /><br />
-      Shenzhen is also a major stop on China's high-speed rail network: about 40
-      minutes from Guangzhou and 8 hours from Beijing or Shanghai, arriving at
-      Shenzhen North or Futian station.
-    </div>
-    <br />
-    <div class="container">
-      <h3>Within Shenzhen</h3>
-      <br />
-      You can order a DIDI (Chinese Uber) from Alipay or WeChat mini app to get a
-      ride anywhere in the city.
-      <br /><br />
-      Shenzhen has one of the largest metro networks in the world, with English
-      signage throughout. You can use the Transit Feature in Alipay and present your
-      transit QR code at the fare gate scanner when riding subways and buses.
 
-      <br /><br />
-      <h3>To Venue From ...</h3>
-      <br />
-      The conference venue will be announced soon. Travel times and costs from the
-      airport and railway stations will be added here once the venue is confirmed.
+  <section
+    class="section travel-section"
+    data-theme-section="light"
+    data-bg-section="lightgray"
+  >
+    <div class="travel-grid-bg"></div>
+    <div class="container">
+      <!-- Before you go -->
+      <div class="travel-block">
+        <div class="travel-head">
+          <span class="travel-kicker">Before You Go</span>
+          <h2 class="travel-h2">Three apps to set up</h2>
+          <p class="travel-intro">
+            Download and link a card to these before you land — they make
+            everything in China seamless.
+          </p>
+        </div>
+
+        <div class="apps-row">
+          <div class="app-item">
+            <span class="app-icon">
+              <img src="/images/travel/Alipay.png" alt="Alipay" width="58" height="58" />
+            </span>
+            <h3>Alipay</h3>
+            <p>Link a card and pay almost everywhere — shops, metro, DIDI, bikes.</p>
+          </div>
+
+          <div class="app-item">
+            <span class="app-icon">
+              <img src="/images/travel/WeChat.png" alt="WeChat" width="58" height="58" />
+            </span>
+            <h3>WeChat</h3>
+            <p>Messaging plus payments and mini-apps for rides, tickets and more.</p>
+          </div>
+
+          <div class="app-item">
+            <span class="app-icon app-icon--pair">
+              <img src="/images/travel/Amap.png" alt="AMap" width="58" height="58" />
+              <img src="/images/travel/AppleMaps.png" alt="Apple Maps" width="58" height="58" />
+            </span>
+            <h3>AMap or Apple Maps</h3>
+            <p>For navigation — Google Maps does not work in mainland China.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Getting to Shenzhen -->
+      <div class="travel-block">
+        <div class="travel-head">
+          <span class="travel-kicker">Arrive</span>
+          <h2 class="travel-h2">Getting to Shenzhen</h2>
+          <p class="travel-intro">
+            Shenzhen sits in Guangdong Province in southern China, directly
+            bordering Hong Kong — home to one of the world's fastest-moving
+            hardware ecosystems, from Huaqiangbei's electronics markets to global
+            tech headquarters.
+          </p>
+        </div>
+
+        <ul class="travel-list">
+          <li class="travel-item">
+            <span class="travel-item-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="11" fill="#3B9AE1"></rect><g transform="translate(9 9) scale(1.25)" fill="#fff"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></g></svg>
+            </span>
+            <div class="travel-item-body">
+              <h3>By Air</h3>
+              <p>
+                Shenzhen Bao'an International Airport (SZX) has direct flights
+                across Asia and a growing number of intercontinental routes.
+              </p>
+            </div>
+          </li>
+
+          <li class="travel-item">
+            <span class="travel-item-icon hk-badge">HK</span>
+            <div class="travel-item-body">
+              <h3>Via Hong Kong</h3>
+              <p>
+                Many international attendees fly into Hong Kong (HKG) for the
+                widest long-haul choice. Direct cross-border shuttle coaches and
+                ferries (SkyPier → Shekou) run straight from the airport to
+                Shenzhen. Crossing from Hong Kong is an international border — make
+                sure your visa covers it.
+              </p>
+            </div>
+          </li>
+
+          <li class="travel-item">
+            <span class="travel-item-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="11" fill="#2C6BB3"></rect><path d="M24 11c-6 0-11 3.6-11 10.2V33a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V21.2C35 14.6 30 11 24 11z" fill="#fff"></path><path d="M18.5 21.5h11a0 0 0 0 1 0 0V27a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1z" fill="#2C6BB3"></path><rect x="17" y="32.5" width="14" height="2.4" rx="1.2" fill="#2C6BB3"></rect><path d="M19 38l-2.2 3.2M29 38l2.2 3.2" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path></svg>
+            </span>
+            <div class="travel-item-body">
+              <h3>By High-Speed Rail</h3>
+              <p>
+                A major stop on China's HSR network — about 40 min from Guangzhou
+                and 8 hours from Beijing or Shanghai, arriving at Shenzhen North or
+                Futian station.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Getting around -->
+      <div class="travel-block">
+        <div class="travel-head">
+          <span class="travel-kicker">Get Around</span>
+          <h2 class="travel-h2">Within Shenzhen</h2>
+        </div>
+
+        <ul class="travel-list">
+          <li class="travel-item">
+            <span class="travel-item-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="11" fill="#FF7A33"></rect><path d="M12 29.5l2.2-6.6a3.2 3.2 0 0 1 3-2.2h13.6a3.2 3.2 0 0 1 3 2.2l2.2 6.6V35a1.6 1.6 0 0 1-1.6 1.6h-1.6A1.6 1.6 0 0 1 34.6 35v-1H13.4v1a1.6 1.6 0 0 1-1.6 1.6h-1.6A1.6 1.6 0 0 1 8.6 35v-5.5z" fill="#fff"></path><path d="M15.5 29h17l-1.5-4.6a1.6 1.6 0 0 0-1.5-1.1H18.5a1.6 1.6 0 0 0-1.5 1.1z" fill="#FF7A33"></path><circle cx="16.5" cy="31.5" r="1.7" fill="#FF7A33"></circle><circle cx="31.5" cy="31.5" r="1.7" fill="#FF7A33"></circle></svg>
+            </span>
+            <div class="travel-item-body">
+              <h3>DIDI Ride-Hailing</h3>
+              <p>
+                Order a DIDI — China's Uber — straight from the Alipay or WeChat
+                mini-app to get anywhere in the city.
+              </p>
+            </div>
+          </li>
+
+          <li class="travel-item">
+            <span class="travel-item-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="11" fill="#0A9D58"></rect><rect x="14.5" y="11.5" width="19" height="23" rx="3.5" fill="#fff"></rect><rect x="16.8" y="15.5" width="14.4" height="7.2" rx="1.6" fill="#0A9D58"></rect><circle cx="19.5" cy="28.5" r="1.7" fill="#0A9D58"></circle><circle cx="28.5" cy="28.5" r="1.7" fill="#0A9D58"></circle><path d="M18.5 34.5 16.6 38M29.5 34.5 31.4 38" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path></svg>
+            </span>
+            <div class="travel-item-body">
+              <h3>Metro &amp; Bus</h3>
+              <p>
+                One of the largest metro networks in the world, with English
+                signage throughout. Use the Transit feature in Alipay and scan your
+                QR code at the fare gate.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
+  <!-- Map + venue -->
   <section
-    class="section section-big-image"
+    class="section travel-venue"
     data-theme-section="light"
     data-bg-section="lightgray"
   >
     <div class="container wide" id="general-travel">
-      <div class="row">
-        <div class="col">
-          <OpenStreetMap
-            mapCenter={{ latitude: 22.55, longitude: 114.0 }}
-            mapZoom={10}
-            markers={mapMarkers}
-            height="350px"
-          />
-        </div>
+      <div class="travel-head travel-head--center">
+        <span class="travel-kicker">Orientation</span>
+        <h2 class="travel-h2">Key Transport Hubs</h2>
       </div>
-    </div>
-  </section>
 
-  <section
-    class="section section-location-info"
-    data-theme-section="light"
-    data-bg-section="lightgray"
-  >
-    <div class="container wide">
-      <div class="row grid">
-        <div class="col col-info">
-          <div class="location-flex">
-            <p>{subtitle}</p>
-            <h2>{title}</h2>
-            <p>{location}</p>
-          </div>
-        </div>
+      <div class="travel-map">
+        <OpenStreetMap
+          mapCenter={{ latitude: 22.55, longitude: 114.0 }}
+          mapZoom={10}
+          markers={mapMarkers}
+          height="420px"
+        />
       </div>
+
+      <p class="travel-venue-note">
+        <span class="travel-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </span>
+        <span>
+          <strong>Venue — to be announced.</strong> Travel times and directions
+          from the airport and stations will be added here once it is confirmed.
+        </span>
+      </p>
     </div>
   </section>
 </Layout>
+
+<style>
+  .travel-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* faint grid pattern for texture */
+  .travel-grid-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(234, 230, 210, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(234, 230, 210, 0.05) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 70%);
+    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 70%);
+  }
+
+  .travel-section .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .travel-block {
+    margin-bottom: 3.5rem;
+  }
+
+  .travel-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .travel-head {
+    max-width: 52rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .travel-head--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .travel-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(234, 230, 210, 0.55);
+    margin-bottom: 0.7rem;
+  }
+
+  .travel-kicker::before {
+    content: "";
+    width: 1.8rem;
+    height: 1px;
+    background: linear-gradient(90deg, #F84A10, transparent);
+  }
+
+  .travel-head--center .travel-kicker::before {
+    display: none;
+  }
+
+  .travel-h2 {
+    margin: 0;
+    font-size: clamp(1.7rem, 1.2rem + 1.6vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #EAE6D2;
+  }
+
+  .travel-intro {
+    margin: 0.9rem 0 0;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: rgba(234, 230, 210, 0.7);
+  }
+
+  /* Full-colour brand/symbol badges */
+  .app-icon,
+  .travel-item-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+  }
+
+  .app-icon svg,
+  .travel-item-icon svg,
+  .app-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.7rem;
+    filter: drop-shadow(0 5px 13px rgba(0, 0, 0, 0.38));
+  }
+
+  .app-icon img {
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Two logos side by side (AMap + Apple Maps) */
+  .app-icon--pair {
+    width: auto;
+    gap: 0.55rem;
+  }
+
+  .app-icon--pair img {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  /* "HK" text badge — Hong Kong flag red */
+  .hk-badge {
+    border-radius: 0.7rem;
+    background: #DE2910;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.02rem;
+    letter-spacing: 0.03em;
+    filter: drop-shadow(0 5px 13px rgba(0, 0, 0, 0.38));
+  }
+
+  /* Apps — open 3-column list with hairline dividers, no boxes */
+  .apps-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .app-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.85rem;
+    padding: 0.5rem 1.6rem;
+  }
+
+  .app-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 12%;
+    bottom: 12%;
+    width: 1px;
+    background: rgba(234, 230, 210, 0.12);
+  }
+
+  .app-icon {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .app-item h3 {
+    margin: 0;
+    font-size: 1.22rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #EAE6D2;
+  }
+
+  .app-item p {
+    margin: 0;
+    max-width: 17rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: rgba(234, 230, 210, 0.66);
+  }
+
+  /* Travel / get-around — open rows, hairline dividers, no boxes */
+  .travel-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(234, 230, 210, 0.1);
+  }
+
+  .travel-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.3rem;
+    padding: 1.5rem 0.25rem;
+    border-bottom: 1px solid rgba(234, 230, 210, 0.1);
+  }
+
+  .travel-item-body h3 {
+    margin: 0.25rem 0 0.45rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #EAE6D2;
+  }
+
+  .travel-item-body p {
+    margin: 0;
+    font-size: 0.96rem;
+    line-height: 1.7;
+    color: rgba(234, 230, 210, 0.68);
+    max-width: 46rem;
+  }
+
+  /* Venue / map */
+  .travel-venue .container {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .travel-map {
+    border-radius: 1.1rem;
+    overflow: hidden;
+    border: 1px solid rgba(234, 230, 210, 0.14);
+  }
+
+  .travel-venue-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    text-align: center;
+    color: rgba(234, 230, 210, 0.6);
+    font-size: 0.96rem;
+  }
+
+  .travel-venue-note .travel-item-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    color: #F84A10;
+    background: rgba(248, 74, 16, 0.1);
+  }
+
+  .travel-venue-note .travel-item-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0;
+    filter: none;
+  }
+
+  .travel-venue-note strong {
+    color: #EAE6D2;
+    font-weight: 700;
+  }
+
+  @media (max-width: 760px) {
+    .apps-row {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    .app-item {
+      flex-direction: row;
+      text-align: left;
+      gap: 1.1rem;
+      padding: 1.3rem 0;
+      border-bottom: 1px solid rgba(234, 230, 210, 0.1);
+    }
+
+    .app-item:last-child {
+      border-bottom: 0;
+    }
+
+    .app-item:not(:last-child)::after {
+      display: none;
+    }
+
+    .app-item p {
+      max-width: none;
+    }
+
+    .travel-block {
+      margin-bottom: 2.5rem;
+    }
+  }
+</style>

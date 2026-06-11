@@ -701,17 +701,13 @@ footer {
 
 .overlay-background-video .overlay-gradient-v2 {
    background:
-      linear-gradient(180deg, rgba(8, 7, 6, 0.52) 0%, rgba(8, 7, 6, 0.3) 26%, rgba(8, 7, 6, 0.3) 60%, rgba(8, 7, 6, 0.62) 100%),
-      radial-gradient(ellipse 70% 55% at 50% 44%, rgba(8, 7, 6, 0) 0%, rgba(8, 7, 6, 0.28) 100%);
+      linear-gradient(180deg, rgba(24, 13, 6, 0.52) 0%, rgba(24, 13, 6, 0.3) 26%, rgba(24, 13, 6, 0.3) 60%, rgba(24, 13, 6, 0.62) 100%),
+      radial-gradient(ellipse 80% 60% at 50% 42%, rgba(150, 64, 18, 0.12) 0%, rgba(24, 13, 6, 0.3) 100%);
    opacity: 1;
    mix-blend-mode: normal;
 }
 
-@media screen and (max-width: 860px) {
-   .overlay-background-video .overlay-gradient-v2 {
-      background-color: rgb(143 193 239 / 50%);
-   }
-}
+
 
 
 /* Presented by */
@@ -1828,7 +1824,7 @@ footer {
 
 
 .section-register-gosim .overlay-wrap {
-   background-color: rgba(34, 35, 43, 1);
+   background-color: #161410;
    overflow: hidden;
 }
 
@@ -1837,7 +1833,12 @@ footer {
 }
 
 .section-register-gosim .overlay-gradient-cover {
-   background: linear-gradient(90deg, rgba(34, 35, 43, 1) 2%, rgba(34, 35, 43, 0) 50%);
+   background: linear-gradient(90deg, #161410 2%, rgba(22, 20, 16, 0) 50%);
+}
+
+/* warm the cool cityscape photo to match the hero / theme */
+.section-register-gosim .overlay-background-video img {
+   filter: saturate(0.62) sepia(0.2) contrast(1.03);
 }
 
 .section-register-gosim .row {
@@ -1885,20 +1886,15 @@ footer {
       align-items: flex-start;
    }
 
+   /* full-bleed image with the text overlaid on top — warm-dark readability
+      gradient from the top, no separate band and no blue hue */
+   .section-register-gosim .overlay-wrap .overlay-background {
+      transform: none;
+      width: 100%;
+      height: 100%;
+   }
+
    .section-register-gosim .overlay-gradient-cover {
-      background: linear-gradient(180deg, rgba(34, 35, 43, 1) 2%, rgba(34, 35, 43, 0) 45%);
-   }
-
-   .section-register-gosim .overlay-wrap .overlay-background {
-      transform: scale(-1, 1) translate(0%, 40%);
-      width: 105%;
-      height: 75%;
-   }
-}
-
-@media screen and (max-width: 540px) {
-   .section-register-gosim .overlay-wrap .overlay-background {
-      transform: scale(-1, 1) translate(0%, 55%);
-      height: 70%;
+      background: linear-gradient(180deg, #161410 0%, rgba(22, 20, 16, 0.82) 26%, rgba(22, 20, 16, 0) 60%);
    }
 }
