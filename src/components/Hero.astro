@@ -17,9 +17,10 @@ interface Props {
     openInNewTab: boolean
     class?: string
   }>
+  note?: string
 }
 
-const { date, location, subtitle, description, video, poster, image, imageAlt, links } = Astro.props
+const { date, location, subtitle, description, video, poster, image, imageAlt, links, note } = Astro.props
 ---
 
 <section
@@ -53,7 +54,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     <div class="row">
       <div class="col">
         <div class="logo-gosim-scroll">
-        <svg width="500" height="190" viewBox="0 0 85 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="500" height="182" viewBox="0 0 85 31" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="gosimGradient" x1="17" y1="0" x2="65" y2="0" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stop-color="#FFFFFF">
@@ -76,7 +77,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
           <!-- SHENZHEN — pure white, large -->
           <text
             x="42.5"
-            y="33"
+            y="28"
             text-anchor="middle"
             font-family="'Helvetica Neue', Arial, sans-serif"
             font-size="16"
@@ -87,6 +88,19 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
           >Shenzhen</text>
           </svg>
 
+          {(links && links.length > 0) || note ? (
+            <div class="hero-cta">
+              {links?.map((loop) => (
+                <Button
+                  text={loop.text}
+                  link={loop.link}
+                  openInNewTab={loop?.openInNewTab}
+                  class={loop.class || "btn outline xl btn-hover"}
+                />
+              ))}
+              {note && <span class="hero-note" aria-disabled="true">{note}</span>}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
@@ -106,19 +120,6 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
             {location && <p class="hero-location">{location}</p>}
           </div>
         )}
-      </div>
-
-      <div class="btn-home-wrap">
-        {
-          links?.map((loop) => (
-            <Button
-              text={loop.text}
-              link={loop.link}
-              openInNewTab={loop?.openInNewTab}
-              class={loop.class || "btn xl btn-hover fade-in-last"}
-            />
-          ))
-        }
       </div>
     </div>
   </div>
@@ -144,13 +145,14 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
 
   .hero-subtitle {
     font-size: clamp(1.55rem, 1.2rem + 0.7vw, 2rem);
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     line-height: 1.18;
     opacity: 0.98;
     color: rgba(255, 255, 255, 0.98);
     margin: 0 0 0.5rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
   }
 
   .hero-description {
@@ -162,6 +164,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     letter-spacing: 0.01em;
     opacity: 0.96;
     color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
   }
 
   .hero-content-row {
@@ -190,6 +193,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     color: #fff;
     margin: 0;
     line-height: 1.1;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
   }
 
   .hero-location {
@@ -197,13 +201,44 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.72);
+    color: rgba(255, 255, 255, 0.85);
     margin: 0.4rem 0 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
   }
 
   .section-home-header .logo-gosim-scroll svg {
     will-change: transform;
     height: auto;
+    filter: drop-shadow(0 3px 18px rgba(0, 0, 0, 0.6));
+  }
+
+  .hero-cta {
+    margin-top: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  /* Informational, non-clickable "more coming" pill next to the CFP button */
+  .hero-note {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.78rem 1.4rem;
+    border-radius: 999px;
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    cursor: default;
+    pointer-events: none;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
   }
 
   .hero-image,

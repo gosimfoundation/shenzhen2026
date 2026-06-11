@@ -15,6 +15,7 @@ interface Props {
 }
 
 const { id, title, events } = Astro.props;
+const eventCount = events?.length ?? 0;
 ---
 
 <section
@@ -31,7 +32,7 @@ const { id, title, events } = Astro.props;
         </div>
 
         <div
-            class="flickity-slider-group three-col count-3"
+            class={`flickity-slider-group three-col count-${eventCount}`}
             data-flickity-slider-type="cards"
         >
             <div class="carousel-container">

@@ -1,7 +1,8 @@
 ---
 interface Facet {
   title: string;
-  text: string;
+  text?: string;
+  keywords?: string[];
 }
 
 interface Props {
@@ -27,6 +28,76 @@ const {
   projectsLabel = "Featuring the teams behind",
   projects = [],
 } = Astro.props;
+
+// Split a facet's text into keyword terms when an explicit keywords array isn't given
+const splitKeywords = (text?: string): string[] =>
+  (text || "")
+    .replace(/[。.]+$/u, "")
+    .split(/[、，,]|—|\band\b|与/u)
+    .map((t) => t.trim())
+    .filter((t) => t.length > 0 && t.length <= 24);
+
+const isZh = Astro.url.pathname.startsWith("/zh");
+
+// Ambient open-source / GOSIM / AI vocabulary that fills out the cloud as faint background depth
+const ambientWords = isZh
+  ? [
+      "开源", "人工智能", "开发者", "社区", "协作", "创新", "构建者", "生态",
+      "前沿", "研究", "推理", "多模态", "基础模型", "大模型", "运行时", "算力",
+      "端侧", "主权 AI", "互操作", "黑客松", "工作坊", "全球", "未来", "机器人",
+      "边缘", "智能体", "开放", "贡献", "落地", "部署", "协议", "标准",
+    ]
+  : [
+      "Open Source", "AI", "Developers", "Community", "Collaboration", "Innovation",
+      "Builders", "Ecosystem", "Frontier", "Research", "Inference", "Multimodal",
+      "Foundation Models", "Reasoning", "Runtime", "Compute", "On-Device", "Sovereign AI",
+      "Interoperability", "Hackathon", "Workshops", "Global", "Future", "Rust",
+      "WebAssembly", "RISC-V", "Robotics", "Edge", "Agents", "Open Models", "Scale", "Deploy",
+    ];
+
+// Deterministic pseudo-random in [0,1) from an integer seed (SSR-safe; no Math.random)
+const prand = (i: number): number => {
+  const x = Math.sin((i + 1) * 12.9898) * 43758.5453;
+  return x - Math.floor(x);
+};
+
+// Per-tier size (rem) and opacity ranges — drives the layered depth
+const TIERS: Record<string, { sMin: number; sMax: number; oMin: number; oMax: number }> = {
+  hero:    { sMin: 2.3, sMax: 3.6, oMin: 1,    oMax: 1 },
+  key:     { sMin: 1.15, sMax: 2,  oMin: 0.6,  oMax: 0.95 },
+  ambient: { sMin: 0.78, sMax: 1.25, oMin: 0.14, oMax: 0.42 },
+};
+
+// Build the full term list: facet titles (hero) + their keywords (key) + ambient filler
+const rawTerms: Array<{ text: string; tier: keyof typeof TIERS }> = [
+  ...facets.flatMap((facet) => {
+    const keywords = facet.keywords && facet.keywords.length > 0
+      ? facet.keywords
+      : splitKeywords(facet.text);
+    return [
+      { text: facet.title, tier: "hero" as const },
+      ...keywords.map((k) => ({ text: k, tier: "key" as const })),
+    ];
+  }),
+  ...ambientWords.map((w) => ({ text: w, tier: "ambient" as const })),
+];
+
+// Assign deterministic size / opacity / float-delay, then scatter the order pseudo-randomly
+const cloudTerms = rawTerms
+  .map((t, i) => {
+    const tier = TIERS[t.tier];
+    const r1 = prand(i * 3 + 1);
+    const r2 = prand(i * 3 + 2);
+    const r3 = prand(i * 3 + 3);
+    return {
+      ...t,
+      size: (tier.sMin + r1 * (tier.sMax - tier.sMin)).toFixed(2),
+      op: (tier.oMin + r2 * (tier.oMax - tier.oMin)).toFixed(2),
+      delay: (r1 * 9).toFixed(1),
+      sort: r3,
+    };
+  })
+  .sort((a, b) => a.sort - b.sort);
 ---
 
 <section
@@ -83,12 +154,12 @@ const {
                 {facetsTitle && <p class="intro-program-title">{facetsTitle}</p>}
               </div>
 
-              <div class="intro-facets-list">
-                {facets.map((facet) => (
-                  <article class="intro-facet-card">
-                    <p class="intro-facet-title">{facet.title}</p>
-                    <p class="intro-facet-text">{facet.text}</p>
-                  </article>
+              <div class="intro-facet-cloud">
+                {cloudTerms.map((term) => (
+                  <span
+                    class={`fc-word fc-${term.tier}`}
+                    style={`font-size:${term.size}rem; opacity:${term.op}; animation-delay:-${term.delay}s;`}
+                  >{term.text}</span>
                 ))}
               </div>
             </div>
@@ -225,12 +296,12 @@ const {
   .intro-headline {
     margin: 0;
     display: grid;
-    gap: 0.08em;
+    gap: 0.05em;
     text-align: center;
-    font-size: clamp(2.9rem, 5.6vw, 6rem);
-    font-weight: 600;
-    line-height: 0.92;
-    letter-spacing: -0.03em;
+    font-size: clamp(1.7rem, 1.1rem + 2vw, 2.85rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
     color: #EAE6D2;
   }
 
@@ -316,13 +387,11 @@ const {
 
   .intro-program {
     position: relative;
-    padding: clamp(1.45rem, 2.45vw, 2.45rem);
-    border-radius: 2rem;
-    border: 2px solid #0A0908;
-    background: linear-gradient(180deg, rgba(32, 30, 22, 0.96), rgba(26, 24, 17, 0.94));
-    box-shadow:
-      0 22px 52px rgba(62, 58, 43, 0.16),
-      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    padding: clamp(1.2rem, 2vw, 2.2rem) 0 0.5rem;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .intro-program::before,
@@ -330,137 +399,92 @@ const {
     display: none;
   }
 
-  .intro-program-header,
-  .intro-facets-list {
+  .intro-program-header {
     position: relative;
     z-index: 1;
-  }
-
-  .intro-program-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 1.15rem;
+    padding-bottom: 0.4rem;
     border-bottom: 0;
     text-align: center;
   }
 
   .intro-program-title {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(234, 230, 210, 0.5);
+  }
+
+  .intro-program-title::before {
+    content: "";
+    width: 1.6rem;
+    height: 1px;
+    background: linear-gradient(90deg, #F84A10, transparent);
+  }
+
+  /* ─── 大会内容 layered word cloud ──────────────────── */
+  .intro-facet-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem 0.95rem;
+    padding: 1.6rem 0.5rem 1rem;
+    max-width: 72rem;
+    margin-inline: auto;
+  }
+
+  .fc-word {
     display: inline-block;
-    margin: 0;
-    padding-bottom: 0.75rem;
-    font-size: clamp(2rem, 2.2vw + 1.2rem, 3.25rem);
-    font-weight: 600;
-    line-height: 0.92;
-    letter-spacing: -0.04em;
+    line-height: 1;
+    white-space: nowrap;
+    /* font-size & opacity are set inline per word for the layered depth */
+    animation: fc-float 11s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* foreground anchors — bold orange, sit on top of the depth field */
+  .fc-hero {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(95deg, #F84A10 0%, #FF7A3C 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 28px rgba(248, 74, 16, 0.25);
+  }
+
+  /* mid layer — brighter cream keywords */
+  .fc-key {
+    font-weight: 700;
+    letter-spacing: -0.01em;
     color: #EAE6D2;
   }
 
-  .intro-program-title::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    left: 50%;
-    width: 6rem;
-    height: 0.24rem;
-    border-radius: 999px;
-    background: linear-gradient(90deg, rgba(248, 74, 16, 0.78), rgba(168, 153, 104, 0.74), rgba(255, 122, 60, 0.72));
-    box-shadow: none;
-    transform: translateX(-50%);
-  }
-
-  .intro-facets-list {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 1rem;
-    align-items: start;
-    padding: 1.15rem 0 0.1rem;
-  }
-
-  .intro-facet-card {
-    position: relative;
-    display: grid;
-    align-content: start;
-    gap: 1rem;
-    min-height: 13.25rem;
-    padding: 1.55rem 1.48rem 1.42rem;
-    border: 2px solid #0A0908;
-    border-radius: 1.45rem;
-    background: linear-gradient(180deg, rgba(32, 30, 22, 0.96), rgba(26, 24, 17, 0.94));
-    box-shadow:
-      0 14px 28px rgba(62, 58, 43, 0.16),
-      inset 0 1px 0 rgba(255, 255, 255, 0.06);
-    transition:
-      transform 220ms ease,
-      box-shadow 220ms ease;
-  }
-
-  .intro-facet-card:nth-child(1) {
-    grid-column: 1 / span 7;
-    background: linear-gradient(180deg, rgba(32, 30, 22, 0.96), rgba(26, 24, 17, 0.94));
-  }
-
-  .intro-facet-card:nth-child(2) {
-    grid-column: 8 / span 5;
-    margin-top: 0.9rem;
-    background: linear-gradient(180deg, rgba(32, 30, 22, 0.96), rgba(26, 24, 17, 0.94));
-  }
-
-  .intro-facet-card:nth-child(3) {
-    grid-column: 1 / span 5;
-    background: linear-gradient(180deg, rgba(32, 30, 22, 0.96), rgba(26, 24, 17, 0.94));
-  }
-
-  .intro-facet-card:nth-child(4) {
-    grid-column: 6 / span 7;
-    margin-top: 0.7rem;
-    background: linear-gradient(180deg, rgba(32, 30, 22, 0.96), rgba(26, 24, 17, 0.94));
-  }
-
-  .intro-facet-card::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 0.28rem;
-    border-radius: 1.45rem 1.45rem 0 0;
-    background: linear-gradient(90deg, rgba(248, 74, 16, 0.18), rgba(255, 122, 60, 0.12));
-    opacity: 1;
-  }
-
-  .intro-facet-card::after {
-    display: none;
-  }
-
-  .intro-facet-card:hover {
-    transform: translateY(-0.16rem);
-    box-shadow: 0 18px 32px rgba(234, 230, 210, 0.14);
-  }
-
-  .intro-facet-title,
-  .intro-facet-text {
-    margin: 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  .intro-facet-title {
-    max-width: 18rem;
-    padding-top: 0.05rem;
-    font-size: clamp(1.42rem, 1.1rem + 0.65vw, 1.9rem);
-    font-weight: 600;
-    letter-spacing: -0.035em;
-    line-height: 0.94;
-    color: #EAE6D2;
-  }
-
-  .intro-facet-text {
-    max-width: 29rem;
-    font-size: 1.04rem;
+  /* background layer — faint recessed filler (opacity set inline, low) */
+  .fc-ambient {
     font-weight: 500;
-    line-height: 1.6;
-    color: rgba(234, 230, 210, 0.76);
+    letter-spacing: 0.01em;
+    color: #EAE6D2;
+  }
+
+  @keyframes fc-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fc-word { animation: none; }
   }
 
   @media (max-width: 1080px) {
@@ -469,39 +493,8 @@ const {
       max-width: none;
     }
 
-    .intro-facets-list {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.15rem;
-    }
-
-    .intro-facet-card:nth-child(1),
-    .intro-facet-card:nth-child(2),
-    .intro-facet-card:nth-child(3),
-    .intro-facet-card:nth-child(4) {
-      grid-column: auto;
-      margin-top: 0;
-    }
-  }
-
-  @media (max-width: 980px) {
-    .intro-facets-list {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      padding-bottom: 0;
-    }
-
-    .intro-facet-card,
-    .intro-facet-card:nth-child(1),
-    .intro-facet-card:nth-child(2),
-    .intro-facet-card:nth-child(3),
-    .intro-facet-card:nth-child(4) {
-      min-height: auto;
-      margin-top: 0;
-      border-radius: 1.2rem;
-    }
-
-    .intro-facet-card:hover {
-      transform: translateY(-0.14rem);
+    .intro-facet-cloud {
+      gap: 0.3rem 1.1rem;
     }
   }
 

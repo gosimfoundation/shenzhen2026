@@ -106,16 +106,16 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
           <li class="link link-hover mobile-language-item">
             <div class="language-mobile-menu">
               <a
-                class="language-item active"
-                href={basePath}
-                onclick="localStorage.setItem('language_preference', 'en')"
-                >English</a
-              >
-              <a
                 class="language-item"
                 href={`/zh${basePath}`}
                 onclick="localStorage.setItem('language_preference', 'zh'); sessionStorage.setItem('language_just_switched', 'true');"
                 >中文</a
+              >
+              <a
+                class="language-item active"
+                href={basePath}
+                onclick="localStorage.setItem('language_preference', 'en')"
+                >English</a
               >
             </div>
           </li>
@@ -233,15 +233,15 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
           </button>
           <div class="language-dropdown-content">
             <a
+              href={`/zh${basePath}`}
+              onclick="localStorage.setItem('language_preference', 'zh'); sessionStorage.setItem('language_just_switched', 'true');"
+              >中文</a
+            >
+            <a
               href={basePath}
               class="active"
               onclick="localStorage.setItem('language_preference', 'en')"
               >English</a
-            >
-            <a
-              href={`/zh${basePath}`}
-              onclick="localStorage.setItem('language_preference', 'zh'); sessionStorage.setItem('language_just_switched', 'true');"
-              >中文</a
             >
           </div>
         </div>

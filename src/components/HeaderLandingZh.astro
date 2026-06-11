@@ -16,7 +16,7 @@ const switchPath = isZhPath ? slug.replace("/zh/", "/") : `/zh${slug}`;
 
 const links = [
   {
-    text: "议题",
+    text: "大会主题",
     link: `${anchorBase}#tracks`,
   },
 ];
@@ -90,16 +90,16 @@ const links = [
           <li class="link link-hover mobile-language-item">
             <div class="language-mobile-menu">
               <a
-                class="language-item"
-                href={basePath}
-                onclick="localStorage.setItem('language_preference', 'en'); sessionStorage.setItem('language_just_switched', 'true');"
-                >English</a
-              >
-              <a
                 class="language-item active"
                 href={`/zh${basePath}`}
                 onclick="localStorage.setItem('language_preference', 'zh')"
                 >中文</a
+              >
+              <a
+                class="language-item"
+                href={basePath}
+                onclick="localStorage.setItem('language_preference', 'en'); sessionStorage.setItem('language_just_switched', 'true');"
+                >English</a
               >
             </div>
           </li>
@@ -222,15 +222,15 @@ const links = [
           </button>
           <div class="language-dropdown-content">
             <a
-              href={basePath}
-              onclick="localStorage.setItem('language_preference', 'en'); sessionStorage.setItem('language_just_switched', 'true');"
-              >English</a
-            >
-            <a
               href={`/zh${basePath}`}
               class="active"
               onclick="localStorage.setItem('language_preference', 'zh')"
               >中文</a
+            >
+            <a
+              href={basePath}
+              onclick="localStorage.setItem('language_preference', 'en'); sessionStorage.setItem('language_just_switched', 'true');"
+              >English</a
             >
           </div>
         </div>

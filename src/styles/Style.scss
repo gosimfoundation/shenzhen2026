@@ -135,8 +135,10 @@ footer {
    stroke: #fff;
 }
 
+/* All sections use dark backgrounds in this theme, so the chevron stays light
+   even when the nav reports a "light" theme over a (dark) lightgray section */
 [data-theme-nav="light"] .has-sublinks svg {
-   stroke: #000;
+   stroke: #F6F3E7;
 }
 
 .main-nav-bar .sub-links {
@@ -608,7 +610,7 @@ footer {
 }
 
 .floating-ticket-button .btn-content.duplicate .btn-fill {
-   background-color: #0A0908 !important;
+   background-color: var(--color-primary) !important;
 }
 
 .floating-ticket-button .btn-content.duplicate span {
@@ -698,9 +700,11 @@ footer {
 }
 
 .overlay-background-video .overlay-gradient-v2 {
-   background: linear-gradient(75deg, rgb(143 180 239 / 50%) 0%, rgb(150 190 245 / 25%) 50%, rgb(135 175 235 / 50%) 100%);
+   background:
+      linear-gradient(180deg, rgba(8, 7, 6, 0.52) 0%, rgba(8, 7, 6, 0.3) 26%, rgba(8, 7, 6, 0.3) 60%, rgba(8, 7, 6, 0.62) 100%),
+      radial-gradient(ellipse 70% 55% at 50% 44%, rgba(8, 7, 6, 0) 0%, rgba(8, 7, 6, 0.28) 100%);
    opacity: 1;
-   mix-blend-mode: multiply;
+   mix-blend-mode: normal;
 }
 
 @media screen and (max-width: 860px) {
