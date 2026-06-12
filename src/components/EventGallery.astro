@@ -1,10 +1,18 @@
 ---
+interface GalleryImage {
+  src: string;
+  alt: string;
+}
+interface Album {
+  label: string;
+  images: GalleryImage[];
+}
 interface Props {
   title: string;
-  images: { src: string; alt: string }[];
+  albums: Album[];
 }
 
-const { title, images } = Astro.props;
+const { title, albums } = Astro.props;
 ---
 
 <section class="section section-event-gallery" data-theme-section="light" data-bg-section="lightgray">
@@ -13,13 +21,18 @@ const { title, images } = Astro.props;
       <h2>{title}</h2>
     </div>
 
-    <div class="exp-grid">
-      {images.map((img) => (
-        <figure class="exp-item">
-          <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
-        </figure>
-      ))}
-    </div>
+    {albums.map((album) => (
+      <div class="exp-album">
+        <h3 class="exp-album-label">{album.label}</h3>
+        <div class="exp-grid">
+          {album.images.map((img) => (
+            <figure class="exp-item">
+              <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
+            </figure>
+          ))}
+        </div>
+      </div>
+    ))}
   </div>
 
   <div class="gallery-lightbox" data-gallery-lightbox>
@@ -38,10 +51,30 @@ const { title, images } = Astro.props;
 
   .exp-header {
     text-align: center;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.8rem;
   }
   .exp-header h2 {
     margin: 0;
+  }
+
+  /* per-event album with its own subtitle */
+  .exp-album + .exp-album {
+    margin-top: clamp(2.2rem, 5vw, 3.4rem);
+  }
+  .exp-album-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 0 1.1rem;
+    font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.45rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .exp-album-label::before {
+    content: "";
+    width: 1.6rem;
+    height: 2px;
+    background: #f84a10;
   }
 
   /* Mosaic / bento grid — clicking a tile opens the lightbox */
