@@ -2,45 +2,35 @@
   "categories": [
     {
       "id": "all",
-      "name": {
-        "en": "All",
-        "zh": "全部"
-      }
+      "name": { "en": "All", "zh": "全部", "fr": "Tous" }
     },
     {
       "id": "host",
-      "name": {
-        "en": "Host",
-        "zh": "主办"
-      }
+      "name": { "en": "Host", "zh": "主办", "fr": "Hôte" }
     },
     {
       "id": "co-organizer",
-      "name": {
-        "en": "Co-organizer",
-        "zh": "承办"
-      }
+      "name": { "en": "Co-organizer", "zh": "承办", "fr": "Co-organisateur" }
     },
     {
-      "id": "premier-sponsor",
-      "name": {
-        "en": "Premier Sponsor",
-        "zh": "首席赞助商"
-      }
+      "id": "diamond",
+      "name": { "en": "Diamond Sponsor", "zh": "钻石赞助商", "fr": "Sponsor Diamant" }
     },
     {
-      "id": "sponsor",
-      "name": {
-        "en": "General Sponsor",
-        "zh": "赞助商"
-      }
+      "id": "platinum",
+      "name": { "en": "Platinum Sponsor", "zh": "白金赞助商", "fr": "Sponsor Platine" }
+    },
+    {
+      "id": "gold",
+      "name": { "en": "Gold Sponsor", "zh": "黄金赞助商", "fr": "Sponsor Or" }
+    },
+    {
+      "id": "silver",
+      "name": { "en": "Silver Sponsor", "zh": "白银赞助商", "fr": "Sponsor Argent" }
     },
     {
       "id": "supporting-organizations",
-      "name": {
-        "en": "Supporting Partner",
-        "zh": "支持伙伴"
-      }
+      "name": { "en": "Supporting Partner", "zh": "支持伙伴", "fr": "Partenaire de soutien" }
     }
   ],
   "partners": [

@@ -26,7 +26,9 @@ const hasRightCol = text || hasSlot;
 
             <div class="col col-title">
                 <div class="col-row col-row-title">
-                    <h1>{title}</h1>
+                    <h1>{title.split("\n").map((line, i) => (
+                        <Fragment>{i > 0 && <br />}{line}</Fragment>
+                    ))}</h1>
                 </div>
             </div>
 

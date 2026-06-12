@@ -1,0 +1,39 @@
+---
+// Components
+import Layout from "layouts/LayoutLanding.astro"
+import GetTickets from "components/GetTickets.astro"
+import HeroText from "components/HeroText.astro"
+import PastSponsors from "components/PastSponsors.astro"
+---
+
+<Layout
+  title="Past Supporters – GOSIM Shenzhen 2026"
+  description="The organizations who have powered GOSIM events around the world."
+  navBackground="light"
+  pageTransitionName="Past Supporters"
+>
+  <HeroText
+    title="Past Supporters (Partial)"
+    text="GOSIM events around the world have been powered by an incredible community of sponsors and partners. Below is a selection of them — this is a partial list, not every past sponsor is shown."
+    lightgray
+  />
+
+  <PastSponsors
+    title=""
+    intro=""
+    contactText="Interested in sponsoring GOSIM Shenzhen 2026? We'd love to hear from you."
+    email="support@gosim.org"
+  />
+
+  <GetTickets
+    title="Call for Proposals Now Open"
+    location="Shenzhen, China"
+    date="October 16-17, 2026"
+    text="We're looking for bold ideas and fresh voices in open-source AI, robotics, edge systems, and developer infrastructure. Submit a proposal to speak at GOSIM Shenzhen 2026."
+    ctaButton={{
+      text: "Submit a Proposal",
+      link: "https://cfp.gosim.org",
+      openInNewTab: true,
+    }}
+  />
+</Layout>

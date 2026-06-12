@@ -1,0 +1,39 @@
+---
+// Components
+import Layout from "layouts/LayoutLandingZh.astro";
+import GetTickets from "components/GetTickets.astro";
+import HeroText from "components/HeroText.astro";
+import PastSponsors from "components/PastSponsors.astro";
+---
+
+<Layout
+  title="往届支持者 – GOSIM Shenzhen 2026"
+  description="感谢全球历届 GOSIM 活动背后的赞助伙伴。"
+  navBackground="light"
+  pageTransitionName="往届支持者"
+>
+  <HeroText
+    title={"往届支持者\n（部分）"}
+    text="GOSIM 全球历届活动的背后，是一群了不起的赞助商与合作伙伴。以下仅展示其中一部分，并非完整名单。"
+    lightgray
+  />
+
+  <PastSponsors
+    title=""
+    intro=""
+    contactText="有兴趣赞助 GOSIM Shenzhen 2026？欢迎随时联系我们。"
+    email="support@gosim.org"
+  />
+
+  <GetTickets
+    title="CFP 议题征集 进行中"
+    location="中国深圳"
+    date="2026年10月16-17日"
+    text="我们正在寻找开源 AI、机器人、边缘系统与开发者基础设施领域的大胆想法与新声音。欢迎提交议题，登上 GOSIM Shenzhen 2026 的舞台。"
+    ctaButton={{
+      text: "提交议题",
+      link: "https://cfp.gosim.org",
+      openInNewTab: true,
+    }}
+  />
+</Layout>

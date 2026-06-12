@@ -1,0 +1,373 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "name": {
+        "en": "All",
+        "zh": "全部",
+        "fr": "Tous"
+      }
+    },
+    {
+      "id": "host",
+      "name": {
+        "en": "Host",
+        "zh": "主办",
+        "fr": "Hôte"
+      }
+    },
+    {
+      "id": "co-organizer",
+      "name": {
+        "en": "Co-organizer",
+        "zh": "承办",
+        "fr": "Co-organisateur"
+      }
+    },
+    {
+      "id": "premier-sponsor",
+      "name": {
+        "en": "Premier Sponsor",
+        "zh": "首席赞助商",
+        "fr": "Sponsor Principal"
+      }
+    },
+    {
+      "id": "sponsor",
+      "name": {
+        "en": "General Sponsor",
+        "zh": "赞助商",
+        "fr": "Sponsor Général"
+      }
+    },
+    {
+      "id": "supporting-organizations",
+      "name": {
+        "en": "Supporting Partner",
+        "zh": "支持伙伴",
+        "fr": "Partenaire de soutien"
+      }
+    },
+    {
+      "id": "speakers-affiliated",
+      "name": {
+        "en": "Speakers Affiliated (Partial)",
+        "zh": "讲师附属组织（部分）",
+        "fr": "Affiliés aux intervenants (partiel)"
+      }
+    }
+  ],
+  "partners": [
+    {
+      "category": "host",
+      "image": "gosim.png",
+      "url": "https://gosim.org"
+    },
+    {
+      "category": "co-organizer",
+      "image": "csdn.png",
+      "url": "https://www.csdn.net"
+    },
+    {
+      "category": "co-organizer",
+      "image": "1msai.png",
+      "url": "https://1ms.ai/"
+    },
+    {
+      "category": "co-organizer",
+      "image": "probabl.png",
+      "url": "https://probabl.ai"
+    },
+    {
+      "category": "premier-sponsor",
+      "image": "huawei.png",
+      "url": "https://www.huawei.com"
+    },
+    {
+      "category": "sponsor",
+      "image": "openharmony.png",
+      "url": "https://www.openharmony.cn"
+    },
+    {
+      "category": "sponsor",
+      "image": "openbmb.png",
+      "url": "https://www.openbmb.cn"
+    },
+    {
+      "category": "sponsor",
+      "image": "minimax.png",
+      "url": "https://www.minimaxi.com"
+    },
+    {
+      "category": "sponsor",
+      "image": "kimi.png",
+      "url": "https://kimi.ai"
+    },
+    {
+      "category": "sponsor",
+      "image": "z-ai.png",
+      "url": "https://z.ai"
+    },
+    {
+      "category": "sponsor",
+      "image": "novita.png",
+      "url": "https://novita.ai"
+    },
+    {
+      "category": "sponsor",
+      "image": "radixark.png",
+      "url": "https://www.radixark.ai"
+    },
+    {
+      "category": "sponsor",
+      "image": "databricks.png",
+      "url": "https://www.databricks.com"
+    },
+    {
+      "category": "sponsor",
+      "image": "fundamental.png",
+      "url": "https://fundamental.tech/"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "baai.png",
+      "url": "https://www.baai.ac.cn"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "ouicrec.png",
+      "url": "http://www.ouicrea.com"
+    },
+        {
+      "category": "supporting-organizations",
+      "image": "quanfa.png",
+      "url": ""
+    },
+        {
+      "category": "supporting-organizations",
+      "image": "zhongfa.png",
+      "url": ""
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "olares.png",
+      "url": "https://olares.com"
+    },
+
+
+    {
+      "category": "supporting-organizations",
+      "image": "second-state.png",
+      "url": "https://secondstate.io"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "sgl.png",
+      "url": "https://sglang.ai"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "vllm.png",
+      "url": "https://vllm.ai"
+    },
+
+    {
+      "category": "supporting-organizations",
+      "image": "huggingface.png",
+      "logoClass": "l",
+      "url": "https://huggingface.co"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "kaiyuanshe.png",
+      "url": "https://kaiyuanshe.cn"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "unaite.png",
+      "url": "https://unaite.fr"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "42-ai.png",
+      "url": "https://42-ai.github.io"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "ai-by-the-bay.png",
+      "url": "https://bythebay.io"
+    },
+        {
+      "category": "supporting-organizations",
+      "image": "innaio.png",
+      "url": "https://www.innaio.com"
+    },
+        {
+      "category": "supporting-organizations",
+      "image": "jumeau-ai.png",
+      "url": "https://www.jumeau.ai"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "amazon.png",
+      "logoClass": "xll",
+      "url": "https://www.amazon.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "arm.png",
+      "logoClass": "xl",
+      "url": "https://www.arm.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "bytedance.png",
+      "url": "https://www.bytedance.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "carrefour.png",
+      "url": "https://www.carrefour.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "copilotkit.png",
+      "url": "https://copilotkit.ai"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "dimforge.png",
+      "url": "https://www.dimforge.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "ellamind.png",
+      "url": "https://ellamind.com/"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "fraunhofer.png",
+      "url": "https://www.fraunhofer.de"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "fudan-university.png",
+      "url": "https://www.fudan.edu.cn"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "futurewei.png",
+      "url": "https://www.futurewei.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "google.png",
+      "logoClass": "xll",
+      "url": "https://www.google.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "huggingface.png",
+      "logoClass": "l",
+      "url": "https://huggingface.co"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "inria.png",
+      "url": "https://www.inria.fr"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "intel.png",
+      "logoClass": "xl",
+      "url": "https://www.intel.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "kedro.png",
+      "url": "https://kedro.org"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "makepad.png",
+      "url": "https://makepad.nl"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "modelbest.png",
+      "url": "https://modelbest.cn"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "nvidia.png",
+      "logoClass": "xl",
+      "url": "https://www.nvidia.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "pleias.png",
+      "url": "https://pleias.fr"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "pollen-robotics.png",
+      "url": "https://www.pollen-robotics.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "probabl.png",
+      "url": "https://probabl.ai"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "quansight.png",
+      "url": "https://quansight.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "quantstack.png",
+      "url": "https://quantstack.net"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "redhat.png",
+      "logoClass": "xl",
+      "url": "https://www.redhat.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "rice-university.png",
+      "url": "https://www.rice.edu"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "robolytics.png",
+      "url": "https://robolytics.ai"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "sgl.png",
+      "url": "https://sglang.ai"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "shanghai-ai-lab.png",
+      "url": "https://www.shlab.org.cn"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "shanghai-jiaotong-university.png",
+      "url": "https://www.sjtu.edu.cn"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "singularity-intelligence.png",
+      "url": "https://singularity-ai.com"
+    },
+    {
+      "category": "speakers-affiliated",
+      "image": "zenoh.png",
+      "url": "https://zenoh.io"
+    }
+  ]
+}

@@ -38,7 +38,10 @@ const isRemoteImage = (image?: string): boolean =>
             {
                 sponsorsData.categories.map(
                     (category) =>
-                        category.id !== "all" && (
+                        category.id !== "all" &&
+                        sponsorsData.partners.some(
+                            (partner) => partner.category === category.id,
+                        ) && (
                             <div
                                 class="grid-group"
                                 data-filter-status="active"

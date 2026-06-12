@@ -59,14 +59,16 @@ const half = Math.ceil(allPills.length / 2);
 const rowA = allPills.slice(0, half);
 const rowB = allPills.slice(half);
 
+// One distinct hue per track (deeper `from` → brighter `to`). Ordered so no two
+// neighbours sit close on the colour wheel — warm/cool/warm/cool spread.
 const palette = [
-  { from: "#8A7F5C", to: "#A89968" },
-  { from: "#C23A0C", to: "#FF7A3C" },
-  { from: "#6B6450", to: "#B3A878" },
-  { from: "#7C7050", to: "#C9BD8F" },
-  { from: "#8F8259", to: "#FF7A3C" },
-  { from: "#74694C", to: "#D0C49A" },
-  { from: "#A89968", to: "#D0C49A" },
+  { from: "#F0531A", to: "#FF8A4C" }, // 01 · orange (brand)
+  { from: "#0E9E8E", to: "#4FD6BF" }, // 02 · teal
+  { from: "#D63C86", to: "#FF6FB4" }, // 03 · magenta
+  { from: "#5BA32C", to: "#9CDE56" }, // 04 · green
+  { from: "#3F6BE0", to: "#7E9CFF" }, // 05 · blue
+  { from: "#7E5AE0", to: "#A98BFF" }, // 06 · violet (spare)
+  { from: "#D89A1E", to: "#FFC94D" }, // 07 · gold (spare)
 ];
 ---
 

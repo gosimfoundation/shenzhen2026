@@ -3,6 +3,7 @@
 import Layout from "layouts/LayoutLandingZh.astro"
 import Hero from "components/Hero.astro"
 import ProgramSection from "components/ProgramSection.astro"
+import EventGallery from "components/EventGallery.astro"
 import PreviousEvents from "components/PreviousEvents.astro"
 import GetTickets from "components/GetTickets.astro"
 
@@ -31,7 +32,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
     poster="/videos/shenzhen-hero-poster.jpg"
     links={[
       {
-        text: "议题征集 CFP",
+        text: "CFP 议题征集",
         link: "https://cfp.gosim.org",
         openInNewTab: true,
       },
@@ -106,6 +107,31 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
     ]}
   />
 
+  <EventGallery
+    title="The GOSIM Experience"
+    images={[
+      { src: "/images/homepage/gallery2026/paris2026-01.jpg", alt: "GOSIM Paris 2026 现场照片" },
+      { src: "/images/homepage/gallery2026/paris2026-02.jpg", alt: "GOSIM Paris 2026 现场照片" },
+      { src: "/images/homepage/gallery2026/paris2026-03.jpg", alt: "GOSIM Paris 2026 现场照片" },
+      { src: "/images/homepage/gallery2026/paris2026-04.jpg", alt: "GOSIM Paris 2026 现场照片" },
+      { src: "/images/homepage/gallery2026/paris2026-05.jpg", alt: "GOSIM Paris 2026 现场照片" },
+      { src: "/images/homepage/gallery2026/paris2026-06.jpg", alt: "GOSIM Paris 2026 现场照片" },
+      { src: "/images/homepage/gallery2026/paris2026-07.jpg", alt: "GOSIM Paris 2026 现场照片" },
+      { src: "/images/homepage/gallery2026/paris2026-08.jpg", alt: "GOSIM Paris 2026 现场照片" },
+      { src: "/images/homepage/gallery2026/paris2026-09.jpg", alt: "GOSIM Paris 2026 现场照片" },
+      { src: "/images/homepage/gallery2025/hangzhou2025-01.jpg", alt: "GOSIM Hangzhou 2025 现场照片" },
+      { src: "/images/homepage/gallery2025/hangzhou2025-02.jpg", alt: "GOSIM Hangzhou 2025 现场照片" },
+      { src: "/images/homepage/gallery2025/hangzhou2025-03.jpg", alt: "GOSIM Hangzhou 2025 现场照片" },
+      { src: "/images/homepage/gallery2025/hangzhou2025-04.jpg", alt: "GOSIM Hangzhou 2025 现场照片" },
+      { src: "/images/homepage/gallery2025/hangzhou2025-05.jpg", alt: "GOSIM Hangzhou 2025 现场照片" },
+      { src: "/images/homepage/gallery2025/hangzhou2025-06.jpg", alt: "GOSIM Hangzhou 2025 现场照片" },
+      { src: "/images/homepage/gallery2025/hangzhou2025-07.jpg", alt: "GOSIM Hangzhou 2025 现场照片" },
+      { src: "/images/homepage/gallery2025/hangzhou2025-08.jpg", alt: "GOSIM Hangzhou 2025 现场照片" },
+      { src: "/images/homepage/gallery2025/hangzhou2025-09.jpg", alt: "GOSIM Hangzhou 2025 现场照片" },
+      { src: "/images/homepage/gallery2025/hangzhou2025-10.jpg", alt: "GOSIM Hangzhou 2025 现场照片" },
+    ]}
+  />
+
   <PreviousEvents
     title="往届活动"
     events={[
@@ -155,7 +181,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
   />
 
   <GetTickets
-    title="议题征集 CFP 进行中"
+    title="CFP 议题征集 进行中"
     location="中国深圳"
     date="2026年10月16-17日"
     text="我们正在寻找开源 AI、机器人、边缘系统与开发者基础设施领域的大胆想法与新声音。欢迎提交议题，登上 GOSIM Shenzhen 2026 的舞台。"
