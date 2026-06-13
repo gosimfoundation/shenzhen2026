@@ -121,7 +121,10 @@ footer {
    display: block;
 
    svg {
-      stroke: #000 !important;
+      /* Match the menu item text colour (#EAE6D2). Was hard-coded #000, which is
+         invisible on the dark mobile menu background; currentColor can't be used
+         because the svg inherits the button's black colour, not the span's. */
+      stroke: #EAE6D2 !important;
       margin-right: -1rem;
    }
 
@@ -1858,7 +1861,14 @@ footer {
 }
 
 .section-register-gosim .col-row-title {
-   max-width: calc(var(--title-size) * 4);
+   max-width: calc(var(--title-size) * 5);
+}
+
+.section-register-gosim .col-row-title h2 {
+   /* Keep CJK phrases (e.g. 进行中) from breaking mid-word and orphaning a
+      single character on a second line; balance lines if they do wrap. */
+   word-break: keep-all;
+   text-wrap: balance;
 }
 
 .section-register-gosim .col-row-text {

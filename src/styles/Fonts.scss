@@ -33,3 +33,30 @@
     src: local('Manrope Bold'), local('Manrope-Bold'),
         url('/fonts/Manrope-Bold.ttf') format('ttf');
 }
+
+/* Hero wordmark — Montserrat (SIL OFL 1.1), self-hosted Latin subset */
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/montserrat-700-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/montserrat-800-latin.woff2') format('woff2');
+}
+
+/* Hero city name — Ma Shan Zheng (SIL OFL 1.1), self-hosted 深圳 subset only */
+@font-face {
+    font-display: swap;
+    font-family: 'Ma Shan Zheng';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/ma-shan-zheng-shenzhen.woff2') format('woff2');
+    unicode-range: U+5733, U+6DF1;
+}

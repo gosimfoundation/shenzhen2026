@@ -75,9 +75,8 @@ const mapMarkers = [
           </div>
 
           <div class="app-item">
-            <span class="app-icon app-icon--pair">
+            <span class="app-icon">
               <img src="/images/travel/Amap.png" alt="AMap" width="58" height="58" />
-              <img src="/images/travel/AppleMaps.png" alt="Apple Maps" width="58" height="58" />
             </span>
             <h3>AMap or Apple Maps</h3>
             <p>For navigation — Google Maps does not work in mainland China.</p>
@@ -321,17 +320,6 @@ const mapMarkers = [
     display: block;
   }
 
-  /* Two logos side by side (AMap + Apple Maps) */
-  .app-icon--pair {
-    width: auto;
-    gap: 0.55rem;
-  }
-
-  .app-icon--pair img {
-    width: 3.6rem;
-    height: 3.6rem;
-  }
-
   /* "HK" text badge — Hong Kong flag red */
   .hk-badge {
     border-radius: 0.7rem;
@@ -470,12 +458,33 @@ const mapMarkers = [
       gap: 0.5rem;
     }
 
+    /* Icon spans both rows; name sits above the description so every
+       description starts at the same left edge regardless of name length. */
     .app-item {
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+        "icon name"
+        "icon desc";
+      align-items: start;
+      column-gap: 1.1rem;
+      row-gap: 0.3rem;
       text-align: left;
-      gap: 1.1rem;
       padding: 1.3rem 0;
       border-bottom: 1px solid rgba(234, 230, 210, 0.1);
+    }
+
+    .app-item .app-icon {
+      grid-area: icon;
+      align-self: center;
+    }
+
+    .app-item h3 {
+      grid-area: name;
+    }
+
+    .app-item p {
+      grid-area: desc;
     }
 
     .app-item:last-child {

@@ -284,12 +284,14 @@
    --gradient-size: calc(var(--title-size) * 9);
    width: var(--gradient-size);
    height: var(--gradient-size);
-   background: radial-gradient(circle, #D4CBE7 0%, rgba(var(--color-dark-rgb), 0) 66%);
+   /* Soft glow from the gradient itself — no blur filter. A 5vw blur on an
+      element this large forces an expensive recomposite on every Lenis scroll
+      frame, which is what made the sub-pages scroll janky. */
+   background: radial-gradient(circle, rgba(212, 203, 231, 0.5) 0%, rgba(var(--color-dark-rgb), 0) 70%);
    position: absolute;
    opacity: 0.4;
    pointer-events: none;
    border-radius: 50%;
-   filter: blur(5vw);
 }
 
 /* ------------------------- Flickity Slider - Setup -------------------------------------------------- */
