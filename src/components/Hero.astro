@@ -55,7 +55,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
       <div class="col">
         <div class="logo-gosim-scroll">
         <div class="hero-wordmark">
-          <span class="hero-gosim">GOSIM</span>
+          <span class="hero-gosim" role="img" aria-label="GOSIM"></span>
           <span class="hero-city-cn">深圳</span>
           <span class="hero-city-en">Shenzhen</span>
         </div>
@@ -116,20 +116,17 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     width: 100%;
   }
 
-  /* GOSIM — Montserrat with the animated orange-glow gradient */
+  /* GOSIM — the official logo wordmark masked over the animated orange-glow
+     gradient, so the gradient shimmers through the real brand mark. */
   .hero-gosim {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: clamp(3.5rem, 14vw, 13rem);
-    letter-spacing: 0.005em;
-    line-height: 0.95;
+    display: block;
+    width: clamp(15rem, 62vw, 34rem);
+    aspect-ratio: 85 / 24;
     background: linear-gradient(95deg, #FFFFFF 0%, #FF7A3C 36%, #C23A0C 64%, #EAE6D2 100%);
     background-size: 220% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
     animation: hero-gosim-shimmer 6s ease-in-out infinite;
+    -webkit-mask: url('/images/gosim-logo.svg') no-repeat center / contain;
+    mask: url('/images/gosim-logo.svg') no-repeat center / contain;
   }
 
   @keyframes hero-gosim-shimmer {
