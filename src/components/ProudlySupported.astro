@@ -1,0 +1,178 @@
+---
+// Scrolling "proudly supported by" strip — the top past supporters/partners shown as
+// uniform white logos inside liquid-glass pills, gliding horizontally.
+// Logos are recoloured to white at render time (filter: brightness(0) invert(1))
+// so mixed-colour source PNGs read as one consistent set.
+interface Props {
+  lead: string;
+  emphasis?: string;
+}
+const { lead, emphasis } = Astro.props;
+
+// Top 20 past supporters by significance (mirrors the ranking used on the
+// Past Supporters page, trimmed to the most recognisable names).
+const TOP_20 = [
+  { image: "huawei.png", name: "Huawei" },
+  { image: "google.png", name: "Google" },
+  { image: "amazon.png", name: "Amazon" },
+  { image: "nvidia.png", name: "NVIDIA", big: true },
+  { image: "intel.png", name: "Intel" },
+  { image: "arm.png", name: "Arm" },
+  { image: "redhat.png", name: "Red Hat", big: true },
+  { image: "huggingface-strip.png", name: "Hugging Face", big: true },
+  { image: "bytedance.png", name: "ByteDance" },
+  { image: "databricks.png", name: "Databricks", big: true },
+  { image: "csdn.png", name: "CSDN" },
+  { image: "minimax.png", name: "MiniMax" },
+  { image: "kimi-strip.png", name: "Kimi" },
+  { image: "z-ai-strip.png", name: "Z.ai" },
+  { image: "baai.png", name: "BAAI" },
+  { image: "openbmb.png", name: "OpenBMB" },
+  { image: "modelbest.png", name: "ModelBest" },
+  { image: "second-state.png", name: "Second State" },
+  { image: "sgl.png", name: "SGLang" },
+  { image: "futurewei.png", name: "Futurewei", big: true },
+];
+
+// duplicated once for a seamless -50% loop
+const loop = [...TOP_20, ...TOP_20];
+---
+
+<section class="psup" data-theme-section="dark" data-bg-section="lightgray">
+  <p class="psup-eyebrow">
+    {lead}{emphasis && <> <em>{emphasis}</em></>}
+  </p>
+
+  <div class="psup-marquee">
+    <div class="psup-row">
+      {loop.map((l, i) => (
+        <span class="psup-pill" aria-hidden={i >= TOP_20.length ? "true" : undefined}>
+          <img
+            src={`/images/sponsors/${l.image}`}
+            alt={i >= TOP_20.length ? "" : l.name}
+            class={[l.raw && "is-raw", l.big && "is-big"].filter(Boolean).join(" ") || undefined}
+            loading="lazy"
+            decoding="async"
+          />
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .psup {
+    --cream: #eae6d2;
+    position: relative;
+    padding: clamp(3rem, 6vw, 5rem) 0;
+    /* base matches the ProgramSection below (#141209) so the two sections blend
+       into one continuous block with no seam between them */
+    background:
+      radial-gradient(120% 90% at 50% -20%, rgba(248, 74, 16, 0.07), transparent 55%),
+      #141209;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .psup-eyebrow {
+    margin: 0 0 clamp(1.8rem, 3.5vw, 2.8rem);
+    text-align: center;
+    font-size: clamp(1.25rem, 0.95rem + 1.2vw, 1.95rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    padding: 0 1.5rem;
+  }
+  .psup-eyebrow em {
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: rgba(234, 230, 210, 0.62);
+  }
+
+  /* fade the strip into the background at both edges */
+  .psup-marquee {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    overflow: hidden;
+  }
+
+  .psup-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    white-space: nowrap;
+    width: max-content;
+    will-change: transform;
+    /* promote to its own GPU layer so pills don't drop out mid-scroll */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    /* 50s ≈ same px/s as the "大会内容" program marquee (matched by row width) */
+    animation: psup-scroll 50s linear infinite;
+  }
+  @keyframes psup-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* liquid-glass pill (no backdrop-filter — many of these scroll, so the glass
+     is faked with a translucent fill + specular sheen + a bright rim). */
+  .psup-pill {
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.4rem;
+    width: 11rem;
+    padding: 0 1.4rem;
+    border-radius: 1.05rem;
+    background: rgba(255, 255, 255, 0.05);
+    backface-visibility: hidden;
+    /* rim ring via inset shadow instead of a mask-composite pseudo-element,
+       which Chrome can fail to repaint on a transforming row (vanishing pills) */
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+      inset 0 1.5px 1px rgba(255, 255, 255, 0.22),
+      inset 0 -3px 7px rgba(0, 0, 0, 0.18),
+      0 6px 18px rgba(0, 0, 0, 0.22);
+  }
+  .psup-pill img {
+    /* fit every logo into the same bounding box so they read at a consistent
+       size and none get clipped (e.g. Hugging Face) */
+    max-height: 1.65rem;
+    max-width: 8.2rem;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* recolour any logo to a uniform white silhouette */
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+  }
+  /* logos already styled for dark backgrounds (kept in their own colours) */
+  .psup-pill img.is-raw {
+    filter: none;
+    opacity: 1;
+  }
+  /* icon+wordmark logos that read small at the default size — scale them up */
+  .psup-pill img.is-big {
+    max-height: 2.5rem;
+    max-width: 9.8rem;
+  }
+
+  @media (max-width: 640px) {
+    .psup-pill {
+      height: 3.7rem;
+      width: 8.5rem;
+      padding: 0 1rem;
+    }
+    .psup-pill img {
+      max-height: 1.35rem;
+      max-width: 6.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .psup-row { animation: none; }
+  }
+</style>
