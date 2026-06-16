@@ -1,0 +1,76 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Liquid glass — a shared translucent-glass treatment applied across the UI.
+   Recipe: a lightly-blurred, see-through surface (the background shows through
+   with a colour tint) + a bright specular rim that glows around the edge +
+   a soft depth shadow. Imported LAST so it layers over the base button styles.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Reusable glowing rim: a masked gradient border that respects the element's
+   radius and is brightest at the top-left (where light catches the glass). */
+@mixin lg-rim($z: 4, $strength: 0.75) {
+   position: relative;
+   &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1.2px;
+      background: linear-gradient(
+         135deg,
+         rgba(255, 255, 255, $strength),
+         rgba(255, 255, 255, calc(#{$strength} * 0.16)) 42%,
+         rgba(255, 255, 255, calc(#{$strength} * 0.14)) 60%,
+         rgba(255, 255, 255, calc(#{$strength} * 0.55))
+      );
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+              mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+      z-index: $z;
+   }
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────
+   Glass look via gloss, NOT transparency: the fill stays its bright, fully
+   saturated brand colour; the "liquid glass" comes from a bright specular
+   top highlight, a glowing rim, inner depth and a soft float shadow. */
+.btn {
+   @include lg-rim(4, 0.85);
+}
+
+.btn .btn-click {
+   box-shadow:
+      inset 0 1.5px 1px rgba(255, 255, 255, 0.6),
+      inset 0 11px 16px -11px rgba(255, 255, 255, 0.45),
+      inset 0 -9px 16px -9px rgba(0, 0, 0, 0.22),
+      0 10px 26px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Featured CTAs: vivid translucent glass (same recipe as the hero CFP) ─────
+   A strongly-saturated translucent tint over a re-saturating/brightening
+   backdrop filter, so the button is see-through yet stays bright. */
+
+/* Nav "Call for Proposals" (floating + static) — see-through orange */
+.floating-ticket-button .btn .btn-click,
+.header-buttons .btn .btn-click {
+   -webkit-backdrop-filter: blur(6px) saturate(210%) brightness(1.12);
+   backdrop-filter: blur(6px) saturate(210%) brightness(1.12);
+}
+/* Match the per-layer specificity of the floating button's own !important fill
+   so the translucent gradient actually replaces the solid orange (otherwise it
+   sits over an opaque fill and looks unchanged). */
+.header-buttons .btn .btn-fill,
+.floating-ticket-button .btn-content.original .btn-fill,
+.floating-ticket-button .btn-content.duplicate .btn-fill {
+   background: linear-gradient(180deg, rgba(255, 122, 48, 0.74), rgba(240, 78, 22, 0.8)) !important;
+}
+
+/* Bottom "Submit a Proposal" — see-through white glass */
+.section-register-gosim .btn.ticket-cta .btn-click {
+   -webkit-backdrop-filter: blur(10px) saturate(135%) brightness(1.18);
+   backdrop-filter: blur(10px) saturate(135%) brightness(1.18);
+}
+.section-register-gosim .btn.ticket-cta .btn-fill {
+   background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.72)) !important;
+}

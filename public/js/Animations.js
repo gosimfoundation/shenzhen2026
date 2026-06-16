@@ -101,7 +101,9 @@ function initLenis() {
    const currentScrollY = window.scrollY || document.documentElement.scrollTop;
 
    scroll = new Lenis({
-      duration: 0.8
+      // lerp tracks the input more directly than a time-based `duration` ease,
+      // which removes the floaty "settle" tail and feels snappier. Higher = snappier.
+      lerp: 0.16
    });
 
    scroll.on('scroll', ScrollTrigger.update);
