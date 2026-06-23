@@ -429,27 +429,11 @@ footer {
 
    /* Outline */
 
+   /* The collapsed (not-scrolled) menu button stays orange on every page so it
+      matches the orange floating button that appears on scroll — previously it
+      only went orange on the homepage and fell back to a flat cream circle
+      elsewhere. */
    .hamburger.outline .hamburger-fill {
-      background-color: var(--color-heading);
-      border: 1px solid var(--color-border-light);
-   }
-
-   [data-bg-nav="light"] .hamburger.outline .hamburger-fill {
-      background-color: var(--color-light);
-      border: 1px solid var(--color-border);
-   }
-
-   [data-bg-nav="lightgray"] .hamburger.outline .hamburger-fill {
-      background-color: var(--color-lightgray);
-      border: 1px solid var(--color-border);
-   }
-
-   [data-bg-nav="beige"] .hamburger.outline .hamburger-fill {
-      background-color: var(--color-beige);
-      border: 1px solid var(--color-border);
-   }
-
-   [data-bg-nav="header-home"] .hamburger.outline .hamburger-fill {
       background-color: var(--color-primary);
       border: 1px solid var(--color-border-light);
    }
@@ -477,8 +461,10 @@ footer {
    }
 
 
+   /* Open state = cream close button, so the "✕" must be dark to stay legible
+      (it was white-on-cream and almost invisible). */
    [data-navigation-status="active"] .hamburger .bar {
-      background-color: var(--color-white);
+      background-color: var(--color-dark);
    }
 
    /* Mobile Nav */
@@ -574,7 +560,7 @@ footer {
 
 .mobile-nav-box nav ul .link .link-click span {
    color: var(--color-heading);
-   font-family: 'Manrope', sans-serif;
+   font-family: 'Outfit', 'Noto Sans SC', sans-serif;
    font-size: min(5vw, 1.5em);
    font-weight: 600;
 }
@@ -1305,7 +1291,9 @@ footer {
 
 .section-resources-featured .flickity-slider {
    display: flex;
-   align-items: center;
+   /* top-align cards: their heights differ (description length varies), and
+      centering made every card's image land at a different vertical position */
+   align-items: flex-start;
 }
 
 @media screen and (max-width: 1024px) {

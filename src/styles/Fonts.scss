@@ -60,3 +60,32 @@
     src: url('/fonts/ma-shan-zheng-shenzhen.woff2') format('woff2');
     unicode-range: U+5733, U+6DF1;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Active type system (all SIL OFL 1.1, self-hosted so they work in mainland
+   China where Google Fonts is blocked):
+     • Outfit       — English display / headings
+     • Sora         — English body
+     • Noto Sans SC — Chinese (subset to the glyphs actually used on the site)
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Outfit — headings */
+@font-face { font-display: swap; font-family: 'Outfit'; font-style: normal; font-weight: 400; src: url('/fonts/outfit-400-latin.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Outfit'; font-style: normal; font-weight: 600; src: url('/fonts/outfit-600-latin.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Outfit'; font-style: normal; font-weight: 700; src: url('/fonts/outfit-700-latin.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Outfit'; font-style: normal; font-weight: 800; src: url('/fonts/outfit-800-latin.woff2') format('woff2'); }
+
+/* Sora — body */
+@font-face { font-display: swap; font-family: 'Sora'; font-style: normal; font-weight: 400; src: url('/fonts/sora-400-latin.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Sora'; font-style: normal; font-weight: 500; src: url('/fonts/sora-500-latin.woff2') format('woff2'); }
+@font-face { font-display: swap; font-family: 'Sora'; font-style: normal; font-weight: 600; src: url('/fonts/sora-600-latin.woff2') format('woff2'); }
+
+/* Noto Sans SC — Chinese (variable weight 100–900, subset, self-hosted) */
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 100 900;
+    src: url('/fonts/noto-sans-sc-subset.woff2') format('woff2');
+    unicode-range: U+2E80-9FFF, U+3000-303F, U+FF00-FFEF, U+2018-201F, U+2026;
+}
