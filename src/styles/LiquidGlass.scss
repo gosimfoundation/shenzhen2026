@@ -74,3 +74,13 @@
 .section-register-gosim .btn.ticket-cta .btn-fill {
    background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.72)) !important;
 }
+
+/* 404 "Back to homepage" — see-through white glass so it reads as liquid glass
+   like the other CTAs (rim + gloss are inherited from the base .btn rules). */
+.section-home-intro .btn.light .btn-click {
+   -webkit-backdrop-filter: blur(10px) saturate(135%) brightness(1.18);
+   backdrop-filter: blur(10px) saturate(135%) brightness(1.18);
+}
+.section-home-intro .btn.light .btn-content.duplicate .btn-fill {
+   background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.74)) !important;
+}

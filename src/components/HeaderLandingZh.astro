@@ -14,6 +14,10 @@ const isHomepage = slug === "/" || slug === "/zh/" || slug === "/fr/";
 const anchorBase = isHomepage ? "" : "/zh/";
 const switchPath = isZhPath ? slug.replace("/zh/", "/") : `/zh${slug}`;
 
+// The "筛选" (Filter) button only works on pages with a filter panel
+// (speakers / sponsors / past-supporters). Elsewhere it was a dead empty pill.
+const hasFilter = ["/speakers/", "/sponsors/"].includes(basePath);
+
 const links = [
   {
     text: "分论坛主题",
@@ -146,18 +150,20 @@ const links = [
     <div class="bar bar-bottom"></div>
   </button>
 
-  <div
-    class="btn light btn-filter btn-filter-floating btn-hover"
-    data-has-notification={hasNotificationBar}
-  >
-    <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
-      <div class="btn-content original">
-        <div class="btn-fill"></div>
-        <span>筛选</span>
+  {hasFilter && (
+    <div
+      class="btn light btn-filter btn-filter-floating btn-hover"
+      data-has-notification={hasNotificationBar}
+    >
+      <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
+        <div class="btn-content original">
+          <div class="btn-fill"></div>
+          <span>筛选</span>
+        </div>
+        <div class="border-box"></div>
       </div>
-      <div class="border-box"></div>
     </div>
-  </div>
+  )}
 
   <div
     class="main-nav-bar"
@@ -266,15 +272,17 @@ const links = [
         <div class="bar bar-bottom"></div>
       </div>
 
-      <div class="btn light btn-filter btn-filter-static btn-hover">
-        <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
-          <div class="btn-content original">
-            <div class="btn-fill"></div>
-            <span>筛选</span>
+      {hasFilter && (
+        <div class="btn light btn-filter btn-filter-static btn-hover">
+          <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
+            <div class="btn-content original">
+              <div class="btn-fill"></div>
+              <span>筛选</span>
+            </div>
+            <div class="border-box"></div>
           </div>
-          <div class="border-box"></div>
         </div>
-      </div>
+      )}
     </div>
   </div>
 </header>

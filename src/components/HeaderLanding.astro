@@ -51,6 +51,17 @@ const isFrPath = slug.startsWith("/fr/")
 const basePath = isZhPath ? slug.replace(/^\/zh/, "") : isFrPath ? slug.replace(/^\/fr/, "") : slug
 const switchPath = isZhPath ? slug.replace("/zh/", "/") : `/zh${slug}`
 
+// Pages that exist in English only — the Chinese site has no localized version.
+// Without this guard the 中文 toggle prepends "/zh" and lands on a 404
+// (e.g. /zh/general-travel/, /zh/chinese-visa/), so fall back to the zh homepage.
+const enOnlyBasePaths = ["/general-travel/", "/chinese-visa/"]
+const zhTogglePath = enOnlyBasePaths.includes(basePath) ? "/zh/" : `/zh${basePath}`
+
+// The "Filter" button only does something on pages that render a filter panel
+// (speakers / sponsors / past-supporters lists). Everywhere else it was showing
+// as an empty, dead pill, so only render it on those pages.
+const hasFilter = ["/speakers/", "/sponsors/"].includes(basePath)
+
 // If not on the homepage, prefix anchor links with the homepage path
 const isHomepage = slug === "/" || slug === "/zh/" || slug === "/fr/"
 const anchorBase = isHomepage ? "" : isZhPath ? "/zh/" : isFrPath ? "/fr/" : "/"
@@ -126,7 +137,7 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
             <div class="language-mobile-menu">
               <a
                 class="language-item"
-                href={`/zh${basePath}`}
+                href={zhTogglePath}
                 onclick="localStorage.setItem('language_preference', 'zh'); sessionStorage.setItem('language_just_switched', 'true');"
                 >中文</a
               >
@@ -157,18 +168,20 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
     <div class="bar bar-bottom"></div>
   </button>
 
-  <div
-    class="btn light btn-filter btn-filter-floating btn-hover"
-    data-has-notification={hasNotificationBar}
-  >
-    <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
-      <div class="btn-content original">
-        <div class="btn-fill"></div>
-        <span>Filter</span>
+  {hasFilter && (
+    <div
+      class="btn light btn-filter btn-filter-floating btn-hover"
+      data-has-notification={hasNotificationBar}
+    >
+      <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
+        <div class="btn-content original">
+          <div class="btn-fill"></div>
+          <span>Filter</span>
+        </div>
+        <div class="border-box"></div>
       </div>
-      <div class="border-box"></div>
     </div>
-  </div>
+  )}
 
   <div
     class="main-nav-bar"
@@ -252,7 +265,7 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
           </button>
           <div class="language-dropdown-content">
             <a
-              href={`/zh${basePath}`}
+              href={zhTogglePath}
               onclick="localStorage.setItem('language_preference', 'zh'); sessionStorage.setItem('language_just_switched', 'true');"
               >中文</a
             >
@@ -272,15 +285,17 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
         <div class="bar bar-bottom"></div>
       </div>
 
-      <div class="btn light btn-filter btn-filter-static btn-hover">
-        <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
-          <div class="btn-content original">
-            <div class="btn-fill"></div>
-            <span>Filter</span>
+      {hasFilter && (
+        <div class="btn light btn-filter btn-filter-static btn-hover">
+          <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
+            <div class="btn-content original">
+              <div class="btn-fill"></div>
+              <span>Filter</span>
+            </div>
+            <div class="border-box"></div>
           </div>
-          <div class="border-box"></div>
         </div>
-      </div>
+      )}
     </div>
   </div>
 </header>
