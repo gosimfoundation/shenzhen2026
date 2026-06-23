@@ -50,6 +50,11 @@ const {
   enterLabel = "Enter",
 } = Astro.props;
 
+// Schedule isn't published yet, so the track cards must NOT link to /schedule/.
+// Flip this to true (keeping each track's `link` in the JSON) once the schedule
+// is live to re-enable the card hyperlinks.
+const tracksLinked = false;
+
 // Marquee rows: hero term (facet title) → solid orange pill; keywords → outlined.
 const allPills: Array<{ text: string; hero: boolean }> = facets.flatMap((f) => [
   { text: f.title, hero: true },
@@ -127,11 +132,12 @@ const trackIcons = [
     <div class="ps-accordion">
       {tracks.map((track, i) => {
         const accent = palette[i % palette.length];
-        const Tag = track.link ? "a" : "div";
+        const linked = tracksLinked && track.link;
+        const Tag = linked ? "a" : "div";
         return (
           <Tag
             class={`ps-panel${i === 0 ? " is-open" : ""}`}
-            href={track.link}
+            href={linked ? track.link : undefined}
             style={`--from:${accent.from};--to:${accent.to}`}
             tabindex="0"
           >
@@ -188,6 +194,10 @@ const trackIcons = [
     width: min(100% - 3rem, 78rem);
     margin-inline: auto;
     display: grid;
+    /* lock the single column to the container width — without this the implicit
+       auto track grows to the accordion's content (22rem) and overflows the
+       right gutter on narrow screens */
+    grid-template-columns: minmax(0, 1fr);
     gap: clamp(3rem, 6vw, 5rem);
   }
 
@@ -525,7 +535,19 @@ const trackIcons = [
     .ps-panel-mini {
       display: none;
     }
-    /* on the stacked layout every block shows its full content */
+    /* Stacked cards: park the glyph in the top-right corner (smaller) so it
+       reads as a corner accent instead of sitting on top of the left-aligned
+       title and body text. */
+    .ps-panel-icon {
+      top: 1rem;
+      left: auto;
+      right: 1.25rem;
+      width: clamp(2.5rem, 11vw, 3.5rem);
+      opacity: 0.7;
+    }
+    /* on the stacked layout every block shows its full content. The top padding
+       clears both the number (top-left) and the glyph (top-right) so nothing
+       overlaps the text. */
     .ps-panel-full,
     .ps-accordion:hover .ps-panel.is-open:not(:hover) .ps-panel-full {
       position: relative;
@@ -533,7 +555,7 @@ const trackIcons = [
       bottom: 0;
       width: auto;
       opacity: 1;
-      padding: 3.2rem 1.5rem 1.6rem;
+      padding: 4.6rem 1.5rem 1.6rem;
     }
     .ps-panel-full-desc {
       -webkit-line-clamp: unset;
@@ -557,7 +579,9 @@ const trackIcons = [
   }
   .ps-spotlight-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    /* min(22rem, 100%) keeps the 22rem min on wide screens but lets each column
+       shrink to the container on narrow ones, so the grid never overflows the gutter */
+    grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr));
     gap: 1.25rem;
   }
   .ps-spot-card {

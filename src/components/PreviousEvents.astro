@@ -119,9 +119,16 @@ const eventCount = events?.length ?? 0;
     gap: 1rem;
   }
 
+  /* Liquid-glass arrows: translucent frosted fill + bright specular rim + inner
+     gloss and depth shadow — matches the glass pills used elsewhere on the site. */
   .carousel-arrow {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* see-through glass: low-opacity tint + light blur with a brightness/saturate
+       lift, so the content behind stays visible (matches the hero glass buttons). */
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(4px) saturate(100%) brightness(0.91);
+    backdrop-filter: blur(4px) saturate(100%) brightness(0.91);
+    border: 0;
     border-radius: 50%;
     width: 48px;
     height: 48px;
@@ -129,26 +136,55 @@ const eventCount = events?.length ?? 0;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
     z-index: 10;
     flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow:
+      inset 0 2px 1.5px rgba(255, 255, 255, 0.55),
+      inset 0 -5px 9px rgba(0, 0, 0, 0.12),
+      0 8px 22px rgba(0, 0, 0, 0.26);
+  }
+
+  /* glowing rim, brightest top-left where light catches the glass */
+  .carousel-arrow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.12) 45%,
+      rgba(255, 255, 255, 0.1) 60%,
+      rgba(255, 255, 255, 0.5)
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
   }
 
   .carousel-arrow:hover {
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.28);
     transform: scale(1.05);
+    box-shadow:
+      inset 0 2px 1.5px rgba(255, 255, 255, 0.65),
+      inset 0 -5px 9px rgba(0, 0, 0, 0.12),
+      0 10px 28px rgba(0, 0, 0, 0.32);
   }
 
   .carousel-arrow:disabled {
-    opacity: 0.5;
+    opacity: 0.4;
     cursor: not-allowed;
     transform: none;
   }
 
   .carousel-arrow svg {
-    color: #333;
+    position: relative;
+    z-index: 1;
+    color: var(--color-heading);
   }
 
   .flickity-carousel {

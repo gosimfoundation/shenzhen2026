@@ -123,7 +123,7 @@ const logos = (sponsorsData.partners ?? [])
 
   .psp-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(10.5rem, 100%), 1fr));
     gap: 1rem;
   }
   .psp-tile {
@@ -188,7 +188,7 @@ const logos = (sponsorsData.partners ?? [])
 
   @media (max-width: 520px) {
     .psp-grid {
-      grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(8rem, 100%), 1fr));
     }
   }
 </style>
