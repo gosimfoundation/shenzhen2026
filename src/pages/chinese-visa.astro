@@ -18,7 +18,7 @@ import VisaTraditional from "images/subpages/visa-traditional.png";
   navBackground="light"
 >
   <HeroText
-    title="China Visa's"
+    title="Chinese Visa"
     text="Most attendees are now eligible for visa-free entry or transit. Some may still need a visa depending on their nationality and travel plans. Please read the updated requirements below and contact your local Chinese embassy or consulate for precise instructions."
     lightgray
   />
@@ -29,7 +29,7 @@ import VisaTraditional from "images/subpages/visa-traditional.png";
       <TextAndImageVisa
         id="visa-free-entry"
         title="Visa Free Entry"
-        text="Citizens from 74 countries, including most EU nations, Australia, New Zealand, and several Latin American countries, can now enter China visa-free for up to 30 days. This applies to tourism, business, visiting family/friends, or short conferences."
+        text="Citizens from 50 countries, including most EU nations, the UK, Canada, Australia, New Zealand, Japan, South Korea, and several Latin American countries, can now enter China visa-free for up to 30 days. This applies to tourism, business, visiting family/friends, or short conferences."
         validExample1="France → China → France"
         validExample2="Singapore → China → Singapore"
         invalidExample1="USA → China → USA"
@@ -51,21 +51,20 @@ import VisaTraditional from "images/subpages/visa-traditional.png";
       <TextAndImageVisa
         id="visa-free-transit"
         title="Visa Free Transit"
-        text="Travelers from 55 countries including the US, Canada, UK, Japan, and many EU states may enter China without a visa if transiting through to a third country."
-        text2="This policy allows stays of up to 240 hours in designated regions — including Shenzhen and the rest of Guangdong Province."
-        text3="You must have confirmed onward travel and meet entry requirements. Note: Hong Kong counts as a third region for transit purposes."
-        validExample1="USA → China → Japan"
-        validExample2="UK → China → USA"
-        invalidExample1="USA → China → USA"
-        invalidExample2="UK → China → UK (round trip)"
+        text="Travelers from 55 countries can enter mainland China visa-free for up to 240 hours (10 days) when transiting onward to a different country or region. This is the main option for nationalities not on the visa-free entry list above — most notably the US."
+        text2="Shenzhen advantage: because Shenzhen borders Hong Kong — a region separate from the mainland — you can fly into Hong Kong, cross into Shenzhen under this policy, attend GOSIM, then depart. Your entry and exit points just have to differ: enter from Hong Kong and leave to the USA, and the trip qualifies even though it starts and ends in the US."
+        text3="You'll need confirmed onward travel within 240 hours. For transit, Hong Kong and Macau each count as a region separate from mainland China."
+        validExample1="USA → Hong Kong → Shenzhen → USA (enter via HK, exit to USA)"
+        invalidExample1="USA → China → USA (same entry & exit region)"
+        invalidExample2="USA → Hong Kong → Shenzhen → Hong Kong (enter & exit both via HK)"
         image={VisaFreeTransit}
         imageAlt="Visa Free Transit"
         dataBgSection="lightgray"
         dataThemeSection="lightgray"
         ctaButton={{
-          text: "",
-          link: "",
-          openInNewTab: true,
+          text: "Getting from Hong Kong to Shenzhen",
+          link: "/general-travel/#via-hong-kong",
+          openInNewTab: false,
         }}
       />
     </div>

@@ -111,16 +111,41 @@ const mapMarkers = [
             </div>
           </li>
 
-          <li class="travel-item">
+          <li class="travel-item" id="via-hong-kong">
             <span class="travel-item-icon hk-badge">HK</span>
             <div class="travel-item-body">
               <h3>Via Hong Kong</h3>
               <p>
                 Many international attendees fly into Hong Kong (HKG) for the
-                widest long-haul choice. Direct cross-border shuttle coaches and
-                ferries (SkyPier → Shekou) run straight from the airport to
-                Shenzhen. Crossing from Hong Kong is an international border — make
-                sure your visa covers it.
+                widest long-haul choice, then cross to Shenzhen. Two direct
+                options leave from the airport itself — choose based on whether
+                you need to enter mainland China on the visa-free transit:
+              </p>
+              <p>
+                <strong>Ferry (SkyPier → Shekou / Fuyong)</strong> — for
+                <em>transfer passengers only</em>. You stay airside, skip Hong Kong
+                immigration entirely, and sail straight from the airport to
+                Shenzhen. Fastest if you're simply connecting through, but
+                hand-baggage limits apply and you can't use it once you've entered
+                Hong Kong. <a
+                  class="travel-link"
+                  href="https://www.hongkongairport.com/en/transport/mainland-connection/ferry-transfer.page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >SkyPier ferry details</a>.
+              </p>
+              <p>
+                <strong>Cross-border coach</strong> — from the airport's
+                Mainland/Macao Transport Centre (Terminal 2, Level 3) to Shenzhen
+                Bay Port in about 1.5 hours. Shenzhen Bay is a designated 240-hour
+                visa-free transit port, so this is the route to use for the
+                visa-free transit (e.g. US → Hong Kong → Shenzhen → onward). Normal
+                checked baggage is fine, and coaches run roughly 06:00–22:30. <a
+                  class="travel-link"
+                  href="https://www.hongkongairport.com/en/transport/mainland-connection/mainland-coaches/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Mainland coach details</a>.
               </p>
             </div>
           </li>
@@ -392,6 +417,17 @@ const mapMarkers = [
     gap: 1.3rem;
     padding: 1.5rem 0.25rem;
     border-bottom: 1px solid rgba(234, 230, 210, 0.1);
+    /* offset so deep-links (e.g. /general-travel/#via-hong-kong) don't land under the header */
+    scroll-margin-top: 6rem;
+  }
+
+  .travel-item-body p + p {
+    margin-top: 0.7rem;
+  }
+
+  .travel-item-body strong {
+    color: #EAE6D2;
+    font-weight: 700;
   }
 
   .travel-item-body h3 {
@@ -408,6 +444,17 @@ const mapMarkers = [
     line-height: 1.7;
     color: rgba(234, 230, 210, 0.68);
     max-width: 46rem;
+  }
+
+  .travel-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 1px;
+    transition: color 0.2s ease;
+  }
+  .travel-link:hover {
+    color: var(--color-glow);
   }
 
   /* Venue / map */
