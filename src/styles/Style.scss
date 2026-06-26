@@ -382,7 +382,10 @@ footer {
       visibility: hidden;
    }
 
-   .main-nav-bar .btn.outline {
+   /* Hide the desktop nav CTA buttons on mobile — they live in the hamburger
+      menu instead. (Covers the CFP + Buy Tickets buttons in .header-buttons.) */
+   .main-nav-bar .btn.outline,
+   .main-nav-bar .header-buttons .btn {
       display: none;
    }
 
@@ -516,6 +519,36 @@ footer {
    gap: 5vh;
 }
 
+/* Mobile-menu CTAs (CFP + Buy Tickets): the buttons stretch to the widest one,
+   so make each button's fill/content span the full width. Otherwise the shorter
+   button (Buy Tickets) shows a wide glass border around a content-sized fill. */
+.mobile-nav-box .box-row-btn {
+   width: 100%;
+   max-width: 22rem;
+   display: flex;
+   flex-direction: column;
+   gap: 1.4rem;
+}
+.mobile-nav-box .box-row-btn .btn,
+.mobile-nav-box .box-row-btn .btn .btn-click,
+.mobile-nav-box .box-row-btn .btn .btn-content {
+   width: 100%;
+}
+
+/* Liquid-glass look matching the hero CTAs: translucent fills over a blurred,
+   brightened backdrop. (The bright rim + gloss already come from the shared
+   .btn glass styles.) CFP = frosted white glass, Buy Tickets = orange glass. */
+.mobile-nav-box .box-row-btn .btn .btn-click {
+   -webkit-backdrop-filter: blur(10px) saturate(150%) brightness(1.15);
+   backdrop-filter: blur(10px) saturate(150%) brightness(1.15);
+}
+.mobile-nav-box .box-row-btn .btn.light .btn-fill {
+   background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.72)) !important;
+}
+.mobile-nav-box .box-row-btn .btn.primary .btn-fill {
+   background: linear-gradient(180deg, rgba(255, 122, 48, 0.76), rgba(240, 78, 22, 0.82)) !important;
+}
+
 [data-navigation-status="active"] .mobile-nav-box {
    transform: translateY(0%) rotate(0.001deg);
 }
@@ -583,11 +616,84 @@ footer {
    z-index: 2;
 }
 
+/* Floating controls wrapper: the floating hamburger + Buy Tickets button, parked
+   top-right and revealed on scroll-down. On desktop the hamburger is hidden, so
+   only the ticket shows (unchanged); on mobile both show side by side. */
+.floating-controls {
+   position: absolute;
+   top: var(--container-padding);
+   right: var(--container-padding);
+   z-index: 201;
+   display: flex;
+   /* row-reverse keeps the hamburger pinned to the right edge (same spot as the
+      static nav hamburger), with the Buy Tickets button appearing to its left. */
+   flex-direction: row-reverse;
+   align-items: center;
+   gap: 0.5rem;
+   pointer-events: none;
+}
+.floating-controls .btn-floating,
+.floating-controls .floating-ticket-button {
+   position: relative;
+   top: auto;
+   right: auto;
+   margin: 0;
+}
+
+/* Give BOTH hamburgers (the static top-right one and the floating one) the same
+   liquid-glass look as the Buy Tickets button: translucent orange gradient fill
+   over a blurred backdrop, a bright specular rim and inner gloss + float shadow.
+   Only in the closed state — when the menu is open the hamburger reverts to the
+   plain cream close button. */
+body:not([data-navigation-status="active"]) .hamburger.outline,
+body:not([data-navigation-status="active"]) .floating-controls .hamburger.btn-floating {
+   -webkit-backdrop-filter: blur(6px) saturate(210%) brightness(1.12);
+   backdrop-filter: blur(6px) saturate(210%) brightness(1.12);
+   box-shadow:
+      inset 0 1.5px 1px rgba(255, 255, 255, 0.6),
+      inset 0 11px 16px -11px rgba(255, 255, 255, 0.45),
+      inset 0 -9px 16px -9px rgba(0, 0, 0, 0.22),
+      0 10px 26px rgba(0, 0, 0, 0.3);
+}
+body:not([data-navigation-status="active"]) .hamburger.outline .hamburger-fill,
+body:not([data-navigation-status="active"]) .floating-controls .hamburger.btn-floating .hamburger-fill {
+   background: linear-gradient(180deg, rgba(255, 122, 48, 0.74), rgba(240, 78, 22, 0.8));
+   border: 0;
+}
+body:not([data-navigation-status="active"]) .hamburger.outline::after,
+body:not([data-navigation-status="active"]) .floating-controls .hamburger.btn-floating::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: inherit;
+   padding: 1.2px;
+   background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.14) 42%,
+      rgba(255, 255, 255, 0.12) 60%,
+      rgba(255, 255, 255, 0.55));
+   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+           mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+   -webkit-mask-composite: xor;
+           mask-composite: exclude;
+   pointer-events: none;
+   z-index: 4;
+}
+
 [data-scrolling-started="true"][data-scrolling-direction="down"] .btn-floating,
 [data-navigation-status="active"] .btn-floating.hamburger {
    transform: translateY(0%) scale(1) rotate(0.001deg);
    opacity: 1;
    pointer-events: all;
+}
+
+/* When the menu is open, only the close button (hamburger) should show — keep
+   the ticket hidden even if the page was scrolled. */
+[data-navigation-status="active"] .floating-controls .floating-ticket-button {
+   opacity: 0;
+}
+[data-navigation-status="active"] .floating-controls .floating-ticket-button .btn-floating {
+   pointer-events: none;
 }
 
 .floating-ticket-button .btn-content.original .btn-fill {
@@ -648,16 +754,20 @@ footer {
 
 @media screen and (max-width: 1070px) {
 
-   .btn-floating.btn {
-      display: none;
-   }
-
    .btn-filter {
       display: block;
    }
 
    .btn-floating.hamburger {
       z-index: 999;
+   }
+
+   /* On mobile the floating Buy Tickets button shows on scroll beside the
+      hamburger; make the hamburger a touch smaller so the ticket reads as the
+      primary action. */
+   .floating-controls .hamburger.btn-floating {
+      width: calc(var(--btn-height) * 0.84);
+      height: calc(var(--btn-height) * 0.84);
    }
 }
 

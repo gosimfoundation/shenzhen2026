@@ -294,8 +294,19 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     -webkit-backdrop-filter: blur(6px) saturate(210%) brightness(1.12);
     backdrop-filter: blur(6px) saturate(210%) brightness(1.12);
   }
-  .hero-cta :global(.btn .btn-fill) {
+  /* Orange glass on the primary (ticket) button. */
+  .hero-cta :global(.btn.primary .btn-fill) {
     background: linear-gradient(180deg, rgba(255, 122, 48, 0.72), rgba(240, 78, 22, 0.78)) !important;
+  }
+  /* Secondary CFP button (.light): translucent frosted white glass — the same
+     see-through liquid-glass look as the bottom "Submit a Proposal" button,
+     instead of a flat solid pill. Dark text stays readable on the frosted fill. */
+  .hero-cta :global(.btn.light .btn-fill) {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.72)) !important;
+  }
+  .hero-cta :global(.btn.light .btn-click) {
+    -webkit-backdrop-filter: blur(10px) saturate(135%) brightness(1.18);
+    backdrop-filter: blur(10px) saturate(135%) brightness(1.18);
   }
 
   .hero-image,

@@ -78,15 +78,6 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
     )
   }
 
-  <div class="floating-ticket-button">
-    <Button
-      text="Call for Proposals"
-      link="https://cfp.gosim.org"
-      openInNewTab={true}
-      class="btn outline btn-floating btn-hover"
-    />
-  </div>
-
   <div class="mobile-nav">
     <div class="overlay overlay-dark" data-navigation-toggle="close"></div>
 
@@ -152,21 +143,33 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
         </ul>
       </nav>
       <div class="box-row box-row-btn">
-        <Button text="Call for Proposals" link="https://cfp.gosim.org" openInNewTab={true} class="btn primary xl btn-hover" />
+        <Button text="Call for Proposals" link="https://cfp.gosim.org" openInNewTab={true} class="btn light xl btn-hover" />
+        <Button text="Buy Tickets" link="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696" openInNewTab={true} class="btn primary xl btn-hover" />
       </div>
     </div>
   </div>
 
-  <button
-    class="hamburger btn-floating"
-    aria-label="Open menu"
-    data-navigation-toggle="toggle"
-    data-has-notification={hasNotificationBar}
-  >
-    <div class="hamburger-fill"></div>
-    <div class="bar bar-top"></div>
-    <div class="bar bar-bottom"></div>
-  </button>
+  <div class="floating-controls">
+    <button
+      class="hamburger btn-floating"
+      aria-label="Open menu"
+      data-navigation-toggle="toggle"
+      data-has-notification={hasNotificationBar}
+    >
+      <div class="hamburger-fill"></div>
+      <div class="bar bar-top"></div>
+      <div class="bar bar-bottom"></div>
+    </button>
+
+    <div class="floating-ticket-button">
+      <Button
+        text="Buy Tickets"
+        link="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696"
+        openInNewTab={true}
+        class="btn primary btn-floating btn-hover"
+      />
+    </div>
+  </div>
 
   {hasFilter && (
     <div
@@ -277,7 +280,8 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
             >
           </div>
         </div>
-        <Button text="Call for Proposals" link="https://cfp.gosim.org" openInNewTab={true} class="btn outline btn-hover" />
+        <Button text="Call for Proposals" link="https://cfp.gosim.org" openInNewTab={true} class="btn light btn-hover" />
+        <Button text="Buy Tickets" link="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696" openInNewTab={true} class="btn primary btn-hover" />
       </div>
       <div class="hamburger outline" data-navigation-toggle="toggle">
         <div class="hamburger-fill"></div>
@@ -302,11 +306,8 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
 
 <style>
   .floating-ticket-button {
-    position: absolute;
-    top: calc(40px + var(--row-gap) * 0.35);
-    right: var(--container-padding);
+    position: relative;
     z-index: 201;
-    pointer-events: none;
   }
 
   .floating-ticket-button :global(.btn-floating) {
