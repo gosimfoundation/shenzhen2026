@@ -1,0 +1,34 @@
+---
+// Components
+import Layout from "layouts/LayoutLanding.astro"
+import HeroText from "components/HeroText.astro"
+import Tickets from "components/Tickets.astro"
+import GetTickets from "components/GetTickets.astro"
+---
+
+<Layout
+  title="Tickets – GOSIM Shenzhen 2026"
+  description="Register and buy tickets for GOSIM Shenzhen 2026 — October 16-17, 2026 in Shenzhen, China."
+  navBackground="light"
+  pageTransitionName="Tickets"
+>
+  <HeroText
+    title="Tickets"
+    text="Secure your spot at GOSIM Shenzhen 2026. Choose your pass below — early-bird pricing is available for a limited time. Registration is handled securely by BagEvent."
+    lightgray
+  />
+
+  <Tickets />
+
+  <GetTickets
+    title="Call for Proposals Now Open"
+    location="Shenzhen, China"
+    date="October 16-17, 2026"
+    text="We're looking for bold ideas and fresh voices in open-source AI, robotics, edge systems, and developer infrastructure. Submit a proposal to speak at GOSIM Shenzhen 2026."
+    ctaButton={{
+      text: "Submit a Proposal",
+      link: "https://cfp.gosim.org",
+      openInNewTab: true,
+    }}
+  />
+</Layout>

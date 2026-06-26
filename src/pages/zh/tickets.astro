@@ -1,0 +1,34 @@
+---
+// Components
+import Layout from "layouts/LayoutLandingZh.astro"
+import HeroText from "components/HeroText.astro"
+import Tickets from "components/Tickets.astro"
+import GetTickets from "components/GetTickets.astro"
+---
+
+<Layout
+  title="购票 – GOSIM Shenzhen 2026"
+  description="GOSIM Shenzhen 2026 门票注册与购买 —— 2026年10月16-17日，中国深圳。"
+  navBackground="light"
+  pageTransitionName="Tickets"
+>
+  <HeroText
+    title="购票"
+    text="立即锁定你的 GOSIM Shenzhen 2026 席位。在下方选择票种，早鸟价限时开放。门票注册由百格（BagEvent）安全提供。"
+    lightgray
+  />
+
+  <Tickets />
+
+  <GetTickets
+    title="CFP 议题征集 进行中"
+    location="中国深圳"
+    date="2026年10月16-17日"
+    text="我们正在寻找开源 AI、机器人、边缘系统与开发者基础设施领域的大胆想法与新声音。欢迎提交议题，登上 GOSIM Shenzhen 2026 的舞台。"
+    ctaButton={{
+      text: "提交议题",
+      link: "https://cfp.gosim.org",
+      openInNewTab: true,
+    }}
+  />
+</Layout>
