@@ -248,7 +248,7 @@ footer {
 /* Logo */
 
 .main-nav-bar .logo {
-   width: 85px;
+   width: 7em;
    position: relative;
    height: 30px;
    transition: width var(--animation-primary) 0.3s;
@@ -265,7 +265,7 @@ footer {
 }
 
 .main-nav-bar .logo svg {
-   width: 5em;
+   width: 7em;
    position: relative;
    transform: translateY(0%) rotate(0.001deg);
    transition: transform var(--animation-nav-smooth);

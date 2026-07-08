@@ -104,7 +104,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
   }
 
   .section-home-header .logo-gosim-scroll {
-    z-index: 3;
+    z-index: 5;
   }
 
   .hero-wordmark {
@@ -162,7 +162,8 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     bottom: 2rem;
     left: 0;
     right: 0;
-    z-index: 4;
+    z-index: 2;
+    pointer-events: none;
   }
 
   .hero-subtitle {
@@ -194,7 +195,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     align-items: flex-end;
     justify-content: space-between;
     gap: 2rem;
-    margin-bottom: 1.4rem;
+    margin-bottom: 0;
   }
 
   .hero-text-left {
@@ -234,6 +235,8 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
   }
 
   .hero-cta {
+    position: relative;
+    z-index: 6;
     margin-top: 1.6rem;
     display: flex;
     justify-content: center;
@@ -408,6 +411,52 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
 
     .hero-date-block {
       text-align: left;
+    }
+  }
+
+  @media (max-height: 760px) {
+    .section-home-header .logo-gosim-scroll {
+      top: 40%;
+      gap: 0.75rem;
+    }
+
+    .hero-cta {
+      margin-top: 1rem;
+    }
+
+    .hero-gosim {
+      width: clamp(13rem, 52vw, 28rem);
+    }
+
+    .hero-city-cn {
+      font-size: clamp(2.4rem, 13vh, 7.5rem);
+    }
+
+    .hero-city-en {
+      margin-top: 0.4em;
+    }
+
+    .hero-bottom-box {
+      bottom: 1.25rem;
+    }
+  }
+
+  @media (max-height: 640px) {
+    .section-home-header .logo-gosim-scroll {
+      top: 37%;
+    }
+  }
+
+  @media (max-width: 768px) and (max-height: 680px) {
+    .hero-description {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
+    .hero-content-row {
+      gap: 0.65rem;
     }
   }
 </style>
