@@ -1,0 +1,586 @@
+---
+import Button from "components/Button.astro";
+
+interface Props {
+  lang?: "en" | "zh";
+}
+
+const { lang = "en" } = Astro.props;
+const isZh = lang === "zh";
+const applicationUrl = "https://marketing.csdn.net/questions/Q2607211202017553510";
+
+const copy = isZh
+  ? {
+      aboutLabel: "大会介绍",
+      about: [
+        "GOSIM（全球开源创新聚会）是由志愿者发起的全球开源开发者创新中心，致力于推广草根开源项目，促进项目合作，并帮助项目成长、发展和成熟。GOSIM Shenzhen 2026 全球开源 AI 大会将首次登陆深圳。",
+        "作为 GOSIM 全球系列大会的重要一站，预计汇聚 150+ 国际讲师、2000+ 全球开发者，围绕 Agentic AI、开源模型、AI 基础设施、开源机器人、边缘智能体 AI、智能体操作系统与应用等前沿方向，打造集 Keynote、技术论坛、Workshop、Hackathon、Spotlight、特色高端论坛于一体的全球开源 AI 盛会。",
+      ],
+      facts: [
+        ["日期", "2026 年 10 月 16—17 日"],
+        ["地点", "深圳南山伊敦酒店"],
+        ["志愿者时间", "2026 年 10 月 15—17 日"],
+      ],
+      recruitmentLabel: "志愿者招募",
+      recruitment:
+        "我们目前正在为本次大会招募志愿者，目标群体是对开源和 AI 感兴趣的高校学生。",
+      apply: "立即报名志愿者",
+      benefitsLabel: "志愿者权益",
+      benefits: [
+        {
+          title: "与开源大牛面对面交流",
+          text: "链接全球顶级开源领袖与开发者",
+        },
+        {
+          title: "专属证书 & 纪念周边",
+          text: "大会志愿者证书，专属纪念周边",
+        },
+        {
+          title: "免费入场 & 餐食保障",
+          text: "优先入场权限，餐食全程保障",
+        },
+        {
+          title: "国际会议实战经历",
+          text: "大型国际会议实战，收获成长与友谊",
+        },
+      ],
+      requirementsLabel: "招募要求",
+      requirements: [
+        "目前仍在高校就读的本科生或研究生，对开源和 AI 有浓厚的兴趣",
+        "有一定的活动服务和推广经验，能用英文做日常交流优先",
+      ],
+      scheduleLabel: "可参与志愿者时间段",
+      schedule: [
+        ["10 月 15 日", "8:00–12:00"],
+        ["10 月 16 日", "8:00–18:00"],
+        ["10 月 17 日", "8:00–18:00"],
+      ],
+      privacyLabel: "报名说明",
+      privacy:
+        "本次大会志愿者招募面向在校学生，会进行一定程度的筛选。你的个人信息和学生证仅用于志愿者报名审核及身份验证，不会用于其他用途或向外泄露，请放心填写。",
+    }
+  : {
+      aboutLabel: "About the Conference",
+      about: [
+        "GOSIM (Global Open-Source Innovation Meetup) is a volunteer-driven global hub for open-source developers. It promotes grassroots open-source projects, encourages collaboration, and helps projects grow, develop, and mature. GOSIM Shenzhen 2026 marks the conference's first event in Shenzhen.",
+        "This major stop in the global GOSIM conference series is expected to bring together 150+ international speakers and 2,000+ developers. The program covers Agentic AI, open-source models, AI infrastructure, open-source robotics, agentic AI on the edge, and agentic operating systems and applications through keynotes, technical forums, workshops, hackathons, Spotlight, and special forums.",
+      ],
+      facts: [
+        ["Conference", "October 16–17, 2026"],
+        ["Venue", "Aden Hotel Shenzhen Nanshan"],
+        ["Volunteer dates", "October 15–17, 2026"],
+      ],
+      recruitmentLabel: "Volunteer Recruitment",
+      recruitment:
+        "We are recruiting university students with a strong interest in open source and AI to volunteer at GOSIM Shenzhen 2026.",
+      apply: "Apply to Volunteer",
+      benefitsLabel: "Volunteer Benefits",
+      benefits: [
+        {
+          title: "Meet Open-Source Leaders",
+          text: "Connect face to face with leading open-source developers from around the world.",
+        },
+        {
+          title: "Certificate & Event Gifts",
+          text: "Receive an official volunteer certificate and GOSIM commemorative gifts.",
+        },
+        {
+          title: "Free Entry & Meals",
+          text: "Receive conference access and meals throughout your volunteer shifts.",
+        },
+        {
+          title: "International Event Experience",
+          text: "Gain hands-on experience supporting a major international conference.",
+        },
+      ],
+      requirementsLabel: "Requirements",
+      requirements: [
+        "Current undergraduate or graduate student with a strong interest in open source and AI",
+        "Event support or promotion experience is preferred; everyday English communication skills are a plus",
+      ],
+      scheduleLabel: "Volunteer Availability",
+      schedule: [
+        ["October 15", "8:00–12:00"],
+        ["October 16", "8:00–18:00"],
+        ["October 17", "8:00–18:00"],
+      ],
+      privacyLabel: "Application Note",
+      privacy:
+        "Volunteer recruitment is open to current university students and applications will be screened. Your personal information and student ID will only be used to review your application and verify your identity. They will not be used for other purposes or disclosed externally.",
+    };
+---
+
+<section class="volunteer-page" data-theme-section="dark" data-bg-section="lightgray">
+  <div class="volunteer-inner">
+    <section class="volunteer-about">
+      <div class="volunteer-about-media">
+        <p class="volunteer-label">{copy.aboutLabel}</p>
+        <button
+          type="button"
+          class="volunteer-photo-button"
+          data-volunteer-photo-trigger
+          aria-label={isZh ? "放大查看 GOSIM Paris 2026 大会团队合影" : "Enlarge the GOSIM Paris 2026 conference team photo"}
+        >
+          <figure class="volunteer-photo">
+            <img
+              src="/images/homepage/gallery2026/paris2026-10.jpg"
+              alt={isZh
+                ? "GOSIM Paris 2026 大会团队合影"
+                : "GOSIM Paris 2026 conference team group photo"}
+              width="3240"
+              height="2160"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
+        </button>
+      </div>
+      <div class="volunteer-about-copy">
+        {copy.about.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </section>
+
+    <dl class="volunteer-facts">
+      {copy.facts.map(([label, value]) => (
+        <div class="volunteer-fact">
+          <dt>{label}</dt>
+          <dd>{value}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <section class="volunteer-recruitment">
+      <div>
+        <p class="volunteer-label">{copy.recruitmentLabel}</p>
+        <p class="volunteer-recruitment-text">{copy.recruitment}</p>
+      </div>
+      <Button
+        text={copy.apply}
+        link={applicationUrl}
+        openInNewTab={true}
+        class="btn primary xl btn-hover"
+      />
+    </section>
+
+    <section>
+      <p class="volunteer-label">{copy.benefitsLabel}</p>
+      <div class="volunteer-benefits">
+        {copy.benefits.map((benefit, index) => (
+          <article class="volunteer-benefit">
+            <span class="volunteer-number">{String(index + 1).padStart(2, "0")}</span>
+            <h2>{benefit.title}</h2>
+            <p>{benefit.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <div class="volunteer-details">
+      <section class="volunteer-panel">
+        <p class="volunteer-label">{copy.requirementsLabel}</p>
+        <ul class="volunteer-requirements">
+          {copy.requirements.map((requirement) => <li>{requirement}</li>)}
+        </ul>
+      </section>
+
+      <section class="volunteer-panel">
+        <p class="volunteer-label">{copy.scheduleLabel}</p>
+        <ol class="volunteer-schedule">
+          {copy.schedule.map(([date, time]) => (
+            <li>
+              <strong>{date}</strong>
+              <span>{time}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </div>
+
+    <section class="volunteer-note">
+      <p class="volunteer-label">{copy.privacyLabel}</p>
+      <p>{copy.privacy}</p>
+    </section>
+  </div>
+
+  <div class="gallery-lightbox" data-volunteer-lightbox aria-hidden="true">
+    <button
+      type="button"
+      class="gallery-lightbox-close"
+      aria-label={isZh ? "关闭大图" : "Close photo"}
+    >&#215;</button>
+    <img class="gallery-lightbox-img" src="" alt="" />
+  </div>
+</section>
+
+<style>
+  .volunteer-page {
+    --orange: #f84a10;
+    --glow: #ff7a3c;
+    --cream: #eae6d2;
+    padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+    background: linear-gradient(180deg, #161410 0%, #100e09 100%);
+  }
+
+  .volunteer-inner {
+    width: min(calc(100% - 3rem), 72rem);
+    margin-inline: auto;
+    display: grid;
+    gap: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .volunteer-label {
+    margin: 0 0 1rem;
+    color: var(--orange);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .volunteer-about {
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: start;
+  }
+
+  .volunteer-about-media {
+    min-width: 0;
+  }
+
+  .volunteer-about-copy {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .volunteer-about-copy p,
+  .volunteer-note > p:last-child {
+    margin: 0;
+    color: rgba(234, 230, 210, 0.76);
+    font-size: clamp(1rem, 1.25vw, 1.12rem);
+    line-height: 1.8;
+  }
+
+  .volunteer-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+    border-top: 1px solid rgba(234, 230, 210, 0.14);
+    border-bottom: 1px solid rgba(234, 230, 210, 0.14);
+  }
+
+  .volunteer-fact {
+    min-width: 0;
+    padding: 1.5rem clamp(1rem, 2.5vw, 2rem);
+  }
+
+  .volunteer-fact + .volunteer-fact {
+    border-left: 1px solid rgba(234, 230, 210, 0.14);
+  }
+
+  .volunteer-fact dt {
+    margin-bottom: 0.45rem;
+    color: rgba(234, 230, 210, 0.48);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .volunteer-fact dd {
+    margin: 0;
+    color: var(--cream);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .volunteer-photo {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(234, 230, 210, 0.12);
+    border-radius: 1rem;
+    background: #1c1a13;
+  }
+
+  .volunteer-photo-button {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 1rem;
+    background: transparent;
+    cursor: zoom-in;
+  }
+
+  .volunteer-photo-button:focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 4px;
+  }
+
+  .volunteer-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .volunteer-photo-button:hover img {
+    transform: scale(1.06);
+  }
+
+  /* Matches the homepage EventGallery lightbox. */
+  .gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vh 6vw;
+    background: rgba(8, 7, 5, 0.9);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    cursor: zoom-out;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .gallery-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .gallery-lightbox-img {
+    max-width: 90vw;
+    max-height: 88vh;
+    border-radius: 14px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    cursor: default;
+    transform: scale(0.92);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .gallery-lightbox.is-open .gallery-lightbox-img {
+    transform: scale(1);
+  }
+
+  .gallery-lightbox-close {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .gallery-lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .volunteer-recruitment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: clamp(2rem, 4vw, 3rem);
+    border-radius: 1rem;
+    border: 1px solid rgba(234, 230, 210, 0.12);
+    background: rgba(234, 230, 210, 0.045);
+  }
+
+  .volunteer-recruitment-text {
+    max-width: 43rem;
+    margin: 0;
+    color: var(--cream);
+    font-size: clamp(1.2rem, 2.3vw, 1.7rem);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .volunteer-recruitment :global(.btn) {
+    flex: 0 0 auto;
+  }
+
+  .volunteer-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .volunteer-benefit {
+    min-width: 0;
+    min-height: 13rem;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid rgba(234, 230, 210, 0.1);
+    border-radius: 1rem;
+    background: #1c1a13;
+  }
+
+  .volunteer-number {
+    display: block;
+    margin-bottom: 2rem;
+    color: var(--orange);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .volunteer-benefit h2 {
+    margin: 0 0 0.65rem;
+    color: var(--cream);
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    line-height: 1.35;
+  }
+
+  .volunteer-benefit p {
+    margin: 0;
+    color: rgba(234, 230, 210, 0.62);
+    line-height: 1.7;
+  }
+
+  .volunteer-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .volunteer-panel {
+    min-width: 0;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border-top: 1px solid rgba(234, 230, 210, 0.16);
+  }
+
+  .volunteer-requirements li {
+    position: relative;
+    padding: 1rem 0 1rem 1.5rem;
+    border-bottom: 1px solid rgba(234, 230, 210, 0.1);
+    color: rgba(234, 230, 210, 0.76);
+    line-height: 1.7;
+  }
+
+  .volunteer-requirements li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+  }
+
+  .volunteer-schedule li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(234, 230, 210, 0.1);
+    color: rgba(234, 230, 210, 0.7);
+  }
+
+  .volunteer-schedule strong {
+    color: var(--cream);
+    font-weight: 600;
+  }
+
+  .volunteer-note {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border-left: 3px solid var(--orange);
+    background: rgba(248, 74, 16, 0.055);
+  }
+
+  @media (max-width: 720px) {
+    .volunteer-about {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    .volunteer-facts,
+    .volunteer-benefits,
+    .volunteer-details {
+      grid-template-columns: 1fr;
+    }
+
+    .volunteer-fact + .volunteer-fact {
+      border-left: 0;
+      border-top: 1px solid rgba(234, 230, 210, 0.14);
+    }
+
+    .volunteer-recruitment {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .volunteer-recruitment :global(.btn) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .volunteer-inner {
+      width: min(calc(100% - 2rem), 72rem);
+    }
+
+    .volunteer-benefit {
+      min-height: 0;
+    }
+
+    .volunteer-schedule li {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.volunteer-page').forEach((section) => {
+    const trigger = section.querySelector('[data-volunteer-photo-trigger]') as HTMLButtonElement | null;
+    const thumb = trigger?.querySelector('img') as HTMLImageElement | null;
+    const lightbox = section.querySelector('[data-volunteer-lightbox]') as HTMLElement | null;
+    const lightboxImage = lightbox?.querySelector('.gallery-lightbox-img') as HTMLImageElement | null;
+    const closeButton = lightbox?.querySelector('.gallery-lightbox-close') as HTMLButtonElement | null;
+    if (!trigger || !thumb || !lightbox || !lightboxImage) return;
+
+    // Match EventGallery: keep the overlay outside transformed/overflow parents.
+    document.querySelectorAll('body > [data-volunteer-lightbox]').forEach((element) => element.remove());
+    document.body.appendChild(lightbox);
+
+    const isOpen = () => lightbox.classList.contains('is-open');
+    const open = () => {
+      lightboxImage.src = thumb.currentSrc || thumb.src;
+      lightboxImage.alt = thumb.alt;
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      closeButton?.focus();
+    };
+    const close = () => {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      trigger.focus();
+    };
+
+    trigger.addEventListener('click', open);
+    closeButton?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      close();
+    });
+    lightboxImage.addEventListener('click', (event) => event.stopPropagation());
+    lightbox.addEventListener('click', close);
+    document.addEventListener('keydown', (event) => {
+      if (isOpen() && event.key === 'Escape') close();
+    });
+  });
+</script>

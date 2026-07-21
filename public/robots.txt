@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://paris2026.gosim.org/sitemap-index.xml
+Sitemap: https://shenzhen2026.gosim.org/sitemap-index.xml

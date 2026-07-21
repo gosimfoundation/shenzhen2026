@@ -1,0 +1,31 @@
+---
+import Layout from "layouts/LayoutLandingZh.astro";
+import VolunteerPage from "components/VolunteerPage.astro";
+import HeroText from "components/HeroText.astro";
+import GetTickets from "components/GetTickets.astro";
+---
+
+<Layout
+  title="志愿者招募 – GOSIM Shenzhen 2026"
+  description="报名成为 GOSIM Shenzhen 2026 大会志愿者。招募面向热爱开源与 AI 的在校本科生和研究生。"
+  navBackground="light"
+  pageTransitionName="志愿者"
+>
+  <HeroText
+    title="志愿者招募"
+    text="加入我们，一起让开源更有力量。与全球开源先锋同行。"
+    lightgray
+  />
+  <VolunteerPage lang="zh" />
+  <GetTickets
+    title="志愿者招募进行中"
+    location="深圳南山伊敦酒店"
+    date="2026年10月15-17日"
+    text="我们目前正在为本次大会招募志愿者，目标群体是对开源和 AI 感兴趣的高校学生。"
+    ctaButton={{
+      text: "立即报名志愿者",
+      link: "https://marketing.csdn.net/questions/Q2607211202017553510",
+      openInNewTab: true,
+    }}
+  />
+</Layout>

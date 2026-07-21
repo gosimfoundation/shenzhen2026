@@ -1,0 +1,31 @@
+---
+import Layout from "layouts/LayoutLanding.astro";
+import VolunteerPage from "components/VolunteerPage.astro";
+import HeroText from "components/HeroText.astro";
+import GetTickets from "components/GetTickets.astro";
+---
+
+<Layout
+  title="Volunteers – GOSIM Shenzhen 2026"
+  description="Apply to volunteer at GOSIM Shenzhen 2026 on October 16–17, 2026. Open to current undergraduate and graduate students interested in open source and AI."
+  navBackground="light"
+  pageTransitionName="Volunteers"
+>
+  <HeroText
+    title="Volunteer Recruitment"
+    text="Join us and help make open source stronger. Work alongside leading members of the global open-source community."
+    lightgray
+  />
+  <VolunteerPage lang="en" />
+  <GetTickets
+    title="Volunteer Recruitment Now Open"
+    location="Aden Hotel Shenzhen Nanshan"
+    date="October 15-17, 2026"
+    text="We are recruiting university students with a strong interest in open source and AI to volunteer at GOSIM Shenzhen 2026."
+    ctaButton={{
+      text: "Apply to Volunteer",
+      link: "https://marketing.csdn.net/questions/Q2607211202017553510",
+      openInNewTab: true,
+    }}
+  />
+</Layout>
