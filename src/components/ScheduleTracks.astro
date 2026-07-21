@@ -260,7 +260,7 @@ const allRooms = Array.from(roomSessionsMap.entries()).map(([key, data]) => ({
 const firstRoom = allRooms[0]?.key || ""
 
 // ── Grid (Room × Time) view data ──
-// Room columns derive from the schedule data (rooms are TBA until the venue is announced)
+// Room columns derive from the schedule data (individual room assignments are still pending)
 const GRID_ROOM_ORDER = [...new Set(allCategories.map((cat: any) => en(cat.room)).filter(Boolean))]
 const gridRooms = GRID_ROOM_ORDER
 const GRID_SLOT_MINUTES = 5

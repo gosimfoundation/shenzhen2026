@@ -47,7 +47,9 @@ const logos = (sponsorsData.partners ?? [])
   })
   .map((p: any, i: number) => ({
     image: p.image as string,
-    src: isRemote(p.image) ? p.image : `/images/sponsors/${p.image}`,
+    // This page renders logos at a small, fixed size. Use the dedicated
+    // thumbnails so scrolling never has to decode multi-thousand-pixel PNGs.
+    src: isRemote(p.image) ? p.image : `/images/sponsors/optimized/${p.image}`,
     url: p.url || "",
     order: i,
   }))
@@ -68,11 +70,25 @@ const logos = (sponsorsData.partners ?? [])
         {logos.map((logo) =>
           logo.url ? (
             <a class="psp-tile" href={logo.url} target="_blank" rel="noopener noreferrer">
-              <img src={logo.src} alt="Sponsor logo" loading="lazy" decoding="async" />
+              <img
+                src={logo.src}
+                alt="Sponsor logo"
+                width="360"
+                height="180"
+                loading="lazy"
+                decoding="async"
+              />
             </a>
           ) : (
             <div class="psp-tile">
-              <img src={logo.src} alt="Sponsor logo" loading="lazy" decoding="async" />
+              <img
+                src={logo.src}
+                alt="Sponsor logo"
+                width="360"
+                height="180"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           )
         )}
@@ -135,6 +151,9 @@ const logos = (sponsorsData.partners ?? [])
     border: 1px solid rgba(234, 230, 210, 0.1);
     background: #ffffff;
     text-decoration: none;
+    contain: layout paint style;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 6.5rem;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
   }
   .psp-tile:hover {
@@ -143,8 +162,8 @@ const logos = (sponsorsData.partners ?? [])
   }
   .psp-tile img {
     display: block;
-    max-width: 100%;
-    max-height: 3.4rem;
+    width: 100%;
+    height: 3.4rem;
     object-fit: contain;
   }
 
