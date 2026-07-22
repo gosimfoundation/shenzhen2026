@@ -50,6 +50,13 @@ const {
           var isAlreadyOnChinesePage = window.location.pathname.startsWith('/zh');
           var languagePreference = localStorage.getItem('language_preference');
           var hasJustSwitched = sessionStorage.getItem('language_just_switched');
+          var englishOnlyPaths = [
+            '/general-travel',
+            '/chinese-visa',
+            '/travel-fund-policy'
+          ];
+          var currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+          var isEnglishOnlyPage = englishOnlyPaths.includes(currentPath);
 
           // Clear the switch flag after a short delay
           if (hasJustSwitched) {
@@ -58,7 +65,7 @@ const {
           }
 
           // Only redirect based on stored preference if it exists and differs from current page
-          if (languagePreference === 'zh' && !isAlreadyOnChinesePage) {
+          if (languagePreference === 'zh' && !isAlreadyOnChinesePage && !isEnglishOnlyPage) {
             sessionStorage.setItem('language_just_switched', 'true');
             var newPath = '/zh' + window.location.pathname;
             if (window.location.pathname === '/') {
@@ -79,7 +86,7 @@ const {
           }
 
           // Only redirect based on browser language if no preference is set
-          if (!languagePreference && isChinese && !isAlreadyOnChinesePage) {
+          if (!languagePreference && isChinese && !isAlreadyOnChinesePage && !isEnglishOnlyPage) {
             var newPath = '/zh' + window.location.pathname;
             if (window.location.pathname === '/') {
               newPath = '/zh/';
