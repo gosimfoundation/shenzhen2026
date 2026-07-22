@@ -8,7 +8,12 @@ interface Props {
   title: string;
   location: string;
   image: string;
+  imageAlt?: string;
   text: string;
+  latitude?: number;
+  longitude?: number;
+  zoom?: number;
+  mapLabel?: string;
   ctaButton?: {
     text: string;
     link: string;
@@ -16,79 +21,196 @@ interface Props {
   };
 }
 
-const { subtitle, title, location, image, text, ctaButton } = Astro.props;
+const {
+  subtitle,
+  title,
+  location,
+  image,
+  imageAlt = title,
+  text,
+  latitude = 22.4872234,
+  longitude = 113.9064244,
+  zoom = 15,
+  mapLabel = "Location",
+  ctaButton,
+} = Astro.props;
 ---
 
 <section
-  class="section section-big-image"
-  data-theme-section="light"
+  class="venue-page"
+  data-theme-section="dark"
   data-bg-section="lightgray"
 >
-  <div class="container wide" id="venue">
-    <div class="row">
-      <div class="col">
-        <figure>
-          <div class="overlay playpause">
-            <img src={image} alt={title} class="overlay" loading="lazy" />
-          </div>
+  <div class="venue-inner" id="venue">
+    <section class="venue-overview">
+      <figure class="venue-photo">
+        <img src={image} alt={imageAlt} loading="eager" fetchpriority="high" />
+      </figure>
 
-          {
-            ctaButton?.text && (
-              <div class="col-row col-row-btn">
-                <Button
-                  text={ctaButton.text}
-                  link={ctaButton.link}
-                  openInNewTab={ctaButton?.openInNewTab}
-                  class="btn light btn-hover xl"
-                />
-              </div>
-            )
-          }
-        </figure>
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="venue-copy">
+        <p class="venue-label">{subtitle}</p>
+        <p class="venue-address">{location}</p>
+        <p class="venue-description">{text}</p>
+        <slot />
 
-<section
-  class="section section-location-info"
-  data-theme-section="light"
-  data-bg-section="lightgray"
->
-  <div class="container wide">
-    <div class="row grid">
-      <div class="border-bottom"></div>
-      <div class="col col-info">
-        <div class="location-flex">
-          <p>{subtitle}</p>
-          <h2>{title}</h2>
-          <p>{location}</p>
-          <div class="col-row">
-            <p>{text}</p>
-          </div>
-          <slot />
-        </div>
+        {
+          ctaButton?.text && (
+            <div class="venue-cta">
+              <Button
+                text={ctaButton.text}
+                link={ctaButton.link}
+                openInNewTab={ctaButton?.openInNewTab}
+                class="btn light btn-hover xl"
+              />
+            </div>
+          )
+        }
       </div>
-      <div class="col col-text styled-content">
+    </section>
 
-        <div class="col-row map-container">
-          <OpenStreetMap
-            latitude={48.8339}
-            longitude={2.3711}
-            zoom={15}
-            markerTitle={title}
-            height="350px"
-          />
-        </div>
+    <section class="venue-location">
+      <p class="venue-label">{mapLabel}</p>
+      <div class="map-container">
+        <OpenStreetMap
+          latitude={latitude}
+          longitude={longitude}
+          zoom={zoom}
+          markerTitle={title}
+          height="440px"
+        />
       </div>
-    </div>
+    </section>
   </div>
 </section>
 
 <style>
+  .venue-page {
+    --orange: #f84a10;
+    --cream: #eae6d2;
+    padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+    background: transparent;
+  }
+
+  .venue-inner {
+    width: min(calc(100% - 3rem), 72rem);
+    margin-inline: auto;
+    display: grid;
+    gap: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .venue-overview {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    min-height: clamp(42rem, 62vw, 52rem);
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
+    padding-block: clamp(3rem, 6vw, 5rem);
+    padding-inline: max(1.5rem, calc((100vw - 72rem) / 2));
+    background: transparent;
+  }
+
+  .venue-copy {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    width: min(49%, 34rem);
+    gap: 1rem;
+    padding: clamp(1.25rem, 2.4vw, 2rem);
+    border: 1px solid rgba(234, 230, 210, 0.11);
+    border-radius: calc(var(--border-radius) * 0.8);
+    background: rgba(20, 18, 13, 0.46);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+  }
+
+  .venue-label {
+    margin: 0 0 0.25rem;
+    color: var(--orange);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .venue-address {
+    margin: 0;
+    color: var(--cream);
+    font-size: clamp(1.3rem, 2vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .venue-description {
+    margin: 0;
+    color: rgba(234, 230, 210, 0.76);
+    font-size: clamp(1rem, 1.25vw, 1.12rem);
+    line-height: 1.8;
+  }
+
+  .venue-cta {
+    justify-self: start;
+    width: max-content;
+    margin-top: 0.75rem;
+  }
+
+  .venue-photo {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    margin: 0;
+    opacity: 0;
+  }
+
+  .venue-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .venue-location {
+    padding-top: clamp(2rem, 4vw, 3.5rem);
+    border-top: 1px solid rgba(234, 230, 210, 0.14);
+  }
+
   .map-container {
     z-index: 0;
     position: relative;
   }
-</style>
 
+  @media (max-width: 840px) {
+    .venue-overview {
+      display: block;
+      min-height: 0;
+      padding: 18rem 1rem 1.5rem;
+    }
+
+    .venue-copy {
+      width: 100%;
+      padding: 1.25rem;
+      background: rgba(20, 18, 13, 0.52);
+    }
+
+    .venue-photo img {
+      object-position: center center;
+    }
+
+    .venue-photo {
+      bottom: auto;
+      height: 26rem;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .venue-inner {
+      width: min(calc(100% - 1.5rem), 72rem);
+    }
+
+  }
+</style>

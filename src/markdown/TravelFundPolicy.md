@@ -32,7 +32,7 @@ Your specific cap will be communicated in your acceptance email.
 | **Accommodation** | October 15–17, 2026 (event dates + 1 night prior). Room rate and tax only. | Meals, mini-bar, phone charges, dry cleaning, bottled water |
 | **Ground Transport** | Not covered | All local transport in Shenzhen |
 
-**Also not covered**: Visas · Meals · Daily commuting to Aden Hotel Shenzhen Nanshan · Rental cars · Luxury rides · Conversion/bank fees · Personal travel days
+**Also not covered**: Visas · Meals · Daily commuting to ADEN Hotel Shenzhen Nanshan · Rental cars · Luxury rides · Conversion/bank fees · Personal travel days
 
 ## General Rules
 

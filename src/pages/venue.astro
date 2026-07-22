@@ -1,0 +1,113 @@
+---
+import Layout from "layouts/LayoutLanding.astro"
+import HeroText from "components/HeroText.astro"
+import VenueInfo from "components/VenueInfo.astro"
+---
+
+<Layout
+  title="Venue – GOSIM Shenzhen 2026"
+  description="Venue information for GOSIM Shenzhen 2026 at ADEN Hotel Shenzhen Nanshan."
+  navBackground="light"
+  pageTransitionName="Venue"
+>
+  <HeroText title="ADEN Hotel Shenzhen Nanshan" lightgray />
+
+  <VenueInfo
+    subtitle="Venue"
+    title="ADEN Hotel Shenzhen Nanshan"
+    location="No. 8 Guishan Road, Shekou, Nanshan District, Shenzhen"
+    image="/images/venue/aden-hotel-shenzhen-nanshan.jpg"
+    imageAlt="ADEN Hotel Shenzhen Nanshan at night"
+    text="The conference venue is about 700 metres from Sea World Metro Station, served by Lines 2, 8 and 12, putting it within easy reach of Shenzhen's metro network and Shekou's waterfront district."
+    latitude={22.4872234}
+    longitude={113.9064244}
+    zoom={16}
+    mapLabel="Location"
+    ctaButton={{
+      text: "Open in Maps",
+      link: "https://www.openstreetmap.org/?mlat=22.4872234&mlon=113.9064244#map=17/22.4872234/113.9064244",
+      openInNewTab: true,
+    }}
+  >
+    <div class="venue-details">
+      <h3>Getting there</h3>
+      <p><strong>By metro:</strong> Sea World Station is served by Lines 2, 8 and 12.</p>
+      <p><strong>By taxi:</strong> Show the driver “深圳南山伊敦酒店，南山区龟山路8号”.</p>
+      <h3>Arriving via Hong Kong</h3>
+      <p>
+        Eligible transfer passengers arriving at Hong Kong International Airport
+        can stay airside and take the SkyPier ferry directly to Shenzhen Shekou.
+        The hotel is a short taxi or ride-hailing trip from Shekou Cruise Home
+        Port, making this a convenient route from HKIA.
+      </p>
+      <p>
+        SkyPier is for transfer passengers only: do not pass through Hong Kong
+        immigration before boarding, and check the latest schedule and participating
+        airlines before travelling. <a
+          href="https://www.hongkongairport.com/en/transport/mainland-connection/ferry-transfer.page"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View official SkyPier information →</a>
+      </p>
+      <p><a href="/general-travel/">See general travel information →</a></p>
+    </div>
+  </VenueInfo>
+</Layout>
+
+<style>
+  :global(#main[data-page-title="Venue"]) {
+    position: relative;
+    isolation: isolate;
+    background: #100e09;
+  }
+
+  :global(#main[data-page-title="Venue"]::before) {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(11, 10, 8, 0.75) 0%, rgba(11, 10, 8, 0.3) 46%, rgba(11, 10, 8, 0.08) 76%),
+      linear-gradient(180deg, rgba(11, 10, 8, 0.3) 0%, rgba(11, 10, 8, 0.08) 38%, rgba(11, 10, 8, 0.62) 100%),
+      url("/images/venue/aden-hotel-shenzhen-nanshan.jpg") center center / cover no-repeat;
+    content: "";
+    pointer-events: none;
+  }
+
+  :global(#main[data-page-title="Venue"] > *) {
+    position: relative;
+    z-index: 1;
+  }
+
+  :global(#main[data-page-title="Venue"] > .default-header) {
+    background: transparent;
+  }
+
+  :global(#main[data-page-title="Venue"] .gradient-circle-wrap) {
+    display: none;
+  }
+
+  .venue-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .venue-details h3 {
+    margin: 1.35rem 0 0.15rem;
+    line-height: 1.15;
+  }
+
+  .venue-details h3:first-child {
+    margin-top: 0;
+  }
+
+  .venue-details p {
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .venue-details a {
+    line-height: 1.4;
+  }
+</style>

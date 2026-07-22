@@ -1,0 +1,178 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  venueName: string;
+  address: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  link: string;
+  linkLabel: string;
+}
+
+const {
+  eyebrow,
+  title,
+  venueName,
+  address,
+  description,
+  image,
+  imageAlt,
+  link,
+  linkLabel,
+} = Astro.props;
+---
+
+<section
+  class="home-venue"
+  id="venue"
+  data-theme-section="dark"
+  data-bg-section="lightgray"
+>
+  <div class="container wide">
+    <div class="home-venue-grid">
+      <div class="home-venue-copy">
+        <p class="home-venue-eyebrow"><span></span>{eyebrow}</p>
+        <h2>{title}</h2>
+        <h3>{venueName}</h3>
+        <p class="home-venue-address">{address}</p>
+        <p class="home-venue-description">{description}</p>
+        <a class="home-venue-link" href={link}>{linkLabel}<span aria-hidden="true">→</span></a>
+      </div>
+
+      <figure class="home-venue-photo">
+        <img
+          src={image}
+          alt={imageAlt}
+          width="1024"
+          height="767"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-venue {
+    padding: clamp(3rem, 5vw, 5rem) 0;
+    background:
+      radial-gradient(circle at 18% 20%, rgba(248, 74, 16, 0.1), transparent 34%),
+      linear-gradient(180deg, #141209 0%, #161410 100%);
+  }
+
+  .home-venue-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .home-venue-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-venue-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 0 1rem;
+    color: #f84a10;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .home-venue-eyebrow span {
+    width: 1.8rem;
+    height: 2px;
+    background: currentColor;
+  }
+
+  .home-venue-copy h2 {
+    margin: 0;
+    font-size: clamp(2.4rem, 4.25vw, 4.75rem);
+    line-height: 1;
+  }
+
+  .home-venue-copy h3 {
+    margin: 1.25rem 0 0;
+    color: #eae6d2;
+    font-size: clamp(1.3rem, 1.7vw, 1.8rem);
+    line-height: 1.15;
+  }
+
+  .home-venue-address {
+    margin: 0.65rem 0 0;
+    color: rgba(234, 230, 210, 0.62);
+    font-weight: 600;
+    line-height: 1.55;
+  }
+
+  .home-venue-description {
+    max-width: 34rem;
+    margin: 1rem 0 0;
+    color: rgba(234, 230, 210, 0.76);
+    font-size: clamp(1rem, 1.25vw, 1.12rem);
+    line-height: 1.75;
+  }
+
+  .home-venue-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.35rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(234, 230, 210, 0.5);
+    color: #eae6d2;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .home-venue-link:hover {
+    color: #f84a10;
+    border-color: #f84a10;
+  }
+
+  .home-venue-photo {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    margin: 0;
+    border-radius: var(--border-radius);
+    background: rgba(234, 230, 210, 0.08);
+  }
+
+  .home-venue-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(234, 230, 210, 0.14);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .home-venue-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 840px) {
+    .home-venue-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .home-venue-photo {
+      order: -1;
+    }
+  }
+</style>

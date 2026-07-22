@@ -1,0 +1,96 @@
+---
+import Layout from "layouts/LayoutLandingZh.astro"
+import HeroText from "components/HeroText.astro"
+import VenueInfo from "components/VenueInfo.astro"
+---
+
+<Layout
+  title="大会场地 – GOSIM 深圳 2026"
+  description="GOSIM 深圳 2026 大会场地：深圳南山伊敦酒店。"
+  navBackground="light"
+  pageTransitionName="Venue"
+>
+  <HeroText title="深圳南山伊敦酒店" lightgray />
+
+  <VenueInfo
+    subtitle="大会场地"
+    title="深圳南山伊敦酒店"
+    location="深圳市南山区蛇口龟山路8号"
+    image="/images/venue/aden-hotel-shenzhen-nanshan.jpg"
+    imageAlt="深圳南山伊敦酒店夜景"
+    text="大会场地距离海上世界地铁站约 700 米，可乘坐 2 号线、8 号线和 12 号线，便捷接驳深圳地铁网络，步行即可到达蛇口海滨片区。"
+    latitude={22.4872234}
+    longitude={113.9064244}
+    zoom={16}
+    mapLabel="位置"
+    ctaButton={{
+      text: "打开地图",
+      link: "https://www.openstreetmap.org/?mlat=22.4872234&mlon=113.9064244#map=17/22.4872234/113.9064244",
+      openInNewTab: true,
+    }}
+  >
+    <div class="venue-details">
+      <h3>如何到达</h3>
+      <p><strong>地铁：</strong>乘坐 2 号线、8 号线或 12 号线至海上世界站。</p>
+      <p><strong>出租车 / 网约车：</strong>目的地请填写“深圳南山伊敦酒店，南山区龟山路8号”。</p>
+    </div>
+  </VenueInfo>
+</Layout>
+
+<style>
+  :global(#main[data-page-title="Venue"]) {
+    position: relative;
+    isolation: isolate;
+    background: #100e09;
+  }
+
+  :global(#main[data-page-title="Venue"]::before) {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(11, 10, 8, 0.75) 0%, rgba(11, 10, 8, 0.3) 46%, rgba(11, 10, 8, 0.08) 76%),
+      linear-gradient(180deg, rgba(11, 10, 8, 0.3) 0%, rgba(11, 10, 8, 0.08) 38%, rgba(11, 10, 8, 0.62) 100%),
+      url("/images/venue/aden-hotel-shenzhen-nanshan.jpg") center center / cover no-repeat;
+    content: "";
+    pointer-events: none;
+  }
+
+  :global(#main[data-page-title="Venue"] > *) {
+    position: relative;
+    z-index: 1;
+  }
+
+  :global(#main[data-page-title="Venue"] > .default-header) {
+    background: transparent;
+  }
+
+  :global(#main[data-page-title="Venue"] .gradient-circle-wrap) {
+    display: none;
+  }
+
+  .venue-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .venue-details h3 {
+    margin: 1.35rem 0 0.15rem;
+    line-height: 1.15;
+  }
+
+  .venue-details h3:first-child {
+    margin-top: 0;
+  }
+
+  .venue-details p {
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .venue-details a {
+    line-height: 1.4;
+  }
+</style>

@@ -3,6 +3,7 @@
 import Layout from "layouts/LayoutLanding.astro"
 import Hero from "components/Hero.astro"
 import ProgramSection from "components/ProgramSection.astro"
+import VenueDetails from "components/VenueDetails.astro"
 import EventGallery from "components/EventGallery.astro"
 import PreviousEvents from "components/PreviousEvents.astro"
 import GetTickets from "components/GetTickets.astro"
@@ -19,14 +20,14 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
 
 <Layout
   title="GOSIM Shenzhen 2026"
-  description="GOSIM Shenzhen 2026 — open-source AI, robotics, edge systems, and developer infrastructure. October 16-17, 2026 at Aden Hotel Shenzhen Nanshan."
+  description="GOSIM Shenzhen 2026 — open-source AI, robotics, edge systems, and developer infrastructure. October 16-17, 2026 at ADEN Hotel Shenzhen Nanshan."
   navDarkMode={true}
   navBackground="header-home"
   pageTransitionName="Home"
 >
   <Hero
     date="October 16-17, 2026"
-    location="Aden Hotel · Shenzhen"
+    location="ADEN Hotel · Shenzhen"
     subtitle="The Premier Open Source Summit"
     description="150+ international speakers and 2,000+ developers gather for keynotes, technical forums, workshops, hackathons, and live open-source demos."
     video="/videos/shenzhen-hero-compressed.mp4"
@@ -116,6 +117,18 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
     enterLabel="Learn more"
   />
 
+  <VenueDetails
+    eyebrow="Conference Venue"
+    title="ADEN Hotel Shenzhen Nanshan"
+    venueName="Meet Us in Shenzhen"
+    address="No. 8 Guishan Road, Shekou, Nanshan District, Shenzhen"
+    description="Set in Shekou, the conference venue is about 700 metres from Sea World Metro Station, served by Lines 2, 8 and 12, with easy access to Shenzhen's metro network and waterfront district."
+    image="/images/venue/aden-hotel-shenzhen-nanshan.jpg"
+    imageAlt="ADEN Hotel Shenzhen Nanshan at night"
+    link="/venue/"
+    linkLabel="Explore the venue"
+  />
+
   <EventGallery
     title="The GOSIM Experience"
     albums={[
@@ -198,7 +211,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
 
   <GetTickets
     title="Call for Proposals Now Open"
-    location="Aden Hotel Shenzhen Nanshan"
+    location="ADEN Hotel Shenzhen Nanshan"
     date="October 16-17, 2026"
     text="We're looking for bold ideas and fresh voices in open-source AI, robotics, edge systems, and developer infrastructure. Submit a proposal to speak at GOSIM Shenzhen 2026."
     ctaButton={{
