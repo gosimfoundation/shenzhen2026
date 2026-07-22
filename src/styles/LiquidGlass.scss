@@ -51,21 +51,12 @@
    A strongly-saturated translucent tint over a re-saturating/brightening
    backdrop filter, so the button is see-through yet stays bright. */
 
-/* Nav ticket button (floating + static) — see-through orange glass.
-   Scoped to .primary so the orange tint only hits the Buy Tickets CTA; the
-   CFP (.light) button gets its own frosted-white glass below, so the two CTAs
-   read as clearly different colours. */
-.floating-ticket-button .btn .btn-click,
-.header-buttons .btn.primary .btn-click {
+/* Reusable orange glass variant for ticket-style primary actions. */
+.btn.glass-orange .btn-click {
    -webkit-backdrop-filter: blur(6px) saturate(210%) brightness(1.12);
    backdrop-filter: blur(6px) saturate(210%) brightness(1.12);
 }
-/* Match the per-layer specificity of the floating button's own !important fill
-   so the translucent gradient actually replaces the solid orange (otherwise it
-   sits over an opaque fill and looks unchanged). */
-.header-buttons .btn.primary .btn-fill,
-.floating-ticket-button .btn-content.original .btn-fill,
-.floating-ticket-button .btn-content.duplicate .btn-fill {
+.btn.glass-orange .btn-fill {
    background: linear-gradient(180deg, rgba(255, 122, 48, 0.74), rgba(240, 78, 22, 0.8)) !important;
 }
 

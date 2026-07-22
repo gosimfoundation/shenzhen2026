@@ -2,6 +2,7 @@
 import Layout from "layouts/LayoutLanding.astro";
 import VolunteerPage from "components/VolunteerPage.astro";
 import HeroText from "components/HeroText.astro";
+import Button from "components/Button.astro";
 import GetTickets from "components/GetTickets.astro";
 ---
 
@@ -11,11 +12,14 @@ import GetTickets from "components/GetTickets.astro";
   navBackground="light"
   pageTransitionName="Volunteers"
 >
-  <HeroText
-    title="Volunteer Recruitment"
-    text="Join us and help make open source stronger. Work alongside leading members of the global open-source community."
-    lightgray
-  />
+  <HeroText title="Volunteer Recruitment" lightgray>
+    <Button
+      text="Apply to Volunteer"
+      link="https://marketing.csdn.net/questions/Q2607211202017553510"
+      class="btn primary glass-orange xl btn-hover"
+      openInNewTab
+    />
+  </HeroText>
   <VolunteerPage lang="en" />
   <GetTickets
     title="Volunteer Recruitment Now Open"

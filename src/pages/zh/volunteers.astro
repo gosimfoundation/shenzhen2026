@@ -2,6 +2,7 @@
 import Layout from "layouts/LayoutLandingZh.astro";
 import VolunteerPage from "components/VolunteerPage.astro";
 import HeroText from "components/HeroText.astro";
+import Button from "components/Button.astro";
 import GetTickets from "components/GetTickets.astro";
 ---
 
@@ -11,11 +12,14 @@ import GetTickets from "components/GetTickets.astro";
   navBackground="light"
   pageTransitionName="志愿者"
 >
-  <HeroText
-    title="志愿者招募"
-    text="加入我们，一起让开源更有力量。与全球开源先锋同行。"
-    lightgray
-  />
+  <HeroText title="志愿者招募" lightgray>
+    <Button
+      text="立即报名志愿者"
+      link="https://marketing.csdn.net/questions/Q2607211202017553510"
+      class="btn primary glass-orange xl btn-hover"
+      openInNewTab
+    />
+  </HeroText>
   <VolunteerPage lang="zh" />
   <GetTickets
     title="志愿者招募进行中"

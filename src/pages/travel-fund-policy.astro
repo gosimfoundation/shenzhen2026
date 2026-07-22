@@ -1,0 +1,122 @@
+---
+// Components
+import Layout from "layouts/LayoutLanding.astro"
+import HeroText from "components/HeroText.astro"
+import Button from "components/Button.astro"
+import Content from "markdown/TravelFundPolicy.md"
+---
+
+<Layout
+  title="Travel Fund Policy – GOSIM Shenzhen 2026"
+  description="Travel fund reimbursement policy for GOSIM Shenzhen 2026 attendees."
+  navBackground="light"
+  pageTransitionName="TravelFundPolicy"
+>
+  <HeroText title="Travel Fund Policy" lightgray>
+    <Button
+      text="Download Reimbursement Template (.docx)"
+      link="/GOSIM-Travel-Fund-Reimbursement-Template.docx"
+      class="btn primary glass-orange xl btn-hover"
+      download="GOSIM-Shenzhen-2026-Travel-Fund-Reimbursement-Template.docx"
+      mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    />
+  </HeroText>
+
+  <section
+    class="section travel-section"
+    data-theme-section="light"
+    data-bg-section="lightgray"
+  >
+    <div class="container">
+      <div class="travel-body">
+        <Content />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style is:global>
+  .default-header .col-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .default-header .col-text .col-row {
+    max-width: none;
+    text-align: center;
+    padding-top: 0;
+  }
+
+  .travel-section {
+    padding-top: var(--row-gap) !important;
+  }
+
+  .travel-body {
+    width: 100%;
+    font-size: 1.05rem;
+  }
+  .travel-body h2 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .travel-body p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .travel-body ul, .travel-body ol {
+    padding-left: 1.5em;
+    margin-bottom: 1.5rem;
+  }
+  .travel-body ul {
+    list-style: disc !important;
+  }
+  .travel-body ol {
+    list-style: decimal !important;
+  }
+  .travel-body ul li {
+    list-style: disc !important;
+    display: list-item;
+  }
+  .travel-body ol li {
+    list-style: decimal !important;
+    display: list-item;
+  }
+  .travel-body ul li,
+  .travel-body ol li {
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+  }
+  .travel-body ul li::before {
+    display: none !important;
+  }
+  .travel-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+  }
+  .travel-body th,
+  .travel-body td {
+    border: 1px solid #ccc;
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+  .travel-body th {
+    background: rgba(0,0,0,0.05);
+    font-weight: 700;
+  }
+  .travel-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .travel-body {
+      overflow-x: auto;
+    }
+    .travel-body table {
+      min-width: 680px;
+    }
+  }
+</style>

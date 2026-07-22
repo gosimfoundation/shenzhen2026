@@ -1,14 +1,10 @@
 ---
-import Button from "components/Button.astro";
-
 interface Props {
   lang?: "en" | "zh";
 }
 
 const { lang = "en" } = Astro.props;
 const isZh = lang === "zh";
-const applicationUrl = "https://marketing.csdn.net/questions/Q2607211202017553510";
-
 const copy = isZh
   ? {
       aboutLabel: "大会介绍",
@@ -21,10 +17,6 @@ const copy = isZh
         ["地点", "深圳南山伊敦酒店"],
         ["志愿者时间", "2026 年 10 月 15—17 日"],
       ],
-      recruitmentLabel: "志愿者招募",
-      recruitment:
-        "我们目前正在为本次大会招募志愿者，目标群体是对开源和 AI 感兴趣的高校学生。",
-      apply: "立即报名志愿者",
       benefitsLabel: "志愿者权益",
       benefits: [
         {
@@ -70,10 +62,6 @@ const copy = isZh
         ["Venue", "Aden Hotel Shenzhen Nanshan"],
         ["Volunteer dates", "October 15–17, 2026"],
       ],
-      recruitmentLabel: "Volunteer Recruitment",
-      recruitment:
-        "We are recruiting university students with a strong interest in open source and AI to volunteer at GOSIM Shenzhen 2026.",
-      apply: "Apply to Volunteer",
       benefitsLabel: "Volunteer Benefits",
       benefits: [
         {
@@ -148,19 +136,6 @@ const copy = isZh
         </div>
       ))}
     </dl>
-
-    <section class="volunteer-recruitment">
-      <div>
-        <p class="volunteer-label">{copy.recruitmentLabel}</p>
-        <p class="volunteer-recruitment-text">{copy.recruitment}</p>
-      </div>
-      <Button
-        text={copy.apply}
-        link={applicationUrl}
-        openInNewTab={true}
-        class="btn primary xl btn-hover"
-      />
-    </section>
 
     <section>
       <p class="volunteer-label">{copy.benefitsLabel}</p>
@@ -391,30 +366,6 @@ const copy = isZh
     background: rgba(255, 255, 255, 0.25);
   }
 
-  .volunteer-recruitment {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    padding: clamp(2rem, 4vw, 3rem);
-    border-radius: 1rem;
-    border: 1px solid rgba(234, 230, 210, 0.12);
-    background: rgba(234, 230, 210, 0.045);
-  }
-
-  .volunteer-recruitment-text {
-    max-width: 43rem;
-    margin: 0;
-    color: var(--cream);
-    font-size: clamp(1.2rem, 2.3vw, 1.7rem);
-    font-weight: 600;
-    line-height: 1.5;
-  }
-
-  .volunteer-recruitment :global(.btn) {
-    flex: 0 0 auto;
-  }
-
   .volunteer-benefits {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -516,14 +467,6 @@ const copy = isZh
       border-top: 1px solid rgba(234, 230, 210, 0.14);
     }
 
-    .volunteer-recruitment {
-      align-items: stretch;
-      flex-direction: column;
-    }
-
-    .volunteer-recruitment :global(.btn) {
-      width: 100%;
-    }
   }
 
   @media (max-width: 480px) {
