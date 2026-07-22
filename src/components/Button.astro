@@ -3,18 +3,29 @@ interface Props {
 	text: string,
     link: string,
     openInNewTab?: boolean,
+    download?: boolean | string,
+    mimeType?: string,
     class?: string,
 }
 
-const { text, link, openInNewTab, class: className } = Astro.props;
+const {
+    text,
+    link,
+    openInNewTab = false,
+    download = false,
+    mimeType,
+    class: className,
+} = Astro.props;
 ---
 
 <div class={className || 'btn outline btn-hover xl'}>
     <a
         href={link}
         class="btn-click"
-        target={openInNewTab ? "_blank" : "_self"}
-        rel={openInNewTab ? "noopener noreferrer" : ""}
+        target={openInNewTab ? "_blank" : undefined}
+        rel={openInNewTab ? "noopener noreferrer" : undefined}
+        download={download || undefined}
+        type={mimeType}
     >
         <div class="btn-content duplicate">
             <div class="btn-fill"></div>

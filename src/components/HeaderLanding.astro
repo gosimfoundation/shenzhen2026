@@ -49,6 +49,10 @@ const rawLinks = [
         text: "Chinese Visa",
         link: "/chinese-visa/",
       },
+      {
+        text: "Travel Fund Policy",
+        link: "/travel-fund-policy/",
+      },
     ],
   },
 ]
@@ -62,7 +66,7 @@ const switchPath = isZhPath ? slug.replace("/zh/", "/") : `/zh${slug}`
 // Pages that exist in English only — the Chinese site has no localized version.
 // Without this guard the 中文 toggle prepends "/zh" and lands on a 404
 // (e.g. /zh/general-travel/, /zh/chinese-visa/), so fall back to the zh homepage.
-const enOnlyBasePaths = ["/general-travel/", "/chinese-visa/"]
+const enOnlyBasePaths = ["/general-travel/", "/chinese-visa/", "/travel-fund-policy/"]
 const zhTogglePath = enOnlyBasePaths.includes(basePath) ? "/zh/" : `/zh${basePath}`
 
 // The "Filter" button only does something on pages that render a filter panel
@@ -152,7 +156,7 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
       </nav>
       <div class="box-row box-row-btn">
         <Button text="Call for Proposals" link="https://cfp.gosim.org" openInNewTab={true} class="btn light xl btn-hover" />
-        <Button text="Buy Tickets" link="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696" openInNewTab={true} class="btn primary xl btn-hover" />
+        <Button text="Buy Tickets" link="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696" openInNewTab={true} class="btn primary glass-orange xl btn-hover" />
       </div>
     </div>
   </div>
@@ -174,7 +178,7 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
         text="Buy Tickets"
         link="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696"
         openInNewTab={true}
-        class="btn primary btn-floating btn-hover"
+        class="btn primary glass-orange btn-floating btn-hover"
       />
     </div>
   </div>
@@ -289,7 +293,7 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
           </div>
         </div>
         <Button text="Call for Proposals" link="https://cfp.gosim.org" openInNewTab={true} class="btn light btn-hover" />
-        <Button text="Buy Tickets" link="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696" openInNewTab={true} class="btn primary btn-hover" />
+        <Button text="Buy Tickets" link="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696" openInNewTab={true} class="btn primary glass-orange btn-hover" />
       </div>
       <div class="hamburger outline" data-navigation-toggle="toggle">
         <div class="hamburger-fill"></div>

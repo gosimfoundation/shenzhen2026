@@ -545,9 +545,6 @@ footer {
 .mobile-nav-box .box-row-btn .btn.light .btn-fill {
    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.72)) !important;
 }
-.mobile-nav-box .box-row-btn .btn.primary .btn-fill {
-   background: linear-gradient(180deg, rgba(255, 122, 48, 0.76), rgba(240, 78, 22, 0.82)) !important;
-}
 
 [data-navigation-status="active"] .mobile-nav-box {
    transform: translateY(0%) rotate(0.001deg);
@@ -696,16 +693,8 @@ body:not([data-navigation-status="active"]) .floating-controls .hamburger.btn-fl
    pointer-events: none;
 }
 
-.floating-ticket-button .btn-content.original .btn-fill {
-   background-color: var(--color-primary) !important;
-}
-
 .floating-ticket-button .btn-content.original span {
    color: #F6F3E7 !important;
-}
-
-.floating-ticket-button .btn-content.duplicate .btn-fill {
-   background-color: var(--color-primary) !important;
 }
 
 .floating-ticket-button .btn-content.duplicate span {
