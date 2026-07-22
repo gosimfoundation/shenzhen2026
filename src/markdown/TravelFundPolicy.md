@@ -1,11 +1,12 @@
 ## How to Submit
 
-1. Download and fill out the reimbursement template above.
-2. Scan or photograph all receipts (must show date, item, and amount paid). Zip all receipt files into one folder, rename to your full name.
-3. Email the completed template and zipped receipts to [travel@gosim.org](mailto:travel@gosim.org).
+1. Open the **International Reimbursement Form** using the button above.
+2. Enter your contact details, role, session title or Spotlight project name.
+3. Provide your travel tier, routes into and out of China, and airfare, accommodation, and total reimbursement amounts in CNY.
+4. Enter your bank payment details.
+5. Upload clear receipts showing the date, item, and amount paid, together with proof of attendance, then submit the form.
 
-**Email title format**: `GOSIM Shenzhen 2026 Reimbursement: [Speaker/Spotlight] [Your Name] - [Total Amount in CNY] - [Departure City]`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Example: `GOSIM Shenzhen 2026 Reimbursement: Speaker Jane Smith - ¥8,500 - Tokyo`
+The upload field accepts PDF, image, document, and ZIP files. A Google account is required to upload files.
 
 **Deadline**: Submit by **December 1, 2026** (45 days after the event). Reimbursements are processed within 45 business days after submission and attendance verification.
 
@@ -13,7 +14,7 @@
 
 ## Eligibility
 
-Travel funding is limited to **Confirmed Speakers** and **Spotlight Project Members** (max one reimbursement quota per Spotlight project).
+Travel funding is limited to **Confirmed Speakers** and **Spotlight attendees** (max one reimbursement quota per Spotlight project).
 
 Reimbursement caps are based on travel distance to Shenzhen:
 
