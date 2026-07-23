@@ -39,14 +39,6 @@
       "room": "TBA"
     },
     {
-      "id": "open-source-robotics",
-      "name": {
-        "en": "Open Source Robotics",
-        "zh": "开源机器人"
-      },
-      "room": "TBA"
-    },
-    {
       "id": "agentic-ai-on-edge",
       "name": {
         "en": "Agentic AI on Edge",
@@ -69,13 +61,30 @@
         "zh": "开源模型"
       },
       "room": "TBA"
+    },
+    {
+      "id": "open-source-robotics",
+      "name": {
+        "en": "Open Source Robotics",
+        "zh": "开源机器人"
+      },
+      "room": "TBA"
+    },
+    {
+      "id": "ai-hardware",
+      "name": {
+        "en": "AI Hardware",
+        "zh": "AI 硬件"
+      },
+      "room": "TBA"
     }
   ],
   "sessions": {
     "agentic-ai-summit": [],
-    "open-source-robotics": [],
     "agentic-ai-on-edge": [],
     "ai-generative-app": [],
-    "open-source-model": []
+    "open-source-model": [],
+    "open-source-robotics": [],
+    "ai-hardware": []
   }
 }

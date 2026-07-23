@@ -54,10 +54,10 @@ const mapMarkers = [
       <div class="travel-block">
         <div class="travel-head">
           <span class="travel-kicker">Before You Go</span>
-          <h2 class="travel-h2">Three apps to set up</h2>
+          <h2 class="travel-h2">Essential apps to set up</h2>
           <p class="travel-intro">
-            Download and link a card to these before you land — they make
-            everything in China seamless.
+            Set up the apps you need before you land — they make everything in
+            China seamless.
           </p>
         </div>
 
@@ -80,10 +80,18 @@ const mapMarkers = [
 
           <div class="app-item">
             <span class="app-icon">
-              <img src="/images/travel/Amap.png" alt="AMap" width="58" height="58" />
+              <img src="/images/travel/Amap.png" alt="AMAP" width="58" height="58" />
             </span>
-            <h3>AMap or Apple Maps</h3>
-            <p>For navigation — Google Maps does not work in mainland China.</p>
+            <h3>AMAP</h3>
+            <p>A standalone navigation app for China, available on iOS and Android.</p>
+          </div>
+
+          <div class="app-item">
+            <span class="app-icon">
+              <img src="/images/travel/AppleMaps.png" alt="Apple Maps" width="58" height="58" />
+            </span>
+            <h3>Apple Maps</h3>
+            <p>A reliable navigation alternative on iPhone. Google Maps does not work in mainland China.</p>
           </div>
         </div>
       </div>
@@ -185,7 +193,8 @@ const mapMarkers = [
             <div class="travel-item-body">
               <h3>DIDI Ride-Hailing</h3>
               <p>
-                Order a DIDI — China's Uber — straight from the Alipay or WeChat
+                Uber does not operate in mainland China, so DIDI is required for
+                ride-hailing. Order a DIDI straight from the Alipay or WeChat
                 mini-app to get anywhere in the city.
               </p>
             </div>
@@ -361,10 +370,10 @@ const mapMarkers = [
     filter: drop-shadow(0 5px 13px rgba(0, 0, 0, 0.38));
   }
 
-  /* Apps — open 3-column list with hairline dividers, no boxes */
+  /* Apps — open 4-column list with hairline dividers, no boxes */
   .apps-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .app-item {
