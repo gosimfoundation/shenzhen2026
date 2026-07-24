@@ -91,7 +91,9 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
 
     <div class="mobile-nav-box">
       <div class="box-row box-row-logo">
-        <Logo />
+        <a href="/" aria-label="Go to homepage" class="logo-click">
+          <Logo />
+        </a>
       </div>
       <nav class="box-row box-row-nav" aria-label="Navigation Mobile">
         <ul>
