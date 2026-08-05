@@ -190,16 +190,19 @@ const trackIcons = [
     position: relative;
     padding: clamp(4rem, 9vw, 8rem) 0;
     background: radial-gradient(120% 80% at 80% -10%, rgba(248, 74, 16, 0.08), transparent 55%), #141209;
+    overflow: hidden;
   }
   .ps-inner {
-    width: min(100% - 3rem, 78rem);
+    width: 100%;
     margin-inline: auto;
     display: grid;
-    /* lock the single column to the container width — without this the implicit
-       auto track grows to the accordion's content (22rem) and overflows the
-       right gutter on narrow screens */
-    grid-template-columns: minmax(0, 1fr);
+    /* Keep content in a centred 78rem column while allowing selected sections
+       (the program marquee) to span the full viewport width. */
+    grid-template-columns: minmax(1.5rem, 1fr) minmax(0, 78rem) minmax(1.5rem, 1fr);
     gap: clamp(3rem, 6vw, 5rem);
+  }
+  .ps-inner > * {
+    grid-column: 2;
   }
 
   /* ── Headline ── */
@@ -250,9 +253,11 @@ const trackIcons = [
   }
 
   /* ── Marquee pill cloud ── */
-  .ps-marquee {
+  .ps-inner > .ps-marquee {
+    grid-column: 1 / -1;
     display: grid;
     gap: 0.9rem;
+    width: 100%;
     padding: 1.6rem 0 0.4rem;
     border-top: 1px solid rgba(234, 230, 210, 0.12);
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
