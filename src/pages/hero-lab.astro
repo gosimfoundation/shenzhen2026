@@ -1,0 +1,391 @@
+---
+// Hero Lab — test page with 4 hero variants inspired by SaaS hero designs.
+// Not linked from the site nav; visit /hero-lab directly.
+const VIDEO = "/videos/shenzhen-hero-compressed.mp4"
+const POSTER = "/videos/shenzhen-hero-poster.jpg"
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Hero Lab — GOSIM Shenzhen 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============ V1 — Centered, circled word (friendly / GrowthOS style) ============ -->
+  <section class="hero v1" id="v1">
+    <div class="bg">
+      <video autoplay loop muted playsinline preload="auto" poster={POSTER}><source src={VIDEO} type="video/mp4" /></video>
+      <div class="veil veil-dark"></div>
+    </div>
+
+    <nav class="mini-nav">
+      <span class="brand"><span class="gosim-mark"></span><span class="brand-city">深圳</span></span>
+      <div class="nav-right">
+        <a class="pill pill-white" href="https://cfp.gosim.org" target="_blank" rel="noopener">Call for Proposals</a>
+      </div>
+    </nav>
+
+    <div class="center-stack">
+      <h1 class="v1-headline">
+        Where open source moves<br />
+        at <span class="circled">Shenzhen<svg viewBox="0 0 260 90" preserveAspectRatio="none" aria-hidden="true"><path d="M215,12 C245,20 254,42 240,60 C222,82 150,88 92,82 C38,76 8,60 12,42 C16,22 74,8 138,7 C176,6 208,9 224,14" /></svg></span> speed.
+      </h1>
+      <p class="v1-sub">Two days of talks, demos, and hands-on building across<br class="desktop-br" /> AI, robotics, open models, and edge systems.</p>
+      <div class="v1-cta">
+        <a class="pill pill-orange lg" href="/tickets">Buy Tickets</a>
+        <a class="pill pill-orange circle lg" href="https://cfp.gosim.org" target="_blank" rel="noopener" aria-label="Call for proposals">↗</a>
+      </div>
+    </div>
+
+    <div class="bottom-strip">
+      <span>Agentic AI</span><span>Robotics</span><span>Open Models</span><span>Edge AI</span><span>Spotlight</span>
+    </div>
+  </section>
+
+  <!-- ============ V2 — Left-aligned, quiet confidence (BookDem style) ============ -->
+  <section class="hero v2" id="v2">
+    <div class="bg">
+      <video autoplay loop muted playsinline preload="auto" poster={POSTER}><source src={VIDEO} type="video/mp4" /></video>
+      <div class="veil veil-left"></div>
+    </div>
+
+    <nav class="mini-nav">
+      <span class="brand"><span class="gosim-mark"></span><span class="brand-city">深圳</span></span>
+      <div class="nav-links">
+        <a href="/schedule">Schedule</a><a href="/speakers">Speakers</a><a href="/faq">FAQ</a>
+      </div>
+      <div class="nav-right">
+        <a class="pill pill-glass" href="/tickets">Buy Tickets</a>
+      </div>
+    </nav>
+
+    <div class="left-stack">
+      <h1 class="v2-headline">Build the<br />open future.</h1>
+      <p class="v2-sub">The world's leading developers gather in Shenzhen —<br class="desktop-br" /> October 16–17, 2026.</p>
+      <div class="v2-cta">
+        <a class="pill pill-dark lg" href="/tickets">Get your ticket</a>
+        <a class="pill pill-dark circle lg" href="/tickets" aria-label="Get your ticket">↗</a>
+      </div>
+      <a class="v2-secondary" href="https://cfp.gosim.org" target="_blank" rel="noopener">Or submit a talk — CFP is open →</a>
+    </div>
+
+    <div class="bottom-strip">
+      <span>Agentic AI</span><span>Robotics</span><span>Open Models</span><span>Edge AI</span><span>Spotlight</span>
+    </div>
+  </section>
+
+  <!-- ============ V3 — Serif elegance with inline chips (Coltax style) ============ -->
+  <section class="hero v3" id="v3">
+    <div class="bg">
+      <video autoplay loop muted playsinline preload="auto" poster={POSTER}><source src={VIDEO} type="video/mp4" /></video>
+      <div class="veil veil-light"></div>
+    </div>
+
+    <nav class="mini-nav dark-text">
+      <span class="brand"><span class="gosim-mark dark"></span><span class="brand-city dark">深圳</span></span>
+      <div class="nav-links">
+        <a href="/schedule">SCHEDULE</a><a href="/speakers">SPEAKERS</a><a href="/tickets">TICKETS</a>
+      </div>
+      <div class="nav-right"><a class="v3-login" href="https://cfp.gosim.org" target="_blank" rel="noopener">CFP →</a></div>
+    </nav>
+
+    <div class="center-stack">
+      <h1 class="v3-headline">
+        Open Source <span class="chip chip-orange" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="12" cy="18" r="2.6"/><path d="M6 8.6 L12 15.4 M18 8.6 L12 15.4"/></svg></span> meets Robotics <span class="chip chip-dark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="11" rx="2.5"/><circle cx="9.5" cy="13" r="1.2" fill="currentColor" stroke="none"/><circle cx="14.5" cy="13" r="1.2" fill="currentColor" stroke="none"/><path d="M12 8 V4.5 M12 4.5 h.01"/></svg></span><br />
+        <em>at Shenzhen speed.</em>
+      </h1>
+      <p class="v3-sub">Talks, workshops, and live demos from the builders shaping open AI —<br class="desktop-br" /> October 16–17, 2026 in Shenzhen, China.</p>
+      <div class="v3-cta">
+        <a class="pill pill-dark" href="/tickets">Get tickets →</a>
+      </div>
+    </div>
+
+    <div class="bottom-strip dark-text">
+      <span>Agentic AI</span><span>Robotics</span><span>Open Models</span><span>Edge AI</span><span>Spotlight</span>
+    </div>
+  </section>
+
+  <!-- ============ V4 — Editorial, eyebrow + accent word + combo CTA (Margin style) ============ -->
+  <section class="hero v4" id="v4">
+    <div class="bg">
+      <video autoplay loop muted playsinline preload="auto" poster={POSTER}><source src={VIDEO} type="video/mp4" /></video>
+      <div class="veil veil-dark strong"></div>
+    </div>
+
+    <nav class="mini-nav">
+      <span class="brand"><span class="gosim-mark"></span><span class="brand-city">深圳</span></span>
+      <div class="nav-links">
+        <a href="/schedule">Schedule</a><a href="/speakers">Speakers</a><a href="/faq">FAQ</a>
+      </div>
+      <div class="nav-right">
+        <a class="pill pill-white" href="/tickets">Buy Tickets ✦</a>
+      </div>
+    </nav>
+
+    <div class="center-stack">
+      <p class="v4-eyebrow"><span class="dot"></span> OCT 16–17 2026 — SHENZHEN, CHINA</p>
+      <h1 class="v4-headline">The summit where<br /><span class="accent">open source</span> ships.</h1>
+      <p class="v4-sub">GOSIM brings together the people building open AI, robotics, and<br class="desktop-br" /> developer infrastructure — for two days of talks, demos, and hacking.</p>
+      <div class="v4-combo">
+        <a class="combo-left" href="https://cfp.gosim.org" target="_blank" rel="noopener">Submit a proposal</a>
+        <a class="combo-right" href="/tickets">Buy Tickets ›</a>
+      </div>
+    </div>
+
+    <div class="bottom-strip">
+      <span>Agentic AI</span><span>Robotics</span><span>Open Models</span><span>Edge AI</span><span>Spotlight</span>
+    </div>
+  </section>
+
+  <!-- Floating version switcher -->
+  <nav class="switcher" aria-label="Hero versions">
+    <a href="#v1" data-v="v1">V1 · Circled</a>
+    <a href="#v2" data-v="v2">V2 · Left</a>
+    <a href="#v3" data-v="v3">V3 · Serif</a>
+    <a href="#v4" data-v="v4">V4 · Editorial</a>
+  </nav>
+
+  <style is:global>
+    /* ---- Fonts (served from /public/fonts, same files as the main site) ---- */
+    @font-face { font-display: swap; font-family: 'Outfit'; font-weight: 400; src: url('/fonts/outfit-400-latin.woff2') format('woff2'); }
+    @font-face { font-display: swap; font-family: 'Outfit'; font-weight: 600; src: url('/fonts/outfit-600-latin.woff2') format('woff2'); }
+    @font-face { font-display: swap; font-family: 'Outfit'; font-weight: 700; src: url('/fonts/outfit-700-latin.woff2') format('woff2'); }
+    @font-face { font-display: swap; font-family: 'Outfit'; font-weight: 800; src: url('/fonts/outfit-800-latin.woff2') format('woff2'); }
+    @font-face { font-display: swap; font-family: 'Sora'; font-weight: 400; src: url('/fonts/sora-400-latin.woff2') format('woff2'); }
+    @font-face { font-display: swap; font-family: 'Sora'; font-weight: 500; src: url('/fonts/sora-500-latin.woff2') format('woff2'); }
+    @font-face { font-display: swap; font-family: 'Sora'; font-weight: 600; src: url('/fonts/sora-600-latin.woff2') format('woff2'); }
+    @font-face { font-display: swap; font-family: 'Ma Shan Zheng'; font-weight: 400; src: url('/fonts/ma-shan-zheng-shenzhen.woff2') format('woff2'); }
+
+    :root {
+      --orange: #F04E16;
+      --orange-bright: #FF7A3C;
+      --ink: #141210;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', system-ui, sans-serif; background: #000; }
+
+    /* ---------- shared hero scaffolding ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .bg, .bg video, .veil { position: absolute; inset: 0; }
+    .bg { z-index: -1; }
+    .bg video { width: 100%; height: 100%; object-fit: cover; }
+    .veil-dark { background: linear-gradient(180deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.18) 40%, rgba(0,0,0,0.55) 100%); }
+    .veil-dark.strong { background: linear-gradient(180deg, rgba(10,8,6,0.62) 0%, rgba(10,8,6,0.34) 45%, rgba(10,8,6,0.66) 100%); }
+    .veil-left { background: linear-gradient(100deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.30) 46%, rgba(0,0,0,0.08) 75%), linear-gradient(0deg, rgba(0,0,0,0.35) 0%, transparent 30%); }
+    .veil-light { background: rgba(244, 241, 234, 0.78); -webkit-backdrop-filter: blur(3px) saturate(0.9); backdrop-filter: blur(3px) saturate(0.9); }
+
+    /* ---------- mini nav ---------- */
+    .mini-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem clamp(1.25rem, 4vw, 3rem);
+      color: #fff;
+    }
+    .brand { display: inline-flex; align-items: baseline; gap: 0.55rem; }
+    .gosim-mark {
+      display: inline-block; width: 6.2rem; aspect-ratio: 85 / 24; align-self: center;
+      background: #fff;
+      -webkit-mask: url('/images/gosim-logo.svg') no-repeat center / contain;
+      mask: url('/images/gosim-logo.svg') no-repeat center / contain;
+    }
+    .gosim-mark.dark { background: var(--ink); }
+    .brand-city { font-family: 'Ma Shan Zheng', cursive; font-size: 1.5rem; color: #fff; line-height: 1; }
+    .brand-city.dark { color: var(--ink); }
+    .nav-links { display: flex; gap: 1.8rem; }
+    .nav-links a { color: inherit; text-decoration: none; font-size: 0.92rem; font-weight: 600; opacity: 0.9; }
+    .nav-links a:hover { opacity: 1; }
+    .mini-nav.dark-text { color: var(--ink); }
+    .mini-nav.dark-text .nav-links a { letter-spacing: 0.08em; font-size: 0.8rem; }
+    .v3-login { color: var(--ink); text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; }
+
+    /* ---------- pills / buttons ---------- */
+    .pill {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.72rem 1.5rem; border-radius: 999px;
+      font-weight: 600; font-size: 0.95rem; text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      white-space: nowrap;
+    }
+    .pill:hover { transform: translateY(-2px); }
+    .pill.lg { padding: 0.95rem 1.9rem; font-size: 1.05rem; }
+    .pill.circle { padding: 0; aspect-ratio: 1; width: 3.3rem; font-size: 1.25rem; }
+    .pill.lg.circle { width: 3.55rem; }
+    .pill-white { background: #fff; color: var(--ink); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+    .pill-orange { background: linear-gradient(180deg, var(--orange-bright), var(--orange)); color: #fff; box-shadow: 0 10px 30px rgba(240,78,22,0.42); }
+    .pill-dark { background: var(--ink); color: #fff; box-shadow: 0 10px 28px rgba(0,0,0,0.4); }
+    .pill-glass {
+      background: rgba(255,255,255,0.12); color: #fff;
+      -webkit-backdrop-filter: blur(10px) saturate(150%); backdrop-filter: blur(10px) saturate(150%);
+      box-shadow: inset 0 1.5px 1px rgba(255,255,255,0.45), 0 8px 24px rgba(0,0,0,0.22);
+    }
+
+    /* ---------- layout stacks ---------- */
+    .center-stack {
+      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 0 1.25rem 4.5rem; gap: 1.4rem;
+    }
+    .left-stack {
+      flex: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+      padding: 0 clamp(1.25rem, 6vw, 5rem) 5rem; gap: 1.3rem; max-width: 62rem;
+    }
+    .desktop-br { display: none; }
+    @media (min-width: 700px) { .desktop-br { display: inline; } }
+
+    .bottom-strip {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      display: flex; justify-content: center; flex-wrap: wrap; gap: clamp(1.2rem, 4vw, 3.4rem);
+      padding: 1.3rem 1rem;
+      color: rgba(255,255,255,0.82); font-weight: 600; font-size: 0.88rem; letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .bottom-strip.dark-text { color: rgba(20,18,16,0.6); }
+
+    /* ---------- V1 ---------- */
+    .v1-headline {
+      font-family: 'Outfit', sans-serif; font-weight: 700; color: #fff;
+      font-size: clamp(2.1rem, 5.6vw, 4.4rem); line-height: 1.12; letter-spacing: -0.01em;
+      text-shadow: 0 3px 22px rgba(0,0,0,0.45);
+    }
+    .circled { position: relative; display: inline-block; font-style: italic; padding: 0 0.12em; }
+    .circled svg {
+      position: absolute; inset: -14% -7% -18% -7%; width: 114%; height: 132%;
+      overflow: visible; pointer-events: none;
+    }
+    .circled svg path {
+      fill: none; stroke: var(--orange-bright); stroke-width: 5.5; stroke-linecap: round;
+      stroke-dasharray: 900; stroke-dashoffset: 900;
+      animation: draw-circle 1.4s ease-out 0.5s forwards;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+    @keyframes draw-circle { to { stroke-dashoffset: 0; } }
+    .v1-sub {
+      color: rgba(255,255,255,0.94); font-size: clamp(1.02rem, 1.6vw, 1.25rem); line-height: 1.55;
+      font-weight: 400; text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+    .v1-cta { display: flex; gap: 0.6rem; margin-top: 0.4rem; }
+
+    /* ---------- V2 ---------- */
+    .v2-headline {
+      font-family: 'Sora', sans-serif; font-weight: 600; color: #fff;
+      font-size: clamp(2.6rem, 7vw, 5.6rem); line-height: 1.04; letter-spacing: -0.02em;
+      text-shadow: 0 3px 24px rgba(0,0,0,0.5);
+    }
+    .v2-sub { color: rgba(255,255,255,0.92); font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.55; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+    .v2-cta { display: flex; gap: 0.55rem; margin-top: 0.3rem; }
+    .v2-cta .pill-dark { background: #0d0c0b; }
+    .v2-secondary {
+      color: rgba(255,255,255,0.85); font-size: 0.95rem; font-weight: 500; text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.35); padding-bottom: 2px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    }
+    .v2-secondary:hover { color: #fff; border-color: rgba(255,255,255,0.8); }
+
+    /* ---------- V3 ---------- */
+    .v3 .center-stack { gap: 1.5rem; }
+    .v3-headline {
+      font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; color: var(--ink);
+      font-size: clamp(2.3rem, 6vw, 4.9rem); line-height: 1.14; letter-spacing: -0.005em;
+    }
+    .v3-headline em { font-style: italic; color: rgba(20,18,16,0.82); }
+    .chip {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 1.05em; height: 1.05em; border-radius: 0.28em; vertical-align: -0.14em;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.35);
+      transform: rotate(-4deg);
+    }
+    .chip svg { width: 62%; height: 62%; }
+    .chip-orange { background: linear-gradient(180deg, #FF9B66, var(--orange)); color: #fff; }
+    .chip-dark { background: linear-gradient(180deg, #3a3733, var(--ink)); color: #fff; transform: rotate(3deg); }
+    .v3-sub { color: rgba(20,18,16,0.72); font-size: clamp(0.98rem, 1.4vw, 1.15rem); line-height: 1.6; font-weight: 400; }
+    .v3-cta .pill-dark { padding: 0.8rem 1.7rem; }
+
+    /* ---------- V4 ---------- */
+    .v4-eyebrow {
+      font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+      color: rgba(255,255,255,0.88); font-size: 0.8rem; letter-spacing: 0.22em;
+      display: inline-flex; align-items: center; gap: 0.55rem;
+    }
+    .v4-eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--orange-bright); box-shadow: 0 0 12px var(--orange-bright); }
+    .v4-headline {
+      font-family: 'Outfit', sans-serif; font-weight: 800; color: #fff;
+      font-size: clamp(2.5rem, 6.6vw, 5.4rem); line-height: 1.06; letter-spacing: -0.02em;
+      text-shadow: 0 4px 26px rgba(0,0,0,0.5);
+    }
+    .v4-headline .accent { color: var(--orange-bright); }
+    .v4-sub { color: rgba(255,255,255,0.9); font-size: clamp(1rem, 1.5vw, 1.18rem); line-height: 1.6; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+    .v4-combo {
+      display: inline-flex; margin-top: 0.5rem;
+      border-radius: 10px; overflow: hidden;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.45);
+    }
+    .v4-combo a { text-decoration: none; font-weight: 600; font-size: 1rem; padding: 1rem 1.6rem; display: inline-flex; align-items: center; transition: filter 0.15s ease; }
+    .v4-combo a:hover { filter: brightness(1.08); }
+    .combo-left { background: #fff; color: var(--ink); }
+    .combo-right { background: linear-gradient(180deg, var(--orange-bright), var(--orange)); color: #fff; }
+
+    /* ---------- switcher ---------- */
+    .switcher {
+      position: fixed; bottom: 1.1rem; right: 1.1rem;
+      z-index: 50; display: flex; gap: 0.25rem;
+      background: rgba(15,13,11,0.72);
+      -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%);
+      padding: 0.3rem; border-radius: 999px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 10px 34px rgba(0,0,0,0.5);
+    }
+    .switcher a {
+      color: rgba(255,255,255,0.75); text-decoration: none;
+      font-size: 0.82rem; font-weight: 600; padding: 0.48rem 0.95rem; border-radius: 999px;
+      transition: background 0.15s ease, color 0.15s ease;
+      white-space: nowrap;
+    }
+    .switcher a:hover { color: #fff; }
+    .switcher a.active { background: var(--orange); color: #fff; }
+
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .v1-cta, .v2-cta { flex-wrap: wrap; }
+      .v4-combo { flex-direction: column; width: min(100%, 20rem); }
+      .v4-combo a { justify-content: center; }
+      .left-stack { justify-content: flex-end; padding-bottom: 6.5rem; }
+      .bottom-strip { display: none; }
+      .switcher { right: 50%; transform: translateX(50%); }
+      .switcher a { padding: 0.45rem 0.7rem; font-size: 0.75rem; }
+    }
+  </style>
+
+  <script>
+    // Highlight the switcher pill for the hero currently in view.
+    const links = document.querySelectorAll(".switcher a")
+    const map = new Map<string, Element>()
+    links.forEach((a) => map.set((a as HTMLElement).dataset.v || "", a))
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            links.forEach((a) => a.classList.remove("active"))
+            map.get(e.target.id)?.classList.add("active")
+          }
+        })
+      },
+      { threshold: 0.55 }
+    )
+    document.querySelectorAll(".hero").forEach((h) => observer.observe(h))
+  </script>
+</body>
+</html>

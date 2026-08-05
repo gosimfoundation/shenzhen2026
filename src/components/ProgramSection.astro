@@ -1,7 +1,6 @@
 ---
 // Homepage program section: editorial headline + scrolling marquee word cloud
-// + horizontal "diagonal-label" accordion of tracks, with an optional Spotlight
-// highlight below. Replaces the former Intro + ConferenceTracks pair.
+// + a full-content track showcase, with an optional Spotlight highlight below.
 interface Facet {
   title: string;
   keywords?: string[];
@@ -64,21 +63,9 @@ const half = Math.ceil(allPills.length / 2);
 const rowA = allPills.slice(0, half);
 const rowB = allPills.slice(half);
 
-// One distinct hue per track (deeper `from` → brighter `to`). Ordered so no two
-// neighbours sit close on the colour wheel — warm/cool/warm/cool spread.
-const palette = [
-  { from: "#F0531A", to: "#FF8A4C" }, // 01 · orange (brand)
-  { from: "#0E9E8E", to: "#4FD6BF" }, // 02 · teal
-  { from: "#D63C86", to: "#FF6FB4" }, // 03 · magenta
-  { from: "#5BA32C", to: "#9CDE56" }, // 04 · green
-  { from: "#3F6BE0", to: "#7E9CFF" }, // 05 · blue
-  { from: "#7E5AE0", to: "#A98BFF" }, // 06 · violet (spare)
-  { from: "#D89A1E", to: "#FFC94D" }, // 07 · gold (spare)
-];
-
 // One simple line-art glyph per track (index-matched to the fixed track order),
-// inheriting the track's accent colour. Just a visual cue to what the track is
-// about: 01 agentic AI → spark, 02 edge → laptop, 03 OS & apps → app window,
+// rendered in one restrained warm-glass treatment. Just a visual cue to what
+// the track is about: 01 agentic AI → spark, 02 edge → laptop, 03 OS & apps → app window,
 // 04 models → neural net, 05 robotics → robot, 06 agentic device → phone.
 const trackIcons = [
   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.7 4.9 1.4 5.6 6.3 6.3C13.4 10 12.7 10.7 12 15.6 11.3 10.7 10.6 10 5.7 9.3 10.6 8.6 11.3 7.9 12 3Z"/><path d="M18.5 14.5c.3 2.2.6 2.5 2.8 2.8-2.2.3-2.5.6-2.8 2.8-.3-2.2-.6-2.5-2.8-2.8 2.2-.3 2.5-.6 2.8-2.8Z"/></svg>`,
@@ -124,32 +111,37 @@ const trackIcons = [
       </div>
     )}
 
-    <!-- ── Tracks — bento: big stage + small selectable blocks ── -->
+    <!-- ── Tracks — every theme stays fully visible ── -->
     <div class="ps-tracks-head" id={id}>
-      <h3 class="ps-tracks-title">{tracksTitle}</h3>
+      <div class="ps-tracks-heading">
+        <span class="ps-tracks-count">{String(tracks.length).padStart(2, "0")} TRACKS</span>
+        <h3 class="ps-tracks-title">{tracksTitle}</h3>
+      </div>
       <p class="ps-tracks-intro">{tracksIntro}</p>
     </div>
 
-    <div class="ps-accordion">
+    <div class="ps-track-grid">
       {tracks.map((track, i) => {
-        const accent = palette[i % palette.length];
         const linked = tracksLinked && track.link;
-        const Tag = linked ? "a" : "div";
+        const Tag = linked ? "a" : "article";
         return (
           <Tag
-            class={`ps-panel${i === 0 ? " is-open" : ""}`}
+            class="ps-track-card"
             href={linked ? track.link : undefined}
-            style={`--from:${accent.from};--to:${accent.to}`}
-            tabindex="0"
           >
-            <span class="ps-panel-num">{String(i + 1).padStart(2, "0")}</span>
-            {trackIcons[i] && (
-              <span class="ps-panel-icon" aria-hidden="true" set:html={trackIcons[i]} />
-            )}
-            <span class="ps-panel-mini">{track.title}</span>
-            <span class="ps-panel-full">
-              <span class="ps-panel-full-title">{track.title}</span>
-              <span class="ps-panel-full-desc">{track.text}</span>
+            <div class="ps-track-top">
+              <span class="ps-track-num">{String(i + 1).padStart(2, "0")}</span>
+              {trackIcons[i] && (
+                <span class="ps-track-icon" aria-hidden="true" set:html={trackIcons[i]} />
+              )}
+            </div>
+            <div class="ps-track-content">
+              <h4 class="ps-track-title">{track.title}</h4>
+              <p class="ps-track-desc">{track.text}</p>
+            </div>
+            <span class="ps-track-foot" aria-hidden="true">
+              <span></span>
+              <span>{linked ? exploreLabel : "GOSIM 2026"}</span>
             </span>
           </Tag>
         );
@@ -337,19 +329,47 @@ const trackIcons = [
     pointer-events: none;
   }
 
-  /* ── Accordion ── */
+  /* ── Tracks ── */
   .ps-tracks-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 1rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(20rem, 1fr);
+    align-items: end;
+    gap: clamp(2rem, 6vw, 6rem);
+    padding: 1.8rem 0 1.5rem;
+    border-top: 1px solid rgba(234, 230, 210, 0.14);
+    border-bottom: 1px solid rgba(234, 230, 210, 0.08);
     scroll-margin-top: 6rem;
+  }
+  .ps-tracks-head::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: clamp(5rem, 12vw, 10rem);
+    height: 2px;
+    background: linear-gradient(90deg, var(--orange), var(--glow), transparent);
+    box-shadow: 0 0 18px rgba(248, 74, 16, 0.5);
+  }
+  .ps-tracks-heading {
+    display: grid;
+    gap: 0.65rem;
+  }
+  .ps-tracks-count {
+    width: fit-content;
+    padding-left: 0.8rem;
+    border-left: 2px solid var(--orange);
+    font-size: 0.64rem;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.2em;
+    color: var(--glow);
   }
   .ps-tracks-title {
     margin: 0;
-    font-size: clamp(2rem, 1.2rem + 3vw, 3.6rem);
+    font-size: clamp(2.6rem, 1.5rem + 3.5vw, 4.6rem);
     font-weight: 700;
+    line-height: 0.96;
     letter-spacing: -0.03em;
     color: var(--cream);
   }
@@ -361,219 +381,148 @@ const trackIcons = [
     color: rgba(234, 230, 210, 0.6);
   }
 
-  /* ── Hover accordion: blocks grow/shrink, text always horizontal ── */
-  .ps-accordion {
-    display: flex;
-    gap: 0.55rem;
-    height: 27rem;
-    align-items: stretch;
+  .ps-track-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid rgba(234, 230, 210, 0.22);
+    border-left: 1px solid rgba(234, 230, 210, 0.14);
   }
-  .ps-panel {
+  /* Desaturated print inks: distinct enough to scan, restrained enough to keep
+     the section editorial rather than reading like a neon AI dashboard. */
+  .ps-track-card:nth-child(1) { --ink: #ef6a3a; }
+  .ps-track-card:nth-child(2) { --ink: #d5a24a; }
+  .ps-track-card:nth-child(3) { --ink: #75a49c; }
+  .ps-track-card:nth-child(4) { --ink: #91a66b; }
+  .ps-track-card:nth-child(5) { --ink: #8096b2; }
+  .ps-track-card:nth-child(6) { --ink: #a48692; }
+  .ps-track-card {
     position: relative;
-    flex: 1 1 0;
     min-width: 0;
-    overflow: hidden;
-    border-radius: 1.2rem;
+    min-height: 22rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.8rem, 3vw, 2.6rem);
+    padding: clamp(1.4rem, 2.2vw, 2rem);
     border: 0;
-    background:
-      radial-gradient(130% 80% at 50% 120%, color-mix(in srgb, var(--from) 36%, transparent), transparent 60%),
-      linear-gradient(180deg, rgba(40, 37, 27, 0.45), rgba(22, 20, 13, 0.64));
+    border-right: 1px solid rgba(234, 230, 210, 0.14);
+    border-bottom: 1px solid rgba(234, 230, 210, 0.14);
+    border-radius: 0;
+    background: color-mix(in srgb, var(--ink) 3.5%, transparent);
     text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .ps-track-card::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: clamp(1.4rem, 2.2vw, 2rem);
+    width: 3.5rem;
+    height: 3px;
+    background: var(--ink);
+    transition: width 0.3s ease;
+  }
+  .ps-track-card[href] {
     cursor: pointer;
-    transition: flex-grow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
   }
-  .ps-panel::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--from), var(--to));
-    opacity: 0.95;
-    z-index: 2;
+  .ps-track-card:hover {
+    background: color-mix(in srgb, var(--ink) 7%, transparent);
   }
-  /* glass: a bright rim glowing in the cell accent + a crisp top edge.
-     (No backdrop-filter — these sit over a solid dark section so the blur
-     showed nothing, and blurring 5 large cells per frame made scroll laggy.) */
-  .ps-panel {
-    box-shadow:
-      inset 0 1px 0.5px rgba(255, 255, 255, 0.22),
-      0 18px 44px rgba(0, 0, 0, 0.3);
+  .ps-track-card:hover::before {
+    width: calc(100% - clamp(2.8rem, 4.4vw, 4rem));
   }
-  .ps-panel::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1.5px;
-    background: linear-gradient(140deg,
-      color-mix(in srgb, var(--to) 92%, white),
-      rgba(255, 255, 255, 0.1) 38%,
-      rgba(255, 255, 255, 0.06) 56%,
-      color-mix(in srgb, var(--from) 72%, white) 100%);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
-    pointer-events: none;
-    z-index: 2;
+  .ps-track-card[href]:focus-visible {
+    outline: 2px solid var(--glow);
+    outline-offset: -2px;
   }
-  /* the expanded block (default first, then whatever is hovered/focused) */
-  .ps-panel.is-open {
-    flex-grow: 1.75;
+  .ps-track-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
   }
-  .ps-accordion:hover .ps-panel.is-open:not(:hover) {
-    flex-grow: 1;
-  }
-  .ps-panel:hover,
-  .ps-panel:focus-visible {
-    flex-grow: 1.75;
-    border-color: color-mix(in srgb, var(--to) 55%, transparent);
-    outline: none;
-  }
-
-  .ps-panel-num {
-    position: absolute;
-    top: 1.3rem;
-    left: 1.5rem;
-    font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    color: var(--to);
+  .ps-track-num {
+    display: block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.7rem, 1.8rem + 2.4vw, 4rem);
+    font-weight: 400;
+    line-height: 0.8;
+    letter-spacing: -0.06em;
+    color: var(--ink);
     font-variant-numeric: tabular-nums;
-    z-index: 2;
   }
-
-  /* Big track glyph in the cell's accent colour — a clear cue to the topic */
-  .ps-panel-icon {
-    position: absolute;
-    top: 3.4rem;
-    left: 1.5rem;
-    width: clamp(5rem, 9vw, 8rem);
-    height: auto;
-    color: var(--to);
-    opacity: 0.85;
-    pointer-events: none;
-    z-index: 1;
-    filter: drop-shadow(0 4px 16px color-mix(in srgb, var(--to) 40%, transparent));
+  .ps-track-icon {
+    width: clamp(3rem, 2.3rem + 2vw, 4.5rem);
+    color: color-mix(in srgb, var(--ink) 72%, var(--cream));
   }
-  .ps-panel-icon svg {
+  .ps-track-icon svg {
     display: block;
     width: 100%;
     height: 100%;
+    stroke-width: 1.25;
   }
-
-  /* Collapsed label — shows the FULL title, wrapped (never truncated). Its width
-     is fixed to the viewport (not the animating panel) so it wraps once and never
-     reflows while the panel resizes — no jumping. */
-  .ps-panel-mini {
-    position: absolute;
-    left: 1.25rem;
-    bottom: 1.5rem;
-    width: calc(100% - 2.5rem);
-    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.2rem);
+  .ps-track-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    margin-top: auto;
+  }
+  .ps-track-title {
+    margin: 0;
+    max-width: none;
+    font-size: clamp(1.55rem, 1.2rem + 0.7vw, 2rem);
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    overflow-wrap: normal;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
     text-wrap: balance;
     color: var(--cream);
-    opacity: 1;
-    transition: opacity 0.25s ease;
   }
-
-  /* Expanded content — FIXED width (independent of the animating panel width),
-     so its line-wrapping is computed once and never reflows. It only fades in,
-     arriving already at its final position. */
-  .ps-panel-full {
-    position: absolute;
-    left: 1.25rem;
-    bottom: 1.5rem;
-    width: calc(100% - 2.5rem);
+  .ps-track-desc {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: rgba(234, 230, 210, 0.62);
+  }
+  .ps-track-foot {
     display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease 0.12s;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 0.1rem;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: color-mix(in srgb, var(--ink) 52%, rgba(234, 230, 210, 0.48));
+    text-transform: uppercase;
   }
-  .ps-panel-full-title {
-    font-size: clamp(1.45rem, 1.1rem + 1vw, 2rem);
-    font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: -0.025em;
-    color: var(--cream);
-  }
-  .ps-panel-full-desc {
-    font-size: 0.97rem;
-    line-height: 1.6;
-    color: rgba(234, 230, 210, 0.74);
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  .ps-track-foot > span:first-child {
+    flex: 1;
+    height: 1px;
+    background: color-mix(in srgb, var(--ink) 30%, rgba(234, 230, 210, 0.08));
   }
 
-  /* crossfade collapsed label → expanded content on the open/hovered block */
-  .ps-panel.is-open .ps-panel-mini,
-  .ps-panel:hover .ps-panel-mini,
-  .ps-panel:focus-visible .ps-panel-mini {
-    opacity: 0;
-  }
-  .ps-panel.is-open .ps-panel-full,
-  .ps-panel:hover .ps-panel-full,
-  .ps-panel:focus-visible .ps-panel-full {
-    opacity: 1;
-  }
-  .ps-accordion:hover .ps-panel.is-open:not(:hover) .ps-panel-mini {
-    opacity: 1;
-  }
-  .ps-accordion:hover .ps-panel.is-open:not(:hover) .ps-panel-full {
-    opacity: 0;
-  }
-
-  @media (max-width: 1100px) {
-    .ps-accordion {
-      flex-direction: column;
-      height: auto;
+  @media (max-width: 980px) {
+    .ps-tracks-head {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
     }
-    .ps-panel {
-      flex: none;
+    .ps-track-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 640px) {
+    .ps-track-grid {
+      grid-template-columns: 1fr;
+    }
+    .ps-track-card {
       min-height: 0;
-    }
-    .ps-panel-mini {
-      display: none;
-    }
-    /* Stacked cards: park the glyph in the top-right corner (smaller) so it
-       reads as a corner accent instead of sitting on top of the left-aligned
-       title and body text. */
-    .ps-panel-icon {
-      top: 1rem;
-      left: auto;
-      right: 1.25rem;
-      width: clamp(2.5rem, 11vw, 3.5rem);
-      opacity: 0.7;
-    }
-    /* on the stacked layout every block shows its full content. The top padding
-       clears both the number (top-left) and the glyph (top-right) so nothing
-       overlaps the text. */
-    .ps-panel-full,
-    .ps-accordion:hover .ps-panel.is-open:not(:hover) .ps-panel-full {
-      position: relative;
-      left: 0;
-      bottom: 0;
-      width: auto;
-      opacity: 1;
-      padding: 4.6rem 1.5rem 1.6rem;
-    }
-    .ps-panel-full-desc {
-      -webkit-line-clamp: unset;
+      gap: 2.5rem;
     }
   }
 
   /* ── Spotlight ── */
   .ps-spotlight {
+    --spot-blue: #8096b2;
     display: grid;
-    gap: 1.4rem;
+    gap: 1rem;
   }
   .ps-spotlight-label {
     margin: 0;
@@ -582,95 +531,131 @@ const trackIcons = [
     font-weight: 800;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(234, 230, 210, 0.45);
-    border-bottom: 1px solid rgba(234, 230, 210, 0.1);
+    color: var(--spot-blue);
+    border-bottom: 1px solid rgba(128, 150, 178, 0.34);
   }
   .ps-spotlight-grid {
     display: grid;
-    /* min(22rem, 100%) keeps the 22rem min on wide screens but lets each column
-       shrink to the container on narrow ones, so the grid never overflows the gutter */
-    grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr));
-    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    border-top: 1px solid rgba(128, 150, 178, 0.34);
+    border-left: 1px solid rgba(128, 150, 178, 0.22);
   }
   .ps-spot-card {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    padding: 2rem;
-    border-radius: 1.25rem;
+    display: grid;
+    grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 1.25fr) auto;
+    grid-template-areas:
+      "badge text link"
+      "title text link";
+    align-items: end;
+    gap: 0.8rem clamp(2rem, 5vw, 5rem);
+    padding: clamp(1.7rem, 3vw, 2.5rem);
     border: 0;
-    background:
-      linear-gradient(135deg, rgba(248, 74, 16, 0.2) 0%, rgba(26, 24, 17, 0.78) 60%);
-    box-shadow:
-      inset 0 1px 0.5px rgba(255, 255, 255, 0.24),
-      0 16px 40px rgba(0, 0, 0, 0.32);
+    border-right: 1px solid rgba(128, 150, 178, 0.22);
+    border-bottom: 1px solid rgba(128, 150, 178, 0.22);
+    border-radius: 0;
+    background: color-mix(in srgb, var(--spot-blue) 5%, transparent);
+    transition: background-color 0.25s ease;
   }
-  .ps-spot-card::after {
+  .ps-spot-card::before {
     content: "";
     position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1.5px;
-    background: linear-gradient(140deg,
-      rgba(255, 170, 100, 0.95), rgba(255, 255, 255, 0.12) 42%, rgba(255, 255, 255, 0.32));
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
-    pointer-events: none;
+    top: -1px;
+    left: clamp(1.7rem, 3vw, 2.5rem);
+    width: 4rem;
+    height: 3px;
+    background: var(--spot-blue);
+    transition: width 0.3s ease;
+  }
+  .ps-spot-card:hover {
+    background: color-mix(in srgb, var(--spot-blue) 8%, transparent);
+  }
+  .ps-spot-card:hover::before {
+    width: calc(100% - clamp(3.4rem, 6vw, 5rem));
   }
   .ps-spot-badge {
+    grid-area: badge;
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.65rem;
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--spot-blue);
   }
   .ps-spot-badge::before {
     content: "";
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 50%;
-    background: var(--orange);
-    box-shadow: 0 0 6px var(--orange);
+    width: 1.5rem;
+    height: 1px;
+    background: var(--spot-blue);
   }
   .ps-spot-title {
+    grid-area: title;
     margin: 0;
-    font-size: 1.35rem;
+    font-size: clamp(1.8rem, 1.35rem + 1vw, 2.5rem);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
     color: var(--cream);
   }
   .ps-spot-text {
+    grid-area: text;
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.7;
-    color: rgba(234, 230, 210, 0.68);
-    flex: 1;
+    color: rgba(234, 230, 210, 0.64);
   }
   .ps-spot-link {
+    grid-area: link;
     display: inline-flex;
     align-items: center;
+    align-self: end;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(128, 150, 178, 0.7);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--orange);
-    transition: opacity 0.2s;
+    white-space: nowrap;
+    color: var(--spot-blue);
+    transition: color 0.2s ease, border-color 0.2s ease;
   }
   .ps-spot-link:hover {
-    opacity: 0.75;
+    color: var(--cream);
+    border-color: var(--cream);
+  }
+
+  @media (max-width: 820px) {
+    .ps-spot-card {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "badge badge"
+        "title title"
+        "text link";
+    }
+  }
+  @media (max-width: 560px) {
+    .ps-spot-card {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "badge"
+        "title"
+        "text"
+        "link";
+      gap: 1rem;
+    }
+    .ps-spot-link {
+      justify-self: start;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .ps-mtrack-row { animation: none; }
-    .ps-panel,
-    .ps-panel-mini,
-    .ps-panel-full { transition: none; }
+    .ps-track-card,
+    .ps-track-card::before,
+    .ps-spot-card,
+    .ps-spot-card::before { transition: none; }
   }
 </style>
