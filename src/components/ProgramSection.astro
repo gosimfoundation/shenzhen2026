@@ -246,14 +246,32 @@ const trackIcons = [
 
   /* ── Marquee pill cloud ── */
   .ps-inner > .ps-marquee {
+    position: relative;
+    isolation: isolate;
     grid-column: 1 / -1;
     display: grid;
     gap: 0.9rem;
     width: 100%;
     padding: 1.6rem 0 0.4rem;
     border-top: 1px solid rgba(234, 230, 210, 0.12);
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  }
+  .ps-marquee::before,
+  .ps-marquee::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 1px;
+    bottom: -2rem;
+    width: clamp(2rem, 7vw, 7rem);
+    pointer-events: none;
+  }
+  .ps-marquee::before {
+    left: 0;
+    background: linear-gradient(90deg, #141209 12%, rgba(20, 18, 9, 0));
+  }
+  .ps-marquee::after {
+    right: 0;
+    background: linear-gradient(270deg, #141209 12%, rgba(20, 18, 9, 0));
   }
   .ps-marquee-label {
     justify-self: center;
@@ -265,7 +283,7 @@ const trackIcons = [
     color: var(--orange);
   }
   .ps-mtrack {
-    overflow: hidden;
+    overflow: visible;
   }
   .ps-mtrack-row {
     display: inline-flex;
@@ -304,7 +322,7 @@ const trackIcons = [
     box-shadow:
       inset 0 1.5px 1px rgba(255, 255, 255, 0.28),
       inset 0 -3px 6px rgba(0, 0, 0, 0.14),
-      0 5px 14px rgba(0, 0, 0, 0.16);
+      0 4px 12px rgba(0, 0, 0, 0.12);
   }
   .ps-pill.is-hero {
     background: linear-gradient(95deg, rgba(248, 74, 16, 0.55), rgba(255, 122, 60, 0.5));
@@ -312,7 +330,7 @@ const trackIcons = [
     font-weight: 700;
     box-shadow:
       inset 0 1.5px 1px rgba(255, 255, 255, 0.45),
-      0 6px 20px rgba(248, 74, 16, 0.3);
+      0 5px 16px rgba(248, 74, 16, 0.22);
   }
   .ps-pill::after {
     content: "";
