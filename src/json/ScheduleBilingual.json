@@ -71,10 +71,10 @@
       "room": "TBA"
     },
     {
-      "id": "ai-hardware",
+      "id": "agentic-device",
       "name": {
-        "en": "AI Hardware",
-        "zh": "AI 硬件"
+        "en": "Agentic Device",
+        "zh": "智能体设备"
       },
       "room": "TBA"
     }
@@ -85,6 +85,6 @@
     "ai-generative-app": [],
     "open-source-model": [],
     "open-source-robotics": [],
-    "ai-hardware": []
+    "agentic-device": []
   }
 }
