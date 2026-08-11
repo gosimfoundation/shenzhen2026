@@ -351,8 +351,34 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
   .header-buttons {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.6rem;
     color: inherit; /* Ensure header buttons inherit text color for icon */
+  }
+
+  /* The English labels and two CTAs need more horizontal room than the
+     Chinese header. Give the menu its own flexible grid column instead of
+     centring it over the CTAs, and keep its spacing compact on laptops. */
+  .main-nav-bar .row {
+    display: grid;
+    grid-template-columns: 7em minmax(0, 1fr) auto;
+    column-gap: clamp(1rem, 1.5vw, 1.75rem);
+  }
+
+  .main-nav-bar nav {
+    position: static;
+    width: auto;
+    min-width: 0;
+    transform: none;
+    justify-self: center;
+  }
+
+  .main-nav-bar nav ul {
+    gap: clamp(0.75rem, 1.35vw, 1.6rem);
+    white-space: nowrap;
+  }
+
+  .header-buttons :global(.btn .btn-content) {
+    padding-inline: 1rem;
   }
 
   .language-dropdown {
@@ -442,12 +468,19 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
     }
   }
 
-  /* Keep the expanded seven-item navigation clear of the desktop CTAs on
-     narrower laptop viewports. The CFP action remains in the mobile menu and
-     elsewhere on the page. */
-  @media screen and (min-width: 1071px) and (max-width: 1300px) {
-    .header-buttons :global(.btn.light) {
-      display: none;
+  @media screen and (min-width: 1071px) and (max-width: 1250px) {
+    .main-nav-bar nav ul {
+      gap: 0.7rem;
+    }
+
+    .main-nav-bar nav .link-click span {
+      font-size: 0.82em;
+    }
+  }
+
+  @media screen and (max-width: 1070px) {
+    .main-nav-bar .row {
+      display: flex;
     }
   }
 </style>
