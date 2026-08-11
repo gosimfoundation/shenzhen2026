@@ -68,7 +68,7 @@
     {
       "id": "xun-wang",
       "name": "Xun Wang",
-      "roleOrg": "演讲嘉宾",
+      "roleOrg": "讲师",
       "bio": "",
       "tags": [
         "sz26-open-source-robotics"
@@ -80,7 +80,7 @@
     {
       "id": "roy-wang",
       "name": "Roy Wang",
-      "roleOrg": "演讲嘉宾",
+      "roleOrg": "讲师",
       "bio": "",
       "tags": [
         "sz26-open-source-robotics"
@@ -92,7 +92,7 @@
     {
       "id": "george-wang",
       "name": "George Wang",
-      "roleOrg": "演讲嘉宾",
+      "roleOrg": "讲师",
       "bio": "",
       "tags": [
         "sz26-open-source-robotics"
@@ -468,7 +468,7 @@
     {
       "id": "pieter-delobelle",
       "name": "Pieter Delobelle",
-      "roleOrg": "演讲嘉宾",
+      "roleOrg": "讲师",
       "bio": "",
       "tags": [
         "sz26-open-source-model"

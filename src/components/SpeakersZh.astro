@@ -88,7 +88,7 @@ const groupedCategories = {
           aria-pressed="true"
           aria-label="Show all speakers"
         >
-          <span>全部演讲嘉宾</span>
+          <span>全部讲师</span>
         </button>
       </div>
 
@@ -179,23 +179,23 @@ const groupedCategories = {
   id="grid"
   data-filter-section
   data-speaker-filter-state
-  data-summary-all="{visible} 位嘉宾 · 全部"
-  data-summary-selected="{visible} 位嘉宾 · 已选 {selected}"
+  data-summary-all="{visible} 位讲师 · 全部"
+  data-summary-selected="{visible} 位讲师 · 已选 {selected}"
   data-theme-section="light"
   data-bg-section="lightgray"
   data-scroll-section
 >
   <div class="container">
     <div class="speaker-browser">
-      <aside class="speaker-filter-sidebar" aria-label="筛选演讲嘉宾">
+      <aside class="speaker-filter-sidebar" aria-label="筛选讲师">
         <div class="filter-panel">
           <div class="filter-heading">
-            <p class="filter-kicker">筛选演讲嘉宾</p>
+            <p class="filter-kicker">筛选讲师</p>
             <output class="filter-summary" data-speaker-filter-summary aria-live="polite">
-              {filteredSpeakers.length} 位嘉宾 · 全部
+              {filteredSpeakers.length} 位讲师 · 全部
             </output>
           </div>
-          <div class="filter-group" data-filter-group aria-label="演讲嘉宾筛选">
+          <div class="filter-group" data-filter-group aria-label="讲师筛选">
             <div class="filter-layout">
               <button
                 type="button"
@@ -205,7 +205,7 @@ const groupedCategories = {
                 data-filter-category="all"
                 aria-pressed="true"
               >
-                <span>全部演讲嘉宾</span>
+                <span>全部讲师</span>
               </button>
               <div class="filter-section filter-section-tracks">
                 <span class="filter-group-label">分会场</span>
@@ -339,10 +339,10 @@ const groupedCategories = {
       }
     </div>
         <p class="filter-empty" data-speaker-filter-empty hidden>
-          没有演讲嘉宾符合当前选择，请尝试其他分会场。
+          没有讲师符合当前选择，请尝试其他分会场。
         </p>
         <p style="text-align: center; width: 100%; margin: 2rem 0 0; color: #888; font-size: 0.9rem;">
-          此列表持续更新中，演讲嘉宾可能会有变动。
+          此列表持续更新中，讲师阵容可能会有变动。
         </p>
       </div>
     </div>

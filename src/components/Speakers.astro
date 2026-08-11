@@ -11,6 +11,31 @@ const getInitials = (name: string) =>
     .join("")
     .toLocaleUpperCase();
 
+const getSpeakerNameFontSize = (name: string) => {
+  const length = [...name].length;
+  if (length >= 22) return "0.8rem";
+  if (length >= 18) return "0.92rem";
+  return "1.05rem";
+};
+
+// Compact labels are only used on speaker cards. Detail pages retain the
+// speakers' full submitted titles and organization names.
+const speakerCardText: Record<string, { role?: string; company?: string }> = {
+  "codingma": { role: "Training Software Expert" },
+  "katarzyna-starosławska": { company: "LUMI AI / CYFRONET / EC" },
+  "kelly-policarpo": { company: "Lumo AI Advisory" },
+  "liuwang-kang": { company: "Shenzhen AIRS" },
+  "hongjun-zhou": { company: "Shenzhen AIRS" },
+  "martino-russi": { role: "Embodied Robotics Eng." },
+  "markus-tavenrath": { role: "Principal DevTech Eng." },
+  "peilin-li": { company: "Tsinghua / Approaching AI" },
+  "qinying-liao": { role: "Principal Program Mgr." },
+  "quanshi-zhang": { company: "Shanghai Jiao Tong Univ." },
+  "shiwei-liu": { company: "Max Planck IS / ELLIS" },
+  "tianyi-han": { role: "Solution Architect" },
+  "joaquin-salvachua": { company: "Polytechnic Univ. Madrid" },
+};
+
 // Filter speakers to only include those where draft is false and id is not "tbd"
 const filteredSpeakers = speakersData.speakers
   .filter((speaker) => speaker.draft !== true && speaker.id !== "tbd")
@@ -318,7 +343,7 @@ const groupedCategories = {
                 </div>
               </div>
               <div class="card-row card-row-info">
-                <h2 class="h5">{speaker.name}</h2>
+                <h2 class="h5" title={speaker.name} style={`font-size: ${getSpeakerNameFontSize(speaker.name)}`}>{speaker.name}</h2>
                 {(() => {
                   let lastComma = -1, depth = 0;
                   for (let i = 0; i < speaker.roleOrg.length; i++) {
@@ -326,10 +351,12 @@ const groupedCategories = {
                     else if (speaker.roleOrg[i] === ')') depth--;
                     else if (speaker.roleOrg[i] === ',' && depth === 0) lastComma = i;
                   }
-                  if (lastComma === -1) return <p class="speaker-role">{speaker.roleOrg}</p>;
-                  const role = speaker.roleOrg.slice(0, lastComma).trim();
-                  const company = speaker.roleOrg.slice(lastComma + 1).trim();
-                  return <><p class="speaker-role">{role}</p><p class="speaker-company"><strong>{company}</strong></p></>;
+                  if (lastComma === -1) return <p class="speaker-role" title={speaker.roleOrg}>{speakerCardText[speaker.id]?.role || speaker.roleOrg}</p>;
+                  const fullRole = speaker.roleOrg.slice(0, lastComma).trim();
+                  const fullCompany = speaker.roleOrg.slice(lastComma + 1).trim();
+                  const role = speakerCardText[speaker.id]?.role || fullRole;
+                  const company = speakerCardText[speaker.id]?.company || fullCompany;
+                  return <><p class="speaker-role" title={fullRole}>{role}</p><p class="speaker-company" title={fullCompany}><strong>{company}</strong></p></>;
                 })()}
               </div>
             </a>
@@ -427,19 +454,22 @@ const groupedCategories = {
   }
 
   .speaker-results .card-row-info {
-    gap: 0.2rem;
+    display: grid;
+    grid-template-rows: 1.3em 1.3em 2.6em;
+    gap: 0.15rem;
   }
 
   .speaker-results .card-row-info .h5 {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    height: 2.4em;
+    height: 1.3em;
     margin: 0;
     overflow: hidden;
-    font-size: 1.05rem;
     line-height: 1.2;
     text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .speaker-results .speaker-role,
