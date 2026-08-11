@@ -3,7 +3,7 @@
 import Layout from "layouts/LayoutLandingZh.astro"
 import schedule from "json/ScheduleBilingual.json"
 import scheduleForum from "json/Schedule-forum.json"
-import speakers from "json/SpeakersCleaned.json"
+import speakers from "json/SpeakersZh.json"
 
 // Types
 type Event = {
@@ -208,7 +208,9 @@ const eventCategory = eventDetails.type === "keynote" ? "Keynote" : (categoryMap
           <p class="ev-speakers-label">演讲嘉宾</p>
           <div class="ev-speaker-list">
             {eventDetails.speakers.map((speaker) => {
-              const full = speakers.speakers.find((s) => s.name === speaker.name) || (speaker.id ? speakers.speakers.find((s) => s.id === speaker.id) : null)
+              const full = speakers.speakers.find(
+                (s) => s.name === speaker.name || s.nameEn === speaker.name
+              ) || (speaker.id ? speakers.speakers.find((s) => s.id === speaker.id) : null)
               const workshopCategories = ["ws-future-web","ws-cann","ws-flutter","ws-cangjie","ws-edge-ai","ws-chitu","ws-ai-education","ws-rn","ws-dora","ws-rust","ws-sglang","open-for-sdg","forum-aivision"]
               const isWorkshop = full ? full.tags?.some((t: string) => workshopCategories.includes(t)) : false
               const speakerPath = isWorkshop ? "/zh/workshops/" : "/zh/speakers/"

@@ -2,8 +2,483 @@
   "categories": [
     {
       "name": "All",
+      "nameZh": "全部",
       "id": "all"
+    },
+    {
+      "id": "sz26-agentic-ai-summit",
+      "name": "Agentic AI Summit",
+      "nameZh": "智能体 AI 峰会"
+    },
+    {
+      "id": "sz26-agentic-ai-on-edge",
+      "name": "Agentic AI on Edge",
+      "nameZh": "边缘智能体 AI"
+    },
+    {
+      "id": "sz26-agentic-os-app",
+      "name": "Agentic OS & App",
+      "nameZh": "智能体操作系统与应用"
+    },
+    {
+      "id": "sz26-open-source-model",
+      "name": "Open Source Models & Infra",
+      "nameZh": "开源模型与基础设施"
+    },
+    {
+      "id": "sz26-open-source-robotics",
+      "name": "Open Source Robotics",
+      "nameZh": "开源机器人"
     }
   ],
-  "speakers": []
+  "speakers": [
+    {
+      "id": "bryce-adelstein-lelbach",
+      "name": "Bryce Adelstein Lelbach",
+      "roleOrg": "Principal Engineer, NVIDIA",
+      "bio": "Bryce Adelstein Lelbach has spent over a decade developing programming languages, compilers, and libraries. He is passionate about parallel programming and strives to make it more accessible for everyone.\n\nBryce is a Principal Engineer at NVIDIA, where he founded the Core C++ Compute Libraries team and now leads the Vanguard Programming group that drives NVIDIA's roadmap for programming languages, compilers, and core libraries.\n\nHe is a leader of the systems programming language community, having served as chair of the C++ Library Evolution and the US programming language standards committee. He has been an organizer and program chair for many conferences over the years. On the C++ committee, he has worked on concurrency primitives, parallel algorithms, senders, and multidimensional arrays.\n\nOutside of work, Bryce is passionate about airplanes and watches. He lives in Midtown Manhattan with his girlfriend and dog.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/brycelelbach",
+        "twitter": "https://twitter.com/blelbach",
+        "linkedin": "https://www.linkedin.com/in/brycelelbach"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/bryce-adelstein-lelbach.png"
+    },
+    {
+      "id": "charles-yang",
+      "name": "Charles Yang",
+      "roleOrg": "AI Solution Architect, AMD",
+      "bio": "Charles Yang is a core technical instructor for Agentic AI and Physical AI at AMD China and an architect focused on AI ecosystem development.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/charyang-ai",
+        "linkedin": "https://www.linkedin.com/in/charles-yang-2162b269"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/charles-yang.png"
+    },
+    {
+      "id": "xun-wang",
+      "name": "Xun Wang",
+      "roleOrg": "Speaker",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "roy-wang",
+      "name": "Roy Wang",
+      "roleOrg": "Speaker",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "george-wang",
+      "name": "George Wang",
+      "roleOrg": "Speaker",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "peilin-li",
+      "name": "Peilin Li",
+      "roleOrg": "Ph.D. Student, Tsinghua University / Approaching AI",
+      "bio": "I am currently a Ph.D. student at Tsinghua University under the supervision of Prof. Mingxing Zhang. I am a core contributor to the open-source projects KTransformers and LLaMA-Factory. My research focuses on inference and fine-tuning on heterogeneous GPU–CPU systems, and large-scale cluster inference optimization.",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/JimmyPeilinLi"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/peilin-li.png"
+    },
+    {
+      "id": "wilson-wang",
+      "name": "Wilson Wang",
+      "roleOrg": "Software Engineer, ByteDance",
+      "bio": "Software Engineer at ByteDance’s Global Traffic Infra, specializing in Virtual Machines and WebAssembly. I have a strong interest in operating systems, distributed systems, cloud-native technologies, edge computing, and serverless architecture.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/wilsonwang371",
+        "linkedin": "https://www.linkedin.com/in/wilson-wang/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/wilson-wang.png"
+    },
+    {
+      "id": "shiwei-liu",
+      "name": "Shiwei Liu",
+      "roleOrg": "Group Leader, Max Planck Institute for Intelligent Systems / ELLIS Institute Tübingen",
+      "bio": "Shiwei Liu leads a research group at the Max Planck Institute for Intelligent Systems and is a Principal Investigator at the ELLIS Institute Tübingen. Previously, he was a Royal Society Newton International Fellow at the University of Oxford and a postdoctoral fellow at the University of Texas at Austin. He received his Ph.D. with Cum Laude honors from Eindhoven University of Technology in 2022. His work focuses broadly on the full lifecycle of large foundation models.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "website": "https://shiweiliuiiiiiii.github.io/",
+        "twitter": "https://x.com/Shiwei_Liu66",
+        "linkedin": "https://www.linkedin.com/in/shiwei-liu-3b60771ab/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/shiwei-liu.png"
+    },
+    {
+      "id": "jiaqi-zheng",
+      "name": "Jiaqi Zheng",
+      "roleOrg": "Associate Professor, Nanjing University",
+      "bio": "Jiaqi Zheng is an associate professor and doctoral supervisor at the School of Computer Science, Nanjing University. His current research focuses on supernode interconnection systems. He has presided over projects funded by the National Natural Science Foundation of China, including the Excellent Young Scientists Fund, the General Program, and the Young Scientists Fund, as well as corporate innovation funds from Huawei, Alibaba, ByteDance, Tencent, and other companies. He has published over 100 academic papers in top-tier international venues such as SIGCOMM, NSDI, and NIPS, and has received the Best Paper Award at CCF-recommended international conferences three times. Three of his authorized patents have been transferred to Huawei Central Research Institute. His related achievements have been incorporated into core computer science curricula at leading universities in the United States, have been specially cited in the U.S. National Science Foundation's 2024 Milestone Report.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "website": "https://jzheng369.github.io/index.html",
+        "github": "https://github.com/jzheng369"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/jiaqi-zheng.png"
+    },
+    {
+      "id": "quanshi-zhang",
+      "name": "Quanshi Zhang",
+      "roleOrg": "Associate Professor, Shanghai Jiao Tong University",
+      "bio": "Quanshi Zhang is a tenured Associate Professor and Ph.D. advisor in the School of Computer Science at Shanghai Jiao Tong University. His internationally recognized research focuses on the interpretability of neural networks. He received his Ph.D. from the University of Tokyo in 2014 and conducted postdoctoral research at UCLA from 2014 to 2018. He is a recipient of the ACM China Rising Star Award and has served in editorial and senior program roles for TMLR, NeurIPS, ICML, IJCAI, AAAI, and CVPR.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/quanshi-zhang.png"
+    },
+    {
+      "id": "sebastien-crozet",
+      "name": "Sébastien Crozet",
+      "roleOrg": "Founder, Dimforge",
+      "bio": "Sébastien Crozet has been in love with the Rust programming language since its earliest days. He is the creator and maintainer of popular open-source libraries, including nalgebra and Rapier, for the Rust ecosystem that specialize in linear algebra, geometry, and physics. He is the founder of Dimforge where he focuses on contributing to the future of cross-platform scientific computing and AI.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://dimforge.com/",
+        "github": "https://github.com/dimforge"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/sebastien-crozet.png"
+    },
+    {
+      "id": "liuwang-kang",
+      "name": "Liuwang Kang",
+      "roleOrg": "Associate Researcher, Shenzhen Institute of Artificial Intelligence and Robotics for Society",
+      "bio": "Liuwang Kang received his Ph.D. in Computer Science from the University of Virginia, where he also conducted postdoctoral research. He previously worked as a Senior Project Scientist at VMASC and as a Staff Engineer at Baidu. He is now an Associate Researcher at the Shenzhen Institute of Artificial Intelligence and Robotics for Society, focusing on multi-agent coordination, 6G-enabled embodied intelligence, and complex-system simulation.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/liuwang-kang.png"
+    },
+    {
+      "id": "hongjun-zhou",
+      "name": "Hongjun Zhou",
+      "roleOrg": "Associate Researcher, Shenzhen Institute of Artificial Intelligence and Robotics for Society",
+      "bio": "Hongjun Zhou is an Associate Researcher at the Shenzhen Institute of Artificial Intelligence and Robotics for Society. His research focuses on robot perception, navigation, and bipedal robot control. He previously worked on service and home robot development at Alibaba and the ASUS Intelligent Robot Center.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "tiberiu-socaci",
+      "name": "Tiberiu Socaci",
+      "roleOrg": "CEO & Co-Founder, Makeitfuture",
+      "bio": "I'm Tiberiu Socaci, CEO & Co-Founder of Makeitfuture — a leading AI and automation agency across the UK, France, Germany, and Romania. I'm passionate about digital transformation and helping businesses streamline complex workflows using AI, Make.com, Airtable, n8n, and no-code solutions. We worked with companies like Celonis, Avidly, BCG, and Billwerk to simplify processes and drive real growth. The whole thing started with Blu Coffee, Romania's first specialty coffee subscription, which I fully automated using Make.com. That turned into a company that's now delivered 15,000+ automations and been recognized by Make.com as their AI Partner of the Year and #1 No-Code Agency EMEA in 2024. Lately, I've been building a new type of application — self-evolving apps — that learn from user corrections without any machine learning. My mission is to empower organizations by making AI practical, accessible, and smarter with every use.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://www.selfevolving.app/",
+        "linkedin": "https://www.linkedin.com/in/tiberiusocaci/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/tiberiu-socaci.png"
+    },
+    {
+      "id": "peter-ide-kostic",
+      "name": "Peter Ide-Kostic",
+      "roleOrg": "Head of EU Policy, OpenMined Foundation",
+      "bio": "Peter Ide-Kostic is Head of EU Policy at the OpenMined Foundation, leading its European engagement on AI governance, data policy and privacy-enhancing technologies. He brings more than 15 years of EU technology-policy experience, including as a European Parliament official supporting the LIBE, IMCO and AIDA committee secretariats and the STOA Panel. An EU Fellow and former visiting scholar at UC San Diego, his work focuses on trustworthy AI, responsible data access and European technological sovereignty. He participates in a personal capacity in the European Commission’s Expert Forum on Frontier AI and represented OpenMined at the inaugural UN Global Dialogue on AI Governance in July 2026.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://openmined.org/",
+        "github": "https://github.com/openmined",
+        "twitter": "https://x.com/openminedorg",
+        "linkedin": "https://linkedin.com/in/peter-ide-kostic-52ab988"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/peter-ide-kostic.png"
+    },
+    {
+      "id": "tianyi-han",
+      "name": "Tianyi Han",
+      "roleOrg": "Solution Architect and Open-Source Builder, Ailuros",
+      "bio": "Tianyi Han is a Solution Architect and open-source builder focused on AI systems, agent governance, and decision-support tooling. With extensive experience designing and delivering enterprise software systems, he is the creator of Ailuros, an open-source initiative exploring how AI-driven systems can become more controllable, auditable, and reproducible through runtime policy enforcement, traceability, validation, and replay.\n\nHis work focuses on bridging experimental LLM applications and production-grade agent systems, with particular attention to observability, silent-failure detection, outcome validation, and trustworthy execution.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://everrun.aixagent.io/",
+        "github": "https://github.com/hant916/main-runtimegovernance",
+        "linkedin": "https://www.linkedin.com/in/tianyi-han-58278844/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/tianyi-han.png"
+    },
+    {
+      "id": "jacky-hsu",
+      "name": "Jacky Hsu",
+      "roleOrg": "Founder & CEO, Ingora",
+      "bio": "Jacky Hsu is the Founder of Ingora, an AI-native learning companion company building next-generation AI companion devices for children.\n\nPreviously, he spent over 20 years at Microsoft as a product leader, where he led product strategy and growth initiatives across multiple businesses including SharePoint Copilot and Agent. He played a key role in bringing Copilot and Agent experiences into real-world enterprise scenarios.\n\nJacky combines deep expertise in AI product design with a unique perspective on integrating agent systems, education, and hardware. At Ingora, he is exploring how AI companions can reshape how children learn, think, and grow.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://ingora.ai/",
+        "github": "https://github.com/Ingora-Inc/Qrio",
+        "linkedin": "https://www.linkedin.com/in/jacky-hsu-7ba6341/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/jacky-hsu.png"
+    },
+    {
+      "id": "yuxuan-zhang",
+      "name": "Yuxuan Zhang",
+      "roleOrg": "Technology Evangelist, Zhipu AI",
+      "bio": "Yuxuan Zhang is a Technology Evangelist at Zhipu AI.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/zRzRzRzRzRzRzR",
+        "twitter": "https://x.com/zRdianjiao",
+        "linkedin": "https://www.linkedin.com/in/yuxuan-zhang-86a124282/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yuxuan-zhang.png"
+    },
+    {
+      "id": "joaquin-salvachua",
+      "name": "Joaquín Salvachúa",
+      "roleOrg": "Professor, Universidad Politécnica de Madrid",
+      "bio": "Joaquín Salvachúa is a Professor at the Telecommunication School of the Universidad Politécnica de Madrid (UPM). A strong advocate for open data, open protocols, and open-source infrastructure, his research focuses on advancing data space architectures through distributed governance, verifiable provenance, and decentralized trust mechanisms to fuel actual AI infrastructure. \n\nHe serves on the board of Gaia-X-ES, and Big Data Value Association, and actively contributes to Gaia-X AISBL. His broader academic work encompasses ML-Ops, Big Data architectures, cloud computing, next-generation internet technologies, network science, and, in special,  formal methods, with numerous contributions to international academic literature and open source projects.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://portalcientifico.upm.es/es/ipublic/researcher/305315",
+        "github": "https://github.com/jsalvachua",
+        "twitter": "https://x.com/jsalvachua",
+        "linkedin": "https://www.linkedin.com/in/jsalvachua/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/joaquin-salvachua.png"
+    },
+    {
+      "id": "satya-mallick",
+      "name": "Satya Mallick",
+      "roleOrg": "CEO, OpenCV.org",
+      "bio": "Dr. Satya Mallick is the CEO of OpenCV.org - the non-profit that maintains the largest computer vision library in the world. He is an entrepreneur in Artificial Intelligence, Computer Vision, and Machine Learning. Before starting his AI consulting company, Big Vision LLC, he co-founded Sight Commerce Inc (formerly Taaz Inc.), where he built AI products that reached over 100M users. His work has been covered in publications like TechCrunch, Huffington Post, NYTimes, and WSJ. Dr. Mallick is also the creator of some of the most popular online computer vision and AI courses. In 2017, IBM's AI Blog named Dr. Mallick as one of the top 20 people in AI to follow on Twitter.",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "website": "https://learnopencv.com/",
+        "github": "https://github.com/spmallick/learnopencv",
+        "twitter": "https://x.com/LearnOpenCV",
+        "linkedin": "https://www.linkedin.com/in/satyamallick/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/satya-mallick.png"
+    },
+    {
+      "id": "kelly-policarpo",
+      "name": "Kelly Policarpo",
+      "roleOrg": "Founder & CEO, Lumo AI Compliance & Advisory",
+      "bio": "An AI Governance and EU Market Entry expert and the Founder of Lumo AI Compliance & Advisory, a consultancy helping AI companies prepare for the European market.\nWith a background in Computer Science and Product Management, and professional expertise spanning AI compliance, privacy, cybersecurity, and product strategy, works at the intersection of technology, regulation, and international market expansion.\nHer work focuses on helping companies understand what it takes to move from building AI products to becoming ready to enter and scale in the European market. Through practical AI governance and market-readiness strategies, she helps organisations navigate the EU AI Act and the broader governance requirements that increasingly shape access to the European AI ecosystem.\nBased in Portugal, Kelly brings a European perspective to the rapidly growing global AI industry, with a particular focus on helping technology companies from Asia and the Greater Bay Area.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://www.lumoai.pt/",
+        "twitter": "https://x.com/policarpolumoai"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/kelly-policarpo.png"
+    },
+    {
+      "id": "katarzyna-starosławska",
+      "name": "Katarzyna Starosławska",
+      "roleOrg": "AI, Data & HPC Expert, LUMI AI Factory / CYFRONET AGH / European Commission",
+      "bio": "Katarzyna Starosławska is a data and AI expert with over 20 years of experience at the intersection of technology, strategy, and innovation. She advises boards, public institutions, and European Union.\nShe focuses on data quality, interoperability, and cross-sector collaboration as foundations for effective and responsible AI solutions.\nCurrent roles:\nMember of the expert group on the next generation of interoperability frameworks at the European Commission\nMember of the SCIANCE AI in Science Working Groups (AISWGs), European Commission\nSenior HCP & AI Specialist, EuroHPC / LUMI AI Factory, CYFRONET AGH\nLeader of the “Data for AI” stream and member of the “AI in Public Administration” group, Ministry of Digital Affairs\nMember of the Business Council, Speakleash / Bielik.ai Foundation (former Vice President)\nExternal expert for the Medical Research Agency, EIT Health.\nShe is a frequent speaker and moderator at international technology events, including Web Summit and TechCrunch Disrupt.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/kstaroslawska/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/katarzyna-starosławska.png"
+    },
+    {
+      "id": "qinying-liao",
+      "name": "Qinying Liao",
+      "roleOrg": "Principal Program Manager, Microsoft",
+      "bio": "Senior AI Product Leader with 10+ years at Microsoft Azure AI, specializing in Speech AI and Voice Agents. Experienced in product strategy, 0-to-1 product development, and global commercialization. Combines B2B and B2C product expertise with deep strengths in human-centered design, AI product experience, and ecosystem development to transform cutting-edge AI technologies into scalable products and lasting business value.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/qinying-liao-7458b358/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/qinying-liao.png"
+    },
+    {
+      "id": "feliana-citradewi",
+      "name": "Feliana Citradewi",
+      "roleOrg": "Founder & CEO, Global AI Assembly",
+      "bio": "Feliana Citradewi is the Founder and CEO of Global AI Assembly.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://globalaiassembly.com/",
+        "linkedin": "https://www.linkedin.com/in/feliana-citradewi%F0%9F%8E%99%EF%B8%8F-39657a83"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/feliana-citradewi.png"
+    },
+    {
+      "id": "markus-tavenrath",
+      "name": "Markus Tavenrath",
+      "roleOrg": "Principal Engineer, Developer Technology, NVIDIA",
+      "bio": "Markus Tavenrath studied computer science with a focus on computer graphics at RWTH Aachen University. This academic background provided a solid foundation for his career in the technology industry.\n\nIn 2008, Markus joined NVIDIA, where he began working on real-time ray tracing on GPUs. Over the years, he has contributed to performance optimization for ray tracing, scene graphs, OpenGL, WebGL, Vulkan, and AI. His work has played a role in advancing these technologies.\n\nMarkus is also a co-founder of the Vulkan-Hpp project, which has been beneficial to the Vulkan community. His efforts have helped improve the use and implementation of Vulkan.\n\nRecently, Markus was elected as the Chair of the ML Council at Khronos. In this role, he helps coordinate and support AI and machine learning initiatives within the Khronos group. His election to this position reflects his expertise and leadership qualities.\n\nMarkus Tavenrath is a dedicated professional whose contributions have positively impacted the technological landscape at NVIDIA and beyond.",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/markus-tavenrath/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/markus-tavenrath.png"
+    },
+    {
+      "id": "igor-schwarzmann",
+      "name": "Igor Schwarzmann",
+      "roleOrg": "Principal, Known Unknowns GmbH",
+      "bio": "Strategic advisor at the intersection of culture and technology. 20 years of experience across Health, Automotive, Luxury, Media, and Government — working with global technology companies, European multinationals, and institutions in the US, Europe, China, and Singapore. Principal of Known Unknowns GmbH, Berlin. At GOSIM Paris 2026 he spoke on the \"Europe in the Age of Agentic AI\" panel and moderated the panel on AI and Education. He runs his practice on his own agentic AI infrastructure — open-source, local-first, no cloud dependencies — and writes about strategy and AI at igorschwarzmann.com. Host of *Follow the Rabbit*, a podcast on cultural phenomena and European AI sovereignty.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://igorschwarzmann.com/",
+        "github": "https://github.com/igor",
+        "linkedin": "https://www.linkedin.com/in/igorschwarzmann/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/igor-schwarzmann.png"
+    },
+    {
+      "id": "codingma",
+      "name": "CodingMa",
+      "roleOrg": "Open-Source Training Software Expert, Huawei",
+      "bio": "CodingMa holds a master's degree from Peking University and has worked extensively on training systems for NLP and large language models. At Huawei, he focuses on building the native open-source ecosystem for Ascend training, leads technical collaborations and planning with post-training communities, and contributes as a committer to LLaMA-Factory.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/codemayq"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/codingma.png"
+    },
+    {
+      "id": "anastasia-stasenko",
+      "name": "Anastasia Stasenko",
+      "roleOrg": "Co-Founder & CEO, Pleias",
+      "bio": "Anastasia Stasenko is Co-Founder and CEO of Pleias, a Franco-German lab developing data infrastructure for frontier AI systems. Under her leadership, Pleias created Common Corpus, an open multilingual dataset for LLM training with more than two trillion tokens, and led SYNTH, which produces open synthetic data at scale for sovereign AI models and agentic applications. She is also a Senior Associate Lecturer at Sorbonne Nouvelle University and came to AI through digital humanities and philosophy at the École Normale Supérieure.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "website": "https://substack.com/@anastasiastasenko",
+        "linkedin": "https://www.linkedin.com/in/anastasia-stasenko/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/anastasia-stasenko.png"
+    },
+    {
+      "id": "pieter-delobelle",
+      "name": "Pieter Delobelle",
+      "roleOrg": "Speaker",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "nouamane-tazi",
+      "name": "Nouamane Tazi",
+      "roleOrg": "ML Research Engineer, Hugging Face",
+      "bio": "Nouamane Tazi is a Machine Learning Research Engineer at Hugging Face, specializing in training large language models. He is a co-author of SmolLM3 and The Ultra Scale Playbook, and his research spans NLP, deep learning, and scalable AI infrastructure.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/nouamanetazi",
+        "twitter": "https://x.com/NouamaneTazi",
+        "linkedin": "https://www.linkedin.com/in/nouamanetazi/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/nouamane-tazi.png"
+    },
+    {
+      "id": "martino-russi",
+      "name": "Martino Russi",
+      "roleOrg": "Embodied Robotics Engineer, Hugging Face",
+      "bio": "Aspiring mad scientist, trying to create this generation's Pinocchio. Martino Russi is a core contributor to LeRobot, the open-source robotics library, where he built and maintains the Unitree G1 humanoid stack. He is the creator of Project Homunculus, an open-source force-feedback hand exoskeleton that subsequent academic work, including HOMIE, builds on. His background spans neuroscience, AI, and robotics; his goal is to make embodied intelligence affordable for everyone.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/nepyope",
+        "twitter": "https://x.com/NepYope",
+        "linkedin": "https://www.linkedin.com/in/martino-russi/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/martino-russi.png"
+    }
+  ]
 }

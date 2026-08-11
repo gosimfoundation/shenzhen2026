@@ -17,3 +17,7 @@ cfp-outreach.md
 assets-src/
 docs/
 .claude/
+
+# Generated editing copies for speaker portraits
+speaker-photo-inbox/*
+!speaker-photo-inbox/README.md

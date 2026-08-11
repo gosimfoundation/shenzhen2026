@@ -1,0 +1,347 @@
+[
+  {
+    "sourceName": "Bryce Adelstein Lelbach",
+    "id": "bryce-adelstein-lelbach",
+    "zh": {
+      "name": "Bryce Adelstein Lelbach",
+      "roleOrg": "NVIDIA 首席工程师",
+      "bio": "Bryce Adelstein Lelbach 长期从事编程语言、编译器和基础库开发，致力于让并行编程更易于使用。他是 NVIDIA 首席工程师，创立了核心 C++ 计算库团队，目前负责推动 NVIDIA 在编程语言、编译器和核心库方面路线图的 Vanguard Programming 团队。他曾担任 C++ 库演进工作组及美国编程语言标准委员会主席，并参与并发原语、并行算法、sender 和多维数组等标准工作。"
+    }
+  },
+  {
+    "sourceName": "Charles Yang",
+    "id": "charles-yang",
+    "en": {
+      "bio": "Charles Yang is a core technical instructor for Agentic AI and Physical AI at AMD China and an architect focused on AI ecosystem development."
+    },
+    "zh": {
+      "name": "Charles Yang",
+      "roleOrg": "AMD AI 解决方案架构师",
+      "bio": "AMD 中国 Agentic AI 与 Physical AI 核心技术讲师，专注于 AI 生态建设与解决方案架构。"
+    }
+  },
+  {
+    "sourceName": "Xun Wang",
+    "id": "xun-wang",
+    "zh": {
+      "name": "Xun Wang",
+      "roleOrg": "演讲嘉宾"
+    }
+  },
+  {
+    "sourceName": "Roy Wang",
+    "id": "roy-wang",
+    "zh": {
+      "name": "Roy Wang",
+      "roleOrg": "演讲嘉宾"
+    }
+  },
+  {
+    "sourceName": "George Wang",
+    "id": "george-wang",
+    "zh": {
+      "name": "George Wang",
+      "roleOrg": "演讲嘉宾"
+    }
+  },
+  {
+    "sourceName": "Peilin Li",
+    "id": "peilin-li",
+    "en": {
+      "roleOrg": "Ph.D. Student, Tsinghua University / Approaching AI"
+    },
+    "zh": {
+      "name": "Peilin Li",
+      "roleOrg": "清华大学 / Approaching AI 博士生",
+      "bio": "清华大学博士生，师从张明兴教授，也是 KTransformers 与 LLaMA-Factory 等开源项目的核心贡献者。研究方向包括 GPU–CPU 异构系统上的推理与微调，以及大规模集群推理优化。"
+    }
+  },
+  {
+    "sourceName": "Wilson Wang",
+    "id": "wilson-wang",
+    "en": {
+      "roleOrg": "Software Engineer, ByteDance"
+    },
+    "zh": {
+      "name": "Wilson Wang",
+      "roleOrg": "字节跳动软件工程师",
+      "bio": "字节跳动全球流量基础设施团队软件工程师，专注于虚拟机与 WebAssembly，并关注操作系统、分布式系统、云原生技术、边缘计算和无服务器架构。"
+    }
+  },
+  {
+    "sourceName": "Shiwei Liu",
+    "id": "shiwei-liu",
+    "en": {
+      "roleOrg": "Group Leader, Max Planck Institute for Intelligent Systems / ELLIS Institute Tübingen",
+      "bio": "Shiwei Liu leads a research group at the Max Planck Institute for Intelligent Systems and is a Principal Investigator at the ELLIS Institute Tübingen. Previously, he was a Royal Society Newton International Fellow at the University of Oxford and a postdoctoral fellow at the University of Texas at Austin. He received his Ph.D. with Cum Laude honors from Eindhoven University of Technology in 2022. His work focuses broadly on the full lifecycle of large foundation models."
+    },
+    "zh": {
+      "name": "Shiwei Liu",
+      "roleOrg": "马克斯·普朗克智能系统研究所研究组负责人 / 图宾根 ELLIS 研究所首席研究员",
+      "bio": "现任马克斯·普朗克智能系统研究所研究组负责人、图宾根 ELLIS 研究所首席研究员。曾获英国皇家学会牛顿国际学者资助，并先后在牛津大学和德州大学奥斯汀分校从事研究。2022 年以最高荣誉获得埃因霍温理工大学博士学位，研究涵盖大型基础模型的完整生命周期。"
+    }
+  },
+  {
+    "sourceName": "Jiaqi Zheng",
+    "id": "jiaqi-zheng",
+    "zh": {
+      "name": "郑嘉琦",
+      "roleOrg": "南京大学副教授、博士生导师",
+      "bio": "南京大学计算机学院副教授、博士生导师，研究方向聚焦超节点互连系统。主持国家自然科学基金优秀青年科学基金、面上项目和青年项目，以及华为、阿里巴巴、字节跳动、腾讯等企业创新基金；在 SIGCOMM、NSDI、NeurIPS 等国际会议发表论文百余篇，多次获得 CCF 推荐国际会议最佳论文奖。"
+    }
+  },
+  {
+    "sourceName": "张拳石",
+    "id": "quanshi-zhang",
+    "en": {
+      "name": "Quanshi Zhang",
+      "roleOrg": "Associate Professor, Shanghai Jiao Tong University",
+      "bio": "Quanshi Zhang is a tenured Associate Professor and Ph.D. advisor in the School of Computer Science at Shanghai Jiao Tong University. His internationally recognized research focuses on the interpretability of neural networks. He received his Ph.D. from the University of Tokyo in 2014 and conducted postdoctoral research at UCLA from 2014 to 2018. He is a recipient of the ACM China Rising Star Award and has served in editorial and senior program roles for TMLR, NeurIPS, ICML, IJCAI, AAAI, and CVPR."
+    },
+    "zh": {
+      "name": "张拳石",
+      "roleOrg": "上海交通大学副教授、博士生导师",
+      "bio": "上海交通大学计算机学院长聘副教授、博士生导师，入选国家级海外高层次人才引进计划，获 ACM China 新星奖。2014 年获东京大学博士学位，2014 至 2018 年在 UCLA 从事博士后研究，在神经网络可解释性方向取得多项具有国际影响力的成果，并担任 TMLR 责任编辑以及 NeurIPS、ICML 等会议领域主席。"
+    }
+  },
+  {
+    "sourceName": "Crozet Sébastien",
+    "id": "sebastien-crozet",
+    "en": {
+      "name": "Sébastien Crozet"
+    },
+    "zh": {
+      "name": "Sébastien Crozet",
+      "roleOrg": "Dimforge 创始人",
+      "bio": "Rust 生态中 nalgebra、Rapier 等知名开源库的创建者和维护者，长期专注于线性代数、几何与物理计算。他创立 Dimforge，致力于推动跨平台科学计算和 AI 的发展。"
+    }
+  },
+  {
+    "sourceName": "Liuwang Kang",
+    "id": "liuwang-kang",
+    "en": {
+      "roleOrg": "Associate Researcher, Shenzhen Institute of Artificial Intelligence and Robotics for Society",
+      "bio": "Liuwang Kang received his Ph.D. in Computer Science from the University of Virginia, where he also conducted postdoctoral research. He previously worked as a Senior Project Scientist at VMASC and as a Staff Engineer at Baidu. He is now an Associate Researcher at the Shenzhen Institute of Artificial Intelligence and Robotics for Society, focusing on multi-agent coordination, 6G-enabled embodied intelligence, and complex-system simulation."
+    },
+    "zh": {
+      "name": "Liuwang Kang",
+      "roleOrg": "深圳市人工智能与机器人研究院副研究员",
+      "bio": "获弗吉尼亚大学计算机科学博士学位，并在该校从事博士后研究。曾任美国 VMASC 高级项目科学家和百度高级工程师，现任深圳市人工智能与机器人研究院副研究员，研究方向包括多智能体协同、6G 赋能的具身智能和复杂系统仿真。"
+    }
+  },
+  {
+    "sourceName": "Hongjun Zhou",
+    "id": "hongjun-zhou",
+    "en": {
+      "roleOrg": "Associate Researcher, Shenzhen Institute of Artificial Intelligence and Robotics for Society",
+      "bio": "Hongjun Zhou is an Associate Researcher at the Shenzhen Institute of Artificial Intelligence and Robotics for Society. His research focuses on robot perception, navigation, and bipedal robot control. He previously worked on service and home robot development at Alibaba and the ASUS Intelligent Robot Center."
+    },
+    "zh": {
+      "name": "Hongjun Zhou",
+      "roleOrg": "深圳市人工智能与机器人研究院副研究员",
+      "bio": "深圳市人工智能与机器人研究院副研究员，研究方向包括机器人感知、导航和双足机器人控制。曾在阿里巴巴和华硕智能机器人中心参与服务机器人与家庭机器人研发。"
+    }
+  },
+  {
+    "sourceName": "Tiberiu Socaci",
+    "id": "tiberiu-socaci",
+    "zh": {
+      "name": "Tiberiu Socaci",
+      "roleOrg": "Makeitfuture 联合创始人兼 CEO",
+      "bio": "Makeitfuture 联合创始人兼 CEO，专注于利用 AI、Make.com、Airtable、n8n 和无代码工具帮助企业实现数字化转型与复杂流程自动化。其团队已交付超过 15,000 项自动化方案，并获 Make.com 评选为 2024 年度 AI 合作伙伴及欧洲、中东和非洲地区排名第一的无代码机构。他目前致力于构建能够从用户纠正中持续学习的自演进应用。"
+    }
+  },
+  {
+    "sourceName": "Peter Ide-Kostic",
+    "id": "peter-ide-kostic",
+    "en": {
+      "roleOrg": "Head of EU Policy, OpenMined Foundation"
+    },
+    "zh": {
+      "name": "Peter Ide-Kostic",
+      "roleOrg": "OpenMined Foundation 欧盟政策主管",
+      "bio": "负责 OpenMined Foundation 在欧洲的 AI 治理、数据政策和隐私增强技术事务，拥有超过 15 年的欧盟技术政策经验。其工作聚焦可信 AI、负责任的数据访问和欧洲技术主权，并以个人身份参与欧盟委员会前沿 AI 专家论坛。"
+    }
+  },
+  {
+    "sourceName": "Tianyi HAN",
+    "id": "tianyi-han",
+    "en": {
+      "name": "Tianyi Han",
+      "roleOrg": "Solution Architect and Open-Source Builder, Ailuros"
+    },
+    "zh": {
+      "name": "Tianyi Han",
+      "roleOrg": "Ailuros 解决方案架构师、开源开发者",
+      "bio": "专注于 AI 系统、智能体治理和决策支持工具的解决方案架构师与开源开发者，也是开源智能体治理项目 Ailuros 的创建者。其工作通过运行时策略执行、可追溯性、验证和重放机制，推动 AI 系统实现可控、可审计和可复现。"
+    }
+  },
+  {
+    "sourceName": "JACKY HSU",
+    "id": "jacky-hsu",
+    "en": {
+      "name": "Jacky Hsu"
+    },
+    "zh": {
+      "name": "Jacky Hsu",
+      "roleOrg": "Ingora 创始人兼 CEO",
+      "bio": "Ingora 创始人兼 CEO，致力于打造面向儿童的新一代 AI 学习伙伴设备。此前在微软拥有超过 20 年产品领导经验，曾负责 SharePoint Copilot 与 Agent 等业务的产品战略和增长。目前探索智能体系统、教育与硬件的结合，以及 AI 伙伴如何重塑儿童的学习和成长方式。"
+    }
+  },
+  {
+    "sourceName": "Yuxuan Zhang",
+    "id": "yuxuan-zhang",
+    "en": {
+      "roleOrg": "Technology Evangelist, Zhipu AI",
+      "bio": "Yuxuan Zhang is a Technology Evangelist at Zhipu AI."
+    },
+    "zh": {
+      "name": "Yuxuan Zhang",
+      "roleOrg": "智谱 AI 技术布道师",
+      "bio": "智谱 AI 技术布道师。"
+    }
+  },
+  {
+    "sourceName": "Joaquin Salvachua",
+    "id": "joaquin-salvachua",
+    "en": {
+      "name": "Joaquín Salvachúa",
+      "roleOrg": "Professor, Universidad Politécnica de Madrid"
+    },
+    "zh": {
+      "name": "Joaquín Salvachúa",
+      "roleOrg": "马德里理工大学教授",
+      "bio": "马德里理工大学电信学院教授，倡导开放数据、开放协议和开源基础设施。研究聚焦通过分布式治理、可验证溯源与去中心化信任机制推进数据空间架构，并涉及 MLOps、大数据架构、云计算、下一代互联网和形式化方法。"
+    }
+  },
+  {
+    "sourceName": "Satya Mallick",
+    "id": "satya-mallick",
+    "zh": {
+      "name": "Satya Mallick",
+      "roleOrg": "OpenCV.org CEO",
+      "bio": "OpenCV.org CEO，长期从事人工智能、计算机视觉和机器学习领域的创业与研发。他曾联合创办 Sight Commerce，并打造服务超过一亿用户的 AI 产品；同时也是广受欢迎的计算机视觉与 AI 在线课程创作者。"
+    }
+  },
+  {
+    "sourceName": "Kelly Policarpo",
+    "id": "kelly-policarpo",
+    "en": {
+      "roleOrg": "Founder & CEO, Lumo AI Compliance & Advisory"
+    },
+    "zh": {
+      "name": "Kelly Policarpo",
+      "roleOrg": "Lumo AI Compliance & Advisory 创始人兼 CEO",
+      "bio": "AI 治理与欧盟市场准入专家，创立 Lumo AI Compliance & Advisory，帮助 AI 企业为进入欧洲市场做好准备。她拥有计算机科学和产品管理背景，专业领域涵盖 AI 合规、隐私、网络安全与产品战略，重点帮助企业理解欧盟《人工智能法案》及相关治理要求。"
+    }
+  },
+  {
+    "sourceName": "Katarzyna Starosławska",
+    "id": "katarzyna-starosławska",
+    "en": {
+      "roleOrg": "AI, Data & HPC Expert, LUMI AI Factory / CYFRONET AGH / European Commission"
+    },
+    "zh": {
+      "name": "Katarzyna Starosławska",
+      "roleOrg": "LUMI AI Factory / CYFRONET AGH / 欧盟委员会 AI、数据与高性能计算专家",
+      "bio": "拥有超过 20 年技术、战略与创新经验的数据和 AI 专家，为企业董事会、公共机构及欧盟提供咨询。她关注数据质量、互操作性和跨行业协作，并参与欧盟委员会下一代互操作框架专家组、AI 科学工作组及 EuroHPC / LUMI AI Factory 等项目。"
+    }
+  },
+  {
+    "sourceName": "Qinying Liao",
+    "id": "qinying-liao",
+    "zh": {
+      "name": "Qinying Liao",
+      "roleOrg": "微软首席项目经理",
+      "bio": "拥有十余年微软 Azure AI 经验的资深 AI 产品负责人，专注于语音 AI 与语音智能体。具备产品战略、从零到一产品开发和全球商业化经验，致力于将前沿 AI 技术转化为可规模化的产品和长期业务价值。"
+    }
+  },
+  {
+    "sourceName": "Feliana Citradewi",
+    "id": "feliana-citradewi",
+    "en": {
+      "roleOrg": "Founder & CEO, Global AI Assembly",
+      "bio": "Feliana Citradewi is the Founder and CEO of Global AI Assembly."
+    },
+    "zh": {
+      "name": "Feliana Citradewi",
+      "roleOrg": "Global AI Assembly 创始人兼 CEO",
+      "bio": "Global AI Assembly 创始人兼 CEO。"
+    }
+  },
+  {
+    "sourceName": "Markus Tavenrath",
+    "id": "markus-tavenrath",
+    "en": {
+      "roleOrg": "Principal Engineer, Developer Technology, NVIDIA"
+    },
+    "zh": {
+      "name": "Markus Tavenrath",
+      "roleOrg": "NVIDIA 开发者技术首席工程师",
+      "bio": "NVIDIA 开发者技术首席工程师，长期从事 GPU 实时光线追踪以及场景图、OpenGL、WebGL、Vulkan 和 AI 的性能优化。他是 Vulkan-Hpp 项目的联合创始人，现任 Khronos 机器学习委员会主席。"
+    }
+  },
+  {
+    "sourceName": "Igor Schwarzmann",
+    "id": "igor-schwarzmann",
+    "zh": {
+      "name": "Igor Schwarzmann",
+      "roleOrg": "Known Unknowns GmbH 负责人",
+      "bio": "文化与技术交叉领域的战略顾问，拥有 20 年跨医疗、汽车、奢侈品、媒体和政府领域经验，曾服务全球科技公司、欧洲跨国企业及公共机构。他以开源、本地优先的智能体 AI 基础设施运营自己的咨询业务，并主持探讨文化现象与欧洲 AI 主权的播客 Follow the Rabbit。"
+    }
+  },
+  {
+    "sourceName": "codingma",
+    "id": "codingma",
+    "en": {
+      "name": "CodingMa",
+      "roleOrg": "Open-Source Training Software Expert, Huawei",
+      "bio": "CodingMa holds a master's degree from Peking University and has worked extensively on training systems for NLP and large language models. At Huawei, he focuses on building the native open-source ecosystem for Ascend training, leads technical collaborations and planning with post-training communities, and contributes as a committer to LLaMA-Factory."
+    },
+    "zh": {
+      "name": "CodingMa",
+      "roleOrg": "华为开源训练软件技术专家",
+      "bio": "硕士毕业于北京大学，长期从事 NLP 与大语言模型训练系统相关工作，负责昇腾训练方向的原生开源生态建设，参与并主导多个后训练社区的技术合作与规划，同时担任 LLaMA-Factory 社区 committer。"
+    }
+  },
+  {
+    "sourceName": "anastasiastasenko1",
+    "id": "anastasia-stasenko",
+    "en": {
+      "name": "Anastasia Stasenko",
+      "roleOrg": "Co-Founder & CEO, Pleias",
+      "bio": "Anastasia Stasenko is Co-Founder and CEO of Pleias, a Franco-German lab developing data infrastructure for frontier AI systems. Under her leadership, Pleias created Common Corpus, an open multilingual dataset for LLM training with more than two trillion tokens, and led SYNTH, which produces open synthetic data at scale for sovereign AI models and agentic applications. She is also a Senior Associate Lecturer at Sorbonne Nouvelle University and came to AI through digital humanities and philosophy at the École Normale Supérieure."
+    },
+    "zh": {
+      "name": "Anastasia Stasenko",
+      "roleOrg": "Pleias 联合创始人兼 CEO",
+      "bio": "法德 AI 实验室 Pleias 联合创始人兼 CEO，负责面向前沿 AI 系统的数据基础设施。Pleias 创建了拥有超过两万亿 token 的开放多语言大模型训练数据集 Common Corpus，并通过 SYNTH 大规模生产用于主权 AI 模型和智能体应用的开放合成数据。她同时任巴黎第三大学高级副讲师，拥有数字人文和哲学背景。"
+    }
+  },
+  {
+    "sourceName": "Pieter Delobelle",
+    "id": "pieter-delobelle",
+    "zh": {
+      "name": "Pieter Delobelle",
+      "roleOrg": "演讲嘉宾"
+    }
+  },
+  {
+    "sourceName": "Nouamane Tazi",
+    "id": "nouamane-tazi",
+    "zh": {
+      "name": "Nouamane Tazi",
+      "roleOrg": "Hugging Face 机器学习研究工程师",
+      "bio": "Hugging Face 机器学习研究工程师，专注于大语言模型训练。他是 SmolLM3 和 The Ultra Scale Playbook 的共同作者，研究涵盖自然语言处理、深度学习和可扩展 AI 基础设施。"
+    }
+  },
+  {
+    "sourceName": "Martino Russi",
+    "id": "martino-russi",
+    "zh": {
+      "name": "Martino Russi",
+      "roleOrg": "Hugging Face 具身机器人工程师",
+      "bio": "LeRobot 开源机器人库核心贡献者，负责构建和维护 Unitree G1 人形机器人技术栈，也是开源力反馈手部外骨骼 Project Homunculus 的创建者。他拥有神经科学、AI 和机器人学背景，致力于让具身智能技术更加普及。"
+    }
+  }
+]

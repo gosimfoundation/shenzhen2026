@@ -1,0 +1,515 @@
+{
+  "categories": [
+    {
+      "name": "All",
+      "nameZh": "全部",
+      "id": "all"
+    },
+    {
+      "id": "sz26-agentic-ai-summit",
+      "name": "Agentic AI Summit",
+      "nameZh": "智能体 AI 峰会"
+    },
+    {
+      "id": "sz26-agentic-ai-on-edge",
+      "name": "Agentic AI on Edge",
+      "nameZh": "边缘智能体 AI"
+    },
+    {
+      "id": "sz26-agentic-os-app",
+      "name": "Agentic OS & App",
+      "nameZh": "智能体操作系统与应用"
+    },
+    {
+      "id": "sz26-open-source-model",
+      "name": "Open Source Models & Infra",
+      "nameZh": "开源模型与基础设施"
+    },
+    {
+      "id": "sz26-open-source-robotics",
+      "name": "Open Source Robotics",
+      "nameZh": "开源机器人"
+    }
+  ],
+  "speakers": [
+    {
+      "id": "bryce-adelstein-lelbach",
+      "name": "Bryce Adelstein Lelbach",
+      "roleOrg": "NVIDIA 首席工程师",
+      "bio": "Bryce Adelstein Lelbach 长期从事编程语言、编译器和基础库开发，致力于让并行编程更易于使用。他是 NVIDIA 首席工程师，创立了核心 C++ 计算库团队，目前负责推动 NVIDIA 在编程语言、编译器和核心库方面路线图的 Vanguard Programming 团队。他曾担任 C++ 库演进工作组及美国编程语言标准委员会主席，并参与并发原语、并行算法、sender 和多维数组等标准工作。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/brycelelbach",
+        "twitter": "https://twitter.com/blelbach",
+        "linkedin": "https://www.linkedin.com/in/brycelelbach"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/bryce-adelstein-lelbach.png",
+      "nameEn": "Bryce Adelstein Lelbach"
+    },
+    {
+      "id": "charles-yang",
+      "name": "Charles Yang",
+      "roleOrg": "AMD AI 解决方案架构师",
+      "bio": "AMD 中国 Agentic AI 与 Physical AI 核心技术讲师，专注于 AI 生态建设与解决方案架构。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/charyang-ai",
+        "linkedin": "https://www.linkedin.com/in/charles-yang-2162b269"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/charles-yang.png",
+      "nameEn": "Charles Yang"
+    },
+    {
+      "id": "xun-wang",
+      "name": "Xun Wang",
+      "roleOrg": "演讲嘉宾",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Xun Wang"
+    },
+    {
+      "id": "roy-wang",
+      "name": "Roy Wang",
+      "roleOrg": "演讲嘉宾",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Roy Wang"
+    },
+    {
+      "id": "george-wang",
+      "name": "George Wang",
+      "roleOrg": "演讲嘉宾",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "George Wang"
+    },
+    {
+      "id": "peilin-li",
+      "name": "Peilin Li",
+      "roleOrg": "清华大学 / Approaching AI 博士生",
+      "bio": "清华大学博士生，师从张明兴教授，也是 KTransformers 与 LLaMA-Factory 等开源项目的核心贡献者。研究方向包括 GPU–CPU 异构系统上的推理与微调，以及大规模集群推理优化。",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/JimmyPeilinLi"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/peilin-li.png",
+      "nameEn": "Peilin Li"
+    },
+    {
+      "id": "wilson-wang",
+      "name": "Wilson Wang",
+      "roleOrg": "字节跳动软件工程师",
+      "bio": "字节跳动全球流量基础设施团队软件工程师，专注于虚拟机与 WebAssembly，并关注操作系统、分布式系统、云原生技术、边缘计算和无服务器架构。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/wilsonwang371",
+        "linkedin": "https://www.linkedin.com/in/wilson-wang/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/wilson-wang.png",
+      "nameEn": "Wilson Wang"
+    },
+    {
+      "id": "shiwei-liu",
+      "name": "Shiwei Liu",
+      "roleOrg": "马克斯·普朗克智能系统研究所研究组负责人 / 图宾根 ELLIS 研究所首席研究员",
+      "bio": "现任马克斯·普朗克智能系统研究所研究组负责人、图宾根 ELLIS 研究所首席研究员。曾获英国皇家学会牛顿国际学者资助，并先后在牛津大学和德州大学奥斯汀分校从事研究。2022 年以最高荣誉获得埃因霍温理工大学博士学位，研究涵盖大型基础模型的完整生命周期。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "website": "https://shiweiliuiiiiiii.github.io/",
+        "twitter": "https://x.com/Shiwei_Liu66",
+        "linkedin": "https://www.linkedin.com/in/shiwei-liu-3b60771ab/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/shiwei-liu.png",
+      "nameEn": "Shiwei Liu"
+    },
+    {
+      "id": "jiaqi-zheng",
+      "name": "郑嘉琦",
+      "roleOrg": "南京大学副教授、博士生导师",
+      "bio": "南京大学计算机学院副教授、博士生导师，研究方向聚焦超节点互连系统。主持国家自然科学基金优秀青年科学基金、面上项目和青年项目，以及华为、阿里巴巴、字节跳动、腾讯等企业创新基金；在 SIGCOMM、NSDI、NeurIPS 等国际会议发表论文百余篇，多次获得 CCF 推荐国际会议最佳论文奖。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "website": "https://jzheng369.github.io/index.html",
+        "github": "https://github.com/jzheng369"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/jiaqi-zheng.png",
+      "nameEn": "Jiaqi Zheng"
+    },
+    {
+      "id": "quanshi-zhang",
+      "name": "张拳石",
+      "roleOrg": "上海交通大学副教授、博士生导师",
+      "bio": "上海交通大学计算机学院长聘副教授、博士生导师，入选国家级海外高层次人才引进计划，获 ACM China 新星奖。2014 年获东京大学博士学位，2014 至 2018 年在 UCLA 从事博士后研究，在神经网络可解释性方向取得多项具有国际影响力的成果，并担任 TMLR 责任编辑以及 NeurIPS、ICML 等会议领域主席。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/quanshi-zhang.png",
+      "nameEn": "Quanshi Zhang"
+    },
+    {
+      "id": "sebastien-crozet",
+      "name": "Sébastien Crozet",
+      "roleOrg": "Dimforge 创始人",
+      "bio": "Rust 生态中 nalgebra、Rapier 等知名开源库的创建者和维护者，长期专注于线性代数、几何与物理计算。他创立 Dimforge，致力于推动跨平台科学计算和 AI 的发展。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://dimforge.com/",
+        "github": "https://github.com/dimforge"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/sebastien-crozet.png",
+      "nameEn": "Sébastien Crozet"
+    },
+    {
+      "id": "liuwang-kang",
+      "name": "Liuwang Kang",
+      "roleOrg": "深圳市人工智能与机器人研究院副研究员",
+      "bio": "获弗吉尼亚大学计算机科学博士学位，并在该校从事博士后研究。曾任美国 VMASC 高级项目科学家和百度高级工程师，现任深圳市人工智能与机器人研究院副研究员，研究方向包括多智能体协同、6G 赋能的具身智能和复杂系统仿真。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/liuwang-kang.png",
+      "nameEn": "Liuwang Kang"
+    },
+    {
+      "id": "hongjun-zhou",
+      "name": "Hongjun Zhou",
+      "roleOrg": "深圳市人工智能与机器人研究院副研究员",
+      "bio": "深圳市人工智能与机器人研究院副研究员，研究方向包括机器人感知、导航和双足机器人控制。曾在阿里巴巴和华硕智能机器人中心参与服务机器人与家庭机器人研发。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Hongjun Zhou"
+    },
+    {
+      "id": "tiberiu-socaci",
+      "name": "Tiberiu Socaci",
+      "roleOrg": "Makeitfuture 联合创始人兼 CEO",
+      "bio": "Makeitfuture 联合创始人兼 CEO，专注于利用 AI、Make.com、Airtable、n8n 和无代码工具帮助企业实现数字化转型与复杂流程自动化。其团队已交付超过 15,000 项自动化方案，并获 Make.com 评选为 2024 年度 AI 合作伙伴及欧洲、中东和非洲地区排名第一的无代码机构。他目前致力于构建能够从用户纠正中持续学习的自演进应用。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://www.selfevolving.app/",
+        "linkedin": "https://www.linkedin.com/in/tiberiusocaci/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/tiberiu-socaci.png",
+      "nameEn": "Tiberiu Socaci"
+    },
+    {
+      "id": "peter-ide-kostic",
+      "name": "Peter Ide-Kostic",
+      "roleOrg": "OpenMined Foundation 欧盟政策主管",
+      "bio": "负责 OpenMined Foundation 在欧洲的 AI 治理、数据政策和隐私增强技术事务，拥有超过 15 年的欧盟技术政策经验。其工作聚焦可信 AI、负责任的数据访问和欧洲技术主权，并以个人身份参与欧盟委员会前沿 AI 专家论坛。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://openmined.org/",
+        "github": "https://github.com/openmined",
+        "twitter": "https://x.com/openminedorg",
+        "linkedin": "https://linkedin.com/in/peter-ide-kostic-52ab988"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/peter-ide-kostic.png",
+      "nameEn": "Peter Ide-Kostic"
+    },
+    {
+      "id": "tianyi-han",
+      "name": "Tianyi Han",
+      "roleOrg": "Ailuros 解决方案架构师、开源开发者",
+      "bio": "专注于 AI 系统、智能体治理和决策支持工具的解决方案架构师与开源开发者，也是开源智能体治理项目 Ailuros 的创建者。其工作通过运行时策略执行、可追溯性、验证和重放机制，推动 AI 系统实现可控、可审计和可复现。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://everrun.aixagent.io/",
+        "github": "https://github.com/hant916/main-runtimegovernance",
+        "linkedin": "https://www.linkedin.com/in/tianyi-han-58278844/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/tianyi-han.png",
+      "nameEn": "Tianyi Han"
+    },
+    {
+      "id": "jacky-hsu",
+      "name": "Jacky Hsu",
+      "roleOrg": "Ingora 创始人兼 CEO",
+      "bio": "Ingora 创始人兼 CEO，致力于打造面向儿童的新一代 AI 学习伙伴设备。此前在微软拥有超过 20 年产品领导经验，曾负责 SharePoint Copilot 与 Agent 等业务的产品战略和增长。目前探索智能体系统、教育与硬件的结合，以及 AI 伙伴如何重塑儿童的学习和成长方式。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://ingora.ai/",
+        "github": "https://github.com/Ingora-Inc/Qrio",
+        "linkedin": "https://www.linkedin.com/in/jacky-hsu-7ba6341/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/jacky-hsu.png",
+      "nameEn": "Jacky Hsu"
+    },
+    {
+      "id": "yuxuan-zhang",
+      "name": "Yuxuan Zhang",
+      "roleOrg": "智谱 AI 技术布道师",
+      "bio": "智谱 AI 技术布道师。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/zRzRzRzRzRzRzR",
+        "twitter": "https://x.com/zRdianjiao",
+        "linkedin": "https://www.linkedin.com/in/yuxuan-zhang-86a124282/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yuxuan-zhang.png",
+      "nameEn": "Yuxuan Zhang"
+    },
+    {
+      "id": "joaquin-salvachua",
+      "name": "Joaquín Salvachúa",
+      "roleOrg": "马德里理工大学教授",
+      "bio": "马德里理工大学电信学院教授，倡导开放数据、开放协议和开源基础设施。研究聚焦通过分布式治理、可验证溯源与去中心化信任机制推进数据空间架构，并涉及 MLOps、大数据架构、云计算、下一代互联网和形式化方法。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://portalcientifico.upm.es/es/ipublic/researcher/305315",
+        "github": "https://github.com/jsalvachua",
+        "twitter": "https://x.com/jsalvachua",
+        "linkedin": "https://www.linkedin.com/in/jsalvachua/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/joaquin-salvachua.png",
+      "nameEn": "Joaquín Salvachúa"
+    },
+    {
+      "id": "satya-mallick",
+      "name": "Satya Mallick",
+      "roleOrg": "OpenCV.org CEO",
+      "bio": "OpenCV.org CEO，长期从事人工智能、计算机视觉和机器学习领域的创业与研发。他曾联合创办 Sight Commerce，并打造服务超过一亿用户的 AI 产品；同时也是广受欢迎的计算机视觉与 AI 在线课程创作者。",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "website": "https://learnopencv.com/",
+        "github": "https://github.com/spmallick/learnopencv",
+        "twitter": "https://x.com/LearnOpenCV",
+        "linkedin": "https://www.linkedin.com/in/satyamallick/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/satya-mallick.png",
+      "nameEn": "Satya Mallick"
+    },
+    {
+      "id": "kelly-policarpo",
+      "name": "Kelly Policarpo",
+      "roleOrg": "Lumo AI Compliance & Advisory 创始人兼 CEO",
+      "bio": "AI 治理与欧盟市场准入专家，创立 Lumo AI Compliance & Advisory，帮助 AI 企业为进入欧洲市场做好准备。她拥有计算机科学和产品管理背景，专业领域涵盖 AI 合规、隐私、网络安全与产品战略，重点帮助企业理解欧盟《人工智能法案》及相关治理要求。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://www.lumoai.pt/",
+        "twitter": "https://x.com/policarpolumoai"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/kelly-policarpo.png",
+      "nameEn": "Kelly Policarpo"
+    },
+    {
+      "id": "katarzyna-starosławska",
+      "name": "Katarzyna Starosławska",
+      "roleOrg": "LUMI AI Factory / CYFRONET AGH / 欧盟委员会 AI、数据与高性能计算专家",
+      "bio": "拥有超过 20 年技术、战略与创新经验的数据和 AI 专家，为企业董事会、公共机构及欧盟提供咨询。她关注数据质量、互操作性和跨行业协作，并参与欧盟委员会下一代互操作框架专家组、AI 科学工作组及 EuroHPC / LUMI AI Factory 等项目。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/kstaroslawska/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/katarzyna-starosławska.png",
+      "nameEn": "Katarzyna Starosławska"
+    },
+    {
+      "id": "qinying-liao",
+      "name": "Qinying Liao",
+      "roleOrg": "微软首席项目经理",
+      "bio": "拥有十余年微软 Azure AI 经验的资深 AI 产品负责人，专注于语音 AI 与语音智能体。具备产品战略、从零到一产品开发和全球商业化经验，致力于将前沿 AI 技术转化为可规模化的产品和长期业务价值。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/qinying-liao-7458b358/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/qinying-liao.png",
+      "nameEn": "Qinying Liao"
+    },
+    {
+      "id": "feliana-citradewi",
+      "name": "Feliana Citradewi",
+      "roleOrg": "Global AI Assembly 创始人兼 CEO",
+      "bio": "Global AI Assembly 创始人兼 CEO。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://globalaiassembly.com/",
+        "linkedin": "https://www.linkedin.com/in/feliana-citradewi%F0%9F%8E%99%EF%B8%8F-39657a83"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/feliana-citradewi.png",
+      "nameEn": "Feliana Citradewi"
+    },
+    {
+      "id": "markus-tavenrath",
+      "name": "Markus Tavenrath",
+      "roleOrg": "NVIDIA 开发者技术首席工程师",
+      "bio": "NVIDIA 开发者技术首席工程师，长期从事 GPU 实时光线追踪以及场景图、OpenGL、WebGL、Vulkan 和 AI 的性能优化。他是 Vulkan-Hpp 项目的联合创始人，现任 Khronos 机器学习委员会主席。",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/markus-tavenrath/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/markus-tavenrath.png",
+      "nameEn": "Markus Tavenrath"
+    },
+    {
+      "id": "igor-schwarzmann",
+      "name": "Igor Schwarzmann",
+      "roleOrg": "Known Unknowns GmbH 负责人",
+      "bio": "文化与技术交叉领域的战略顾问，拥有 20 年跨医疗、汽车、奢侈品、媒体和政府领域经验，曾服务全球科技公司、欧洲跨国企业及公共机构。他以开源、本地优先的智能体 AI 基础设施运营自己的咨询业务，并主持探讨文化现象与欧洲 AI 主权的播客 Follow the Rabbit。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://igorschwarzmann.com/",
+        "github": "https://github.com/igor",
+        "linkedin": "https://www.linkedin.com/in/igorschwarzmann/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/igor-schwarzmann.png",
+      "nameEn": "Igor Schwarzmann"
+    },
+    {
+      "id": "codingma",
+      "name": "CodingMa",
+      "roleOrg": "华为开源训练软件技术专家",
+      "bio": "硕士毕业于北京大学，长期从事 NLP 与大语言模型训练系统相关工作，负责昇腾训练方向的原生开源生态建设，参与并主导多个后训练社区的技术合作与规划，同时担任 LLaMA-Factory 社区 committer。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/codemayq"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/codingma.png",
+      "nameEn": "CodingMa"
+    },
+    {
+      "id": "anastasia-stasenko",
+      "name": "Anastasia Stasenko",
+      "roleOrg": "Pleias 联合创始人兼 CEO",
+      "bio": "法德 AI 实验室 Pleias 联合创始人兼 CEO，负责面向前沿 AI 系统的数据基础设施。Pleias 创建了拥有超过两万亿 token 的开放多语言大模型训练数据集 Common Corpus，并通过 SYNTH 大规模生产用于主权 AI 模型和智能体应用的开放合成数据。她同时任巴黎第三大学高级副讲师，拥有数字人文和哲学背景。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "website": "https://substack.com/@anastasiastasenko",
+        "linkedin": "https://www.linkedin.com/in/anastasia-stasenko/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/anastasia-stasenko.png",
+      "nameEn": "Anastasia Stasenko"
+    },
+    {
+      "id": "pieter-delobelle",
+      "name": "Pieter Delobelle",
+      "roleOrg": "演讲嘉宾",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Pieter Delobelle"
+    },
+    {
+      "id": "nouamane-tazi",
+      "name": "Nouamane Tazi",
+      "roleOrg": "Hugging Face 机器学习研究工程师",
+      "bio": "Hugging Face 机器学习研究工程师，专注于大语言模型训练。他是 SmolLM3 和 The Ultra Scale Playbook 的共同作者，研究涵盖自然语言处理、深度学习和可扩展 AI 基础设施。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/nouamanetazi",
+        "twitter": "https://x.com/NouamaneTazi",
+        "linkedin": "https://www.linkedin.com/in/nouamanetazi/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/nouamane-tazi.png",
+      "nameEn": "Nouamane Tazi"
+    },
+    {
+      "id": "martino-russi",
+      "name": "Martino Russi",
+      "roleOrg": "Hugging Face 具身机器人工程师",
+      "bio": "LeRobot 开源机器人库核心贡献者，负责构建和维护 Unitree G1 人形机器人技术栈，也是开源力反馈手部外骨骼 Project Homunculus 的创建者。他拥有神经科学、AI 和机器人学背景，致力于让具身智能技术更加普及。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/nepyope",
+        "twitter": "https://x.com/NepYope",
+        "linkedin": "https://www.linkedin.com/in/martino-russi/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/martino-russi.png",
+      "nameEn": "Martino Russi"
+    }
+  ]
+}

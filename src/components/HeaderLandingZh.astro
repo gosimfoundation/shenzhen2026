@@ -24,6 +24,10 @@ const links = [
     link: `${anchorBase}#tracks`,
   },
   {
+    text: "演讲嘉宾",
+    link: "/zh/speakers/",
+  },
+  {
     text: "同期活动",
     subLinks: [
       {
@@ -431,6 +435,14 @@ const links = [
     .language-dropdown {
       position: absolute;
       left: 130px;
+    }
+  }
+
+  /* Keep the expanded navigation clear of the desktop CTAs on narrower
+     laptop viewports. The CFP action remains available in the mobile menu. */
+  @media screen and (min-width: 1071px) and (max-width: 1300px) {
+    .header-buttons :global(.btn.light) {
+      display: none;
     }
   }
 </style>

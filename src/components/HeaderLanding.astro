@@ -12,6 +12,10 @@ const rawLinks = [
     anchor: "#tracks",
   },
   {
+    text: "Speakers",
+    link: "/speakers/",
+  },
+  {
     text: "Co-located Events",
     subLinks: [
       {
@@ -435,6 +439,15 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
     .language-dropdown {
       position: absolute;
       left: 130px;
+    }
+  }
+
+  /* Keep the expanded seven-item navigation clear of the desktop CTAs on
+     narrower laptop viewports. The CFP action remains in the mobile menu and
+     elsewhere on the page. */
+  @media screen and (min-width: 1071px) and (max-width: 1300px) {
+    .header-buttons :global(.btn.light) {
+      display: none;
     }
   }
 </style>
