@@ -16,6 +16,10 @@ const domain = "https://shenzhen2026.gosim.org";
 
 const slug = Astro.url.pathname;
 
+const socialImage = new URL("/images/social-preview.jpg", domain).href;
+
+const socialImageAlt = "GOSIM Shenzhen 2026, October 15–17, 2026 in Shenzhen, China";
+
 ---
 
 <meta charset="UTF-8" />
@@ -25,14 +29,14 @@ const slug = Astro.url.pathname;
 <title>{newTitle}</title>
 <meta name="title" content={newTitle}/>
 <meta property="og:title" content={newTitle}/>
-<meta property="twitter:title" content={newTitle}/>
+<meta name="twitter:title" content={newTitle}/>
 
 <meta property="og:site_name" content="GOSIM Shenzhen 2026" />
-<meta property="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <link rel="canonical" href={`${domain}${slug}`} />
 <meta property="og:url" content={`${domain}${slug}`} />
-<meta property="twitter:url" content={`${domain}${slug}`} />
+<meta name="twitter:url" content={`${domain}${slug}`} />
 
 <link rel="sitemap" href={`${domain}/sitemap-index.xml`} />
 
@@ -46,14 +50,18 @@ const slug = Astro.url.pathname;
 
 <link rel="icon" href="/images/favicon-gosim.png" type="image/svg+xml">
 
-<meta property="og:image" content="/images/thumbnail.jpg" />
-<meta property="twitter:image" content="/images/thumbnail.jpg" />
+<meta property="og:image" content={socialImage} />
+<meta property="og:image:secure_url" content={socialImage} />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:alt" content={socialImageAlt} />
+<meta name="twitter:image" content={socialImage} />
+<meta name="twitter:image:alt" content={socialImageAlt} />
 <meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="800" />
+<meta property="og:image:height" content="630" />
 
 <meta name="description" content={newDescription} />
 <meta property="og:description" content={newDescription} />
-<meta property="twitter:description" content={newDescription} />
+<meta name="twitter:description" content={newDescription} />
 
 {pageTransitionName === "Home" &&
     <link rel="prefetch" href="/videos/shenzhen-hero-poster.jpg" as="image" type="image/jpeg" />
