@@ -1,0 +1,269 @@
+---
+import Button from "components/Button.astro";
+
+interface Props {
+  id?: string;
+  eyebrow: string;
+  title: string;
+  theme: string;
+  dateLabel: string;
+  date: string;
+  text: string;
+  image: string;
+  imageAlt: string;
+  link: string;
+  linkLabel: string;
+}
+
+const {
+  id = "co-located-event",
+  eyebrow,
+  title,
+  theme,
+  dateLabel,
+  date,
+  text,
+  image,
+  imageAlt,
+  link,
+  linkLabel,
+} = Astro.props;
+---
+
+<section
+  class="co-located-feature"
+  id={id}
+  data-theme-section="dark"
+  data-bg-section="dark-tint"
+>
+  <img
+    class="event-art"
+    src={image}
+    alt={imageAlt}
+    width="1672"
+    height="941"
+    loading="eager"
+    decoding="async"
+  />
+  <div class="event-shade" aria-hidden="true"></div>
+
+  <div class="container wide event-inner">
+    <div class="event-copy">
+      <div class="event-kicker">
+        <p class="event-eyebrow">{eyebrow}</p>
+        <p class="event-theme">{theme}</p>
+      </div>
+
+      <h2>{title}</h2>
+
+      <div class="event-date-block">
+        <p class="event-label">{dateLabel}</p>
+        <p class="event-date">{date}</p>
+      </div>
+
+      <p class="event-description">{text}</p>
+
+      <div class="event-actions">
+        <Button
+          text={linkLabel}
+          link={link}
+          openInNewTab={true}
+          class="btn primary xl btn-hover glass-orange"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .co-located-feature {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #141209;
+  }
+
+  .event-shade {
+    position: absolute;
+    inset: 0;
+  }
+
+  .event-art {
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    z-index: 0;
+    display: block;
+    width: auto !important;
+    max-width: none;
+    height: 116% !important;
+    object-fit: contain;
+  }
+
+  .event-shade {
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 10% 82%, rgba(248, 74, 16, 0.18), transparent 34%),
+      linear-gradient(90deg, #141209 0%, rgba(20, 18, 9, 0.98) 30%, rgba(20, 18, 9, 0.86) 48%, rgba(20, 18, 9, 0.36) 67%, rgba(20, 18, 9, 0) 84%);
+  }
+
+  .event-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: clamp(3rem, 5vw, 5rem);
+    padding-bottom: clamp(3rem, 5vw, 5rem);
+  }
+
+  .event-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: min(40rem, 52%);
+  }
+
+  .event-kicker {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .event-eyebrow,
+  .event-label,
+  .event-theme {
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .event-eyebrow {
+    color: #f84a10;
+  }
+
+  .event-eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 1.8rem;
+    height: 2px;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+    background: currentColor;
+  }
+
+  .event-theme {
+    padding: 0.5rem 0.7rem;
+    color: rgba(246, 243, 231, 0.92);
+    border: 1px solid rgba(248, 74, 16, 0.48);
+    background: rgba(20, 18, 9, 0.4);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+    backdrop-filter: blur(10px) saturate(130%);
+  }
+
+  .event-copy h2 {
+    max-width: 39rem;
+    margin: 0;
+    color: #f6f3e7;
+    font-size: clamp(3rem, 4.15vw, 4.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+
+  .event-date-block {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.7rem 1rem;
+    margin-top: 1.7rem;
+  }
+
+  .event-label {
+    color: rgba(246, 243, 231, 0.58);
+  }
+
+  .event-date,
+  .event-description {
+    margin: 0;
+  }
+
+  .event-date {
+    color: #f6f3e7;
+    font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .event-description {
+    max-width: 36rem;
+    margin-top: 1.25rem;
+    color: rgba(246, 243, 231, 0.72);
+    font-size: clamp(0.95rem, 1.15vw, 1.1rem);
+    line-height: 1.6;
+  }
+
+  .event-actions {
+    display: flex;
+    align-self: flex-start;
+    width: fit-content;
+    margin-top: 2.5rem;
+  }
+
+  .event-actions :global(.btn),
+  .event-actions :global(.btn-click) {
+    width: auto !important;
+  }
+
+  @media screen and (max-width: 840px) {
+    .event-shade {
+      background:
+        linear-gradient(90deg, rgba(20, 18, 9, 0.98) 0%, rgba(20, 18, 9, 0.88) 58%, rgba(20, 18, 9, 0.3) 100%),
+        linear-gradient(0deg, rgba(20, 18, 9, 0.42), transparent 52%);
+    }
+
+    .event-inner {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .event-copy {
+      width: min(34rem, 86%);
+    }
+
+    .event-copy h2 {
+      font-size: clamp(2.5rem, 8.5vw, 4rem);
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    .event-shade {
+      background: linear-gradient(90deg, rgba(20, 18, 9, 0.92), rgba(20, 18, 9, 0.68));
+    }
+
+    .event-inner {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .event-copy {
+      width: 100%;
+    }
+
+    .event-copy h2 {
+      font-size: clamp(2.4rem, 12vw, 3.2rem);
+    }
+
+    .event-description {
+      max-width: 28rem;
+    }
+  }
+</style>

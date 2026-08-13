@@ -3,6 +3,7 @@
 import Layout from "layouts/LayoutLandingZh.astro"
 import Hero from "components/Hero.astro"
 import ProgramSection from "components/ProgramSection.astro"
+import CoLocatedEventFeature from "components/CoLocatedEventFeature.astro"
 import VenueDetails from "components/VenueDetails.astro"
 import EventGallery from "components/EventGallery.astro"
 import PreviousEvents from "components/PreviousEvents.astro"
@@ -133,6 +134,20 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
         linkLabel: "查看黑客松",
       },
     ]}
+  />
+
+  <CoLocatedEventFeature
+    id="rustchinaconf"
+    eyebrow="同期活动"
+    title="RustChinaConf 2026 · 深圳"
+    theme="Rust and AI"
+    dateLabel="大会时间"
+    date="2026 年 10 月 15–17 日"
+    text="RustChinaConf 与 GOSIM Shenzhen 2026 同期举办，聚焦 Rust for AI、AI for Rust 与 Rust in Production，汇聚 Rust 开发者、开源维护者与产业实践者。"
+    image="https://rustchinaconf.org/hero/rustchinaconf-shenzhen-2026-banner.png"
+    imageAlt="RustChinaConf 2026 深圳大会主视觉"
+    link="https://rustchinaconf.org/zh-CN/"
+    linkLabel="了解 RustChinaConf"
   />
 
   <VenueDetails
