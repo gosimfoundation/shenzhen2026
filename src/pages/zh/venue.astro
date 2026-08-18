@@ -7,10 +7,11 @@ import VenueInfo from "components/VenueInfo.astro"
 <Layout
   title="大会场地 – GOSIM 深圳 2026"
   description="GOSIM 深圳 2026 大会场地：深圳南山伊敦酒店。"
-  navBackground="light"
+  navDarkMode={true}
+  navBackground="header-home"
   pageTransitionName="Venue"
 >
-  <HeroText title="深圳南山伊敦酒店" lightgray />
+  <HeroText title="深圳南山伊敦酒店" lightgray video={false} />
 
   <VenueInfo
     subtitle="大会场地"

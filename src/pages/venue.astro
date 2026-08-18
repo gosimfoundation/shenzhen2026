@@ -7,10 +7,11 @@ import VenueInfo from "components/VenueInfo.astro"
 <Layout
   title="Venue – GOSIM Shenzhen 2026"
   description="Venue information for GOSIM Shenzhen 2026 at ADEN Hotel Shenzhen Nanshan."
-  navBackground="light"
+  navDarkMode={true}
+  navBackground="header-home"
   pageTransitionName="Venue"
 >
-  <HeroText title="ADEN Hotel Shenzhen Nanshan" lightgray />
+  <HeroText title="ADEN Hotel Shenzhen Nanshan" lightgray video={false} />
 
   <VenueInfo
     subtitle="Venue"

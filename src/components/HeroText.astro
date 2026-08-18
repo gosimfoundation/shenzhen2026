@@ -3,22 +3,40 @@ interface Props {
     title: string;
     text?: string;
     lightgray?: boolean;
+    video?: boolean;
 }
 
-const { title, text, lightgray } = Astro.props;
+const { title, text, lightgray, video = true } = Astro.props;
 const hasSlot = Astro.slots.has('default');
 const hasRightCol = text || hasSlot;
+const heroVideo = "/videos/shenzhen-hero-compressed.mp4";
+const heroPoster = "/videos/shenzhen-hero-poster.jpg";
 ---
 
 <section
-    class="section default-header"
-    data-theme-section="light"
-    data-bg-section={lightgray ? 'lightgray' : 'light'}
+    class={`section default-header ${video ? 'default-header-video' : 'default-header-static'} ${lightgray ? 'has-lightgray-followup' : ''}`}
+    data-theme-section="dark"
+    data-bg-section="header-home"
     data-scroll-section
 >
-    <div class="gradient-circle-wrap">
-        <div class="gradient-circle" />
-    </div>
+    {video && (
+        <div class="default-header-media" aria-hidden="true">
+            <video
+                class="default-header-video-bg"
+                autoplay
+                loop
+                muted
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+                poster={heroPoster}
+                tabindex="-1"
+            >
+                <source src={heroVideo} type="video/mp4" />
+            </video>
+            <div class="default-header-scrim" />
+        </div>
+    )}
 
     <div class="container">
         <div class={`row ${hasRightCol ? 'grid' : ''}`}>
@@ -26,6 +44,7 @@ const hasRightCol = text || hasSlot;
 
             <div class="col col-title">
                 <div class="col-row col-row-title">
+                    <span class="default-header-kicker">GOSIM · SHENZHEN 2026</span>
                     <h1>{title.split("\n").map((line, i) => (
                         <Fragment>{i > 0 && <br />}{line}</Fragment>
                     ))}</h1>
@@ -45,8 +64,62 @@ const hasRightCol = text || hasSlot;
 </section>
 
 <style>
+    .default-header-video {
+        isolation: isolate;
+        overflow: hidden;
+        background: #0d0c09;
+    }
+
+    .default-header-static {
+        isolation: isolate;
+        overflow: hidden;
+        background: transparent;
+    }
+
+    .default-header-media,
+    .default-header-video-bg,
+    .default-header-scrim {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .default-header-media {
+        z-index: -1;
+        background: #0d0c09;
+    }
+
+    .default-header-video-bg {
+        object-fit: cover;
+        object-position: center 48%;
+        transform: scale(1.015);
+    }
+
+    .default-header-scrim {
+        background:
+            linear-gradient(90deg, rgba(7, 7, 5, 0.48) 0%, rgba(7, 7, 5, 0.16) 58%, rgba(7, 7, 5, 0.34) 100%),
+            linear-gradient(180deg, rgba(7, 7, 5, 0.58) 0%, rgba(7, 7, 5, 0.18) 40%, rgba(7, 7, 5, 0.86) 100%);
+    }
+
     .default-header .row.grid {
         align-items: center;
+    }
+
+    .default-header-kicker {
+        display: block;
+        margin-bottom: 1.15rem;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        color: rgba(255, 255, 255, 0.72);
+    }
+
+    .default-header-video h1 {
+        max-width: 12ch;
+        color: #fff;
+        text-wrap: balance;
+        text-shadow: 0 3px 24px rgba(0, 0, 0, 0.48);
     }
 
     .hero-text-right {
@@ -54,5 +127,43 @@ const hasRightCol = text || hasSlot;
         align-items: center;
         justify-content: center;
         text-align: center;
+    }
+
+    .default-header-video .hero-text-right :global(p) {
+        color: rgba(255, 255, 255, 0.84);
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+    }
+
+    .default-header-video .border-bottom {
+        background: rgba(255, 255, 255, 0.28);
+    }
+
+    @media screen and (max-width: 860px) {
+        .default-header-video .row {
+            gap: 1.5rem;
+        }
+
+        .default-header-video h1 {
+            max-width: 15ch;
+        }
+
+        .hero-text-right {
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        .default-header-video .hero-text-right :global(.styled-content) {
+            max-width: 38rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .default-header-video-bg {
+            display: none;
+        }
+
+        .default-header-media {
+            background: #0d0c09 url('/videos/shenzhen-hero-poster.jpg') center 48% / cover no-repeat;
+        }
     }
 </style>
