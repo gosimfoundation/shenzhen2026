@@ -11,6 +11,8 @@ interface Props {
   email?: string;
   /** partner categories to skip (e.g. ["host"]) */
   excludeCategories?: string[];
+  /** individual logos to skip when they are featured elsewhere on the page */
+  excludeImages?: string[];
 }
 
 const {
@@ -19,6 +21,7 @@ const {
   contactText = "Interested in sponsoring GOSIM Shenzhen 2026? We'd love to hear from you.",
   email = "support@gosim.org",
   excludeCategories = ["host"],
+  excludeImages = [],
 } = Astro.props;
 
 // Rough prominence ranking — better-known sponsors sort to the front, everyone
@@ -39,7 +42,12 @@ const isRemote = (s?: string): boolean => Boolean(s && /^https?:\/\//.test(s));
 // Flatten partners, drop excluded categories, dedupe by logo, sort by prominence.
 const seen = new Set<string>();
 const logos = (sponsorsData.partners ?? [])
-  .filter((p: any) => p.image && !excludeCategories.includes(p.category))
+  .filter(
+    (p: any) =>
+      p.image &&
+      !excludeCategories.includes(p.category) &&
+      !excludeImages.includes(p.image),
+  )
   .filter((p: any) => {
     if (seen.has(p.image)) return false;
     seen.add(p.image);

@@ -4,6 +4,7 @@ import Layout from "layouts/LayoutLandingZh.astro";
 import GetTickets from "components/GetTickets.astro";
 import HeroText from "components/HeroText.astro";
 import AllSponsors from "components/Sponsors.astro";
+import PastSponsors from "components/PastSponsors.astro";
 ---
 
 <Layout
@@ -30,5 +31,12 @@ import AllSponsors from "components/Sponsors.astro";
       link: "https://cfp.gosim.org",
       openInNewTab: true,
     }}
+  />
+
+  <PastSponsors
+    title="往届支持者（部分）"
+    intro="以下是曾支持 GOSIM 全球往届活动的部分组织。"
+    contactText="有兴趣赞助 GOSIM Shenzhen 2026？欢迎随时联系我们。"
+    excludeImages={["csdn.png", "kaiyuanshe.png"]}
   />
 </Layout>

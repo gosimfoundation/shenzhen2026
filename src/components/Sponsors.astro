@@ -61,7 +61,7 @@ const isRemoteImage = (image?: string): boolean =>
                                             <div class="col">
                                                 <div class="single-partners-card card-hover">
                                                     {partner.url && (
-                                                        <a class="sponsor-link-overlay" href={partner.url} target="_blank" rel="noopener noreferrer" aria-label="Sponsor website" />
+                                                        <a class="sponsor-link-overlay" href={partner.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${partner.name} website`} />
                                                     )}
                                                     <div class="overlay card-fill" />
                                                     <div class={`card-logo boxed-logo${partner.logoClass ? ` ${partner.logoClass}` : ''}`}>
@@ -70,7 +70,7 @@ const isRemoteImage = (image?: string): boolean =>
                                                                 <img
                                                                     class="sponsor-logo-image"
                                                                     src={partner.image}
-                                                                    alt="Sponsor Logo"
+                                                                    alt={`${partner.name} logo`}
                                                                     loading="lazy"
                                                                     decoding="async"
                                                                 />
@@ -87,7 +87,7 @@ const isRemoteImage = (image?: string): boolean =>
                                                                             "jpg",
                                                                             "png",
                                                                         ]}
-                                                                        alt="Sponsor Logo"
+                                                                        alt={`${partner.name} logo`}
                                                                         widths={[
                                                                             75,
                                                                             150,
@@ -123,5 +123,18 @@ const isRemoteImage = (image?: string): boolean =>
         inset: 0;
         z-index: 3;
         border-radius: inherit;
+    }
+
+    .single-partners-card .boxed-logo.community-logo-large {
+        width: 100%;
+        height: 100%;
+    }
+
+    .boxed-logo.community-logo-large > * {
+        max-width: 98%;
+    }
+
+    .boxed-logo.community-logo-medium > * {
+        max-width: 90%;
     }
 </style>

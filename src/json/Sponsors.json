@@ -29,15 +29,36 @@
       "name": { "en": "Silver Sponsor", "zh": "白银赞助商", "fr": "Sponsor Argent" }
     },
     {
-      "id": "supporting-organizations",
-      "name": { "en": "Supporting Partner", "zh": "支持伙伴", "fr": "Partenaire de soutien" }
+      "id": "community-partners",
+      "name": { "en": "Community Partners", "zh": "合作社区", "fr": "Partenaires communautaires" }
     }
   ],
   "partners": [
     {
       "category": "host",
       "image": "gosim.png",
+      "name": "GOSIM",
       "url": "https://gosim.org"
+    },
+    {
+      "category": "co-organizer",
+      "image": "csdn.png",
+      "name": "CSDN",
+      "url": "https://www.csdn.net"
+    },
+    {
+      "category": "community-partners",
+      "image": "rte-developer-community.png",
+      "name": "RTE Developer Community",
+      "logoClass": "community-logo-large",
+      "url": "https://www.rtecommunity.dev/"
+    },
+    {
+      "category": "community-partners",
+      "image": "kaiyuanshe-community.png",
+      "name": "Kaiyuanshe",
+      "logoClass": "community-logo-medium",
+      "url": "https://kaiyuanshe.cn"
     }
   ]
 }
