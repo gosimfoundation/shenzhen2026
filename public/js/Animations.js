@@ -220,7 +220,10 @@ function initBasicFunctions() {
    });
 
    // Filter
-   $('[data-filter-section]').each(function () {
+   // Speaker filters have their own multi-select controller. Binding this
+   // legacy single-select handler as well makes a deselection get interpreted
+   // as a new selection and rewrites the state again after the fade timeout.
+   $('[data-filter-section]:not([data-speaker-filter-state])').each(function () {
 
       var filterSection = $(this);
       var filterGroup = $('[data-filter-group]');
