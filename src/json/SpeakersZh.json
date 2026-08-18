@@ -8,47 +8,41 @@
     {
       "id": "sz26-agentic-ai-summit",
       "name": "Agentic AI Summit",
-      "nameZh": "智能体 AI 峰会"
+      "nameZh": "智能体 AI 峰会",
+      "group": "tracks"
     },
     {
       "id": "sz26-agentic-ai-on-edge",
       "name": "Agentic AI on Edge",
-      "nameZh": "边缘智能体 AI"
+      "nameZh": "边缘智能体 AI",
+      "group": "tracks"
     },
     {
       "id": "sz26-agentic-os-app",
       "name": "Agentic OS & App",
-      "nameZh": "智能体操作系统与应用"
+      "nameZh": "智能体操作系统与应用",
+      "group": "tracks"
+    },
+    {
+      "id": "sz26-agentic-device",
+      "name": "Agentic Device",
+      "nameZh": "智能体设备",
+      "group": "tracks"
     },
     {
       "id": "sz26-open-source-model",
       "name": "Open Source Models & Infra",
-      "nameZh": "开源模型与基础设施"
+      "nameZh": "开源模型与基础设施",
+      "group": "tracks"
     },
     {
       "id": "sz26-open-source-robotics",
       "name": "Open Source Robotics",
-      "nameZh": "开源机器人"
+      "nameZh": "开源机器人",
+      "group": "tracks"
     }
   ],
   "speakers": [
-    {
-      "id": "bryce-adelstein-lelbach",
-      "name": "Bryce Adelstein Lelbach",
-      "roleOrg": "NVIDIA 首席工程师",
-      "bio": "Bryce Adelstein Lelbach 长期从事编程语言、编译器和基础库开发，致力于让并行编程更易于使用。他是 NVIDIA 首席工程师，创立了核心 C++ 计算库团队，目前负责推动 NVIDIA 在编程语言、编译器和核心库方面路线图的 Vanguard Programming 团队。他曾担任 C++ 库演进工作组及美国编程语言标准委员会主席，并参与并发原语、并行算法、sender 和多维数组等标准工作。",
-      "tags": [
-        "sz26-agentic-ai-summit"
-      ],
-      "socialLinks": {
-        "github": "https://github.com/brycelelbach",
-        "twitter": "https://twitter.com/blelbach",
-        "linkedin": "https://www.linkedin.com/in/brycelelbach"
-      },
-      "draft": false,
-      "image": "/images/speakers/confirmed/bryce-adelstein-lelbach.png",
-      "nameEn": "Bryce Adelstein Lelbach"
-    },
     {
       "id": "charles-yang",
       "name": "Charles Yang",
@@ -68,7 +62,7 @@
     {
       "id": "xun-wang",
       "name": "Xun Wang",
-      "roleOrg": "讲师",
+      "roleOrg": "联合讲师",
       "bio": "",
       "tags": [
         "sz26-open-source-robotics"
@@ -80,7 +74,7 @@
     {
       "id": "roy-wang",
       "name": "Roy Wang",
-      "roleOrg": "讲师",
+      "roleOrg": "联合讲师",
       "bio": "",
       "tags": [
         "sz26-open-source-robotics"
@@ -92,7 +86,7 @@
     {
       "id": "george-wang",
       "name": "George Wang",
-      "roleOrg": "讲师",
+      "roleOrg": "联合讲师",
       "bio": "",
       "tags": [
         "sz26-open-source-robotics"
@@ -122,7 +116,7 @@
       "roleOrg": "字节跳动软件工程师",
       "bio": "字节跳动全球流量基础设施团队软件工程师，专注于虚拟机与 WebAssembly，并关注操作系统、分布式系统、云原生技术、边缘计算和无服务器架构。",
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-ai-on-edge"
       ],
       "socialLinks": {
         "github": "https://github.com/wilsonwang371",
@@ -131,6 +125,22 @@
       "draft": false,
       "image": "/images/speakers/confirmed/wilson-wang.png",
       "nameEn": "Wilson Wang"
+    },
+    {
+      "id": "peng-zhang",
+      "name": "张鹏",
+      "roleOrg": "建元科技创始人",
+      "bio": "张鹏，建元科技创始人，DHttp 布道师。",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "website": "https://www.dhttp.net/",
+        "github": "https://github.com/genmeta/dhttp"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/peng-zhang.png",
+      "nameEn": "Peng Zhang"
     },
     {
       "id": "shiwei-liu",
@@ -166,19 +176,6 @@
       "nameEn": "Jiaqi Zheng"
     },
     {
-      "id": "quanshi-zhang",
-      "name": "张拳石",
-      "roleOrg": "上海交通大学副教授、博士生导师",
-      "bio": "上海交通大学计算机学院长聘副教授、博士生导师，入选国家级海外高层次人才引进计划，获 ACM China 新星奖。2014 年获东京大学博士学位，2014 至 2018 年在 UCLA 从事博士后研究，在神经网络可解释性方向取得多项具有国际影响力的成果，并担任 TMLR 责任编辑以及 NeurIPS、ICML 等会议领域主席。",
-      "tags": [
-        "sz26-agentic-ai-summit"
-      ],
-      "socialLinks": {},
-      "draft": false,
-      "image": "/images/speakers/confirmed/quanshi-zhang.png",
-      "nameEn": "Quanshi Zhang"
-    },
-    {
       "id": "sebastien-crozet",
       "name": "Sébastien Crozet",
       "roleOrg": "Dimforge 创始人",
@@ -210,7 +207,7 @@
     {
       "id": "hongjun-zhou",
       "name": "Hongjun Zhou",
-      "roleOrg": "深圳市人工智能与机器人研究院副研究员",
+      "roleOrg": "联合讲师",
       "bio": "深圳市人工智能与机器人研究院副研究员，研究方向包括机器人感知、导航和双足机器人控制。曾在阿里巴巴和华硕智能机器人中心参与服务机器人与家庭机器人研发。",
       "tags": [
         "sz26-open-source-robotics"
@@ -254,23 +251,6 @@
       "nameEn": "Peter Ide-Kostic"
     },
     {
-      "id": "tianyi-han",
-      "name": "Tianyi Han",
-      "roleOrg": "Ailuros 解决方案架构师、开源开发者",
-      "bio": "专注于 AI 系统、智能体治理和决策支持工具的解决方案架构师与开源开发者，也是开源智能体治理项目 Ailuros 的创建者。其工作通过运行时策略执行、可追溯性、验证和重放机制，推动 AI 系统实现可控、可审计和可复现。",
-      "tags": [
-        "sz26-agentic-ai-summit"
-      ],
-      "socialLinks": {
-        "website": "https://everrun.aixagent.io/",
-        "github": "https://github.com/hant916/main-runtimegovernance",
-        "linkedin": "https://www.linkedin.com/in/tianyi-han-58278844/"
-      },
-      "draft": false,
-      "image": "/images/speakers/confirmed/tianyi-han.png",
-      "nameEn": "Tianyi Han"
-    },
-    {
       "id": "jacky-hsu",
       "name": "许建志",
       "roleOrg": "Ingora 创始人兼 CEO",
@@ -286,41 +266,6 @@
       "draft": false,
       "image": "/images/speakers/confirmed/jacky-hsu.png",
       "nameEn": "Jacky Hsu"
-    },
-    {
-      "id": "yuxuan-zhang",
-      "name": "张昱轩",
-      "roleOrg": "智谱 AI 技术布道师",
-      "bio": "智谱 AI 技术布道师。",
-      "tags": [
-        "sz26-open-source-model"
-      ],
-      "socialLinks": {
-        "github": "https://github.com/zRzRzRzRzRzRzR",
-        "twitter": "https://x.com/zRdianjiao",
-        "linkedin": "https://www.linkedin.com/in/yuxuan-zhang-86a124282/"
-      },
-      "draft": false,
-      "image": "/images/speakers/confirmed/yuxuan-zhang.png",
-      "nameEn": "Yuxuan Zhang"
-    },
-    {
-      "id": "joaquin-salvachua",
-      "name": "Joaquín Salvachúa",
-      "roleOrg": "马德里理工大学教授",
-      "bio": "马德里理工大学电信学院教授，倡导开放数据、开放协议和开源基础设施。研究聚焦通过分布式治理、可验证溯源与去中心化信任机制推进数据空间架构，并涉及 MLOps、大数据架构、云计算、下一代互联网和形式化方法。",
-      "tags": [
-        "sz26-agentic-ai-summit"
-      ],
-      "socialLinks": {
-        "website": "https://portalcientifico.upm.es/es/ipublic/researcher/305315",
-        "github": "https://github.com/jsalvachua",
-        "twitter": "https://x.com/jsalvachua",
-        "linkedin": "https://www.linkedin.com/in/jsalvachua/"
-      },
-      "draft": false,
-      "image": "/images/speakers/confirmed/joaquin-salvachua.png",
-      "nameEn": "Joaquín Salvachúa"
     },
     {
       "id": "satya-mallick",
@@ -450,6 +395,21 @@
       "nameEn": "CodingMa"
     },
     {
+      "id": "meiyi-qiang",
+      "name": "强美伊",
+      "roleOrg": "元枢智汇联合创始人",
+      "bio": "OpenDCAI 系列开源项目核心技术开发者，重点参与 AI 数据准备系统 DataFlow 与动态训练系统 DataFlex 的研发与落地，研究方向涵盖 Data-Centric AI、数据—模型协同训练与动态数据优化。个人累计发表 CCF-A 类期刊及会议论文 7 篇，现作为元枢智汇联合创始人，负责 AI 数据基础设施的解决方案与商业落地。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/Qmeiyi"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/meiyi-qiang.png",
+      "nameEn": "Meiyi Qiang"
+    },
+    {
       "id": "anastasia-stasenko",
       "name": "Anastasia Stasenko",
       "roleOrg": "Pleias 联合创始人兼 CEO",
@@ -468,7 +428,7 @@
     {
       "id": "pieter-delobelle",
       "name": "Pieter Delobelle",
-      "roleOrg": "讲师",
+      "roleOrg": "联合讲师",
       "bio": "",
       "tags": [
         "sz26-open-source-model"
@@ -510,6 +470,285 @@
       "draft": false,
       "image": "/images/speakers/confirmed/martino-russi.png",
       "nameEn": "Martino Russi"
+    },
+    {
+      "id": "bryce-adelstein-lelbach",
+      "name": "Bryce Adelstein Lelbach",
+      "roleOrg": "NVIDIA 首席工程师",
+      "bio": "Bryce Adelstein Lelbach 长期从事编程语言、编译器和基础库开发，致力于让并行编程更易于使用。他是 NVIDIA 首席工程师，创立了核心 C++ 计算库团队，目前负责推动 NVIDIA 在编程语言、编译器和核心库方面路线图的 Vanguard Programming 团队。他曾担任 C++ 库演进工作组及美国编程语言标准委员会主席，并参与并发原语、并行算法、sender 和多维数组等标准工作。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/brycelelbach",
+        "twitter": "https://twitter.com/blelbach",
+        "linkedin": "https://www.linkedin.com/in/brycelelbach"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/bryce-adelstein-lelbach.png",
+      "nameEn": "Bryce Adelstein Lelbach"
+    },
+    {
+      "id": "quanshi-zhang",
+      "name": "张拳石",
+      "roleOrg": "上海交通大学副教授、博士生导师",
+      "bio": "上海交通大学计算机学院长聘副教授、博士生导师，入选国家级海外高层次人才引进计划，获 ACM China 新星奖。2014 年获东京大学博士学位，2014 至 2018 年在 UCLA 从事博士后研究，在神经网络可解释性方向取得多项具有国际影响力的成果，并担任 TMLR 责任编辑以及 NeurIPS、ICML 等会议领域主席。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/quanshi-zhang.png",
+      "nameEn": "Quanshi Zhang"
+    },
+    {
+      "id": "anni-lai",
+      "name": "Anni Lai",
+      "roleOrg": "LF AI & Data 生成式 AI 公共社区联合主席",
+      "bio": "Anni Lai 是 LF AI & Data 生成式 AI 公共社区联合主席，并担任 LF AI & Data 董事会成员。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/anni-lai.png",
+      "nameEn": "Anni Lai"
+    },
+    {
+      "id": "zhihong-mo",
+      "name": "莫志宏",
+      "roleOrg": "嘉立创 EDA 生态社区及大学计划负责人",
+      "bio": "深圳嘉立创科技集团股份有限公司高校教育经理、生态平台负责人，立创开源硬件平台发起人。致力于国产 PCB 设计工具在教育领域的普及推广与开源硬件生态建设，主导平台从 0 到 1 的建设与运营，连接开发者、高校与产业。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "website": "https://oshwhub.com/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhihong-mo.png",
+      "nameEn": "Zhihong Mo"
+    },
+    {
+      "id": "bartlomiej-szejny",
+      "name": "Bartłomiej Szejny",
+      "roleOrg": "AI Poland 董事会成员",
+      "bio": "技术创业者、独立 AI 研究者及 AI Poland 董事会成员，致力于从商业、技术和战略角度推动波兰人工智能生态发展。他的研究聚焦自主具身智能体，以及受神经生物学启发的控制机制。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://aipoland.org/",
+        "linkedin": "https://www.linkedin.com/in/bartlomiej-szejny-9627b051/"
+      },
+      "draft": false,
+      "nameEn": "Bartłomiej Szejny"
+    },
+    {
+      "id": "sean-dong",
+      "name": "Sean Dong",
+      "roleOrg": "华为仓颉编程语言团队产品管理总监",
+      "bio": "曾任 Microsoft Azure 企业云专家，并负责华为移动 AI 工具、昇腾 MindStudio、HarmonyOS DevEco Studio 以及仓颉/毕昇 C 语言 IDE。自 2025 年初起探索 AI Agent 驱动的研发模式，并开源已被多个大型工程团队采用的 ACEHarness。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Sean Dong"
+    },
+    {
+      "id": "birgitta-boeckeler",
+      "name": "Birgitta Böckeler",
+      "roleOrg": "杰出工程师",
+      "bio": "拥有 20 多年技术与软件咨询经验的软件开发者、架构师和技术负责人，长期观察组织和团队交付软件的成功与失败。她最近任职于 Thoughtworks，担任杰出工程师，并自 2023 年起专注于 AI 辅助软件交付。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://birgitta.info/",
+        "linkedin": "https://www.linkedin.com/in/birgittaboeckeler/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/birgitta-boeckeler.png",
+      "nameEn": "Birgitta Böckeler"
+    },
+    {
+      "id": "zixi-liu",
+      "name": "刘子夕",
+      "roleOrg": "华为高级工程师",
+      "bio": "南京大学博士，华为 2012 实验室编程语言实验室员工，从事编程语言与 AI 相关研究。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zixi-liu.png",
+      "nameEn": "Zixi Liu"
+    },
+    {
+      "id": "fahua-jin",
+      "name": "金发华",
+      "roleOrg": "EMQ 联合创始人兼 CTO",
+      "bio": "EMQ 联合创始人兼 CTO，负责公司的产品与研发。多个开源项目的发起者和参与者，前 IBM 中国软件开发中心高级架构师。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/fahua-jin.png",
+      "nameEn": "Fahua Jin"
+    },
+    {
+      "id": "chenghao-rong",
+      "name": "Chenghao Rong",
+      "roleOrg": "华为高级软件工程师",
+      "bio": "毕业于清华大学，2024 年加入华为，从事 AI 基础设施研发，重点关注后训练和大语言模型推理。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Chenghao Rong"
+    },
+    {
+      "id": "yixiang-zhang",
+      "name": "Yixiang Zhang",
+      "roleOrg": "联合讲师",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Yixiang Zhang"
+    },
+    {
+      "id": "yongqiang-ma",
+      "name": "Yongqiang Ma",
+      "roleOrg": "联合讲师",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Yongqiang Ma"
+    },
+    {
+      "id": "bardia-moshiri",
+      "name": "Bardia Moshiri",
+      "roleOrg": "Furi Labs 嵌入式软件工程师",
+      "bio": "专注移动 GNU/Linux 系统的嵌入式软件工程师，拥有操作系统开发、硬件适配和平台集成经验。他的工作聚焦开源移动技术，以及 Linux 在下一代移动计算中的作用。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/fakeshell",
+        "linkedin": "https://www.linkedin.com/in/bardia-moshiri/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/bardia-moshiri.png",
+      "nameEn": "Bardia Moshiri"
+    },
+    {
+      "id": "wayne-connolly",
+      "name": "Wayne Connolly",
+      "roleOrg": "联合讲师",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Wayne Connolly"
+    },
+    {
+      "id": "chen-xin",
+      "name": "Chen Xin",
+      "roleOrg": "华为工程师",
+      "bio": "openEuler Embedded SIG Maintainer，长期专注于嵌入式实时操作系统、异构计算与机器人软件栈。在 openEuler 社区中主导 IB-Robot、MICA 及 UniProton 等核心项目的架构设计与版本演进。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Chen Xin"
+    },
+    {
+      "id": "zhichao-jiao",
+      "name": "焦智超",
+      "roleOrg": "声网开发者体验产品经理",
+      "bio": "声网开发者体验产品经理。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhichao-jiao.png",
+      "nameEn": "Zhichao Jiao"
+    },
+    {
+      "id": "chris-simmonds",
+      "name": "Chris Simmonds",
+      "roleOrg": "2net Ltd. 开源嵌入式系统专家",
+      "bio": "软件顾问及开源嵌入式系统专家，拥有 20 多年开源嵌入式系统设计与开发经验。他是《Mastering Embedded Linux Programming》作者，也是 aosp-devs 开发者社区的主要推动者，曾多次在 Linux Foundation Embedded Linux Conference 和 FOSDEM 等会议演讲。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://2net.co.uk/",
+        "github": "https://github.com/csimmonds",
+        "linkedin": "https://uk.linkedin.com/in/chrisdsimmonds/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/chris-simmonds.png",
+      "nameEn": "Chris Simmonds"
+    },
+    {
+      "id": "fanshi-zhang",
+      "name": "Fanshi Zhang",
+      "roleOrg": "Moeru AI CTO",
+      "bio": "全栈开发者和开源项目构建者，其项目累计获得超过 5 万颗 GitHub Star，工作领域涵盖 CNCF 生态、AI 训练与智能体技术。",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "website": "http://nolebase.ayaka.io/",
+        "twitter": "https://x.com/ayakaneko",
+        "linkedin": "https://www.linkedin.com/in/fanshi-zhang-851980271"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/fanshi-zhang.png",
+      "nameEn": "Fanshi Zhang"
+    },
+    {
+      "id": "rin",
+      "name": "Rin",
+      "roleOrg": "联合讲师",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Rin"
+    },
+    {
+      "id": "hsuan-han-lai",
+      "name": "Hsuan Han Lai",
+      "roleOrg": "涂鸦智能开发者生态负责人",
+      "bio": "涂鸦智能开发者生态负责人、TuyaOpen 开源项目技术负责人及 Agent OS Foundation 架构师，专注构建下一代智能体 AI 硬件框架，曾任 Vibe Inc. 产品工程总监。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "website": "https://tuyaopen.ai/",
+        "github": "https://github.com/adwuard",
+        "linkedin": "http://linkedin.com/in/hsuan-han-l-37782b92"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/hsuan-han-lai.png",
+      "nameEn": "Hsuan Han Lai"
     }
   ]
 }

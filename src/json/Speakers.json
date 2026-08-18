@@ -8,46 +8,41 @@
     {
       "id": "sz26-agentic-ai-summit",
       "name": "Agentic AI Summit",
-      "nameZh": "智能体 AI 峰会"
+      "nameZh": "智能体 AI 峰会",
+      "group": "tracks"
     },
     {
       "id": "sz26-agentic-ai-on-edge",
       "name": "Agentic AI on Edge",
-      "nameZh": "边缘智能体 AI"
+      "nameZh": "边缘智能体 AI",
+      "group": "tracks"
     },
     {
       "id": "sz26-agentic-os-app",
       "name": "Agentic OS & App",
-      "nameZh": "智能体操作系统与应用"
+      "nameZh": "智能体操作系统与应用",
+      "group": "tracks"
+    },
+    {
+      "id": "sz26-agentic-device",
+      "name": "Agentic Device",
+      "nameZh": "智能体设备",
+      "group": "tracks"
     },
     {
       "id": "sz26-open-source-model",
       "name": "Open Source Models & Infra",
-      "nameZh": "开源模型与基础设施"
+      "nameZh": "开源模型与基础设施",
+      "group": "tracks"
     },
     {
       "id": "sz26-open-source-robotics",
       "name": "Open Source Robotics",
-      "nameZh": "开源机器人"
+      "nameZh": "开源机器人",
+      "group": "tracks"
     }
   ],
   "speakers": [
-    {
-      "id": "bryce-adelstein-lelbach",
-      "name": "Bryce Adelstein Lelbach",
-      "roleOrg": "Principal Engineer, NVIDIA",
-      "bio": "Bryce Adelstein Lelbach has spent over a decade developing programming languages, compilers, and libraries. He is passionate about parallel programming and strives to make it more accessible for everyone.\n\nBryce is a Principal Engineer at NVIDIA, where he founded the Core C++ Compute Libraries team and now leads the Vanguard Programming group that drives NVIDIA's roadmap for programming languages, compilers, and core libraries.\n\nHe is a leader of the systems programming language community, having served as chair of the C++ Library Evolution and the US programming language standards committee. He has been an organizer and program chair for many conferences over the years. On the C++ committee, he has worked on concurrency primitives, parallel algorithms, senders, and multidimensional arrays.\n\nOutside of work, Bryce is passionate about airplanes and watches. He lives in Midtown Manhattan with his girlfriend and dog.",
-      "tags": [
-        "sz26-agentic-ai-summit"
-      ],
-      "socialLinks": {
-        "github": "https://github.com/brycelelbach",
-        "twitter": "https://twitter.com/blelbach",
-        "linkedin": "https://www.linkedin.com/in/brycelelbach"
-      },
-      "draft": false,
-      "image": "/images/speakers/confirmed/bryce-adelstein-lelbach.png"
-    },
     {
       "id": "charles-yang",
       "name": "Charles Yang",
@@ -66,7 +61,7 @@
     {
       "id": "xun-wang",
       "name": "Xun Wang",
-      "roleOrg": "Speaker",
+      "roleOrg": "Co-speaker",
       "bio": "",
       "tags": [
         "sz26-open-source-robotics"
@@ -77,7 +72,7 @@
     {
       "id": "roy-wang",
       "name": "Roy Wang",
-      "roleOrg": "Speaker",
+      "roleOrg": "Co-speaker",
       "bio": "",
       "tags": [
         "sz26-open-source-robotics"
@@ -88,7 +83,7 @@
     {
       "id": "george-wang",
       "name": "George Wang",
-      "roleOrg": "Speaker",
+      "roleOrg": "Co-speaker",
       "bio": "",
       "tags": [
         "sz26-open-source-robotics"
@@ -116,7 +111,7 @@
       "roleOrg": "Software Engineer, ByteDance",
       "bio": "Software Engineer at ByteDance’s Global Traffic Infra, specializing in Virtual Machines and WebAssembly. I have a strong interest in operating systems, distributed systems, cloud-native technologies, edge computing, and serverless architecture.",
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-ai-on-edge"
       ],
       "socialLinks": {
         "github": "https://github.com/wilsonwang371",
@@ -124,6 +119,21 @@
       },
       "draft": false,
       "image": "/images/speakers/confirmed/wilson-wang.png"
+    },
+    {
+      "id": "peng-zhang",
+      "name": "Peng Zhang",
+      "roleOrg": "Founder, GENMETA TECH LIMITED",
+      "bio": "Peng Zhang is the founder of Genmeta Technology and an advocate for DHttp.",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "website": "https://www.dhttp.net/",
+        "github": "https://github.com/genmeta/dhttp"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/peng-zhang.png"
     },
     {
       "id": "shiwei-liu",
@@ -157,18 +167,6 @@
       "image": "/images/speakers/confirmed/jiaqi-zheng.png"
     },
     {
-      "id": "quanshi-zhang",
-      "name": "Quanshi Zhang",
-      "roleOrg": "Associate Professor, Shanghai Jiao Tong University",
-      "bio": "Quanshi Zhang is a tenured Associate Professor and Ph.D. advisor in the School of Computer Science at Shanghai Jiao Tong University. His internationally recognized research focuses on the interpretability of neural networks. He received his Ph.D. from the University of Tokyo in 2014 and conducted postdoctoral research at UCLA from 2014 to 2018. He is a recipient of the ACM China Rising Star Award and has served in editorial and senior program roles for TMLR, NeurIPS, ICML, IJCAI, AAAI, and CVPR.",
-      "tags": [
-        "sz26-agentic-ai-summit"
-      ],
-      "socialLinks": {},
-      "draft": false,
-      "image": "/images/speakers/confirmed/quanshi-zhang.png"
-    },
-    {
       "id": "sebastien-crozet",
       "name": "Sébastien Crozet",
       "roleOrg": "Founder, Dimforge",
@@ -198,7 +196,7 @@
     {
       "id": "hongjun-zhou",
       "name": "Hongjun Zhou",
-      "roleOrg": "Associate Researcher, Shenzhen Institute of Artificial Intelligence and Robotics for Society",
+      "roleOrg": "Co-speaker",
       "bio": "Hongjun Zhou is an Associate Researcher at the Shenzhen Institute of Artificial Intelligence and Robotics for Society. His research focuses on robot perception, navigation, and bipedal robot control. He previously worked on service and home robot development at Alibaba and the ASUS Intelligent Robot Center.",
       "tags": [
         "sz26-open-source-robotics"
@@ -239,22 +237,6 @@
       "image": "/images/speakers/confirmed/peter-ide-kostic.png"
     },
     {
-      "id": "tianyi-han",
-      "name": "Tianyi Han",
-      "roleOrg": "Solution Architect and Open-Source Builder, Ailuros",
-      "bio": "Tianyi Han is a Solution Architect and open-source builder focused on AI systems, agent governance, and decision-support tooling. With extensive experience designing and delivering enterprise software systems, he is the creator of Ailuros, an open-source initiative exploring how AI-driven systems can become more controllable, auditable, and reproducible through runtime policy enforcement, traceability, validation, and replay.\n\nHis work focuses on bridging experimental LLM applications and production-grade agent systems, with particular attention to observability, silent-failure detection, outcome validation, and trustworthy execution.",
-      "tags": [
-        "sz26-agentic-ai-summit"
-      ],
-      "socialLinks": {
-        "website": "https://everrun.aixagent.io/",
-        "github": "https://github.com/hant916/main-runtimegovernance",
-        "linkedin": "https://www.linkedin.com/in/tianyi-han-58278844/"
-      },
-      "draft": false,
-      "image": "/images/speakers/confirmed/tianyi-han.png"
-    },
-    {
       "id": "jacky-hsu",
       "name": "Jacky Hsu",
       "roleOrg": "Founder & CEO, Ingora",
@@ -269,39 +251,6 @@
       },
       "draft": false,
       "image": "/images/speakers/confirmed/jacky-hsu.png"
-    },
-    {
-      "id": "yuxuan-zhang",
-      "name": "Yuxuan Zhang",
-      "roleOrg": "Technology Evangelist, Zhipu AI",
-      "bio": "Yuxuan Zhang is a Technology Evangelist at Zhipu AI.",
-      "tags": [
-        "sz26-open-source-model"
-      ],
-      "socialLinks": {
-        "github": "https://github.com/zRzRzRzRzRzRzR",
-        "twitter": "https://x.com/zRdianjiao",
-        "linkedin": "https://www.linkedin.com/in/yuxuan-zhang-86a124282/"
-      },
-      "draft": false,
-      "image": "/images/speakers/confirmed/yuxuan-zhang.png"
-    },
-    {
-      "id": "joaquin-salvachua",
-      "name": "Joaquín Salvachúa",
-      "roleOrg": "Professor, Universidad Politécnica de Madrid",
-      "bio": "Joaquín Salvachúa is a Professor at the Telecommunication School of the Universidad Politécnica de Madrid (UPM). A strong advocate for open data, open protocols, and open-source infrastructure, his research focuses on advancing data space architectures through distributed governance, verifiable provenance, and decentralized trust mechanisms to fuel actual AI infrastructure. \n\nHe serves on the board of Gaia-X-ES, and Big Data Value Association, and actively contributes to Gaia-X AISBL. His broader academic work encompasses ML-Ops, Big Data architectures, cloud computing, next-generation internet technologies, network science, and, in special,  formal methods, with numerous contributions to international academic literature and open source projects.",
-      "tags": [
-        "sz26-agentic-ai-summit"
-      ],
-      "socialLinks": {
-        "website": "https://portalcientifico.upm.es/es/ipublic/researcher/305315",
-        "github": "https://github.com/jsalvachua",
-        "twitter": "https://x.com/jsalvachua",
-        "linkedin": "https://www.linkedin.com/in/jsalvachua/"
-      },
-      "draft": false,
-      "image": "/images/speakers/confirmed/joaquin-salvachua.png"
     },
     {
       "id": "satya-mallick",
@@ -423,6 +372,20 @@
       "image": "/images/speakers/confirmed/codingma.png"
     },
     {
+      "id": "meiyi-qiang",
+      "name": "Meiyi Qiang",
+      "roleOrg": "Co-Founder, Yuanshu Zhihui",
+      "bio": "Meiyi Qiang is a core developer of the OpenDCAI open-source projects, with a focus on the DataFlow AI data preparation system and the DataFlex dynamic training system. Her work spans data-centric AI, data-model co-training, and dynamic data optimization. She has published seven papers in CCF-A journals and conferences and now leads AI data infrastructure solutions and commercialization as Co-Founder of Yuanshu Zhihui.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/Qmeiyi"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/meiyi-qiang.png"
+    },
+    {
       "id": "anastasia-stasenko",
       "name": "Anastasia Stasenko",
       "roleOrg": "Co-Founder & CEO, Pleias",
@@ -440,7 +403,7 @@
     {
       "id": "pieter-delobelle",
       "name": "Pieter Delobelle",
-      "roleOrg": "Speaker",
+      "roleOrg": "Co-speaker",
       "bio": "",
       "tags": [
         "sz26-open-source-model"
@@ -479,6 +442,265 @@
       },
       "draft": false,
       "image": "/images/speakers/confirmed/martino-russi.png"
+    },
+    {
+      "id": "bryce-adelstein-lelbach",
+      "name": "Bryce Adelstein Lelbach",
+      "roleOrg": "Principal Engineer, NVIDIA",
+      "bio": "Bryce Adelstein Lelbach has spent over a decade developing programming languages, compilers, and libraries. He is passionate about parallel programming and strives to make it more accessible for everyone.\n\nBryce is a Principal Engineer at NVIDIA, where he founded the Core C++ Compute Libraries team and now leads the Vanguard Programming group that drives NVIDIA's roadmap for programming languages, compilers, and core libraries.\n\nHe is a leader of the systems programming language community, having served as chair of the C++ Library Evolution and the US programming language standards committee. He has been an organizer and program chair for many conferences over the years. On the C++ committee, he has worked on concurrency primitives, parallel algorithms, senders, and multidimensional arrays.\n\nOutside of work, Bryce is passionate about airplanes and watches. He lives in Midtown Manhattan with his girlfriend and dog.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/brycelelbach",
+        "twitter": "https://twitter.com/blelbach",
+        "linkedin": "https://www.linkedin.com/in/brycelelbach"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/bryce-adelstein-lelbach.png"
+    },
+    {
+      "id": "quanshi-zhang",
+      "name": "Quanshi Zhang",
+      "roleOrg": "Associate Professor, Shanghai Jiao Tong University",
+      "bio": "Quanshi Zhang is a tenured Associate Professor and Ph.D. advisor in the School of Computer Science at Shanghai Jiao Tong University. His internationally recognized research focuses on the interpretability of neural networks. He received his Ph.D. from the University of Tokyo in 2014 and conducted postdoctoral research at UCLA from 2014 to 2018. He is a recipient of the ACM China Rising Star Award and has served in editorial and senior program roles for TMLR, NeurIPS, ICML, IJCAI, AAAI, and CVPR.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/quanshi-zhang.png"
+    },
+    {
+      "id": "anni-lai",
+      "name": "Anni Lai",
+      "roleOrg": "Generative AI Commons Co-Chair, LF AI & Data",
+      "bio": "Anni Lai is Co-Chair of the Generative AI Commons and a board member of LF AI & Data.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/anni-lai.png"
+    },
+    {
+      "id": "zhihong-mo",
+      "name": "Zhihong Mo",
+      "roleOrg": "EDA Ecosystem & University Program Lead, JLC Technology Group",
+      "bio": "Zhihong Mo is the higher-education manager and ecosystem platform lead at JLC Technology Group, as well as the initiator of the Open Source Hardware Platform. He works to expand the use of domestic PCB design tools in education and to build an open hardware ecosystem connecting developers, universities, and industry.",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "website": "https://oshwhub.com/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhihong-mo.png"
+    },
+    {
+      "id": "bartlomiej-szejny",
+      "name": "Bartłomiej Szejny",
+      "roleOrg": "Board Member, AI Poland",
+      "bio": "Bartłomiej Szejny is a technology entrepreneur, independent AI researcher, and board member of AI Poland. He contributes to the development of Poland’s artificial intelligence ecosystem by combining business, technological, and strategic perspectives. His research interests focus on autonomous embodied AI agents and control mechanisms inspired by neurobiology.\n\nHe is the author of the position paper “Embodied Agents in Open-Ended Environments Require a Stress-Gated Homeostatic Meta-Controller,” submitted as a preprint in the cs.AI category. The paper introduces the SGHMC architecture, which uses a slowly evolving stress variable to coordinate reactive and deliberative behavior while maintaining explicitly defined safety boundaries. The work proposes a falsifiable research programme exploring machine homeostasis as a potential foundation for the safe autonomy of AI systems operating in open-ended and unpredictable environments.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://aipoland.org/",
+        "linkedin": "https://www.linkedin.com/in/bartlomiej-szejny-9627b051/"
+      },
+      "draft": false
+    },
+    {
+      "id": "sean-dong",
+      "name": "Sean Dong",
+      "roleOrg": "Director of Product Management, Huawei Cangjie Programming Language Team",
+      "bio": "Speaker: Dong Xin, Huawei Cangjie Programming Language Team\nFormer Microsoft Azure enterprise cloud expert and lead of Huawei's mobile AI tooling, Ascend MindStudio, HarmonyOS DevEco Studio, and the Cangjie/Bisheng C language IDE. Since early 2025, Dong Xin has pioneered AI Agent-driven R&D models and open-sourced ACEHarness, now adopted by multiple large-scale engineering teams.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "birgitta-boeckeler",
+      "name": "Birgitta Böckeler",
+      "roleOrg": "Distinguished Engineer",
+      "bio": "Birgitta is a software developer, architect and technical leader with over 20 years of experience in technology and software consulting, during which she has seen many organisations and teams succeed and fail at delivering valuable software. Most recently she worked at Thoughtworks, where she was a Distinguished Engineer and subject matter expert for AI-assisted software delivery since 2023.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://birgitta.info/",
+        "linkedin": "https://www.linkedin.com/in/birgittaboeckeler/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/birgitta-boeckeler.png"
+    },
+    {
+      "id": "zixi-liu",
+      "name": "Zixi Liu",
+      "roleOrg": "Senior Engineer, Huawei",
+      "bio": "Zixi Liu holds a Ph.D. from Nanjing University and works at Huawei's Programming Languages Laboratory in the 2012 Laboratories, focusing on programming languages and AI research.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zixi-liu.png"
+    },
+    {
+      "id": "fahua-jin",
+      "name": "Fahua Jin",
+      "roleOrg": "Co-Founder & CTO, EMQ",
+      "bio": "Fahua Jin is Co-Founder and CTO of EMQ, where he leads product and R&D. He has initiated and contributed to multiple open-source projects and previously worked as a Senior Architect at IBM China Software Development Lab.",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/fahua-jin.png"
+    },
+    {
+      "id": "chenghao-rong",
+      "name": "Chenghao Rong",
+      "roleOrg": "Senior Software Engineer, HUAWEI",
+      "bio": "Chenghao Rong graduated from Tsinghua University. He joined Huawei in 2024, where he works on the research and development of AI infrastructure, focusing on post-training and LLM inference.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "yixiang-zhang",
+      "name": "Yixiang Zhang",
+      "roleOrg": "Co-speaker",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "yongqiang-ma",
+      "name": "Yongqiang Ma",
+      "roleOrg": "Co-speaker",
+      "bio": "",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "bardia-moshiri",
+      "name": "Bardia Moshiri",
+      "roleOrg": "Embedded Software Engineer, Furi Labs",
+      "bio": "Embedded software engineer specializing in mobile GNU/Linux systems, with experience spanning operating system development, hardware enablement, and platform integration. My work focuses on advancing open-source mobile technologies and exploring the role of Linux in the next generation of mobile computing.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/fakeshell",
+        "linkedin": "https://www.linkedin.com/in/bardia-moshiri/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/bardia-moshiri.png"
+    },
+    {
+      "id": "wayne-connolly",
+      "name": "Wayne Connolly",
+      "roleOrg": "Co-speaker",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "chen-xin",
+      "name": "Chen Xin",
+      "roleOrg": "Engineer, Huawei Technologies",
+      "bio": "Chen Xin is a maintainer of the openEuler Embedded SIG with long-term experience in embedded real-time operating systems, heterogeneous computing, and robotics software stacks. Within the openEuler community, Chen leads architecture and release evolution for projects including IB-Robot, MICA, and UniProton.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "zhichao-jiao",
+      "name": "Zhichao Jiao",
+      "roleOrg": "Developer Experience Product Manager, Agora",
+      "bio": "Zhichao Jiao is a Developer Experience Product Manager at Agora.",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhichao-jiao.png"
+    },
+    {
+      "id": "chris-simmonds",
+      "name": "Chris Simmonds",
+      "roleOrg": "Professional Geek, 2net Ltd.",
+      "bio": "Chris Simmonds is a software consultant and professional geek living in Northern England. He has more than two decades of experience in designing and building open-source embedded systems. He is a big believer in Open Source and the importance of community.  He is the author of the book “Mastering Embedded Linux Programming”, and is the moving force behind the aosp-devs developer community. He is a frequent presenter at open source and embedded conferences, including the Linux Foundation Embedded Linux Conference and FOSDEM. You can see some of his work on the “Inner Penguin” blog at 2net.co.uk",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://2net.co.uk/",
+        "github": "https://github.com/csimmonds",
+        "linkedin": "https://uk.linkedin.com/in/chrisdsimmonds/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/chris-simmonds.png"
+    },
+    {
+      "id": "fanshi-zhang",
+      "name": "Fanshi Zhang",
+      "roleOrg": "CTO, Moeru AI",
+      "bio": "Literally full stack developer. Coder and builder grants more than 50k stars. Covering CNCF area, AI  training, and agentic",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "website": "http://nolebase.ayaka.io/",
+        "twitter": "https://x.com/ayakaneko",
+        "linkedin": "https://www.linkedin.com/in/fanshi-zhang-851980271"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/fanshi-zhang.png"
+    },
+    {
+      "id": "rin",
+      "name": "Rin",
+      "roleOrg": "Co-speaker",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "hsuan-han-lai",
+      "name": "Hsuan Han Lai",
+      "roleOrg": "Lead of Developer Ecosystem, Tuya Smart Inc",
+      "bio": "Tuya Smart | Lead of Developer Ecosystem\nTuyaOpen Open Source Project Tech Lead & Agent OS Foundation Architect\n- Focusing on building the next-generation Agentic AI Hardware Framework\n- Former Product Engineering Director, Vibe Inc.",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "website": "https://tuyaopen.ai/",
+        "github": "https://github.com/adwuard",
+        "linkedin": "http://linkedin.com/in/hsuan-han-l-37782b92"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/hsuan-han-lai.png"
     }
   ]
 }

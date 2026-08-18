@@ -28,6 +28,12 @@ const PROGRAM_CATEGORIES = [
     group: "tracks",
   },
   {
+    id: "sz26-agentic-device",
+    name: "Agentic Device",
+    nameZh: "智能体设备",
+    group: "tracks",
+  },
+  {
     id: "sz26-open-source-model",
     name: "Open Source Models & Infra",
     nameZh: "开源模型与基础设施",
@@ -245,6 +251,8 @@ const existingById = new Map(
 const speakersByName = new Map();
 const usedIds = new Set();
 const sourceNameKeyById = new Map();
+const coSpeakerIds = new Set();
+const primarySpeakerIds = new Set();
 
 const addSpeaker = (person, proposal, isCoSpeaker = false) => {
   const sourceName = cleanText(person.name);
@@ -267,7 +275,14 @@ const addSpeaker = (person, proposal, isCoSpeaker = false) => {
   if (existing) {
     existing.tags = [...new Set([...existing.tags, ...tags])];
     if (!existing.bio) existing.bio = overrideBio || cleanText(person.bio);
-    if (existing.roleOrg === "Speaker") {
+    if (isCoSpeaker && !primarySpeakerIds.has(existing.id)) {
+      existing.roleOrg = "Co-speaker";
+      coSpeakerIds.add(existing.id);
+    } else if (!isCoSpeaker) {
+      primarySpeakerIds.add(existing.id);
+      coSpeakerIds.delete(existing.id);
+    }
+    if (!isCoSpeaker && ["Speaker", "Co-speaker"].includes(existing.roleOrg)) {
       existing.roleOrg = overrideRoleOrg || roleAndOrganization(person);
     }
     if (!isCoSpeaker) {
@@ -284,13 +299,21 @@ const addSpeaker = (person, proposal, isCoSpeaker = false) => {
   while (usedIds.has(id)) id = `${baseId}-${suffix++}`;
   usedIds.add(id);
 
+  if (isCoSpeaker) {
+    coSpeakerIds.add(id);
+  } else {
+    primarySpeakerIds.add(id);
+  }
+
   const speaker = {
     id,
     name,
-    roleOrg: overrideRoleOrg ||
-      (roleAndOrganization(person) === "Speaker" && previous?.roleOrg
-        ? previous.roleOrg
-        : roleAndOrganization(person)),
+    roleOrg: isCoSpeaker
+      ? "Co-speaker"
+      : overrideRoleOrg ||
+        (roleAndOrganization(person) === "Speaker" && previous?.roleOrg
+          ? previous.roleOrg
+          : roleAndOrganization(person)),
     bio: overrideBio || cleanText(person.bio) || cleanText(previous?.bio),
     tags,
     socialLinks: {
@@ -347,7 +370,9 @@ const outputZh = {
       sourceNameKeyById.get(speaker.id),
     );
     const nameZh = cleanText(contentOverride?.zh?.name) || speaker.name;
-    const roleOrgZh = cleanText(contentOverride?.zh?.roleOrg) || speaker.roleOrg;
+    const roleOrgZh = coSpeakerIds.has(speaker.id)
+      ? "联合讲师"
+      : cleanText(contentOverride?.zh?.roleOrg) || speaker.roleOrg;
     const bioZh = cleanText(contentOverride?.zh?.bio) || speaker.bio;
 
     return {

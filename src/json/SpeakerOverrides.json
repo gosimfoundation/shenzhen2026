@@ -343,5 +343,233 @@
       "roleOrg": "Hugging Face 具身机器人工程师",
       "bio": "LeRobot 开源机器人库核心贡献者，负责构建和维护 Unitree G1 人形机器人技术栈，也是开源力反馈手部外骨骼 Project Homunculus 的创建者。他拥有神经科学、AI 和机器人学背景，致力于让具身智能技术更加普及。"
     }
+  },
+  {
+    "sourceName": "张鹏",
+    "id": "peng-zhang",
+    "en": {
+      "name": "Peng Zhang",
+      "roleOrg": "Founder, GENMETA TECH LIMITED",
+      "bio": "Peng Zhang is the founder of Genmeta Technology and an advocate for DHttp."
+    },
+    "zh": {
+      "name": "张鹏",
+      "roleOrg": "建元科技创始人",
+      "bio": "张鹏，建元科技创始人，DHttp 布道师。"
+    }
+  },
+  {
+    "sourceName": "强美伊",
+    "id": "meiyi-qiang",
+    "en": {
+      "name": "Meiyi Qiang",
+      "roleOrg": "Co-Founder, Yuanshu Zhihui",
+      "bio": "Meiyi Qiang is a core developer of the OpenDCAI open-source projects, with a focus on the DataFlow AI data preparation system and the DataFlex dynamic training system. Her work spans data-centric AI, data-model co-training, and dynamic data optimization. She has published seven papers in CCF-A journals and conferences and now leads AI data infrastructure solutions and commercialization as Co-Founder of Yuanshu Zhihui."
+    },
+    "zh": {
+      "name": "强美伊",
+      "roleOrg": "元枢智汇联合创始人",
+      "bio": "OpenDCAI 系列开源项目核心技术开发者，重点参与 AI 数据准备系统 DataFlow 与动态训练系统 DataFlex 的研发与落地，研究方向涵盖 Data-Centric AI、数据—模型协同训练与动态数据优化。个人累计发表 CCF-A 类期刊及会议论文 7 篇，现作为元枢智汇联合创始人，负责 AI 数据基础设施的解决方案与商业落地。"
+    }
+  },
+  {
+    "sourceName": "anni",
+    "id": "anni-lai",
+    "en": {
+      "name": "Anni Lai",
+      "roleOrg": "Generative AI Commons Co-Chair, LF AI & Data",
+      "bio": "Anni Lai is Co-Chair of the Generative AI Commons and a board member of LF AI & Data."
+    },
+    "zh": {
+      "name": "Anni Lai",
+      "roleOrg": "LF AI & Data 生成式 AI 公共社区联合主席",
+      "bio": "Anni Lai 是 LF AI & Data 生成式 AI 公共社区联合主席，并担任 LF AI & Data 董事会成员。"
+    }
+  },
+  {
+    "sourceName": "莫志宏",
+    "id": "zhihong-mo",
+    "en": {
+      "name": "Zhihong Mo",
+      "roleOrg": "EDA Ecosystem & University Program Lead, JLC Technology Group",
+      "bio": "Zhihong Mo is the higher-education manager and ecosystem platform lead at JLC Technology Group, as well as the initiator of the Open Source Hardware Platform. He works to expand the use of domestic PCB design tools in education and to build an open hardware ecosystem connecting developers, universities, and industry."
+    },
+    "zh": {
+      "name": "莫志宏",
+      "roleOrg": "嘉立创 EDA 生态社区及大学计划负责人",
+      "bio": "深圳嘉立创科技集团股份有限公司高校教育经理、生态平台负责人，立创开源硬件平台发起人。致力于国产 PCB 设计工具在教育领域的普及推广与开源硬件生态建设，主导平台从 0 到 1 的建设与运营，连接开发者、高校与产业。"
+    }
+  },
+  {
+    "sourceName": "Bartlomiej Szejny",
+    "id": "bartlomiej-szejny",
+    "en": {
+      "name": "Bartłomiej Szejny",
+      "roleOrg": "Board Member, AI Poland"
+    },
+    "zh": {
+      "name": "Bartłomiej Szejny",
+      "roleOrg": "AI Poland 董事会成员",
+      "bio": "技术创业者、独立 AI 研究者及 AI Poland 董事会成员，致力于从商业、技术和战略角度推动波兰人工智能生态发展。他的研究聚焦自主具身智能体，以及受神经生物学启发的控制机制。"
+    }
+  },
+  {
+    "sourceName": "Sean Dong",
+    "id": "sean-dong",
+    "en": {
+      "name": "Sean Dong",
+      "roleOrg": "Director of Product Management, Huawei Cangjie Programming Language Team"
+    },
+    "zh": {
+      "name": "Sean Dong",
+      "roleOrg": "华为仓颉编程语言团队产品管理总监",
+      "bio": "曾任 Microsoft Azure 企业云专家，并负责华为移动 AI 工具、昇腾 MindStudio、HarmonyOS DevEco Studio 以及仓颉/毕昇 C 语言 IDE。自 2025 年初起探索 AI Agent 驱动的研发模式，并开源已被多个大型工程团队采用的 ACEHarness。"
+    }
+  },
+  {
+    "sourceName": "Birgitta Boeckeler",
+    "id": "birgitta-boeckeler",
+    "en": {
+      "name": "Birgitta Böckeler",
+      "roleOrg": "Distinguished Engineer"
+    },
+    "zh": {
+      "name": "Birgitta Böckeler",
+      "roleOrg": "杰出工程师",
+      "bio": "拥有 20 多年技术与软件咨询经验的软件开发者、架构师和技术负责人，长期观察组织和团队交付软件的成功与失败。她最近任职于 Thoughtworks，担任杰出工程师，并自 2023 年起专注于 AI 辅助软件交付。"
+    }
+  },
+  {
+    "sourceName": "刘子夕",
+    "id": "zixi-liu",
+    "en": {
+      "name": "Zixi Liu",
+      "roleOrg": "Senior Engineer, Huawei",
+      "bio": "Zixi Liu holds a Ph.D. from Nanjing University and works at Huawei's Programming Languages Laboratory in the 2012 Laboratories, focusing on programming languages and AI research."
+    },
+    "zh": {
+      "name": "刘子夕",
+      "roleOrg": "华为高级工程师",
+      "bio": "南京大学博士，华为 2012 实验室编程语言实验室员工，从事编程语言与 AI 相关研究。"
+    }
+  },
+  {
+    "sourceName": "金发华",
+    "id": "fahua-jin",
+    "en": {
+      "name": "Fahua Jin",
+      "roleOrg": "Co-Founder & CTO, EMQ",
+      "bio": "Fahua Jin is Co-Founder and CTO of EMQ, where he leads product and R&D. He has initiated and contributed to multiple open-source projects and previously worked as a Senior Architect at IBM China Software Development Lab."
+    },
+    "zh": {
+      "name": "金发华",
+      "roleOrg": "EMQ 联合创始人兼 CTO",
+      "bio": "EMQ 联合创始人兼 CTO，负责公司的产品与研发。多个开源项目的发起者和参与者，前 IBM 中国软件开发中心高级架构师。"
+    }
+  },
+  {
+    "sourceName": "Chenghao Rong",
+    "id": "chenghao-rong",
+    "zh": {
+      "name": "Chenghao Rong",
+      "roleOrg": "华为高级软件工程师",
+      "bio": "毕业于清华大学，2024 年加入华为，从事 AI 基础设施研发，重点关注后训练和大语言模型推理。"
+    }
+  },
+  {
+    "sourceName": "Yixiang Zhang",
+    "id": "yixiang-zhang",
+    "zh": {
+      "name": "Yixiang Zhang",
+      "roleOrg": "讲师"
+    }
+  },
+  {
+    "sourceName": "Yongqiang Ma",
+    "id": "yongqiang-ma",
+    "zh": {
+      "name": "Yongqiang Ma",
+      "roleOrg": "讲师"
+    }
+  },
+  {
+    "sourceName": "Bardia Moshiri",
+    "id": "bardia-moshiri",
+    "zh": {
+      "name": "Bardia Moshiri",
+      "roleOrg": "Furi Labs 嵌入式软件工程师",
+      "bio": "专注移动 GNU/Linux 系统的嵌入式软件工程师，拥有操作系统开发、硬件适配和平台集成经验。他的工作聚焦开源移动技术，以及 Linux 在下一代移动计算中的作用。"
+    }
+  },
+  {
+    "sourceName": "Wayne Connolly",
+    "id": "wayne-connolly",
+    "zh": {
+      "name": "Wayne Connolly",
+      "roleOrg": "讲师"
+    }
+  },
+  {
+    "sourceName": "chenxin852",
+    "id": "chen-xin",
+    "en": {
+      "name": "Chen Xin",
+      "roleOrg": "Engineer, Huawei Technologies",
+      "bio": "Chen Xin is a maintainer of the openEuler Embedded SIG with long-term experience in embedded real-time operating systems, heterogeneous computing, and robotics software stacks. Within the openEuler community, Chen leads architecture and release evolution for projects including IB-Robot, MICA, and UniProton."
+    },
+    "zh": {
+      "name": "Chen Xin",
+      "roleOrg": "华为工程师",
+      "bio": "openEuler Embedded SIG Maintainer，长期专注于嵌入式实时操作系统、异构计算与机器人软件栈。在 openEuler 社区中主导 IB-Robot、MICA 及 UniProton 等核心项目的架构设计与版本演进。"
+    }
+  },
+  {
+    "sourceName": "焦智超",
+    "id": "zhichao-jiao",
+    "en": {
+      "name": "Zhichao Jiao",
+      "roleOrg": "Developer Experience Product Manager, Agora",
+      "bio": "Zhichao Jiao is a Developer Experience Product Manager at Agora."
+    },
+    "zh": {
+      "name": "焦智超",
+      "roleOrg": "声网开发者体验产品经理",
+      "bio": "声网开发者体验产品经理。"
+    }
+  },
+  {
+    "sourceName": "Chris Simmonds",
+    "id": "chris-simmonds",
+    "zh": {
+      "name": "Chris Simmonds",
+      "roleOrg": "2net Ltd. 开源嵌入式系统专家",
+      "bio": "软件顾问及开源嵌入式系统专家，拥有 20 多年开源嵌入式系统设计与开发经验。他是《Mastering Embedded Linux Programming》作者，也是 aosp-devs 开发者社区的主要推动者，曾多次在 Linux Foundation Embedded Linux Conference 和 FOSDEM 等会议演讲。"
+    }
+  },
+  {
+    "sourceName": "Fanshi Zhang",
+    "id": "fanshi-zhang",
+    "zh": {
+      "name": "Fanshi Zhang",
+      "roleOrg": "Moeru AI CTO",
+      "bio": "全栈开发者和开源项目构建者，其项目累计获得超过 5 万颗 GitHub Star，工作领域涵盖 CNCF 生态、AI 训练与智能体技术。"
+    }
+  },
+  {
+    "sourceName": "Rin",
+    "id": "rin",
+    "zh": {
+      "name": "Rin",
+      "roleOrg": "讲师"
+    }
+  },
+  {
+    "sourceName": "Hsuan Han Lai",
+    "id": "hsuan-han-lai",
+    "zh": {
+      "name": "Hsuan Han Lai",
+      "roleOrg": "涂鸦智能开发者生态负责人",
+      "bio": "涂鸦智能开发者生态负责人、TuyaOpen 开源项目技术负责人及 Agent OS Foundation 架构师，专注构建下一代智能体 AI 硬件框架，曾任 Vibe Inc. 产品工程总监。"
+    }
   }
 ]
