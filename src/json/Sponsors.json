@@ -48,6 +48,12 @@
     },
     {
       "category": "community-partners",
+      "image": "atomgit.png",
+      "name": "AtomGit",
+      "url": "https://atomgit.com"
+    },
+    {
+      "category": "community-partners",
       "image": "rte-developer-community.png",
       "name": "RTE Developer Community",
       "logoClass": "community-logo-large",
