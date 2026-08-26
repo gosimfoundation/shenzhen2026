@@ -73,12 +73,14 @@ await writeFile(
 
 let clearedInboxCount = 0;
 for (const id of portraitsById.keys()) {
-  const inboxPath = path.join(photoInboxDirectory, `${id}.jpg`);
-  try {
-    await rm(inboxPath);
-    clearedInboxCount += 1;
-  } catch (error) {
-    if (error.code !== "ENOENT") throw error;
+  for (const extension of supportedPhotoExtensions) {
+    const inboxPath = path.join(photoInboxDirectory, `${id}${extension}`);
+    try {
+      await rm(inboxPath);
+      clearedInboxCount += 1;
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+    }
   }
 }
 

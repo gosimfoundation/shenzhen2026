@@ -2,21 +2,20 @@
 // Import the speakers data
 import speakersData from "json/SpeakersZh.json";
 
-const getInitials = (name: string) =>
-  name
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join("")
-    .toLocaleUpperCase();
+const speakerPlaceholderImage = "/images/speakers/0-speaker-placeholder.png";
 
 const categoryName = (category) => category.nameZh || category.name;
+
+const isCoSpeaker = (speaker) =>
+  ["联合讲师", "co-speaker"].includes(speaker.roleOrg.trim().toLocaleLowerCase());
 
 // Filter speakers to only include those where draft is false and id is not "tbd"
 const filteredSpeakers = speakersData.speakers
   .filter((speaker) => speaker.draft !== true && speaker.id !== "tbd")
   .sort((a, b) => {
+    const speakerTypeOrder = Number(isCoSpeaker(a)) - Number(isCoSpeaker(b));
+    if (speakerTypeOrder !== 0) return speakerTypeOrder;
+
     return a.name.localeCompare(b.name, "zh-CN");
   });
 
@@ -298,24 +297,13 @@ const groupedCategories = {
             >
               <div class="card-row card-row-image">
                 <div class="card-image">
-                  {speaker?.image && (
-                    <img
-                      src={speaker.image}
-                      alt={speaker.name}
-                      class="overlay speaker-img"
-                      loading="lazy"
-                      style="object-position: center 15% !important;"
-                    />
-                  )}
-                  {!speaker?.image && (
-                    <span
-                      class="speaker-placeholder"
-                      style={`--speaker-hue: ${(index * 47 + 228) % 360}`}
-                      aria-hidden="true"
-                    >
-                      {getInitials(speaker.name)}
-                    </span>
-                  )}
+                  <img
+                    src={speaker.image?.trim() || speakerPlaceholderImage}
+                    alt={speaker.name}
+                    class="overlay speaker-img"
+                    loading="lazy"
+                    style="object-position: center 15% !important;"
+                  />
                 </div>
               </div>
               <div class="card-row card-row-info">

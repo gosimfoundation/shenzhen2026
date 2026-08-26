@@ -2,14 +2,7 @@
 // Import the speakers data
 import speakersData from "json/SpeakersCleaned.json";
 
-const getInitials = (name: string) =>
-  name
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join("")
-    .toLocaleUpperCase();
+const speakerPlaceholderImage = "/images/speakers/0-speaker-placeholder.png";
 
 const getSpeakerNameFontSize = (name: string) => {
   const length = [...name].length;
@@ -23,6 +16,7 @@ const getSpeakerNameFontSize = (name: string) => {
 const speakerCardText: Record<string, { role?: string; company?: string }> = {
   "anni-lai": { role: "GenAI Commons Co-Chair" },
   "bardia-moshiri": { role: "Embedded Software Eng." },
+  "bo-tang": { role: "Applied Algorithms Lead", company: "MemTensor" },
   "codingma": { role: "Training Software Expert" },
   "chenghao-rong": { role: "Senior Software Eng." },
   "hsuan-han-lai": { role: "Developer Ecosystem Lead", company: "Tuya Smart" },
@@ -38,15 +32,24 @@ const speakerCardText: Record<string, { role?: string; company?: string }> = {
   "shiwei-liu": { company: "Max Planck IS / ELLIS" },
   "sean-dong": { role: "Product Management Director", company: "Huawei Cangjie" },
   "tianyi-han": { role: "Solution Architect" },
+  "tong-ling": { role: "IoT Commercialization Lead", company: "Espressif" },
+  "xuewen-gao": { role: "Deputy Chief Engineer", company: "QI-ANXIN" },
+  "yuu": { role: "Agent Performance Intern", company: "Dify" },
   "zhichao-jiao": { role: "Developer Experience PM" },
   "zhihong-mo": { role: "Ecosystem & University Lead", company: "JLC Technology Group" },
   "joaquin-salvachua": { company: "Polytechnic Univ. Madrid" },
 };
 
+const isCoSpeaker = (speaker) =>
+  speaker.roleOrg.trim().toLocaleLowerCase() === "co-speaker";
+
 // Filter speakers to only include those where draft is false and id is not "tbd"
 const filteredSpeakers = speakersData.speakers
   .filter((speaker) => speaker.draft !== true && speaker.id !== "tbd")
   .sort((a, b) => {
+    const speakerTypeOrder = Number(isCoSpeaker(a)) - Number(isCoSpeaker(b));
+    if (speakerTypeOrder !== 0) return speakerTypeOrder;
+
     const lastName = (name) => name.trim().split(/\s+/).slice(-1)[0].toLowerCase();
     return lastName(a.name).localeCompare(lastName(b.name));
   });
@@ -329,24 +332,13 @@ const groupedCategories = {
             >
               <div class="card-row card-row-image">
                 <div class="card-image">
-                  {speaker?.image && (
-                    <img
-                      src={speaker.image}
-                      alt={speaker.name}
-                      class="overlay speaker-img"
-                      loading="lazy"
-                      style="object-position: center 15% !important;"
-                    />
-                  )}
-                  {!speaker?.image && (
-                    <span
-                      class="speaker-placeholder"
-                      style={`--speaker-hue: ${(index * 47 + 228) % 360}`}
-                      aria-hidden="true"
-                    >
-                      {getInitials(speaker.name)}
-                    </span>
-                  )}
+                  <img
+                    src={speaker.image?.trim() || speakerPlaceholderImage}
+                    alt={speaker.name}
+                    class="overlay speaker-img"
+                    loading="lazy"
+                    style="object-position: center 15% !important;"
+                  />
                 </div>
               </div>
               <div class="card-row card-row-info">

@@ -215,13 +215,10 @@ const eventCategory = eventDetails.type === "keynote" ? "Keynote" : (categoryMap
               const isWorkshop = full ? full.tags?.some((t: string) => workshopCategories.includes(t)) : false
               const speakerPath = isWorkshop ? "/zh/workshops/" : "/zh/speakers/"
               const speakerId = full?.id || speaker.id || speaker.name.toLowerCase().replace(/\s+/g, "-")
-              const img = full?.image || speaker?.image
+              const img = full?.image || speaker?.image || "/images/speakers/0-speaker-placeholder.png"
               return (
                 <a href={`${speakerPath}${speakerId}/`} class="ev-speaker-card">
-                  {img
-                    ? <img src={img} alt={speaker.name} class="ev-speaker-img" />
-                    : <div class="ev-speaker-placeholder" />
-                  }
+                  <img src={img} alt={speaker.name} class="ev-speaker-img" />
                   <div class="ev-speaker-info">
                     <span class="ev-speaker-name">{full?.name || speaker.name}</span>
                     <span class="ev-speaker-role">{full?.roleOrg || speaker.roleOrg}</span>

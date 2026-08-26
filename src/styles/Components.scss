@@ -990,6 +990,13 @@
    visibility: hidden;
 }
 
+/* The filter panel can be opened from the static mobile nav before its grid
+   reaches the scroll trigger. Its own overlay/box transitions handle the UI. */
+[data-nav-filter-status="active"] .filter-container.filter-alpha-animate {
+   opacity: 1 !important;
+   visibility: visible !important;
+}
+
 .filter-container {
    position: fixed;
    top: 0;

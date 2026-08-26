@@ -689,8 +689,15 @@ body:not([data-navigation-status="active"]) .floating-controls .hamburger.btn-fl
 [data-navigation-status="active"] .floating-controls .floating-ticket-button {
    opacity: 0;
 }
-[data-navigation-status="active"] .floating-controls .floating-ticket-button .btn-floating {
+[data-navigation-status="active"] .floating-controls .floating-ticket-button .btn-floating,
+[data-navigation-status="active"] .floating-controls .btn-filter-floating {
    pointer-events: none;
+}
+
+/* The open navigation owns the top-right corner; page controls stay out of it. */
+[data-navigation-status="active"] .floating-controls .btn-filter-floating {
+   opacity: 0;
+   visibility: hidden;
 }
 
 .floating-ticket-button .btn-content.original span {
@@ -716,30 +723,6 @@ body:not([data-navigation-status="active"]) .floating-controls .hamburger.btn-fl
    right: calc(0.25em + var(--btn-height));
    top: 0;
 }
-
-.btn-filter-floating {
-   position: absolute;
-   right: calc(var(--container-padding) + 0.25em + var(--btn-height));
-   top: var(--container-padding);
-   transform: translateY(0%) scale(0.5) rotate(0.001deg);
-   transition: all var(--animation-nav-smooth);
-   opacity: 0;
-}
-
-.btn-filter-floating .btn-click {
-   box-shadow: 0px 0.5em 2em 0px rgba(var(--color-dark-rgb), 0.4);
-}
-
-[data-theme-nav="light"] .btn-filter-floating .btn-click {
-   box-shadow: 0px 0.5em 2em 0px rgba(var(--color-dark-rgb), 0.15);
-}
-
-[data-scrolling-started="true"][data-scrolling-direction="down"] .btn-filter-floating {
-   transform: translateY(0%) scale(1) rotate(0.001deg);
-   opacity: 1;
-   pointer-events: all;
-}
-
 
 @media screen and (max-width: 1070px) {
 

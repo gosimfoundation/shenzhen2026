@@ -79,10 +79,9 @@ const switchPath = isZhPath ? slug.replace("/zh/", "/") : `/zh${slug}`
 const enOnlyBasePaths = ["/general-travel/", "/chinese-visa/", "/travel-fund-policy/"]
 const zhTogglePath = enOnlyBasePaths.includes(basePath) ? "/zh/" : `/zh${basePath}`
 
-// The "Filter" button only does something on pages that render a filter panel
-// (speakers / sponsors / past-supporters lists). Everywhere else it was showing
-// as an empty, dead pill, so only render it on those pages.
-const hasFilter = ["/speakers/", "/sponsors/"].includes(basePath)
+// Only the speakers list renders the mobile filter panel. Keep the control out
+// of every other page so the shared header never exposes a dead action.
+const hasFilter = basePath === "/speakers/"
 
 // If not on the homepage, prefix anchor links with the homepage path
 const isHomepage = slug === "/" || slug === "/zh/" || slug === "/fr/"
@@ -193,22 +192,22 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
         class="btn primary glass-orange btn-floating btn-hover"
       />
     </div>
-  </div>
 
-  {hasFilter && (
-    <div
-      class="btn light btn-filter btn-filter-floating btn-hover"
-      data-has-notification={hasNotificationBar}
-    >
-      <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
-        <div class="btn-content original">
-          <div class="btn-fill"></div>
-          <span>Filter</span>
+    {hasFilter && (
+      <div
+        class="btn primary glass-orange btn-floating btn-filter btn-filter-floating btn-hover"
+        data-has-notification={hasNotificationBar}
+      >
+        <div class="btn-click" data-filter-toggle="toggle">
+          <div class="btn-content duplicate">
+            <div class="btn-fill"></div>
+            <span>Filter</span>
+          </div>
+          <div class="border-box"></div>
         </div>
-        <div class="border-box"></div>
       </div>
-    </div>
-  )}
+    )}
+  </div>
 
   <div
     class="main-nav-bar"
@@ -314,9 +313,9 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
       </div>
 
       {hasFilter && (
-        <div class="btn light btn-filter btn-filter-static btn-hover">
-          <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
-            <div class="btn-content original">
+        <div class="btn primary glass-orange btn-filter btn-filter-static btn-hover">
+          <div class="btn-click" data-filter-toggle="toggle">
+            <div class="btn-content duplicate">
               <div class="btn-fill"></div>
               <span>Filter</span>
             </div>
@@ -472,9 +471,44 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
   }
 
   @media screen and (max-width: 1070px) {
+    .main-nav-bar .row {
+      display: grid;
+      grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+      column-gap: clamp(0.4rem, 1.4vw, 0.8rem);
+    }
+
+    .main-nav-bar .logo {
+      grid-column: 1;
+    }
+
+    .main-nav-bar nav {
+      display: none;
+    }
+
+    .header-buttons {
+      position: relative;
+      grid-column: 2;
+      gap: 0;
+    }
+
     .language-dropdown {
-      position: absolute;
-      left: 130px;
+      position: relative;
+      left: auto;
+    }
+
+    .main-nav-bar .btn-filter-static {
+      position: relative;
+      top: auto;
+      right: auto;
+      grid-column: 4;
+      grid-row: 1;
+      justify-self: end;
+    }
+
+    .main-nav-bar .hamburger.outline {
+      grid-column: 5;
+      grid-row: 1;
+      justify-self: end;
     }
   }
 
@@ -488,9 +522,4 @@ const links = rawLinks.map(l => l.anchor ? { ...l, link: `${anchorBase}${l.ancho
     }
   }
 
-  @media screen and (max-width: 1070px) {
-    .main-nav-bar .row {
-      display: flex;
-    }
-  }
 </style>

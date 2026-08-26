@@ -106,6 +106,17 @@
       "image": "/images/speakers/confirmed/peilin-li.png"
     },
     {
+      "id": "yujie-yang",
+      "name": "Yujie Yang",
+      "roleOrg": "Co-speaker",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
       "id": "wilson-wang",
       "name": "Wilson Wang",
       "roleOrg": "Software Engineer, ByteDance",
@@ -372,6 +383,37 @@
       "image": "/images/speakers/confirmed/codingma.png"
     },
     {
+      "id": "charbel-dandjinou",
+      "name": "Charbel Dandjinou",
+      "roleOrg": "Founder & CTO, Reflexion Robotics",
+      "bio": "Charbel Dandjinou is the founder and CTO of Reflexion Robotics, a Paris-based startup building A OS, a safety runtime for embodied AI. Previously an AI research engineer and MLOps technical lead at EXXACT Robotics, he also founded IROKO and the Deep Takka research lab to make AI more accessible and inclusive.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://www.cd-ia.blog/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/charbel-dandjinou.png"
+    },
+    {
+      "id": "alba-maria-tellez-fernandez",
+      "name": "Alba María Téllez Fernández",
+      "roleOrg": "AI Lead, Marso Robotics",
+      "bio": "Alba María Téllez Fernández is AI Lead at Marso Robotics and the main developer of the open-source simulation projects AlpaBridge and URDF Studio. She works at the intersection of world models, agentic AI, and cybersecurity for robotics and autonomous vehicles.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://amtellezfernandez.com/",
+        "github": "https://github.com/amtellezfernandez",
+        "twitter": "https://x.com/leader_arm",
+        "linkedin": "https://linkedin.com/in/amtellezfernandez"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/alba-maria-tellez-fernandez.png"
+    },
+    {
       "id": "meiyi-qiang",
       "name": "Meiyi Qiang",
       "roleOrg": "Co-Founder, Yuanshu Zhihui",
@@ -509,7 +551,8 @@
         "website": "https://aipoland.org/",
         "linkedin": "https://www.linkedin.com/in/bartlomiej-szejny-9627b051/"
       },
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/bartlomiej-szejny.png"
     },
     {
       "id": "sean-dong",
@@ -520,7 +563,8 @@
         "sz26-agentic-ai-summit"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/sean-dong.png"
     },
     {
       "id": "birgitta-boeckeler",
@@ -570,7 +614,8 @@
         "sz26-open-source-model"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/chenghao-rong.png"
     },
     {
       "id": "yixiang-zhang",
@@ -629,7 +674,8 @@
         "sz26-open-source-robotics"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/chen-xin.png"
     },
     {
       "id": "zhichao-jiao",
@@ -665,7 +711,7 @@
       "roleOrg": "CTO, Moeru AI",
       "bio": "Literally full stack developer. Coder and builder grants more than 50k stars. Covering CNCF area, AI  training, and agentic",
       "tags": [
-        "sz26-agentic-ai-on-edge"
+        "sz26-agentic-os-app"
       ],
       "socialLinks": {
         "website": "http://nolebase.ayaka.io/",
@@ -681,7 +727,7 @@
       "roleOrg": "Co-speaker",
       "bio": "",
       "tags": [
-        "sz26-agentic-ai-on-edge"
+        "sz26-agentic-os-app"
       ],
       "socialLinks": {},
       "draft": false
@@ -701,6 +747,172 @@
       },
       "draft": false,
       "image": "/images/speakers/confirmed/hsuan-han-lai.png"
+    },
+    {
+      "id": "xuewen-gao",
+      "name": "Xuewen Gao",
+      "roleOrg": "Deputy Chief Engineer & Security Architect, QI-ANXIN",
+      "bio": "Xuewen Gao is Deputy Chief Engineer and Security Architect at QI-ANXIN, with 20 years of experience in cybersecurity operations, product development, and solution architecture. His work spans DevSecOps, code security, SOAR, threat intelligence, security operations, data governance, and AI security.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/xuewen-gao.png"
+    },
+    {
+      "id": "yuning-liang",
+      "name": "Yuning Liang",
+      "roleOrg": "Founder & CEO, DeepComputing",
+      "bio": "Yuning Liang is the founder and CEO of DeepComputing, which develops RISC-V products including laptops, tablets, workstations, vehicles, and drones. He has a hands-on background in embedded systems, platform APIs, and system software, and received the RISC-V Community Contributor Award in 2024.",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "website": "https://deepcomputing.io/",
+        "twitter": "https://x.com/Yuning_XC5",
+        "linkedin": "https://www.linkedin.com/in/yuningliang/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yuning-liang.png"
+    },
+    {
+      "id": "yanwei-huang",
+      "name": "Yanwei Huang",
+      "roleOrg": "Co-speaker",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false
+    },
+    {
+      "id": "yuu",
+      "name": "Yuu",
+      "roleOrg": "Agent Performance & Optimization Intern, Dify",
+      "bio": "Yuu, also known as tommy0103, is the author of Obelisk, an open-source evidence layer that unifies coding-agent session history in a queryable SQLite index. Her work focuses on agent runtimes, CodeAct-style interfaces, local-first data layers, and the tooling needed for intensive multi-agent workflows.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://obelisk.antinomie.org/",
+        "twitter": "https://x.com/QuantumTransf"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yuu.png"
+    },
+    {
+      "id": "yaowei-zheng",
+      "name": "Yaowei Zheng",
+      "roleOrg": "Co-Founder & CTO, PrismShadow",
+      "bio": "Yaowei Zheng is Co-Founder and CTO of PrismShadow and a Ph.D. student in computer science at Beihang University. He created the open-source LlamaFactory fine-tuning framework and now leads PenguinHarness, an open and transparent self-evolving agent engine designed to support more than 1,000 models.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://github.com/hiyouga",
+        "github": "https://github.com/hiyouga",
+        "twitter": "https://x.com/code_hiyouga",
+        "linkedin": "https://www.linkedin.com/in/hiyouga/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yaowei-zheng.png"
+    },
+    {
+      "id": "vincent-caldeira",
+      "name": "Vincent Caldeira",
+      "roleOrg": "APAC CTO, Red Hat",
+      "bio": "Vincent Caldeira is Red Hat's APAC CTO and an Industry Visiting Scholar at Columbia University. With more than 20 years in financial-services technology, he works across open source, cloud-native systems, AI safety, sustainability, and digital sovereignty, and holds leadership roles in several Linux Foundation communities.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://thinkinginsidethebox.ai/",
+        "linkedin": "https://www.linkedin.com/in/caldeirav/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/vincent-caldeira.png"
+    },
+    {
+      "id": "tong-ling",
+      "name": "Tong Ling",
+      "roleOrg": "Head of IoT Product Commercialization, Espressif Systems",
+      "bio": "Tong Ling leads IoT product commercialization at Espressif Systems, advancing the ecosystem and commercial adoption of its open-source IoT platform. His interests span technology, business, philosophy, and human-centered product development.",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/tong-ling.png"
+    },
+    {
+      "id": "xin-liu",
+      "name": "Xin Liu",
+      "roleOrg": "Principal Researcher, Huawei",
+      "bio": "Xin Liu is a Principal Researcher at Huawei and the founder of Jiuwen Symbiosis.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/xin-liu.png"
+    },
+    {
+      "id": "bo-tang",
+      "name": "Bo Tang",
+      "roleOrg": "Head of Applied Algorithms, MemTensor",
+      "bio": "Bo Tang leads applied algorithms at MemTensor and is responsible for the development and deployment of MemOS and ClawForce. His research spans natural language processing, reinforcement learning, and safe reinforcement learning, with extensive experience turning advanced algorithms into production systems.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/bo-tang.png"
+    },
+    {
+      "id": "yanzhi-wang",
+      "name": "Yanzhi Wang",
+      "roleOrg": "Professor, Northeastern University",
+      "bio": "Yanzhi Wang is a professor of electrical and computer engineering at Northeastern University. His research focuses on real-time and energy-efficient deep learning and AI systems, particularly efficient large language models and large-scale generative AI systems.",
+      "tags": [
+        "sz26-open-source-model",
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/yanzhi-wang.png"
+    },
+    {
+      "id": "kerry-zhu",
+      "name": "Kerry Zhu",
+      "roleOrg": "Professor, Tongji University",
+      "bio": "Kerry Zhu is a professor at Tongji University and a Distinguished Member of the China Computer Federation. He has worked in software-engineering education and research for nearly three decades, with a focus on software testing, quality assurance, and intelligent software engineering.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://blog.csdn.net/kerryzhu",
+        "github": "https://github.com/kerryzhu",
+        "twitter": "https://x.com/Kerryzhu",
+        "linkedin": "https://www.linkedin.com/in/kerryzhu/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/kerry-zhu.png"
+    },
+    {
+      "id": "philipp-oppermann",
+      "name": "Philipp Oppermann",
+      "roleOrg": "Freelance Rust Developer",
+      "bio": "Philipp Oppermann is a freelance Rust developer from Germany working on the Dora robotics framework and operating-system development in Rust. He is the author of the Writing an OS in Rust blog and the main editor of the This Month in Rust OSDev newsletter.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://os.phil-opp.com/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/philipp-oppermann.png"
     }
   ]
 }

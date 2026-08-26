@@ -48,13 +48,8 @@ export async function getStaticPaths() {
 }
 
 const { speaker } = Astro.props as { speaker: Speaker };
-const speakerInitials = speaker.name
-  .trim()
-  .split(/\s+/)
-  .slice(0, 2)
-  .map((part) => part[0])
-  .join("")
-  .toLocaleUpperCase();
+const speakerPlaceholderImage = "/images/speakers/0-speaker-placeholder.png";
+const speakerImage = speaker.image?.trim() || speakerPlaceholderImage;
 
 // Previous/Next speaker navigation
 const allSpeakers = speakers.speakers as Speaker[];
@@ -140,7 +135,7 @@ const speakerSessions = [
 });
 
 // Detect placeholder speakers (no bio or using generic placeholder image)
-const isPlaceholder = !speaker.bio || speaker.image === "/images/speakers/better_portrait/0-placeholder-person.png";
+const isPlaceholder = !speaker.bio || speakerImage === speakerPlaceholderImage;
 
 // Social links mapping for icons
 const socialIconMap: Record<string, string> = {
@@ -214,7 +209,7 @@ const socialIconMap: Record<string, string> = {
             }
             {!speaker?.image && (
               <div class="speaker-detail-image speaker-detail-placeholder" aria-hidden="true">
-                {speakerInitials}
+                <img src={speakerImage} alt="" />
               </div>
             )}
             <div class="speaker-row-meta">

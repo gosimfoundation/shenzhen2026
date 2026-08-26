@@ -111,6 +111,18 @@
       "nameEn": "Peilin Li"
     },
     {
+      "id": "yujie-yang",
+      "name": "Yujie Yang",
+      "roleOrg": "联合讲师",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Yujie Yang"
+    },
+    {
       "id": "wilson-wang",
       "name": "Wilson Wang",
       "roleOrg": "字节跳动软件工程师",
@@ -395,6 +407,39 @@
       "nameEn": "CodingMa"
     },
     {
+      "id": "charbel-dandjinou",
+      "name": "Charbel Dandjinou",
+      "roleOrg": "Reflexion Robotics 创始人兼 CTO",
+      "bio": "Reflexion Robotics 创始人兼 CTO，致力于开发面向具身智能的安全运行时 A OS。曾任 EXXACT Robotics AI 研究工程师及 MLOps 技术负责人，并创立 IROKO 与 Deep Takka 研究实验室，推动 AI 技术普及与包容性发展。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://www.cd-ia.blog/"
+      },
+      "draft": false,
+      "nameEn": "Charbel Dandjinou",
+      "image": "/images/speakers/confirmed/charbel-dandjinou.png"
+    },
+    {
+      "id": "alba-maria-tellez-fernandez",
+      "name": "Alba María Téllez Fernández",
+      "roleOrg": "Marso Robotics AI 负责人",
+      "bio": "Marso Robotics AI 负责人，也是开源仿真项目 AlpaBridge 与 URDF Studio 的主要开发者。她的工作聚焦世界模型、智能体 AI，以及机器人和自动驾驶系统的网络安全。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://amtellezfernandez.com/",
+        "github": "https://github.com/amtellezfernandez",
+        "twitter": "https://x.com/leader_arm",
+        "linkedin": "https://linkedin.com/in/amtellezfernandez"
+      },
+      "draft": false,
+      "nameEn": "Alba María Téllez Fernández",
+      "image": "/images/speakers/confirmed/alba-maria-tellez-fernandez.png"
+    },
+    {
       "id": "meiyi-qiang",
       "name": "强美伊",
       "roleOrg": "元枢智汇联合创始人",
@@ -542,7 +587,8 @@
         "linkedin": "https://www.linkedin.com/in/bartlomiej-szejny-9627b051/"
       },
       "draft": false,
-      "nameEn": "Bartłomiej Szejny"
+      "nameEn": "Bartłomiej Szejny",
+      "image": "/images/speakers/confirmed/bartlomiej-szejny.png"
     },
     {
       "id": "sean-dong",
@@ -554,7 +600,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Sean Dong"
+      "nameEn": "Sean Dong",
+      "image": "/images/speakers/confirmed/sean-dong.png"
     },
     {
       "id": "birgitta-boeckeler",
@@ -608,7 +655,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Chenghao Rong"
+      "nameEn": "Chenghao Rong",
+      "image": "/images/speakers/confirmed/chenghao-rong.png"
     },
     {
       "id": "yixiang-zhang",
@@ -672,7 +720,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Chen Xin"
+      "nameEn": "Chen Xin",
+      "image": "/images/speakers/confirmed/chen-xin.png"
     },
     {
       "id": "zhichao-jiao",
@@ -710,7 +759,7 @@
       "roleOrg": "Moeru AI CTO",
       "bio": "全栈开发者和开源项目构建者，其项目累计获得超过 5 万颗 GitHub Star，工作领域涵盖 CNCF 生态、AI 训练与智能体技术。",
       "tags": [
-        "sz26-agentic-ai-on-edge"
+        "sz26-agentic-os-app"
       ],
       "socialLinks": {
         "website": "http://nolebase.ayaka.io/",
@@ -727,7 +776,7 @@
       "roleOrg": "联合讲师",
       "bio": "",
       "tags": [
-        "sz26-agentic-ai-on-edge"
+        "sz26-agentic-os-app"
       ],
       "socialLinks": {},
       "draft": false,
@@ -749,6 +798,184 @@
       "draft": false,
       "image": "/images/speakers/confirmed/hsuan-han-lai.png",
       "nameEn": "Hsuan Han Lai"
+    },
+    {
+      "id": "xuewen-gao",
+      "name": "高学文",
+      "roleOrg": "奇安信副总工程师兼安全架构师",
+      "bio": "从事网络空间安全实战攻防、产品研发及解决方案工作 20 年，主导设计与研发 DevSecOps、代码安全、SOAR、威胁情报、威胁分析和安全运营平台等产品。近年重点负责 AI 安全整体规划、数据分类分级、数据治理与 AI 安全研究，拥有十余项行业专利。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Xuewen Gao",
+      "image": "/images/speakers/confirmed/xuewen-gao.png"
+    },
+    {
+      "id": "yuning-liang",
+      "name": "Yuning Liang",
+      "roleOrg": "DeepComputing 创始人兼 CEO",
+      "bio": "DeepComputing 创始人兼 CEO，带领团队开发基于 RISC-V 的笔记本电脑、平板、工作站、遥控车和无人机等产品。他拥有嵌入式系统、平台 API 与系统软件实践经验，并于 2024 年获得 RISC-V 社区贡献者奖。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "website": "https://deepcomputing.io/",
+        "twitter": "https://x.com/Yuning_XC5",
+        "linkedin": "https://www.linkedin.com/in/yuningliang/"
+      },
+      "draft": false,
+      "nameEn": "Yuning Liang",
+      "image": "/images/speakers/confirmed/yuning-liang.png"
+    },
+    {
+      "id": "yanwei-huang",
+      "name": "Yanwei Huang",
+      "roleOrg": "联合讲师",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Yanwei Huang"
+    },
+    {
+      "id": "yuu",
+      "name": "Yuu",
+      "roleOrg": "Dify 智能体性能与优化实习生",
+      "bio": "开源项目 Obelisk 作者。该项目将多种编码智能体的会话历史统一到可查询的 SQLite 索引中。她的工作聚焦智能体运行时、CodeAct 风格交互、本地优先数据层，以及高强度多智能体工作流所需的工具。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://obelisk.antinomie.org/",
+        "twitter": "https://x.com/QuantumTransf"
+      },
+      "draft": false,
+      "nameEn": "Yuu",
+      "image": "/images/speakers/confirmed/yuu.png"
+    },
+    {
+      "id": "yaowei-zheng",
+      "name": "郑耀威",
+      "roleOrg": "千影光流联合创始人兼 CTO",
+      "bio": "千影光流联合创始人兼 CTO、北京航空航天大学计算机学院博士研究生，开源大模型微调框架 LlamaFactory 作者。目前带领团队打造 PenguinHarness，一个面向 1000 多种模型的开源、透明智能体自进化引擎。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://github.com/hiyouga",
+        "github": "https://github.com/hiyouga",
+        "twitter": "https://x.com/code_hiyouga",
+        "linkedin": "https://www.linkedin.com/in/hiyouga/"
+      },
+      "draft": false,
+      "nameEn": "Yaowei Zheng",
+      "image": "/images/speakers/confirmed/yaowei-zheng.png"
+    },
+    {
+      "id": "vincent-caldeira",
+      "name": "Vincent Caldeira",
+      "roleOrg": "Red Hat 亚太区 CTO",
+      "bio": "Red Hat 亚太区 CTO、哥伦比亚大学产业访问学者，拥有二十多年金融科技经验。他长期关注开源、云原生系统、AI 安全、可持续发展与数字主权，并在多个 Linux Foundation 社区担任领导职务。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://thinkinginsidethebox.ai/",
+        "linkedin": "https://www.linkedin.com/in/caldeirav/"
+      },
+      "draft": false,
+      "nameEn": "Vincent Caldeira",
+      "image": "/images/speakers/confirmed/vincent-caldeira.png"
+    },
+    {
+      "id": "tong-ling",
+      "name": "凌通",
+      "roleOrg": "乐鑫科技 IoT 产品商业化负责人",
+      "bio": "现任乐鑫科技 IoT 产品商业化负责人，推动乐鑫开源 IoT 平台的生态建设与商业化落地，关注科技、商业、哲学与生活的交叉，并致力于创造有温度的产品与内容。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Tong Ling",
+      "image": "/images/speakers/confirmed/tong-ling.png"
+    },
+    {
+      "id": "xin-liu",
+      "name": "Xin Liu",
+      "roleOrg": "华为首席研究员",
+      "bio": "华为首席研究员、九问共生创始人。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Xin Liu",
+      "image": "/images/speakers/confirmed/xin-liu.png"
+    },
+    {
+      "id": "bo-tang",
+      "name": "唐波",
+      "roleOrg": "记忆张量应用算法负责人",
+      "bio": "现任记忆张量应用算法负责人，主要负责 MemOS 与 ClawForce 的技术研发及应用落地，长期从事自然语言处理、强化学习与安全强化学习研究，拥有丰富的前沿技术研究、核心算法研发及规模化业务落地经验。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Bo Tang",
+      "image": "/images/speakers/confirmed/bo-tang.png"
+    },
+    {
+      "id": "yanzhi-wang",
+      "name": "Yanzhi Wang",
+      "roleOrg": "Northeastern University 教授",
+      "bio": "Northeastern University 电气与计算机工程教授，研究方向包括实时与高能效深度学习和人工智能系统，尤其关注高效大语言模型及大规模生成式 AI 系统。",
+      "tags": [
+        "sz26-open-source-model",
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Yanzhi Wang",
+      "image": "/images/speakers/confirmed/yanzhi-wang.png"
+    },
+    {
+      "id": "kerry-zhu",
+      "name": "朱少民",
+      "roleOrg": "同济大学教授",
+      "bio": "同济大学教授、中国计算机学会杰出会员，近三十年来从事软件工程教学与研究，重点关注软件测试、质量保障和智能软件工程，出版二十余部专著及多部译著。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://blog.csdn.net/kerryzhu",
+        "github": "https://github.com/kerryzhu",
+        "twitter": "https://x.com/Kerryzhu",
+        "linkedin": "https://www.linkedin.com/in/kerryzhu/"
+      },
+      "draft": false,
+      "nameEn": "Kerry Zhu",
+      "image": "/images/speakers/confirmed/kerry-zhu.png"
+    },
+    {
+      "id": "philipp-oppermann",
+      "name": "Philipp Oppermann",
+      "roleOrg": "自由职业 Rust 开发者",
+      "bio": "来自德国的自由职业 Rust 开发者，参与 Dora 机器人框架及 Rust 操作系统开发相关项目。他是 Writing an OS in Rust 博客作者，也是 This Month in Rust OSDev 月报的主要编辑。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://os.phil-opp.com/"
+      },
+      "draft": false,
+      "nameEn": "Philipp Oppermann",
+      "image": "/images/speakers/confirmed/philipp-oppermann.png"
     }
   ]
 }

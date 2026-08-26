@@ -14,9 +14,8 @@ const isHomepage = slug === "/" || slug === "/zh/" || slug === "/fr/";
 const anchorBase = isHomepage ? "" : "/zh/";
 const switchPath = isZhPath ? slug.replace("/zh/", "/") : `/zh${slug}`;
 
-// The "筛选" (Filter) button only works on pages with a filter panel
-// (speakers / sponsors / past-supporters). Elsewhere it was a dead empty pill.
-const hasFilter = ["/speakers/", "/sponsors/"].includes(basePath);
+// 只有讲师列表提供移动端筛选面板；其他页面不渲染无效按钮。
+const hasFilter = basePath === "/speakers/";
 
 const links = [
   {
@@ -180,22 +179,22 @@ const links = [
         class="btn primary glass-orange btn-floating btn-hover"
       />
     </div>
-  </div>
 
-  {hasFilter && (
-    <div
-      class="btn light btn-filter btn-filter-floating btn-hover"
-      data-has-notification={hasNotificationBar}
-    >
-      <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
-        <div class="btn-content original">
-          <div class="btn-fill"></div>
-          <span>筛选</span>
+    {hasFilter && (
+      <div
+        class="btn primary glass-orange btn-floating btn-filter btn-filter-floating btn-hover"
+        data-has-notification={hasNotificationBar}
+      >
+        <div class="btn-click" data-filter-toggle="toggle">
+          <div class="btn-content duplicate">
+            <div class="btn-fill"></div>
+            <span>筛选</span>
+          </div>
+          <div class="border-box"></div>
         </div>
-        <div class="border-box"></div>
       </div>
-    </div>
-  )}
+    )}
+  </div>
 
   <div
     class="main-nav-bar"
@@ -311,9 +310,9 @@ const links = [
       </div>
 
       {hasFilter && (
-        <div class="btn light btn-filter btn-filter-static btn-hover">
-          <div class="btn-click filter-alpha-animate" data-filter-toggle="toggle">
-            <div class="btn-content original">
+        <div class="btn primary glass-orange btn-filter btn-filter-static btn-hover">
+          <div class="btn-click" data-filter-toggle="toggle">
+            <div class="btn-content duplicate">
               <div class="btn-fill"></div>
               <span>筛选</span>
             </div>
@@ -442,9 +441,44 @@ const links = [
     background-color: rgba(255, 255, 255, 0.1);
   }
   @media screen and (max-width: 1070px) {
+    .main-nav-bar .row {
+      display: grid;
+      grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+      column-gap: clamp(0.4rem, 1.4vw, 0.8rem);
+    }
+
+    .main-nav-bar .logo {
+      grid-column: 1;
+    }
+
+    .main-nav-bar nav {
+      display: none;
+    }
+
+    .header-buttons {
+      position: relative;
+      grid-column: 2;
+      gap: 0;
+    }
+
     .language-dropdown {
-      position: absolute;
-      left: 130px;
+      position: relative;
+      left: auto;
+    }
+
+    .main-nav-bar .btn-filter-static {
+      position: relative;
+      top: auto;
+      right: auto;
+      grid-column: 4;
+      grid-row: 1;
+      justify-self: end;
+    }
+
+    .main-nav-bar .hamburger.outline {
+      grid-column: 5;
+      grid-row: 1;
+      justify-self: end;
     }
   }
 

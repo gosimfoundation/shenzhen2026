@@ -9,7 +9,7 @@ finished portrait.
    npm run import-speakers -- /path/to/proposals-accepted.json /path/to/speakers-photos.zip
    ```
 
-2. Edit only the JPG files created in this folder.
+2. Edit only the JPG, JPEG, PNG, or WebP files created in this folder.
 3. Export each finished portrait as a PNG with the same base filename into
    `public/images/speakers/confirmed/`.
 4. Sync the finished files to the website:

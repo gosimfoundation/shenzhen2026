@@ -68,6 +68,12 @@ if (!sourcePath) {
 const cleanText = (value) =>
   typeof value === "string" ? value.trim().replace(/\r\n/g, "\n") : "";
 
+const speakerNameKey = (value) =>
+  cleanText(value)
+    .normalize("NFKD")
+    .replace(/\p{Mark}/gu, "")
+    .toLocaleLowerCase();
+
 const slugify = (name, fallback) => {
   const slug = cleanText(name)
     .normalize("NFKD")
@@ -147,7 +153,7 @@ for (const entry of overrideData) {
   const sourceName = cleanText(entry.sourceName);
   if (!sourceName) throw new Error("Every speaker override needs a sourceName.");
 
-  const key = sourceName.toLocaleLowerCase();
+  const key = speakerNameKey(sourceName);
   if (overridesBySourceName.has(key)) {
     throw new Error(`Duplicate speaker override for ${sourceName}.`);
   }
@@ -215,13 +221,17 @@ if (photosZipPath) {
         throw new Error(`Unsupported speaker image format: ${imageFile}`);
       }
 
-      const key = name.toLocaleLowerCase();
-      if (photosByName.has(key)) {
-        throw new Error(`Duplicate photo manifest entry for ${name}.`);
+      const key = speakerNameKey(name);
+      const existingPhoto = photosByName.get(key);
+      if (existingPhoto) {
+        if (existingPhoto.imageFile !== imageFile) {
+          throw new Error(`Conflicting photo manifest entries for ${name}.`);
+        }
+        continue;
       }
 
       const archivePath = `${trackId}/${imageFile}`;
-      photosByName.set(key, { archivePath });
+      photosByName.set(key, { archivePath, imageFile });
     }
   }
 }
@@ -240,7 +250,7 @@ try {
 
 const existingByName = new Map(
   existingSpeakers.map((speaker) => [
-    cleanText(speaker.name).toLocaleLowerCase(),
+    speakerNameKey(speaker.name),
     speaker,
   ]),
 );
@@ -258,10 +268,10 @@ const addSpeaker = (person, proposal, isCoSpeaker = false) => {
   const sourceName = cleanText(person.name);
   if (!sourceName) return;
 
-  const sourceKey = sourceName.toLocaleLowerCase();
+  const sourceKey = speakerNameKey(sourceName);
   const contentOverride = overridesBySourceName.get(sourceKey);
   const name = cleanText(contentOverride?.en?.name) || sourceName;
-  const key = name.toLocaleLowerCase();
+  const key = speakerNameKey(name);
   const tags = normalizeTracks(proposal.tracks);
   const existing = speakersByName.get(key);
   const baseId = cleanText(contentOverride?.id) || slugify(name, proposal.ref);
