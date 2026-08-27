@@ -5,6 +5,7 @@ import {
   getSpeakerImagePath,
   SPEAKER_IMAGE_FALLBACK_HANDLER,
 } from "utils/speaker-images";
+import { compareSpeakersBySurname } from "utils/speaker-sorting";
 
 const getSpeakerNameFontSize = (name: string) => {
   const length = [...name].length;
@@ -44,19 +45,10 @@ const speakerCardText: Record<string, { role?: string; company?: string }> = {
   "joaquin-salvachua": { company: "Polytechnic Univ. Madrid" },
 };
 
-const isCoSpeaker = (speaker) =>
-  speaker.roleOrg.trim().toLocaleLowerCase() === "co-speaker";
-
 // Filter speakers to only include those where draft is false and id is not "tbd"
 const filteredSpeakers = speakersData.speakers
   .filter((speaker) => speaker.draft !== true && speaker.id !== "tbd")
-  .sort((a, b) => {
-    const speakerTypeOrder = Number(isCoSpeaker(a)) - Number(isCoSpeaker(b));
-    if (speakerTypeOrder !== 0) return speakerTypeOrder;
-
-    const lastName = (name) => name.trim().split(/\s+/).slice(-1)[0].toLowerCase();
-    return lastName(a.name).localeCompare(lastName(b.name));
-  });
+  .sort((a, b) => compareSpeakersBySurname(a, b));
 
 const eventCategoryIds = new Set([
   "open-for-sdg",

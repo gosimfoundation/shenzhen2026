@@ -1,25 +1,23 @@
 ---
 // Import the speakers data
 import speakersData from "json/SpeakersZh.json";
+import canonicalSpeakersData from "json/SpeakersCleaned.json";
 import {
   getSpeakerImagePath,
   SPEAKER_IMAGE_FALLBACK_HANDLER,
 } from "utils/speaker-images";
+import { compareSpeakersBySurname } from "utils/speaker-sorting";
 
 const categoryName = (category) => category.nameZh || category.name;
 
-const isCoSpeaker = (speaker) =>
-  ["联合讲师", "co-speaker"].includes(speaker.roleOrg.trim().toLocaleLowerCase());
+const canonicalNamesById = new Map(
+  canonicalSpeakersData.speakers.map((speaker) => [speaker.id, speaker.name]),
+);
 
 // Filter speakers to only include those where draft is false and id is not "tbd"
 const filteredSpeakers = speakersData.speakers
   .filter((speaker) => speaker.draft !== true && speaker.id !== "tbd")
-  .sort((a, b) => {
-    const speakerTypeOrder = Number(isCoSpeaker(a)) - Number(isCoSpeaker(b));
-    if (speakerTypeOrder !== 0) return speakerTypeOrder;
-
-    return a.name.localeCompare(b.name, "zh-CN");
-  });
+  .sort((a, b) => compareSpeakersBySurname(a, b, canonicalNamesById));
 
 const eventCategoryIds = new Set([
   "open-for-sdg",

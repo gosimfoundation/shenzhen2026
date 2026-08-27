@@ -18,4 +18,14 @@ describe("speaker image paths", () => {
       SPEAKER_PLACEHOLDER_IMAGE,
     );
   });
+
+  it.each([
+    "bartlomiej-szejny",
+    "chenghao-rong",
+    "chen-xin",
+    "shuyue-hu",
+    "xin-liu",
+  ])("uses the placeholder instead of the GitHub identicon for %s", (speakerId) => {
+    expect(getSpeakerImagePath(speakerId)).toBe(SPEAKER_PLACEHOLDER_IMAGE);
+  });
 });
