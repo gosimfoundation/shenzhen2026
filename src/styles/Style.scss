@@ -637,6 +637,20 @@ footer {
    margin: 0;
 }
 
+/* The desktop floating ticket replaces the header ticket while the header is
+   hidden. Keep it on the exact same top/right axes and avoid wrapping a second
+   glass pill around it, so both states read as one continuous control. */
+@media screen and (min-width: 1071px) {
+   body .floating-controls {
+      top: var(--row-gap);
+      padding: 0;
+   }
+
+   .floating-controls::before {
+      display: none;
+   }
+}
+
 /* Give BOTH hamburgers (the static top-right one and the floating one) the same
    liquid-glass look as the Buy Tickets button: translucent orange gradient fill
    over a blurred backdrop, a bright specular rim and inner gloss + float shadow.

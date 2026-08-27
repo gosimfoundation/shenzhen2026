@@ -24,8 +24,16 @@ export function setupSpeakerFilters() {
     "[data-speaker-filter-empty]",
   );
   const activeCategories = new Set<string>();
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const render = () => {
+  const render = (animate = true) => {
+    const previousRects = new Map<HTMLElement, DOMRect>();
+    if (animate && !reducedMotion) {
+      for (const card of cards) {
+        if (!card.hidden) previousRects.set(card, card.getBoundingClientRect());
+      }
+    }
+
     let visibleCount = 0;
 
     for (const card of cards) {
@@ -63,6 +71,41 @@ export function setupSpeakerFilters() {
 
     for (const output of summaries) output.textContent = summary;
     if (emptyState) emptyState.hidden = visibleCount !== 0;
+
+    if (animate && !reducedMotion) {
+      requestAnimationFrame(() => {
+        for (const card of cards) {
+          if (card.hidden) continue;
+          const previous = previousRects.get(card);
+          const current = card.getBoundingClientRect();
+          if (typeof card.animate !== "function") continue;
+          const keyframes = previous
+            ? [
+                {
+                  transform: `translate(${previous.left - current.left}px, ${previous.top - current.top}px) scale(0.985)`,
+                  opacity: 0.72,
+                },
+                { transform: "translate(0, 0) scale(1)", opacity: 1 },
+              ]
+            : [
+                { transform: "translateY(18px) scale(0.9)", opacity: 0 },
+                { transform: "translateY(0) scale(1)", opacity: 1 },
+              ];
+
+          card.getAnimations?.().forEach((animation) => animation.cancel());
+          card.animate(keyframes, {
+            duration: previous ? 420 : 360,
+            easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+            fill: "both",
+          });
+        }
+
+        window.setTimeout(() => {
+          (window as typeof window & { ScrollTrigger?: { refresh?: () => void } })
+            .ScrollTrigger?.refresh?.();
+        }, 440);
+      });
+    }
   };
 
   for (const control of controls) {
@@ -77,9 +120,17 @@ export function setupSpeakerFilters() {
         activeCategories.add(category);
       }
 
-      render();
+      render(true);
+
+      if (control.closest(".filter-container")) {
+        document.body.setAttribute("data-nav-filter-status", "not-active");
+        document.body.setAttribute("data-liquid-overlay-open", "false");
+        document
+          .querySelectorAll<HTMLElement>("[data-filter-toggle='toggle']")
+          .forEach((toggle) => toggle.closest("button")?.setAttribute("aria-expanded", "false"));
+      }
     });
   }
 
-  render();
+  render(false);
 }

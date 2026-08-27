@@ -62,6 +62,14 @@ const links = [
     link: "/zh/venue/",
   },
 ];
+
+const normalizePath = (path: string) => path === "/" ? "/" : path.replace(/\/$/, "");
+const currentPath = normalizePath(slug);
+const isNavigationLinkActive = (link?: string) => {
+  if (!link?.startsWith("/")) return false;
+  const linkPath = normalizePath(link);
+  return currentPath === linkPath || currentPath.startsWith(`${linkPath}/`);
+};
 ---
 
 <header>
@@ -90,14 +98,14 @@ const links = [
               <li
                 class={`link link-hover ${loop.subLinks ? "has-sublinks" : ""}`}
                 data-barba-update
-                data-link-status={loop.link === slug ? "active" : "not-active"}
+                data-link-status={isNavigationLinkActive(loop.link) ? "active" : "not-active"}
                 data-has-sublinks={loop.subLinks ? "true" : "false"}
                 data-sublinks={
                   loop.subLinks ? JSON.stringify(loop.subLinks) : "[]"
                 }
               >
                 {loop?.subLinks ? (
-                  <button class="link-click">
+                  <button class="link-click" aria-expanded="false">
                     <span>{loop.text}</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +123,7 @@ const links = [
                     </svg>
                   </button>
                 ) : (
-                  <a class="link-click" href={loop.link} target={loop.openInNewTab ? "_blank" : undefined} rel={loop.openInNewTab ? "noopener noreferrer" : undefined}>
+                  <a class="link-click" href={loop.link} aria-current={isNavigationLinkActive(loop.link) ? "page" : undefined} target={loop.openInNewTab ? "_blank" : undefined} rel={loop.openInNewTab ? "noopener noreferrer" : undefined}>
                     <span>{loop.text}</span>
                   </a>
                 )}
@@ -161,6 +169,7 @@ const links = [
     <button
       class="hamburger btn-floating"
       aria-label="Open menu"
+      aria-expanded="false"
       data-navigation-toggle="toggle"
       data-has-notification={hasNotificationBar}
     >
@@ -179,7 +188,10 @@ const links = [
     </div>
 
     {hasFilter && (
-      <div
+      <button
+        type="button"
+        aria-label="打开讲师筛选"
+        aria-expanded="false"
         class="btn primary glass-orange btn-floating btn-filter btn-filter-floating btn-hover"
         data-has-notification={hasNotificationBar}
       >
@@ -190,7 +202,7 @@ const links = [
           </div>
           <div class="border-box"></div>
         </div>
-      </div>
+      </button>
     )}
   </div>
 
@@ -218,14 +230,14 @@ const links = [
                 class={`link link-hover ${loop.subLinks ? "has-sublinks" : ""}`}
                 style="position: relative;"
                 data-barba-update
-                data-link-status={loop.link === slug ? "active" : "not-active"}
+                data-link-status={isNavigationLinkActive(loop.link) ? "active" : "not-active"}
                 data-has-sublinks={loop.subLinks ? "true" : "false"}
                 data-sublinks={
                   loop.subLinks ? JSON.stringify(loop.subLinks) : "[]"
                 }
               >
                 {loop?.subLinks ? (
-                  <button class="link-click">
+                  <button class="link-click" aria-expanded="false">
                     <span>{loop.text}</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -243,7 +255,7 @@ const links = [
                     </svg>
                   </button>
                 ) : (
-                  <a class="link-click" href={loop.link} target={loop.openInNewTab ? "_blank" : undefined} rel={loop.openInNewTab ? "noopener noreferrer" : undefined}>
+                  <a class="link-click" href={loop.link} aria-current={isNavigationLinkActive(loop.link) ? "page" : undefined} target={loop.openInNewTab ? "_blank" : undefined} rel={loop.openInNewTab ? "noopener noreferrer" : undefined}>
                     <span>{loop.text}</span>
                   </a>
                 )}
@@ -255,7 +267,7 @@ const links = [
 
       <div class="header-buttons">
         <div class="language-dropdown">
-          <button class="language-btn">
+          <button class="language-btn" aria-label="选择语言" aria-expanded="false">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -301,14 +313,14 @@ const links = [
           class="btn primary glass-orange btn-hover"
         />
       </div>
-      <div class="hamburger outline" data-navigation-toggle="toggle">
+      <button class="hamburger outline" type="button" aria-label="打开菜单" aria-expanded="false" data-navigation-toggle="toggle">
         <div class="hamburger-fill"></div>
         <div class="bar bar-top"></div>
         <div class="bar bar-bottom"></div>
-      </div>
+      </button>
 
       {hasFilter && (
-        <div class="btn primary glass-orange btn-filter btn-filter-static btn-hover">
+        <button class="btn primary glass-orange btn-filter btn-filter-static btn-hover" type="button" aria-label="打开讲师筛选" aria-expanded="false">
           <div class="btn-click" data-filter-toggle="toggle">
             <div class="btn-content duplicate">
               <div class="btn-fill"></div>
@@ -316,7 +328,7 @@ const links = [
             </div>
             <div class="border-box"></div>
           </div>
-        </div>
+        </button>
       )}
     </div>
   </div>

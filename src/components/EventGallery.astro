@@ -252,11 +252,19 @@ const { title, albums } = Astro.props;
     const go = (delta: number) => {
       index = (index + delta + items.length) % items.length;
       const next = items[index];
+      lightbox.classList.add('is-switching');
       lbImg.style.opacity = '0';
       const pre = new Image();
       pre.onload = () => {
         lbImg.src = pre.src;
         lbImg.alt = next.alt || '';
+        requestAnimationFrame(() => {
+          lightbox.classList.remove('is-switching');
+          lbImg.style.opacity = '1';
+        });
+      };
+      pre.onerror = () => {
+        lightbox.classList.remove('is-switching');
         lbImg.style.opacity = '1';
       };
       pre.src = next.src;

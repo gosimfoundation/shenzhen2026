@@ -1168,13 +1168,30 @@ const gridDays: GridDay[] = days.map(d => {
       Array.from(panels, (panel) => panel.dataset.previewTrackPanel).filter(Boolean),
     )
 
+    const revealPanel = (panel: HTMLElement | undefined) => {
+      if (!panel || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+      if (typeof panel.animate !== "function") return
+      panel.getAnimations?.().forEach((animation) => animation.cancel())
+      panel.animate(
+        [
+          { opacity: 0, transform: "translateY(14px) scale(0.985)", filter: "blur(5px)" },
+          { opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" },
+        ],
+        { duration: 380, easing: "cubic-bezier(0.16, 1, 0.3, 1)" },
+      )
+    }
+
     const showTrack = (trackId: string, updateHash = true) => {
       buttons.forEach((button) => {
         button.classList.toggle("active", button.dataset.previewTrackButton === trackId)
       })
+      let incoming: HTMLElement | undefined
       panels.forEach((panel) => {
-        panel.style.display = panel.dataset.previewTrackPanel === trackId ? "block" : "none"
+        const matches = panel.dataset.previewTrackPanel === trackId
+        panel.style.display = matches ? "block" : "none"
+        if (matches) incoming = panel
       })
+      revealPanel(incoming)
       if (updateHash) history.replaceState(null, "", `#${trackId}`)
     }
 
@@ -1208,6 +1225,20 @@ const gridDays: GridDay[] = days.map(d => {
   const roomsBtn = document.querySelector("[data-view='rooms']")
   const gridBtn = document.querySelector("[data-view='grid']")
   const venueBtn = document.querySelector("[data-view='venue']")
+  const reduceScheduleMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
+  function revealSchedulePanel(panel) {
+    if (!(panel instanceof HTMLElement) || reduceScheduleMotion) return
+    if (typeof panel.animate !== "function") return
+    panel.getAnimations?.().forEach((animation) => animation.cancel())
+    panel.animate(
+      [
+        { opacity: 0, transform: "translateY(14px) scale(0.988)", filter: "blur(5px)" },
+        { opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0)" },
+      ],
+      { duration: 380, easing: "cubic-bezier(0.16, 1, 0.3, 1)" },
+    )
+  }
 
   function hideAllPanels() {
     schedContainer.style.display = "none"
@@ -1238,6 +1269,7 @@ const gridDays: GridDay[] = days.map(d => {
     overviewBtn.classList.add("active")
     hideAllPanels()
     overviewPanel.style.display = "block"
+    revealSchedulePanel(overviewPanel)
     refreshScroll()
   }
 
@@ -1247,6 +1279,7 @@ const gridDays: GridDay[] = days.map(d => {
     hideAllPanels()
     roomsPanel.style.display = "block"
     showRoomPanel(activeRoomDay, activeRoom)
+    revealSchedulePanel(roomsPanel)
     refreshScroll()
   }
 
@@ -1255,6 +1288,7 @@ const gridDays: GridDay[] = days.map(d => {
     gridBtn.classList.add("active")
     hideAllPanels()
     gridPanel.style.display = "block"
+    revealSchedulePanel(gridPanel)
     refreshScroll()
   }
 
@@ -1263,6 +1297,7 @@ const gridDays: GridDay[] = days.map(d => {
     venueBtn.classList.add("active")
     hideAllPanels()
     venuePanel.style.display = "block"
+    revealSchedulePanel(venuePanel)
     refreshScroll()
   }
 
@@ -1285,6 +1320,7 @@ const gridDays: GridDay[] = days.map(d => {
     document.querySelectorAll("[data-room-panel-day]").forEach((panel) => {
       const match = panel.dataset.roomPanelDay === day && panel.dataset.roomPanelRoom === room
       panel.style.display = match ? "block" : "none"
+      if (match) revealSchedulePanel(panel)
     })
   }
 
@@ -1310,6 +1346,7 @@ const gridDays: GridDay[] = days.map(d => {
     document.querySelectorAll("[data-panel-day]").forEach((panel) => {
       const match = panel.dataset.panelDay === day && panel.dataset.panelTrack === track
       panel.style.display = match ? "block" : "none"
+      if (match) revealSchedulePanel(panel)
     })
     refreshScroll()
   }
@@ -1325,7 +1362,9 @@ const gridDays: GridDay[] = days.map(d => {
       document.querySelectorAll("[data-grid-day]").forEach((b) => b.classList.remove("active"))
       btn.classList.add("active")
       document.querySelectorAll("[data-grid-panel]").forEach((p) => {
-        p.classList.toggle("hidden", p.dataset.gridPanel !== btn.dataset.gridDay)
+        const match = p.dataset.gridPanel === btn.dataset.gridDay
+        p.classList.toggle("hidden", !match)
+        if (match) revealSchedulePanel(p)
       })
       refreshScroll()
     })

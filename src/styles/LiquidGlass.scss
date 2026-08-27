@@ -89,3 +89,897 @@
 .section-home-intro .btn.light .btn-content.duplicate .btn-fill {
    background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.74)) !important;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Liquid-gooey motion system
+   One movable surface is shared by each selector group. This creates the
+   visual stretch/merge effect while keeping the DOM, hit areas, and text
+   stationary and crisp.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+   --liquid-spring: 420ms cubic-bezier(0.16, 1, 0.3, 1);
+   --liquid-quick: 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+button.hamburger,
+button.btn-filter {
+   appearance: none;
+   margin: 0;
+   padding: 0;
+   border: 0;
+   color: inherit;
+   background: transparent;
+   font: inherit;
+}
+
+.liquid-selection-group {
+   position: relative;
+   isolation: isolate;
+}
+
+.liquid-selection-group > :not(.liquid-selection) {
+   position: relative;
+   z-index: 1;
+}
+
+.liquid-selection-group button:focus-visible,
+.liquid-selection-group a:focus-visible {
+   outline: 2px solid rgba(255, 136, 82, 0.9);
+   outline-offset: 3px;
+}
+
+.liquid-selection {
+   --liquid-x: 0px;
+   --liquid-y: 0px;
+   --liquid-w: 0px;
+   --liquid-h: 0px;
+   --liquid-stretch: 1;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 0;
+   width: var(--liquid-w);
+   height: var(--liquid-h);
+   border: 1px solid color-mix(in srgb, var(--liquid-accent, #f84a10) 42%, rgba(255, 255, 255, 0.18));
+   border-radius: 1rem;
+   background: rgba(248, 74, 16, 0.16);
+   background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--liquid-accent, #f84a10) 27%, rgba(255, 255, 255, 0.16)),
+      color-mix(in srgb, var(--liquid-accent, #f84a10) 17%, rgba(20, 18, 9, 0.2))
+   );
+   box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.34),
+      inset 0 -5px 12px rgba(0, 0, 0, 0.12),
+      0 8px 24px color-mix(in srgb, var(--liquid-accent, #f84a10) 20%, transparent);
+   opacity: 0;
+   pointer-events: none;
+   transform: translate3d(var(--liquid-x), var(--liquid-y), 0) scaleX(var(--liquid-stretch));
+   transform-origin: center;
+   transition:
+      transform var(--liquid-spring),
+      width var(--liquid-spring),
+      height var(--liquid-spring),
+      border-radius var(--liquid-spring),
+      background-color var(--liquid-quick),
+      opacity 140ms ease;
+   will-change: transform, width, height;
+}
+
+.liquid-selection::before,
+.liquid-selection::after {
+   content: "";
+   position: absolute;
+   top: 50%;
+   width: clamp(0.7rem, 34%, 1.8rem);
+   aspect-ratio: 1;
+   border-radius: 50%;
+   background: inherit;
+   opacity: 0;
+   filter: blur(5px);
+   transform: translateY(-50%) scale(0.35);
+   transition: opacity 120ms ease, transform var(--liquid-spring);
+}
+
+.liquid-selection::before { left: -0.45rem; }
+.liquid-selection::after { right: -0.45rem; }
+
+.liquid-selection[data-visible="true"] { opacity: 1; }
+.liquid-selection[data-moving="true"]::before,
+.liquid-selection[data-moving="true"]::after {
+   opacity: 0.62;
+   transform: translateY(-50%) scale(1);
+}
+
+.liquid-selection[data-instant="true"] { transition: none; }
+
+/* ── Desktop navigation and dropdowns ─────────────────────────────────── */
+
+.main-nav-bar nav[aria-label="Navigation Desktop"] > ul.liquid-selection-group {
+   padding: 0.28rem;
+   margin: -0.28rem;
+   border-radius: 999px;
+}
+
+/* The liquid surface replaces the legacy underline for every top-level desktop
+   navigation state, including hover and keyboard focus. */
+.main-nav-bar nav[aria-label="Navigation Desktop"]
+   > ul > .link > .link-click::before {
+   display: none !important;
+   opacity: 0 !important;
+   transform: scaleX(0) !important;
+}
+
+.main-nav-bar nav[aria-label="Navigation Desktop"] > ul > .liquid-selection {
+   border-color: rgba(255, 255, 255, 0.2);
+   border-radius: 999px;
+   background: linear-gradient(145deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.06));
+   box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.32),
+      0 7px 22px rgba(0, 0, 0, 0.16);
+}
+
+.main-nav-bar nav[aria-label="Navigation Desktop"] > ul > li > .link-click {
+   padding: 0.46rem 0.62rem;
+   border-radius: 999px;
+}
+
+[data-scrolling-started="true"] .main-nav-bar .nav-fill {
+   background: rgba(20, 18, 9, 0.68) !important;
+   -webkit-backdrop-filter: blur(20px) saturate(145%);
+   backdrop-filter: blur(20px) saturate(145%);
+   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav-bar .sub-links,
+header .main-nav-bar .language-dropdown-content {
+   display: flex !important;
+   visibility: hidden;
+   opacity: 0;
+   transform: translateY(-0.55rem) scale(0.94);
+   transform-origin: 18% 0;
+   clip-path: inset(0 0 100% 0 round 1.25rem);
+   border: 1px solid rgba(255, 255, 255, 0.17);
+   border-radius: 1.25rem !important;
+   background:
+      radial-gradient(circle at 18% 0%, rgba(248, 74, 16, 0.2), transparent 40%),
+      rgba(20, 18, 9, 0.78) !important;
+   -webkit-backdrop-filter: blur(22px) saturate(145%);
+   backdrop-filter: blur(22px) saturate(145%);
+   box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.17),
+      0 18px 50px rgba(0, 0, 0, 0.34) !important;
+   transition:
+      opacity 170ms ease,
+      visibility 170ms ease,
+      transform var(--liquid-spring),
+      clip-path var(--liquid-spring) !important;
+}
+
+@media screen and (min-width: 1071px) {
+   /* Keep the parent <li> hovered while the pointer crosses from the trigger
+      into the floating submenu. The submenu stays above this transparent
+      bridge, so all of its links remain directly clickable. */
+   .main-nav-bar .has-sublinks::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      right: -1rem;
+      left: -1rem;
+      z-index: 1;
+      height: 1rem;
+      background: transparent;
+   }
+
+   .main-nav-bar .has-sublinks > .sub-links {
+      top: calc(100% + 0.15rem) !important;
+   }
+}
+
+header .main-nav-bar .language-dropdown-content {
+   flex-direction: column;
+   right: 0;
+   min-width: 9rem;
+   padding: 0.45rem;
+   transform-origin: 82% 0;
+}
+
+.main-nav-bar li:hover > .sub-links,
+.main-nav-bar li:focus-within > .sub-links,
+.main-nav-bar li.has-sublinks.active > .sub-links,
+header .language-dropdown:hover .language-dropdown-content,
+header .language-dropdown:focus-within .language-dropdown-content {
+   visibility: visible;
+   opacity: 1;
+   transform: translateY(0) scale(1);
+   max-height: 24rem !important;
+   clip-path: inset(0 0 0 0 round 1.25rem);
+   pointer-events: auto;
+}
+
+.main-nav-bar .sub-links li a,
+header .language-dropdown-content a {
+   color: #f6f3e7 !important;
+   border-radius: 0.8rem;
+   transition: color var(--liquid-quick), background var(--liquid-quick), transform var(--liquid-quick);
+}
+
+.main-nav-bar .sub-links li a:hover,
+header .language-dropdown-content a:hover,
+header .language-dropdown-content a.active {
+   color: #fff !important;
+   background: rgba(248, 74, 16, 0.2) !important;
+   transform: translateX(0.18rem);
+   text-decoration: none !important;
+}
+
+/* ── Floating controls and mobile sheets ───────────────────────────────── */
+
+.floating-controls {
+   isolation: isolate;
+   padding: 0.22rem;
+   border-radius: 999px;
+}
+
+.floating-controls::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   z-index: -1;
+   border: 1px solid rgba(255, 255, 255, 0.16);
+   border-radius: inherit;
+   background: rgba(248, 74, 16, 0.12);
+   -webkit-backdrop-filter: blur(14px) saturate(165%);
+   backdrop-filter: blur(14px) saturate(165%);
+   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+   opacity: 0;
+   transform: scale(0.78);
+   transition: opacity var(--liquid-quick), transform var(--liquid-spring);
+}
+
+[data-scrolling-started="true"][data-scrolling-direction="down"] .floating-controls::before,
+[data-navigation-status="active"] .floating-controls::before {
+   opacity: 1;
+   transform: scale(1);
+}
+
+body[data-navigation-status="active"] .floating-controls::before {
+   opacity: 0;
+   transform: scale(0.55);
+}
+
+.floating-controls .btn-click,
+.floating-controls .hamburger {
+   transition: transform var(--liquid-quick), opacity var(--liquid-quick), filter var(--liquid-quick);
+}
+
+/* Keep the static and floating ticket CTAs mutually exclusive, including
+   during the header's scroll transition. */
+.floating-controls .floating-ticket-button {
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+}
+
+[data-scrolling-started="true"][data-scrolling-direction="down"]
+   .floating-controls .floating-ticket-button {
+   opacity: 1;
+   visibility: visible;
+   pointer-events: auto;
+}
+
+[data-scrolling-started="true"][data-scrolling-direction="down"]
+   .main-nav-bar .header-buttons {
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+}
+
+body[data-navigation-status="active"] .floating-controls .floating-ticket-button {
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+   .floating-controls .btn:hover .btn-click,
+   .floating-controls .hamburger:hover {
+      transform: scale(1.055);
+      filter: saturate(1.1) brightness(1.06);
+   }
+}
+
+body[data-liquid-overlay-open="true"] {
+   overflow: hidden;
+}
+
+@media screen and (max-width: 1070px) {
+   .mobile-nav .overlay-dark,
+   .filter-container .overlay-dark {
+      background: rgba(7, 6, 4, 0.58) !important;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+   }
+
+   .mobile-nav-box {
+      max-height: calc(var(--vh, 1vh) * 100);
+      overflow-y: auto;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-top: 0;
+      border-radius: 0 0 2.6rem 2.6rem;
+      background:
+         radial-gradient(circle at 88% 5%, rgba(248, 74, 16, 0.18), transparent 32%),
+         rgba(20, 18, 9, 0.86) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(140%);
+      backdrop-filter: blur(24px) saturate(140%);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+      opacity: 0;
+      clip-path: inset(0 0 100% 0 round 0 0 3rem 3rem);
+      transform: translateY(-1.5rem) scale(0.985) !important;
+      transform-origin: 92% 0;
+      transition:
+         opacity 180ms ease,
+         transform 520ms cubic-bezier(0.16, 1, 0.3, 1),
+         clip-path 520ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+   }
+
+   [data-navigation-status="active"] .mobile-nav-box {
+      opacity: 1;
+      clip-path: inset(0 0 0 0 round 0 0 2.6rem 2.6rem);
+      transform: translateY(0) scale(1) !important;
+   }
+
+   .mobile-nav-box .link-click,
+   .language-mobile-menu {
+      border-radius: 999px;
+      transition: color var(--liquid-quick), background var(--liquid-quick), transform var(--liquid-quick);
+   }
+
+   .mobile-nav-box li.active > .link-click,
+   .mobile-nav-box [data-link-status="active"] > .link-click {
+      background: rgba(248, 74, 16, 0.13);
+      box-shadow: inset 0 0 0 1px rgba(248, 74, 16, 0.24);
+   }
+
+   .filter-container {
+      align-items: flex-start;
+      justify-content: flex-end;
+   }
+
+   .filter-container .filter-box {
+      width: min(92vw, 34rem);
+      max-width: none;
+      height: min(90vh, 52rem) !important;
+      margin-top: clamp(2.8rem, 8vh, 5rem);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 2rem;
+      background:
+         radial-gradient(circle at 92% 4%, rgba(248, 74, 16, 0.2), transparent 34%),
+         rgba(20, 18, 9, 0.84) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(145%);
+      backdrop-filter: blur(24px) saturate(145%);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.46);
+      opacity: 0;
+      clip-path: circle(0% at calc(100% - 1.8rem) 1.8rem);
+      transform: translate(0.8rem, -0.7rem) scale(0.92) !important;
+      transform-origin: calc(100% - 1.8rem) 1.8rem;
+      transition:
+         opacity 170ms ease,
+         visibility 170ms ease,
+         transform 520ms cubic-bezier(0.16, 1, 0.3, 1),
+         clip-path 520ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+      overflow-y: auto !important;
+      scrollbar-color: rgba(255, 126, 69, 0.5) transparent;
+      scrollbar-width: thin;
+   }
+
+   .filter-container .filter-box::-webkit-scrollbar {
+      width: 0.38rem;
+   }
+
+   .filter-container .filter-box::-webkit-scrollbar-track {
+      background: transparent;
+   }
+
+   .filter-container .filter-box::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: rgba(255, 126, 69, 0.45);
+   }
+
+   .filter-container .filter-box > p {
+      margin: 0 0 0.15rem;
+      color: rgba(246, 243, 231, 0.66);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+   }
+
+   .filter-container .filter-group {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      flex-wrap: nowrap;
+      gap: 1.25rem;
+   }
+
+   .filter-container .all-speakers-section,
+   .filter-container .filter-group-section {
+      width: 100%;
+   }
+
+   .filter-container .filter-group-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+   }
+
+   .filter-container .filter-group-title {
+      margin: 0;
+      color: #f6f3e7;
+      font-size: 0.9rem;
+   }
+
+   .filter-container .filter-group-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+   }
+
+   .filter-container .single-filter {
+      min-height: 2.35rem;
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+   }
+
+   .filter-container .all-button {
+      width: 100%;
+      min-height: 2.75rem;
+   }
+
+   [data-nav-filter-status="active"] .filter-container .filter-box {
+      opacity: 1;
+      clip-path: circle(145% at calc(100% - 1.8rem) 1.8rem);
+      transform: translate(0, 0) scale(1) !important;
+   }
+
+   .filter-container .close {
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 50%;
+      background: linear-gradient(145deg, rgba(255, 122, 60, 0.96), rgba(240, 78, 22, 0.88));
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      box-shadow:
+         inset 0 1px 1px rgba(255, 255, 255, 0.52),
+         0 10px 28px rgba(0, 0, 0, 0.3);
+      transition: transform var(--liquid-quick), border-radius var(--liquid-quick);
+   }
+
+   .filter-container .close:hover,
+   .filter-container .close:focus-visible {
+      transform: scale(1.08) rotate(4deg);
+   }
+}
+
+/* ── Schedule selectors and panels ─────────────────────────────────────── */
+
+.preview-sidebar > .liquid-selection,
+.sched-sidebar .track-group > .liquid-selection {
+   border-radius: 0.8rem;
+}
+
+.preview-track-button:hover,
+.preview-track-button.active,
+.sched-track-btn:hover,
+.sched-track-btn.active,
+.sched-day-btn:hover,
+.sched-day-btn.active,
+.preview-mobile-pill.active,
+.mobile-track-pill.active,
+.room-day-btn.active,
+.grid-day-btn.active {
+   background: transparent !important;
+   box-shadow: none !important;
+}
+
+.day-tabs-track > .liquid-selection,
+.preview-mobile-pills > .liquid-selection,
+.mobile-track-pills > .liquid-selection,
+.room-day-nav > .liquid-selection,
+.grid-day-tabs > .liquid-selection {
+   border-radius: 999px;
+}
+
+.preview-track-panel,
+.track-panel,
+.overview-panel,
+.rooms-panel,
+.grid-panel,
+.venue-panel,
+[data-room-panel-day],
+[data-grid-panel] {
+   transform-origin: 50% 0;
+}
+
+/* ── Speaker filtering ─────────────────────────────────────────────────── */
+
+/* Match the schedule sidebar: one quiet surface, borderless rows, and a dot
+   that carries selection state. This also removes the stacked active borders
+   that made speaker filters look like two buttons. */
+[data-speaker-filter-state] .speaker-filter-sidebar .filter-panel {
+   padding: 1.25rem !important;
+   border: 0 !important;
+   border-radius: var(--border-radius) !important;
+   background: var(--color-surface) !important;
+}
+
+[data-speaker-filter-state] .speaker-filter-sidebar .filter-heading {
+   margin-bottom: 0.55rem !important;
+   padding: 0 0 0.65rem 0.5rem !important;
+   border-bottom-color: rgba(234, 230, 210, 0.1) !important;
+}
+
+[data-speaker-filter-state] .speaker-filter-sidebar .filter-section {
+   gap: 0.2rem !important;
+   margin-top: 0.35rem !important;
+   padding-top: 0.7rem !important;
+   border-top-color: rgba(234, 230, 210, 0.1) !important;
+}
+
+[data-speaker-filter-state] .speaker-filter-sidebar .filter-options {
+   gap: 0.2rem !important;
+}
+
+[data-speaker-filter-state] .speaker-filter-sidebar .filter-panel .single-filter,
+[data-speaker-filter-state] .speaker-filter-sidebar .filter-panel .single-filter.filter-all {
+   justify-content: flex-start !important;
+   min-height: 0 !important;
+   gap: 0.65rem !important;
+   margin: 0 !important;
+   padding: 0.65rem !important;
+   border: 0 !important;
+   border-radius: 8px !important;
+   color: var(--color-text) !important;
+   background: transparent !important;
+   box-shadow: none !important;
+   font-size: 0.82rem !important;
+   font-weight: 600 !important;
+   line-height: 1.3 !important;
+   text-align: left !important;
+   transform: none !important;
+}
+
+[data-speaker-filter-state] .speaker-filter-sidebar .filter-panel .single-filter span,
+[data-speaker-filter-state] .speaker-filter-sidebar .filter-panel .single-filter.filter-all span {
+   width: auto !important;
+   color: inherit !important;
+   font-weight: inherit !important;
+   text-align: left !important;
+}
+
+[data-speaker-filter-state] .speaker-filter-sidebar .filter-panel .single-filter::before {
+   content: "" !important;
+   display: block !important;
+   width: 8px !important;
+   height: 8px !important;
+   flex: 0 0 8px !important;
+   margin: 0 !important;
+   border: 0 !important;
+   border-radius: 50% !important;
+   background: rgba(234, 230, 210, 0.2) !important;
+   transform: none;
+   transition: background var(--liquid-quick), transform var(--liquid-quick);
+}
+
+[data-speaker-filter-state] .speaker-filter-sidebar .filter-panel .single-filter:hover,
+[data-speaker-filter-state] .speaker-filter-sidebar .filter-panel .single-filter[data-filter-status="active"] {
+   color: var(--color-heading) !important;
+   border: 0 !important;
+   background: rgba(255, 255, 255, 0.07) !important;
+   box-shadow: inset 0 0 0 1px rgba(248, 74, 16, 0.68) !important;
+   transform: none !important;
+}
+
+[data-speaker-filter-state] .speaker-filter-sidebar
+   .filter-panel .single-filter[data-filter-status="active"]::before {
+   content: "" !important;
+   background: var(--color-primary) !important;
+   transform: scale(1.2);
+}
+
+[data-speaker-filter-state] .speaker-filter-sidebar [data-speaker-filter-control]::after {
+   display: none;
+}
+
+[data-speaker-filter-control] {
+   position: relative;
+   isolation: isolate;
+   overflow: hidden;
+   transition:
+      color var(--liquid-quick),
+      border-color var(--liquid-quick),
+      background var(--liquid-quick),
+      transform var(--liquid-spring),
+      box-shadow var(--liquid-spring) !important;
+}
+
+[data-speaker-filter-control]::after {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   inset: -45%;
+   border-radius: 50%;
+   background: radial-gradient(circle, rgba(255, 159, 117, 0.46), rgba(248, 74, 16, 0) 65%);
+   opacity: 0;
+   transform: scale(0.25);
+   transition: opacity var(--liquid-quick), transform var(--liquid-spring);
+}
+
+[data-speaker-filter-control][data-filter-status="active"]::after {
+   opacity: 0.68;
+   transform: scale(1);
+}
+
+[data-speaker-filter-control].liquid-pop {
+   animation: liquid-filter-pop 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes liquid-filter-pop {
+   0% { transform: scale(1); border-radius: 0.8rem; }
+   42% { transform: scale(1.055, 0.92); border-radius: 1.35rem 0.75rem 1.25rem 0.8rem; }
+   100% { transform: scale(1); border-radius: 0.8rem; }
+}
+
+.speaker-results [data-speaker-filter-card] {
+   transform-origin: 50% 20%;
+}
+
+/* ── Speaker/event detail pill navigation ──────────────────────────────── */
+
+.speaker-nav.liquid-selection-group,
+.ev-nav.liquid-selection-group {
+   display: grid !important;
+   grid-template-columns: minmax(12rem, 18rem) minmax(10rem, 12rem) minmax(12rem, 18rem) !important;
+   align-items: stretch !important;
+   justify-content: space-between !important;
+   gap: clamp(0.65rem, 2vw, 1.25rem) !important;
+   padding: 0 !important;
+   border: 0 !important;
+   border-radius: 0 !important;
+   background: transparent !important;
+}
+
+.speaker-nav > .liquid-selection,
+.ev-nav > .liquid-selection {
+   border-radius: 999px;
+   background: linear-gradient(145deg, rgba(248, 74, 16, 0.32), rgba(255, 255, 255, 0.06));
+}
+
+.liquid-hover-group .speaker-nav-btn,
+.liquid-hover-group .ev-nav-btn,
+.liquid-hover-group .speaker-nav-btn:hover,
+.liquid-hover-group .ev-nav-btn:hover {
+   width: 100% !important;
+   min-width: 0 !important;
+   min-height: 4.25rem !important;
+   padding: 0.75rem 1rem !important;
+   border: 0 !important;
+   border-radius: 999px !important;
+   color: #f6f3e7 !important;
+   background: rgba(246, 243, 231, 0.045) !important;
+   box-shadow: inset 0 0 0 1px rgba(246, 243, 231, 0.13) !important;
+   overflow: hidden;
+}
+
+.liquid-hover-group .speaker-nav-all,
+.liquid-hover-group .ev-nav-all {
+   justify-content: center !important;
+   min-height: 4.25rem !important;
+   padding: 0.75rem 1.15rem !important;
+   border: 0 !important;
+   border-radius: 999px !important;
+   font-size: 0.95rem !important;
+   font-weight: 650 !important;
+   background: transparent !important;
+   box-shadow: none !important;
+}
+
+.speaker-nav-prev,
+.ev-nav-prev { justify-content: flex-start !important; }
+
+.speaker-nav-next,
+.ev-nav-next { justify-content: flex-end !important; }
+
+@media (max-width: 900px) {
+   .speaker-nav.liquid-selection-group,
+   .ev-nav.liquid-selection-group {
+      grid-template-columns: minmax(0, 1fr) minmax(8.25rem, 10rem) minmax(0, 1fr) !important;
+   }
+}
+
+@media (max-width: 640px) {
+   .speaker-nav.liquid-selection-group,
+   .ev-nav.liquid-selection-group {
+      grid-template-columns: minmax(0, 1fr) 7.5rem minmax(0, 1fr) !important;
+      gap: 0.4rem !important;
+   }
+
+   .liquid-hover-group .speaker-nav-btn,
+   .liquid-hover-group .ev-nav-btn,
+   .liquid-hover-group .speaker-nav-btn:hover,
+   .liquid-hover-group .ev-nav-btn:hover,
+   .liquid-hover-group .speaker-nav-all,
+   .liquid-hover-group .ev-nav-all {
+      min-height: 3.7rem !important;
+      padding: 0.55rem 0.65rem !important;
+   }
+
+   .speaker-nav-name,
+   .ev-nav-name {
+      max-width: 7rem !important;
+      font-size: 0.78rem !important;
+   }
+
+   .speaker-nav-label,
+   .ev-nav-label {
+      font-size: 0.62rem !important;
+   }
+}
+
+/* Give speaker profiles the same pill vocabulary used by session metadata and
+   speaker cards, without enclosing the portrait in another heavy panel. */
+.speaker-detail-header .speaker-detail-image {
+   border: 1px solid rgba(246, 243, 231, 0.18) !important;
+   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.24) !important;
+}
+
+.speaker-detail-header .speaker-row-meta > p {
+   align-self: center;
+   margin: 0.25rem 0 0 !important;
+   padding: 0.5rem 1rem;
+   border: 1px solid rgba(246, 243, 231, 0.12);
+   border-radius: 999px;
+   color: rgba(246, 243, 231, 0.76);
+   background: rgba(246, 243, 231, 0.05);
+}
+
+.speaker-detail-header .social-wrap {
+   align-self: center;
+   width: max-content;
+   margin: 1.15rem auto 0;
+   padding: 0.62rem 1rem !important;
+   border: 1px solid rgba(246, 243, 231, 0.12);
+   border-radius: 999px;
+   background: rgba(246, 243, 231, 0.045);
+}
+
+.speaker-detail-header .box-row-text {
+   margin-top: 1.5rem;
+   padding: 1.15rem 1.35rem;
+   border: 1px solid rgba(246, 243, 231, 0.12);
+   border-radius: 1.5rem;
+   background: rgba(246, 243, 231, 0.045);
+}
+
+.speaker-detail-header .speaker-bio {
+   margin: 0 !important;
+   color: rgba(246, 243, 231, 0.82);
+   line-height: 1.72;
+}
+
+.section-agenda-grid.speaker-sessions .single-agenda-card {
+   border-radius: 1.25rem !important;
+}
+
+/* ── Glass lightbox controls ───────────────────────────────────────────── */
+
+.gallery-lightbox-close,
+.gallery-lightbox-nav,
+#photo-close {
+   border: 1px solid rgba(255, 255, 255, 0.34) !important;
+   background:
+      radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.3), transparent 38%),
+      rgba(255, 255, 255, 0.12) !important;
+   -webkit-backdrop-filter: blur(14px) saturate(150%);
+   backdrop-filter: blur(14px) saturate(150%);
+   box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.4),
+      inset 0 -5px 12px rgba(0, 0, 0, 0.14),
+      0 12px 30px rgba(0, 0, 0, 0.28);
+   transition: transform var(--liquid-spring), background var(--liquid-quick), border-radius var(--liquid-spring) !important;
+}
+
+.gallery-lightbox-close:hover,
+#photo-close:hover {
+   transform: scale(1.09) rotate(5deg);
+   border-radius: 42% 58% 52% 48%;
+}
+
+.gallery-lightbox-nav:hover {
+   transform: translateY(-50%) scale(1.09, 0.94) !important;
+   border-radius: 43% 57% 48% 52%;
+}
+
+.gallery-lightbox-close:active,
+#photo-close:active {
+   transform: scale(0.91);
+}
+
+.gallery-lightbox-nav:active {
+   transform: translateY(-50%) scale(0.91) !important;
+}
+
+.gallery-lightbox.is-switching .gallery-lightbox-img {
+   opacity: 0 !important;
+   transform: scale(0.94) translateY(0.45rem) !important;
+   border-radius: 1.8rem 1rem 1.65rem 1.15rem;
+}
+
+#photo-lightbox[open] {
+   animation: liquid-dialog-in 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes liquid-dialog-in {
+   from { opacity: 0; transform: scale(0.82); border-radius: 42% 58% 54% 46%; }
+   to { opacity: 1; transform: scale(1); border-radius: 50%; }
+}
+
+/* ── Cross-document page transition ───────────────────────────────────── */
+
+@view-transition {
+   navigation: auto;
+}
+
+::view-transition-old(root) {
+   animation: liquid-page-out 260ms ease both;
+}
+
+::view-transition-new(root) {
+   animation: liquid-page-in 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes liquid-page-out {
+   to { opacity: 0.35; transform: scale(0.992); filter: blur(2px); }
+}
+
+@keyframes liquid-page-in {
+   from {
+      opacity: 0.45;
+      clip-path: ellipse(0% 0% at 88% 8%);
+      transform: scale(1.012);
+   }
+   to {
+      opacity: 1;
+      clip-path: ellipse(155% 155% at 88% 8%);
+      transform: scale(1);
+   }
+}
+
+/* ── Motion accessibility and coarse pointers ──────────────────────────── */
+
+@media (pointer: coarse) {
+   .liquid-selection::before,
+   .liquid-selection::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+   .liquid-selection,
+   .mobile-nav-box,
+   .filter-container .filter-box,
+   .gallery-lightbox-img,
+   .gallery-lightbox-close,
+   .gallery-lightbox-nav,
+   #photo-close,
+   [data-speaker-filter-control] {
+      animation: none !important;
+      transition-duration: 1ms !important;
+   }
+
+   .liquid-selection::before,
+   .liquid-selection::after { display: none; }
+
+   ::view-transition-old(root),
+   ::view-transition-new(root) {
+      animation: none !important;
+   }
+}
