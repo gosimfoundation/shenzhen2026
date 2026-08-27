@@ -1,0 +1,317 @@
+/* ── Temporary no-time preview ──
+   This keeps the full schedule implementation above intact. Remove the
+   previewMode prop from the page when dates, times, and rooms are ready. */
+.schedule-preview-mode {
+  padding: 1.5rem 0 5rem;
+  background: var(--color-lightgray);
+}
+
+.preview-container {
+  max-width: calc(var(--title-size) * 12);
+  margin: 0 auto;
+  padding: 0 var(--container-padding) 2rem;
+}
+
+.preview-body {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.preview-sidebar {
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  background: var(--color-surface);
+}
+
+.preview-group-label {
+  margin: 0 0 0.5rem 0.5rem;
+  color: rgba(234, 230, 210, 0.55);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.preview-track-button {
+  display: flex;
+  width: 100%;
+  gap: 0.65rem;
+  align-items: flex-start;
+  padding: 0.65rem;
+  border: 0;
+  border-radius: 8px;
+  color: var(--color-text);
+  background: transparent;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+}
+
+.preview-track-button:hover,
+.preview-track-button.active {
+  color: var(--color-heading);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.preview-track-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  margin-top: 0.22rem;
+  border-radius: 50%;
+  background: rgba(234, 230, 210, 0.2);
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+.preview-track-button.active .preview-track-dot {
+  background: var(--tc);
+  transform: scale(1.2);
+}
+
+.preview-main {
+  min-width: 0;
+  min-height: 500px;
+}
+
+.preview-panel-header {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0 0 0.8rem 1rem;
+  border-bottom: 2px solid var(--color-surface);
+  border-left: 3px solid var(--tc);
+}
+
+.preview-panel-header h2 {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.preview-panel-header span {
+  flex: 0 0 auto;
+  color: rgba(234, 230, 210, 0.55);
+  font-size: 0.75rem;
+}
+
+.preview-session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.preview-session-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr) minmax(12rem, 38%);
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 4rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--border-radius);
+  background: var(--color-surface);
+}
+
+.preview-session-card:hover {
+  background: #201e16;
+}
+
+.preview-session-cell-link {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.preview-session-cell-link:focus-visible {
+  outline: 2px solid var(--tc);
+  outline-offset: 2px;
+}
+
+.preview-session-index {
+  color: var(--tc);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.preview-session-card h3 {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.preview-session-content {
+  min-width: 0;
+}
+
+.preview-session-speakers {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.preview-speaker-link {
+  display: grid;
+  grid-template-columns: 1.75rem minmax(0, 1fr);
+  gap: 0.45rem;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  padding: 0.22rem 0.55rem 0.22rem 0.22rem;
+  border: 1px solid rgba(234, 230, 210, 0.12);
+  border-radius: 999px;
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+.preview-speaker-link:hover {
+  border-color: var(--tc);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.preview-speaker-link img {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.preview-speaker-link span {
+  min-width: 0;
+}
+
+.preview-speaker-link strong,
+.preview-speaker-link small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preview-speaker-link strong {
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+
+.preview-speaker-link small {
+  margin-top: 0.08rem;
+  color: rgba(234, 230, 210, 0.58);
+  font-size: 0.58rem;
+  line-height: 1.2;
+}
+
+.preview-note {
+  margin: 1.25rem 0 0;
+  color: rgba(234, 230, 210, 0.5);
+  font-size: 0.75rem;
+}
+
+.preview-mobile-tracks {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .schedule-preview-mode {
+    padding-top: 1rem;
+  }
+
+  .preview-container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .preview-body {
+    display: block;
+  }
+
+  .preview-sidebar {
+    display: none;
+  }
+
+  .preview-mobile-tracks {
+    display: block;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .preview-mobile-tracks .preview-group-label {
+    margin-left: var(--container-padding);
+  }
+
+  .preview-mobile-pills {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.15rem var(--container-padding) 0.75rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .preview-mobile-pills::-webkit-scrollbar {
+    display: none;
+  }
+
+  .preview-mobile-pill {
+    flex: 0 0 auto;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid rgba(234, 230, 210, 0.16);
+    border-radius: 999px;
+    color: var(--color-text);
+    background: var(--color-surface);
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .preview-mobile-pill.active {
+    border-color: var(--tc);
+    color: var(--color-heading);
+    box-shadow: inset 0 0 0 1px var(--tc);
+  }
+
+  .preview-track-panel,
+  .preview-note {
+    margin-right: var(--container-padding);
+    margin-left: var(--container-padding);
+  }
+}
+
+@media (max-width: 560px) {
+  .preview-panel-header {
+    align-items: flex-start;
+  }
+
+  .preview-session-card {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.65rem;
+    min-height: 0;
+    padding: 0.8rem;
+  }
+
+  .preview-session-speakers {
+    grid-column: 2;
+  }
+}

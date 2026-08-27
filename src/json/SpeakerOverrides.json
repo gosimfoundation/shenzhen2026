@@ -753,5 +753,61 @@
       "roleOrg": "自由职业 Rust 开发者",
       "bio": "来自德国的自由职业 Rust 开发者，参与 Dora 机器人框架及 Rust 操作系统开发相关项目。他是 Writing an OS in Rust 博客作者，也是 This Month in Rust OSDev 月报的主要编辑。"
     }
+  },
+  {
+    "sourceName": "shuyue hu",
+    "id": "shuyue-hu",
+    "en": {
+      "name": "Shuyue Hu",
+      "roleOrg": "Research Scientist, Shanghai AI Lab",
+      "bio": "Shuyue Hu is a research scientist at Shanghai Artificial Intelligence Laboratory. Her research focuses on agents, multi-agent systems, large language models, and game theory. She received her Ph.D. from the Chinese University of Hong Kong in 2019 and was a research fellow at the National University of Singapore. Her work has received the First Prize of the Natural Science Award from the Chinese Institute of Electronics, the DAI 2025 Best Paper Award, an AAMAS 2026 Best Student Paper nomination, and the AAMAS 2026 Best System Demonstration Award."
+    },
+    "zh": {
+      "name": "胡舒悦",
+      "roleOrg": "上海人工智能实验室研究科学家",
+      "bio": "上海人工智能实验室研究科学家，研究方向包括智能体、多智能体系统、大语言模型和博弈论。2019 年获香港中文大学博士学位，曾任新加坡国立大学研究员。其研究获得中国电子学会自然科学一等奖、DAI 2025 最佳论文奖、AAMAS 2026 最佳学生论文提名和最佳系统演示奖。"
+    }
+  },
+  {
+    "sourceName": "Che Jiang",
+    "id": "che-jiang",
+    "en": {
+      "name": "Che Jiang",
+      "roleOrg": "Ph.D. Candidate & Algorithm Researcher, Tsinghua University / Frontis.AI",
+      "bio": "Che Jiang is a Ph.D. candidate at Tsinghua University and an Algorithm Researcher at Frontis.AI. His research focuses on AI4AI, self-evolving agents, automated machine learning engineering, and AI for scientific discovery. His recent work includes NatureBench and Frontis-MA1/OpenMLE."
+    },
+    "zh": {
+      "name": "姜澈",
+      "roleOrg": "清华大学博士研究生、衔远科技算法研究员",
+      "bio": "清华大学博士研究生、衔远科技算法研究员，研究方向包括 AI4AI、自进化智能体、自动化机器学习工程和 AI for Science。近期工作包括 NatureBench 与 Frontis-MA1/OpenMLE。"
+    }
+  },
+  {
+    "sourceName": "Kaiyan Zhang",
+    "id": "kaiyan-zhang",
+    "en": {
+      "name": "Kaiyan Zhang",
+      "roleOrg": "Co-speaker",
+      "bio": ""
+    },
+    "zh": {
+      "name": "张开颜",
+      "roleOrg": "联合讲师",
+      "bio": ""
+    }
+  },
+  {
+    "sourceName": "Ning Liu",
+    "id": "ning-liu",
+    "en": {
+      "name": "Ning Liu",
+      "roleOrg": "Algorithm Expert, Beijing Innovation Center of Humanoid Robotics",
+      "bio": "Ning Liu earned his Ph.D. from Northeastern University in the United States. He has published more than 40 papers in leading conferences and journals, including NeurIPS, CVPR, ICML, and IEEE TNNLS, and chairs the IEEE Standards Working Group on AI for Edge Devices."
+    },
+    "zh": {
+      "name": "刘宁",
+      "roleOrg": "北京人形机器人创新中心算法专家",
+      "bio": "刘宁博士毕业于美国东北大学，在 NeurIPS、CVPR、ICML、IEEE TNNLS 等国际顶级会议和期刊发表论文 40 余篇，并担任 IEEE 边缘设备人工智能标准工作组主席。"
+    }
   }
 ]

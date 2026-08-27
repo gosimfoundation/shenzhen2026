@@ -67,7 +67,8 @@
         "sz26-open-source-robotics"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/xun-wang.png"
     },
     {
       "id": "roy-wang",
@@ -78,7 +79,8 @@
         "sz26-open-source-robotics"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/roy-wang.png"
     },
     {
       "id": "george-wang",
@@ -89,7 +91,8 @@
         "sz26-open-source-robotics"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/george-wang.png"
     },
     {
       "id": "peilin-li",
@@ -114,7 +117,8 @@
         "sz26-agentic-ai-on-edge"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/yujie-yang.png"
     },
     {
       "id": "wilson-wang",
@@ -213,7 +217,8 @@
         "sz26-open-source-robotics"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/hongjun-zhou.png"
     },
     {
       "id": "tiberiu-socaci",
@@ -451,7 +456,8 @@
         "sz26-open-source-model"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/pieter-delobelle.png"
     },
     {
       "id": "nouamane-tazi",
@@ -626,7 +632,8 @@
         "sz26-open-source-model"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/yixiang-zhang.png"
     },
     {
       "id": "yongqiang-ma",
@@ -637,7 +644,8 @@
         "sz26-open-source-model"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/yongqiang-ma.png"
     },
     {
       "id": "bardia-moshiri",
@@ -663,7 +671,8 @@
         "sz26-agentic-os-app"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/wayne-connolly.png"
     },
     {
       "id": "chen-xin",
@@ -730,7 +739,8 @@
         "sz26-agentic-os-app"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/rin.png"
     },
     {
       "id": "hsuan-han-lai",
@@ -785,7 +795,8 @@
         "sz26-agentic-device"
       ],
       "socialLinks": {},
-      "draft": false
+      "draft": false,
+      "image": "/images/speakers/confirmed/yanwei-huang.png"
     },
     {
       "id": "yuu",
@@ -913,6 +924,54 @@
       },
       "draft": false,
       "image": "/images/speakers/confirmed/philipp-oppermann.png"
+    },
+    {
+      "id": "shuyue-hu",
+      "name": "Shuyue Hu",
+      "roleOrg": "Research Scientist, Shanghai AI Lab",
+      "bio": "Shuyue Hu is a research scientist at Shanghai Artificial Intelligence Laboratory. Her research focuses on agents, multi-agent systems, large language models, and game theory. She received her Ph.D. from the Chinese University of Hong Kong in 2019 and was a research fellow at the National University of Singapore. Her work has received the First Prize of the Natural Science Award from the Chinese Institute of Electronics, the DAI 2025 Best Paper Award, an AAMAS 2026 Best Student Paper nomination, and the AAMAS 2026 Best System Demonstration Award.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/shuyue-hu.png"
+    },
+    {
+      "id": "che-jiang",
+      "name": "Che Jiang",
+      "roleOrg": "Ph.D. Candidate & Algorithm Researcher, Tsinghua University / Frontis.AI",
+      "bio": "Che Jiang is a Ph.D. candidate at Tsinghua University and an Algorithm Researcher at Frontis.AI. His research focuses on AI4AI, self-evolving agents, automated machine learning engineering, and AI for scientific discovery. His recent work includes NatureBench and Frontis-MA1/OpenMLE.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/che-jiang.png"
+    },
+    {
+      "id": "kaiyan-zhang",
+      "name": "Kaiyan Zhang",
+      "roleOrg": "Co-speaker",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/kaiyan-zhang.png"
+    },
+    {
+      "id": "ning-liu",
+      "name": "Ning Liu",
+      "roleOrg": "Algorithm Expert, Beijing Innovation Center of Humanoid Robotics",
+      "bio": "Ning Liu earned his Ph.D. from Northeastern University in the United States. He has published more than 40 papers in leading conferences and journals, including NeurIPS, CVPR, ICML, and IEEE TNNLS, and chairs the IEEE Standards Working Group on AI for Edge Devices.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/ning-liu.png"
     }
   ]
 }

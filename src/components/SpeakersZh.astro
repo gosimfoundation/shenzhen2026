@@ -1,8 +1,10 @@
 ---
 // Import the speakers data
 import speakersData from "json/SpeakersZh.json";
-
-const speakerPlaceholderImage = "/images/speakers/0-speaker-placeholder.png";
+import {
+  getSpeakerImagePath,
+  SPEAKER_IMAGE_FALLBACK_HANDLER,
+} from "utils/speaker-images";
 
 const categoryName = (category) => category.nameZh || category.name;
 
@@ -298,7 +300,8 @@ const groupedCategories = {
               <div class="card-row card-row-image">
                 <div class="card-image">
                   <img
-                    src={speaker.image?.trim() || speakerPlaceholderImage}
+                    src={getSpeakerImagePath(speaker.id)}
+                    onerror={SPEAKER_IMAGE_FALLBACK_HANDLER}
                     alt={speaker.name}
                     class="overlay speaker-img"
                     loading="lazy"

@@ -1,13 +1,41 @@
 ---
 import scheduleData from "json/ScheduleBilingual.json"
+import schedulePreview from "json/SchedulePreview.json"
+import speakersEn from "json/SpeakersCleaned.json"
+import speakersZh from "json/SpeakersZh.json"
+import {
+  getSpeakerImagePath,
+  SPEAKER_IMAGE_FALLBACK_HANDLER,
+} from "utils/speaker-images"
+import "styles/SchedulePreview.scss"
 
 interface Props {
   currentDay?: string
   lang?: "en" | "zh" | "fr"
   speakerBasePath?: string
+  previewMode?: boolean
 }
 
-const { lang = "en", speakerBasePath = "/speakers/" } = Astro.props
+const { lang = "en", speakerBasePath = "/speakers/", previewMode = false } = Astro.props
+const previewLang: "en" | "zh" = lang === "zh" ? "zh" : "en"
+const previewCopy = {
+  en: {
+    tracks: "Conference Tracks",
+    sessions: (count: number) => `${count} talk${count === 1 ? "" : "s"}`,
+    note: "Session dates, times, and rooms will be added once confirmed.",
+  },
+  zh: {
+    tracks: "分论坛主题",
+    sessions: (count: number) => `${count} 场演讲`,
+    note: "具体日期、时间与会场确认后将在此补充。",
+  },
+}[previewLang]
+const previewSpeakerData = previewLang === "zh" ? speakersZh : speakersEn
+const previewSpeakerById = new Map(
+  previewSpeakerData.speakers.map((speaker: any) => [speaker.id, speaker]),
+)
+const previewScheduleBasePath = previewLang === "zh" ? "/zh/schedule/" : "/schedule/"
+const previewSpeakerBasePath = previewLang === "zh" ? "/zh/speakers/" : speakerBasePath
 
 // Get English text from bilingual objects
 const en = (obj: any): string => {
@@ -51,7 +79,7 @@ const i18n = {
     typeLabels: { keynote: "Keynote", talk: "Talk", panel: "Panel", break: "Break", workshop: "Workshop", hackathon: "Hackathon" },
   },
   zh: {
-    conferenceTracks: "会议议程",
+    conferenceTracks: "议程安排",
     hackathons: "Spotlight & Hackathons",
     workshops: "工作坊",
     overview: "概览",
@@ -70,7 +98,7 @@ const i18n = {
     noSessions: "该议题暂无会议安排。",
     sessionsScheduledOn: "会议安排在：",
     viewDaySessions: (day: string) => `→ 查看 ${day} 的会议`,
-    disclaimer: "日程安排可能有所变动。",
+    disclaimer: "议程安排可能有所变动。",
     dayOnly: (day: string) => `仅 ${day}`,
     tracks: "议程",
     sessionCount: (n: number) => `${n} 场演讲`,
@@ -154,12 +182,13 @@ const getSessions = (catId: string, day: string) => {
 }
 
 const TRACK_COLORS: Record<string, string> = {
-  "agentic-ai-summit":          "#C23A0C",
-  "open-source-robotics":       "#B3A878",
-  "agentic-ai-on-edge":         "#8A7F5C",
-  "ai-generative-app":          "#7C7050",
-  "open-source-model":          "#8F8259",
-  "agentic-device":             "#6E6250",
+  // Keep these in sync with ProgramSection.astro's six homepage track inks.
+  "agentic-ai-summit":          "#EF6A3A",
+  "agentic-ai-on-edge":         "#D5A24A",
+  "ai-generative-app":          "#75A49C",
+  "open-source-model":          "#91A66B",
+  "open-source-robotics":       "#8096B2",
+  "agentic-device":             "#A48692",
 }
 const WORKSHOP_COLOR = "#6B6450"
 const trackColor = (id: string) => TRACK_COLORS[id] || WORKSHOP_COLOR
@@ -398,7 +427,103 @@ const gridDays: GridDay[] = days.map(d => {
 })
 ---
 
-<section class="sched-section" data-bg-section="lightgray" data-theme-section="light">
+{previewMode && (
+  <section class="schedule-preview-mode" data-bg-section="lightgray" data-theme-section="light">
+    <div class="preview-container">
+      <div class="preview-body">
+        <aside class="preview-sidebar">
+          <p class="preview-group-label">{previewCopy.tracks}</p>
+          {schedulePreview.tracks.map((track, index) => (
+            <button
+              class={`preview-track-button${index === 0 ? " active" : ""}`}
+              data-preview-track-button={track.id}
+              style={`--tc: ${trackColor(track.id)}`}
+              type="button"
+            >
+              <span class="preview-track-dot"></span>
+              <span>{track.name[previewLang]}</span>
+            </button>
+          ))}
+        </aside>
+
+        <div class="preview-main">
+          <div class="preview-mobile-tracks">
+            <p class="preview-group-label">{previewCopy.tracks}</p>
+            <div class="preview-mobile-pills">
+              {schedulePreview.tracks.map((track, index) => (
+                <button
+                  class={`preview-mobile-pill${index === 0 ? " active" : ""}`}
+                  data-preview-track-button={track.id}
+                  style={`--tc: ${trackColor(track.id)}`}
+                  type="button"
+                >
+                  {track.name[previewLang]}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {schedulePreview.tracks.map((track, trackIndex) => (
+            <div
+              class="preview-track-panel"
+              data-preview-track-panel={track.id}
+              style={trackIndex === 0 ? undefined : "display:none"}
+            >
+              <div class="preview-panel-header" style={`--tc: ${trackColor(track.id)}`}>
+                <h2>{track.name[previewLang]}</h2>
+                <span>{previewCopy.sessions(track.talks.length)}</span>
+              </div>
+
+              <div class="preview-session-list">
+                {track.talks.map((talk, talkIndex) => {
+                  const talkSpeakers = talk.speakers
+                    .map((speakerId) => previewSpeakerById.get(speakerId))
+                    .filter(Boolean) as any[]
+                  return (
+                    <article class="preview-session-card" style={`--tc: ${trackColor(track.id)}`}>
+                      <a
+                        class="preview-session-cell-link"
+                        href={`${previewScheduleBasePath}${talk.slug}/`}
+                        aria-label={talk.title[previewLang]}
+                      ></a>
+                      <span class="preview-session-index">{String(talkIndex + 1).padStart(2, "0")}</span>
+                      <div class="preview-session-content">
+                        <h3>{talk.title[previewLang]}</h3>
+                      </div>
+                      <div class="preview-session-speakers">
+                        {talkSpeakers.map((speaker) => (
+                          <a
+                            class="preview-speaker-link"
+                            href={`${previewSpeakerBasePath}${speaker.id}/`}
+                          >
+                            <img
+                              src={getSpeakerImagePath(speaker.id)}
+                              onerror={SPEAKER_IMAGE_FALLBACK_HANDLER}
+                              alt=""
+                              loading="lazy"
+                            />
+                            <span>
+                              <strong>{speaker.name}</strong>
+                              {speaker.roleOrg && <small>{speaker.roleOrg}</small>}
+                            </span>
+                          </a>
+                        ))}
+                      </div>
+                    </article>
+                  )
+                })}
+              </div>
+            </div>
+          ))}
+
+          <p class="preview-note">{previewCopy.note}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+<section class="sched-section" data-bg-section="lightgray" data-theme-section="light" style={previewMode ? "display:none" : undefined}>
 
   <!-- Day Tabs -->
   <div class="sched-day-nav">
@@ -1031,6 +1156,42 @@ const gridDays: GridDay[] = days.map(d => {
   </div>
 
 </section>
+
+<script>
+  function initPreviewSchedule(root: Element) {
+    if (!(root instanceof HTMLElement) || root.dataset.previewInitialized === "true") return
+    root.dataset.previewInitialized = "true"
+
+    const buttons = root.querySelectorAll<HTMLElement>("[data-preview-track-button]")
+    const panels = root.querySelectorAll<HTMLElement>("[data-preview-track-panel]")
+    const availableTracks = new Set(
+      Array.from(panels, (panel) => panel.dataset.previewTrackPanel).filter(Boolean),
+    )
+
+    const showTrack = (trackId: string, updateHash = true) => {
+      buttons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.previewTrackButton === trackId)
+      })
+      panels.forEach((panel) => {
+        panel.style.display = panel.dataset.previewTrackPanel === trackId ? "block" : "none"
+      })
+      if (updateHash) history.replaceState(null, "", `#${trackId}`)
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const trackId = button.dataset.previewTrackButton
+        if (trackId) showTrack(trackId)
+      })
+    })
+
+    const hashTrack = window.location.hash.slice(1)
+    const firstTrack = panels[0]?.dataset.previewTrackPanel
+    showTrack(availableTracks.has(hashTrack) ? hashTrack : firstTrack || "", false)
+  }
+
+  document.querySelectorAll(".schedule-preview-mode").forEach(initPreviewSchedule)
+</script>
 
 <script define:vars={{ firstDay, firstCat, firstRoom }}>
   let activeDay = firstDay
@@ -2199,4 +2360,5 @@ const gridDays: GridDay[] = days.map(d => {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
 </style>

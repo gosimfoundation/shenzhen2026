@@ -34,18 +34,9 @@ const syncPortraits = (speakerData) => {
   }
 
   for (const speaker of speakerData.speakers) {
-    const filename = portraitsById.get(speaker.id);
-    const nextImage = filename
-      ? `/images/speakers/confirmed/${filename}`
-      : undefined;
-
-    if (nextImage) {
-      if (speaker.image !== nextImage) {
-        speaker.image = nextImage;
-        updatedCount += 1;
-      }
-    } else if (speaker.image?.startsWith("/images/speakers/confirmed/")) {
-      delete speaker.image;
+    const nextImage = `/images/speakers/confirmed/${speaker.id}.png`;
+    if (speaker.image !== nextImage) {
+      speaker.image = nextImage;
       updatedCount += 1;
     }
   }

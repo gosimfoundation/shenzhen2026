@@ -237,12 +237,23 @@ if (photosZipPath) {
 }
 
 let existingSpeakers = [];
+let existingSpeakersZh = [];
 try {
   const existingData = JSON.parse(
     await readFile(path.join(projectRoot, "src/json/SpeakersCleaned.json"), "utf8"),
   );
   existingSpeakers = Array.isArray(existingData.speakers)
     ? existingData.speakers
+    : [];
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
+try {
+  const existingDataZh = JSON.parse(
+    await readFile(path.join(projectRoot, "src/json/SpeakersZh.json"), "utf8"),
+  );
+  existingSpeakersZh = Array.isArray(existingDataZh.speakers)
+    ? existingDataZh.speakers
     : [];
 } catch (error) {
   if (error.code !== "ENOENT") throw error;
@@ -257,10 +268,14 @@ const existingByName = new Map(
 const existingById = new Map(
   existingSpeakers.map((speaker) => [cleanText(speaker.id), speaker]),
 );
+const existingZhById = new Map(
+  existingSpeakersZh.map((speaker) => [cleanText(speaker.id), speaker]),
+);
 
 const speakersByName = new Map();
 const usedIds = new Set();
 const sourceNameKeyById = new Map();
+const speakerIdBySourceNameKey = new Map();
 const coSpeakerIds = new Set();
 const primarySpeakerIds = new Set();
 
@@ -283,6 +298,7 @@ const addSpeaker = (person, proposal, isCoSpeaker = false) => {
   const overrideBio = cleanText(contentOverride?.en?.bio);
 
   if (existing) {
+    speakerIdBySourceNameKey.set(sourceKey, existing.id);
     existing.tags = [...new Set([...existing.tags, ...tags])];
     if (!existing.bio) existing.bio = overrideBio || cleanText(person.bio);
     if (isCoSpeaker && !primarySpeakerIds.has(existing.id)) {
@@ -333,19 +349,13 @@ const addSpeaker = (person, proposal, isCoSpeaker = false) => {
     draft: false,
   };
 
-  const previousImage = cleanText(previous?.image);
-  const confirmedImage = confirmedImagesById.get(id);
-  if (confirmedImage) {
-    speaker.image = `/images/speakers/confirmed/${confirmedImage}`;
-  } else if (
-    previousImage &&
-    !previousImage.startsWith("/images/speakers/confirmed/")
-  ) {
-    speaker.image = previousImage;
-  }
+  // Every profile gets its canonical PNG path up front. The browser falls
+  // back to the placeholder until that file is added to the confirmed folder.
+  speaker.image = `/images/speakers/confirmed/${id}.png`;
 
   speakersByName.set(key, speaker);
   sourceNameKeyById.set(id, sourceKey);
+  speakerIdBySourceNameKey.set(sourceKey, id);
 };
 
 for (const proposal of accepted) {
@@ -384,14 +394,24 @@ const outputZh = {
       ? "联合讲师"
       : cleanText(contentOverride?.zh?.roleOrg) || speaker.roleOrg;
     const bioZh = cleanText(contentOverride?.zh?.bio) || speaker.bio;
-
-    return {
+    const localizedSpeaker = {
       ...speaker,
       name: nameZh,
-      nameEn: speaker.name,
       roleOrg: roleOrgZh,
       bio: bioZh,
+      nameEn: speaker.name,
     };
+    const existingSpeakerZh = existingZhById.get(speaker.id);
+    if (!existingSpeakerZh) return localizedSpeaker;
+
+    return Object.fromEntries([
+      ...Object.keys(existingSpeakerZh)
+        .filter((key) => key in localizedSpeaker)
+        .map((key) => [key, localizedSpeaker[key]]),
+      ...Object.entries(localizedSpeaker).filter(
+        ([key]) => !(key in existingSpeakerZh),
+      ),
+    ]);
   }),
 };
 
@@ -457,6 +477,58 @@ await writeFile(
   path.join(projectRoot, "src/json/SpeakersZh.json"),
   serializedZh,
 );
+
+// Keep the temporary no-time schedule connected to the same speaker profiles
+// and event-detail routes as the full schedule. Existing hand-reviewed title
+// translations and bilingual talk overviews are preserved by proposal reference.
+const schedulePreviewPath = path.join(
+  projectRoot,
+  "src/json/SchedulePreview.json",
+);
+try {
+  const schedulePreview = JSON.parse(
+    await readFile(schedulePreviewPath, "utf8"),
+  );
+  const proposalByRef = new Map(
+    accepted.map((proposal) => [cleanText(proposal.ref), proposal]),
+  );
+
+  for (const track of schedulePreview.tracks ?? []) {
+    for (const talk of track.talks ?? []) {
+      const proposal = proposalByRef.get(cleanText(talk.ref));
+      if (!proposal) {
+        throw new Error(`No accepted proposal found for ${talk.ref}.`);
+      }
+
+      const people = [proposal, ...(proposal.coSpeakers ?? [])];
+      const speakerIds = people.map((person) => {
+        const id = speakerIdBySourceNameKey.get(speakerNameKey(person.name));
+        if (!id) {
+          throw new Error(
+            `No imported speaker profile found for ${person.name} (${talk.ref}).`,
+          );
+        }
+        return id;
+      });
+      const titleForSlug = cleanText(talk.title?.en) || cleanText(talk.originalTitle);
+      const originalAbstract = cleanText(proposal.abstract);
+
+      talk.originalAbstract = originalAbstract;
+      talk.originalAbstractLanguage = /[\u3400-\u9fff]/u.test(originalAbstract)
+        ? "zh"
+        : "en";
+      talk.slug = `${cleanText(talk.ref).toLowerCase()}-${slugify(titleForSlug, talk.ref)}`;
+      talk.speakers = [...new Set(speakerIds)];
+    }
+  }
+
+  await writeFile(
+    schedulePreviewPath,
+    `${JSON.stringify(schedulePreview, null, 2)}\n`,
+  );
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
 
 console.log(
   `Imported ${output.speakers.length} speakers from ${accepted.length} accepted proposals.`,

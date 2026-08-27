@@ -53,10 +53,8 @@ const {
   enterLabel = "Enter",
 } = Astro.props;
 
-// Schedule isn't published yet, so the track cards must NOT link to /schedule/.
-// Flip this to true (keeping each track's `link` in the JSON) once the schedule
-// is live to re-enable the card hyperlinks.
-const tracksLinked = false;
+// The program preview is live, so each homepage track card links to its section.
+const tracksLinked = true;
 
 // Marquee rows: hero term (facet title) → solid orange pill; keywords → outlined.
 const allPills: Array<{ text: string; hero: boolean }> = facets.flatMap((f) => [

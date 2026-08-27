@@ -1,8 +1,10 @@
 ---
 // Import the speakers data
 import speakersData from "json/SpeakersCleaned.json";
-
-const speakerPlaceholderImage = "/images/speakers/0-speaker-placeholder.png";
+import {
+  getSpeakerImagePath,
+  SPEAKER_IMAGE_FALLBACK_HANDLER,
+} from "utils/speaker-images";
 
 const getSpeakerNameFontSize = (name: string) => {
   const length = [...name].length;
@@ -17,6 +19,7 @@ const speakerCardText: Record<string, { role?: string; company?: string }> = {
   "anni-lai": { role: "GenAI Commons Co-Chair" },
   "bardia-moshiri": { role: "Embedded Software Eng." },
   "bo-tang": { role: "Applied Algorithms Lead", company: "MemTensor" },
+  "che-jiang": { role: "Ph.D. Candidate & AI Researcher", company: "Tsinghua / Frontis.AI" },
   "codingma": { role: "Training Software Expert" },
   "chenghao-rong": { role: "Senior Software Eng." },
   "hsuan-han-lai": { role: "Developer Ecosystem Lead", company: "Tuya Smart" },
@@ -26,6 +29,7 @@ const speakerCardText: Record<string, { role?: string; company?: string }> = {
   "hongjun-zhou": { company: "Shenzhen AIRS" },
   "martino-russi": { role: "Embodied Robotics Eng." },
   "markus-tavenrath": { role: "Principal DevTech Eng." },
+  "ning-liu": { company: "Beijing Humanoid Center" },
   "peilin-li": { company: "Tsinghua / Approaching AI" },
   "qinying-liao": { role: "Principal Program Mgr." },
   "quanshi-zhang": { company: "Shanghai Jiao Tong Univ." },
@@ -333,7 +337,8 @@ const groupedCategories = {
               <div class="card-row card-row-image">
                 <div class="card-image">
                   <img
-                    src={speaker.image?.trim() || speakerPlaceholderImage}
+                    src={getSpeakerImagePath(speaker.id)}
+                    onerror={SPEAKER_IMAGE_FALLBACK_HANDLER}
                     alt={speaker.name}
                     class="overlay speaker-img"
                     loading="lazy"

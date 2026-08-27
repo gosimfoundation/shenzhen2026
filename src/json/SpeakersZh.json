@@ -69,7 +69,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Xun Wang"
+      "nameEn": "Xun Wang",
+      "image": "/images/speakers/confirmed/xun-wang.png"
     },
     {
       "id": "roy-wang",
@@ -81,7 +82,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Roy Wang"
+      "nameEn": "Roy Wang",
+      "image": "/images/speakers/confirmed/roy-wang.png"
     },
     {
       "id": "george-wang",
@@ -93,7 +95,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "George Wang"
+      "nameEn": "George Wang",
+      "image": "/images/speakers/confirmed/george-wang.png"
     },
     {
       "id": "peilin-li",
@@ -120,7 +123,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Yujie Yang"
+      "nameEn": "Yujie Yang",
+      "image": "/images/speakers/confirmed/yujie-yang.png"
     },
     {
       "id": "wilson-wang",
@@ -226,7 +230,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Hongjun Zhou"
+      "nameEn": "Hongjun Zhou",
+      "image": "/images/speakers/confirmed/hongjun-zhou.png"
     },
     {
       "id": "tiberiu-socaci",
@@ -480,7 +485,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Pieter Delobelle"
+      "nameEn": "Pieter Delobelle",
+      "image": "/images/speakers/confirmed/pieter-delobelle.png"
     },
     {
       "id": "nouamane-tazi",
@@ -668,7 +674,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Yixiang Zhang"
+      "nameEn": "Yixiang Zhang",
+      "image": "/images/speakers/confirmed/yixiang-zhang.png"
     },
     {
       "id": "yongqiang-ma",
@@ -680,7 +687,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Yongqiang Ma"
+      "nameEn": "Yongqiang Ma",
+      "image": "/images/speakers/confirmed/yongqiang-ma.png"
     },
     {
       "id": "bardia-moshiri",
@@ -708,7 +716,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Wayne Connolly"
+      "nameEn": "Wayne Connolly",
+      "image": "/images/speakers/confirmed/wayne-connolly.png"
     },
     {
       "id": "chen-xin",
@@ -780,7 +789,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Rin"
+      "nameEn": "Rin",
+      "image": "/images/speakers/confirmed/rin.png"
     },
     {
       "id": "hsuan-han-lai",
@@ -839,7 +849,8 @@
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Yanwei Huang"
+      "nameEn": "Yanwei Huang",
+      "image": "/images/speakers/confirmed/yanwei-huang.png"
     },
     {
       "id": "yuu",
@@ -976,6 +987,58 @@
       "draft": false,
       "nameEn": "Philipp Oppermann",
       "image": "/images/speakers/confirmed/philipp-oppermann.png"
+    },
+    {
+      "id": "shuyue-hu",
+      "name": "胡舒悦",
+      "roleOrg": "上海人工智能实验室研究科学家",
+      "bio": "上海人工智能实验室研究科学家，研究方向包括智能体、多智能体系统、大语言模型和博弈论。2019 年获香港中文大学博士学位，曾任新加坡国立大学研究员。其研究获得中国电子学会自然科学一等奖、DAI 2025 最佳论文奖、AAMAS 2026 最佳学生论文提名和最佳系统演示奖。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Shuyue Hu",
+      "image": "/images/speakers/confirmed/shuyue-hu.png"
+    },
+    {
+      "id": "che-jiang",
+      "name": "姜澈",
+      "roleOrg": "清华大学博士研究生、衔远科技算法研究员",
+      "bio": "清华大学博士研究生、衔远科技算法研究员，研究方向包括 AI4AI、自进化智能体、自动化机器学习工程和 AI for Science。近期工作包括 NatureBench 与 Frontis-MA1/OpenMLE。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Che Jiang",
+      "image": "/images/speakers/confirmed/che-jiang.png"
+    },
+    {
+      "id": "kaiyan-zhang",
+      "name": "张开颜",
+      "roleOrg": "联合讲师",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Kaiyan Zhang",
+      "image": "/images/speakers/confirmed/kaiyan-zhang.png"
+    },
+    {
+      "id": "ning-liu",
+      "name": "刘宁",
+      "roleOrg": "北京人形机器人创新中心算法专家",
+      "bio": "刘宁博士毕业于美国东北大学，在 NeurIPS、CVPR、ICML、IEEE TNNLS 等国际顶级会议和期刊发表论文 40 余篇，并担任 IEEE 边缘设备人工智能标准工作组主席。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "nameEn": "Ning Liu",
+      "image": "/images/speakers/confirmed/ning-liu.png"
     }
   ]
 }

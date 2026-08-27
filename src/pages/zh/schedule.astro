@@ -7,24 +7,24 @@ import ScheduleTracks from "components/ScheduleTracks.astro";
 ---
 
 <Layout
-  title="日程安排 – GOSIM Shenzhen 2026"
-  description="GOSIM Shenzhen 2026 是开源 AI 项目、开发者、研究人员和行业支持者的聚会，旨在分享知识、相互学习和协作。"
+  title="议程安排 – GOSIM Shenzhen 2026"
+  description="查看 GOSIM Shenzhen 2026 六大分论坛已确认的演讲题目。具体时间与会场安排将稍后公布。"
   navDarkMode={true}
   navBackground="header-home"
-  pageTransitionName="日程安排"
+  pageTransitionName="议程安排"
 >
   <HeroText title="议程安排" lightgray />
 
-  <ScheduleTracks currentDay="October 16" lang="zh" speakerBasePath="/zh/speakers/" />
+  <ScheduleTracks lang="zh" previewMode />
 
   <GetTickets
-    title="CFP 议题征集 进行中"
+    title="相约深圳"
     location="深圳南山伊敦酒店"
     date="2026年10月16-17日"
-    text="我们正在寻找开源 AI、机器人、边缘系统与开发者基础设施领域的大胆想法与新声音。欢迎提交议题，登上 GOSIM Shenzhen 2026 的舞台。"
+    text="与开源 AI、机器人、边缘系统和开发者基础设施领域的建设者相聚 GOSIM Shenzhen 2026。"
     ctaButton={{
-      text: "提交议题",
-      link: "https://cfp.gosim.org",
+      text: "立即购票",
+      link: "https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696",
       openInNewTab: true,
     }}
   />

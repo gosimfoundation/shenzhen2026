@@ -10,8 +10,6 @@ const slug = Astro.url.pathname;
 const isZhPath = slug.startsWith("/zh/");
 const isFrPath = slug.startsWith("/fr/");
 const basePath = isZhPath ? slug.replace(/^\/zh/, "") : isFrPath ? slug.replace(/^\/fr/, "") : slug;
-const isHomepage = slug === "/" || slug === "/zh/" || slug === "/fr/";
-const anchorBase = isHomepage ? "" : "/zh/";
 const switchPath = isZhPath ? slug.replace("/zh/", "/") : `/zh${slug}`;
 
 // 只有讲师列表提供移动端筛选面板；其他页面不渲染无效按钮。
@@ -19,15 +17,15 @@ const hasFilter = basePath === "/speakers/";
 
 const links = [
   {
-    text: "分论坛主题",
-    link: `${anchorBase}#tracks`,
+    text: "议程安排",
+    link: "/zh/schedule/",
   },
   {
-    text: "大会讲师",
+    text: "讲师",
     link: "/zh/speakers/",
   },
   {
-    text: "支持者",
+    text: "赞助商",
     link: "/zh/sponsors/",
   },
   {
@@ -60,7 +58,7 @@ const links = [
     link: "/zh/volunteers/",
   },
   {
-    text: "大会场地",
+    text: "大会地点",
     link: "/zh/venue/",
   },
 ];

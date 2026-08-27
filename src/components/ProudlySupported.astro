@@ -1,5 +1,5 @@
 ---
-// Scrolling "proudly supported by" strip — the top past supporters/partners shown as
+// Scrolling "proudly supported by" strip — the top past sponsors/partners shown as
 // uniform white logos inside liquid-glass pills, gliding horizontally.
 // Logos are recoloured to white at render time (filter: brightness(0) invert(1))
 // so mixed-colour source PNGs read as one consistent set.
@@ -9,8 +9,8 @@ interface Props {
 }
 const { lead, emphasis } = Astro.props;
 
-// Top 20 past supporters by significance (mirrors the ranking used on the
-// Past Supporters page, trimmed to the most recognisable names).
+// Top 20 past sponsors by significance (mirrors the ranking used on the
+// Past Sponsors page, trimmed to the most recognisable names).
 const TOP_20 = [
   { image: "huawei.png", name: "Huawei" },
   { image: "google.png", name: "Google" },
