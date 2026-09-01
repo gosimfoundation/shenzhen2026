@@ -308,7 +308,7 @@ const groupedCategories = {
                 </div>
               </div>
               <div class="card-row card-row-info">
-                <h2 class="h5">{speaker.name}</h2>
+                <h2 class="h5" title={speaker.name}><span>{speaker.name}</span></h2>
                 {(() => {
                   let lastComma = -1, depth = 0;
                   for (let i = 0; i < speaker.roleOrg.length; i++) {
@@ -316,10 +316,10 @@ const groupedCategories = {
                     else if (speaker.roleOrg[i] === ')') depth--;
                     else if (speaker.roleOrg[i] === ',' && depth === 0) lastComma = i;
                   }
-                  if (lastComma === -1) return <p class="speaker-role">{speaker.roleOrg}</p>;
+                  if (lastComma === -1) return <p class="speaker-role" title={speaker.roleOrg}>{speaker.roleOrg}</p>;
                   const role = speaker.roleOrg.slice(0, lastComma).trim();
                   const company = speaker.roleOrg.slice(lastComma + 1).trim();
-                  return <><p class="speaker-role">{role}</p><p class="speaker-company"><strong>{company}</strong></p></>;
+                  return <><p class="speaker-role" title={role}>{role}</p><p class="speaker-company" title={company}><strong>{company}</strong></p></>;
                 })()}
               </div>
             </a>
@@ -417,14 +417,14 @@ const groupedCategories = {
   }
 
   .speaker-results .card-row-info {
-    gap: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
   }
 
   .speaker-results .card-row-info .h5 {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    height: 2.4em;
+    display: block;
+    min-height: 0;
     margin: 0;
     overflow: hidden;
     font-size: 1.05rem;
@@ -432,18 +432,34 @@ const groupedCategories = {
     text-align: center;
   }
 
+  .speaker-results .card-row-info .h5 span {
+    display: -webkit-box;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
   .speaker-results .speaker-role,
   .speaker-results .speaker-company {
+    min-height: 0;
     margin: 0;
     overflow: hidden;
+    overflow-wrap: anywhere;
     text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 
   .speaker-results .speaker-role {
+    display: -webkit-box;
     color: rgba(246, 243, 231, 0.62);
     font-size: 0.86rem;
     line-height: 1.3;
-    white-space: nowrap;
   }
 
   .speaker-results .speaker-company {
@@ -451,9 +467,6 @@ const groupedCategories = {
     color: rgba(246, 243, 231, 0.86);
     font-size: 0.88rem !important;
     line-height: 1.3;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
   }
 
   .filter-panel {
