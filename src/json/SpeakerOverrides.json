@@ -809,5 +809,257 @@
       "roleOrg": "北京人形机器人创新中心算法专家",
       "bio": "刘宁博士毕业于美国东北大学，在 NeurIPS、CVPR、ICML、IEEE TNNLS 等国际顶级会议和期刊发表论文 40 余篇，并担任 IEEE 边缘设备人工智能标准工作组主席。"
     }
+  },
+  {
+    "sourceName": "刘月刚",
+    "id": "yuegang-liu",
+    "en": {
+      "name": "Yuegang Liu",
+      "roleOrg": "Vice Principal, Sun Yat-sen University Affiliated School (Shenzhen)",
+      "bio": "Yuegang Liu is a senior secondary-school art teacher and Vice Principal of Sun Yat-sen University Affiliated School in Shenzhen. Over more than 20 years in education, he has worked on school culture, brand and design management, and AI-supported collaborative learning. He developed the Three-Person Learning Group model, combining Confucian differentiated instruction with Vygotsky's zone of proximal development through intelligent grouping, collaborative inquiry, and multidimensional assessment."
+    },
+    "zh": {
+      "name": "刘月刚",
+      "roleOrg": "中山大学深圳附属学校副校长",
+      "bio": "中学美术高级教师、中山大学深圳附属学校副校长，深耕深圳教育二十余年。长期研究学校文化、品牌与形象管理，并提出“学习沐城”理念和“三人行”小组合作式学习模型，以因材施教和最近发展区理论为基础，探索智能分组、协作探究与多维评估在 AI 时代的应用。"
+    }
+  },
+  {
+    "sourceName": "Susanna Wong",
+    "id": "susanna-wong",
+    "en": {
+      "name": "Susanna Wong",
+      "roleOrg": "Staff AI Engineer, Typeform",
+      "bio": "Susanna Wong is a Staff AI Engineer at Typeform, building products with cutting-edge AI. Her software-engineering experience spans startups and global companies, with expertise in web development, GraphQL, and generative AI. She is a Google Developer Expert in web technologies, serves on the Google Developer Advisory Board, and has spoken at conferences worldwide."
+    },
+    "zh": {
+      "name": "Susanna Wong",
+      "roleOrg": "Typeform 资深 AI 工程师",
+      "bio": "Typeform 资深 AI 工程师，负责前沿人工智能产品研发。她拥有跨初创公司与全球企业的软件工程经验，专长涵盖 Web 开发、GraphQL 和生成式 AI。她也是 Google Web 技术开发者专家、Google Developer Advisory Board 成员，并曾在多场国际技术大会发表演讲。"
+    }
+  },
+  {
+    "sourceName": "董鑫",
+    "id": "sean-dong",
+    "en": {
+      "name": "Xin Dong",
+      "roleOrg": "Program Director, Huawei Programming Language Lab",
+      "bio": "Xin Dong is a Program Director at Huawei Programming Language Lab, leading core technology development for programming languages and IDE infrastructure. He previously worked on Microsoft Azure and Dynamics 365, and later led initiatives across Huawei's mobile AI tools, Ascend AI toolchain, HarmonyOS toolchain, and company-wide AI development platforms."
+    },
+    "zh": {
+      "name": "董鑫",
+      "roleOrg": "华为编程语言实验室项目总监",
+      "bio": "现任华为编程语言实验室项目总监，负责编程语言与 IDE 基础软件的核心技术研发。曾参与 Microsoft Azure、Dynamics 365，以及华为移动 AI 研发工具、昇腾 AI 芯片工具链、HarmonyOS 工具链和公司级 AI 研发平台建设。"
+    }
+  },
+  {
+    "sourceName": "Gregory Terzian",
+    "id": "gregory-terzian",
+    "en": {
+      "name": "Gregory Terzian",
+      "roleOrg": "Founder, FOSS (Shanghai) Technology Consulting",
+      "bio": "Gregory Terzian is the founder of FOSS (Shanghai) Technology Consulting and a maintainer of the Servo browser engine."
+    },
+    "zh": {
+      "name": "Gregory Terzian",
+      "roleOrg": "FOSS（上海）技术咨询创始人",
+      "bio": "FOSS（上海）技术咨询创始人，也是 Servo 浏览器引擎维护者。"
+    }
+  },
+  {
+    "sourceName": "Tess Kassier",
+    "id": "tess-kassier",
+    "en": {
+      "name": "Tess Kassier",
+      "roleOrg": "Fractional GTM & Ecosystem Lead, RiseLink",
+      "bio": "Tess Kassier is a Yale Ventures Entrepreneur-in-Residence, founder, and fractional go-to-market and ecosystem lead at RiseLink, the US innovation arm of Beken. She helps early-stage companies turn product learning into enterprise sales and global hyperscaler partnerships."
+    },
+    "zh": {
+      "name": "Tess Kassier",
+      "roleOrg": "RiseLink 外部 GTM 与生态负责人",
+      "bio": "Yale Ventures 驻校企业家、创业者，并担任 RiseLink 外部市场进入与生态负责人。RiseLink 是博通集成在美国的创新业务平台。她擅长帮助早期企业将产品经验转化为企业销售和全球云服务合作伙伴关系。"
+    }
+  },
+  {
+    "sourceName": "陈昱衡",
+    "id": "yuheng-chen",
+    "en": {
+      "name": "Yuheng Chen",
+      "roleOrg": "AI Researcher & Embedded Systems Specialist, ambi",
+      "bio": "Yuheng Chen is a serial entrepreneur, AI researcher, and embedded-systems specialist at ambi. Since 2022, he has explored Rust for embedded product development and helped deliver more than 30 software and hardware products. His current work focuses on combining Rust and AI to create AI-native embedded products and new end-to-end development workflows."
+    },
+    "zh": {
+      "name": "陈昱衡",
+      "roleOrg": "ambi AI 研究员、嵌入式专家",
+      "bio": "连续创业者，现任 ambi AI 研究员与嵌入式专家。自 2022 年起持续探索 Rust 在嵌入式产品研发中的应用，推动三十余款软硬件产品落地。当前专注于 Rust 与 AI 的融合，探索 AI 原生嵌入式产品及全流程研发的新范式。"
+    }
+  },
+  {
+    "sourceName": "Jiechen Liu",
+    "id": "jiechen-liu",
+    "en": {
+      "name": "Jiechen Liu",
+      "roleOrg": "Director of Ecosystem & Technology, Magic Data",
+      "bio": "Jiechen Liu is Director of Ecosystem and Technology and Head of Algorithm Engineering at Magic Data. He leads AI data infrastructure, industry AI solutions, and ecosystem partnerships, with a focus on embodied intelligence and voice agents for intelligent cockpits and home-service robots. His expertise includes multimodal dataset construction, voice-interaction optimization, domain-shift mitigation, and compliant data strategies."
+    },
+    "zh": {
+      "name": "Jiechen Liu",
+      "roleOrg": "Magic Data 生态与技术总监、算法工程负责人",
+      "bio": "Magic Data 生态与技术总监、算法工程负责人，负责 AI 数据基础设施、行业解决方案和跨行业生态合作。其工作聚焦具身智能，以及智能座舱和家庭服务机器人等设备中的语音智能体，专长包括多模态高质量数据集建设、语音交互优化、域偏移缓解和合规数据策略。"
+    }
+  },
+  {
+    "sourceName": "Michael Berns",
+    "id": "michael-berns",
+    "en": {
+      "name": "Michael Berns",
+      "roleOrg": "Head of AI, Eclipse Foundation",
+      "bio": "Michael Berns is Head of AI at the Eclipse Foundation. With more than 23 years of international experience, he works at the intersection of open-source AI, digital transformation, and global ecosystem development, advancing vendor-neutral innovation, transparent technology standards, and digital sovereignty."
+    },
+    "zh": {
+      "name": "Michael Berns",
+      "roleOrg": "Eclipse Foundation 人工智能负责人",
+      "bio": "Eclipse Foundation 人工智能负责人，拥有二十余年国际经验，长期从事开源 AI、数字化转型和全球生态建设，致力于推动厂商中立的创新、透明技术标准和数字主权。"
+    }
+  },
+  {
+    "sourceName": "Cen Ming",
+    "id": "cen-ming",
+    "en": {
+      "name": "Cen Ming",
+      "roleOrg": "Professor, Chongqing University of Posts and Telecommunications",
+      "bio": "Cen Ming is a professor at Chongqing University of Posts and Telecommunications. He received his Ph.D. in optical engineering from the Graduate School of the Chinese Academy of Sciences in 2006. His research interests include information fusion, multi-target tracking, autonomous driving, and intelligent robotics."
+    },
+    "zh": {
+      "name": "Cen Ming",
+      "roleOrg": "重庆邮电大学教授",
+      "bio": "重庆邮电大学教授，2006 年获中国科学院研究生院光学工程博士学位。研究方向包括信息融合、多目标跟踪、自动驾驶和智能机器人。"
+    }
+  },
+  {
+    "sourceName": "王宝峰",
+    "id": "baofeng-wang",
+    "en": {
+      "name": "Baofeng Wang",
+      "roleOrg": "Co-founder, Shanghai Mood Perception Intelligence Technology",
+      "bio": "Baofeng Wang is a co-founder of Shanghai Mood Perception Intelligence Technology and holds an EMBA from Shanghai Jiao Tong University's Antai College. With more than 20 years of experience across internet and technology businesses, he now focuses on brain-computer interfaces, AI wearables, and agentic devices that bring perception, understanding, and feedback into real-world human-computer interaction."
+    },
+    "zh": {
+      "name": "王宝峰",
+      "roleOrg": "上海心境感知智能科技联合创始人",
+      "bio": "上海心境感知智能科技联合创始人、上海交通大学安泰 EMBA，拥有二十余年互联网及科技行业经验。当前专注于脑机接口、AI 可穿戴与智能体设备的产品创新，探索通过感知、理解与反馈创造新一代人机交互体验。"
+    }
+  },
+  {
+    "sourceName": "井晨哲",
+    "id": "chenzhe-jing",
+    "en": {
+      "name": "Chenzhe Jing",
+      "roleOrg": "Head of Open Source Ecosystem, ModelBest",
+      "bio": "Chenzhe Jing leads the open-source ecosystem at ModelBest and supports the company's Chief Scientist. He also leads advocacy and operations for the OpenBMB community. His work spans developer communities, industry partnerships, on-device large models, intelligent hardware, and the commercialization of AI technology."
+    },
+    "zh": {
+      "name": "井晨哲",
+      "roleOrg": "面壁智能开源生态负责人",
+      "bio": "面壁智能开源生态负责人、首席科学家助理，同时负责 OpenBMB 开源社区布道和运营。其工作涵盖开发者社区、产业合作、端侧大模型、智能硬件及 AI 技术产业化。"
+    }
+  },
+  {
+    "sourceName": "Iaroslav NEVEROV",
+    "id": "iaroslav-neverov",
+    "en": {
+      "name": "Iaroslav Neverov",
+      "roleOrg": "Full-stack Engineer, Pleias",
+      "bio": "Iaroslav Neverov is a full-stack engineer at Pleias, a Paris-based AI company building the data layer for enterprise agentic AI. An École 42 graduate, he co-authored Pleias research on local, offline AI for knowledge work, including retrieval and RAG pipelines running on low-cost hardware."
+    },
+    "zh": {
+      "name": "Iaroslav Neverov",
+      "roleOrg": "Pleias 全栈工程师",
+      "bio": "巴黎 AI 公司 Pleias 全栈工程师，参与企业智能体 AI 数据层建设。毕业于 École 42，并参与 Pleias 本地离线知识工作 AI 研究，探索在低成本硬件上运行检索与 RAG 流程。"
+    }
+  },
+  {
+    "sourceName": "Bohua Zhan",
+    "id": "bohua-zhan",
+    "en": {
+      "name": "Bohua Zhan",
+      "roleOrg": "Technical Expert, Huawei Programming Language Lab",
+      "bio": "Bohua Zhan is a technical expert at Huawei Programming Language Lab. He earned his Ph.D. in mathematics from Princeton University in 2014 and later held postdoctoral positions at MIT and the Technical University of Munich. His research covers automated reasoning, interactive theorem provers, embedded-system modeling and verification, and applications in operating systems, distributed systems, and quantum programs."
+    },
+    "zh": {
+      "name": "詹博华",
+      "roleOrg": "华为编程语言实验室技术专家",
+      "bio": "华为编程语言实验室技术专家，2014 年获普林斯顿大学数学博士学位，后在麻省理工学院和慕尼黑工业大学从事博士后研究。研究方向包括证明自动化、交互式定理证明器、嵌入式系统建模与验证，以及程序验证、操作系统、分布式系统和量子程序验证。"
+    }
+  },
+  {
+    "sourceName": "WEIQI ZHAO",
+    "id": "weiqi-zhao",
+    "en": {
+      "name": "Weiqi Zhao",
+      "roleOrg": "Global Head of Open Ecosystem, Rokid",
+      "bio": "Weiqi Zhao leads Rokid's global developer and partner ecosystem for AI and AR glasses. A serial entrepreneur in China and the United States, he has spent more than a decade building intelligent-hardware and spatial-computing products. His current work focuses on agentic AI, human-computer interaction, open standards, developer platforms, and human-centered wearable computing."
+    },
+    "zh": {
+      "name": "Weiqi Zhao",
+      "roleOrg": "Rokid 全球开放生态负责人",
+      "bio": "负责 Rokid AI 与 AR 眼镜的全球开发者及合作伙伴生态，拥有十余年智能硬件与空间计算产品经验。当前关注智能体 AI、人机交互、开放标准、开发者平台及以人为中心的可穿戴计算。"
+    }
+  },
+  {
+    "sourceName": "茹忆",
+    "id": "yi-ru",
+    "en": {
+      "name": "Yi Ru",
+      "roleOrg": "Founder & CEO, Lawaken Technology",
+      "bio": "Yi Ru is the founder and CEO of Lawaken Technology and a veteran smart-hardware entrepreneur with more than 20 years of consumer-electronics experience. He previously led intelligent terminals at Alibaba AI Labs, served as General Manager of Tmall Genie, and was a partner at Xiaomi TV. He founded Lawaken in 2021 to develop AI-powered consumer electronics and smart glasses."
+    },
+    "zh": {
+      "name": "茹忆",
+      "roleOrg": "李未可科技创始人兼 CEO",
+      "bio": "李未可科技创始人兼 CEO，拥有二十余年消费电子行业经验。曾任阿里巴巴人工智能实验室智能终端负责人、天猫精灵产品总经理及小米电视合伙人。2021 年创立李未可科技，专注于 AI 与消费电子融合及智能眼镜产品创新。"
+    }
+  },
+  {
+    "sourceName": "杜超",
+    "id": "chao-du",
+    "en": {
+      "name": "Chao Du",
+      "roleOrg": "openvela Project Lead, Xiaomi",
+      "bio": "Chao Du leads the openvela open-source project at Xiaomi. He has more than a decade of experience in open-source and ecosystem operations across cloud computing and telecommunications, and previously founded the IMGeek developer community."
+    },
+    "zh": {
+      "name": "杜超",
+      "roleOrg": "小米 openvela 开源项目负责人",
+      "bio": "小米 openvela 开源项目负责人，在云计算和通信行业拥有十余年开源及生态运营经验，曾创办 IMGeek 开发者社区。"
+    }
+  },
+  {
+    "sourceName": "Willem Jiang",
+    "id": "willem-jiang",
+    "en": {
+      "name": "Willem Jiang",
+      "roleOrg": "Independent Open Source & Agentic AI Consultant",
+      "bio": "Willem Jiang is an independent open-source and agentic AI consultant and a maintainer of DeerFlow. He previously worked at ByteDance's OSPO, served on the Apache Software Foundation Board of Directors, and contributed to Apache Camel, CXF, ServiceMix, and ServiceComb. His earlier roles include open-source technical expert at Huawei and Principal Engineer at Red Hat."
+    },
+    "zh": {
+      "name": "姜宁",
+      "roleOrg": "独立开源与智能体 AI 顾问",
+      "bio": "独立开源与智能体 AI 顾问、DeerFlow 维护者。曾任字节跳动 OSPO 开源布道师和 Apache 软件基金会董事，并长期参与 Apache Camel、CXF、ServiceMix 与 ServiceComb 等项目。此前曾任华为开源技术专家及 Red Hat 首席工程师。"
+    }
+  },
+  {
+    "sourceName": "谭欣",
+    "id": "xin-tan",
+    "en": {
+      "name": "Xin Tan",
+      "roleOrg": "Solutions Architect, Google Cloud",
+      "bio": "Xin Tan is a Solutions Architect at Google Cloud, focusing on applications of frontier AI technologies in the gaming industry."
+    },
+    "zh": {
+      "name": "谭欣",
+      "roleOrg": "Google Cloud 解决方案架构师",
+      "bio": "Google Cloud 解决方案架构师，专注于 AI 前沿技术在游戏行业的应用。"
+    }
   }
 ]

@@ -40,9 +40,31 @@
       "name": "Open Source Robotics",
       "nameZh": "开源机器人",
       "group": "tracks"
+    },
+    {
+      "id": "ws-ai-education",
+      "name": "AI Education Workshop",
+      "nameZh": "AI 教育工作坊",
+      "group": "workshops"
     }
   ],
   "speakers": [
+    {
+      "id": "dhh",
+      "name": "David Heinemeier Hansson (DHH)",
+      "roleOrg": "Ruby on Rails 与 Omarchy 创建者",
+      "bio": "David Heinemeier Hansson（DHH）是 Ruby on Rails 与 Omarchy 的创建者、37signals 的共同所有人兼联合创始人，也是畅销书作者。他与 Jason Fried 合著《REWORK》《REMOTE》《It Doesn't Have to Be Crazy at Work》和《Getting Real》，并担任 Rails Foundation 主席及 Shopify 董事。",
+      "nameEn": "David Heinemeier Hansson (DHH)",
+      "tags": [],
+      "socialLinks": {
+        "website": "https://dhh.dk/",
+        "github": "https://github.com/dhh",
+        "twitter": "https://x.com/dhh"
+      },
+      "draft": false,
+      "keynote": true,
+      "image": "/images/speakers/confirmed/dhh.png"
+    },
     {
       "id": "charles-yang",
       "name": "Charles Yang",
@@ -523,6 +545,19 @@
       "nameEn": "Martino Russi"
     },
     {
+      "id": "yuegang-liu",
+      "name": "刘月刚",
+      "roleOrg": "中山大学深圳附属学校副校长",
+      "bio": "中学美术高级教师、中山大学深圳附属学校副校长，深耕深圳教育二十余年。长期研究学校文化、品牌与形象管理，并提出“学习沐城”理念和“三人行”小组合作式学习模型，以因材施教和最近发展区理论为基础，探索智能分组、协作探究与多维评估在 AI 时代的应用。",
+      "tags": [
+        "ws-ai-education"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/yuegang-liu.png",
+      "nameEn": "Yuegang Liu"
+    },
+    {
       "id": "bryce-adelstein-lelbach",
       "name": "Bryce Adelstein Lelbach",
       "roleOrg": "NVIDIA 首席工程师",
@@ -551,6 +586,23 @@
       "draft": false,
       "image": "/images/speakers/confirmed/quanshi-zhang.png",
       "nameEn": "Quanshi Zhang"
+    },
+    {
+      "id": "susanna-wong",
+      "name": "Susanna Wong",
+      "roleOrg": "Typeform 资深 AI 工程师",
+      "bio": "Typeform 资深 AI 工程师，负责前沿人工智能产品研发。她拥有跨初创公司与全球企业的软件工程经验，专长涵盖 Web 开发、GraphQL 和生成式 AI。她也是 Google Web 技术开发者专家、Google Developer Advisory Board 成员，并曾在多场国际技术大会发表演讲。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/studioswong?tab=overview&from=2026-03-01&to=2026-03-31",
+        "twitter": "https://x.com/studioswong",
+        "linkedin": "https://www.linkedin.com/in/susanna-wong-london/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/susanna-wong.png",
+      "nameEn": "Susanna Wong"
     },
     {
       "id": "anni-lai",
@@ -594,20 +646,20 @@
       },
       "draft": false,
       "nameEn": "Bartłomiej Szejny",
-      "image": "/images/speakers/0-speaker-placeholder.png"
+      "image": "/images/speakers/confirmed/bartlomiej-szejny.png"
     },
     {
       "id": "sean-dong",
-      "name": "Sean Dong",
-      "roleOrg": "华为仓颉编程语言团队产品管理总监",
-      "bio": "曾任 Microsoft Azure 企业云专家，并负责华为移动 AI 工具、昇腾 MindStudio、HarmonyOS DevEco Studio 以及仓颉/毕昇 C 语言 IDE。自 2025 年初起探索 AI Agent 驱动的研发模式，并开源已被多个大型工程团队采用的 ACEHarness。",
+      "name": "董鑫",
+      "roleOrg": "华为编程语言实验室项目总监",
+      "bio": "现任华为编程语言实验室项目总监，负责编程语言与 IDE 基础软件的核心技术研发。曾参与 Microsoft Azure、Dynamics 365，以及华为移动 AI 研发工具、昇腾 AI 芯片工具链、HarmonyOS 工具链和公司级 AI 研发平台建设。",
       "tags": [
         "sz26-agentic-ai-summit"
       ],
       "socialLinks": {},
       "draft": false,
-      "nameEn": "Sean Dong",
-      "image": "/images/speakers/confirmed/sean-dong.png"
+      "image": "/images/speakers/confirmed/sean-dong.png",
+      "nameEn": "Xin Dong"
     },
     {
       "id": "birgitta-boeckeler",
@@ -662,7 +714,7 @@
       "socialLinks": {},
       "draft": false,
       "nameEn": "Chenghao Rong",
-      "image": "/images/speakers/0-speaker-placeholder.png"
+      "image": "/images/speakers/confirmed/chenghao-rong.png"
     },
     {
       "id": "yixiang-zhang",
@@ -730,7 +782,7 @@
       "socialLinks": {},
       "draft": false,
       "nameEn": "Chen Xin",
-      "image": "/images/speakers/0-speaker-placeholder.png"
+      "image": "/images/speakers/confirmed/chen-xin.png"
     },
     {
       "id": "zhichao-jiao",
@@ -823,6 +875,21 @@
       "image": "/images/speakers/confirmed/xuewen-gao.png"
     },
     {
+      "id": "gregory-terzian",
+      "name": "Gregory Terzian",
+      "roleOrg": "FOSS（上海）技术咨询创始人",
+      "bio": "FOSS（上海）技术咨询创始人，也是 Servo 浏览器引擎维护者。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/gterzian"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/gregory-terzian.png",
+      "nameEn": "Gregory Terzian"
+    },
+    {
       "id": "yuning-liang",
       "name": "Yuning Liang",
       "roleOrg": "DeepComputing 创始人兼 CEO",
@@ -887,6 +954,21 @@
       "image": "/images/speakers/confirmed/yaowei-zheng.png"
     },
     {
+      "id": "tess-kassier",
+      "name": "Tess Kassier",
+      "roleOrg": "RiseLink 外部 GTM 与生态负责人",
+      "bio": "Yale Ventures 驻校企业家、创业者，并担任 RiseLink 外部市场进入与生态负责人。RiseLink 是博通集成在美国的创新业务平台。她擅长帮助早期企业将产品经验转化为企业销售和全球云服务合作伙伴关系。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/tessmaggio/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/tess-kassier.png",
+      "nameEn": "Tess Kassier"
+    },
+    {
       "id": "vincent-caldeira",
       "name": "Vincent Caldeira",
       "roleOrg": "Red Hat 亚太区 CTO",
@@ -901,6 +983,21 @@
       "draft": false,
       "nameEn": "Vincent Caldeira",
       "image": "/images/speakers/confirmed/vincent-caldeira.png"
+    },
+    {
+      "id": "yuheng-chen",
+      "name": "陈昱衡",
+      "roleOrg": "ambi AI 研究员、嵌入式专家",
+      "bio": "连续创业者，现任 ambi AI 研究员与嵌入式专家。自 2022 年起持续探索 Rust 在嵌入式产品研发中的应用，推动三十余款软硬件产品落地。当前专注于 Rust 与 AI 的融合，探索 AI 原生嵌入式产品及全流程研发的新范式。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/Adancurusul"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yuheng-chen.png",
+      "nameEn": "Yuheng Chen"
     },
     {
       "id": "tong-ling",
@@ -926,7 +1023,7 @@
       "socialLinks": {},
       "draft": false,
       "nameEn": "Xin Liu",
-      "image": "/images/speakers/0-speaker-placeholder.png"
+      "image": "/images/speakers/confirmed/xin-liu.png"
     },
     {
       "id": "bo-tang",
@@ -989,6 +1086,19 @@
       "image": "/images/speakers/confirmed/philipp-oppermann.png"
     },
     {
+      "id": "jiechen-liu",
+      "name": "Jiechen Liu",
+      "roleOrg": "Magic Data 生态与技术总监、算法工程负责人",
+      "bio": "Magic Data 生态与技术总监、算法工程负责人，负责 AI 数据基础设施、行业解决方案和跨行业生态合作。其工作聚焦具身智能，以及智能座舱和家庭服务机器人等设备中的语音智能体，专长包括多模态高质量数据集建设、语音交互优化、域偏移缓解和合规数据策略。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/jiechen-liu.png",
+      "nameEn": "Jiechen Liu"
+    },
+    {
       "id": "shuyue-hu",
       "name": "胡舒悦",
       "roleOrg": "上海人工智能实验室研究科学家",
@@ -999,7 +1109,7 @@
       "socialLinks": {},
       "draft": false,
       "nameEn": "Shuyue Hu",
-      "image": "/images/speakers/0-speaker-placeholder.png"
+      "image": "/images/speakers/confirmed/shuyue-hu.png"
     },
     {
       "id": "che-jiang",
@@ -1007,7 +1117,7 @@
       "roleOrg": "清华大学博士研究生、衔远科技算法研究员",
       "bio": "清华大学博士研究生、衔远科技算法研究员，研究方向包括 AI4AI、自进化智能体、自动化机器学习工程和 AI for Science。近期工作包括 NatureBench 与 Frontis-MA1/OpenMLE。",
       "tags": [
-        "sz26-agentic-ai-summit"
+        "sz26-open-source-model"
       ],
       "socialLinks": {},
       "draft": false,
@@ -1020,7 +1130,7 @@
       "roleOrg": "联合讲师",
       "bio": "",
       "tags": [
-        "sz26-agentic-ai-summit"
+        "sz26-open-source-model"
       ],
       "socialLinks": {},
       "draft": false,
@@ -1039,6 +1149,158 @@
       "draft": false,
       "nameEn": "Ning Liu",
       "image": "/images/speakers/confirmed/ning-liu.png"
+    },
+    {
+      "id": "michael-berns",
+      "name": "Michael Berns",
+      "roleOrg": "Eclipse Foundation 人工智能负责人",
+      "bio": "Eclipse Foundation 人工智能负责人，拥有二十余年国际经验，长期从事开源 AI、数字化转型和全球生态建设，致力于推动厂商中立的创新、透明技术标准和数字主权。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://www.linkedin.com/in/aithoughtleader",
+        "linkedin": "https://www.linkedin.com/in/aithoughtleader"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/michael-berns.png",
+      "nameEn": "Michael Berns"
+    },
+    {
+      "id": "cen-ming",
+      "name": "Cen Ming",
+      "roleOrg": "重庆邮电大学教授",
+      "bio": "重庆邮电大学教授，2006 年获中国科学院研究生院光学工程博士学位。研究方向包括信息融合、多目标跟踪、自动驾驶和智能机器人。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/cen-ming.png",
+      "nameEn": "Cen Ming"
+    },
+    {
+      "id": "baofeng-wang",
+      "name": "王宝峰",
+      "roleOrg": "上海心境感知智能科技联合创始人",
+      "bio": "上海心境感知智能科技联合创始人、上海交通大学安泰 EMBA，拥有二十余年互联网及科技行业经验。当前专注于脑机接口、AI 可穿戴与智能体设备的产品创新，探索通过感知、理解与反馈创造新一代人机交互体验。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/baofeng-wang.png",
+      "nameEn": "Baofeng Wang"
+    },
+    {
+      "id": "chenzhe-jing",
+      "name": "井晨哲",
+      "roleOrg": "面壁智能开源生态负责人",
+      "bio": "面壁智能开源生态负责人、首席科学家助理，同时负责 OpenBMB 开源社区布道和运营。其工作涵盖开发者社区、产业合作、端侧大模型、智能硬件及 AI 技术产业化。",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/chenzhe-jing.png",
+      "nameEn": "Chenzhe Jing"
+    },
+    {
+      "id": "iaroslav-neverov",
+      "name": "Iaroslav Neverov",
+      "roleOrg": "Pleias 全栈工程师",
+      "bio": "巴黎 AI 公司 Pleias 全栈工程师，参与企业智能体 AI 数据层建设。毕业于 École 42，并参与 Pleias 本地离线知识工作 AI 研究，探索在低成本硬件上运行检索与 RAG 流程。",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/iaroslav-neverov.png",
+      "nameEn": "Iaroslav Neverov"
+    },
+    {
+      "id": "bohua-zhan",
+      "name": "詹博华",
+      "roleOrg": "华为编程语言实验室技术专家",
+      "bio": "华为编程语言实验室技术专家，2014 年获普林斯顿大学数学博士学位，后在麻省理工学院和慕尼黑工业大学从事博士后研究。研究方向包括证明自动化、交互式定理证明器、嵌入式系统建模与验证，以及程序验证、操作系统、分布式系统和量子程序验证。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/bohua-zhan.png",
+      "nameEn": "Bohua Zhan"
+    },
+    {
+      "id": "weiqi-zhao",
+      "name": "Weiqi Zhao",
+      "roleOrg": "Rokid 全球开放生态负责人",
+      "bio": "负责 Rokid AI 与 AR 眼镜的全球开发者及合作伙伴生态，拥有十余年智能硬件与空间计算产品经验。当前关注智能体 AI、人机交互、开放标准、开发者平台及以人为中心的可穿戴计算。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/weiqizhao/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/weiqi-zhao.png",
+      "nameEn": "Weiqi Zhao"
+    },
+    {
+      "id": "yi-ru",
+      "name": "茹忆",
+      "roleOrg": "李未可科技创始人兼 CEO",
+      "bio": "李未可科技创始人兼 CEO，拥有二十余年消费电子行业经验。曾任阿里巴巴人工智能实验室智能终端负责人、天猫精灵产品总经理及小米电视合伙人。2021 年创立李未可科技，专注于 AI 与消费电子融合及智能眼镜产品创新。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/yi-ru.png",
+      "nameEn": "Yi Ru"
+    },
+    {
+      "id": "chao-du",
+      "name": "杜超",
+      "roleOrg": "小米 openvela 开源项目负责人",
+      "bio": "小米 openvela 开源项目负责人，在云计算和通信行业拥有十余年开源及生态运营经验，曾创办 IMGeek 开发者社区。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/chao-du.png",
+      "nameEn": "Chao Du"
+    },
+    {
+      "id": "willem-jiang",
+      "name": "姜宁",
+      "roleOrg": "独立开源与智能体 AI 顾问",
+      "bio": "独立开源与智能体 AI 顾问、DeerFlow 维护者。曾任字节跳动 OSPO 开源布道师和 Apache 软件基金会董事，并长期参与 Apache Camel、CXF、ServiceMix 与 ServiceComb 等项目。此前曾任华为开源技术专家及 Red Hat 首席工程师。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://willemjiang.github.io/",
+        "twitter": "https://x.com/willemjiang",
+        "linkedin": "https://www.linkedin.com/in/jiangning"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/willem-jiang.png",
+      "nameEn": "Willem Jiang"
+    },
+    {
+      "id": "xin-tan",
+      "name": "谭欣",
+      "roleOrg": "Google Cloud 解决方案架构师",
+      "bio": "Google Cloud 解决方案架构师，专注于 AI 前沿技术在游戏行业的应用。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/xin-tan.png",
+      "nameEn": "Xin Tan"
     }
   ]
 }

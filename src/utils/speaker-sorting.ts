@@ -2,6 +2,7 @@ type SpeakerForSorting = {
   id: string;
   name: string;
   roleOrg?: string;
+  keynote?: boolean;
 };
 
 type CanonicalNamesById = ReadonlyMap<string, string>;
@@ -42,6 +43,9 @@ export const compareSpeakersBySurname = (
   b: SpeakerForSorting,
   canonicalNamesById?: CanonicalNamesById,
 ) => {
+  const keynoteOrder = Number(b.keynote === true) - Number(a.keynote === true);
+  if (keynoteOrder !== 0) return keynoteOrder;
+
   const speakerTypeOrder = Number(isCoSpeaker(a)) - Number(isCoSpeaker(b));
   if (speakerTypeOrder !== 0) return speakerTypeOrder;
 

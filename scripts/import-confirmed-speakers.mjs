@@ -45,7 +45,18 @@ const PROGRAM_CATEGORIES = [
     nameZh: "开源机器人",
     group: "tracks",
   },
+  {
+    id: "ws-ai-education",
+    name: "AI Education Workshop",
+    nameZh: "AI 教育工作坊",
+    group: "workshops",
+  },
 ];
+
+const TRACK_ALIASES = new Map([
+  // The CFP portal currently exposes this workshop ID with a typo.
+  ["sz26-ws-ai-education-workshoip", "ws-ai-education"],
+]);
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptDirectory, "..");
@@ -87,7 +98,14 @@ const slugify = (name, fallback) => {
 
 const normalizeTracks = (value) => {
   const tracks = Array.isArray(value) ? value : [value];
-  return [...new Set(tracks.map(cleanText).filter(Boolean))];
+  return [
+    ...new Set(
+      tracks
+        .map(cleanText)
+        .filter(Boolean)
+        .map((track) => TRACK_ALIASES.get(track) || track),
+    ),
+  ];
 };
 
 const normalizeUrl = (value, platform) => {
@@ -158,6 +176,74 @@ for (const entry of overrideData) {
     throw new Error(`Duplicate speaker override for ${sourceName}.`);
   }
   overridesBySourceName.set(key, entry);
+}
+
+const scheduleOverrideData = JSON.parse(
+  await readFile(
+    path.join(projectRoot, "src/json/SchedulePreviewOverrides.json"),
+    "utf8",
+  ),
+);
+if (!Array.isArray(scheduleOverrideData)) {
+  throw new TypeError("SchedulePreviewOverrides.json must contain an array.");
+}
+
+const scheduleOverridesByRef = new Map();
+for (const entry of scheduleOverrideData) {
+  const ref = cleanText(entry.ref);
+  if (!ref) throw new Error("Every schedule preview override needs a ref.");
+  if (scheduleOverridesByRef.has(ref)) {
+    throw new Error(`Duplicate schedule preview override for ${ref}.`);
+  }
+  scheduleOverridesByRef.set(ref, entry);
+}
+
+const invitedSpeakerData = JSON.parse(
+  await readFile(path.join(projectRoot, "src/json/InvitedSpeakers.json"), "utf8"),
+);
+if (!Array.isArray(invitedSpeakerData)) {
+  throw new TypeError("InvitedSpeakers.json must contain an array.");
+}
+
+const invitedSpeakersById = new Map();
+for (const entry of invitedSpeakerData) {
+  const id = cleanText(entry.id);
+  const name = cleanText(entry.en?.name);
+  const nameZh = cleanText(entry.zh?.name) || name;
+  if (!id || !name) {
+    throw new Error("Every invited speaker needs an id and an English name.");
+  }
+  if (invitedSpeakersById.has(id)) {
+    throw new Error(`Duplicate invited speaker id: ${id}.`);
+  }
+
+  invitedSpeakersById.set(id, {
+    en: {
+      id,
+      name,
+      roleOrg: cleanText(entry.en?.roleOrg) || "Invited Speaker",
+      bio: cleanText(entry.en?.bio),
+      tags: Array.isArray(entry.tags) ? entry.tags.map(cleanText).filter(Boolean) : [],
+      socialLinks: entry.socialLinks ?? {},
+      draft: false,
+      keynote: entry.keynote === true,
+      image:
+        cleanText(entry.image) || `/images/speakers/confirmed/${id}.png`,
+    },
+    zh: {
+      id,
+      name: nameZh,
+      roleOrg: cleanText(entry.zh?.roleOrg) || "受邀讲师",
+      bio: cleanText(entry.zh?.bio) || cleanText(entry.en?.bio),
+      nameEn: name,
+      tags: Array.isArray(entry.tags) ? entry.tags.map(cleanText).filter(Boolean) : [],
+      socialLinks: entry.socialLinks ?? {},
+      draft: false,
+      keynote: entry.keynote === true,
+      image:
+        cleanText(entry.image) || `/images/speakers/confirmed/${id}.png`,
+    },
+  });
 }
 
 const raw = JSON.parse(await readFile(path.resolve(sourcePath), "utf8"));
@@ -375,17 +461,31 @@ if (unknownTracks.length) {
   throw new Error(`Unknown track IDs: ${unknownTracks.join(", ")}`);
 }
 
+for (const invitedSpeakerId of invitedSpeakersById.keys()) {
+  if (usedIds.has(invitedSpeakerId)) {
+    throw new Error(
+      `Invited speaker id ${invitedSpeakerId} conflicts with a CFP speaker.`,
+    );
+  }
+}
+
 const output = {
   categories: [
     { name: "All", nameZh: "全部", id: "all" },
     ...PROGRAM_CATEGORIES.filter((category) => presentTrackIds.has(category.id)),
   ],
-  speakers: [...speakersByName.values()],
+  speakers: [
+    ...[...invitedSpeakersById.values()].map((speaker) => speaker.en),
+    ...speakersByName.values(),
+  ],
 };
 
 const outputZh = {
   categories: output.categories,
   speakers: output.speakers.map((speaker) => {
+    const invitedSpeaker = invitedSpeakersById.get(speaker.id);
+    if (invitedSpeaker) return invitedSpeaker.zh;
+
     const contentOverride = overridesBySourceName.get(
       sourceNameKeyById.get(speaker.id),
     );
@@ -478,9 +578,10 @@ await writeFile(
   serializedZh,
 );
 
-// Keep the temporary no-time schedule connected to the same speaker profiles
-// and event-detail routes as the full schedule. Existing hand-reviewed title
-// translations and bilingual talk overviews are preserved by proposal reference.
+// Keep the temporary no-time schedule connected to the latest accepted CFP
+// proposals. Existing hand-reviewed title translations and bilingual talk
+// overviews are preserved by proposal reference; newly accepted proposals get
+// safe source-language content until those translations are reviewed.
 const schedulePreviewPath = path.join(
   projectRoot,
   "src/json/SchedulePreview.json",
@@ -489,38 +590,104 @@ try {
   const schedulePreview = JSON.parse(
     await readFile(schedulePreviewPath, "utf8"),
   );
-  const proposalByRef = new Map(
-    accepted.map((proposal) => [cleanText(proposal.ref), proposal]),
+  const existingTracks = Array.isArray(schedulePreview.tracks)
+    ? schedulePreview.tracks
+    : [];
+  const existingTalkByRef = new Map(
+    existingTracks.flatMap((track) =>
+      (track.talks ?? []).map((talk) => [cleanText(talk.ref), talk]),
+    ),
   );
+  const existingTrackBySourceId = new Map(
+    existingTracks.map((track) => [cleanText(track.sourceId), track]),
+  );
+  const proposalsByTrack = new Map();
+  const updatedTalkByRef = new Map();
 
-  for (const track of schedulePreview.tracks ?? []) {
-    for (const talk of track.talks ?? []) {
-      const proposal = proposalByRef.get(cleanText(talk.ref));
-      if (!proposal) {
-        throw new Error(`No accepted proposal found for ${talk.ref}.`);
-      }
-
-      const people = [proposal, ...(proposal.coSpeakers ?? [])];
-      const speakerIds = people.map((person) => {
-        const id = speakerIdBySourceNameKey.get(speakerNameKey(person.name));
-        if (!id) {
-          throw new Error(
-            `No imported speaker profile found for ${person.name} (${talk.ref}).`,
-          );
-        }
-        return id;
-      });
-      const titleForSlug = cleanText(talk.title?.en) || cleanText(talk.originalTitle);
-      const originalAbstract = cleanText(proposal.abstract);
-
-      talk.originalAbstract = originalAbstract;
-      talk.originalAbstractLanguage = /[\u3400-\u9fff]/u.test(originalAbstract)
-        ? "zh"
-        : "en";
-      talk.slug = `${cleanText(talk.ref).toLowerCase()}-${slugify(titleForSlug, talk.ref)}`;
-      talk.speakers = [...new Set(speakerIds)];
+  for (const proposal of accepted) {
+    const ref = cleanText(proposal.ref);
+    const proposalTracks = normalizeTracks(proposal.tracks);
+    if (proposalTracks.length !== 1) {
+      throw new Error(
+        `${ref} must belong to exactly one program category; found ${proposalTracks.join(", ") || "none"}.`,
+      );
     }
+
+    const trackId = proposalTracks[0];
+    const trackProposals = proposalsByTrack.get(trackId) ?? [];
+    trackProposals.push(proposal);
+    proposalsByTrack.set(trackId, trackProposals);
+
+    const existingTalk = existingTalkByRef.get(ref);
+    const contentOverride = scheduleOverridesByRef.get(ref);
+    const people = [proposal, ...(proposal.coSpeakers ?? [])];
+    const speakerIds = people.map((person) => {
+      const id = speakerIdBySourceNameKey.get(speakerNameKey(person.name));
+      if (!id) {
+        throw new Error(
+          `No imported speaker profile found for ${person.name} (${ref}).`,
+        );
+      }
+      return id;
+    });
+    const originalTitle = cleanText(proposal.title);
+    const originalAbstract = cleanText(proposal.abstract);
+    const titleLanguage = /[\u3400-\u9fff]/u.test(originalTitle) ? "zh" : "en";
+    const abstractLanguage = /[\u3400-\u9fff]/u.test(originalAbstract)
+      ? "zh"
+      : "en";
+
+    updatedTalkByRef.set(ref, {
+      ref,
+      originalTitle,
+      originalLanguage: titleLanguage,
+      title: contentOverride?.title ?? existingTalk?.title ?? {
+        en: originalTitle,
+        zh: originalTitle,
+      },
+      slug:
+        cleanText(existingTalk?.slug) ||
+        `${ref.toLowerCase()}-${slugify(originalTitle, ref)}`,
+      speakers: [...new Set(speakerIds)],
+      originalAbstract,
+      originalAbstractLanguage: abstractLanguage,
+      overview: contentOverride?.overview ?? existingTalk?.overview ?? {
+        en: originalAbstract,
+        zh: originalAbstract,
+      },
+    });
   }
+
+  const nextTracks = PROGRAM_CATEGORIES.filter((category) =>
+    proposalsByTrack.has(category.id),
+  ).map((category) => {
+    const existingTrack = existingTrackBySourceId.get(category.id);
+    const proposals = proposalsByTrack.get(category.id);
+    const proposalByRef = new Map(
+      proposals.map((proposal) => [cleanText(proposal.ref), proposal]),
+    );
+    const orderedRefs = [
+      ...(existingTrack?.talks ?? [])
+        .map((talk) => cleanText(talk.ref))
+        .filter((ref) => proposalByRef.has(ref)),
+      ...proposals
+        .map((proposal) => cleanText(proposal.ref))
+        .filter((ref) => !(existingTrack?.talks ?? []).some((talk) => cleanText(talk.ref) === ref)),
+    ];
+
+    return {
+      id: cleanText(existingTrack?.id) || category.id,
+      sourceId: category.id,
+      name: {
+        en: category.name,
+        zh: category.nameZh,
+      },
+      talks: orderedRefs.map((ref) => updatedTalkByRef.get(ref)),
+      originalName: cleanText(existingTrack?.originalName) || category.name,
+    };
+  });
+
+  schedulePreview.tracks = nextTracks;
 
   await writeFile(
     schedulePreviewPath,

@@ -1,0 +1,200 @@
+[
+  {
+    "ref": "P-50",
+    "title": {
+      "en": "When Confucius Meets Vygotsky: Reconstructing Learning and Building Future Schools in the AI Era",
+      "zh": "当孔子遇见维果茨基——AI 赋能时代的学习重构与未来学校建设"
+    },
+    "overview": {
+      "en": "This workshop connects Confucius's individualized teaching with Vygotsky's zone of proximal development to explain how AI can reshape learning. It presents a teacher–AI–student model, Shenzhen's teacher AI-literacy training, a three-teacher classroom model, and a citywide learning ecosystem.",
+      "zh": "本工作坊结合孔子的“因材施教”与维果茨基的“最近发展区”，探讨 AI 如何重构学习。内容涵盖“师—机—生”协同模型、深圳教师 AI 素养培训、“三师课堂”及城市无边界学习生态。"
+    }
+  },
+  {
+    "ref": "P-42",
+    "title": {
+      "en": "From Coding Agents to Autonomous Contributors: Designing the Operating Model for Agentic Software Engineering",
+      "zh": "从编程智能体到自主贡献者：为智能体软件工程设计运行模式"
+    },
+    "overview": {
+      "en": "This talk examines how coding agents can move beyond individual assistance and become trustworthy contributors to production software workflows. It shares lessons from CI-based experiments, including separating generation from verification, setting safety boundaries, and deciding when an autonomous system should stop and return control to a human.",
+      "zh": "本次演讲探讨编程智能体如何从个人辅助工具转变为生产级软件流程中可信赖的自主贡献者。内容涵盖生成与验证的职责分离、安全边界，以及自主系统何时应停止并把控制权交还给人类。"
+    }
+  },
+  {
+    "ref": "P-55",
+    "title": {
+      "en": "Cangjie and the New Frontier of Programming Languages in the AI Era",
+      "zh": "仓颉与 AI 时代编程语言的新前沿"
+    },
+    "overview": {
+      "en": "As software moves toward CPU and LLM co-execution, programming languages must serve both developers and AI agents. This talk presents Cangjie's AI-friendly compiler, LSP and testing infrastructure, a structured skill library, Speclang for verifiable specifications, and early work on an Agent-oriented language.",
+      "zh": "随着软件进入 CPU 与大模型协同执行的新阶段，编程语言需要同时服务开发者与 AI 智能体。本次演讲介绍仓颉面向 AI 的编译器、LSP、测试基础设施、结构化技能库、可验证规格语言 Speclang，以及智能体语言的早期探索。"
+    }
+  },
+  {
+    "ref": "P-77",
+    "title": {
+      "en": "Effective and High-Performance Human–Agent Interaction",
+      "zh": "高效、高性能的人机智能体交互"
+    },
+    "overview": {
+      "en": "Using uni03C0, a macOS client for the Pi coding agent, this talk explores how human–agent interfaces can move beyond chat and terminal conventions. It focuses on practical ways to improve interaction performance, precision, usability, and security.",
+      "zh": "本次演讲以 Pi 编程智能体的 macOS 客户端 uni03C0 为例，探讨人机智能体界面如何突破传统聊天框和终端模式，并通过实际设计提升交互效率、精确度、易用性与安全性。"
+    }
+  },
+  {
+    "ref": "P-83",
+    "title": {
+      "en": "You Built the Prototype. Should It Become a Product?",
+      "zh": "原型已经完成，它应该成为产品吗？"
+    },
+    "overview": {
+      "en": "This talk offers a practical framework for deciding whether an AI-native hardware prototype should become a product. It works backward from user value to hardware and AI requirements, covering latency, power, connectivity, cloud cost, privacy, form factor, and common causes of overbuilt products.",
+      "zh": "本次演讲提供一套实用框架，帮助团队判断 AI 原生硬件原型是否值得产品化。内容从用户价值反推硬件与 AI 需求，并讨论延迟、功耗、连接、云成本、隐私、形态以及产品过度设计等关键问题。"
+    }
+  },
+  {
+    "ref": "P-86",
+    "title": {
+      "en": "AI-Native Embedded Product Development: Reshaping the Hardware–Software R&D Paradigm",
+      "zh": "AI 原生嵌入式产品研发：重塑软硬件研发范式"
+    },
+    "overview": {
+      "en": "This session shares an AI-native approach to embedded product development that reorganizes software, hardware, tooling, and validation around AI. It covers modular Rust architecture, AI-operable debugging tools, evidence-based development harnesses, and a path from rapid prototyping to cost- and power-conscious production platforms.",
+      "zh": "本次演讲分享围绕 AI 重新组织软件、硬件、工具与验证流程的嵌入式产品研发实践。内容涵盖模块化 Rust 架构、面向 AI 的设备调试能力、基于验证证据的研发 Harness，以及从快速验证平台向量产平台迁移的方法。"
+    }
+  },
+  {
+    "ref": "P-98",
+    "title": {
+      "en": "Applications of Voice Agents in Embodied Intelligence and High-Quality Data-Driven Solutions",
+      "zh": "语音智能体在具身智能与高质量数据驱动解决方案中的应用"
+    },
+    "overview": {
+      "en": "This talk examines how high-quality real-world multimodal data can help voice agents progress from conversation to reliable action in embodied systems. It covers intelligent cockpits and home-service robots, with practical approaches to natural interaction, command understanding, safe execution, multilingual coverage, and compliant data construction.",
+      "zh": "本次演讲探讨高质量真实世界多模态数据如何帮助语音智能体从“能对话”走向具身系统中的可靠行动。内容涵盖智能座舱和家庭服务机器人，并讨论自然交互、指令理解、安全执行、多语言覆盖及合规数据建设。"
+    }
+  },
+  {
+    "ref": "P-102",
+    "title": {
+      "en": "Evaluation You Can Audit: Eclipse PanEval as Shared Infrastructure",
+      "zh": "可审计的评测：Eclipse PanEval 作为共享基础设施"
+    },
+    "overview": {
+      "en": "This session presents Eclipse PanEval, an open-source framework for auditable evaluation of language and vision models. It explains its decoupled architecture, cross-region collaboration model, vendor-neutral governance, and how contributors can help build shared evaluation infrastructure.",
+      "zh": "本次演讲介绍用于语言与视觉模型可审计评测的开源框架 Eclipse PanEval，讲解其解耦架构、跨区域协作方式、中立治理模式，以及社区如何共同建设共享评测基础设施。"
+    }
+  },
+  {
+    "ref": "P-103",
+    "title": {
+      "en": "Interactive Heuristic Learning with LiDAR and Cameras for Target Detection",
+      "zh": "面向目标检测的激光雷达与相机交互式启发学习方法"
+    },
+    "overview": {
+      "en": "This talk proposes an interactive heuristic learning method that combines LiDAR and camera data for target detection on intelligent mobile platforms. The approach aims to reduce costly manual annotation while improving learning efficiency and the system's ability to evolve its perception capabilities.",
+      "zh": "本次演讲提出一种结合激光雷达与相机数据的交互式启发学习方法，用于智能移动平台的目标检测。该方法旨在减少高成本的人工标注，同时提升学习效率与感知能力的自我演进水平。"
+    }
+  },
+  {
+    "ref": "P-104",
+    "title": {
+      "en": "From Wearable to Understanding You: Productizing AI Agent Devices for Real-World Scenarios",
+      "zh": "从“可穿戴”到“懂你”：AI 智能体设备的产品化与场景落地"
+    },
+    "overview": {
+      "en": "Drawing on product work in brain–computer interfaces and AI wearables, this talk explores how agentic devices can continuously sense user states and deliver personalized services. It follows the path from user needs and product definition through scenario design and commercialization.",
+      "zh": "本次演讲结合脑机接口与 AI 可穿戴设备的产品实践，探讨智能体设备如何持续感知用户状态并提供个性化服务，覆盖用户需求、产品定义、场景设计与商业落地的完整路径。"
+    }
+  },
+  {
+    "ref": "P-105",
+    "title": {
+      "en": "The Evolution of On-Device Intelligence and Lessons from the MiniCPM Open-Source Ecosystem",
+      "zh": "端侧智能的技术发展与 MiniCPM 开源生态实践观察"
+    },
+    "overview": {
+      "en": "This talk surveys the current development of on-device intelligence and related industry trends. Using the MiniCPM open-source ecosystem as a case study, it examines practical lessons in building and growing edge AI capabilities.",
+      "zh": "本次演讲梳理端侧智能技术的发展现状与产业趋势，并以 MiniCPM 开源生态为案例，探讨端侧 AI 能力建设与生态实践中的经验。"
+    }
+  },
+  {
+    "ref": "P-106",
+    "title": {
+      "en": "How Do You Read a Million Tokens on Your Laptop? You Don't.",
+      "zh": "如何在笔记本电脑上读取一百万个 Token？答案是：不要直接读"
+    },
+    "overview": {
+      "en": "This session explores on-device agentic knowledge work under strict memory and model-size constraints. It combines cache-augmented generation, recursive language models, and grounded evaluation, with examples including cited legal analysis on a Raspberry Pi and curriculum retrieval on Android.",
+      "zh": "本次演讲探讨在严格内存与模型规模限制下完成端侧智能体知识工作的系统方法，结合缓存增强生成、递归语言模型和有依据的评测，并展示树莓派法律分析与 Android 课程检索等案例。"
+    }
+  },
+  {
+    "ref": "P-107",
+    "title": {
+      "en": "Cangjie and the New Frontier of Programming Languages in the AI Era",
+      "zh": "仓颉与 AI 时代编程语言的新前沿"
+    },
+    "overview": {
+      "en": "As software moves toward CPU and LLM co-execution, programming languages must serve both developers and AI agents. This talk presents Cangjie's AI-friendly compiler, LSP and testing infrastructure, a structured skill library, Speclang for verifiable specifications, and early work on an Agent-oriented language.",
+      "zh": "随着软件进入 CPU 与大模型协同执行的新阶段，编程语言需要同时服务开发者与 AI 智能体。本次演讲介绍仓颉面向 AI 的编译器、LSP、测试基础设施、结构化技能库、可验证规格语言 Speclang，以及智能体语言的早期探索。"
+    }
+  },
+  {
+    "ref": "P-108",
+    "title": {
+      "en": "The World as the Interface: Building an Open Agent Ecosystem for AI Glasses",
+      "zh": "以世界为界面：构建面向 AI 眼镜的开放智能体生态"
+    },
+    "overview": {
+      "en": "This talk presents a product and ecosystem framework for turning the world into the interface for AI glasses. It connects multimodal devices, agents, tools, developers, and services through open protocols while addressing deployment realities such as latency, battery life, privacy, permissions, safety, and developer experience.",
+      "zh": "本次演讲提出一套让现实世界成为 AI 眼镜交互界面的产品与生态框架，通过开放协议连接多模态设备、智能体、工具、开发者与服务，并讨论延迟、续航、隐私、权限、安全和开发体验等落地问题。"
+    }
+  },
+  {
+    "ref": "P-110",
+    "title": {
+      "en": "2026: The Memory Inflection Point for AI Glasses",
+      "zh": "2026，AI 眼镜的“记忆拐点”"
+    },
+    "overview": {
+      "en": "As AI glasses move toward the mass market, competition is shifting from the number of features to the depth of memory. This talk argues that long-term memory is becoming core AI infrastructure and may define the next generation of wearable agents.",
+      "zh": "随着 AI 眼镜走向大众市场，竞争重点正从“功能数量”转向“记忆深度”。本次演讲探讨长期记忆如何成为 AI 基础设施的核心能力，并定义下一代可穿戴智能体。"
+    }
+  },
+  {
+    "ref": "P-112",
+    "title": {
+      "en": "openvela: From an Open-Source Operating System to the Foundation for AI Hardware Agents",
+      "zh": "openvela：从开源操作系统到 AI 硬件智能体的基础底座"
+    },
+    "overview": {
+      "en": "This session introduces openvela, Xiaomi's open-source AIoT operating system, and its evolution into a foundation for AI hardware agents. It covers the project's development, core technical strengths, open-source ecosystem, production experience at large scale, and future roadmap.",
+      "zh": "本次演讲介绍小米开源 AIoT 操作系统 openvela 如何演进为 AI 硬件智能体的基础底座，涵盖发展历程、核心技术优势、大规模量产实践、开源生态建设与未来规划。"
+    }
+  },
+  {
+    "ref": "P-113",
+    "title": {
+      "en": "Agent First, Workflow Later: Enterprise Agent Practices with DeerFlow",
+      "zh": "Agent First, Workflow Later：DeerFlow 的企业级智能体实践"
+    },
+    "overview": {
+      "en": "Drawing on DeerFlow deployments in large enterprises, this talk explains how to build a Super Agent environment with reusable skills, MCP and CLI integrations, identity-aware IM gateways, and human confirmation for critical actions. It also explores how successful agent trajectories can later become reviewed workflows and test assets.",
+      "zh": "本次演讲结合 DeerFlow 在大型企业中的实践，介绍如何通过可复用 Skill、MCP 与 CLI 集成、贯通身份权限的 IM 网关及关键操作人工确认，构建企业级 Super Agent 环境，并将稳定的成功轨迹沉淀为经审核的工作流和测试资产。"
+    }
+  },
+  {
+    "ref": "P-114",
+    "title": {
+      "en": "Using Harness Engineering to Build an AI Mini-Game Production Pipeline",
+      "zh": "如何运用 Harness 工程打造 AI 小游戏制作管线"
+    },
+    "overview": {
+      "en": "This talk presents an automated AI mini-game production pipeline built with Harness engineering, a two-layer automated review system, and an ADK agent-development toolkit. The approach improves generation quality and production efficiency while reducing overall cost.",
+      "zh": "本次演讲介绍如何结合 Harness 工程、双层自动化评审体系与 ADK 智能体开发工具集，构建从设计到量产的 AI 小游戏自动化制作管线，在提升质量和效率的同时降低综合成本。"
+    }
+  }
+]

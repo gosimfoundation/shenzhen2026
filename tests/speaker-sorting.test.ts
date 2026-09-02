@@ -8,6 +8,25 @@ const canonicalNamesById = new Map([
 ]);
 
 describe("speaker surname sorting", () => {
+  it("places keynote speakers before other primary speakers", () => {
+    const speakers = [
+      { id: "peng-zhang", name: "Peng Zhang", roleOrg: "Founder" },
+      {
+        id: "dhh",
+        name: "David Heinemeier Hansson",
+        roleOrg: "Keynote Speaker, 37signals",
+        keynote: true,
+      },
+      { id: "pieter-delobelle", name: "Pieter Delobelle", roleOrg: "Co-speaker" },
+    ];
+
+    expect(speakers.sort(compareSpeakersBySurname).map((speaker) => speaker.id)).toEqual([
+      "dhh",
+      "peng-zhang",
+      "pieter-delobelle",
+    ]);
+  });
+
   it("interleaves Chinese and English display names using canonical surnames", () => {
     const speakers = [
       { id: "peng-zhang", name: "张鹏", roleOrg: "创始人" },

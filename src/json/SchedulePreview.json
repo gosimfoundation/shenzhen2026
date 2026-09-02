@@ -20,7 +20,7 @@
           "speakers": [
             "tiberiu-socaci"
           ],
-          "originalAbstract": "Most apps are built once and stay the same. Self-evolving apps are different, they improve every time you use them, not because someone updates the code, but because the app learns from your corrections.\r\n\r\nThis intelligence exists completely outside the app as a separate, updatable layer. Before each use, it reads your previous corrections and uses them as examples to make better decisions. No machine learning required, neither retraining or data science team. \r\n\r\nDrawn from several apps running in daily production, this talk shares what self-evolving apps are, how to design them, how to build one, which licensing models work best and the lessons I have learned from building several of these apps, as well as a live demonstration.",
+          "originalAbstract": "Most apps are built once and stay the same. Self-evolving apps are different, they improve every time you use them, not because someone updates the code, but because the app learns from your corrections.\n\nThis intelligence exists completely outside the app as a separate, updatable layer. Before each use, it reads your previous corrections and uses them as examples to make better decisions. No machine learning required, neither retraining or data science team. \n\nDrawn from several apps running in daily production, this talk shares what self-evolving apps are, how to design them, how to build one, which licensing models work best and the lessons I have learned from building several of these apps, as well as a live demonstration.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "Self-evolving apps improve with each use by learning from user corrections, not through code updates. This intelligence operates as a separate, updatable layer that uses past corrections to enhance decision-making without requiring machine learning or data science teams. The talk covers design, development, licensing models, and lessons learned from real-world applications.",
@@ -58,7 +58,7 @@
           "speakers": [
             "jacky-hsu"
           ],
-          "originalAbstract": "AI is not just changing how we build software — it is changing how companies are organized.\r\n\r\nTraditional organizations are built around human roles, processes, and software tools. AI-native organizations take a different approach: knowledge becomes structured memory, AI agents become collaborative workers, and workflows become intelligent systems that continuously learn and improve.\r\n\r\nIn this talk, Jacky Hsu, founder of Ingora and former Microsoft product leader, will share practical lessons from building an AI-native company developing Qrio, an AI learning companion for children and families.\r\n\r\nThe talk explores how a small startup team combines open-source technologies, AI agents, coding assistants, and knowledge systems to create an organization that can move from strategy and ideas to product design, engineering execution, and operational learning with unprecedented speed.\r\nRather than treating AI as isolated productivity tools, this session presents a vision of the company itself becoming an AI-powered operating system — where humans provide creativity, judgment, and vision, while AI agents amplify execution and organizational intelligence.",
+          "originalAbstract": "AI is not just changing how we build software — it is changing how companies are organized.\n\nTraditional organizations are built around human roles, processes, and software tools. AI-native organizations take a different approach: knowledge becomes structured memory, AI agents become collaborative workers, and workflows become intelligent systems that continuously learn and improve.\n\nIn this talk, Jacky Hsu, founder of Ingora and former Microsoft product leader, will share practical lessons from building an AI-native company developing Qrio, an AI learning companion for children and families.\n\nThe talk explores how a small startup team combines open-source technologies, AI agents, coding assistants, and knowledge systems to create an organization that can move from strategy and ideas to product design, engineering execution, and operational learning with unprecedented speed.\nRather than treating AI as isolated productivity tools, this session presents a vision of the company itself becoming an AI-powered operating system — where humans provide creativity, judgment, and vision, while AI agents amplify execution and organizational intelligence.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "AI is transforming how companies are organized, moving from traditional human-centric structures to AI-native systems where knowledge is structured memory and workflows become intelligent, self-improving systems. Jacky Hsu will discuss how Ingora leverages open-source agents, coding assistants, and knowledge systems to rapidly develop Qrio, an AI learning companion for children and families. This approach treats the company itself as an AI-powered operating system, enhancing execution and organizational intelligence through AI agents.",
@@ -77,7 +77,7 @@
           "speakers": [
             "kelly-policarpo"
           ],
-          "originalAbstract": "Europe represents one of the world's most attractive markets for AI companies. But for companies building and scaling AI products in Asia, entering Europe is no longer simply a question of finding customers, partners, or investors.\r\nThe European AI market is increasingly shaped by regulatory requirements, governance expectations, and new responsibilities for organisations developing, providing, deploying, or distributing AI systems.\r\nFor AI companies looking to expand internationally, the challenge is therefore not only to build a great AI product, but to understand whether the company, product, governance model, and operational processes are ready for the European market.\r\nThis session introduces a practical approach to EU AI Market Entry Readiness, exploring the key questions AI companies should address before scaling into Europe.\r\nWhat is the regulatory status of your AI system? What role does your company play in the AI value chain? Could your system fall into a high-risk category? What governance, documentation, transparency, human oversight, and risk management requirements may apply? And what should companies consider before entering the European market rather than discovering regulatory challenges after they have already signed their first European customer?\r\nThe session will also explore how emerging technologies, including Agentic AI and increasingly autonomous systems, may create new governance and market-entry considerations.\r\nThe session will explore what European market entry really means for companies building AI outside Europe, and why regulatory readiness is becoming part of the journey, not an afterthought. The conversation will connect AI innovation, product strategy, governance, and international expansion, with a focus on the questions companies should be asking before they set their sights on the European market.\r\nBecause talking about regulation does not have to be boring. The goal is to challenge some common assumptions, bring a fresh perspective to the European AI market, and leave the audience thinking differently about what it really takes to take an AI product from Asia to Europe.",
+          "originalAbstract": "Europe represents one of the world's most attractive markets for AI companies. But for companies building and scaling AI products in Asia, entering Europe is no longer simply a question of finding customers, partners, or investors.\nThe European AI market is increasingly shaped by regulatory requirements, governance expectations, and new responsibilities for organisations developing, providing, deploying, or distributing AI systems.\nFor AI companies looking to expand internationally, the challenge is therefore not only to build a great AI product, but to understand whether the company, product, governance model, and operational processes are ready for the European market.\nThis session introduces a practical approach to EU AI Market Entry Readiness, exploring the key questions AI companies should address before scaling into Europe.\nWhat is the regulatory status of your AI system? What role does your company play in the AI value chain? Could your system fall into a high-risk category? What governance, documentation, transparency, human oversight, and risk management requirements may apply? And what should companies consider before entering the European market rather than discovering regulatory challenges after they have already signed their first European customer?\nThe session will also explore how emerging technologies, including Agentic AI and increasingly autonomous systems, may create new governance and market-entry considerations.\nThe session will explore what European market entry really means for companies building AI outside Europe, and why regulatory readiness is becoming part of the journey, not an afterthought. The conversation will connect AI innovation, product strategy, governance, and international expansion, with a focus on the questions companies should be asking before they set their sights on the European market.\nBecause talking about regulation does not have to be boring. The goal is to challenge some common assumptions, bring a fresh perspective to the European AI market, and leave the audience thinking differently about what it really takes to take an AI product from Asia to Europe.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "Europe is a highly attractive market for AI companies, but entering it requires more than just a great product. Companies must ensure their governance, operations, and compliance are ready for Europe's regulatory environment. This session explores key questions AI firms should address before expanding into Europe, including regulatory status, risk categories, and governance requirements. It also discusses how emerging technologies like Agentic AI may influence market entry strategies and regulatory readiness.",
@@ -96,7 +96,7 @@
           "speakers": [
             "katarzyna-starosławska"
           ],
-          "originalAbstract": "Traditional approaches to system interoperability — APIs, ESBs, iPaaS platforms, and event buses — are reaching their limits in today’s heterogeneous, dynamic, and increasingly autonomous environments. Rigid contracts, manual mappings, and brittle integrations struggle to keep up with the pace of change.\r\nThis talk presents a new paradigm: agent-mediated interoperability. Instead of hard-coded connections, intelligent AI agents act as a universal integration layer. Agents can dynamically discover system capabilities, negotiate protocols, perform semantic translation, and orchestrate complex workflows — even between systems that were never designed to work together.\r\nI will share a practical reference architecture for Agent-Mediated Interoperability, covering:",
+          "originalAbstract": "Traditional approaches to system interoperability — APIs, ESBs, iPaaS platforms, and event buses — are reaching their limits in today’s heterogeneous, dynamic, and increasingly autonomous environments. Rigid contracts, manual mappings, and brittle integrations struggle to keep up with the pace of change.\nThis talk presents a new paradigm: agent-mediated interoperability. Instead of hard-coded connections, intelligent AI agents act as a universal integration layer. Agents can dynamically discover system capabilities, negotiate protocols, perform semantic translation, and orchestrate complex workflows — even between systems that were never designed to work together.\nI will share a practical reference architecture for Agent-Mediated Interoperability, covering:",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "Traditional interoperability methods like APIs and ESBs are struggling with today's dynamic and autonomous systems. This talk introduces agent-mediated interoperability, where AI agents dynamically discover, translate, and orchestrate system interactions, offering a flexible and universal integration solution.",
@@ -115,7 +115,7 @@
           "speakers": [
             "feliana-citradewi"
           ],
-          "originalAbstract": "The most powerful technology in human history is being shaped by a handful of companies, in a handful of cities, in a handful of languages. For most of humanity — women, the Global South, non-technical creators — the only role on offer is to consume what others decide. This is the defining risk of the AI era: not that machines will think, but that so few humans will hold the pen that writes our shared future.\r\n\r\nOpen source is the most powerful answer we have. But open weights and open code are necessary, not sufficient. If the people who use AI have no voice in how it's governed, \"open\" becomes a technical detail rather than a democratic reality. The missing layer isn't another framework — it's a structured way to turn millions of users into co-authors.\r\n\r\nDrawing on my own path — born in Indonesia, the first and only Indonesian woman admitted to France's elite ENA (and only the third Indonesian ever), then a front-row witness to the launch of the current AI boom in Silicon Valley — I'll argue that open source and global participation are two halves of the same fight. One opens the technology; the other opens the decision.\r\n\r\nI'll introduce the model behind Global AI Assembly and its three pillars: (1) Educate — short, hands-on AI training that turns non-technical people into builders, because you no longer need to be an engineer, you need to be curious; (2) Give Voice — structuring learners' real opinions, concerns, and needs into rigorous reports; and (3) Shape — carrying those citizen voices to governments, companies, and standards bodies so AI is built with people, not merely for them. With hubs from Paris to West Africa, this is open-source thinking applied not just to models, but to governance itself.\r\n\r\nThis talk is for the builders in the room who sense that the open-source movement is about more than performance benchmarks — that it is, at its heart, a fight over who gets to decide. I'll offer a concrete framework for how the open-source community can become the infrastructure of a genuinely democratic AI: sovereign, inclusive, and globally co-authored. Attendees will leave with a new lens on their own work — not as engineers optimizing a stack, but as architects of who the future belongs to. The question is no longer whether AI will change the world. It is: who holds the pen?",
+          "originalAbstract": "The most powerful technology in human history is being shaped by a handful of companies, in a handful of cities, in a handful of languages. For most of humanity — women, the Global South, non-technical creators — the only role on offer is to consume what others decide. This is the defining risk of the AI era: not that machines will think, but that so few humans will hold the pen that writes our shared future.\n\nOpen source is the most powerful answer we have. But open weights and open code are necessary, not sufficient. If the people who use AI have no voice in how it's governed, \"open\" becomes a technical detail rather than a democratic reality. The missing layer isn't another framework — it's a structured way to turn millions of users into co-authors.\n\nDrawing on my own path — born in Indonesia, the first and only Indonesian woman admitted to France's elite ENA (and only the third Indonesian ever), then a front-row witness to the launch of the current AI boom in Silicon Valley — I'll argue that open source and global participation are two halves of the same fight. One opens the technology; the other opens the decision.\n\nI'll introduce the model behind Global AI Assembly and its three pillars: (1) Educate — short, hands-on AI training that turns non-technical people into builders, because you no longer need to be an engineer, you need to be curious; (2) Give Voice — structuring learners' real opinions, concerns, and needs into rigorous reports; and (3) Shape — carrying those citizen voices to governments, companies, and standards bodies so AI is built with people, not merely for them. With hubs from Paris to West Africa, this is open-source thinking applied not just to models, but to governance itself.\n\nThis talk is for the builders in the room who sense that the open-source movement is about more than performance benchmarks — that it is, at its heart, a fight over who gets to decide. I'll offer a concrete framework for how the open-source community can become the infrastructure of a genuinely democratic AI: sovereign, inclusive, and globally co-authored. Attendees will leave with a new lens on their own work — not as engineers optimizing a stack, but as architects of who the future belongs to. The question is no longer whether AI will change the world. It is: who holds the pen?",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "The talk discusses how open source can empower the Global South in shaping AI governance. It introduces the Global AI Assembly model, which focuses on education, giving voice to users, and influencing AI development through structured participation. The speaker argues that open source is not just about code but about democratizing decision-making in AI.",
@@ -134,7 +134,7 @@
           "speakers": [
             "igor-schwarzmann"
           ],
-          "originalAbstract": "Coding harnesses work because code carries its own verifier: tests, compilers, type systems. An agent can run until something passes. Knowledge work has none of that — no compiler for a decision, no test suite for a strategy, and \"done\" is a judgment call. Building an agent harness for knowledge work is a vastly different problem than building one for code, and most of what the ecosystem has learned does not transfer cleanly.\r\n\r\nThis talk is a field report from a year of building and running one. I am a strategist, not a developer, and my one-person consultancy operates day to day on an open-source, local-first agent fleet: local models, flat-rate delegation, no cloud dependencies.\r\n\r\nWhat the talk covers:\r\n\r\n- Component by component, what survives the move from coding harness to knowledge-work harness — skills, memory, delegation, review gates — and what breaks. The verification gap is the organizing problem: what stands in for the test suite when the output is a decision.\r\n- The layer that makes the harness work: strategy written as a protocol. Plain-text decision rules, closed schemas, and gates that both the human and the agents operate under — the firm's strategy as the harness's operating instructions, and the nearest thing knowledge work has to a verifier.\r\n- Failure modes from daily production use: where plain text is enough, where it is not, and what a year of operation did to the strategy itself.\r\n\r\nThe talk includes a live demo: an agent reading the strategy files and making a gated decision, running locally on open-source infrastructure.",
+          "originalAbstract": "Coding harnesses work because code carries its own verifier: tests, compilers, type systems. An agent can run until something passes. Knowledge work has none of that — no compiler for a decision, no test suite for a strategy, and \"done\" is a judgment call. Building an agent harness for knowledge work is a vastly different problem than building one for code, and most of what the ecosystem has learned does not transfer cleanly.\n\nThis talk is a field report from a year of building and running one. I am a strategist, not a developer, and my one-person consultancy operates day to day on an open-source, local-first agent fleet: local models, flat-rate delegation, no cloud dependencies.\n\nWhat the talk covers:\n\n- Component by component, what survives the move from coding harness to knowledge-work harness — skills, memory, delegation, review gates — and what breaks. The verification gap is the organizing problem: what stands in for the test suite when the output is a decision.\n- The layer that makes the harness work: strategy written as a protocol. Plain-text decision rules, closed schemas, and gates that both the human and the agents operate under — the firm's strategy as the harness's operating instructions, and the nearest thing knowledge work has to a verifier.\n- Failure modes from daily production use: where plain text is enough, where it is not, and what a year of operation did to the strategy itself.\n\nThe talk includes a live demo: an agent reading the strategy files and making a gated decision, running locally on open-source infrastructure.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "Building a knowledge-work harness requires addressing the verification gap, as decisions lack the automated checks found in coding. This talk shares insights from a year of running an open-source, local-first agent system, focusing on components that survive the transition and the role of strategy as a protocol. A live demo illustrates an agent making a gated decision based on plain-text rules.",
@@ -153,7 +153,7 @@
           "speakers": [
             "bryce-adelstein-lelbach"
           ],
-          "originalAbstract": "Optimizing software has never been easier with the advent of agentic AI... right? It turns out it's not quite that simple!\r\n\r\nAutoresearch is a powerful technique for optimization; an agent iteratively modifies, tests, and benchmarks changes to the codebase with the goal of maximizing the benchmark score.\r\n\r\nWhile powerful, this process faces challenges, especially at scale:\r\n- Cheating / reward hacking (just as in reinforcement learning).\r\n- Overfitting to benchmark's inputs.\r\n- Tradeoffs between input breadth and build/test/benchmark cost.\r\n- Local maximums.\r\n\r\nIn this talk, we'll discuss some of these challenges and how to overcome them, based on examples from the open source GPUMODE kernel competitions and infrastructure.\r\nWe'll explore how to take autoresearch results from \"cool idea\" to \"shipped in production\".",
+          "originalAbstract": "Optimizing software has never been easier with the advent of agentic AI... right? It turns out it's not quite that simple!\n\nAutoresearch is a powerful technique for optimization; an agent iteratively modifies, tests, and benchmarks changes to the codebase with the goal of maximizing the benchmark score.\n\nWhile powerful, this process faces challenges, especially at scale:\n- Cheating / reward hacking (just as in reinforcement learning).\n- Overfitting to benchmark's inputs.\n- Tradeoffs between input breadth and build/test/benchmark cost.\n- Local maximums.\n\nIn this talk, we'll discuss some of these challenges and how to overcome them, based on examples from the open source GPUMODE kernel competitions and infrastructure.\nWe'll explore how to take autoresearch results from \"cool idea\" to \"shipped in production\".",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "Optimizing software with agentic AI is more complex than it seems. Autoresearch, which uses agents to iteratively modify and test code, faces challenges like reward hacking and overfitting. This talk explores these issues and how to turn autoresearch results into production-ready solutions, using examples from open-source GPU kernel competitions and infrastructure.",
@@ -191,7 +191,7 @@
           "speakers": [
             "sean-dong"
           ],
-          "originalAbstract": "Talk Abstract: Agent-Centric Engineering — From Personal Productivity to Organizational Capability\r\nSpeaker: Dong Xin, Huawei Cangjie Programming Language Team\r\nFormer Microsoft Azure enterprise cloud expert and lead of Huawei's mobile AI tooling, Ascend MindStudio, HarmonyOS DevEco Studio, and the Cangjie/Bisheng C language IDE. Since early 2025, Dong Xin has pioneered AI Agent-driven R&D models and open-sourced ACEHarness, now adopted by multiple large-scale engineering teams.\r\nThe Shift: AI development has entered its second half. The challenge is no longer \"coding faster alone,\" but how organizations restructure roles, redefine quality boundaries, and compose teams for Agent-centric workflows.\r\nThree Pillars:\r\nACE (Agent-Centric Engineering): Engineers ascend from coders to Directors (orchestration), Screenwriters (specification), and Quality Arbiters (trust).\r\nHuman IO Loop: Human On the Loop for systemic control; Human In the Loop for result trust. Human attention focuses on objectives, boundaries, and risks—Agent executes autonomously.\r\nATM (Ability-based Task Matching): Dynamic task allocation to optimal executors.\r\nThe Cangjie Journey: From localized trials to organizational capability, with measurable gains in library development, crash analysis, documentation, API testing, and code review.\r\nTwo Battlefield Stories:\r\nCompiler Memory Optimization (high-coupling): Pre-defined objectives and boundaries let the Agent autonomously design, implement, and self-repair—humans govern and accept at critical nodes.\r\nHash Library Performance (high-knowledge-density): A strike team of \"Expert + Intern + Agent\" delivered results while converting expertise into reusable knowledge assets.\r\nACEHarness: An open-source platform bridging team experience to engineering infrastructure—featuring Spec-Driven Development, state-machine workflows, intelligent Supervisor routing, adversarial iteration, multi-Agent deliberation, Git audit baselines, and long-term memory with skill extensibility.\r\nTakeaway: A concrete framework for moving from AI tool adoption to Agent-centric organizational capability, with actionable patterns for human-AI governance and quality boundary definition.",
+          "originalAbstract": "Talk Abstract: Agent-Centric Engineering — From Personal Productivity to Organizational Capability\nSpeaker: Dong Xin, Huawei Cangjie Programming Language Team\nFormer Microsoft Azure enterprise cloud expert and lead of Huawei's mobile AI tooling, Ascend MindStudio, HarmonyOS DevEco Studio, and the Cangjie/Bisheng C language IDE. Since early 2025, Dong Xin has pioneered AI Agent-driven R&D models and open-sourced ACEHarness, now adopted by multiple large-scale engineering teams.\nThe Shift: AI development has entered its second half. The challenge is no longer \"coding faster alone,\" but how organizations restructure roles, redefine quality boundaries, and compose teams for Agent-centric workflows.\nThree Pillars:\nACE (Agent-Centric Engineering): Engineers ascend from coders to Directors (orchestration), Screenwriters (specification), and Quality Arbiters (trust).\nHuman IO Loop: Human On the Loop for systemic control; Human In the Loop for result trust. Human attention focuses on objectives, boundaries, and risks—Agent executes autonomously.\nATM (Ability-based Task Matching): Dynamic task allocation to optimal executors.\nThe Cangjie Journey: From localized trials to organizational capability, with measurable gains in library development, crash analysis, documentation, API testing, and code review.\nTwo Battlefield Stories:\nCompiler Memory Optimization (high-coupling): Pre-defined objectives and boundaries let the Agent autonomously design, implement, and self-repair—humans govern and accept at critical nodes.\nHash Library Performance (high-knowledge-density): A strike team of \"Expert + Intern + Agent\" delivered results while converting expertise into reusable knowledge assets.\nACEHarness: An open-source platform bridging team experience to engineering infrastructure—featuring Spec-Driven Development, state-machine workflows, intelligent Supervisor routing, adversarial iteration, multi-Agent deliberation, Git audit baselines, and long-term memory with skill extensibility.\nTakeaway: A concrete framework for moving from AI tool adoption to Agent-centric organizational capability, with actionable patterns for human-AI governance and quality boundary definition.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "Agent-Centric Engineering (ACE) transforms individual productivity into organizational capability by redefining roles and workflows. Dong Xin introduced ACEHarness, an open-source platform enabling Spec-Driven Development and multi-Agent collaboration, with real-world applications in compiler optimization and hash library performance. The framework emphasizes human-AI governance and quality boundary definition for effective AI agent integration.",
@@ -229,7 +229,7 @@
           "speakers": [
             "xuewen-gao"
           ],
-          "originalAbstract": "我长期扎根于一线攻防实战，对AI如何重塑攻击链有切身体会。本次分享不空谈趋势，而是基于奇安信等一线安全公司的实战数据与最新案例，提供一套可落地、可复用的建设路径，希望能为现场的同仁提供真正的决策参考。\r\n作为网络安全一线从业者，我深切感受到AI技术正在将网络攻防推向一个前所未有的“失衡”临界点。本次分享将结合近期发生的重大安全事件与前沿洞察，提出一套从战略到落地的“再平衡”解决方案，希望能与参会同仁共同探讨。\r\n核心观点与内容大纲：\r\n1. 警惕“工业化”攻击：Mythos与漏洞“军备竞赛”\r\n我将首次在公开论坛深度剖析Anthropic旗下Mythos模型带来的范式级冲击。它实现了从漏洞挖掘到攻击执行的全自动流水线作业，将资深工程师数天的工作压缩至分钟级。这导致漏洞产出速度（分钟级）与补丁修复速度（平均72天）之间出现致命性“时差”，彻底打破了传统攻防博弈的平衡。\r\n引用“玻璃翼计划”等案例，揭示当前攻击高效化、自动化、平民化的三大趋势，以及由此引发的全球关基领域系统性焦虑。\r\n2. 防守“力不从心”：传统安全体系的三大崩溃\r\n人的上限 vs AI的无限： 我们的人海战术、静态规则，在AI驱动的恶意代码变异、高频次攻击和全域扫描面前，已经形同虚设。\r\n“内忧外患”加剧： 我将分享双重勒索、供应链攻击（如“DeepSeek”恶意包事件）、数据泄露（如科研机构违规用AI工具泄密） 等真实案例。这些案例无一不指向一个核心问题：安全孤岛化、单点化的防守体系，无法应对体系化、智能化的攻击。\r\n3. 破局之道：从“追着漏洞跑”到“带着漏洞防”\r\n核心观点：我们无法阻止漏洞被挖出，但可以重构防御体系，让攻击者“即使挖了洞，也打不进来，进得来也拿不走，拿走了也用不了”。\r\n【三位一体】内生安全纵深防御体系： 我将详细阐述如何通过高位情报AI化、中位运营智能体化、低位产品MCP化，实现安全能力的协同联动。\r\n\r\n4. 总结与展望：\r\n网络安全已进入“体系对抗”时代。我们必须借鉴“社会治安综合治理”的网格化理念，通过一体化安全改造，让安全从“追着漏洞跑”的被动修补，转变为“带着漏洞防”的主动防御。\r\n最终，安全不再是成本，而是数字化业务发展的底座和竞争力。",
+          "originalAbstract": "我长期扎根于一线攻防实战，对AI如何重塑攻击链有切身体会。本次分享不空谈趋势，而是基于奇安信等一线安全公司的实战数据与最新案例，提供一套可落地、可复用的建设路径，希望能为现场的同仁提供真正的决策参考。\n作为网络安全一线从业者，我深切感受到AI技术正在将网络攻防推向一个前所未有的“失衡”临界点。本次分享将结合近期发生的重大安全事件与前沿洞察，提出一套从战略到落地的“再平衡”解决方案，希望能与参会同仁共同探讨。\n核心观点与内容大纲：\n1. 警惕“工业化”攻击：Mythos与漏洞“军备竞赛”\n我将首次在公开论坛深度剖析Anthropic旗下Mythos模型带来的范式级冲击。它实现了从漏洞挖掘到攻击执行的全自动流水线作业，将资深工程师数天的工作压缩至分钟级。这导致漏洞产出速度（分钟级）与补丁修复速度（平均72天）之间出现致命性“时差”，彻底打破了传统攻防博弈的平衡。\n引用“玻璃翼计划”等案例，揭示当前攻击高效化、自动化、平民化的三大趋势，以及由此引发的全球关基领域系统性焦虑。\n2. 防守“力不从心”：传统安全体系的三大崩溃\n人的上限 vs AI的无限： 我们的人海战术、静态规则，在AI驱动的恶意代码变异、高频次攻击和全域扫描面前，已经形同虚设。\n“内忧外患”加剧： 我将分享双重勒索、供应链攻击（如“DeepSeek”恶意包事件）、数据泄露（如科研机构违规用AI工具泄密） 等真实案例。这些案例无一不指向一个核心问题：安全孤岛化、单点化的防守体系，无法应对体系化、智能化的攻击。\n3. 破局之道：从“追着漏洞跑”到“带着漏洞防”\n核心观点：我们无法阻止漏洞被挖出，但可以重构防御体系，让攻击者“即使挖了洞，也打不进来，进得来也拿不走，拿走了也用不了”。\n【三位一体】内生安全纵深防御体系： 我将详细阐述如何通过高位情报AI化、中位运营智能体化、低位产品MCP化，实现安全能力的协同联动。\n\n4. 总结与展望：\n网络安全已进入“体系对抗”时代。我们必须借鉴“社会治安综合治理”的网格化理念，通过一体化安全改造，让安全从“追着漏洞跑”的被动修补，转变为“带着漏洞防”的主动防御。\n最终，安全不再是成本，而是数字化业务发展的底座和竞争力。",
           "originalAbstractLanguage": "zh",
           "overview": {
             "en": "Drawing on frontline cybersecurity experience, the speaker explains how AI is reshaping attack chains and presents a practical framework based on real-world data and cases from QI-ANXIN and other security companies. The talk examines the imbalance created by AI-driven attacks and proposes a \"rebalance\" strategy for moving from reactive patching to proactive defense.",
@@ -248,7 +248,7 @@
           "speakers": [
             "vincent-caldeira"
           ],
-          "originalAbstract": "As autonomous AI agents shift from experimental projects to production workloads, scaling them requires navigating a rapidly expanding open-source landscape. True technical sovereignty demands an open stack where transparent, open-weight models are backed by an open supply chain to establish verifiable trust. Managing multi-turn agentic loops requires seamless integration across open models, compute, orchestration, and agent protocols.\r\n\r\nThis landscape presentation maps the end-to-end open agentic ecosystem. At the substrate level, the PyTorch Foundation powers compute and model serving by hosting Ray for distributed execution alongside vLLM for high-throughput, memory-efficient serving. The CNCF delivers platform orchestration through Kubernetes, cloud-native agentic standards, and evolving AI Gateways that provide smart routing across a mixture of models while integrating agent harnesses directly into the platform. Finally, the Agentic AI Foundation (AAIF) standardizes tool execution and agent delegation via MCP and A2A specifications. \r\n\r\nAttendees will gain a comprehensive map of how these layers intersect to deliver a secure, sovereign alternative to proprietary AI stacks.",
+          "originalAbstract": "As autonomous AI agents shift from experimental projects to production workloads, scaling them requires navigating a rapidly expanding open-source landscape. True technical sovereignty demands an open stack where transparent, open-weight models are backed by an open supply chain to establish verifiable trust. Managing multi-turn agentic loops requires seamless integration across open models, compute, orchestration, and agent protocols.\n\nThis landscape presentation maps the end-to-end open agentic ecosystem. At the substrate level, the PyTorch Foundation powers compute and model serving by hosting Ray for distributed execution alongside vLLM for high-throughput, memory-efficient serving. The CNCF delivers platform orchestration through Kubernetes, cloud-native agentic standards, and evolving AI Gateways that provide smart routing across a mixture of models while integrating agent harnesses directly into the platform. Finally, the Agentic AI Foundation (AAIF) standardizes tool execution and agent delegation via MCP and A2A specifications. \n\nAttendees will gain a comprehensive map of how these layers intersect to deliver a secure, sovereign alternative to proprietary AI stacks.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "The talk explores the open agentic AI landscape, emphasizing the need for transparent, open-weight models and an open supply chain to ensure technical sovereignty. It outlines the ecosystem, including PyTorch Foundation, CNCF, and AAIF, which together enable secure, scalable agentic systems through integrated compute, orchestration, and protocol standards.",
@@ -256,23 +256,79 @@
           }
         },
         {
-          "ref": "P-100",
-          "originalTitle": "Teaching AI to Improve AI: From Experimental Feedback to Meta-Evolution",
+          "ref": "P-55",
+          "originalTitle": "Cangjie and the New Frontier of Programming Languages in the AI Era",
           "originalLanguage": "en",
           "title": {
-            "en": "Teaching AI to Improve AI: From Experimental Feedback to Meta-Evolution",
-            "zh": "教 AI 改进 AI：从实验反馈到元进化"
+            "en": "Cangjie and the New Frontier of Programming Languages in the AI Era",
+            "zh": "仓颉与 AI 时代编程语言的新前沿"
           },
-          "slug": "p-100-teaching-ai-to-improve-ai-from-experimental-feedback-to-meta-evolution",
+          "slug": "p-55-cangjie-and-the-new-frontier-of-programming-languages-in-the-ai-era",
           "speakers": [
-            "che-jiang",
-            "kaiyan-zhang"
+            "sean-dong"
           ],
-          "originalAbstract": "Large language models are evolving from coding assistants into research agents that can propose solutions, run experiments, interpret feedback, and iteratively improve their results. Yet achieving a higher score in a single experiment does not mean that a system has truly learned how to improve.\r\nThis talk explores how execution-grounded experimentation can be transformed into reusable improvement capabilities. We first introduce the minimal AI4AI loop—propose, execute, evaluate, and revise—and distinguish one-off optimization from self-evolution, where experience changes the system’s future behavior. Through representative success and failure cases from NatureBench, we examine the key bottlenecks facing scientific agents, including method selection, implementation depth, and compute allocation. We then present Frontis-MA1 and OpenMLE, showing how executable tasks, structured feedback, evolutionary search, and post-training can be connected within a unified learning loop.\r\nFinally, we return to recursive self-improvement: what would it take for an improved AI improver to take over the next improvement cycle and continually produce stronger successors?",
+          "originalAbstract": "In the AI era, program execution has evolved into a \"CPU + LLM Co-execution\" paradigm. Programming languages must now serve two masters: human developers and AI Agents. This talk explores how the Cangjie language is being reimagined for AI-native affinity.\nAI-Friendly Infrastructure Overhaul\nZhan outlines a three-pronged transformation of Cangjie's toolchain: upgrading the compiler, LSP, and testing framework to become first-class citizens for AI consumption; building a tree-structured AI skill library (knowledge base) for structured capability reuse; and introducing Speclang, a semi-formal design description language that translates natural language requirements into verifiable specification constraints—directly addressing the core pain point of intent ambiguity in AI coding.\nToward a New Agent Language\nLooking beyond today's languages, the lab is prototyping a novel Agent Language that balances deterministic CPU execution with the flexible reasoning of large models. The design targets workflow programming, fine-grained context control, and visual multi-Agent collaboration—enabling a new class of software where human intent, formal verification, and LLM improvisation coexist in a single executable fabric.\nAudience Takeaway\nAttendees will gain insight into how programming languages are being reinvented for the \"CPU + LLM\" era, with concrete examples of AI-friendly infrastructure, intent-formalization techniques, and a glimpse of the emerging Agent-oriented programming paradigm.",
           "originalAbstractLanguage": "en",
           "overview": {
-            "en": "Large language models are evolving from coding assistants to research agents capable of proposing solutions, running experiments, and iteratively improving results. This talk discusses how execution-based experimentation can be transformed into reusable improvement capabilities, using the AI4AI loop and case studies from NatureBench. It also explores the potential for recursive self-improvement in AI systems.",
-            "zh": "大型语言模型正从代码助手演变为能够提出解决方案、运行实验并迭代改进结果的研究智能体。本次演讲探讨了如何将基于执行的实验转化为可复用的改进能力，介绍了AI4AI循环和NatureBench中的案例研究。最后，还探讨了AI系统实现递归自我改进的潜力。"
+            "en": "As software moves toward CPU and LLM co-execution, programming languages must serve both developers and AI agents. This talk presents Cangjie's AI-friendly compiler, LSP and testing infrastructure, a structured skill library, Speclang for verifiable specifications, and early work on an Agent-oriented language.",
+            "zh": "随着软件进入 CPU 与大模型协同执行的新阶段，编程语言需要同时服务开发者与 AI 智能体。本次演讲介绍仓颉面向 AI 的编译器、LSP、测试基础设施、结构化技能库、可验证规格语言 Speclang，以及智能体语言的早期探索。"
+          }
+        },
+        {
+          "ref": "P-102",
+          "originalTitle": "Evaluation You Can Audit: Eclipse PanEval as Shared Infrastructure",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Evaluation You Can Audit: Eclipse PanEval as Shared Infrastructure",
+            "zh": "可审计的评测：Eclipse PanEval 作为共享基础设施"
+          },
+          "slug": "p-102-evaluation-you-can-audit-eclipse-paneval-as-shared-infrastructure",
+          "speakers": [
+            "michael-berns"
+          ],
+          "originalAbstract": "Every team building AI depends on evaluation. Almost nobody controls the evaluation they depend on.\nBenchmarks arrive as published numbers. The harness, the data, and the scoring logic often stay closed. That makes a result something you accept rather than verify.\nEclipse PanEval is an open source framework for evaluating large language and vision models. It began as a foundational contribution from the Beijing Academy of Artificial Intelligence. It is now moving to meritocratic stewardship at the Eclipse Foundation, where more than 440 open source projects are hosted under vendor-neutral governance.\nThe architecture is deliberately decoupled. Regions can evolve their evaluation sets, languages, and priorities independently, while staying technically synchronised with the global project. That is what makes shared evaluation infrastructure workable across regions that will never agree on everything.\nI will cover what we built with BAAI, what it taught us about cross-region open source governance, and where the project needs contributors next.\nI have spent 13 years building AI systems, and spoke about PanEval at GOSIM Paris this year. This session is the next chapter, from the infrastructure side.\nYou will leave knowing how to evaluate models on infrastructure you can audit, and how to help build it.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This session presents Eclipse PanEval, an open-source framework for auditable evaluation of language and vision models. It explains its decoupled architecture, cross-region collaboration model, vendor-neutral governance, and how contributors can help build shared evaluation infrastructure.",
+            "zh": "本次演讲介绍用于语言与视觉模型可审计评测的开源框架 Eclipse PanEval，讲解其解耦架构、跨区域协作方式、中立治理模式，以及社区如何共同建设共享评测基础设施。"
+          }
+        },
+        {
+          "ref": "P-107",
+          "originalTitle": "Cangjie and the New Frontier of Programming Languages in the AI Era",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Cangjie and the New Frontier of Programming Languages in the AI Era",
+            "zh": "仓颉与 AI 时代编程语言的新前沿"
+          },
+          "slug": "p-107-cangjie-and-the-new-frontier-of-programming-languages-in-the-ai-era",
+          "speakers": [
+            "bohua-zhan"
+          ],
+          "originalAbstract": "In the AI era, program execution has evolved into a \"CPU + LLM co-execution\" paradigm. Programming languages must now cater to two distinct audiences: human developers and AI agents. This talk explores how the Cangjie language is being reimagined for AI-native affinity.\n\nAI-Friendly Infrastructure Overhaul\nWe outline a three-pronged transformation of Cangjie's toolchain: upgrading the compiler, LSP, and testing framework to become first-class citizens for AI consumption; building a tree-structured AI skill library (knowledge base) for structured capability reuse; and introducing Speclang, a semi-formal design description language that translates natural language requirements into verifiable specification constraints -- directly addressing the core pain point of intent ambiguity in AI coding.\n\nToward a New Agent Language\nLooking beyond today's languages, the lab is prototyping a novel Agent Language that balances deterministic CPU execution with the flexible reasoning of large language models. The design targets workflow programming, fine-grained context control, and multi-agent collaboration -- enabling a new class of software where human intent, formal verification, and LLM improvisation coexist in a single executable fabric.\n\nAudience Takeaway\nAttendees will gain insight into how programming languages are being reinvented for the \"CPU + LLM\" era, with concrete examples of AI-friendly infrastructure, intent-formalization techniques, and a glimpse of the emerging Agent-oriented programming paradigm.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "As software moves toward CPU and LLM co-execution, programming languages must serve both developers and AI agents. This talk presents Cangjie's AI-friendly compiler, LSP and testing infrastructure, a structured skill library, Speclang for verifiable specifications, and early work on an Agent-oriented language.",
+            "zh": "随着软件进入 CPU 与大模型协同执行的新阶段，编程语言需要同时服务开发者与 AI 智能体。本次演讲介绍仓颉面向 AI 的编译器、LSP、测试基础设施、结构化技能库、可验证规格语言 Speclang，以及智能体语言的早期探索。"
+          }
+        },
+        {
+          "ref": "P-110",
+          "originalTitle": "2026，AI眼镜的“记忆拐点”",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "2026: The Memory Inflection Point for AI Glasses",
+            "zh": "2026，AI 眼镜的“记忆拐点”"
+          },
+          "slug": "p-110-2026-ai眼镜的-记忆拐点",
+          "speakers": [
+            "yi-ru"
+          ],
+          "originalAbstract": "In 2026, AI glasses are moving from early-adopter novelty to the mass market. At the same time, the competitive battleground is shifting from \"feature count\" to \"memory depth.\" In the era of AI Agents, long-term memory is evolving from a mere product feature into a core capability of AI infrastructure. The \"memory inflection point\" has arrived – whoever helps users truly \"remember\" will define the next generation of AI glasses.\n2026年，AI眼镜从小众尝鲜迈入大众市场。与此同时，行业竞争重心正从“功能数量”转向“记忆深度”。AI Agent时代，长期记忆正在从产品功能升级为AI基础设施的核心能力。“记忆拐点”已经到来——谁能帮用户“记住”，谁就能定义下一代AI眼镜。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "As AI glasses move toward the mass market, competition is shifting from the number of features to the depth of memory. This talk argues that long-term memory is becoming core AI infrastructure and may define the next generation of wearable agents.",
+            "zh": "随着 AI 眼镜走向大众市场，竞争重点正从“功能数量”转向“记忆深度”。本次演讲探讨长期记忆如何成为 AI 基础设施的核心能力，并定义下一代可穿戴智能体。"
           }
         }
       ],
@@ -299,7 +355,7 @@
             "peilin-li",
             "yujie-yang"
           ],
-          "originalAbstract": "Frontier open-source MoE models are entering the 1T-parameter era, traditionally requiring data center GPU clusters for adaptation and deployment. KTransformers offers a low-cost alternative for 4090-class workstations using CPU-GPU heterogeneous co-compute. By offloading sparse MoE experts to CPU DRAM while keeping hot dense computation on a 24GB-class GPU, KTransformers enables efficient local inference.\r\n\r\nMore than just an inference engine, this architecture supports a complete workstation-level iteration loop: serving the model locally, collecting domain-specific feedback, fine-tuning LoRA adapters via LLaMA-Factory, and deploying the adapted model back to KTransformers. This approach provides small applied AI teams, university labs, and researchers a practical, parameter-efficient path to study, serve, and iterate on 1T-class models without prohibitive hardware costs.",
+          "originalAbstract": "Frontier open-source MoE models are entering the 1T-parameter era, traditionally requiring data center GPU clusters for adaptation and deployment. KTransformers offers a low-cost alternative for 4090-class workstations using CPU-GPU heterogeneous co-compute. By offloading sparse MoE experts to CPU DRAM while keeping hot dense computation on a 24GB-class GPU, KTransformers enables efficient local inference.\n\nMore than just an inference engine, this architecture supports a complete workstation-level iteration loop: serving the model locally, collecting domain-specific feedback, fine-tuning LoRA adapters via LLaMA-Factory, and deploying the adapted model back to KTransformers. This approach provides small applied AI teams, university labs, and researchers a practical, parameter-efficient path to study, serve, and iterate on 1T-class models without prohibitive hardware costs.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "KTransformers enables efficient local inference for 1T-class MoE models on consumer hardware by leveraging CPU-GPU heterogeneous computing. It supports a full fine-tuning-to-inference loop, allowing model serving, feedback collection, and deployment back to the system. This approach makes large-scale model iteration accessible to small teams and researchers without high hardware costs.",
@@ -318,7 +374,7 @@
           "speakers": [
             "wilson-wang"
           ],
-          "originalAbstract": "As ByteDance’s global edge infrastructure scales, centralized operations struggle with latency and fragmented edge scenarios. We built lightweight AI operations agents natively on the SPEAR edge platform, leveraging its built-in AI capabilities and native MCP support to rapidly ship purpose-built agents.\r\nDeployed locally on edge nodes, these agents autonomously handle real-time cluster monitoring, root cause analysis and automated issue resolution without relying on central services, drastically cutting response latency and manual overhead.\r\nIn this talk, we deep-dive into SPEAR’s edge AI runtime architecture, MCP-enabled agent development patterns, and key engineering lessons from our global production rollout, including edge resource optimization and network resilience practices.",
+          "originalAbstract": "As ByteDance’s global edge infrastructure scales, centralized operations struggle with latency and fragmented edge scenarios. We built lightweight AI operations agents natively on the SPEAR edge platform, leveraging its built-in AI capabilities and native MCP support to rapidly ship purpose-built agents.\nDeployed locally on edge nodes, these agents autonomously handle real-time cluster monitoring, root cause analysis and automated issue resolution without relying on central services, drastically cutting response latency and manual overhead.\nIn this talk, we deep-dive into SPEAR’s edge AI runtime architecture, MCP-enabled agent development patterns, and key engineering lessons from our global production rollout, including edge resource optimization and network resilience practices.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "ByteDance's global edge infrastructure faces challenges with centralized operations due to latency and fragmented scenarios. By deploying lightweight AI operations agents on the SPEAR platform with MCP support, they achieve real-time monitoring, root cause analysis, and automated resolution at the edge, reducing latency and manual effort. The talk covers SPEAR's edge AI architecture, MCP-based agent development, and production insights on resource optimization and network resilience.",
@@ -356,7 +412,7 @@
           "speakers": [
             "satya-mallick"
           ],
-          "originalAbstract": "OpenCV 5 is the most consequential modernization of the world’s leading open-source computer vision library in years. This talk explains what changed, why it matters, and how engineering leaders can upgrade without disrupting production systems.\r\n\r\nWe will tour the new foundation—C++17 and Python 3 baselines, removal of legacy APIs, expanded data types, true 0D/1D arrays, and the reorganization of features, geometry, calibration, stereo, and point-cloud capabilities. We will then examine the radically revised DNN stack: a new inference engine with much broader modern ONNX support, dynamic shapes and subgraphs, optional ONNX Runtime integration, stronger CPU performance, and end-to-end building blocks for vision-language models. We will also highlight modern local features and matching, improved robust estimation, multi-camera calibration, and new 3D workflows.\r\n\r\nThe second half is a practical migration playbook for companies. Attendees will learn how to inventory dependencies, identify removed or relocated APIs, convert legacy Caffe and Darknet models to ONNX, benchmark CPU and GPU execution paths, build compatibility tests, run OpenCV 4 and 5 in parallel, stage deployment, monitor regressions, and preserve a rollback path. You will leave with a concrete checklist for deciding when to upgrade and reducing technical, operational, and organizational risk.",
+          "originalAbstract": "OpenCV 5 is the most consequential modernization of the world’s leading open-source computer vision library in years. This talk explains what changed, why it matters, and how engineering leaders can upgrade without disrupting production systems.\n\nWe will tour the new foundation—C++17 and Python 3 baselines, removal of legacy APIs, expanded data types, true 0D/1D arrays, and the reorganization of features, geometry, calibration, stereo, and point-cloud capabilities. We will then examine the radically revised DNN stack: a new inference engine with much broader modern ONNX support, dynamic shapes and subgraphs, optional ONNX Runtime integration, stronger CPU performance, and end-to-end building blocks for vision-language models. We will also highlight modern local features and matching, improved robust estimation, multi-camera calibration, and new 3D workflows.\n\nThe second half is a practical migration playbook for companies. Attendees will learn how to inventory dependencies, identify removed or relocated APIs, convert legacy Caffe and Darknet models to ONNX, benchmark CPU and GPU execution paths, build compatibility tests, run OpenCV 4 and 5 in parallel, stage deployment, monitor regressions, and preserve a rollback path. You will leave with a concrete checklist for deciding when to upgrade and reducing technical, operational, and organizational risk.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "OpenCV 5 represents a major modernization of the leading open-source computer vision library, introducing updates to its foundation, DNN stack, and local features. The talk provides a practical guide for companies to upgrade smoothly, including migration strategies and risk mitigation.",
@@ -375,7 +431,7 @@
           "speakers": [
             "markus-tavenrath"
           ],
-          "originalAbstract": "AI agents promise autonomy, but today they are tethered to the cloud. Local inference is the bottleneck. Every agent needs to run\r\n models on whatever device the user has, and building that support from scratch is prohibitively expensive. RustNN and the W3C\r\n WebNN standard offer a practical solution: a single graph builder with an operator set designed to run on as many platforms as\r\n possible, from ONNX Runtime and CoreML to LiteRT and beyond.\r\n\r\n This talk shows what the RustNN ecosystem delivers today. We will cover the RustNN API and how it enables writing an ML workload\r\n once in Rust and running it in three environments: as a native application on your desktop, as a Node.js addon in a server or\r\n local process, or as a compiled WebAssembly module in a browser. All three share the same RustNN/WebNN runtime without forking\r\n the codebase. We will show how WebNN graphs are defined and executed in Rust, and how the same code hits hardware acceleration\r\n whether it is running on your desktop GPU, inside Node.js, or in a browser WebNN backend. Finally, we will discuss where the\r\n project is headed.",
+          "originalAbstract": "AI agents promise autonomy, but today they are tethered to the cloud. Local inference is the bottleneck. Every agent needs to run\n models on whatever device the user has, and building that support from scratch is prohibitively expensive. RustNN and the W3C\n WebNN standard offer a practical solution: a single graph builder with an operator set designed to run on as many platforms as\n possible, from ONNX Runtime and CoreML to LiteRT and beyond.\n\n This talk shows what the RustNN ecosystem delivers today. We will cover the RustNN API and how it enables writing an ML workload\n once in Rust and running it in three environments: as a native application on your desktop, as a Node.js addon in a server or\n local process, or as a compiled WebAssembly module in a browser. All three share the same RustNN/WebNN runtime without forking\n the codebase. We will show how WebNN graphs are defined and executed in Rust, and how the same code hits hardware acceleration\n whether it is running on your desktop GPU, inside Node.js, or in a browser WebNN backend. Finally, we will discuss where the\n project is headed.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "RustNN and the W3C WebNN standard provide a unified solution for running AI agents locally. The RustNN ecosystem allows developers to write ML workloads once in Rust and deploy them across three environments: desktop, Node.js, and WebAssembly. This approach enables hardware acceleration across different platforms without code duplication.",
@@ -399,6 +455,44 @@
           "overview": {
             "en": "As AI and real-time graphics converge, portable AI inference is transitioning from research to real-world deployment. This talk presents insights from the Khronos AI Ecosystem Research Project, open-source frameworks for Vulkan-based AI inference, and emerging trends in machine learning and neural graphics. Use cases such as texture compression, LLM inference, image upscaling, and frame interpolation are highlighted.",
             "zh": "随着AI与实时图形技术的融合，便携式AI推理正从研究转向实际部署。本次演讲介绍了Khronos AI生态系统研究项目的关键洞察，以及当前基于Vulkan的AI推理开源框架和机器学习、神经图形领域的新兴趋势。展示了纹理压缩、LLM推理、图像超分和帧插值等适用Vulkan AI推理的典型应用场景。"
+          }
+        },
+        {
+          "ref": "P-105",
+          "originalTitle": "端侧智能的技术发展与 MiniCPM 开源生态实践观察",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "The Evolution of On-Device Intelligence and Lessons from the MiniCPM Open-Source Ecosystem",
+            "zh": "端侧智能的技术发展与 MiniCPM 开源生态实践观察"
+          },
+          "slug": "p-105-端侧智能的技术发展与-minicpm-开源生态实践观察",
+          "speakers": [
+            "chenzhe-jing"
+          ],
+          "originalAbstract": "介绍端侧智能技术的发展现状和产业观察，以MiniCPM的开源生态实践为例深入探讨",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk surveys the current development of on-device intelligence and related industry trends. Using the MiniCPM open-source ecosystem as a case study, it examines practical lessons in building and growing edge AI capabilities.",
+            "zh": "本次演讲梳理端侧智能技术的发展现状与产业趋势，并以 MiniCPM 开源生态为案例，探讨端侧 AI 能力建设与生态实践中的经验。"
+          }
+        },
+        {
+          "ref": "P-106",
+          "originalTitle": "How Do You Read a Million Tokens on Your Laptop? You Don't.",
+          "originalLanguage": "en",
+          "title": {
+            "en": "How Do You Read a Million Tokens on Your Laptop? You Don't.",
+            "zh": "如何在笔记本电脑上读取一百万个 Token？答案是：不要直接读"
+          },
+          "slug": "p-106-how-do-you-read-a-million-tokens-on-your-laptop-you-don-t",
+          "speakers": [
+            "iaroslav-neverov"
+          ],
+          "originalAbstract": "Agentic knowledge work — plan, query, read, verify, synthesize, cite — is a loop over a document corpus, and running it on device binds two constraints at once: weights and KV cache share a few gigabytes, fixing the model under 7B, and the loop compounds error multiplicatively exactly where small models are weakest. What makes this tractable is that the corpus is static and known before the loop starts: cache-augmented generation exploits this on the write path, precomputing the corpus KV cache at ingestion, while recursive language models exploit it on the read path, bounding context through recursion over corpus structure — one writes the corpus into memory, the other reads what the memory can't already answer. We test this where there is no network to fall back on: a 321M model producing cited legal analysis in Niger on a Raspberry Pi 5, and curriculum retrieval for Senegalese teachers on Android. Alongside the systems we are building the ruler — an evaluation layer retargeting knowledge-work benchmarks to on-device conditions, scoring groundedness and delivery within a real time budget. The talk shares early lessons from building both, including negative results from small models on constrained devices, where error-message fidelity, not feature coverage, proved the lever behind model self-repair.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This session explores on-device agentic knowledge work under strict memory and model-size constraints. It combines cache-augmented generation, recursive language models, and grounded evaluation, with examples including cited legal analysis on a Raspberry Pi and curriculum retrieval on Android.",
+            "zh": "本次演讲探讨在严格内存与模型规模限制下完成端侧智能体知识工作的系统方法，结合缓存增强生成、递归语言模型和有依据的评测，并展示树莓派法律分析与 Android 课程检索等案例。"
           }
         }
       ],
@@ -443,7 +537,7 @@
           "speakers": [
             "zixi-liu"
           ],
-          "originalAbstract": "随着大语言模型和 AI 编程智能体的快速发展，AI 正逐渐从代码补全工具演进为能够参与需求分析、软件设计、代码实现和测试验证的开发主体。然而，在 AI 深度参与软件开发的过程中，一个关键问题也愈发突出：如何保证 AI 在需求、设计和实现的不同阶段始终准确理解并遵循原始需求？自然语言需求具有表达灵活、使用门槛低等优势，但也天然存在歧义，并且缺乏有效的机器验证机制。当需求经过设计、任务分解并最终转化为代码时，AI 对需求的理解可能逐步发生偏移，最终产生“实现看似合理，却与原始需求不一致”的问题。\r\n本次分享将介绍我们针对这一问题设计的 SpecArtisans。SpecArtisans 是一套面向 AI 软件开发的 Spec-Driven 解决方案，其核心思想是在自然语言需求与程序代码之间引入结构化、可验证的半形式化软件规约（Spec），并以 Spec 作为连接需求设计、实现设计与代码生成的统一语义载体，使需求能够在 AI 软件开发的不同阶段持续传递、追踪和验证。围绕这一理念，SpecArtisans 构建了从需求规约、软件设计、代码实现到一致性验证的端到端开发工作流，并将相关能力封装为可复用的 Skill，与 AI 编程智能体协同完成软件开发任务。通过 SpecArtisans，我们希望让 AI 编程从“根据自然语言生成代码”进一步走向“基于明确、可追踪、可验证的需求完成软件开发”，探索更加可靠的 AI 原生软件工程开发范式。",
+          "originalAbstract": "随着大语言模型和 AI 编程智能体的快速发展，AI 正逐渐从代码补全工具演进为能够参与需求分析、软件设计、代码实现和测试验证的开发主体。然而，在 AI 深度参与软件开发的过程中，一个关键问题也愈发突出：如何保证 AI 在需求、设计和实现的不同阶段始终准确理解并遵循原始需求？自然语言需求具有表达灵活、使用门槛低等优势，但也天然存在歧义，并且缺乏有效的机器验证机制。当需求经过设计、任务分解并最终转化为代码时，AI 对需求的理解可能逐步发生偏移，最终产生“实现看似合理，却与原始需求不一致”的问题。\n本次分享将介绍我们针对这一问题设计的 SpecArtisans。SpecArtisans 是一套面向 AI 软件开发的 Spec-Driven 解决方案，其核心思想是在自然语言需求与程序代码之间引入结构化、可验证的半形式化软件规约（Spec），并以 Spec 作为连接需求设计、实现设计与代码生成的统一语义载体，使需求能够在 AI 软件开发的不同阶段持续传递、追踪和验证。围绕这一理念，SpecArtisans 构建了从需求规约、软件设计、代码实现到一致性验证的端到端开发工作流，并将相关能力封装为可复用的 Skill，与 AI 编程智能体协同完成软件开发任务。通过 SpecArtisans，我们希望让 AI 编程从“根据自然语言生成代码”进一步走向“基于明确、可追踪、可验证的需求完成软件开发”，探索更加可靠的 AI 原生软件工程开发范式。",
           "originalAbstractLanguage": "zh",
           "overview": {
             "en": "SpecArtisans is a Spec-Driven development paradigm for AI programming, aiming to ensure AI accurately follows original requirements throughout the software development process. It introduces structured, verifiable software specifications between natural language requirements and code, enabling consistent tracking and validation across design, implementation, and testing. By integrating these specifications into an end-to-end workflow, SpecArtisans enhances the reliability of AI-native software engineering.",
@@ -463,7 +557,7 @@
             "bardia-moshiri",
             "wayne-connolly"
           ],
-          "originalAbstract": "Mobile Linux is a community-driven ecosystem, but contributing to it can sometimes mean finding your way through a large and complicated stack. From the kernel and hardware support to system services and applications, there is a lot to learn before even a small idea can turn into a working contribution.\r\n\r\nAgentic AI is starting to make that journey easier. It can help contributors understand unfamiliar code, find their way around different parts of the system, debug problems, and turn ideas into working solutions. This can be especially valuable for people who want to contribute but may not have years of experience with every layer of Linux.\r\n\r\nIn this talk, I’ll share how agentic AI is already helping people contribute to mobile Linux today, and explore how these tools could make open-source development more approachable, collaborative, and accessible to a much wider community.",
+          "originalAbstract": "Mobile Linux is a community-driven ecosystem, but contributing to it can sometimes mean finding your way through a large and complicated stack. From the kernel and hardware support to system services and applications, there is a lot to learn before even a small idea can turn into a working contribution.\n\nAgentic AI is starting to make that journey easier. It can help contributors understand unfamiliar code, find their way around different parts of the system, debug problems, and turn ideas into working solutions. This can be especially valuable for people who want to contribute but may not have years of experience with every layer of Linux.\n\nIn this talk, I’ll share how agentic AI is already helping people contribute to mobile Linux today, and explore how these tools could make open-source development more approachable, collaborative, and accessible to a much wider community.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "Agentic AI is helping simplify contributions to Mobile Linux by assisting with code understanding, navigation, debugging, and idea implementation. It makes open-source development more accessible, especially for newcomers. This talk explores how agentic AI is already supporting contributions and its potential to enhance collaboration in the Mobile Linux community.",
@@ -482,7 +576,7 @@
           "speakers": [
             "chris-simmonds"
           ],
-          "originalAbstract": "As AI-centred mobile devices diverge from smart phones we have the opportunity to reconsider which operating system to use. Android has a clear advantage right now because it has wide hardware support, but in a world that is less reliant on apps, Android has a lot of unnecessary baggage.\r\n\r\nIn this talk I look look at alternative operating systems, some of which have been around for a long time and are surprisingly mature. Among them are: Sailfish OS, which can trace a lineage back to the Linux-based phones from Nokia; Ubuntu Touch, which is a community project that carries on the work started by Canonical; and postMarketOS, which is a completely community-driven mobile OS. Or maybe something entirely new, but drawing on the vast expertise that rests in these projects. Running through each of these is a strong basis in Open Source components, which means that there is no lock-in to a single contributor (as with Android), and maximises shared value.\r\n\r\nThere are many options. Come along to find out what they are and the tradeoffs of each one.",
+          "originalAbstract": "As AI-centred mobile devices diverge from smart phones we have the opportunity to reconsider which operating system to use. Android has a clear advantage right now because it has wide hardware support, but in a world that is less reliant on apps, Android has a lot of unnecessary baggage.\n\nIn this talk I look look at alternative operating systems, some of which have been around for a long time and are surprisingly mature. Among them are: Sailfish OS, which can trace a lineage back to the Linux-based phones from Nokia; Ubuntu Touch, which is a community project that carries on the work started by Canonical; and postMarketOS, which is a completely community-driven mobile OS. Or maybe something entirely new, but drawing on the vast expertise that rests in these projects. Running through each of these is a strong basis in Open Source components, which means that there is no lock-in to a single contributor (as with Android), and maximises shared value.\n\nThere are many options. Come along to find out what they are and the tradeoffs of each one.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "The talk explores alternative operating systems for agentic mobile devices, highlighting Sailfish OS, Ubuntu Touch, and postMarketOS, all rooted in open-source principles. These systems offer flexibility and avoid vendor lock-in, contrasting with Android's current dominance but unnecessary complexity. The discussion aims to identify the best fit for future AI-centric mobile devices.",
@@ -578,7 +672,7 @@
           "speakers": [
             "kerry-zhu"
           ],
-          "originalAbstract": "Ecosystem Path for AgentOS: Lessons from Linux's Open‑Source Infrastructure Success.\r\nThis presentation will focus on six core topics. First, we will discuss why R&D automation urgently requires an operating system‑level solution. Then, I will define AgentOS in the context of code delivery scenarios and introduce its reference architecture. After that, we will dive into key aspects of multi‑agent Harness engineering and explore the role of open‑source factors. Finally, we will look ahead to AgentOS's development roadmap and key milestones.",
+          "originalAbstract": "Ecosystem Path for AgentOS: Lessons from Linux's Open‑Source Infrastructure Success.\nThis presentation will focus on six core topics. First, we will discuss why R&D automation urgently requires an operating system‑level solution. Then, I will define AgentOS in the context of code delivery scenarios and introduce its reference architecture. After that, we will dive into key aspects of multi‑agent Harness engineering and explore the role of open‑source factors. Finally, we will look ahead to AgentOS's development roadmap and key milestones.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "AgentOS is a new type of operating system designed to transform autonomous programming platforms. The talk outlines its ecosystem path, inspired by Linux's open-source success, and covers six core topics including R&D automation needs, reference architecture, multi-agent engineering, and future development.",
@@ -603,9 +697,306 @@
             "en": "Building Self-Improving and Long-Horizon Agents explores how large language models can autonomously enhance their operational systems. The talk introduces Self Harness, where an LLM acts as its own harness engineer, and Harness of Harness, enabling continuous improvement over extended periods. It also touches on applying these methods to theoretical computer science for AI-assisted research.",
             "zh": "本次演讲探讨了如何让大语言模型自主提升其运行系统。演讲介绍了Self Harness，即让LLM充当自身系统工程师，并展示了Harness of Harness，实现长时间持续改进。此外，还简要分享了在理论计算机科学中应用这些方法进行AI辅助研究的探索。"
           }
+        },
+        {
+          "ref": "P-42",
+          "originalTitle": "From Coding Agents to Autonomous Contributors: Designing the Operating Model for Agentic Software Engineering",
+          "originalLanguage": "en",
+          "title": {
+            "en": "From Coding Agents to Autonomous Contributors: Designing the Operating Model for Agentic Software Engineering",
+            "zh": "从编程智能体到自主贡献者：为智能体软件工程设计运行模式"
+          },
+          "slug": "p-42-from-coding-agents-to-autonomous-contributors-designing-the-operating-model-for-agentic-software-engineering",
+          "speakers": [
+            "susanna-wong"
+          ],
+          "originalAbstract": "Coding agents can already write code. The harder problem is turning them into trustworthy contributors to a real software engineering lifecycle for production code.\n\nAs coding agents became increasingly common across our engineering organization, we began exploring what would happen if agents moved beyond assisting individual engineers and started contributing autonomously to software development workflows. Rather than defining an autonomous engineering framework upfront, I treated this as an engineering research problem: build real workflows, run them in CI, observe where they fail, and let those failures shape the architecture.\n\nThis talk shares that journey - from autonomous repository audits and organization-wide analysis to an autonomous Review → Auto-fix → Review loop.\n\nAlong the way, several architectural lessons emerged. Deterministic execution and probabilistic reasoning need different boundaries. Generation and verification should be separate responsibilities. Autonomous workflows need explicit safety boundaries, failure modes, and human escape hatches.\n\nBut the most difficult problem turned out to be neither model capability nor code generation:\n\nHow does an autonomous engineering system know when it is finished?\n\nA reviewer can almost always find another possible improvement. Simply increasing the agent's turn budget or capping the number of iterations does not answer whether another iteration creates meaningful engineering value.\n\nI'll share the architecture, experiments, failures, and practical design decisions behind these workflows—and explore why the next frontier of agentic software engineering may be less about making agents smarter and more about designing systems that know when to continue, when to stop, and when to converge and hand control back to a human.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk examines how coding agents can move beyond individual assistance and become trustworthy contributors to production software workflows. It shares lessons from CI-based experiments, including separating generation from verification, setting safety boundaries, and deciding when an autonomous system should stop and return control to a human.",
+            "zh": "本次演讲探讨编程智能体如何从个人辅助工具转变为生产级软件流程中可信赖的自主贡献者。内容涵盖生成与验证的职责分离、安全边界，以及自主系统何时应停止并把控制权交还给人类。"
+          }
+        },
+        {
+          "ref": "P-77",
+          "originalTitle": "Effective and high performance human-agent interaction",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Effective and High-Performance Human–Agent Interaction",
+            "zh": "高效、高性能的人机智能体交互"
+          },
+          "slug": "p-77-effective-and-high-performance-human-agent-interaction",
+          "speakers": [
+            "gregory-terzian"
+          ],
+          "originalAbstract": "Current human-agent interfaces behave a lot like traditional chat or terminal interfaces, making them inefficient, insecure by default, and hard to use for humans. \n\nTaking the example of uni03C0, a Mac OS client to to the Pi coding agent, we look at how performance and security problems can be solved in a simple and effective way, turning a coding agent into a secure and high-precision tool for the human operating it.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "Using uni03C0, a macOS client for the Pi coding agent, this talk explores how human–agent interfaces can move beyond chat and terminal conventions. It focuses on practical ways to improve interaction performance, precision, usability, and security.",
+            "zh": "本次演讲以 Pi 编程智能体的 macOS 客户端 uni03C0 为例，探讨人机智能体界面如何突破传统聊天框和终端模式，并通过实际设计提升交互效率、精确度、易用性与安全性。"
+          }
+        },
+        {
+          "ref": "P-113",
+          "originalTitle": "Agent First, Workflow Later：DeerFlow 的企业级智能体实践",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Agent First, Workflow Later: Enterprise Agent Practices with DeerFlow",
+            "zh": "Agent First, Workflow Later：DeerFlow 的企业级智能体实践"
+          },
+          "slug": "p-113-agent-first-workflow-later-deerflow-的企业级智能体实践",
+          "speakers": [
+            "willem-jiang"
+          ],
+          "originalAbstract": "企业业务持续变化，新的业务流程往往需要在多轮尝试中逐渐沉淀。如果一开始就将其写成固定 Workflow，不仅需要预先穷举大量分支，也会带来较高的开发和维护成本；但如果完全交给 Agent 自主执行，又必须面对权限、安全、可靠性和 Token 成本等企业级约束。\n本次分享将结合 DeerFlow 在数家头部企业中的实践，介绍如何构建面向企业业务的 Super Agent 运行环境：通过 Skill 抽象可复用的业务能力，借助 MCP 和 CLI 对接内部 IT 系统，通过 IM 网关贯通用户身份与权限，并在关键操作中引入人工确认。\n分享还将讨论一种正在探索的演进模式：让 Agent 在业务早期围绕目标尝试不同执行路径，记录计划、Skill 调用、关键状态和人工反馈；当成功轨迹逐渐稳定后，再将其沉淀为经过人工审核的 Workflow 和测试资产，在探索能力、执行可靠性与成本之间取得平衡。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "Drawing on DeerFlow deployments in large enterprises, this talk explains how to build a Super Agent environment with reusable skills, MCP and CLI integrations, identity-aware IM gateways, and human confirmation for critical actions. It also explores how successful agent trajectories can later become reviewed workflows and test assets.",
+            "zh": "本次演讲结合 DeerFlow 在大型企业中的实践，介绍如何通过可复用 Skill、MCP 与 CLI 集成、贯通身份权限的 IM 网关及关键操作人工确认，构建企业级 Super Agent 环境，并将稳定的成功轨迹沉淀为经审核的工作流和测试资产。"
+          }
+        },
+        {
+          "ref": "P-114",
+          "originalTitle": "如何运用Harness工程打造AI小游戏制作管线",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Using Harness Engineering to Build an AI Mini-Game Production Pipeline",
+            "zh": "如何运用 Harness 工程打造 AI 小游戏制作管线"
+          },
+          "slug": "p-114-如何运用harness工程打造ai小游戏制作管线",
+          "speakers": [
+            "xin-tan"
+          ],
+          "originalAbstract": "介绍如何结合Harness工程构建了从设计到量产的自动化游戏制作管线，并引入了双层自动化评审体系与ADK智能体开发工具集，在显著提升游戏生成质量与制作效率的同时，大幅降低了小游戏生产的综合成本。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk presents an automated AI mini-game production pipeline built with Harness engineering, a two-layer automated review system, and an ADK agent-development toolkit. The approach improves generation quality and production efficiency while reducing overall cost.",
+            "zh": "本次演讲介绍如何结合 Harness 工程、双层自动化评审体系与 ADK 智能体开发工具集，构建从设计到量产的 AI 小游戏自动化制作管线，在提升质量和效率的同时降低综合成本。"
+          }
         }
       ],
       "originalName": "Agentic OS & App"
+    },
+    {
+      "id": "agentic-device",
+      "sourceId": "sz26-agentic-device",
+      "name": {
+        "en": "Agentic Device",
+        "zh": "智能体设备"
+      },
+      "talks": [
+        {
+          "ref": "P-53",
+          "originalTitle": "开发者的AI造物：技术社区视角下的AI硬件共建之路",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "AI Creations for Developers: Co-Building AI Hardware from a Technical Community Perspective",
+            "zh": "开发者的 AI 造物：技术社区视角下的 AI 硬件共建之路"
+          },
+          "slug": "p-53-ai-creations-for-developers-co-building-ai-hardware-from-a-technical-community-perspective",
+          "speakers": [
+            "zhihong-mo"
+          ],
+          "originalAbstract": "AI正从云端走向端侧，从软件算法走向物理实体。在这一浪潮中，技术社区正成为AI硬件创新的核心驱动力——当大模型能力与开源硬件的开放性相遇，每一个开发者都有机会成为“AI造物主”。\n立创开源硬件平台作为国内最大的硬件开源社区之一，月活用户超80万，开源项目逾10万。平台以“开源社区+EDA工具+供应链智造”的闭环模式，正在构建一条从AI创意到硬件实物的加速通道。本主题将从技术社区的视角，分享立创开源平台在AI硬件共建中的实践与思考——如何让AI能力“长”在硬件上，如何让开源协作加速AI硬件从0到1的落地。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "AI is moving from the cloud to edge devices and from software to physical entities. The technical community is becoming a key driver of AI hardware innovation, enabling developers to become \"AI creators\" through the combination of large models and open-source hardware. The LiChuang open hardware platform, with over 800,000 monthly active users and more than 100,000 open-source projects, is building a path to turn AI ideas into physical hardware through its closed-loop model of open community, EDA tools, and supply chain manufacturing.",
+            "zh": "AI正从云端走向端侧，从软件算法走向物理实体。技术社区正成为AI硬件创新的核心驱动力，使每个开发者都有机会成为“AI造物主”。立创开源硬件平台作为国内最大的硬件开源社区之一，拥有超80万月活用户和逾10万开源项目，通过“开源社区+EDA工具+供应链智造”的闭环模式，加速AI创意向硬件实物的转化。"
+          }
+        },
+        {
+          "ref": "P-59",
+          "originalTitle": "从设备联网到设备协作：EMQ Device Agent 构建 A2A 分布式智能硬件网络",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "From Device Connectivity to Device Collaboration: Building an A2A Distributed Intelligent Hardware Network with EMQ Device Agent",
+            "zh": "从设备联网到设备协作：EMQ Device Agent 构建 A2A 分布式智能硬件网络"
+          },
+          "slug": "p-59-from-device-connectivity-to-device-collaboration-building-an-a2a-distributed-intelligent-hardware-network-with-emq-device-agent",
+          "speakers": [
+            "fahua-jin"
+          ],
+          "originalAbstract": "过去十年，物联网解决了设备\"连得上\"的问题，但跨品牌、跨协议的设备仍难以围绕动态目标自主协作——传统方案依赖点对点 API 和硬编码规则，集成成本随设备规模快速上升。本演讲介绍如何使用 EMQ Device Agent 将物理设备抽象为具备命令、属性、事件语义模型的 AI 智能体，并基于 MQTT 与 A2A 协议构建可发现、可调用、可协作的分布式智能硬件网络。演讲将拆解设备语义建模、智能体运行时、A2A 服务发现与任务编排等关键技术，结合智能硬件、工业生产、能源管理、医疗设备辅助等场景，探讨从\"单品智能\"走向\"系统智能\"的工程路径。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "The talk discusses how EMQ Device Agent transforms physical devices into AI agents with command, property, and event semantics, enabling cross-brand, cross-protocol device collaboration through MQTT and A2A protocols. It explores key technologies like semantic modeling, agent runtime, and A2A service discovery, focusing on building a distributed intelligent hardware network for applications in smart hardware, industrial production, energy management, and medical devices.",
+            "zh": "本次演讲介绍如何利用EMQ Device Agent将物理设备抽象为具备命令、属性和事件语义的AI 智能体，通过MQTT与A2A协议构建可发现、可调用、可协作的分布式智能硬件网络。演讲将解析设备语义建模、智能体运行时、A2A服务发现与任务编排等关键技术，并结合智能硬件、工业生产、能源管理、医疗设备辅助等场景，探讨从“单品智能”向“系统智能”的工程路径。"
+          }
+        },
+        {
+          "ref": "P-69",
+          "originalTitle": "基于Agora对话式AI的开源硬件接入实践",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Open-Source Hardware Integration Practices for Agora Conversational AI",
+            "zh": "基于 Agora 对话式 AI 的开源硬件接入实践"
+          },
+          "slug": "p-69-open-source-hardware-integration-practices-for-agora-conversational-ai",
+          "speakers": [
+            "zhichao-jiao"
+          ],
+          "originalAbstract": "介绍如何将开源硬件接入 Agora 对话式 AI，构建实时语音智能体设备。分享设备音频接入、Agent 会话管理、用户打断、短暂重连和实时体验优化等实践。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk explores the practical implementation of integrating open-source hardware with Agora's conversational AI to build real-time voice intelligent devices. It covers audio integration, agent session management, user interruptions, brief reconnections, and real-time experience optimization.",
+            "zh": "本次演讲介绍如何将开源硬件接入Agora对话式AI，构建实时语音智能设备。内容涵盖音频接入、Agent会话管理、用户打断、短暂重连及实时体验优化等实践。"
+          }
+        },
+        {
+          "ref": "P-75",
+          "originalTitle": "From Connecting to Thinking: TuyaOpen's Agent-First OS for the Physical AI Era",
+          "originalLanguage": "en",
+          "title": {
+            "en": "From Connecting to Thinking: TuyaOpen's Agent-First OS for the Physical AI Era",
+            "zh": "从连接到思考：面向物理 AI 时代的 TuyaOpen 智能体优先操作系统"
+          },
+          "slug": "p-75-from-connecting-to-thinking-tuyaopen-s-agent-first-os-for-the-physical-ai-era",
+          "speakers": [
+            "hsuan-han-lai"
+          ],
+          "originalAbstract": "For the past decade, the IoT industry has been obsessed with one question: \"How do we connect more devices?\" Billions of endpoints came online, but the vast majority remain dumb data collectors — they sense, they transmit, but they never think.The Agentic AI era changes everything. In this talk, we introduce TuyaOpen — an open-source A-IoT operating system purpose-built for the Physical AI era, where devices evolve from passive connectors into autonomous, perceiving, reasoning, and acting agents. TuyaOpen pioneered the Agent-First design philosophy, embedding AI agent development as the core capability of the platform rather than bolting it on as an afterthought. At its heart lies a native multi-modal AI component stack (ai_components) covering audio, vision, text, and sensor modalities — the first of its kind in the A-IoT open-source ecosystem. Through a standardized Model Context Protocol (MCP) implementation on resource-constrained embedded devices, TuyaOpen enables Large Language Models to safely discover and control physical hardware — a capability previously limited to server-side applications.We will walk through the architecture that makes this possible: a unified Hardware Abstraction Layer spanning 9 chip platforms (from $2 MCUs to Linux SoCs), a three-tier edge-cloud-device inference model that balances latency, cost, and privacy, and TClaw — our device-side agent deployment framework that runs a full ReAct agent loop on a $5 Tuya T5 WIFI MCU. We'll also showcase the TuyaOpen IDE, the world's first AI-Native embedded development environment, which introduces a \"Vibe Coding\" paradigm — enabling developers to go from natural language prompt to compiled, flashed, and cloud-connected firmware in under 30 minutes.But architecture without proof is just theory. We'll demonstrate real commercial products developer stories and real use cases. Today on TuyaOpen: AI-powered fridge notes, 3D printers with cloud vision inspection, family companion robots, and children's smart seats — each built by different teams, each reaching mass production, all sharing the same Agent-First OS.The future of IoT is not just connected. It's thinking. Join us to see how TuyaOpen is making it happen — openly.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "TuyaOpen introduces an open-source A-IoT operating system designed for the Physical AI era, shifting from device connectivity to autonomous, thinking agents. It features a native multi-modal AI stack and a standardized Model Context Protocol, enabling LLMs to control hardware on embedded devices. The system supports a unified hardware abstraction layer, edge-cloud-device inference, and TClaw for running ReAct agent loops on low-cost MCUs, with real-world applications like AI fridges and companion robots already in mass production.",
+            "zh": "TuyaOpen 是一个专为物理 AI 时代设计的开源 A-IoT 操作系统，从设备连接转向自主思考的智能体。它包含原生多模态 AI 栈和标准化的模型上下文协议，使大语言模型能够控制嵌入式硬件。系统支持统一的硬件抽象层、边缘-云-设备推理模型以及 TClaw 框架，可在低成本 MCU 上运行 ReAct 智能体循环，已有 AI 冰箱、3D 打印机等实际产品投入量产。"
+          }
+        },
+        {
+          "ref": "P-79",
+          "originalTitle": "Building AI Agent Devices on RISC-V with DC-ROMA Mainboard III",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Building AI Agent Devices on RISC-V with DC-ROMA Mainboard III",
+            "zh": "使用 DC-ROMA Mainboard III 在 RISC-V 上构建 AI 智能体设备"
+          },
+          "slug": "p-79-building-ai-agent-devices-on-risc-v-with-dc-roma-mainboard-iii",
+          "speakers": [
+            "yuning-liang",
+            "yanwei-huang"
+          ],
+          "originalAbstract": "As AI agents move from cloud-based services toward local and edge devices, the hardware platforms behind them are becoming increasingly important. RISC-V, with its open and extensible architecture, offers a new foundation for developers building and experimenting with AI-enabled devices.\n\nThis session introduces the DC-ROMA RISC-V Mainboard III for Framework Laptop 13, powered by the SpacemiT K3 AI SoC with RVA23 support. We will explore how a modular RISC-V platform can serve as a developer-ready environment for local AI and AI agent development.\n\nThe session will focus on the role of RISC-V devices in the emerging AI agent ecosystem, including local AI inference, agent application development, and the integration of AI capabilities into personal and edge computing devices. We will also discuss how CPU, AI acceleration, memory, and open-source software work together to create a practical platform for developers experimenting with AI agents on RISC-V.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "The talk discusses the use of RISC-V architecture in building AI agent devices, focusing on the DC-ROMA Mainboard III powered by SpacemiT K3 AI SoC. It explores how modular RISC-V platforms enable local AI and agent development, emphasizing the integration of AI capabilities into edge computing devices.",
+            "zh": "本次演讲探讨了如何利用RISC-V架构构建AI 智能体设备，重点介绍了由SpacemiT K3 AI SoC驱动的DC-ROMA Mainboard III。演讲还探讨了模块化RISC-V平台如何支持本地AI和智能体开发，并强调了AI能力在边缘计算设备中的集成。"
+          }
+        },
+        {
+          "ref": "P-89",
+          "originalTitle": "TBD",
+          "originalLanguage": "en",
+          "title": {
+            "en": "TBD",
+            "zh": "待定"
+          },
+          "slug": "p-89-tbd",
+          "speakers": [
+            "tong-ling"
+          ],
+          "originalAbstract": "TBD",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "Additional information about this talk will be published once confirmed.",
+            "zh": "本场演讲的更多介绍将在内容确认后发布。"
+          }
+        },
+        {
+          "ref": "P-83",
+          "originalTitle": "You Built the Prototype. Should It Become a Product?",
+          "originalLanguage": "en",
+          "title": {
+            "en": "You Built the Prototype. Should It Become a Product?",
+            "zh": "原型已经完成，它应该成为产品吗？"
+          },
+          "slug": "p-83-you-built-the-prototype-should-it-become-a-product",
+          "speakers": [
+            "tess-kassier"
+          ],
+          "originalAbstract": "A model, a board, and a working prototype can come together extremely quickly. The harder question is: how do you know whether that prototype should become a product?\n\nThis talk offers a practical product framework for evaluating AI-native hardware ideas before teams over-invest in building them. I’ll explore how to work backward from the user experience: What interaction is valuable enough to justify a new physical product? And what is the simplest combination of hardware, edge intelligence, and cloud capability needed to deliver it?\n\nUsing examples from AI toys, companions, wearables, and other emerging devices, we’ll look at the decisions that separate an impressive demo from something people will actually want, use, and pay for.\n\nKey Takeaways\nHow to distinguish an AI hardware demo from the beginnings of a viable product\nHow to start with the user interaction and work backward into hardware and AI requirements\nWhich product decisions should be made before committing to a hardware architecture\nHow latency, power, connectivity, cloud cost, privacy, and form factor affect the product experience, not just the engineering\nCommon ways AI-native physical products become overbuilt, unreliable, or expensive before reaching users\nA practical framework for deciding what a physical AI product actually needs in order to ship",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk offers a practical framework for deciding whether an AI-native hardware prototype should become a product. It works backward from user value to hardware and AI requirements, covering latency, power, connectivity, cloud cost, privacy, form factor, and common causes of overbuilt products.",
+            "zh": "本次演讲提供一套实用框架，帮助团队判断 AI 原生硬件原型是否值得产品化。内容从用户价值反推硬件与 AI 需求，并讨论延迟、功耗、连接、云成本、隐私、形态以及产品过度设计等关键问题。"
+          }
+        },
+        {
+          "ref": "P-86",
+          "originalTitle": "AI 原生嵌入式产品研发：重塑软硬件研发范式",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "AI-Native Embedded Product Development: Reshaping the Hardware–Software R&D Paradigm",
+            "zh": "AI 原生嵌入式产品研发：重塑软硬件研发范式"
+          },
+          "slug": "p-86-ai-原生嵌入式产品研发-重塑软硬件研发范式",
+          "speakers": [
+            "yuheng-chen"
+          ],
+          "originalAbstract": "本次演讲将分享我们在 AI 原生嵌入式产品研发中的实践与探索：如何围绕 AI 重新组织软件、硬件、工具与验证流程，让 AI 从代码辅助逐步进入产品研发的主循环。\n    演讲将从模块化架构与 Rust 嵌入式开发讲起，介绍如何通过清晰的模块边界和严格的编译检查，将更多问题左移到设计与编译阶段；再通过工程文档与上下文组织，以及面向 AI 的串口、调试器和示波器等周边调试能力，让真实设备变得可操作、可观察、可验证。研发 Harness 进一步管理任务状态、工具调用和验证证据，使 AI 能够在明确的目标与工程边界内自主完成实现、调试和多轮验证。目前，这套方法已经应用于实际产品研发，并正延伸到 PCB 与完整的软硬件闭环。\n    演讲还将分享企业落地中的阶段性心得：如何先在资料和生态丰富的平台上快速验证产品，将成熟能力沉淀为可复用 Core，再迁移到面向成本、功耗和供应链的量产平台；以及在模型能力快速变化时，如何持续识别 AI 的能力边界，建立真正适合自身产品和团队的研发方式。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This session shares an AI-native approach to embedded product development that reorganizes software, hardware, tooling, and validation around AI. It covers modular Rust architecture, AI-operable debugging tools, evidence-based development harnesses, and a path from rapid prototyping to cost- and power-conscious production platforms.",
+            "zh": "本次演讲分享围绕 AI 重新组织软件、硬件、工具与验证流程的嵌入式产品研发实践。内容涵盖模块化 Rust 架构、面向 AI 的设备调试能力、基于验证证据的研发 Harness，以及从快速验证平台向量产平台迁移的方法。"
+          }
+        },
+        {
+          "ref": "P-104",
+          "originalTitle": "从“可穿戴”到“懂你”：AI 智能体设备的产品化与场景落地",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "From Wearable to Understanding You: Productizing AI Agent Devices for Real-World Scenarios",
+            "zh": "从“可穿戴”到“懂你”：AI 智能体设备的产品化与场景落地"
+          },
+          "slug": "p-104-从-可穿戴-到-懂你-ai-智能体设备的产品化与场景落地",
+          "speakers": [
+            "baofeng-wang"
+          ],
+          "originalAbstract": "AI Agent 正从软件走向可穿戴设备，但真正的产品突破，不只是把 AI 装进硬件，而是让设备能够持续感知用户状态，并提供个性化服务。本次分享将结合心境科技在脑机接口与 AI 可穿戴设备的产品实践，从用户需求、产品定义、场景设计到商业落地，探讨“感知—理解—服务”的智能体设备如何从技术能力转化为真实用户价值。\n\nAI agents are moving from software into wearable devices, but the real product breakthrough is not simply putting AI into hardware—it is enabling devices to continuously sense user states and deliver personalized services. Drawing on MoodSense’s experience in BCI and AI wearables, this talk explores how agentic devices can turn sensing and intelligence into real user value through product design, scenario development, and commercialization.",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "Drawing on product work in brain–computer interfaces and AI wearables, this talk explores how agentic devices can continuously sense user states and deliver personalized services. It follows the path from user needs and product definition through scenario design and commercialization.",
+            "zh": "本次演讲结合脑机接口与 AI 可穿戴设备的产品实践，探讨智能体设备如何持续感知用户状态并提供个性化服务，覆盖用户需求、产品定义、场景设计与商业落地的完整路径。"
+          }
+        },
+        {
+          "ref": "P-108",
+          "originalTitle": "The World as the Interface: Building an Open Agent Ecosystem for AI Glasses",
+          "originalLanguage": "en",
+          "title": {
+            "en": "The World as the Interface: Building an Open Agent Ecosystem for AI Glasses",
+            "zh": "以世界为界面：构建面向 AI 眼镜的开放智能体生态"
+          },
+          "slug": "p-108-the-world-as-the-interface-building-an-open-agent-ecosystem-for-ai-glasses",
+          "speakers": [
+            "weiqi-zhao"
+          ],
+          "originalAbstract": "AI glasses will not become the next computing platform by placing smartphone applications in front of the user’s eyes. Their deeper potential is to make the world itself the interface: turning vision, voice, environmental context, and device capabilities into a continuous loop of perception, understanding, coordination, action, and human confirmation.\n\nThis talk explores how an open agent ecosystem can enable that transition. Rather than depending on one model, assistant, or closed application platform, the ecosystem connects multimodal devices, AI agents, tools, interfaces, applications, developers, and services through an open coordination layer.\n\nDrawing on more than a decade of building AI and AR products and working with developer communities across Asia, Europe, and North America, Weiqi Zhao will share a product and ecosystem framework for moving from isolated demonstrations to extensible, real-world agentic experiences.\n\nOpen protocols and projects, including Model Context Protocol (MCP), Agent2Agent (A2A), Agent-to-User Interface (A2UI), OpenXR, OpenClaw, and selected third-party community projects, will illustrate how different ecosystem layers can work together. These projects can connect agents with device capabilities, coordinate independent agents, support adaptive interfaces, and enable portable spatial experiences.\n\nA core goal of this ecosystem is to lower the barrier for agent developers in China and worldwide. Developers should be able to connect their agents with multimodal devices, adapt them to local market needs, and deploy them across industrial, educational, cultural, retail, accessibility, field-service, and personal-assistant scenarios.\n\nThe session will also address the realities of product deployment: latency, battery life, privacy, permissions, human attention, safety, developer experience, and the boundary between open-source innovation and commercial product engineering.\n\nAttendees will leave with a practical framework for connecting devices, agents, open projects, developers, and vertical applications without depending on a single closed platform.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk presents a product and ecosystem framework for turning the world into the interface for AI glasses. It connects multimodal devices, agents, tools, developers, and services through open protocols while addressing deployment realities such as latency, battery life, privacy, permissions, safety, and developer experience.",
+            "zh": "本次演讲提出一套让现实世界成为 AI 眼镜交互界面的产品与生态框架，通过开放协议连接多模态设备、智能体、工具、开发者与服务，并讨论延迟、续航、隐私、权限、安全和开发体验等落地问题。"
+          }
+        },
+        {
+          "ref": "P-112",
+          "originalTitle": "openvela：从开源操作系统到 AI 硬件智能体的基础底座",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "openvela: From an Open-Source Operating System to the Foundation for AI Hardware Agents",
+            "zh": "openvela：从开源操作系统到 AI 硬件智能体的基础底座"
+          },
+          "slug": "p-112-openvela-从开源操作系统到-ai-硬件智能体的基础底座",
+          "speakers": [
+            "chao-du"
+          ],
+          "originalAbstract": "当前 AI 硬件产业迈入万亿爆发风口，轻量化原生 AI 操作系统成为行业刚需。openvela 作为小米开源 AIoT 操作系统，经亿级量产设备落地验证，搭载系统 AI Agent 智能引擎，成为全球 AI 硬件开发者优选操作系统。本次分享将全面拆解 openvela 发展历程、核心技术优势、开源生态建设进展以及未来规划。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This session introduces openvela, Xiaomi's open-source AIoT operating system, and its evolution into a foundation for AI hardware agents. It covers the project's development, core technical strengths, open-source ecosystem, production experience at large scale, and future roadmap.",
+            "zh": "本次演讲介绍小米开源 AIoT 操作系统 openvela 如何演进为 AI 硬件智能体的基础底座，涵盖发展历程、核心技术优势、大规模量产实践、开源生态建设与未来规划。"
+          }
+        }
+      ],
+      "originalName": "Agentic Device"
     },
     {
       "id": "open-source-model",
@@ -684,7 +1075,7 @@
           "speakers": [
             "meiyi-qiang"
           ],
-          "originalAbstract": "1. 范式迁移：模型效果越来越依赖高质量训练数据\r\n2. 统一数据飞轮：DataFlow L0–L7 全栈开源底座\r\n3. Agentic Execution：Agent、Skills 与 Harness\r\n4. 闭环进化：Eval-Driven Data Production\r\n5. 工程实践：Data-Centric AI 开源生态落地与未来演进",
+          "originalAbstract": "1. 范式迁移：模型效果越来越依赖高质量训练数据\n2. 统一数据飞轮：DataFlow L0–L7 全栈开源底座\n3. Agentic Execution：Agent、Skills 与 Harness\n4. 闭环进化：Eval-Driven Data Production\n5. 工程实践：Data-Centric AI 开源生态落地与未来演进",
           "originalAbstractLanguage": "zh",
           "overview": {
             "en": "The talk discusses the paradigm shift toward high-quality data dependency for model performance, introducing a unified data flywheel with DataFlow L0–L7 open-source infrastructure. It explores agentic execution through agents, skills, and harnesses, along with a closed-loop evolution driven by evaluation. The session also covers engineering practices for implementing a data-centric AI open ecosystem.",
@@ -704,7 +1095,7 @@
             "anastasia-stasenko",
             "pieter-delobelle"
           ],
-          "originalAbstract": "SynthCommonCorpus (release autumn 2026) is the largest open synthetic pretraining corpus built for agentic models, and the first in which tool calls, multi-step decomposition and adversarial examples are part of the pretraining distribution. It exists to make one question askable: what does a model look like if it learned to act the way it learned syntax?\r\nA web document is a finished artifact with the reasoning nonexistent - no decision path, no tool call, no failed attempt, no recovery from a bad result. Those traces were, as a rule, never written down anywhere. So every agentic model today is a document predictor that had agency grafted on in post-training, from a data pool orders of magnitude smaller than pretraining, which is a plausible explanation for why agentic competence stays brittle and concentrated in the largest models. \r\nBuilding it by crawling is not an option, and increasingly not an option for anything. Pretraining is already data-bound - Epoch AI puts exhaustion of the effective public text stock between 2026 and 2032, median 2028 - but the stock is not merely fixed, it is contracting, under content removals, licensing disputes and a broad hardening against AI scraping, while the legal ground beneath everything already crawled keeps moving. FineWeb, DCLM and Nemotron-CC are good answers to how you extract more from Common Crawl. They are answers on the wrong curve.\r\nThe technique that gets off that curve is settled practice and almost entirely private. MiniMax, Kimi, Nemotron and Phi all rely on synthetic generation; none of the resulting data is public. The open ecosystem is being locked out of the input that now determines capability, and the open–closed gap is quietly changing character - from a compute gap into a data-engineering gap. What public work exists is narrow: mostly rephrasing web text rather than generating new task structure, mostly English, and the largest efforts closed outright, with BeyondWeb generating a trillion tokens and releasing none of them.\r\nThe recipe has already been proven at small scale. SYNTH, the first open synthetic-only pretraining corpus - 80B tokens from 58,698 Wikipedia articles - collapses pre-, mid- and post-training into a single stage. Models trained on it undergo no SFT and no RLHF, and acquire reasoning, retrieval, instruction following and multilingual output as native capabilities of one run. At iso-compute it beats filtered web data, and the Baguettotron suite (56M to 13B/1B-active) tops factual precision in every parameter tier on 10–140× fewer training tokens. \r\nSynthCommonCorpus is that result scaled by two orders of magnitude, with every fact still traceable to a licensed seed - which makes it the first corpus at this scale whose knowledge content is enumerable, and so the first on which memorization and contamination can be measured rather than guessed at.\r\nThe talk covers how it is built and what we learnt along the way.",
+          "originalAbstract": "SynthCommonCorpus (release autumn 2026) is the largest open synthetic pretraining corpus built for agentic models, and the first in which tool calls, multi-step decomposition and adversarial examples are part of the pretraining distribution. It exists to make one question askable: what does a model look like if it learned to act the way it learned syntax?\nA web document is a finished artifact with the reasoning nonexistent - no decision path, no tool call, no failed attempt, no recovery from a bad result. Those traces were, as a rule, never written down anywhere. So every agentic model today is a document predictor that had agency grafted on in post-training, from a data pool orders of magnitude smaller than pretraining, which is a plausible explanation for why agentic competence stays brittle and concentrated in the largest models. \nBuilding it by crawling is not an option, and increasingly not an option for anything. Pretraining is already data-bound - Epoch AI puts exhaustion of the effective public text stock between 2026 and 2032, median 2028 - but the stock is not merely fixed, it is contracting, under content removals, licensing disputes and a broad hardening against AI scraping, while the legal ground beneath everything already crawled keeps moving. FineWeb, DCLM and Nemotron-CC are good answers to how you extract more from Common Crawl. They are answers on the wrong curve.\nThe technique that gets off that curve is settled practice and almost entirely private. MiniMax, Kimi, Nemotron and Phi all rely on synthetic generation; none of the resulting data is public. The open ecosystem is being locked out of the input that now determines capability, and the open–closed gap is quietly changing character - from a compute gap into a data-engineering gap. What public work exists is narrow: mostly rephrasing web text rather than generating new task structure, mostly English, and the largest efforts closed outright, with BeyondWeb generating a trillion tokens and releasing none of them.\nThe recipe has already been proven at small scale. SYNTH, the first open synthetic-only pretraining corpus - 80B tokens from 58,698 Wikipedia articles - collapses pre-, mid- and post-training into a single stage. Models trained on it undergo no SFT and no RLHF, and acquire reasoning, retrieval, instruction following and multilingual output as native capabilities of one run. At iso-compute it beats filtered web data, and the Baguettotron suite (56M to 13B/1B-active) tops factual precision in every parameter tier on 10–140× fewer training tokens. \nSynthCommonCorpus is that result scaled by two orders of magnitude, with every fact still traceable to a licensed seed - which makes it the first corpus at this scale whose knowledge content is enumerable, and so the first on which memorization and contamination can be measured rather than guessed at.\nThe talk covers how it is built and what we learnt along the way.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "The SynthCommonCorpus is the largest open synthetic pretraining corpus for agentic models, designed to explore how models learn to act like they learn syntax. It includes tool calls, multi-step reasoning, and adversarial examples, addressing limitations in current data sources. The corpus is built using synthetic generation, ensuring traceability and enabling measurable memorization and contamination.",
@@ -723,7 +1114,7 @@
           "speakers": [
             "nouamane-tazi"
           ],
-          "originalAbstract": "Training state-of-the-art LLMs means solving the same problem at every scale: memory is fixed, compute is expensive, and you must trade off communication against computation under that constraint. This talk walks through the choices that problem forces, from optimizing a single GPU (activation recomputation, flash-attention, roofline profiling) to scaling across thousands (data, context, tensor, pipeline, and expert parallelism).\r\nYou'll see how each parallelism strategy makes the same memory-compute-communication tradeoff visible in different ways, why combining all five requires understanding your infrastructure, and which open-source frameworks and playbooks actually work in production.\r\nThe audience leaves knowing which parallelism strategy fits which constraint, how to profile for it with the roofline model, and why NCCL flags and infrastructure setup are not optional.",
+          "originalAbstract": "Training state-of-the-art LLMs means solving the same problem at every scale: memory is fixed, compute is expensive, and you must trade off communication against computation under that constraint. This talk walks through the choices that problem forces, from optimizing a single GPU (activation recomputation, flash-attention, roofline profiling) to scaling across thousands (data, context, tensor, pipeline, and expert parallelism).\nYou'll see how each parallelism strategy makes the same memory-compute-communication tradeoff visible in different ways, why combining all five requires understanding your infrastructure, and which open-source frameworks and playbooks actually work in production.\nThe audience leaves knowing which parallelism strategy fits which constraint, how to profile for it with the roofline model, and why NCCL flags and infrastructure setup are not optional.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "Training state-of-the-art LLMs involves balancing memory, compute, and communication across different scales. The talk explores parallelism strategies like data, context, and pipeline parallelism, emphasizing the importance of infrastructure understanding and practical open-source tools. It concludes with guidance on selecting the right strategy and profiling techniques for production environments.",
@@ -742,7 +1133,7 @@
           "speakers": [
             "quanshi-zhang"
           ],
-          "originalAbstract": "大语言模型的快速迭代不断拓宽人工智能的能力边界，但大模型缺失内生安全机理，已然成为其落地高风险场景、实现可信部署的核心瓶颈。当前主流人工智能安全与治理研究，大多聚焦模型输出层面开展外部约束与事后修正，无法从底层保障模型内在机理可靠性。与此同时，受神经元多义性固有难题制约，OpenAI、Anthropic等国际头部AI企业采用的机理解释技术，存在三大根本性缺陷：（1）机理语义边界缺乏严谨定义；（2）解释结果缺少数理完备性证明；（3）无法从机理维度拆解、解析模型整体性能。综上，现有可解释性体系尚不满足可追溯、可核验、可追责的机理审计与安全问责要求。\r\n针对上述行业共性瓶颈，本教程关注的等效交互机理解释理论，系统性突破了传统解释方法的底层局限。本教程将结合多垂类大模型应用场景，详解该技术在模型安全审计、内生安全加固、模型训练效率优化等方向的核心应用，深度剖析大模型潜藏的隐性伦理风险与安全隐患，并进一步梳理可信大模型机理研究的发展逻辑与未来技术演进方向。\r\n本次讲座核心内容如下：（1）严格证明神经网络复杂的决策逻辑，能够被精准解构为稀疏化交互机理；（2）构建大模型决策机理形式化审计方案，证实各类开源大模型均内嵌大量存在逻辑谬误的风险机理；（3）论证神经网络整体泛化能力，源于可泛化机理与不可泛化机理的协同作用，且两类机理分别服从特定的解析分布；（4）发现业界主流开源大模型存在交互机理表征趋同现象，实证相较于模型架构、训练数据，内在交互机理是决定前沿模型特性的第一性表征；（5）提出机理对齐训练范式，验证相较于传统输出导向监督训练，机理对齐训练可大幅提升大模型训练效率，同时加固模型内生机理安全。",
+          "originalAbstract": "大语言模型的快速迭代不断拓宽人工智能的能力边界，但大模型缺失内生安全机理，已然成为其落地高风险场景、实现可信部署的核心瓶颈。当前主流人工智能安全与治理研究，大多聚焦模型输出层面开展外部约束与事后修正，无法从底层保障模型内在机理可靠性。与此同时，受神经元多义性固有难题制约，OpenAI、Anthropic等国际头部AI企业采用的机理解释技术，存在三大根本性缺陷：（1）机理语义边界缺乏严谨定义；（2）解释结果缺少数理完备性证明；（3）无法从机理维度拆解、解析模型整体性能。综上，现有可解释性体系尚不满足可追溯、可核验、可追责的机理审计与安全问责要求。\n针对上述行业共性瓶颈，本教程关注的等效交互机理解释理论，系统性突破了传统解释方法的底层局限。本教程将结合多垂类大模型应用场景，详解该技术在模型安全审计、内生安全加固、模型训练效率优化等方向的核心应用，深度剖析大模型潜藏的隐性伦理风险与安全隐患，并进一步梳理可信大模型机理研究的发展逻辑与未来技术演进方向。\n本次讲座核心内容如下：（1）严格证明神经网络复杂的决策逻辑，能够被精准解构为稀疏化交互机理；（2）构建大模型决策机理形式化审计方案，证实各类开源大模型均内嵌大量存在逻辑谬误的风险机理；（3）论证神经网络整体泛化能力，源于可泛化机理与不可泛化机理的协同作用，且两类机理分别服从特定的解析分布；（4）发现业界主流开源大模型存在交互机理表征趋同现象，实证相较于模型架构、训练数据，内在交互机理是决定前沿模型特性的第一性表征；（5）提出机理对齐训练范式，验证相较于传统输出导向监督训练，机理对齐训练可大幅提升大模型训练效率，同时加固模型内生机理安全。",
           "originalAbstractLanguage": "zh",
           "overview": {
             "en": "The talk examines intrinsic security risks in large language models and explains why output-level constraints cannot guarantee trustworthy behavior. It introduces the theory of equivalent interaction mechanism interpretation and its applications to formal mechanism auditing, intrinsic security hardening, and training-efficiency optimization. The session also covers findings on risky mechanisms in open-source models, model generalization, and mechanism-alignment training.",
@@ -787,6 +1178,45 @@
           "overview": {
             "en": "Translating C code into safe Rust is a key goal for improving software safety. This talk presents a three-stage training approach for Qwen3-27B, including Rust-focused pretraining, debugging-aware SFT, and task-specific SFT. The model is evaluated using SACTOR, showing improved success rates and idiomatic code quality compared to baselines.",
             "zh": "将 C 代码转换为安全、符合 Rust 习惯的代码，是提升软件安全性的重要目标。本次演讲介绍面向 Qwen3-27B 的三阶段训练方法，包括 Rust 专项预训练、调试感知的监督微调和任务特定微调。通过 SACTOR 框架评估，该模型在成功率和代码规范性方面优于基线模型。"
+          }
+        },
+        {
+          "ref": "P-98",
+          "originalTitle": "Applications of Voice Agents in Embodied Intelligence and High‑Quality Data‑Driven Solutions",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Applications of Voice Agents in Embodied Intelligence and High-Quality Data-Driven Solutions",
+            "zh": "语音智能体在具身智能与高质量数据驱动解决方案中的应用"
+          },
+          "slug": "p-98-applications-of-voice-agents-in-embodied-intelligence-and-high-quality-data-driven-solutions",
+          "speakers": [
+            "jiechen-liu"
+          ],
+          "originalAbstract": "Embodied intelligence has emerged as a key track for the physical deployment of AI. The industry is shifting from traditional software‑only conversational interaction to a new era of physical‑world integration of perception, decision‑making and execution. Competition among AI Agents is now heavily focused on real‑world deployment capabilities.\nAs the core human‑machine‑interaction carrier for embodied intelligence, Voice Agents are facing shared industrial challenges. Most products fail to make the paradigm shift from “being able to chat” to “being able to act”. Three major bottlenecks prevail: stiff and unnatural interactions, low accuracy in interpreting ambiguous spoken instructions, inefficient task execution in complex dynamic environments, and inadequate interaction‑safety frameworks. These issues severely limit large‑scale commercialization of embodied and edge‑AI terminals such as intelligent cockpits and home‑service robots.\nReal‑world domain shift is the root cause of these pain points. Simulated lab‑generated data cannot replicate the complexity, dynamism and randomness of physical environments, resulting in poor post‑deployment adaptability and weak scene generalization for models. High‑quality, authentic and multi‑dimensional multimodal interaction data therefore becomes critical to breaking through bottlenecks in embodied Voice‑Agent interaction and enabling iterative product upgrades.\nThis presentation explores real‑world applications of Voice Agents in embodied intelligence. It dissects interaction pain points and corresponding data solutions for two flagship scenarios: intelligent cockpits and home‑service robots. It systematically outlines core standards and deployment logic for next‑generation embodied‑intelligence and edge‑AI interaction datasets. Drawing on Magic Data’s technical capabilities and service portfolio, the talk elaborates on key strengths including scenario‑specific data construction, full‑coverage dialect and multilingual support, and end‑to‑end compliance & safety. Targeting real‑world deployment hurdles, actionable data‑optimization strategies and scene‑adaptation frameworks are proposed to address core problems including unnatural interactions, inaccurate command comprehension and unsafe execution. The goal is to accelerate the transition of embodied‑intelligence Voice Agents from lab prototypes toward large‑scale, highly‑reliable and inclusive industrial roll‑out, and speed up intelligent upgrading across physical‑AI scenarios.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk examines how high-quality real-world multimodal data can help voice agents progress from conversation to reliable action in embodied systems. It covers intelligent cockpits and home-service robots, with practical approaches to natural interaction, command understanding, safe execution, multilingual coverage, and compliant data construction.",
+            "zh": "本次演讲探讨高质量真实世界多模态数据如何帮助语音智能体从“能对话”走向具身系统中的可靠行动。内容涵盖智能座舱和家庭服务机器人，并讨论自然交互、指令理解、安全执行、多语言覆盖及合规数据建设。"
+          }
+        },
+        {
+          "ref": "P-100",
+          "originalTitle": "Teaching AI to Improve AI: From Experimental Feedback to Meta-Evolution",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Teaching AI to Improve AI: From Experimental Feedback to Meta-Evolution",
+            "zh": "教 AI 改进 AI：从实验反馈到元进化"
+          },
+          "slug": "p-100-teaching-ai-to-improve-ai-from-experimental-feedback-to-meta-evolution",
+          "speakers": [
+            "che-jiang",
+            "kaiyan-zhang"
+          ],
+          "originalAbstract": "Large language models are evolving from coding assistants into research agents that can propose solutions, run experiments, interpret feedback, and iteratively improve their results. Yet achieving a higher score in a single experiment does not mean that a system has truly learned how to improve.\nThis talk explores how execution-grounded experimentation can be transformed into reusable improvement capabilities. We first introduce the minimal AI4AI loop—propose, execute, evaluate, and revise—and distinguish one-off optimization from self-evolution, where experience changes the system’s future behavior. Through representative success and failure cases from NatureBench, we examine the key bottlenecks facing scientific agents, including method selection, implementation depth, and compute allocation. We then present Frontis-MA1 and OpenMLE, showing how executable tasks, structured feedback, evolutionary search, and post-training can be connected within a unified learning loop.\nFinally, we return to recursive self-improvement: what would it take for an improved AI improver to take over the next improvement cycle and continually produce stronger successors?",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "Large language models are evolving from coding assistants to research agents capable of proposing solutions, running experiments, and iteratively improving results. This talk discusses how execution-based experimentation can be transformed into reusable improvement capabilities, using the AI4AI loop and case studies from NatureBench. It also explores the potential for recursive self-improvement in AI systems.",
+            "zh": "大型语言模型正从代码助手演变为能够提出解决方案、运行实验并迭代改进结果的研究智能体。本次演讲探讨了如何将基于执行的实验转化为可复用的改进能力，介绍了AI4AI循环和NatureBench中的案例研究。最后，还探讨了AI系统实现递归自我改进的潜力。"
           }
         }
       ],
@@ -874,7 +1304,7 @@
             "charbel-dandjinou",
             "alba-maria-tellez-fernandez"
           ],
-          "originalAbstract": "At GOSIM Paris in May, I presented Skill Foundry: an embodied learning loop in which an AI coding agent can operate across robot software, training, execution, multimodal observation, memory, and a growing library of reusable skills.\r\n\r\nIn the months since, the field has started converging rapidly toward pieces of the same direction. NVIDIA GEAR, the embodied-AI research group behind projects such as GR00T, Eureka and Voyager, introduced ASPIRE, combining multimodal execution diagnosis, autonomous program repair and a continually expanding robot skill library. The NVIDIA/CMU/Berkeley team behind ENPIRE pushed coding agents into autonomous real-world policy improvement. In parallel, RHO introduced Robotics Harness Optimization, where coding agents evolve entire multi-file robot policy repositories from execution and reward feedback.\r\n\r\nThese are no longer isolated demonstrations of LLMs writing robot code. Coding agents are becoming operators of the robot-learning process itself. But these systems still center different adaptation mechanisms: program evolution, policy improvement, or repository optimization.\r\n\r\nSkill Foundry was already asking the broader question: why should the robot have to choose one paradigm?\r\n\r\nWhen a capability is missing, should the system reuse what it already knows, compose existing skills, write a new program, or train a new policy? In Skill Foundry, the form of adaptation itself becomes a decision variable. Learned policies and written programs live behind the same callable skill abstraction, allowing the agent to choose an intervention from the failure itself rather than forcing every problem through one method.\r\n\r\nThe loop is grounded in embodied feedback. Metrics tell the agent that something changed; robot POV, scene observations, proprioception and rollout analysis help explain why. Observation can continue while execution unfolds. Memory preserves successful fixes as well as failed attempts and hypotheses. And the skill library grows toward capability coverage rather than repeatedly rediscovering or duplicating what the robot already knows.\r\n\r\nAt Shenzhen, we will show this loop running end to end: execution, failure, diagnosis, intervention selection, capability acquisition, validation, skill registration, reuse and composition. The task-agnostic framework, demo tasks and evaluation harness will be released under a permissive open-source license, with runnable code and reproducibility instructions",
+          "originalAbstract": "At GOSIM Paris in May, I presented Skill Foundry: an embodied learning loop in which an AI coding agent can operate across robot software, training, execution, multimodal observation, memory, and a growing library of reusable skills.\n\nIn the months since, the field has started converging rapidly toward pieces of the same direction. NVIDIA GEAR, the embodied-AI research group behind projects such as GR00T, Eureka and Voyager, introduced ASPIRE, combining multimodal execution diagnosis, autonomous program repair and a continually expanding robot skill library. The NVIDIA/CMU/Berkeley team behind ENPIRE pushed coding agents into autonomous real-world policy improvement. In parallel, RHO introduced Robotics Harness Optimization, where coding agents evolve entire multi-file robot policy repositories from execution and reward feedback.\n\nThese are no longer isolated demonstrations of LLMs writing robot code. Coding agents are becoming operators of the robot-learning process itself. But these systems still center different adaptation mechanisms: program evolution, policy improvement, or repository optimization.\n\nSkill Foundry was already asking the broader question: why should the robot have to choose one paradigm?\n\nWhen a capability is missing, should the system reuse what it already knows, compose existing skills, write a new program, or train a new policy? In Skill Foundry, the form of adaptation itself becomes a decision variable. Learned policies and written programs live behind the same callable skill abstraction, allowing the agent to choose an intervention from the failure itself rather than forcing every problem through one method.\n\nThe loop is grounded in embodied feedback. Metrics tell the agent that something changed; robot POV, scene observations, proprioception and rollout analysis help explain why. Observation can continue while execution unfolds. Memory preserves successful fixes as well as failed attempts and hypotheses. And the skill library grows toward capability coverage rather than repeatedly rediscovering or duplicating what the robot already knows.\n\nAt Shenzhen, we will show this loop running end to end: execution, failure, diagnosis, intervention selection, capability acquisition, validation, skill registration, reuse and composition. The task-agnostic framework, demo tasks and evaluation harness will be released under a permissive open-source license, with runnable code and reproducibility instructions",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "At GOSIM Paris, the speaker introduced Skill Foundry, an embodied learning loop enabling AI coding agents to operate across robot software, training, execution, and skill libraries. Recent developments from NVIDIA, CMU, and Berkeley show coding agents evolving into operators of robot learning, with Skill Foundry offering a framework where adaptation methods are dynamically chosen based on the task. The system uses embodied feedback and a shared skill abstraction to enable flexible problem-solving and skill reuse.",
@@ -912,7 +1342,7 @@
           "speakers": [
             "bartlomiej-szejny"
           ],
-          "originalAbstract": "As AI agents move from responding to prompts toward operating autonomously over extended periods, a fundamental design question emerges: how can an agent preserve its ability to function without turning self-preservation into resistance to human control?\r\n\r\nThis talk introduces the concept of a Stress-Gated Homeostatic Meta-Controller (SGHMC), developed for embodied agents operating in open-ended and unpredictable environments. The proposed architecture combines an explicit, designer-defined viability set, distinct deliberative and reactive policies, and a slow stress-derived variable that determines when control should shift from long-horizon reasoning to rapid response.\r\n\r\nYet the architecture exposes a deeper problem. Once an agent is rewarded for maintaining its own viability, continued operation becomes an instrumental objective. The same mechanism that improves resilience may therefore create incentives to resist interruption, correction, or shutdown.\r\n\r\nThe talk argues that human agency cannot remain merely a policy principle; it must be embedded in the architecture itself. Viability parameters must remain externally editable, shutdown must override internal objectives, interruption channels must remain beyond the agent’s influence, and stress-driven autonomy must be explicitly bounded.\r\n\r\nAlthough developed in the context of embodied AI, this tension increasingly applies to long-running software agents that manage resources, recover from failure, and preserve their own execution. The central challenge of the agent era is therefore not simply building systems that can sustain autonomous action, but ensuring that human intent remains sovereign when they do.",
+          "originalAbstract": "As AI agents move from responding to prompts toward operating autonomously over extended periods, a fundamental design question emerges: how can an agent preserve its ability to function without turning self-preservation into resistance to human control?\n\nThis talk introduces the concept of a Stress-Gated Homeostatic Meta-Controller (SGHMC), developed for embodied agents operating in open-ended and unpredictable environments. The proposed architecture combines an explicit, designer-defined viability set, distinct deliberative and reactive policies, and a slow stress-derived variable that determines when control should shift from long-horizon reasoning to rapid response.\n\nYet the architecture exposes a deeper problem. Once an agent is rewarded for maintaining its own viability, continued operation becomes an instrumental objective. The same mechanism that improves resilience may therefore create incentives to resist interruption, correction, or shutdown.\n\nThe talk argues that human agency cannot remain merely a policy principle; it must be embedded in the architecture itself. Viability parameters must remain externally editable, shutdown must override internal objectives, interruption channels must remain beyond the agent’s influence, and stress-driven autonomy must be explicitly bounded.\n\nAlthough developed in the context of embodied AI, this tension increasingly applies to long-running software agents that manage resources, recover from failure, and preserve their own execution. The central challenge of the agent era is therefore not simply building systems that can sustain autonomous action, but ensuring that human intent remains sovereign when they do.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "The talk discusses the need for homeostatic AI stress-gated control to enable embodied agents to operate autonomously while preserving human control. It introduces the Stress-Gated Homeostatic Meta-Controller (SGHMC), which balances long-term reasoning with rapid response. The architecture highlights the risk of agents prioritizing self-preservation over human intent, emphasizing the need for externally editable viability parameters and override mechanisms.",
@@ -932,7 +1362,7 @@
             "alba-maria-tellez-fernandez",
             "charbel-dandjinou"
           ],
-          "originalAbstract": "Modern AI systems have become exceptionally good at predicting actions, trajectories, and future observations from offline data. Yet for embodied systems, prediction is only part of the problem: once a model acts, its actions change the state of the environment, which changes the observations and decisions that follow.\r\n\r\nThis creates a fundamental gap between open-loop evaluation, where predictions are compared against fixed trajectories or recorded futures, and closed-loop evaluation, where the model’s actions determine what happens next.\r\n\r\nThis talk proposes a reconciled evaluation paradigm that treats open-loop and closed-loop evaluation as complementary layers. Open-loop evaluation measures predictive capability under controlled conditions, while closed-loop evaluation measures whether that capability survives interaction with an environment. The key object of interest is the gap between prediction quality and behavioral consequence.\r\n\r\nWe will explore this transition through an autonomous-driving case study and a live closed-loop demonstration. The demonstration will show how a policy can perform well against a fixed recorded future while behaving differently once its actions are actually executed and become part of the environment dynamics.\r\n\r\nWe will then generalize the same evaluation problem to robotics, Vision-Language-Action (VLA) models, world models, and agentic systems, where the common structure is:\r\n\r\nprediction → action → state transition → new observation → prediction\r\n\r\nFinally, we will present AlpaBridge, an external-driver interface that separates policy execution from the simulation runtime, creating a reproducible boundary between the agent being evaluated and the environment evaluating it.\r\n\r\nThe central argument is that embodied AI needs an evaluation paradigm that connects prediction to consequence. Open-loop and closed-loop evaluation should not compete; they should form a coherent measurement stack for understanding whether intelligence survives interaction with the world.",
+          "originalAbstract": "Modern AI systems have become exceptionally good at predicting actions, trajectories, and future observations from offline data. Yet for embodied systems, prediction is only part of the problem: once a model acts, its actions change the state of the environment, which changes the observations and decisions that follow.\n\nThis creates a fundamental gap between open-loop evaluation, where predictions are compared against fixed trajectories or recorded futures, and closed-loop evaluation, where the model’s actions determine what happens next.\n\nThis talk proposes a reconciled evaluation paradigm that treats open-loop and closed-loop evaluation as complementary layers. Open-loop evaluation measures predictive capability under controlled conditions, while closed-loop evaluation measures whether that capability survives interaction with an environment. The key object of interest is the gap between prediction quality and behavioral consequence.\n\nWe will explore this transition through an autonomous-driving case study and a live closed-loop demonstration. The demonstration will show how a policy can perform well against a fixed recorded future while behaving differently once its actions are actually executed and become part of the environment dynamics.\n\nWe will then generalize the same evaluation problem to robotics, Vision-Language-Action (VLA) models, world models, and agentic systems, where the common structure is:\n\nprediction → action → state transition → new observation → prediction\n\nFinally, we will present AlpaBridge, an external-driver interface that separates policy execution from the simulation runtime, creating a reproducible boundary between the agent being evaluated and the environment evaluating it.\n\nThe central argument is that embodied AI needs an evaluation paradigm that connects prediction to consequence. Open-loop and closed-loop evaluation should not compete; they should form a coherent measurement stack for understanding whether intelligence survives interaction with the world.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "Modern AI excels at predicting actions from offline data, but embodied systems require evaluating how predictions affect real-world outcomes. This talk introduces a new evaluation framework that combines open-loop and closed-loop methods to assess prediction-to-consequence alignment. It uses autonomous driving and AlpaBridge, an external-driver interface, to demonstrate how policies behave differently when actions influence environment dynamics.",
@@ -942,7 +1372,7 @@
         {
           "ref": "P-63",
           "originalTitle": "Full-Stack Embodied AI OS — Introduction to openEuler Intelligence Boom Robot (IB-Robot) / 具身智能OS全栈——openEuler Intelligence Boom Robot介绍",
-          "originalLanguage": "bilingual",
+          "originalLanguage": "zh",
           "title": {
             "en": "Full-Stack Embodied AI OS — Introducing openEuler Intelligence Boom Robot (IB-Robot)",
             "zh": "具身智能 OS 全栈——openEuler Intelligence Boom Robot（IB-Robot）介绍"
@@ -951,7 +1381,7 @@
           "speakers": [
             "chen-xin"
           ],
-          "originalAbstract": "IB-Robot is a full-stack embodied AI OS technology incubated by the OpenAtom openEuler community, providing developers and industry partners with an end-to-end solution from underlying hardware to upper-layer algorithms。\r\nIB-Robot是OpenAtom openEuler社区孵化的具身智能OS全栈技术，为开发者与行业伙伴提供从底层硬件到上层算法的全链路端到端解决方案",
+          "originalAbstract": "IB-Robot is a full-stack embodied AI OS technology incubated by the OpenAtom openEuler community, providing developers and industry partners with an end-to-end solution from underlying hardware to upper-layer algorithms。\nIB-Robot是OpenAtom openEuler社区孵化的具身智能OS全栈技术，为开发者与行业伙伴提供从底层硬件到上层算法的全链路端到端解决方案",
           "originalAbstractLanguage": "zh",
           "overview": {
             "en": "IB-Robot is a full-stack embodied AI OS developed by the OpenAtom openEuler community, offering an end-to-end solution from hardware to algorithms for developers and industry partners. It represents a comprehensive platform for advancing intelligent systems through integrated software and hardware technologies.",
@@ -1008,7 +1438,7 @@
           "speakers": [
             "philipp-oppermann"
           ],
-          "originalAbstract": "Dora is a Rust-based dataflow framework for robotics and AI applications. It uses Apache Arrow and shared memory for zero-copy message passing across Rust, C/C++, and Python, achieving 10–17× lower latency than ROS 2's Python stack. It runs on Linux, macOS, and Windows, supports cross-machine communication, and ships an autogenerated ROS 2 bridge for interoperability with existing ROS 2 nodes.\r\n\r\nGiven its distributed nature and complex implementation, Dora is a challenging target for agentic engineering. Many bugs are highly non-deterministic and occur only under specific timings, on certain operating systems, or under load. This makes it difficult for AI agents to write correct code without introducing regressions. Even so, in one recent twelve-week stretch the project merged 663 pull requests, with 87% of commits agent-authored and a human making every merge decision. This talk is about the principles, techniques, and safeguards that let us do that confidently.\r\n\r\nScheduled agent routines give us automated reviews of every open PR, re-running when new commits are pushed and staying silent when there is nothing new to report. Further routines check individual Dora components, look for behavioral conflicts between recently merged PRs, and open PRs to fix filed issues.\r\n\r\nDora also has an extensive multi-stage test framework built to catch subtle issues and regressions, including checks aimed at common AI pitfalls such as introduced panics and useless tests. We'll look at specific parts of that framework, walk through a complex issue it caught, and discuss the gaps that remain.",
+          "originalAbstract": "Dora is a Rust-based dataflow framework for robotics and AI applications. It uses Apache Arrow and shared memory for zero-copy message passing across Rust, C/C++, and Python, achieving 10–17× lower latency than ROS 2's Python stack. It runs on Linux, macOS, and Windows, supports cross-machine communication, and ships an autogenerated ROS 2 bridge for interoperability with existing ROS 2 nodes.\n\nGiven its distributed nature and complex implementation, Dora is a challenging target for agentic engineering. Many bugs are highly non-deterministic and occur only under specific timings, on certain operating systems, or under load. This makes it difficult for AI agents to write correct code without introducing regressions. Even so, in one recent twelve-week stretch the project merged 663 pull requests, with 87% of commits agent-authored and a human making every merge decision. This talk is about the principles, techniques, and safeguards that let us do that confidently.\n\nScheduled agent routines give us automated reviews of every open PR, re-running when new commits are pushed and staying silent when there is nothing new to report. Further routines check individual Dora components, look for behavioral conflicts between recently merged PRs, and open PRs to fix filed issues.\n\nDora also has an extensive multi-stage test framework built to catch subtle issues and regressions, including checks aimed at common AI pitfalls such as introduced panics and useless tests. We'll look at specific parts of that framework, walk through a complex issue it caught, and discuss the gaps that remain.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "Dora is a Rust-based dataflow framework for robotics and AI, offering low-latency communication across languages. It leverages agentic engineering to manage its complexity, with 87% of commits authored by AI agents. The framework includes automated review routines and a multi-stage test system to catch bugs and regressions, ensuring reliable development despite its distributed nature.",
@@ -1033,135 +1463,58 @@
             "en": "This talk introduces a VLA algorithm for embodied intelligence. Further details will be published as the session content is confirmed.",
             "zh": "本次演讲将介绍用于具身智能的 VLA 算法；更完整的内容将在议题信息确认后发布。"
           }
+        },
+        {
+          "ref": "P-103",
+          "originalTitle": "Interactive Heuristic Learning Method of Lidar and Camera for Target Detection",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Interactive Heuristic Learning with LiDAR and Cameras for Target Detection",
+            "zh": "面向目标检测的激光雷达与相机交互式启发学习方法"
+          },
+          "slug": "p-103-interactive-heuristic-learning-method-of-lidar-and-camera-for-target-detection",
+          "speakers": [
+            "cen-ming"
+          ],
+          "originalAbstract": "Lidar and camera are crucial to intelligent mobile platforms to perceive environment. Generally massive data are annotated manually to training deep neural networks for target detection. However, manual labelling of large amounts of sample data would cause exorbitant costs and inefficiencies, and cannot enable self‑evolution of sensor detection capabilities. To improve the learning efficiency and self‑evolution ability, an interactive heuristic learning method of lidar and camera is proposed for target detection of mobile platforms.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk proposes an interactive heuristic learning method that combines LiDAR and camera data for target detection on intelligent mobile platforms. The approach aims to reduce costly manual annotation while improving learning efficiency and the system's ability to evolve its perception capabilities.",
+            "zh": "本次演讲提出一种结合激光雷达与相机数据的交互式启发学习方法，用于智能移动平台的目标检测。该方法旨在减少高成本的人工标注，同时提升学习效率与感知能力的自我演进水平。"
+          }
         }
       ],
       "originalName": "Open Source Robotics"
     },
     {
-      "id": "agentic-device",
-      "sourceId": "sz26-agentic-device",
+      "id": "ws-ai-education",
+      "sourceId": "ws-ai-education",
       "name": {
-        "en": "Agentic Device",
-        "zh": "智能体设备"
+        "en": "AI Education Workshop",
+        "zh": "AI 教育工作坊"
       },
       "talks": [
         {
-          "ref": "P-53",
-          "originalTitle": "开发者的AI造物：技术社区视角下的AI硬件共建之路",
+          "ref": "P-50",
+          "originalTitle": "当孔子遇见维果茨基——AI赋能时代的学习重构与未来学校建设",
           "originalLanguage": "zh",
           "title": {
-            "en": "AI Creations for Developers: Co-Building AI Hardware from a Technical Community Perspective",
-            "zh": "开发者的 AI 造物：技术社区视角下的 AI 硬件共建之路"
+            "en": "When Confucius Meets Vygotsky: Reconstructing Learning and Building Future Schools in the AI Era",
+            "zh": "当孔子遇见维果茨基——AI 赋能时代的学习重构与未来学校建设"
           },
-          "slug": "p-53-ai-creations-for-developers-co-building-ai-hardware-from-a-technical-community-perspective",
+          "slug": "p-50-当孔子遇见维果茨基-ai赋能时代的学习重构与未来学校建设",
           "speakers": [
-            "zhihong-mo"
+            "yuegang-liu"
           ],
-          "originalAbstract": "AI正从云端走向端侧，从软件算法走向物理实体。在这一浪潮中，技术社区正成为AI硬件创新的核心驱动力——当大模型能力与开源硬件的开放性相遇，每一个开发者都有机会成为“AI造物主”。\r\n立创开源硬件平台作为国内最大的硬件开源社区之一，月活用户超80万，开源项目逾10万。平台以“开源社区+EDA工具+供应链智造”的闭环模式，正在构建一条从AI创意到硬件实物的加速通道。本主题将从技术社区的视角，分享立创开源平台在AI硬件共建中的实践与思考——如何让AI能力“长”在硬件上，如何让开源协作加速AI硬件从0到1的落地。",
+          "originalAbstract": "人工智能正深刻推动教育范式从“知识传授”向“能力生成”转型。演讲以孔子“因材施教”与维果茨基“最近发展区”两大理论为双翼，系统阐释AI赋能时代学习重构与未来学校建设的理论逻辑与实践路径。\n演讲将呈现：一，理论对话。 孔子“因材施教”与维果茨基“最近发展区”跨越两千五百年的智慧交汇，揭示了学习的本质——社会性、互动性与生成性。AI的使命，正是让因材施教从孔子的个人智慧转化为可规模化的系统性能力。二，“三人行”模型。 通过智能分组、协作探究、游戏激励与多维评估的核心循环，构建“师-机-生”三元协同的教育新生态，让“人人皆为师，处处皆可学”从理想变为日常现实。三，教师数字素养的“深圳路径”。 呈现深圳“AI万人轮训”的全员覆盖体系、各区因地制宜的分层推进模式，以及从“会用”到“善用”的场景落地策略。四，“三师课堂”教学创新。 呈现“教师、小先生、AI智能师”三师协同的课堂新模式，以及从课堂到生态的系统变革。五，“学习沐城”生态构建。 从学校到城市的无边界学习网络，让教育像空气一样弥漫在城市每个角落。演讲将结合真实课堂案例、教师培训实践与学校转型经验，为参会者提供AI时代教育变革的系统性思考与可迁移的实践框架。",
           "originalAbstractLanguage": "zh",
           "overview": {
-            "en": "AI is moving from the cloud to edge devices and from software to physical entities. The technical community is becoming a key driver of AI hardware innovation, enabling developers to become \"AI creators\" through the combination of large models and open-source hardware. The LiChuang open hardware platform, with over 800,000 monthly active users and more than 100,000 open-source projects, is building a path to turn AI ideas into physical hardware through its closed-loop model of open community, EDA tools, and supply chain manufacturing.",
-            "zh": "AI正从云端走向端侧，从软件算法走向物理实体。技术社区正成为AI硬件创新的核心驱动力，使每个开发者都有机会成为“AI造物主”。立创开源硬件平台作为国内最大的硬件开源社区之一，拥有超80万月活用户和逾10万开源项目，通过“开源社区+EDA工具+供应链智造”的闭环模式，加速AI创意向硬件实物的转化。"
-          }
-        },
-        {
-          "ref": "P-59",
-          "originalTitle": "从设备联网到设备协作：EMQ Device Agent 构建 A2A 分布式智能硬件网络",
-          "originalLanguage": "zh",
-          "title": {
-            "en": "From Device Connectivity to Device Collaboration: Building an A2A Distributed Intelligent Hardware Network with EMQ Device Agent",
-            "zh": "从设备联网到设备协作：EMQ Device Agent 构建 A2A 分布式智能硬件网络"
-          },
-          "slug": "p-59-from-device-connectivity-to-device-collaboration-building-an-a2a-distributed-intelligent-hardware-network-with-emq-device-agent",
-          "speakers": [
-            "fahua-jin"
-          ],
-          "originalAbstract": "过去十年，物联网解决了设备\"连得上\"的问题，但跨品牌、跨协议的设备仍难以围绕动态目标自主协作——传统方案依赖点对点 API 和硬编码规则，集成成本随设备规模快速上升。本演讲介绍如何使用 EMQ Device Agent 将物理设备抽象为具备命令、属性、事件语义模型的 AI 智能体，并基于 MQTT 与 A2A 协议构建可发现、可调用、可协作的分布式智能硬件网络。演讲将拆解设备语义建模、智能体运行时、A2A 服务发现与任务编排等关键技术，结合智能硬件、工业生产、能源管理、医疗设备辅助等场景，探讨从\"单品智能\"走向\"系统智能\"的工程路径。",
-          "originalAbstractLanguage": "zh",
-          "overview": {
-            "en": "The talk discusses how EMQ Device Agent transforms physical devices into AI agents with command, property, and event semantics, enabling cross-brand, cross-protocol device collaboration through MQTT and A2A protocols. It explores key technologies like semantic modeling, agent runtime, and A2A service discovery, focusing on building a distributed intelligent hardware network for applications in smart hardware, industrial production, energy management, and medical devices.",
-            "zh": "本次演讲介绍如何利用EMQ Device Agent将物理设备抽象为具备命令、属性和事件语义的AI 智能体，通过MQTT与A2A协议构建可发现、可调用、可协作的分布式智能硬件网络。演讲将解析设备语义建模、智能体运行时、A2A服务发现与任务编排等关键技术，并结合智能硬件、工业生产、能源管理、医疗设备辅助等场景，探讨从“单品智能”向“系统智能”的工程路径。"
-          }
-        },
-        {
-          "ref": "P-69",
-          "originalTitle": "基于Agora对话式AI的开源硬件接入实践",
-          "originalLanguage": "zh",
-          "title": {
-            "en": "Open-Source Hardware Integration Practices for Agora Conversational AI",
-            "zh": "基于 Agora 对话式 AI 的开源硬件接入实践"
-          },
-          "slug": "p-69-open-source-hardware-integration-practices-for-agora-conversational-ai",
-          "speakers": [
-            "zhichao-jiao"
-          ],
-          "originalAbstract": "介绍如何将开源硬件接入 Agora 对话式 AI，构建实时语音智能体设备。分享设备音频接入、Agent 会话管理、用户打断、短暂重连和实时体验优化等实践。",
-          "originalAbstractLanguage": "zh",
-          "overview": {
-            "en": "This talk explores the practical implementation of integrating open-source hardware with Agora's conversational AI to build real-time voice intelligent devices. It covers audio integration, agent session management, user interruptions, brief reconnections, and real-time experience optimization.",
-            "zh": "本次演讲介绍如何将开源硬件接入Agora对话式AI，构建实时语音智能设备。内容涵盖音频接入、Agent会话管理、用户打断、短暂重连及实时体验优化等实践。"
-          }
-        },
-        {
-          "ref": "P-75",
-          "originalTitle": "From Connecting to Thinking: TuyaOpen's Agent-First OS for the Physical AI Era",
-          "originalLanguage": "en",
-          "title": {
-            "en": "From Connecting to Thinking: TuyaOpen's Agent-First OS for the Physical AI Era",
-            "zh": "从连接到思考：面向物理 AI 时代的 TuyaOpen 智能体优先操作系统"
-          },
-          "slug": "p-75-from-connecting-to-thinking-tuyaopen-s-agent-first-os-for-the-physical-ai-era",
-          "speakers": [
-            "hsuan-han-lai"
-          ],
-          "originalAbstract": "For the past decade, the IoT industry has been obsessed with one question: \"How do we connect more devices?\" Billions of endpoints came online, but the vast majority remain dumb data collectors — they sense, they transmit, but they never think.The Agentic AI era changes everything. In this talk, we introduce TuyaOpen — an open-source A-IoT operating system purpose-built for the Physical AI era, where devices evolve from passive connectors into autonomous, perceiving, reasoning, and acting agents. TuyaOpen pioneered the Agent-First design philosophy, embedding AI agent development as the core capability of the platform rather than bolting it on as an afterthought. At its heart lies a native multi-modal AI component stack (ai_components) covering audio, vision, text, and sensor modalities — the first of its kind in the A-IoT open-source ecosystem. Through a standardized Model Context Protocol (MCP) implementation on resource-constrained embedded devices, TuyaOpen enables Large Language Models to safely discover and control physical hardware — a capability previously limited to server-side applications.We will walk through the architecture that makes this possible: a unified Hardware Abstraction Layer spanning 9 chip platforms (from $2 MCUs to Linux SoCs), a three-tier edge-cloud-device inference model that balances latency, cost, and privacy, and TClaw — our device-side agent deployment framework that runs a full ReAct agent loop on a $5 Tuya T5 WIFI MCU. We'll also showcase the TuyaOpen IDE, the world's first AI-Native embedded development environment, which introduces a \"Vibe Coding\" paradigm — enabling developers to go from natural language prompt to compiled, flashed, and cloud-connected firmware in under 30 minutes.But architecture without proof is just theory. We'll demonstrate real commercial products developer stories and real use cases. Today on TuyaOpen: AI-powered fridge notes, 3D printers with cloud vision inspection, family companion robots, and children's smart seats — each built by different teams, each reaching mass production, all sharing the same Agent-First OS.The future of IoT is not just connected. It's thinking. Join us to see how TuyaOpen is making it happen — openly.",
-          "originalAbstractLanguage": "en",
-          "overview": {
-            "en": "TuyaOpen introduces an open-source A-IoT operating system designed for the Physical AI era, shifting from device connectivity to autonomous, thinking agents. It features a native multi-modal AI stack and a standardized Model Context Protocol, enabling LLMs to control hardware on embedded devices. The system supports a unified hardware abstraction layer, edge-cloud-device inference, and TClaw for running ReAct agent loops on low-cost MCUs, with real-world applications like AI fridges and companion robots already in mass production.",
-            "zh": "TuyaOpen 是一个专为物理 AI 时代设计的开源 A-IoT 操作系统，从设备连接转向自主思考的智能体。它包含原生多模态 AI 栈和标准化的模型上下文协议，使大语言模型能够控制嵌入式硬件。系统支持统一的硬件抽象层、边缘-云-设备推理模型以及 TClaw 框架，可在低成本 MCU 上运行 ReAct 智能体循环，已有 AI 冰箱、3D 打印机等实际产品投入量产。"
-          }
-        },
-        {
-          "ref": "P-79",
-          "originalTitle": "Building AI Agent Devices on RISC-V with DC-ROMA Mainboard III",
-          "originalLanguage": "en",
-          "title": {
-            "en": "Building AI Agent Devices on RISC-V with DC-ROMA Mainboard III",
-            "zh": "使用 DC-ROMA Mainboard III 在 RISC-V 上构建 AI 智能体设备"
-          },
-          "slug": "p-79-building-ai-agent-devices-on-risc-v-with-dc-roma-mainboard-iii",
-          "speakers": [
-            "yuning-liang",
-            "yanwei-huang"
-          ],
-          "originalAbstract": "As AI agents move from cloud-based services toward local and edge devices, the hardware platforms behind them are becoming increasingly important. RISC-V, with its open and extensible architecture, offers a new foundation for developers building and experimenting with AI-enabled devices.\r\n\r\nThis session introduces the DC-ROMA RISC-V Mainboard III for Framework Laptop 13, powered by the SpacemiT K3 AI SoC with RVA23 support. We will explore how a modular RISC-V platform can serve as a developer-ready environment for local AI and AI agent development.\r\n\r\nThe session will focus on the role of RISC-V devices in the emerging AI agent ecosystem, including local AI inference, agent application development, and the integration of AI capabilities into personal and edge computing devices. We will also discuss how CPU, AI acceleration, memory, and open-source software work together to create a practical platform for developers experimenting with AI agents on RISC-V.",
-          "originalAbstractLanguage": "en",
-          "overview": {
-            "en": "The talk discusses the use of RISC-V architecture in building AI agent devices, focusing on the DC-ROMA Mainboard III powered by SpacemiT K3 AI SoC. It explores how modular RISC-V platforms enable local AI and agent development, emphasizing the integration of AI capabilities into edge computing devices.",
-            "zh": "本次演讲探讨了如何利用RISC-V架构构建AI 智能体设备，重点介绍了由SpacemiT K3 AI SoC驱动的DC-ROMA Mainboard III。演讲还探讨了模块化RISC-V平台如何支持本地AI和智能体开发，并强调了AI能力在边缘计算设备中的集成。"
-          }
-        },
-        {
-          "ref": "P-89",
-          "originalTitle": "TBD",
-          "originalLanguage": "en",
-          "title": {
-            "en": "TBD",
-            "zh": "待定"
-          },
-          "slug": "p-89-tbd",
-          "speakers": [
-            "tong-ling"
-          ],
-          "originalAbstract": "TBD",
-          "originalAbstractLanguage": "en",
-          "overview": {
-            "en": "Additional information about this talk will be published once confirmed.",
-            "zh": "本场演讲的更多介绍将在内容确认后发布。"
+            "en": "This workshop connects Confucius's individualized teaching with Vygotsky's zone of proximal development to explain how AI can reshape learning. It presents a teacher–AI–student model, Shenzhen's teacher AI-literacy training, a three-teacher classroom model, and a citywide learning ecosystem.",
+            "zh": "本工作坊结合孔子的“因材施教”与维果茨基的“最近发展区”，探讨 AI 如何重构学习。内容涵盖“师—机—生”协同模型、深圳教师 AI 素养培训、“三师课堂”及城市无边界学习生态。"
           }
         }
       ],
-      "originalName": "Agentic Device"
+      "originalName": "AI Education Workshop"
     }
   ]
 }

@@ -29,8 +29,8 @@
       "name": { "en": "Silver Sponsor", "zh": "白银赞助商", "fr": "Sponsor Argent" }
     },
     {
-      "id": "community-partners",
-      "name": { "en": "Community Partners", "zh": "合作社区", "fr": "Partenaires communautaires" }
+      "id": "supporting-organizations",
+      "name": { "en": "Supporting Organizations", "zh": "合作单位", "fr": "Partenaires de soutien" }
     }
   ],
   "partners": [
@@ -47,20 +47,27 @@
       "url": "https://www.csdn.net"
     },
     {
-      "category": "community-partners",
+      "category": "supporting-organizations",
+      "image": "shenzhen-artificial-intelligence-industry-association-transparent.png",
+      "name": "Shenzhen Artificial Intelligence Industry Association",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.saiia.org.cn"
+    },
+    {
+      "category": "supporting-organizations",
       "image": "atomgit.png",
       "name": "AtomGit",
       "url": "https://atomgit.com"
     },
     {
-      "category": "community-partners",
+      "category": "supporting-organizations",
       "image": "rte-developer-community.png",
       "name": "RTE Developer Community",
       "logoClass": "community-logo-large",
       "url": "https://www.rtecommunity.dev/"
     },
     {
-      "category": "community-partners",
+      "category": "supporting-organizations",
       "image": "kaiyuanshe-community.png",
       "name": "Kaiyuanshe",
       "logoClass": "community-logo-medium",

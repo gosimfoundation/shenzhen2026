@@ -1,0 +1,23 @@
+[
+  {
+    "id": "dhh",
+    "keynote": true,
+    "tags": [],
+    "image": "/images/speakers/confirmed/dhh.png",
+    "socialLinks": {
+      "website": "https://dhh.dk/",
+      "github": "https://github.com/dhh",
+      "twitter": "https://x.com/dhh"
+    },
+    "en": {
+      "name": "David Heinemeier Hansson (DHH)",
+      "roleOrg": "Creator of Ruby on Rails & Omarchy",
+      "bio": "David Heinemeier Hansson (DHH) is the creator of Ruby on Rails and Omarchy, a co-owner and co-founder of 37signals, and a best-selling author. He co-authored REWORK, REMOTE, It Doesn't Have to Be Crazy at Work, and Getting Real with Jason Fried. He also chairs the Rails Foundation and serves on Shopify's board of directors."
+    },
+    "zh": {
+      "name": "David Heinemeier Hansson (DHH)",
+      "roleOrg": "Ruby on Rails 与 Omarchy 创建者",
+      "bio": "David Heinemeier Hansson（DHH）是 Ruby on Rails 与 Omarchy 的创建者、37signals 的共同所有人兼联合创始人，也是畅销书作者。他与 Jason Fried 合著《REWORK》《REMOTE》《It Doesn't Have to Be Crazy at Work》和《Getting Real》，并担任 Rails Foundation 主席及 Shopify 董事。"
+    }
+  }
+]
