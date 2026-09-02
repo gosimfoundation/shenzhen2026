@@ -150,7 +150,7 @@
     },
     {
       "id": "wilson-wang",
-      "name": "Wilson Wang",
+      "name": "王潇爽",
       "roleOrg": "字节跳动软件工程师",
       "bio": "字节跳动全球流量基础设施团队软件工程师，专注于虚拟机与 WebAssembly，并关注操作系统、分布式系统、云原生技术、边缘计算和无服务器架构。",
       "tags": [
@@ -659,7 +659,7 @@
       "socialLinks": {},
       "draft": false,
       "image": "/images/speakers/confirmed/sean-dong.png",
-      "nameEn": "Xin Dong"
+      "nameEn": "Sean Dong"
     },
     {
       "id": "birgitta-boeckeler",
@@ -816,7 +816,7 @@
     },
     {
       "id": "fanshi-zhang",
-      "name": "Fanshi Zhang",
+      "name": "张凡石",
       "roleOrg": "Moeru AI CTO",
       "bio": "全栈开发者和开源项目构建者，其项目累计获得超过 5 万颗 GitHub Star，工作领域涵盖 CNCF 生态、AI 训练与智能体技术。",
       "tags": [
@@ -891,7 +891,7 @@
     },
     {
       "id": "yuning-liang",
-      "name": "Yuning Liang",
+      "name": "梁宇宁",
       "roleOrg": "DeepComputing 创始人兼 CEO",
       "bio": "DeepComputing 创始人兼 CEO，带领团队开发基于 RISC-V 的笔记本电脑、平板、工作站、遥控车和无人机等产品。他拥有嵌入式系统、平台 API 与系统软件实践经验，并于 2024 年获得 RISC-V 社区贡献者奖。",
       "tags": [
@@ -908,7 +908,7 @@
     },
     {
       "id": "yanwei-huang",
-      "name": "Yanwei Huang",
+      "name": "黄言伟",
       "roleOrg": "联合讲师",
       "bio": "",
       "tags": [
@@ -1014,7 +1014,7 @@
     },
     {
       "id": "xin-liu",
-      "name": "Xin Liu",
+      "name": "刘鑫",
       "roleOrg": "华为首席研究员",
       "bio": "华为首席研究员、九问共生创始人。",
       "tags": [
@@ -1040,7 +1040,7 @@
     },
     {
       "id": "yanzhi-wang",
-      "name": "Yanzhi Wang",
+      "name": "王言治",
       "roleOrg": "Northeastern University 教授",
       "bio": "Northeastern University 电气与计算机工程教授，研究方向包括实时与高能效深度学习和人工智能系统，尤其关注高效大语言模型及大规模生成式 AI 系统。",
       "tags": [
@@ -1087,7 +1087,7 @@
     },
     {
       "id": "jiechen-liu",
-      "name": "Jiechen Liu",
+      "name": "刘杰辰",
       "roleOrg": "Magic Data 生态与技术总监、算法工程负责人",
       "bio": "Magic Data 生态与技术总监、算法工程负责人，负责 AI 数据基础设施、行业解决方案和跨行业生态合作。其工作聚焦具身智能，以及智能座舱和家庭服务机器人等设备中的语音智能体，专长包括多模态高质量数据集建设、语音交互优化、域偏移缓解和合规数据策略。",
       "tags": [
@@ -1168,7 +1168,7 @@
     },
     {
       "id": "cen-ming",
-      "name": "Cen Ming",
+      "name": "岑明",
       "roleOrg": "重庆邮电大学教授",
       "bio": "重庆邮电大学教授，2006 年获中国科学院研究生院光学工程博士学位。研究方向包括信息融合、多目标跟踪、自动驾驶和智能机器人。",
       "tags": [
@@ -1233,7 +1233,7 @@
     },
     {
       "id": "weiqi-zhao",
-      "name": "Weiqi Zhao",
+      "name": "赵维奇",
       "roleOrg": "Rokid 全球开放生态负责人",
       "bio": "负责 Rokid AI 与 AR 眼镜的全球开发者及合作伙伴生态，拥有十余年智能硬件与空间计算产品经验。当前关注智能体 AI、人机交互、开放标准、开发者平台及以人为中心的可穿戴计算。",
       "tags": [
