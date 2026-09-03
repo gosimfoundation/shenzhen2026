@@ -6,6 +6,12 @@
       "id": "all"
     },
     {
+      "id": "special-keynote",
+      "name": "Keynote Plenary",
+      "nameZh": "Keynote 全体大会",
+      "group": "tracks"
+    },
+    {
       "id": "sz26-agentic-ai-summit",
       "name": "Agentic AI Summit",
       "nameZh": "智能体 AI 峰会",
@@ -46,6 +52,18 @@
       "name": "AI Education Workshop",
       "nameZh": "AI 教育工作坊",
       "group": "workshops"
+    },
+    {
+      "id": "ws-dora",
+      "name": "DORA Workshop",
+      "nameZh": "DORA 工作坊",
+      "group": "workshops"
+    },
+    {
+      "id": "ws-vllm",
+      "name": "vLLM Workshop",
+      "nameZh": "vLLM 工作坊",
+      "group": "workshops"
     }
   ],
   "speakers": [
@@ -55,11 +73,13 @@
       "roleOrg": "Ruby on Rails 与 Omarchy 创建者",
       "bio": "David Heinemeier Hansson（DHH）是 Ruby on Rails 与 Omarchy 的创建者、37signals 的共同所有人兼联合创始人，也是畅销书作者。他与 Jason Fried 合著《REWORK》《REMOTE》《It Doesn't Have to Be Crazy at Work》和《Getting Real》，并担任 Rails Foundation 主席及 Shopify 董事。",
       "nameEn": "David Heinemeier Hansson (DHH)",
-      "tags": [],
+      "tags": [
+        "special-keynote"
+      ],
       "socialLinks": {
         "website": "https://dhh.dk/",
-        "github": "https://github.com/dhh",
-        "twitter": "https://x.com/dhh"
+        "twitter": "https://x.com/dhh",
+        "github": "https://github.com/dhh"
       },
       "draft": false,
       "keynote": true,
@@ -361,7 +381,7 @@
       "roleOrg": "微软首席项目经理",
       "bio": "拥有十余年微软 Azure AI 经验的资深 AI 产品负责人，专注于语音 AI 与语音智能体。具备产品战略、从零到一产品开发和全球商业化经验，致力于将前沿 AI 技术转化为可规模化的产品和长期业务价值。",
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-device"
       ],
       "socialLinks": {
         "linkedin": "https://www.linkedin.com/in/qinying-liao-7458b358/"
@@ -803,7 +823,7 @@
       "roleOrg": "2net Ltd. 开源嵌入式系统专家",
       "bio": "软件顾问及开源嵌入式系统专家，拥有 20 多年开源嵌入式系统设计与开发经验。他是《Mastering Embedded Linux Programming》作者，也是 aosp-devs 开发者社区的主要推动者，曾多次在 Linux Foundation Embedded Linux Conference 和 FOSDEM 等会议演讲。",
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-ai-on-edge"
       ],
       "socialLinks": {
         "website": "https://2net.co.uk/",
@@ -1058,7 +1078,7 @@
       "roleOrg": "同济大学教授",
       "bio": "同济大学教授、中国计算机学会杰出会员，近三十年来从事软件工程教学与研究，重点关注软件测试、质量保障和智能软件工程，出版二十余部专著及多部译著。",
       "tags": [
-        "sz26-agentic-os-app"
+        "ws-ai-education"
       ],
       "socialLinks": {
         "website": "https://blog.csdn.net/kerryzhu",
@@ -1247,6 +1267,19 @@
       "nameEn": "Weiqi Zhao"
     },
     {
+      "id": "an-chen",
+      "name": "陈安",
+      "roleOrg": "深圳智微通科技联合创始人、董事长兼 CEO",
+      "bio": "清华大学博士、博士后，现任深圳清华大学研究院微流控绿色制造研发中心副主任、深圳智微通科技有限公司联合创始人、董事长兼 CEO。长期从事微流控、液冷及端侧 AI 算力设备的研发与产业化。",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/an-chen.png",
+      "nameEn": "An Chen"
+    },
+    {
       "id": "yi-ru",
       "name": "茹忆",
       "roleOrg": "李未可科技创始人兼 CEO",
@@ -1301,6 +1334,124 @@
       "draft": false,
       "image": "/images/speakers/confirmed/xin-tan.png",
       "nameEn": "Xin Tan"
+    },
+    {
+      "id": "keshu-han",
+      "name": "韩可树",
+      "roleOrg": "北京道瑞智能具身智能开发者",
+      "bio": "具身智能开发者，DORA 社区贡献者。",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/keshu-han.png",
+      "nameEn": "Keshu Han"
+    },
+    {
+      "id": "jiarui-li",
+      "name": "李佳芮",
+      "roleOrg": "句子互动创始人兼 CEO",
+      "bio": "句子互动创始人兼 CEO，深耕 AI 十余年，是国内企业级 Agentic AI 员工领域的开拓者与技术布道者。她是微软 AI MVP、Regional Director，句子互动产品已在千余家大型企业及政府机构落地。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://rui.juzi.bot/",
+        "github": "https://github.com/lijiarui",
+        "linkedin": "https://www.linkedin.com/in/jiarui-li-710277b6/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/jiarui-li.png",
+      "nameEn": "Jiarui Li"
+    },
+    {
+      "id": "canran-tang",
+      "name": "Canran Tang",
+      "roleOrg": "中国科学技术大学研究生",
+      "bio": "中国科学技术大学研究生，研究方向包括具身智能基础设施、机器人中间件、异构 GPU 通信，以及端—边—云机器人推理中的高效数据交换。",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/tang-canran"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/canran-tang.png",
+      "nameEn": "Canran Tang"
+    },
+    {
+      "id": "yang-li",
+      "name": "李扬",
+      "roleOrg": "DORA 社区技术负责人",
+      "bio": "DORA 社区技术负责人、DORA 核心开发者，同时是华为 CANN 核心开发者、M-Robots PMC 委员及 OpenLoong 中间件 SIG 核心成员，长期从事具身智能机器人系统研发及 DORA 生态建设。",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {
+        "website": "https://doracc.com/",
+        "github": "https://github.com/doracn"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yang-li.png",
+      "nameEn": "Yang Li"
+    },
+    {
+      "id": "jiang-tao",
+      "name": "蒋涛",
+      "roleOrg": "CSDN 创始人兼董事长、GOSIM 发起人",
+      "bio": "CSDN 创始人兼董事长、GOSIM 发起人，拥有三十余年软件、互联网与创业经验。曾参与巨人手写电脑、金山词霸和豪杰超级解霸等产品，创办《程序员》杂志，并投资八十余家科技创业公司。",
+      "tags": [
+        "special-keynote"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/jiang-tao.png",
+      "nameEn": "Jiang Tao"
+    },
+    {
+      "id": "zhenwei-pi",
+      "name": "Zhenwei Pi",
+      "roleOrg": "Tensorfer 创始人",
+      "bio": "AI 基础设施创业公司 Tensorfer 创始人，曾联合创建字节跳动 IaaS 业务的计算体系，也是长期的 Linux 内核与 QEMU 贡献者。当前专注于大规模大模型推理中的系统级性能瓶颈，包括 GPUDirect RDMA 权重加载与分布式调度。",
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhenwei-pi.png",
+      "nameEn": "Zhenwei Pi"
+    },
+    {
+      "id": "yuchao-qian",
+      "name": "钱宇超",
+      "roleOrg": "Botiverse 联合创始人兼 CEO",
+      "bio": "多人多智能体群聊协作平台 Raft.build 联合创始人，曾开发 Kimi CLI 与 NoneBot，长期参与开源社区建设。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://stdrc.cc/",
+        "github": "https://github.com/stdrc",
+        "twitter": "https://x.com/istdrc",
+        "linkedin": "https://www.linkedin.com/in/stdrc/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yuchao-qian.png",
+      "nameEn": "Yuchao Qian"
+    },
+    {
+      "id": "weiyang-liu",
+      "name": "Weiyang Liu",
+      "roleOrg": "香港中文大学助理教授",
+      "bio": "香港中文大学助理教授。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/weiyang-liu.png",
+      "nameEn": "Weiyang Liu"
     }
   ]
 }

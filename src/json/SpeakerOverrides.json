@@ -1068,5 +1068,131 @@
       "roleOrg": "Google Cloud 解决方案架构师",
       "bio": "Google Cloud 解决方案架构师，专注于 AI 前沿技术在游戏行业的应用。"
     }
+  },
+  {
+    "sourceName": "陈安",
+    "id": "an-chen",
+    "en": {
+      "name": "An Chen",
+      "roleOrg": "Co-founder, Chairman & CEO, Shenzhen Zhiweitong Technology",
+      "bio": "An Chen is a co-founder, Chairman, and CEO of Shenzhen Zhiweitong Technology and Deputy Director of the Microfluidic Green Manufacturing R&D Center at the Research Institute of Tsinghua University in Shenzhen. He holds a Ph.D. from Tsinghua University and has led research and commercialization work in microfluidics, liquid cooling, and edge AI computing equipment."
+    },
+    "zh": {
+      "name": "陈安",
+      "roleOrg": "深圳智微通科技联合创始人、董事长兼 CEO",
+      "bio": "清华大学博士、博士后，现任深圳清华大学研究院微流控绿色制造研发中心副主任、深圳智微通科技有限公司联合创始人、董事长兼 CEO。长期从事微流控、液冷及端侧 AI 算力设备的研发与产业化。"
+    }
+  },
+  {
+    "sourceName": "可树 韩",
+    "id": "keshu-han",
+    "en": {
+      "name": "Keshu Han",
+      "roleOrg": "Embodied AI Developer, Beijing Dora Intelligence",
+      "bio": "Keshu Han is an embodied AI developer and a contributor to the DORA community."
+    },
+    "zh": {
+      "name": "韩可树",
+      "roleOrg": "北京道瑞智能具身智能开发者",
+      "bio": "具身智能开发者，DORA 社区贡献者。"
+    }
+  },
+  {
+    "sourceName": "李佳芮（Jiarui Li）",
+    "id": "jiarui-li",
+    "en": {
+      "name": "Jiarui Li",
+      "roleOrg": "Founder & CEO, Juzi.bot",
+      "bio": "Jiarui Li is the founder and CEO of Juzi.bot and a serial entrepreneur with more than a decade of experience in AI. A Microsoft AI MVP and Regional Director, she is a pioneer and advocate for enterprise agentic AI employees in China. Juzi.bot's products serve more than a thousand large enterprises and government organizations across retail, public services, finance, internet, and education."
+    },
+    "zh": {
+      "name": "李佳芮",
+      "roleOrg": "句子互动创始人兼 CEO",
+      "bio": "句子互动创始人兼 CEO，深耕 AI 十余年，是国内企业级 Agentic AI 员工领域的开拓者与技术布道者。她是微软 AI MVP、Regional Director，句子互动产品已在千余家大型企业及政府机构落地。"
+    }
+  },
+  {
+    "sourceName": "Canran Tang",
+    "id": "canran-tang",
+    "en": {
+      "name": "Canran Tang",
+      "roleOrg": "Graduate Student, University of Science and Technology of China",
+      "bio": "Canran Tang is a graduate student at the University of Science and Technology of China. His research focuses on embodied-intelligence infrastructure, robotic middleware, heterogeneous GPU communication, and efficient data exchange for end–edge–cloud robot inference."
+    },
+    "zh": {
+      "name": "Canran Tang",
+      "roleOrg": "中国科学技术大学研究生",
+      "bio": "中国科学技术大学研究生，研究方向包括具身智能基础设施、机器人中间件、异构 GPU 通信，以及端—边—云机器人推理中的高效数据交换。"
+    }
+  },
+  {
+    "sourceName": "李扬",
+    "id": "yang-li",
+    "en": {
+      "name": "Yang Li",
+      "roleOrg": "Technical Lead, DORA Community",
+      "bio": "Yang Li is the technical lead of the DORA community and a core DORA developer. He is also a core Huawei CANN developer, an M-Robots PMC member, and a core member of the OpenLoong Middleware SIG. He works on embodied-intelligence robot systems and the development and growth of the DORA ecosystem."
+    },
+    "zh": {
+      "name": "李扬",
+      "roleOrg": "DORA 社区技术负责人",
+      "bio": "DORA 社区技术负责人、DORA 核心开发者，同时是华为 CANN 核心开发者、M-Robots PMC 委员及 OpenLoong 中间件 SIG 核心成员，长期从事具身智能机器人系统研发及 DORA 生态建设。"
+    }
+  },
+  {
+    "sourceName": "jiangtao",
+    "id": "jiang-tao",
+    "en": {
+      "name": "Jiang Tao",
+      "roleOrg": "Founder & Chairman, CSDN",
+      "bio": "Jiang Tao is the founder and chairman of CSDN and the initiator of GOSIM. Across more than 30 years in software, the internet, and entrepreneurship, he has led products including Giant Handwriting Computer, Kingsoft PowerWord, and Super Decoder, founded Programmer Magazine, and invested in more than 80 technology startups."
+    },
+    "zh": {
+      "name": "蒋涛",
+      "roleOrg": "CSDN 创始人兼董事长、GOSIM 发起人",
+      "bio": "CSDN 创始人兼董事长、GOSIM 发起人，拥有三十余年软件、互联网与创业经验。曾参与巨人手写电脑、金山词霸和豪杰超级解霸等产品，创办《程序员》杂志，并投资八十余家科技创业公司。"
+    }
+  },
+  {
+    "sourceName": "zhenwei pi",
+    "id": "zhenwei-pi",
+    "en": {
+      "name": "Zhenwei Pi",
+      "roleOrg": "Founder, Tensorfer",
+      "bio": "Zhenwei Pi is the founder of Tensorfer, an AI infrastructure startup. He previously co-founded the compute pillar of ByteDance's IaaS business and is a long-time Linux kernel and QEMU contributor. His current work focuses on system-level performance bottlenecks in large-scale LLM inference, including GPUDirect RDMA weight loading and distributed scheduling."
+    },
+    "zh": {
+      "name": "Zhenwei Pi",
+      "roleOrg": "Tensorfer 创始人",
+      "bio": "AI 基础设施创业公司 Tensorfer 创始人，曾联合创建字节跳动 IaaS 业务的计算体系，也是长期的 Linux 内核与 QEMU 贡献者。当前专注于大规模大模型推理中的系统级性能瓶颈，包括 GPUDirect RDMA 权重加载与分布式调度。"
+    }
+  },
+  {
+    "sourceName": "钱宇超 RC",
+    "id": "yuchao-qian",
+    "en": {
+      "name": "Yuchao Qian",
+      "roleOrg": "Co-founder & CEO, Botiverse",
+      "bio": "Yuchao Qian is the co-founder of Raft.build, a multiplayer, multi-agent collaboration platform. He previously created Kimi CLI and NoneBot and has contributed to open-source communities for many years."
+    },
+    "zh": {
+      "name": "钱宇超",
+      "roleOrg": "Botiverse 联合创始人兼 CEO",
+      "bio": "多人多智能体群聊协作平台 Raft.build 联合创始人，曾开发 Kimi CLI 与 NoneBot，长期参与开源社区建设。"
+    }
+  },
+  {
+    "sourceName": "Weiyang Liu",
+    "id": "weiyang-liu",
+    "en": {
+      "name": "Weiyang Liu",
+      "roleOrg": "Assistant Professor, The Chinese University of Hong Kong",
+      "bio": "Weiyang Liu is an Assistant Professor at The Chinese University of Hong Kong."
+    },
+    "zh": {
+      "name": "Weiyang Liu",
+      "roleOrg": "香港中文大学助理教授",
+      "bio": "香港中文大学助理教授。"
+    }
   }
 ]

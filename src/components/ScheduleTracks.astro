@@ -7,6 +7,7 @@ import {
   getSpeakerImagePath,
   SPEAKER_IMAGE_FALLBACK_HANDLER,
 } from "utils/speaker-images"
+import { programCategoryColor } from "utils/program-colors"
 import "styles/SchedulePreview.scss"
 
 interface Props {
@@ -20,16 +21,41 @@ const { lang = "en", speakerBasePath = "/speakers/", previewMode = false } = Ast
 const previewLang: "en" | "zh" = lang === "zh" ? "zh" : "en"
 const previewCopy = {
   en: {
-    tracks: "Conference Tracks",
+    sidebarTitle: "Browse schedule",
+    sidebarAria: "Schedule categories",
+    tracks: "Tracks",
+    workshops: "Workshops",
     sessions: (count: number) => `${count} talk${count === 1 ? "" : "s"}`,
+    summary: (talks: number, categories: number) => `All ${talks} talks · ${categories} program categories`,
     note: "Session dates, times, and rooms will be added once confirmed.",
   },
   zh: {
+    sidebarTitle: "筛选议程",
+    sidebarAria: "议程分类",
     tracks: "分论坛主题",
+    workshops: "工作坊",
     sessions: (count: number) => `${count} 场演讲`,
+    summary: (talks: number, categories: number) => `全部共 ${talks} 场演讲 · ${categories} 个议程分类`,
     note: "具体日期、时间与会场确认后将在此补充。",
   },
 }[previewLang]
+const previewTalkCount = schedulePreview.tracks.reduce(
+  (count, track) => count + track.talks.length,
+  0,
+)
+const previewFirstTrackId = schedulePreview.tracks[0]?.id
+const previewSidebarGroups = [
+  {
+    id: "tracks",
+    label: previewCopy.tracks,
+    tracks: schedulePreview.tracks.filter((track) => !track.id.startsWith("ws-")),
+  },
+  {
+    id: "workshops",
+    label: previewCopy.workshops,
+    tracks: schedulePreview.tracks.filter((track) => track.id.startsWith("ws-")),
+  },
+].filter((group) => group.tracks.length > 0)
 const previewSpeakerData = previewLang === "zh" ? speakersZh : speakersEn
 const previewSpeakerById = new Map(
   previewSpeakerData.speakers.map((speaker: any) => [speaker.id, speaker]),
@@ -181,17 +207,7 @@ const getSessions = (catId: string, day: string) => {
     .sort((a, b) => (a.timeSlot || "").localeCompare(b.timeSlot || ""))
 }
 
-const TRACK_COLORS: Record<string, string> = {
-  // Keep these in sync with ProgramSection.astro's six homepage track inks.
-  "agentic-ai-summit":          "#EF6A3A",
-  "agentic-ai-on-edge":         "#D5A24A",
-  "ai-generative-app":          "#75A49C",
-  "open-source-model":          "#91A66B",
-  "open-source-robotics":       "#8096B2",
-  "agentic-device":             "#A48692",
-}
-const WORKSHOP_COLOR = "#6B6450"
-const trackColor = (id: string) => TRACK_COLORS[id] || WORKSHOP_COLOR
+const trackColor = programCategoryColor
 
 const TYPE_BG_FG: Record<string, { bg: string; fg: string }> = {
   keynote:   { bg: "#3F3C2D", fg: "#EAE6D2" },
@@ -431,18 +447,30 @@ const gridDays: GridDay[] = days.map(d => {
   <section class="schedule-preview-mode" data-bg-section="lightgray" data-theme-section="light">
     <div class="preview-container">
       <div class="preview-body">
-        <aside class="preview-sidebar">
-          <p class="preview-group-label">{previewCopy.tracks}</p>
-          {schedulePreview.tracks.map((track, index) => (
-            <button
-              class={`preview-track-button${index === 0 ? " active" : ""}`}
-              data-preview-track-button={track.id}
-              style={`--tc: ${trackColor(track.id)}`}
-              type="button"
-            >
-              <span class="preview-track-dot"></span>
-              <span>{track.name[previewLang]}</span>
-            </button>
+        <aside class="preview-sidebar" aria-label={previewCopy.sidebarAria}>
+          <div class="preview-sidebar-heading">
+            <p class="preview-sidebar-title">{previewCopy.sidebarTitle}</p>
+            <p class="preview-sidebar-summary">
+              {previewCopy.summary(previewTalkCount, schedulePreview.tracks.length)}
+            </p>
+          </div>
+          {previewSidebarGroups.map((group) => (
+            <div class="preview-track-group" data-preview-track-group={group.id}>
+              <p class="preview-group-label">{group.label}</p>
+              <div class="preview-track-options">
+                {group.tracks.map((track) => (
+                  <button
+                    class={`preview-track-button${track.id === previewFirstTrackId ? " active" : ""}`}
+                    data-preview-track-button={track.id}
+                    style={`--tc: ${trackColor(track.id)}`}
+                    type="button"
+                  >
+                    <span class="preview-track-dot"></span>
+                    <span>{track.name[previewLang]}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
           ))}
         </aside>
 

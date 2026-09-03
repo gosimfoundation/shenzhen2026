@@ -117,6 +117,7 @@ export function setupSpeakerFilters() {
       } else if (activeCategories.has(category)) {
         activeCategories.delete(category);
       } else if (category) {
+        activeCategories.clear();
         activeCategories.add(category);
       }
 

@@ -6,6 +6,12 @@
       "id": "all"
     },
     {
+      "id": "special-keynote",
+      "name": "Keynote Plenary",
+      "nameZh": "Keynote 全体大会",
+      "group": "tracks"
+    },
+    {
       "id": "sz26-agentic-ai-summit",
       "name": "Agentic AI Summit",
       "nameZh": "智能体 AI 峰会",
@@ -46,6 +52,18 @@
       "name": "AI Education Workshop",
       "nameZh": "AI 教育工作坊",
       "group": "workshops"
+    },
+    {
+      "id": "ws-dora",
+      "name": "DORA Workshop",
+      "nameZh": "DORA 工作坊",
+      "group": "workshops"
+    },
+    {
+      "id": "ws-vllm",
+      "name": "vLLM Workshop",
+      "nameZh": "vLLM 工作坊",
+      "group": "workshops"
     }
   ],
   "speakers": [
@@ -54,11 +72,13 @@
       "name": "David Heinemeier Hansson (DHH)",
       "roleOrg": "Creator of Ruby on Rails & Omarchy",
       "bio": "David Heinemeier Hansson (DHH) is the creator of Ruby on Rails and Omarchy, a co-owner and co-founder of 37signals, and a best-selling author. He co-authored REWORK, REMOTE, It Doesn't Have to Be Crazy at Work, and Getting Real with Jason Fried. He also chairs the Rails Foundation and serves on Shopify's board of directors.",
-      "tags": [],
+      "tags": [
+        "special-keynote"
+      ],
       "socialLinks": {
         "website": "https://dhh.dk/",
-        "github": "https://github.com/dhh",
-        "twitter": "https://x.com/dhh"
+        "twitter": "https://x.com/dhh",
+        "github": "https://github.com/dhh"
       },
       "draft": false,
       "keynote": true,
@@ -341,7 +361,7 @@
       "roleOrg": "Principal Program Manager, Microsoft",
       "bio": "Senior AI Product Leader with 10+ years at Microsoft Azure AI, specializing in Speech AI and Voice Agents. Experienced in product strategy, 0-to-1 product development, and global commercialization. Combines B2B and B2C product expertise with deep strengths in human-centered design, AI product experience, and ecosystem development to transform cutting-edge AI technologies into scalable products and lasting business value.",
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-device"
       ],
       "socialLinks": {
         "linkedin": "https://www.linkedin.com/in/qinying-liao-7458b358/"
@@ -753,7 +773,7 @@
       "roleOrg": "Professional Geek, 2net Ltd.",
       "bio": "Chris Simmonds is a software consultant and professional geek living in Northern England. He has more than two decades of experience in designing and building open-source embedded systems. He is a big believer in Open Source and the importance of community.  He is the author of the book “Mastering Embedded Linux Programming”, and is the moving force behind the aosp-devs developer community. He is a frequent presenter at open source and embedded conferences, including the Linux Foundation Embedded Linux Conference and FOSDEM. You can see some of his work on the “Inner Penguin” blog at 2net.co.uk",
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-ai-on-edge"
       ],
       "socialLinks": {
         "website": "https://2net.co.uk/",
@@ -991,7 +1011,7 @@
       "roleOrg": "Professor, Tongji University",
       "bio": "Kerry Zhu is a professor at Tongji University and a Distinguished Member of the China Computer Federation. He has worked in software-engineering education and research for nearly three decades, with a focus on software testing, quality assurance, and intelligent software engineering.",
       "tags": [
-        "sz26-agentic-os-app"
+        "ws-ai-education"
       ],
       "socialLinks": {
         "website": "https://blog.csdn.net/kerryzhu",
@@ -1166,6 +1186,18 @@
       "image": "/images/speakers/confirmed/weiqi-zhao.png"
     },
     {
+      "id": "an-chen",
+      "name": "An Chen",
+      "roleOrg": "Co-founder, Chairman & CEO, Shenzhen Zhiweitong Technology",
+      "bio": "An Chen is a co-founder, Chairman, and CEO of Shenzhen Zhiweitong Technology and Deputy Director of the Microfluidic Green Manufacturing R&D Center at the Research Institute of Tsinghua University in Shenzhen. He holds a Ph.D. from Tsinghua University and has led research and commercialization work in microfluidics, liquid cooling, and edge AI computing equipment.",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/an-chen.png"
+    },
+    {
       "id": "yi-ru",
       "name": "Yi Ru",
       "roleOrg": "Founder & CEO, Lawaken Technology",
@@ -1216,6 +1248,116 @@
       "socialLinks": {},
       "draft": false,
       "image": "/images/speakers/confirmed/xin-tan.png"
+    },
+    {
+      "id": "keshu-han",
+      "name": "Keshu Han",
+      "roleOrg": "Embodied AI Developer, Beijing Dora Intelligence",
+      "bio": "Keshu Han is an embodied AI developer and a contributor to the DORA community.",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/keshu-han.png"
+    },
+    {
+      "id": "jiarui-li",
+      "name": "Jiarui Li",
+      "roleOrg": "Founder & CEO, Juzi.bot",
+      "bio": "Jiarui Li is the founder and CEO of Juzi.bot and a serial entrepreneur with more than a decade of experience in AI. A Microsoft AI MVP and Regional Director, she is a pioneer and advocate for enterprise agentic AI employees in China. Juzi.bot's products serve more than a thousand large enterprises and government organizations across retail, public services, finance, internet, and education.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://rui.juzi.bot/",
+        "github": "https://github.com/lijiarui",
+        "linkedin": "https://www.linkedin.com/in/jiarui-li-710277b6/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/jiarui-li.png"
+    },
+    {
+      "id": "canran-tang",
+      "name": "Canran Tang",
+      "roleOrg": "Graduate Student, University of Science and Technology of China",
+      "bio": "Canran Tang is a graduate student at the University of Science and Technology of China. His research focuses on embodied-intelligence infrastructure, robotic middleware, heterogeneous GPU communication, and efficient data exchange for end–edge–cloud robot inference.",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/tang-canran"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/canran-tang.png"
+    },
+    {
+      "id": "yang-li",
+      "name": "Yang Li",
+      "roleOrg": "Technical Lead, DORA Community",
+      "bio": "Yang Li is the technical lead of the DORA community and a core DORA developer. He is also a core Huawei CANN developer, an M-Robots PMC member, and a core member of the OpenLoong Middleware SIG. He works on embodied-intelligence robot systems and the development and growth of the DORA ecosystem.",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {
+        "website": "https://doracc.com/",
+        "github": "https://github.com/doracn"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yang-li.png"
+    },
+    {
+      "id": "jiang-tao",
+      "name": "Jiang Tao",
+      "roleOrg": "Founder & Chairman, CSDN",
+      "bio": "Jiang Tao is the founder and chairman of CSDN and the initiator of GOSIM. Across more than 30 years in software, the internet, and entrepreneurship, he has led products including Giant Handwriting Computer, Kingsoft PowerWord, and Super Decoder, founded Programmer Magazine, and invested in more than 80 technology startups.",
+      "tags": [
+        "special-keynote"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/jiang-tao.png"
+    },
+    {
+      "id": "zhenwei-pi",
+      "name": "Zhenwei Pi",
+      "roleOrg": "Founder, Tensorfer",
+      "bio": "Zhenwei Pi is the founder of Tensorfer, an AI infrastructure startup. He previously co-founded the compute pillar of ByteDance's IaaS business and is a long-time Linux kernel and QEMU contributor. His current work focuses on system-level performance bottlenecks in large-scale LLM inference, including GPUDirect RDMA weight loading and distributed scheduling.",
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhenwei-pi.png"
+    },
+    {
+      "id": "yuchao-qian",
+      "name": "Yuchao Qian",
+      "roleOrg": "Co-founder & CEO, Botiverse",
+      "bio": "Yuchao Qian is the co-founder of Raft.build, a multiplayer, multi-agent collaboration platform. He previously created Kimi CLI and NoneBot and has contributed to open-source communities for many years.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://stdrc.cc/",
+        "github": "https://github.com/stdrc",
+        "twitter": "https://x.com/istdrc",
+        "linkedin": "https://www.linkedin.com/in/stdrc/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yuchao-qian.png"
+    },
+    {
+      "id": "weiyang-liu",
+      "name": "Weiyang Liu",
+      "roleOrg": "Assistant Professor, The Chinese University of Hong Kong",
+      "bio": "Weiyang Liu is an Assistant Professor at The Chinese University of Hong Kong.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/weiyang-liu.png"
     }
   ]
 }

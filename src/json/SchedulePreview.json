@@ -1,6 +1,55 @@
 {
   "tracks": [
     {
+      "id": "special-keynote",
+      "sourceId": "special-keynote",
+      "name": {
+        "en": "Keynote Plenary",
+        "zh": "Keynote 全体大会"
+      },
+      "talks": [
+        {
+          "ref": "P-124",
+          "originalTitle": "从开源软件到开源智能：硅基时间正在重写开发者世界",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "From Open-Source Software to Open Intelligence: Silicon Time Is Rewriting the Developer World",
+            "zh": "从开源软件到开源智能：硅基时间正在重写开发者世界"
+          },
+          "slug": "p-124-从开源软件到开源智能-硅基时间正在重写开发者世界",
+          "speakers": [
+            "jiang-tao"
+          ],
+          "originalAbstract": "AI 正在把开源从“软件协作”推向“智能协作”。当代码生成、Agent 与自主执行开始进入开发全流程，开发者创造软件的方式、开源社区的协作模式，以及人与机器的角色边界都在被重新定义。本次分享将从“硅基时间”的视角，探讨开源如何从代码与软件走向模型、Agent 与智能系统，以及这场变化将为开发者带来怎样的新机会。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "AI is pushing open source from software collaboration toward intelligence collaboration. This keynote explores how code generation, agents, and autonomous execution are redefining software creation, community collaboration, and the boundary between developers and machines—and what new opportunities this shift creates.",
+            "zh": "AI 正推动开源从“软件协作”走向“智能协作”。本次主旨演讲探讨代码生成、智能体与自主执行如何重新定义软件创造、社区协作及人与机器的边界，并分析这场变化为开发者带来的新机会。"
+          }
+        },
+        {
+          "ref": "P-123",
+          "originalTitle": "Omarchy: Beautiful, Fun & Agentic Linux",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Omarchy: Beautiful, Fun & Agentic Linux",
+            "zh": "Omarchy：美观、有趣、面向智能体的 Linux"
+          },
+          "slug": "p-123-omarchy-beautiful-fun-agentic-linux",
+          "speakers": [
+            "dhh"
+          ],
+          "originalAbstract": "The age of agents demand a new, AI-native operating system. Omarchy is it. Beautiful, fun & agentic, where you can vibe code your way through every alteration, tweak, and desire to your machine.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "The age of agents calls for an AI-native operating system. DHH presents Omarchy, a beautiful, fun, and agentic Linux environment designed so users can shape and customize their machines through AI-assisted coding.",
+            "zh": "智能体时代需要 AI 原生操作系统。DHH 将介绍 Omarchy：一个美观、有趣且面向智能体的 Linux 环境，让用户能够借助 AI 编程塑造并定制自己的计算机。"
+          }
+        }
+      ],
+      "originalName": "Keynote Plenary"
+    },
+    {
       "id": "agentic-ai-summit",
       "sourceId": "sz26-agentic-ai-summit",
       "name": {
@@ -330,6 +379,25 @@
             "en": "As AI glasses move toward the mass market, competition is shifting from the number of features to the depth of memory. This talk argues that long-term memory is becoming core AI infrastructure and may define the next generation of wearable agents.",
             "zh": "随着 AI 眼镜走向大众市场，竞争重点正从“功能数量”转向“记忆深度”。本次演讲探讨长期记忆如何成为 AI 基础设施的核心能力，并定义下一代可穿戴智能体。"
           }
+        },
+        {
+          "ref": "P-120",
+          "originalTitle": "AI 原生组织的构建（Building the AI-Native Organization）",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Building the AI-Native Organization",
+            "zh": "AI 原生组织的构建"
+          },
+          "slug": "p-120-ai-原生组织的构建-building-the-ai-native-organization",
+          "speakers": [
+            "jiarui-li"
+          ],
+          "originalAbstract": "先问一个最朴素的问题：组织为什么存在。因为工作要交给能干的执行单元，而过去能干活的只有人，所以才有了团队、层级和流程。现在这个前提变了，执行能力可以被复制、边际成本趋近于零，组织的最小单元就从一支团队变成一个人加一支 Agent 团队。\n顺着这个前提往下推三步。第一步，人手里剩下的是不可替代的两成：判断、品味、在场、关系、手艺，个人价值等于关系加手艺，再乘以判断加品味加在场，两边缺一边就归零。第二步，管理动作从管人变成分活、定义、验收，做过三次的事应该写成 SOP，做过五次的事应该被 AI 接管。第三步，公司结构从串行的流程变成并行的网络，不停把串行的瓶颈压掉，这也是第三代公司和前两代最大的区别。\n在自己公司里跑通只是一半。要让它在别人的生意里也成立，得有人把这套东西开进客户的真实业务，这就是 FDE。对内，AI 原生组织落到每个人身上就是 FDE 这种能力，做商业化、做产品、做研发都要有；对外，FDE 是把 AI 员工送上岗、并对业务结果负责的那一环。句子互动 2023 年就开始按结果交付，比硅谷把这个岗位炒热早了三年。支撑它的是 7 大产品基建 × FDE · 三层一体：模型是发动机，七大产品基建是整车工程，FDE 是把整车开进客户业务的那一环。一套基建复制到多个岗位和多个行业，交付按业务结果衡量，不按项目人头衡量。\n这场分享会用真实落地经验回答四个问题：哪些流程值得交给 Agent，人和 Agent 的责任边界怎么划，收益怎么衡量，以及合规要求高的行业里怎么让 Agent 可控上线。\n\nStart with the plainest question: why do organizations exist. Because work has to go to a unit that can execute it, and for all of history the only such unit was a person, which is where teams, hierarchies and processes come from. That premise has changed. Execution can now be copied at close to zero marginal cost, so the smallest unit of an organization shifts from a team to one person plus a team of agents.\nThree consequences follow. First, what stays with people is the irreplaceable twenty percent: judgment, taste, presence, relationships and craft. Personal value is relationships plus craft, multiplied by judgment plus taste plus presence, and it collapses to zero if either side is missing. Second, management becomes assigning the work, defining what done means, and accepting the result. Anything done three times should become an SOP, and anything done five times should be taken over by AI. Third, the company moves from a serial process to a parallel network with the serial bottlenecks squeezed out, which is what separates a third generation company from the two that came before it.\nProving this inside your own company is only half the job. For it to hold inside someone else business, a person has to drive it into their real operations, and that is FDE. Internally, an AI-native organization comes down to FDE as a capability that commercial, product and engineering people all need. Externally, FDE is the part that puts AI employees to work and owns the business outcome. Juzi.bot started delivering against results in 2023, three years before the role became the hottest job in Silicon Valley. Underneath sits seven product infrastructures working as one across three layers, with FDE running through them. The model is the engine, the seven infrastructures are the whole vehicle engineering, and FDE drives that vehicle into the customer business. One set of infrastructure replicates across roles and industries, and delivery is measured by business outcomes rather than project headcount.\nDrawing on real deployments, the talk answers four questions: which workflows are worth handing to agents, where the responsibility line between people and agents sits, how return is measured, and how agents go live in a controlled way in regulated industries.",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "Drawing on real enterprise deployments, this talk explores how organizations change when execution can be delegated to teams of agents. It covers the new human role, management through task definition and acceptance, parallel organizational structures, FDE capabilities, and controlled agent deployment in regulated industries.",
+            "zh": "本次演讲结合真实企业落地经验，探讨当执行能力可以交给智能体团队后，组织结构将如何变化。内容涵盖人的新角色、以任务定义和验收为核心的管理方式、并行组织、FDE 能力，以及合规行业中的可控智能体上线。"
+          }
         }
       ],
       "originalName": "Agentic AI Summit"
@@ -494,6 +562,44 @@
             "en": "This session explores on-device agentic knowledge work under strict memory and model-size constraints. It combines cache-augmented generation, recursive language models, and grounded evaluation, with examples including cited legal analysis on a Raspberry Pi and curriculum retrieval on Android.",
             "zh": "本次演讲探讨在严格内存与模型规模限制下完成端侧智能体知识工作的系统方法，结合缓存增强生成、递归语言模型和有依据的评测，并展示树莓派法律分析与 Android 课程检索等案例。"
           }
+        },
+        {
+          "ref": "P-71",
+          "originalTitle": "Which operating system is best for agentic mobile devices?",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Which Operating System Is Best for Agentic Mobile Devices?",
+            "zh": "哪种操作系统最适合智能体移动设备？"
+          },
+          "slug": "p-71-which-operating-system-is-best-for-agentic-mobile-devices",
+          "speakers": [
+            "chris-simmonds"
+          ],
+          "originalAbstract": "As AI-centred mobile devices diverge from smart phones we have the opportunity to reconsider which operating system to use. Android has a clear advantage right now because it has wide hardware support, but in a world that is less reliant on apps, Android has a lot of unnecessary baggage.\n\nIn this talk I look look at alternative operating systems, some of which have been around for a long time and are surprisingly mature. Among them are: Sailfish OS, which can trace a lineage back to the Linux-based phones from Nokia; Ubuntu Touch, which is a community project that carries on the work started by Canonical; and postMarketOS, which is a completely community-driven mobile OS. Or maybe something entirely new, but drawing on the vast expertise that rests in these projects. Running through each of these is a strong basis in Open Source components, which means that there is no lock-in to a single contributor (as with Android), and maximises shared value.\n\nThere are many options. Come along to find out what they are and the tradeoffs of each one.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "The talk explores alternative operating systems for agentic mobile devices, highlighting Sailfish OS, Ubuntu Touch, and postMarketOS, all rooted in open-source principles. These systems offer flexibility and avoid vendor lock-in, contrasting with Android's current dominance but unnecessary complexity. The discussion aims to identify the best fit for future AI-centric mobile devices.",
+            "zh": "当以 AI 为中心的移动设备逐渐区别于智能手机，我们有机会重新考虑操作系统的选择。本次演讲将比较 Sailfish OS、Ubuntu Touch 和 postmarketOS 等成熟的替代方案；它们建立在开源组件之上，可避免被单一贡献者锁定。演讲也会说明 Android 的硬件支持优势、面向应用的冗余负担，以及不同方案各自的权衡。"
+          }
+        },
+        {
+          "ref": "P-109",
+          "originalTitle": "《从部件到整机：端侧AI液冷算力设备的规模化落地路径》",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "From Components to Complete Systems: Scaling Liquid-Cooled Edge AI Computing Devices",
+            "zh": "从部件到整机：端侧 AI 液冷算力设备的规模化落地路径"
+          },
+          "slug": "p-109-从部件到整机-端侧ai液冷算力设备的规模化落地路径",
+          "speakers": [
+            "an-chen"
+          ],
+          "originalAbstract": "1. 开篇：立足端侧AI算力散热瓶颈，点明液冷从部件突破到整机规模化的行业意义。\n2. 研发与转化：简述部件级突破与整机级集成要点，及平台化、标准化对规模化的助力。\n3. 核心亮点：聚焦液冷算力设备在散热效率、环境适应性、运维可靠性等方面的本征优势及应用场景。\n总结：展望端侧AI液冷算力设备规模化应用价值与市场发展潜力。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk examines how liquid-cooled edge AI computing equipment can move from component-level breakthroughs to scalable complete systems. It covers integration, platform standardization, thermal efficiency, environmental adaptability, operational reliability, and real-world deployment scenarios.",
+            "zh": "本次演讲探讨端侧 AI 液冷算力设备如何从部件级突破走向整机规模化，涵盖系统集成、平台化与标准化、散热效率、环境适应性、运维可靠性及实际应用场景。"
+          }
         }
       ],
       "originalName": "Agentic AI on Edge"
@@ -506,25 +612,6 @@
         "zh": "智能体操作系统与应用"
       },
       "talks": [
-        {
-          "ref": "P-31",
-          "originalTitle": "Voice AI Is Entering Its Second Generation: Lessons from Enterprise Voice Agent Deployments",
-          "originalLanguage": "en",
-          "title": {
-            "en": "Voice AI Is Entering Its Second Generation: Lessons from Enterprise Voice Agent Deployments",
-            "zh": "语音 AI 正迈入第二代：企业级语音智能体部署经验"
-          },
-          "slug": "p-31-voice-ai-is-entering-its-second-generation-lessons-from-enterprise-voice-agent-deployments",
-          "speakers": [
-            "qinying-liao"
-          ],
-          "originalAbstract": "In this talk, I'll share six industry shifts that are redefining Voice AI—from intelligence to execution, from speech to conversation, from APIs to platforms, and ultimately from conversations to long-term relationships. While these patterns first emerged in enterprise deployments, they point toward the future of open-source AI infrastructure and consumer AI experiences.",
-          "originalAbstractLanguage": "en",
-          "overview": {
-            "en": "The talk discusses six key industry shifts transforming Voice AI, including moving from intelligence to execution and from APIs to platforms. These changes, initially seen in enterprise voice agent deployments, signal the future of open-source AI infrastructure and consumer AI experiences. The focus is on evolving Voice AI from short interactions to long-term relationships.",
-            "zh": "本次演讲探讨了六大行业趋势，正在重塑语音AI，包括从智能到执行、从语音到对话、从API到平台，最终从对话到长期关系。这些变化最初出现在企业语音智能体部署中，预示了开源AI基础设施和消费者AI体验的未来。演讲重点在于语音AI从短期互动向长期关系的演进。"
-          }
-        },
         {
           "ref": "P-58",
           "originalTitle": "SpecArtisans：面向 AI 编程的可验证 Spec-Driven 开发范式",
@@ -562,25 +649,6 @@
           "overview": {
             "en": "Agentic AI is helping simplify contributions to Mobile Linux by assisting with code understanding, navigation, debugging, and idea implementation. It makes open-source development more accessible, especially for newcomers. This talk explores how agentic AI is already supporting contributions and its potential to enhance collaboration in the Mobile Linux community.",
             "zh": "Agentic AI 正在帮助简化对 Mobile Linux 的贡献，通过协助代码理解、系统导航、调试和实现想法，使开源开发更易上手。它特别对新手有帮助，使更多人能够参与。本次演讲将探讨 Agentic AI 如何支持当前的贡献，并探索其在增强 Mobile Linux 社区协作方面的潜力。"
-          }
-        },
-        {
-          "ref": "P-71",
-          "originalTitle": "Which operating system is best for agentic mobile devices?",
-          "originalLanguage": "en",
-          "title": {
-            "en": "Which Operating System Is Best for Agentic Mobile Devices?",
-            "zh": "哪种操作系统最适合智能体移动设备？"
-          },
-          "slug": "p-71-which-operating-system-is-best-for-agentic-mobile-devices",
-          "speakers": [
-            "chris-simmonds"
-          ],
-          "originalAbstract": "As AI-centred mobile devices diverge from smart phones we have the opportunity to reconsider which operating system to use. Android has a clear advantage right now because it has wide hardware support, but in a world that is less reliant on apps, Android has a lot of unnecessary baggage.\n\nIn this talk I look look at alternative operating systems, some of which have been around for a long time and are surprisingly mature. Among them are: Sailfish OS, which can trace a lineage back to the Linux-based phones from Nokia; Ubuntu Touch, which is a community project that carries on the work started by Canonical; and postMarketOS, which is a completely community-driven mobile OS. Or maybe something entirely new, but drawing on the vast expertise that rests in these projects. Running through each of these is a strong basis in Open Source components, which means that there is no lock-in to a single contributor (as with Android), and maximises shared value.\n\nThere are many options. Come along to find out what they are and the tradeoffs of each one.",
-          "originalAbstractLanguage": "en",
-          "overview": {
-            "en": "The talk explores alternative operating systems for agentic mobile devices, highlighting Sailfish OS, Ubuntu Touch, and postMarketOS, all rooted in open-source principles. These systems offer flexibility and avoid vendor lock-in, contrasting with Android's current dominance but unnecessary complexity. The discussion aims to identify the best fit for future AI-centric mobile devices.",
-            "zh": "当以 AI 为中心的移动设备逐渐区别于智能手机，我们有机会重新考虑操作系统的选择。本次演讲将比较 Sailfish OS、Ubuntu Touch 和 postmarketOS 等成熟的替代方案；它们建立在开源组件之上，可避免被单一贡献者锁定。演讲也会说明 Android 的硬件支持优势、面向应用的冗余负担，以及不同方案各自的权衡。"
           }
         },
         {
@@ -658,25 +726,6 @@
           "overview": {
             "en": "MemOS 2.0 addresses the evolution of memory systems from static management to runtime state control, focusing on long-term state maintenance, dynamic scheduling, and memory governance. It introduces runtime memory management, versioning, native models, and a foundational memory model, with applications in agent, companion, and enterprise services.",
             "zh": "MemOS 2.0 从静态记忆管理升级为运行时状态管理，强调长期状态维护、动态调度与记忆治理。它引入运行态记忆管理、记忆版本化、原生模型及 Memory 基础模型底座，并结合 Agent、陪伴及企业服务等场景探讨下一代记忆系统的技术路径与落地机会。"
-          }
-        },
-        {
-          "ref": "P-95",
-          "originalTitle": "AgentOS: Transforming Autonomous Programming Platforms into a New Type of Operating System",
-          "originalLanguage": "en",
-          "title": {
-            "en": "AgentOS: Transforming Autonomous Programming Platforms into a New Type of Operating System",
-            "zh": "AgentOS：将自主编程平台转变为一种新型操作系统"
-          },
-          "slug": "p-95-agentos-transforming-autonomous-programming-platforms-into-a-new-type-of-operating-system",
-          "speakers": [
-            "kerry-zhu"
-          ],
-          "originalAbstract": "Ecosystem Path for AgentOS: Lessons from Linux's Open‑Source Infrastructure Success.\nThis presentation will focus on six core topics. First, we will discuss why R&D automation urgently requires an operating system‑level solution. Then, I will define AgentOS in the context of code delivery scenarios and introduce its reference architecture. After that, we will dive into key aspects of multi‑agent Harness engineering and explore the role of open‑source factors. Finally, we will look ahead to AgentOS's development roadmap and key milestones.",
-          "originalAbstractLanguage": "en",
-          "overview": {
-            "en": "AgentOS is a new type of operating system designed to transform autonomous programming platforms. The talk outlines its ecosystem path, inspired by Linux's open-source success, and covers six core topics including R&D automation needs, reference architecture, multi-agent engineering, and future development.",
-            "zh": "AgentOS 是一种新型操作系统，旨在转变自主编程平台。本次演讲将围绕其生态系统路径展开，借鉴 Linux 开源成功经验，涵盖六大核心主题，包括研发自动化需求、参考架构、多智能体工程及未来开发路线图。"
           }
         },
         {
@@ -772,6 +821,25 @@
           "overview": {
             "en": "This talk presents an automated AI mini-game production pipeline built with Harness engineering, a two-layer automated review system, and an ADK agent-development toolkit. The approach improves generation quality and production efficiency while reducing overall cost.",
             "zh": "本次演讲介绍如何结合 Harness 工程、双层自动化评审体系与 ADK 智能体开发工具集，构建从设计到量产的 AI 小游戏自动化制作管线，在提升质量和效率的同时降低综合成本。"
+          }
+        },
+        {
+          "ref": "P-127",
+          "originalTitle": "Agent Harness for Multiplayer Collaboration",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Agent Harness for Multiplayer Collaboration",
+            "zh": "面向多人协作的 Agent Harness"
+          },
+          "slug": "p-127-agent-harness-for-multiplayer-collaboration",
+          "speakers": [
+            "yuchao-qian"
+          ],
+          "originalAbstract": "关于多人多 Agent 协作场景的 Agent Harness 设计。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk explores Agent Harness design for collaborative environments involving multiple people and multiple AI agents.",
+            "zh": "本次演讲探讨多人、多 AI 智能体协作场景中的 Agent Harness 设计。"
           }
         }
       ],
@@ -993,6 +1061,25 @@
           "overview": {
             "en": "This session introduces openvela, Xiaomi's open-source AIoT operating system, and its evolution into a foundation for AI hardware agents. It covers the project's development, core technical strengths, open-source ecosystem, production experience at large scale, and future roadmap.",
             "zh": "本次演讲介绍小米开源 AIoT 操作系统 openvela 如何演进为 AI 硬件智能体的基础底座，涵盖发展历程、核心技术优势、大规模量产实践、开源生态建设与未来规划。"
+          }
+        },
+        {
+          "ref": "P-31",
+          "originalTitle": "Voice AI Is Entering Its Second Generation: Lessons from Enterprise Voice Agent Deployments",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Voice AI Is Entering Its Second Generation: Lessons from Enterprise Voice Agent Deployments",
+            "zh": "语音 AI 正迈入第二代：企业级语音智能体部署经验"
+          },
+          "slug": "p-31-voice-ai-is-entering-its-second-generation-lessons-from-enterprise-voice-agent-deployments",
+          "speakers": [
+            "qinying-liao"
+          ],
+          "originalAbstract": "In this talk, I'll share six industry shifts that are redefining Voice AI—from intelligence to execution, from speech to conversation, from APIs to platforms, and ultimately from conversations to long-term relationships. While these patterns first emerged in enterprise deployments, they point toward the future of open-source AI infrastructure and consumer AI experiences.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "The talk discusses six key industry shifts transforming Voice AI, including moving from intelligence to execution and from APIs to platforms. These changes, initially seen in enterprise voice agent deployments, signal the future of open-source AI infrastructure and consumer AI experiences. The focus is on evolving Voice AI from short interactions to long-term relationships.",
+            "zh": "本次演讲探讨了六大行业趋势，正在重塑语音AI，包括从智能到执行、从语音到对话、从API到平台，最终从对话到长期关系。这些变化最初出现在企业语音智能体部署中，预示了开源AI基础设施和消费者AI体验的未来。演讲重点在于语音AI从短期互动向长期关系的演进。"
           }
         }
       ],
@@ -1217,6 +1304,25 @@
           "overview": {
             "en": "Large language models are evolving from coding assistants to research agents capable of proposing solutions, running experiments, and iteratively improving results. This talk discusses how execution-based experimentation can be transformed into reusable improvement capabilities, using the AI4AI loop and case studies from NatureBench. It also explores the potential for recursive self-improvement in AI systems.",
             "zh": "大型语言模型正从代码助手演变为能够提出解决方案、运行实验并迭代改进结果的研究智能体。本次演讲探讨了如何将基于执行的实验转化为可复用的改进能力，介绍了AI4AI循环和NatureBench中的案例研究。最后，还探讨了AI系统实现递归自我改进的潜力。"
+          }
+        },
+        {
+          "ref": "P-129",
+          "originalTitle": "Efficient Training of Large Language Models via Orthogonal Transformation",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Efficient Training of Large Language Models via Orthogonal Transformation",
+            "zh": "通过正交变换高效训练大语言模型"
+          },
+          "slug": "p-129-efficient-training-of-large-language-models-via-orthogonal-transformation",
+          "speakers": [
+            "weiyang-liu"
+          ],
+          "originalAbstract": "TBA",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This session will explore efficient approaches to large-language-model training based on orthogonal transformation. Additional details will be announced soon.",
+            "zh": "本次演讲将探讨基于正交变换的大语言模型高效训练方法，更多内容即将公布。"
           }
         }
       ],
@@ -1512,9 +1618,126 @@
             "en": "This workshop connects Confucius's individualized teaching with Vygotsky's zone of proximal development to explain how AI can reshape learning. It presents a teacher–AI–student model, Shenzhen's teacher AI-literacy training, a three-teacher classroom model, and a citywide learning ecosystem.",
             "zh": "本工作坊结合孔子的“因材施教”与维果茨基的“最近发展区”，探讨 AI 如何重构学习。内容涵盖“师—机—生”协同模型、深圳教师 AI 素养培训、“三师课堂”及城市无边界学习生态。"
           }
+        },
+        {
+          "ref": "P-95",
+          "originalTitle": "AgentOS: Transforming Autonomous Programming Platforms into a New Type of Operating System",
+          "originalLanguage": "en",
+          "title": {
+            "en": "AgentOS: Transforming Autonomous Programming Platforms into a New Type of Operating System",
+            "zh": "AgentOS：将自主编程平台转变为一种新型操作系统"
+          },
+          "slug": "p-95-agentos-transforming-autonomous-programming-platforms-into-a-new-type-of-operating-system",
+          "speakers": [
+            "kerry-zhu"
+          ],
+          "originalAbstract": "Ecosystem Path for AgentOS: Lessons from Linux's Open‑Source Infrastructure Success.\nThis presentation will focus on six core topics. First, we will discuss why R&D automation urgently requires an operating system‑level solution. Then, I will define AgentOS in the context of code delivery scenarios and introduce its reference architecture. After that, we will dive into key aspects of multi‑agent Harness engineering and explore the role of open‑source factors. Finally, we will look ahead to AgentOS's development roadmap and key milestones.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "AgentOS is a new type of operating system designed to transform autonomous programming platforms. The talk outlines its ecosystem path, inspired by Linux's open-source success, and covers six core topics including R&D automation needs, reference architecture, multi-agent engineering, and future development.",
+            "zh": "AgentOS 是一种新型操作系统，旨在转变自主编程平台。本次演讲将围绕其生态系统路径展开，借鉴 Linux 开源成功经验，涵盖六大核心主题，包括研发自动化需求、参考架构、多智能体工程及未来开发路线图。"
+          }
         }
       ],
       "originalName": "AI Education Workshop"
+    },
+    {
+      "id": "ws-dora",
+      "sourceId": "ws-dora",
+      "name": {
+        "en": "DORA Workshop",
+        "zh": "DORA 工作坊"
+      },
+      "talks": [
+        {
+          "ref": "P-118",
+          "originalTitle": "Dora Studio——A GSOC Project Share (Tentative)",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Dora Studio: A GSoC Project Share (Tentative)",
+            "zh": "Dora Studio：一个 GSoC 项目分享（暂定）"
+          },
+          "slug": "p-118-dora-studio-a-gsoc-project-share-tentative",
+          "speakers": [
+            "keshu-han"
+          ],
+          "originalAbstract": "Sharing the use of visualization projects in the Dora community(Tentative)",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop shares the design and use of visualization projects in the DORA community through the Dora Studio GSoC project.",
+            "zh": "本工作坊通过 Dora Studio GSoC 项目，分享 DORA 社区可视化项目的设计与使用。"
+          }
+        },
+        {
+          "ref": "P-121",
+          "originalTitle": "High-Performance Heterogeneous Data Transfer Framework for End-Edge-Cloud Robot Inference",
+          "originalLanguage": "en",
+          "title": {
+            "en": "High-Performance Heterogeneous Data Transfer for End–Edge–Cloud Robot Inference",
+            "zh": "面向端—边—云机器人推理的高性能异构数据传输框架"
+          },
+          "slug": "p-121-high-performance-heterogeneous-data-transfer-framework-for-end-edge-cloud-robot-inference",
+          "speakers": [
+            "canran-tang"
+          ],
+          "originalAbstract": "End-edge-cloud computing is becoming a practical architecture for robot intelligence. Endpoint devices acquire observations and interact with the physical environment, edge servers provide low-latency GPU computing for perception and policy inference, and cloud resources support global context, long-horizon planning, and large-scale model execution. A single robot control cycle may therefore move observations, intermediate features, and actions across CPU and GPU memory, processes, machines, and network links. As vision-language-action models and world models continue to grow, data movement becomes an important bottleneck in addition to model computation.\n\nToday’s software stack remains fragmented. Robot middleware typically provides node and message communication for endpoint modules, while edge and cloud models are managed by separate inference runtimes and GPU communication libraries. These layers expose different data abstractions and resource-lifetime models. Low-level communication libraries can move data efficiently, but leave topology-aware path selection, buffer reuse, synchronization, and resource cleanup to applications. This results in additional data copies, serialization overhead, adapter code, and fragile resource management.\n\nThis talk discusses the design of a high-performance heterogeneous data transfer framework for end-edge-cloud robot inference. The framework treats CPU memory, GPU memory, local device interconnects, and LAN/WAN links as a unified communication substrate. It combines persistent memory pools, topology-aware path selection, reusable receiver-side views, and control-plane lifetime management while preserving the dataflow semantics of robot middleware. The resulting framework has been implemented as DORA’s tensor-pool feature and merged into the DORA codebase. Using this implementation as a case study, I will discuss its integration with robotic middleware, real-robot VLA pipelines, and multi-GPU inference workloads.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This session presents a unified data-transfer framework spanning CPU memory, GPU memory, local interconnects, and network links for robot inference. Using DORA's tensor-pool implementation, it covers persistent memory pools, topology-aware path selection, reusable receiver views, and resource-lifetime management.",
+            "zh": "本次演讲介绍一套覆盖 CPU 内存、GPU 内存、本地互连与网络链路的机器人推理统一数据传输框架，并以 DORA tensor-pool 为案例，讲解持久内存池、拓扑感知路径选择、可复用接收视图及资源生命周期管理。"
+          }
+        },
+        {
+          "ref": "P-122",
+          "originalTitle": "从代码到机器人——DORA社区的共建之路与具身智能实践",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "From Code to Robots: Co-building the DORA Community and Practicing Embodied Intelligence",
+            "zh": "从代码到机器人——DORA 社区的共建之路与具身智能实践"
+          },
+          "slug": "p-122-从代码到机器人-dora社区的共建之路与具身智能实践",
+          "speakers": [
+            "yang-li"
+          ],
+          "originalAbstract": "DORA（Dataflow-Oriented Robotic Architecture）是一个为AI时代打造的高性能机器人开发框架。本次演讲将分享DORA社区从代码到机器人的共建之路与技术实践。\n在社区共建方面，我们构建了中文课程体系，通过高校行、黑客松等活动培育开源人才，并深度参与开源鸿蒙与M-Robots生态共建。在具身智能实践方面，DORA已成功支撑智元X2人形机器人的完整自主交互闭环，实现工业场景的零突破，并通过实操工作坊让开发者跑通从数据采集到真机部署的全流程。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This workshop shares how the DORA community connects open-source collaboration with real embodied-intelligence systems. It covers Chinese learning resources, university and hackathon programs, ecosystem partnerships, humanoid-robot deployments, and a hands-on path from data collection to physical-robot deployment.",
+            "zh": "本工作坊分享 DORA 社区如何把开源共建与真实具身智能系统连接起来，涵盖中文课程、高校与黑客松活动、生态协作、人形机器人落地，以及从数据采集到真机部署的实践路径。"
+          }
+        }
+      ],
+      "originalName": "DORA Workshop"
+    },
+    {
+      "id": "ws-vllm",
+      "sourceId": "ws-vllm",
+      "name": {
+        "en": "vLLM Workshop",
+        "zh": "vLLM 工作坊"
+      },
+      "talks": [
+        {
+          "ref": "P-126",
+          "originalTitle": "Scaling vLLM System-Wide: From Network I/O to Distributed Scheduling",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Scaling vLLM System-Wide: From Network I/O to Distributed Scheduling",
+            "zh": "vLLM 全系统扩展：从网络 I/O 到分布式调度"
+          },
+          "slug": "p-126-scaling-vllm-system-wide-from-network-i-o-to-distributed-scheduling",
+          "speakers": [
+            "zhenwei-pi"
+          ],
+          "originalAbstract": "This talk presents our optimizations on vLLM for large-scale LLM inference, targeting three critical performance bottlenecks: cold-start latency, KV cache efficiency, and scheduling improvement — all addressed through deep vLLM internal customizations.\n\nFirst, we achieved a sub-3-second end-to-end cold start for the QWEN3 32B model (62GB weights) — including safetensors header parsing, JSON metadata loading, and the full weight loading path from remote storage into GPU HBM — by enabling on-demand high-speed loading over a 400Gbps network with GPUDirect RDMA. This allows model weights to be written directly from the NIC into GPU memory, bypassing the entire OS kernel I/O stack, CPU, and any user-space memory copies. We'll share how we extended vLLM's model loader to support this remote direct-to-HBM weight loading path.\n\nSecond, we rebuilt the inference architecture on top of vLLM into a stateless model with advanced prefix caching, achieving 100% KV cache hit rate for historical sessions and over 98% average hit rate across all requests — significantly reducing vLLM's prefill overhead and improving TTFT.\n\nThird, we implemented I/O preloading within vLLM's execution loop to overlap data transfer with GPU computation, delivering measurable throughput gains (over 3% in our tests). We also replaced vLLM's default scheduler with an event-driven \"no-wait\" policy combined with a greedy distributed scheduling strategy, which significantly improves concurrency and overall GPU utilization.\n\nOur practices demonstrate that meaningful performance gains can be achieved through careful orchestration of vLLM internals — from model loader and scheduler to KV cache manager — providing actionable insights for developers seeking to maximize inference efficiency in production environments.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop presents deep vLLM optimizations for cold-start latency, KV-cache efficiency, and distributed scheduling. It covers GPUDirect RDMA weight loading, stateless inference with advanced prefix caching, I/O preloading, and an event-driven no-wait scheduler for higher concurrency and GPU utilization.",
+            "zh": "本工作坊介绍针对冷启动延迟、KV Cache 效率与分布式调度的 vLLM 深度优化，涵盖 GPUDirect RDMA 权重加载、结合高级前缀缓存的无状态推理、I/O 预加载，以及提升并发和 GPU 利用率的事件驱动无等待调度器。"
+          }
+        }
+      ],
+      "originalName": "vLLM Workshop"
     }
   ]
 }

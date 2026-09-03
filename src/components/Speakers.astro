@@ -6,6 +6,7 @@ import {
   SPEAKER_IMAGE_FALLBACK_HANDLER,
 } from "utils/speaker-images";
 import { compareSpeakersBySurname } from "utils/speaker-sorting";
+import { programCategoryColor } from "utils/program-colors";
 
 const getSpeakerNameFontSize = (name: string) => {
   const length = [...name].length;
@@ -78,6 +79,8 @@ const groupedCategories = {
   events: programCategories.filter((category) => categoryGroup(category) === "events"),
 };
 
+const categoryColor = programCategoryColor;
+
 // For images in public directory, we can reference them directly
 ---
 
@@ -117,6 +120,7 @@ const groupedCategories = {
           data-filter-category="all"
           aria-pressed="true"
           aria-label="Show all speakers"
+          style="--tc: #F84A10"
         >
           <span>All Speakers</span>
         </button>
@@ -138,6 +142,7 @@ const groupedCategories = {
                 data-filter-category={category.id}
                 aria-pressed="false"
                 aria-label={`Filter by ${category.name}`}
+                style={`--tc: ${categoryColor(category.id)}`}
               >
                 <span>{category.name}</span>
               </button>
@@ -163,6 +168,7 @@ const groupedCategories = {
                 data-filter-category={category.id}
                 aria-pressed="false"
                 aria-label={`Filter by ${category.name}`}
+                style={`--tc: ${categoryColor(category.id)}`}
               >
                 <span>{category.name}</span>
               </button>
@@ -190,6 +196,7 @@ const groupedCategories = {
                     data-filter-category={category.id}
                     aria-pressed="false"
                     aria-label={`Filter by ${category.name}`}
+                    style={`--tc: ${categoryColor(category.id)}`}
                   >
                     <span>{category.name}</span>
                   </button>
@@ -210,7 +217,7 @@ const groupedCategories = {
   data-filter-section
   data-speaker-filter-state
   data-summary-all="{visible} speakers · All"
-  data-summary-selected="{visible} speakers · {selected} selected"
+  data-summary-selected="{visible} speakers"
   data-theme-section="light"
   data-bg-section="lightgray"
   data-scroll-section
@@ -234,6 +241,7 @@ const groupedCategories = {
                 data-filter-status="active"
                 data-filter-category="all"
                 aria-pressed="true"
+                style="--tc: #F84A10"
               >
                 <span>All Speakers</span>
               </button>
@@ -249,6 +257,7 @@ const groupedCategories = {
                         data-filter-status="not-active"
                         data-filter-category={category.id}
                         aria-pressed="false"
+                        style={`--tc: ${categoryColor(category.id)}`}
                       >
                         <span>{category.name}</span>
                       </button>
@@ -270,6 +279,7 @@ const groupedCategories = {
                             data-filter-status="not-active"
                             data-filter-category={category.id}
                             aria-pressed="false"
+                            style={`--tc: ${categoryColor(category.id)}`}
                           >
                             <span>{category.name}</span>
                           </button>
@@ -293,6 +303,7 @@ const groupedCategories = {
                             data-filter-status="not-active"
                             data-filter-category={category.id}
                             aria-pressed="false"
+                            style={`--tc: ${categoryColor(category.id)}`}
                           >
                             <span>{category.name}</span>
                           </button>
@@ -408,20 +419,19 @@ const groupedCategories = {
   /* Filter layout */
   .speaker-browser {
     display: grid;
-    grid-template-columns: minmax(14rem, 15.5rem) minmax(0, 1fr);
+    grid-template-columns: 260px minmax(0, 1fr);
     align-items: start;
-    gap: clamp(1.5rem, 2.5vw, 2.5rem);
+    gap: 1.5rem;
     padding-top: var(--row-gap);
   }
 
   .speaker-filter-sidebar {
     position: sticky;
-    top: 1.5rem;
+    top: 6rem;
     z-index: 2;
-    max-height: calc(100vh - 3rem);
+    max-height: calc(100vh - 7.5rem);
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding-right: 0.25rem;
     scrollbar-width: thin;
   }
 
@@ -503,12 +513,10 @@ const groupedCategories = {
 
   .filter-panel {
     width: 100%;
-    padding: 1rem;
-    border: 1px solid rgba(246, 243, 231, 0.18);
-    border-radius: 1.25rem;
-    background:
-      radial-gradient(circle at 90% 0%, rgba(248, 74, 16, 0.12), transparent 34%),
-      rgba(246, 243, 231, 0.035);
+    padding: 1.25rem;
+    border: 0;
+    border-radius: var(--border-radius);
+    background: var(--color-surface);
   }
 
   .filter-heading {
@@ -516,14 +524,14 @@ const groupedCategories = {
     flex-direction: column;
     align-items: stretch;
     gap: 0.35rem;
-    padding-bottom: 0.7rem;
-    margin-bottom: 0.7rem;
-    border-bottom: 1px solid rgba(246, 243, 231, 0.14);
+    margin-bottom: 0.15rem;
+    padding: 0 0 0.65rem 0.5rem;
+    border-bottom: 1px solid rgba(234, 230, 210, 0.1);
   }
 
   .filter-kicker {
     margin: 0;
-    color: #f6f3e7;
+    color: var(--color-heading);
     font-size: 0.96rem;
     font-weight: 650;
   }
@@ -532,7 +540,7 @@ const groupedCategories = {
     display: block;
     min-height: 1.3em;
     overflow: hidden;
-    color: rgba(246, 243, 231, 0.62);
+    color: rgba(234, 230, 210, 0.62);
     font-size: 0.72rem;
     font-weight: 600;
     line-height: 1.3;
@@ -550,7 +558,7 @@ const groupedCategories = {
   .filter-options {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.2rem;
   }
 
   .filter-all {
@@ -576,10 +584,10 @@ const groupedCategories = {
   .filter-section {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
-    margin-top: 0.3rem;
-    padding-top: 0.6rem;
-    border-top: 1px solid rgba(246, 243, 231, 0.12);
+    gap: 0.2rem;
+    margin-top: 0.15rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgba(234, 230, 210, 0.1);
   }
 
   .filter-panel .single-filter {
@@ -593,11 +601,12 @@ const groupedCategories = {
     padding: 0.65rem;
     border: 0 !important;
     border-radius: 8px;
-    color: #f6f3e7;
+    color: var(--color-text);
     background: transparent !important;
     font: inherit;
-    font-size: 0.8rem;
-    line-height: 1.2;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.3;
     text-align: left;
     transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
   }
@@ -616,8 +625,9 @@ const groupedCategories = {
 
   .filter-panel .single-filter:hover {
     border: 0 !important;
-    background: rgba(255, 255, 255, 0.07) !important;
-    transform: none;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: translateX(3px) scale(1.015);
   }
 
   .filter-panel .single-filter:focus-visible {
@@ -626,9 +636,15 @@ const groupedCategories = {
   }
 
   .filter-panel .single-filter[data-filter-status="active"] {
-    background: rgba(255, 255, 255, 0.07) !important;
+    background: transparent !important;
     border: 0 !important;
-    box-shadow: inset 0 0 0 1px rgba(248, 74, 16, 0.68);
+    box-shadow: none !important;
+  }
+
+  .filter-panel .single-filter[data-filter-status="active"]:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: translateX(3px) scale(1.015);
   }
 
   .filter-panel .single-filter[data-filter-status="active"]:focus-visible {
@@ -642,17 +658,18 @@ const groupedCategories = {
 
   .filter-panel .single-filter[data-filter-status="active"]::before {
     content: "";
-    background: var(--color-primary);
+    background: var(--tc, var(--color-primary));
     transform: scale(1.2);
   }
 
   .filter-group-label {
     display: block;
-    font-size: 0.68rem;
-    font-weight: 600;
-    color: rgba(246, 243, 231, 0.72);
+    margin: 0 0 0.5rem 0.5rem;
+    color: rgba(234, 230, 210, 0.55);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     white-space: nowrap;
   }
 

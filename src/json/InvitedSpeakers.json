@@ -1,8 +1,11 @@
 [
   {
     "id": "dhh",
+    "sourceName": "David Heinemeier Hansson",
     "keynote": true,
-    "tags": [],
+    "tags": [
+      "special-keynote"
+    ],
     "image": "/images/speakers/confirmed/dhh.png",
     "socialLinks": {
       "website": "https://dhh.dk/",

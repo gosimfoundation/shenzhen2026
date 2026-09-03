@@ -49,33 +49,23 @@ describe("speaker track filters", () => {
     `;
   });
 
-  it("keeps both filter surfaces in sync while categories are toggled", () => {
+  it("keeps both filter surfaces in sync and replaces the previous selection", () => {
     setupSpeakerFilters();
 
-    for (const category of categories) click("sidebar", category);
-
-    expect(selectedOn("sidebar")).toEqual(categories);
-    expect(selectedOn("mobile")).toEqual(categories);
-
-    click("sidebar", "os");
-
-    const remaining = ["edge", "models", "robotics"];
-    expect(selectedOn("sidebar")).toEqual(remaining);
-    expect(selectedOn("mobile")).toEqual(remaining);
-    expect(
-      document.querySelector("[data-speaker-filter-summary]")?.textContent,
-    ).toBe("2 speakers · 3 selected");
-  });
-
-  it("returns to All only after the last selected category is removed", () => {
-    setupSpeakerFilters();
-
-    click("mobile", "edge");
-    click("mobile", "models");
-    click("mobile", "edge");
+    click("sidebar", "edge");
+    click("sidebar", "models");
 
     expect(selectedOn("sidebar")).toEqual(["models"]);
+    expect(selectedOn("mobile")).toEqual(["models"]);
+    expect(
+      document.querySelector("[data-speaker-filter-summary]")?.textContent,
+    ).toBe("1 speakers · 1 selected");
+  });
 
+  it("returns to All when the selected category is clicked again", () => {
+    setupSpeakerFilters();
+
+    click("mobile", "models");
     click("mobile", "models");
 
     expect(selectedOn("sidebar")).toEqual(["all"]);

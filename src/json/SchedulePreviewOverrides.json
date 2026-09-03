@@ -196,5 +196,116 @@
       "en": "This talk presents an automated AI mini-game production pipeline built with Harness engineering, a two-layer automated review system, and an ADK agent-development toolkit. The approach improves generation quality and production efficiency while reducing overall cost.",
       "zh": "本次演讲介绍如何结合 Harness 工程、双层自动化评审体系与 ADK 智能体开发工具集，构建从设计到量产的 AI 小游戏自动化制作管线，在提升质量和效率的同时降低综合成本。"
     }
+  },
+  {
+    "ref": "P-109",
+    "title": {
+      "en": "From Components to Complete Systems: Scaling Liquid-Cooled Edge AI Computing Devices",
+      "zh": "从部件到整机：端侧 AI 液冷算力设备的规模化落地路径"
+    },
+    "overview": {
+      "en": "This talk examines how liquid-cooled edge AI computing equipment can move from component-level breakthroughs to scalable complete systems. It covers integration, platform standardization, thermal efficiency, environmental adaptability, operational reliability, and real-world deployment scenarios.",
+      "zh": "本次演讲探讨端侧 AI 液冷算力设备如何从部件级突破走向整机规模化，涵盖系统集成、平台化与标准化、散热效率、环境适应性、运维可靠性及实际应用场景。"
+    }
+  },
+  {
+    "ref": "P-118",
+    "title": {
+      "en": "Dora Studio: A GSoC Project Share (Tentative)",
+      "zh": "Dora Studio：一个 GSoC 项目分享（暂定）"
+    },
+    "overview": {
+      "en": "This workshop shares the design and use of visualization projects in the DORA community through the Dora Studio GSoC project.",
+      "zh": "本工作坊通过 Dora Studio GSoC 项目，分享 DORA 社区可视化项目的设计与使用。"
+    }
+  },
+  {
+    "ref": "P-120",
+    "title": {
+      "en": "Building the AI-Native Organization",
+      "zh": "AI 原生组织的构建"
+    },
+    "overview": {
+      "en": "Drawing on real enterprise deployments, this talk explores how organizations change when execution can be delegated to teams of agents. It covers the new human role, management through task definition and acceptance, parallel organizational structures, FDE capabilities, and controlled agent deployment in regulated industries.",
+      "zh": "本次演讲结合真实企业落地经验，探讨当执行能力可以交给智能体团队后，组织结构将如何变化。内容涵盖人的新角色、以任务定义和验收为核心的管理方式、并行组织、FDE 能力，以及合规行业中的可控智能体上线。"
+    }
+  },
+  {
+    "ref": "P-121",
+    "title": {
+      "en": "High-Performance Heterogeneous Data Transfer for End–Edge–Cloud Robot Inference",
+      "zh": "面向端—边—云机器人推理的高性能异构数据传输框架"
+    },
+    "overview": {
+      "en": "This session presents a unified data-transfer framework spanning CPU memory, GPU memory, local interconnects, and network links for robot inference. Using DORA's tensor-pool implementation, it covers persistent memory pools, topology-aware path selection, reusable receiver views, and resource-lifetime management.",
+      "zh": "本次演讲介绍一套覆盖 CPU 内存、GPU 内存、本地互连与网络链路的机器人推理统一数据传输框架，并以 DORA tensor-pool 为案例，讲解持久内存池、拓扑感知路径选择、可复用接收视图及资源生命周期管理。"
+    }
+  },
+  {
+    "ref": "P-122",
+    "title": {
+      "en": "From Code to Robots: Co-building the DORA Community and Practicing Embodied Intelligence",
+      "zh": "从代码到机器人——DORA 社区的共建之路与具身智能实践"
+    },
+    "overview": {
+      "en": "This workshop shares how the DORA community connects open-source collaboration with real embodied-intelligence systems. It covers Chinese learning resources, university and hackathon programs, ecosystem partnerships, humanoid-robot deployments, and a hands-on path from data collection to physical-robot deployment.",
+      "zh": "本工作坊分享 DORA 社区如何把开源共建与真实具身智能系统连接起来，涵盖中文课程、高校与黑客松活动、生态协作、人形机器人落地，以及从数据采集到真机部署的实践路径。"
+    }
+  },
+  {
+    "ref": "P-123",
+    "categoryId": "special-keynote",
+    "title": {
+      "en": "Omarchy: Beautiful, Fun & Agentic Linux",
+      "zh": "Omarchy：美观、有趣、面向智能体的 Linux"
+    },
+    "overview": {
+      "en": "The age of agents calls for an AI-native operating system. DHH presents Omarchy, a beautiful, fun, and agentic Linux environment designed so users can shape and customize their machines through AI-assisted coding.",
+      "zh": "智能体时代需要 AI 原生操作系统。DHH 将介绍 Omarchy：一个美观、有趣且面向智能体的 Linux 环境，让用户能够借助 AI 编程塑造并定制自己的计算机。"
+    }
+  },
+  {
+    "ref": "P-124",
+    "title": {
+      "en": "From Open-Source Software to Open Intelligence: Silicon Time Is Rewriting the Developer World",
+      "zh": "从开源软件到开源智能：硅基时间正在重写开发者世界"
+    },
+    "overview": {
+      "en": "AI is pushing open source from software collaboration toward intelligence collaboration. This keynote explores how code generation, agents, and autonomous execution are redefining software creation, community collaboration, and the boundary between developers and machines—and what new opportunities this shift creates.",
+      "zh": "AI 正推动开源从“软件协作”走向“智能协作”。本次主旨演讲探讨代码生成、智能体与自主执行如何重新定义软件创造、社区协作及人与机器的边界，并分析这场变化为开发者带来的新机会。"
+    }
+  },
+  {
+    "ref": "P-126",
+    "title": {
+      "en": "Scaling vLLM System-Wide: From Network I/O to Distributed Scheduling",
+      "zh": "vLLM 全系统扩展：从网络 I/O 到分布式调度"
+    },
+    "overview": {
+      "en": "This workshop presents deep vLLM optimizations for cold-start latency, KV-cache efficiency, and distributed scheduling. It covers GPUDirect RDMA weight loading, stateless inference with advanced prefix caching, I/O preloading, and an event-driven no-wait scheduler for higher concurrency and GPU utilization.",
+      "zh": "本工作坊介绍针对冷启动延迟、KV Cache 效率与分布式调度的 vLLM 深度优化，涵盖 GPUDirect RDMA 权重加载、结合高级前缀缓存的无状态推理、I/O 预加载，以及提升并发和 GPU 利用率的事件驱动无等待调度器。"
+    }
+  },
+  {
+    "ref": "P-127",
+    "title": {
+      "en": "Agent Harness for Multiplayer Collaboration",
+      "zh": "面向多人协作的 Agent Harness"
+    },
+    "overview": {
+      "en": "This talk explores Agent Harness design for collaborative environments involving multiple people and multiple AI agents.",
+      "zh": "本次演讲探讨多人、多 AI 智能体协作场景中的 Agent Harness 设计。"
+    }
+  },
+  {
+    "ref": "P-129",
+    "title": {
+      "en": "Efficient Training of Large Language Models via Orthogonal Transformation",
+      "zh": "通过正交变换高效训练大语言模型"
+    },
+    "overview": {
+      "en": "This session will explore efficient approaches to large-language-model training based on orthogonal transformation. Additional details will be announced soon.",
+      "zh": "本次演讲将探讨基于正交变换的大语言模型高效训练方法，更多内容即将公布。"
+    }
   }
 ]

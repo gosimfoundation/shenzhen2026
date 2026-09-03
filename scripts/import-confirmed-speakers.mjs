@@ -10,6 +10,12 @@ import sharp from "sharp";
 // Add future filter categories here with group: "tracks", "workshops", or "events".
 const PROGRAM_CATEGORIES = [
   {
+    id: "special-keynote",
+    name: "Keynote Plenary",
+    nameZh: "Keynote 全体大会",
+    group: "tracks",
+  },
+  {
     id: "sz26-agentic-ai-summit",
     name: "Agentic AI Summit",
     nameZh: "智能体 AI 峰会",
@@ -51,11 +57,26 @@ const PROGRAM_CATEGORIES = [
     nameZh: "AI 教育工作坊",
     group: "workshops",
   },
+  {
+    id: "ws-dora",
+    name: "DORA Workshop",
+    nameZh: "DORA 工作坊",
+    group: "workshops",
+  },
+  {
+    id: "ws-vllm",
+    name: "vLLM Workshop",
+    nameZh: "vLLM 工作坊",
+    group: "workshops",
+  },
 ];
 
 const TRACK_ALIASES = new Map([
   // The CFP portal currently exposes this workshop ID with a typo.
   ["sz26-ws-ai-education-workshoip", "ws-ai-education"],
+  ["sz26-ws-dora-workshop", "ws-dora"],
+  ["sz26-ws-vllm-workshop", "ws-vllm"],
+  ["sz26-special-keynote", "special-keynote"],
 ]);
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -198,6 +219,15 @@ for (const entry of scheduleOverrideData) {
   scheduleOverridesByRef.set(ref, entry);
 }
 
+const normalizeProposalTracks = (proposal) => {
+  const categoryOverride = cleanText(
+    scheduleOverridesByRef.get(cleanText(proposal.ref))?.categoryId,
+  );
+  return categoryOverride
+    ? [TRACK_ALIASES.get(categoryOverride) || categoryOverride]
+    : normalizeTracks(proposal.tracks);
+};
+
 const invitedSpeakerData = JSON.parse(
   await readFile(path.join(projectRoot, "src/json/InvitedSpeakers.json"), "utf8"),
 );
@@ -206,6 +236,7 @@ if (!Array.isArray(invitedSpeakerData)) {
 }
 
 const invitedSpeakersById = new Map();
+const invitedSpeakerIdBySourceNameKey = new Map();
 for (const entry of invitedSpeakerData) {
   const id = cleanText(entry.id);
   const name = cleanText(entry.en?.name);
@@ -223,7 +254,7 @@ for (const entry of invitedSpeakerData) {
       name,
       roleOrg: cleanText(entry.en?.roleOrg) || "Invited Speaker",
       bio: cleanText(entry.en?.bio),
-      tags: Array.isArray(entry.tags) ? entry.tags.map(cleanText).filter(Boolean) : [],
+      tags: normalizeTracks(entry.tags ?? []),
       socialLinks: entry.socialLinks ?? {},
       draft: false,
       keynote: entry.keynote === true,
@@ -236,7 +267,7 @@ for (const entry of invitedSpeakerData) {
       roleOrg: cleanText(entry.zh?.roleOrg) || "受邀讲师",
       bio: cleanText(entry.zh?.bio) || cleanText(entry.en?.bio),
       nameEn: name,
-      tags: Array.isArray(entry.tags) ? entry.tags.map(cleanText).filter(Boolean) : [],
+      tags: normalizeTracks(entry.tags ?? []),
       socialLinks: entry.socialLinks ?? {},
       draft: false,
       keynote: entry.keynote === true,
@@ -244,6 +275,17 @@ for (const entry of invitedSpeakerData) {
         cleanText(entry.image) || `/images/speakers/confirmed/${id}.png`,
     },
   });
+
+  const sourceNames = Array.isArray(entry.sourceNames)
+    ? entry.sourceNames
+    : [entry.sourceName].filter(Boolean);
+  for (const sourceName of sourceNames) {
+    const sourceKey = speakerNameKey(sourceName);
+    if (invitedSpeakerIdBySourceNameKey.has(sourceKey)) {
+      throw new Error(`Duplicate invited speaker source name: ${sourceName}.`);
+    }
+    invitedSpeakerIdBySourceNameKey.set(sourceKey, id);
+  }
 }
 
 const raw = JSON.parse(await readFile(path.resolve(sourcePath), "utf8"));
@@ -370,10 +412,31 @@ const addSpeaker = (person, proposal, isCoSpeaker = false) => {
   if (!sourceName) return;
 
   const sourceKey = speakerNameKey(sourceName);
+  const invitedSpeakerId = invitedSpeakerIdBySourceNameKey.get(sourceKey);
+  if (invitedSpeakerId) {
+    if (isCoSpeaker) {
+      throw new Error(`${sourceName} is configured as an invited primary speaker.`);
+    }
+
+    const invitedSpeaker = invitedSpeakersById.get(invitedSpeakerId);
+    const tags = normalizeProposalTracks(proposal);
+    invitedSpeaker.en.tags = [...new Set([...invitedSpeaker.en.tags, ...tags])];
+    invitedSpeaker.zh.tags = [...new Set([...invitedSpeaker.zh.tags, ...tags])];
+    invitedSpeaker.en.socialLinks = {
+      ...getSocialLinks(proposal),
+      ...invitedSpeaker.en.socialLinks,
+    };
+    invitedSpeaker.zh.socialLinks = invitedSpeaker.en.socialLinks;
+    sourceNameKeyById.set(invitedSpeakerId, sourceKey);
+    speakerIdBySourceNameKey.set(sourceKey, invitedSpeakerId);
+    primarySpeakerIds.add(invitedSpeakerId);
+    return;
+  }
+
   const contentOverride = overridesBySourceName.get(sourceKey);
   const name = cleanText(contentOverride?.en?.name) || sourceName;
   const key = speakerNameKey(name);
-  const tags = normalizeTracks(proposal.tracks);
+  const tags = normalizeProposalTracks(proposal);
   const existing = speakersByName.get(key);
   const baseId = cleanText(contentOverride?.id) || slugify(name, proposal.ref);
   const previous =
@@ -452,7 +515,10 @@ for (const proposal of accepted) {
 }
 
 const presentTrackIds = new Set(
-  [...speakersByName.values()].flatMap((speaker) => speaker.tags),
+  [
+    ...[...invitedSpeakersById.values()].map((speaker) => speaker.en),
+    ...speakersByName.values(),
+  ].flatMap((speaker) => speaker.tags),
 );
 const unknownTracks = [...presentTrackIds].filter(
   (trackId) => !PROGRAM_CATEGORIES.some((category) => category.id === trackId),
@@ -606,7 +672,7 @@ try {
 
   for (const proposal of accepted) {
     const ref = cleanText(proposal.ref);
-    const proposalTracks = normalizeTracks(proposal.tracks);
+    const proposalTracks = normalizeProposalTracks(proposal);
     if (proposalTracks.length !== 1) {
       throw new Error(
         `${ref} must belong to exactly one program category; found ${proposalTracks.join(", ") || "none"}.`,

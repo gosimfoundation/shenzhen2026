@@ -165,7 +165,7 @@ function initLiquidGooey() {
 
       const activeItem = () => {
          const explicit = items.find((item) =>
-            item.matches('.active, [data-link-status="active"], [aria-current="page"]')
+            item.matches('.active, [data-filter-status="active"], [data-link-status="active"], [aria-current="page"]')
          );
          if (explicit) return explicit;
          if (defaultSelector === null) return null;
@@ -221,7 +221,7 @@ function initLiquidGooey() {
       const observer = new MutationObserver(() => requestAnimationFrame(() => moveToActive(false)));
       items.forEach((item) => observer.observe(item, {
          attributes: true,
-         attributeFilter: ['class', 'data-link-status', 'aria-current'],
+         attributeFilter: ['class', 'data-filter-status', 'data-link-status', 'aria-current'],
       }));
 
       if ('ResizeObserver' in window) {
@@ -243,6 +243,9 @@ function initLiquidGooey() {
    });
    document.querySelectorAll('.preview-mobile-pills').forEach((group) => {
       bindIndicator(group, '[data-preview-track-button]', '.active', true);
+   });
+   document.querySelectorAll('.speaker-filter-sidebar .filter-layout').forEach((group) => {
+      bindIndicator(group, '[data-speaker-filter-control]', '[data-filter-status="active"]', true);
    });
    document.querySelectorAll('.day-tabs-track').forEach((group) => {
       bindIndicator(group, '.sched-day-btn', '.active', true);

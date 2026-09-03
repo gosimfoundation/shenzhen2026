@@ -103,7 +103,7 @@
          let currentItem = null;
          let settleTimer;
          const activeItem = () => {
-            const explicit = items.find((item) => item.matches('.active, [data-link-status="active"], [aria-current="page"]'));
+            const explicit = items.find((item) => item.matches('.active, [data-filter-status="active"], [data-link-status="active"], [aria-current="page"]'));
             if (explicit) return explicit;
             if (defaultSelector === null) return null;
             return (defaultSelector ? group.querySelector(defaultSelector) : null) || items[0];
@@ -152,7 +152,7 @@
          const observer = new MutationObserver(() => requestAnimationFrame(() => moveToActive(false)));
          items.forEach((item) => observer.observe(item, {
             attributes: true,
-            attributeFilter: ['class', 'data-link-status', 'aria-current'],
+            attributeFilter: ['class', 'data-filter-status', 'data-link-status', 'aria-current'],
          }));
          if ('ResizeObserver' in window) {
             const resizeObserver = new ResizeObserver(() => moveToActive(true));
@@ -166,6 +166,9 @@
       document.querySelectorAll('.main-nav-bar nav[aria-label="Navigation Desktop"] > ul').forEach((group) => bindIndicator(group, ':scope > li[data-barba-update]', null, true));
       document.querySelectorAll('.preview-sidebar').forEach((group) => bindIndicator(group, '[data-preview-track-button]', '.active', true));
       document.querySelectorAll('.preview-mobile-pills').forEach((group) => bindIndicator(group, '[data-preview-track-button]', '.active', true));
+      document.querySelectorAll('.speaker-filter-sidebar .filter-layout').forEach((group) => {
+         bindIndicator(group, '[data-speaker-filter-control]', '[data-filter-status="active"]', true);
+      });
       document.querySelectorAll('.day-tabs-track').forEach((group) => bindIndicator(group, '.sched-day-btn', '.active', true));
       document.querySelectorAll('.sched-sidebar .track-group').forEach((group) => bindIndicator(group, '.sched-track-btn', '.active', true));
       document.querySelectorAll('.mobile-track-pills, .room-day-nav, .grid-day-tabs').forEach((group) => bindIndicator(group, 'button', '.active', true));

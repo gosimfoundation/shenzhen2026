@@ -8,8 +8,32 @@ const englishSpeakerIds = new Set(speakersEn.speakers.map((speaker) => speaker.i
 const chineseSpeakerIds = new Set(speakersZh.speakers.map((speaker) => speaker.id));
 
 describe("temporary schedule relationships", () => {
+  it("shows the keynote plenary first and assigns DHH only to it", () => {
+    expect(schedulePreview.tracks[0]).toMatchObject({
+      id: "special-keynote",
+      name: {
+        en: "Keynote Plenary",
+        zh: "Keynote 全体大会",
+      },
+    });
+
+    const dhhTrackIds = schedulePreview.tracks
+      .filter((track) => track.talks.some((talk) => talk.speakers.includes("dhh")))
+      .map((track) => track.id);
+    expect(dhhTrackIds).toEqual(["special-keynote"]);
+
+    expect(speakersEn.categories[1]).toMatchObject({
+      id: "special-keynote",
+      group: "tracks",
+    });
+    expect(speakersEn.speakers.find((speaker) => speaker.id === "dhh")?.tags)
+      .toEqual(["special-keynote"]);
+    expect(speakersZh.speakers.find((speaker) => speaker.id === "dhh")?.tags)
+      .toEqual(["special-keynote"]);
+  });
+
   it("gives every accepted talk bilingual page content, a stable route, and a speaker", () => {
-    expect(talks).toHaveLength(75);
+    expect(talks).toHaveLength(85);
     expect(new Set(talks.map((talk) => talk.ref)).size).toBe(talks.length);
     expect(new Set(talks.map((talk) => talk.slug)).size).toBe(talks.length);
 
@@ -33,5 +57,13 @@ describe("temporary schedule relationships", () => {
         expect(chineseSpeakerIds.has(speakerId), `${talk.ref}: ${speakerId} ZH`).toBe(true);
       }
     }
+  });
+
+  it("provides all current workshops to the homepage program section", () => {
+    expect(
+      schedulePreview.tracks
+        .filter((track) => track.id.startsWith("ws-"))
+        .map((track) => track.id),
+    ).toEqual(["ws-ai-education", "ws-dora", "ws-vllm"]);
   });
 });

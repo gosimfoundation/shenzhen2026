@@ -24,10 +24,60 @@
   top: 6rem;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.4rem;
+  max-height: calc(100vh - 7.5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 1.25rem;
   border-radius: var(--border-radius);
   background: var(--color-surface);
+  scrollbar-width: thin;
+}
+
+.preview-sidebar-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.15rem;
+  padding: 0 0 0.65rem 0.5rem;
+  border-bottom: 1px solid rgba(234, 230, 210, 0.1);
+}
+
+.preview-sidebar-title,
+.preview-sidebar-summary {
+  margin: 0;
+}
+
+.preview-sidebar-title {
+  color: var(--color-heading);
+  font-size: 0.96rem;
+  font-weight: 650;
+}
+
+.preview-sidebar-summary {
+  color: rgba(234, 230, 210, 0.62);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.preview-track-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 0.25rem;
+}
+
+.preview-track-group + .preview-track-group {
+  margin-top: 0.15rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(234, 230, 210, 0.1);
+}
+
+.preview-track-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 .preview-group-label {
