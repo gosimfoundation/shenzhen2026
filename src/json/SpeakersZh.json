@@ -64,6 +64,18 @@
       "name": "vLLM Workshop",
       "nameZh": "vLLM 工作坊",
       "group": "workshops"
+    },
+    {
+      "id": "ws-google-cloud",
+      "name": "Google Cloud Workshop",
+      "nameZh": "Google Cloud 工作坊",
+      "group": "workshops"
+    },
+    {
+      "id": "ws-kvcdn",
+      "name": "KVCDN Workshop",
+      "nameZh": "KVCDN 工作坊",
+      "group": "workshops"
     }
   ],
   "speakers": [
@@ -1328,7 +1340,8 @@
       "roleOrg": "Google Cloud 解决方案架构师",
       "bio": "Google Cloud 解决方案架构师，专注于 AI 前沿技术在游戏行业的应用。",
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-os-app",
+        "ws-google-cloud"
       ],
       "socialLinks": {},
       "draft": false,
@@ -1410,6 +1423,21 @@
       "nameEn": "Jiang Tao"
     },
     {
+      "id": "jianzhong-li",
+      "name": "Jianzhong Li",
+      "roleOrg": "奇点智能研究院院长 / CSDN 高级副总裁",
+      "bio": "Jianzhong Li 现任奇点智能研究院院长、CSDN 高级副总裁，长期关注人工智能、技术创新、产业生态与 AI 产品范式变迁。他于 2016 年发起奇点智能技术峰会，并参与 ISO C++ 标准社区工作。",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://singintelligence.com/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/jianzhong-li.png",
+      "nameEn": "Jianzhong Li"
+    },
+    {
       "id": "zhenwei-pi",
       "name": "Zhenwei Pi",
       "roleOrg": "Tensorfer 创始人",
@@ -1452,6 +1480,73 @@
       "draft": false,
       "image": "/images/speakers/confirmed/weiyang-liu.png",
       "nameEn": "Weiyang Liu"
+    },
+    {
+      "id": "emily-chen",
+      "name": "Emily Chen",
+      "roleOrg": "RoboChallenge 联合创始人",
+      "bio": "Emily Chen 负责 Dexmal 的开源战略与生态，并推动 RoboChallenge 评测平台和赛事体系建设。她长期参与全球开源社区，曾任开源社负责人，也是中国开源年度报告、COSCon 等项目的发起者之一，近年来专注于具身智能的真实机器人评测与开放基准。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/emily-chen.png",
+      "nameEn": "Emily Chen"
+    },
+    {
+      "id": "haibin-zhang",
+      "name": "Haibin Zhang",
+      "roleOrg": "Dexmal AI 基础设施与开源负责人",
+      "bio": "Haibin Zhang 负责 Dexmal 的 AI 基础设施以及 OpenDM、Dexbotic 等开源项目，当前专注于具身智能领域可扩展的数据、训练、评测与推理基础设施，曾参与 Brain++、MegEngine 和自动驾驶基础设施建设。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/dexmal/OpenDM"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/haibin-zhang.png",
+      "nameEn": "Haibin Zhang"
+    },
+    {
+      "id": "cong-wang",
+      "name": "王聪",
+      "roleOrg": "华为技术有限公司软件工程师",
+      "bio": "王聪是华为技术有限公司软件工程师，专注于大语言模型推理中的 KV Cache 加速、高性能计算与 AI 基础设施。目前负责统一缓存管理器 UCM 的架构设计、核心功能开发与开源社区运营。",
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/cong-wang.png",
+      "nameEn": "Cong Wang"
+    },
+    {
+      "id": "longhang-deng",
+      "name": "Longhang Deng",
+      "roleOrg": "东南大学硕士研究生",
+      "bio": "Longhang Deng 是东南大学硕士研究生，研究方向包括智能体操作系统与智能体安全，重点探索能够为内核漏洞自动生成并验证运行时防护的自主智能体。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/longhang-deng.png",
+      "nameEn": "Longhang Deng"
+    },
+    {
+      "id": "dongbiao-he",
+      "name": "Dongbiao He",
+      "roleOrg": "联合讲师",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/dongbiao-he.png",
+      "nameEn": "Dongbiao He"
     }
   ]
 }

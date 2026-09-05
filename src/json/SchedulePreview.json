@@ -398,6 +398,25 @@
             "en": "Drawing on real enterprise deployments, this talk explores how organizations change when execution can be delegated to teams of agents. It covers the new human role, management through task definition and acceptance, parallel organizational structures, FDE capabilities, and controlled agent deployment in regulated industries.",
             "zh": "本次演讲结合真实企业落地经验，探讨当执行能力可以交给智能体团队后，组织结构将如何变化。内容涵盖人的新角色、以任务定义和验收为核心的管理方式、并行组织、FDE 能力，以及合规行业中的可控智能体上线。"
           }
+        },
+        {
+          "ref": "P-125",
+          "originalTitle": "Agent 产品范式创新的若干命题 Key Propositions for Agent Product Paradigm Innovation",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Key Propositions for Innovation in the Agent Product Paradigm",
+            "zh": "Agent 产品范式创新的若干命题"
+          },
+          "slug": "p-125-agent-产品范式创新的若干命题-key-propositions-for-agent-product-paradigm-innovation",
+          "speakers": [
+            "jianzhong-li"
+          ],
+          "originalAbstract": "本次演讲将跳出当前 Agent 产品的局部创新，从更长周期、更底层的视角，探讨一场正在发生的产品创新跃迁：Agent 改变的不只是产品形态，而是产品的整个范式。 当软件从被动响应走向主动行动，从功能交付走向能力生成，从一次性交付走向持续进化，产品的定义、价值、交互、商业模式与竞争壁垒等都将被重新书写。本次演讲将围绕这一变化提出一组核心命题，并尝试回答一个更根本的问题：当软件开始理解意图、主动行动并持续进化，Agent时代的产品范式究竟应该如何重新定义？\n\nThis talk looks beyond the incremental innovations of today’s Agent products and takes a longer-term, deeper perspective to explore a fundamental paradigm shift in product innovation: Agents are changing not just the form of products, but the very paradigm of products themselves. As software evolves from passive response to proactive action, from delivering functions to generating capabilities, and from one-time delivery to continuous evolution, the very definition of a product—its value, interaction model, business model, and competitive moat—will be fundamentally rewritten. This talk puts forward a set of core propositions around this transformation and seeks to answer a more fundamental question: As software begins to understand intent, act autonomously, and continuously evolve, how should we redefine the product paradigm in the Agent era?",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk looks beyond incremental Agent product features to examine a broader paradigm shift: software is moving from passive response to proactive action, from delivering fixed functions to generating capabilities, and from one-time delivery to continuous evolution. It explores how this shift will redefine product value, interaction, business models, and competitive advantage.",
+            "zh": "本次演讲跳出 Agent 产品的局部功能创新，从更长周期和更底层的视角讨论产品范式的变化：软件正从被动响应走向主动行动，从功能交付走向能力生成，从一次性交付走向持续进化，并由此重新定义产品价值、交互方式、商业模式与竞争壁垒。"
+          }
         }
       ],
       "originalName": "Agentic AI Summit"
@@ -711,7 +730,7 @@
         },
         {
           "ref": "P-91",
-          "originalTitle": "MemOS 2.0: 记忆系统关键技术挑战与演进",
+          "originalTitle": "MemOS：Agent 自主进化的下一代记忆系统",
           "originalLanguage": "zh",
           "title": {
             "en": "MemOS 2.0: Key Technical Challenges and the Evolution of Memory Systems",
@@ -721,7 +740,7 @@
           "speakers": [
             "bo-tang"
           ],
-          "originalAbstract": "随着大模型系统从单轮问答走向持续交互、复杂任务执行与多智能体协作，记忆系统正从“外挂能力”演变为智能体长期运行的核心基础设施。MemOS 1.0 重点解决了参数记忆、激活记忆与明文记忆的分层管理和统一调度问题，而 MemOS 2.0 则进一步从“管理静态记忆”升级为“管理运行时状态”，强调面向用户与 Agent 的长期状态维护、动态调度、版本化演进与记忆治理。本次分享将系统分析记忆系统演进中的关键技术挑战，介绍运行态记忆管理、记忆版本化、记忆原生模型以及 Memory 基础模型底座等方向，并结合 Agent、陪伴、企业服务等场景，讨论下一代记忆系统的技术路径与落地机会。",
+          "originalAbstract": "随着大模型从一次性问答走向持续交互、复杂任务执行与多智能体协作，记忆正在从外挂能力演变为 Agent 长期运行和持续进化的基础设施。MemOS 1.0—2.0 以多种记忆的统一管理和运行态治理为基础，完成了从记忆条目到用户、Agent、任务与 Session 状态的系统演进。\n本次分享将重点讨论记忆如何推动 Agent 成长：MSCE 将执行轨迹逐层沉淀为可验证技能，PHASE-Tree 让角色状态在长期交互中保持身份稳定并持续变化；进一步结合以 Metis 为代表的记忆原生模型，探索如何让高频记忆状态和记忆操作参与模型前向。由此讨论下一代记忆系统的统一形态：记忆原生模型负责高密度、低延迟的模型内执行，外置记忆系统负责长期记忆、证据链、技能与角色状态的版本化治理，二者通过统一调度实现准入、同步、冲突处理、回退与重建。",
           "originalAbstractLanguage": "zh",
           "overview": {
             "en": "MemOS 2.0 addresses the evolution of memory systems from static management to runtime state control, focusing on long-term state maintenance, dynamic scheduling, and memory governance. It introduces runtime memory management, versioning, native models, and a foundational memory model, with applications in agent, companion, and enterprise services.",
@@ -840,6 +859,26 @@
           "overview": {
             "en": "This talk explores Agent Harness design for collaborative environments involving multiple people and multiple AI agents.",
             "zh": "本次演讲探讨多人、多 AI 智能体协作场景中的 Agent Harness 设计。"
+          }
+        },
+        {
+          "ref": "P-133",
+          "originalTitle": "An Autonomous Runtime Shielding Agent for Linux Kernel Vulnerabilities",
+          "originalLanguage": "en",
+          "title": {
+            "en": "An Autonomous Runtime Shielding Agent for Linux Kernel Vulnerabilities",
+            "zh": "面向 Linux 内核漏洞的自主运行时防护智能体"
+          },
+          "slug": "p-133-an-autonomous-runtime-shielding-agent-for-linux-kernel-vulnerabilities",
+          "speakers": [
+            "longhang-deng",
+            "dongbiao-he"
+          ],
+          "originalAbstract": "We present a technical exploration of using an agent for emergency defense against kernel vulnerabilities. Once a vulnerability goes public, the official fix takes time to land, leaving the system exposed. Existing quick defenses key on one observed failure, so attackers slip past with a different trigger, and LLMs make such evasion cheap. Our autonomous agent reproduces the bug, reasons about its root cause, generates an eBPF hot shield, then turns attacker to strike its own shield and ships only what holds. The process is non-intrusive and hot-deployed, with no downtime and no source changes.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk presents an autonomous agent for emergency defense against newly disclosed Linux kernel vulnerabilities. The agent reproduces a flaw, reasons about its root cause, generates an eBPF hot shield, actively tests that defense against evasive triggers, and deploys only validated protection without downtime or source changes.",
+            "zh": "本次演讲介绍一种面向新披露 Linux 内核漏洞的自主应急防护智能体。它能够复现漏洞、分析根因、生成 eBPF 热防护，并主动使用不同触发方式验证防护效果，最终在无需停机或修改源代码的情况下部署通过验证的运行时保护。"
           }
         }
       ],
@@ -1588,6 +1627,44 @@
             "en": "This talk proposes an interactive heuristic learning method that combines LiDAR and camera data for target detection on intelligent mobile platforms. The approach aims to reduce costly manual annotation while improving learning efficiency and the system's ability to evolve its perception capabilities.",
             "zh": "本次演讲提出一种结合激光雷达与相机数据的交互式启发学习方法，用于智能移动平台的目标检测。该方法旨在减少高成本的人工标注，同时提升学习效率与感知能力的自我演进水平。"
           }
+        },
+        {
+          "ref": "P-130",
+          "originalTitle": "From Leaderboards to Global Infrastructure: Building an Open Evaluation Ecosystem for Embodied AI",
+          "originalLanguage": "en",
+          "title": {
+            "en": "From Leaderboards to Global Infrastructure: Building an Open Evaluation Ecosystem for Embodied AI",
+            "zh": "从排行榜到全球基础设施：构建开放的具身智能评测生态"
+          },
+          "slug": "p-130-from-leaderboards-to-global-infrastructure-building-an-open-evaluation-ecosystem-for-embodied-ai",
+          "speakers": [
+            "emily-chen"
+          ],
+          "originalAbstract": "Initiated by Dexmal & Hugging Face, RoboChallenge is evolving from a real-robot benchmark and global leaderboard into an open, global evaluation infrastructure for embodied AI.\n\nAs embodied AI moves from research labs into the real world, reliable, reproducible, and accessible evaluation has become essential for measuring progress and enabling meaningful comparison. RoboChallenge has built a growing ecosystem connecting real-robot benchmarks and leaderboards with international competitions at CVPR and ICRA, bringing together researchers, developers, robotics companies, universities, and open source communities worldwide.\n\nThis talk will share RoboChallenge’s journey and lessons learned in benchmark design, real-world evaluation, reproducibility, and global community building. It will also introduce EAI Bench and ongoing efforts to develop more systematic evaluation methodologies and international standards for embodied AI.\n\nLooking ahead, RoboChallenge aims to become a neutral, open, and public-good platform—independent of any single model, robot, or company. By making embodied AI progress measurable, comparable, and reproducible, RoboChallenge seeks to build shared global infrastructure that enables the community to evaluate, collaborate, and advance embodied AI together.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk traces RoboChallenge's evolution from real-robot benchmarks and global leaderboards toward neutral, open evaluation infrastructure for embodied AI. It covers benchmark design, reproducible real-world evaluation, international competitions, community building, EAI Bench, and emerging work on shared evaluation methods and standards.",
+            "zh": "本次演讲介绍 RoboChallenge 如何从真实机器人基准与全球排行榜，发展为中立、开放的具身智能评测基础设施，涵盖基准设计、可复现的真实环境评测、国际赛事、全球社区建设、EAI Bench，以及评测方法与国际标准的探索。"
+          }
+        },
+        {
+          "ref": "P-131",
+          "originalTitle": "Engineering an Open VLA Stack with DM0.5, OpenDM, and Dexbotic",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Engineering an Open VLA Stack with DM0.5, OpenDM, and Dexbotic",
+            "zh": "基于 DM0.5、OpenDM 与 Dexbotic 构建开放 VLA 技术栈"
+          },
+          "slug": "p-131-engineering-an-open-vla-stack-with-dm0-5-opendm-and-dexbotic",
+          "speakers": [
+            "haibin-zhang"
+          ],
+          "originalAbstract": "This talk presents the engineering practices behind DM0.5, OpenDM, and Dexbotic. It covers the full VLA lifecycle—from heterogeneous robot data and reproducible training to scalable evaluation and low-latency inference—with practical insights into building efficient, reliable, and extensible infrastructure for embodied AI.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk presents the engineering practices behind DM0.5, OpenDM, and Dexbotic across the complete VLA lifecycle. It covers heterogeneous robot data, reproducible training, scalable evaluation, low-latency inference, and the infrastructure needed to build efficient, reliable, and extensible embodied-AI systems.",
+            "zh": "本次演讲分享 DM0.5、OpenDM 与 Dexbotic 背后的工程实践，覆盖 VLA 全生命周期，包括异构机器人数据、可复现训练、可扩展评测、低延迟推理，以及构建高效、可靠、可扩展具身智能系统所需的基础设施。"
+          }
         }
       ],
       "originalName": "Open Source Robotics"
@@ -1738,6 +1815,66 @@
         }
       ],
       "originalName": "vLLM Workshop"
+    },
+    {
+      "id": "ws-google-cloud",
+      "sourceId": "ws-google-cloud",
+      "name": {
+        "en": "Google Cloud Workshop",
+        "zh": "Google Cloud 工作坊"
+      },
+      "talks": [
+        {
+          "ref": "P-134",
+          "originalTitle": "Get started with Agent Development Kit (ADK)",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Getting Started with the Agent Development Kit (ADK)",
+            "zh": "Agent Development Kit（ADK）入门实践"
+          },
+          "slug": "p-134-get-started-with-agent-development-kit-adk",
+          "speakers": [
+            "xin-tan"
+          ],
+          "originalAbstract": "Begin your journey with the Agent Development Kit (ADK) by building a specialized research assistant. You will configure a local environment, define agents with custom tools, design dynamic workflows, and inspect execution traces using the ADK browser UI, CLI, and Python.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "In this hands-on workshop, participants build a specialized research assistant with the Agent Development Kit. The session covers local setup, custom tools, dynamic agent workflows, and execution-trace inspection using the ADK browser UI, CLI, and Python.",
+            "zh": "本工作坊将带领参与者使用 Agent Development Kit 构建专用研究助理，内容涵盖本地环境配置、自定义工具、动态智能体工作流，以及通过 ADK 浏览器界面、CLI 和 Python 检查执行轨迹。"
+          }
+        }
+      ],
+      "originalName": "Google Cloud Workshop"
+    },
+    {
+      "id": "ws-kvcdn",
+      "sourceId": "ws-kvcdn",
+      "name": {
+        "en": "KVCDN Workshop",
+        "zh": "KVCDN 工作坊"
+      },
+      "talks": [
+        {
+          "ref": "P-132",
+          "originalTitle": "UCM: Beyond KVCache Acceleration, Lifecycle Management for Agent-Scale Inference",
+          "originalLanguage": "en",
+          "title": {
+            "en": "UCM: Beyond KV-Cache Acceleration to Lifecycle Management for Agent-Scale Inference",
+            "zh": "UCM：从 KV Cache 加速走向智能体规模推理的全生命周期管理"
+          },
+          "slug": "p-132-ucm-beyond-kvcache-acceleration-lifecycle-management-for-agent-scale-inference",
+          "speakers": [
+            "cong-wang"
+          ],
+          "originalAbstract": "KVCache reuse has become one of the most effective approaches to reducing LLM inference cost by eliminating redundant attention computation. However, the emergence of agentic workloads is fundamentally changing the characteristics of KVCache. Unlike traditional chat workloads where KVCache is short-lived and request-bound, agents continuously reuse large contexts across reasoning steps, tool interactions, and multi-turn workflows, resulting in high reuse rates, extended retention periods, and rapidly growing storage demands.\n\nExisting KVCache systems mainly focus on accelerating data movement and improving cache hit rates, while lacking comprehensive lifecycle management capabilities, including retention prediction, intelligent eviction, and multi-tier placement. As a result, valuable KVCache may be prematurely discarded, while expensive memory resources are occupied by inactive states.\n\nIn this talk, we will analyze KVCache characteristics under emerging agent workloads, including reuse patterns, retention behaviors, and capacity challenges. We will introduce Unified Cache Manager (UCM), a lifecycle-aware KVCache storage system designed to bridge inference frameworks and storage infrastructure. UCM combines intelligent cache management, tier-aware placement, and high-performance data movement to enable efficient KVCache management across GPU memory, DRAM, SSD, and distributed storage.\n\nSpecifically, we will discuss how UCM leverages lifecycle-aware dispatch, adaptive cache policies, persistent KV storage, and optimized transfer engines to maximize KVCache utilization and reduce inference costs in large-scale agent deployments.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop examines how agent workloads transform KV-cache reuse, retention, and capacity requirements. It introduces UCM, a lifecycle-aware cache system spanning GPU memory, DRAM, SSD, and distributed storage, with adaptive policies, persistent KV storage, tier-aware placement, and optimized data movement for lower inference cost.",
+            "zh": "本工作坊分析智能体负载如何改变 KV Cache 的复用、留存与容量需求，并介绍具备生命周期感知能力的统一缓存管理器 UCM。系统覆盖 GPU 内存、DRAM、SSD 与分布式存储，通过自适应策略、持久化缓存、分层放置和高性能数据传输降低大规模推理成本。"
+          }
+        }
+      ],
+      "originalName": "KVCDN Workshop"
     }
   ]
 }

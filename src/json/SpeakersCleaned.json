@@ -64,6 +64,18 @@
       "name": "vLLM Workshop",
       "nameZh": "vLLM 工作坊",
       "group": "workshops"
+    },
+    {
+      "id": "ws-google-cloud",
+      "name": "Google Cloud Workshop",
+      "nameZh": "Google Cloud 工作坊",
+      "group": "workshops"
+    },
+    {
+      "id": "ws-kvcdn",
+      "name": "KVCDN Workshop",
+      "nameZh": "KVCDN 工作坊",
+      "group": "workshops"
     }
   ],
   "speakers": [
@@ -1243,7 +1255,8 @@
       "roleOrg": "Solutions Architect, Google Cloud",
       "bio": "Xin Tan is a Solutions Architect at Google Cloud, focusing on applications of frontier AI technologies in the gaming industry.",
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-os-app",
+        "ws-google-cloud"
       ],
       "socialLinks": {},
       "draft": false,
@@ -1319,6 +1332,20 @@
       "image": "/images/speakers/confirmed/jiang-tao.png"
     },
     {
+      "id": "jianzhong-li",
+      "name": "Jianzhong Li",
+      "roleOrg": "President, Singularity Intelligence Research Institute / Senior Vice President, CSDN",
+      "bio": "Jianzhong Li is President of the Singularity Intelligence Research Institute and Senior Vice President of CSDN. He founded the Singularity Intelligence Technology Summit in 2016 and focuses on artificial intelligence, technology innovation, industrial ecosystems, and shifts in the AI product paradigm. He is also a member of the ISO C++ standards community.",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://singintelligence.com/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/jianzhong-li.png"
+    },
+    {
       "id": "zhenwei-pi",
       "name": "Zhenwei Pi",
       "roleOrg": "Founder, Tensorfer",
@@ -1358,6 +1385,68 @@
       "socialLinks": {},
       "draft": false,
       "image": "/images/speakers/confirmed/weiyang-liu.png"
+    },
+    {
+      "id": "emily-chen",
+      "name": "Emily Chen",
+      "roleOrg": "Co-founder, RoboChallenge",
+      "bio": "Emily Chen is General Manager of Open Source Strategy & Ecosystem at Dexmal, where she leads the development the RoboChallenge evaluation platform and competition program. She is a long-time open source practitioner and community leader, dedicated to advancing collaboration between China and the global open source ecosystem. Under her leadership, Kaiyuanshe became the first Chinese Affiliate Member of the Open Source Initiative (OSI). She also initiated several influential projects, including the China Open Source Annual Report and COSCon.\nEmily was a contributor to Mozilla, a GSoC mentor, and a TOC Mentor at the OpenAtom Foundation. Recently, she initiated the RoboChallenge platform and community, one of the first large scale real robot evaluation benchmarks for embodied intelligence. With over 20 years of experience, she worked at Sun Microsystems, Oracle, and Microsoft, with expertise in open source governance, cloud computing, and embodied AI.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/emily-chen.png"
+    },
+    {
+      "id": "haibin-zhang",
+      "name": "Haibin Zhang",
+      "roleOrg": "AI Infrastructure & Open Source Lead, Dexmal",
+      "bio": "Responsible for AI infrastructure and the OpenDM and Dexbotic open-source projects at Dexmal. Currently focused on scalable data, training, evaluation, and inference infrastructure for embodied AI. Previous work spans Brain++, MegEngine, and autonomous-driving infrastructure, with extensive experience in AI systems and data flywheels.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/dexmal/OpenDM"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/haibin-zhang.png"
+    },
+    {
+      "id": "cong-wang",
+      "name": "Cong Wang",
+      "roleOrg": "Software Engineer, Huawei Technologies",
+      "bio": "Cong Wang is a software engineer at Huawei Technologies specializing in KV-cache acceleration for large-language-model inference. His work spans high-performance computing, inference acceleration, and AI infrastructure. He currently leads architecture design, core development, and open-source community work for UCM, Huawei's Unified Cache Manager.",
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/cong-wang.png"
+    },
+    {
+      "id": "longhang-deng",
+      "name": "Longhang Deng",
+      "roleOrg": "Master's Student, Southeast University",
+      "bio": "I am Longhang Deng, a master's student at Southeast University. My research focuses on agent operating systems and agent security, including autonomous agents that generate and validate runtime defenses for kernel vulnerabilities.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/longhang-deng.png"
+    },
+    {
+      "id": "dongbiao-he",
+      "name": "Dongbiao He",
+      "roleOrg": "Co-speaker",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/dongbiao-he.png"
     }
   ]
 }

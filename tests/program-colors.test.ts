@@ -5,7 +5,7 @@ import {
 } from "../src/utils/program-colors";
 
 describe("shared program category colors", () => {
-  it("keeps all six tracks and three workshops visually distinct", () => {
+  it("keeps all six tracks and five workshops visually distinct", () => {
     const categoryIds = [
       "agentic-ai-summit",
       "agentic-ai-on-edge",
@@ -16,9 +16,11 @@ describe("shared program category colors", () => {
       "ws-ai-education",
       "ws-dora",
       "ws-vllm",
+      "ws-google-cloud",
+      "ws-kvcdn",
     ];
 
-    expect(new Set(categoryIds.map(programCategoryColor)).size).toBe(9);
+    expect(new Set(categoryIds.map(programCategoryColor)).size).toBe(11);
   });
 
   it("maps CFP source IDs to the same colors used by the public schedule", () => {

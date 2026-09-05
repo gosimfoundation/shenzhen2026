@@ -33,7 +33,7 @@ describe("temporary schedule relationships", () => {
   });
 
   it("gives every accepted talk bilingual page content, a stable route, and a speaker", () => {
-    expect(talks).toHaveLength(85);
+    expect(talks).toHaveLength(91);
     expect(new Set(talks.map((talk) => talk.ref)).size).toBe(talks.length);
     expect(new Set(talks.map((talk) => talk.slug)).size).toBe(talks.length);
 
@@ -64,6 +64,12 @@ describe("temporary schedule relationships", () => {
       schedulePreview.tracks
         .filter((track) => track.id.startsWith("ws-"))
         .map((track) => track.id),
-    ).toEqual(["ws-ai-education", "ws-dora", "ws-vllm"]);
+    ).toEqual([
+      "ws-ai-education",
+      "ws-dora",
+      "ws-vllm",
+      "ws-google-cloud",
+      "ws-kvcdn",
+    ]);
   });
 });

@@ -307,5 +307,71 @@
       "en": "This session will explore efficient approaches to large-language-model training based on orthogonal transformation. Additional details will be announced soon.",
       "zh": "本次演讲将探讨基于正交变换的大语言模型高效训练方法，更多内容即将公布。"
     }
+  },
+  {
+    "ref": "P-125",
+    "title": {
+      "en": "Key Propositions for Innovation in the Agent Product Paradigm",
+      "zh": "Agent 产品范式创新的若干命题"
+    },
+    "overview": {
+      "en": "This talk looks beyond incremental Agent product features to examine a broader paradigm shift: software is moving from passive response to proactive action, from delivering fixed functions to generating capabilities, and from one-time delivery to continuous evolution. It explores how this shift will redefine product value, interaction, business models, and competitive advantage.",
+      "zh": "本次演讲跳出 Agent 产品的局部功能创新，从更长周期和更底层的视角讨论产品范式的变化：软件正从被动响应走向主动行动，从功能交付走向能力生成，从一次性交付走向持续进化，并由此重新定义产品价值、交互方式、商业模式与竞争壁垒。"
+    }
+  },
+  {
+    "ref": "P-130",
+    "title": {
+      "en": "From Leaderboards to Global Infrastructure: Building an Open Evaluation Ecosystem for Embodied AI",
+      "zh": "从排行榜到全球基础设施：构建开放的具身智能评测生态"
+    },
+    "overview": {
+      "en": "This talk traces RoboChallenge's evolution from real-robot benchmarks and global leaderboards toward neutral, open evaluation infrastructure for embodied AI. It covers benchmark design, reproducible real-world evaluation, international competitions, community building, EAI Bench, and emerging work on shared evaluation methods and standards.",
+      "zh": "本次演讲介绍 RoboChallenge 如何从真实机器人基准与全球排行榜，发展为中立、开放的具身智能评测基础设施，涵盖基准设计、可复现的真实环境评测、国际赛事、全球社区建设、EAI Bench，以及评测方法与国际标准的探索。"
+    }
+  },
+  {
+    "ref": "P-131",
+    "title": {
+      "en": "Engineering an Open VLA Stack with DM0.5, OpenDM, and Dexbotic",
+      "zh": "基于 DM0.5、OpenDM 与 Dexbotic 构建开放 VLA 技术栈"
+    },
+    "overview": {
+      "en": "This talk presents the engineering practices behind DM0.5, OpenDM, and Dexbotic across the complete VLA lifecycle. It covers heterogeneous robot data, reproducible training, scalable evaluation, low-latency inference, and the infrastructure needed to build efficient, reliable, and extensible embodied-AI systems.",
+      "zh": "本次演讲分享 DM0.5、OpenDM 与 Dexbotic 背后的工程实践，覆盖 VLA 全生命周期，包括异构机器人数据、可复现训练、可扩展评测、低延迟推理，以及构建高效、可靠、可扩展具身智能系统所需的基础设施。"
+    }
+  },
+  {
+    "ref": "P-132",
+    "title": {
+      "en": "UCM: Beyond KV-Cache Acceleration to Lifecycle Management for Agent-Scale Inference",
+      "zh": "UCM：从 KV Cache 加速走向智能体规模推理的全生命周期管理"
+    },
+    "overview": {
+      "en": "This workshop examines how agent workloads transform KV-cache reuse, retention, and capacity requirements. It introduces UCM, a lifecycle-aware cache system spanning GPU memory, DRAM, SSD, and distributed storage, with adaptive policies, persistent KV storage, tier-aware placement, and optimized data movement for lower inference cost.",
+      "zh": "本工作坊分析智能体负载如何改变 KV Cache 的复用、留存与容量需求，并介绍具备生命周期感知能力的统一缓存管理器 UCM。系统覆盖 GPU 内存、DRAM、SSD 与分布式存储，通过自适应策略、持久化缓存、分层放置和高性能数据传输降低大规模推理成本。"
+    }
+  },
+  {
+    "ref": "P-133",
+    "title": {
+      "en": "An Autonomous Runtime Shielding Agent for Linux Kernel Vulnerabilities",
+      "zh": "面向 Linux 内核漏洞的自主运行时防护智能体"
+    },
+    "overview": {
+      "en": "This talk presents an autonomous agent for emergency defense against newly disclosed Linux kernel vulnerabilities. The agent reproduces a flaw, reasons about its root cause, generates an eBPF hot shield, actively tests that defense against evasive triggers, and deploys only validated protection without downtime or source changes.",
+      "zh": "本次演讲介绍一种面向新披露 Linux 内核漏洞的自主应急防护智能体。它能够复现漏洞、分析根因、生成 eBPF 热防护，并主动使用不同触发方式验证防护效果，最终在无需停机或修改源代码的情况下部署通过验证的运行时保护。"
+    }
+  },
+  {
+    "ref": "P-134",
+    "title": {
+      "en": "Getting Started with the Agent Development Kit (ADK)",
+      "zh": "Agent Development Kit（ADK）入门实践"
+    },
+    "overview": {
+      "en": "In this hands-on workshop, participants build a specialized research assistant with the Agent Development Kit. The session covers local setup, custom tools, dynamic agent workflows, and execution-trace inspection using the ADK browser UI, CLI, and Python.",
+      "zh": "本工作坊将带领参与者使用 Agent Development Kit 构建专用研究助理，内容涵盖本地环境配置、自定义工具、动态智能体工作流，以及通过 ADK 浏览器界面、CLI 和 Python 检查执行轨迹。"
+    }
   }
 ]

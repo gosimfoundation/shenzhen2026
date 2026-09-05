@@ -1194,5 +1194,72 @@
       "roleOrg": "香港中文大学助理教授",
       "bio": "香港中文大学助理教授。"
     }
+  },
+  {
+    "sourceName": "王聪",
+    "id": "cong-wang",
+    "en": {
+      "name": "Cong Wang",
+      "roleOrg": "Software Engineer, Huawei Technologies",
+      "bio": "Cong Wang is a software engineer at Huawei Technologies specializing in KV-cache acceleration for large-language-model inference. His work spans high-performance computing, inference acceleration, and AI infrastructure. He currently leads architecture design, core development, and open-source community work for UCM, Huawei's Unified Cache Manager."
+    },
+    "zh": {
+      "name": "王聪",
+      "roleOrg": "华为技术有限公司软件工程师",
+      "bio": "王聪是华为技术有限公司软件工程师，专注于大语言模型推理中的 KV Cache 加速、高性能计算与 AI 基础设施。目前负责统一缓存管理器 UCM 的架构设计、核心功能开发与开源社区运营。"
+    }
+  },
+  {
+    "sourceName": "Jianzhong Li",
+    "id": "jianzhong-li",
+    "en": {
+      "name": "Jianzhong Li",
+      "roleOrg": "President, Singularity Intelligence Research Institute / Senior Vice President, CSDN",
+      "bio": "Jianzhong Li is President of the Singularity Intelligence Research Institute and Senior Vice President of CSDN. He founded the Singularity Intelligence Technology Summit in 2016 and focuses on artificial intelligence, technology innovation, industrial ecosystems, and shifts in the AI product paradigm. He is also a member of the ISO C++ standards community."
+    },
+    "zh": {
+      "name": "Jianzhong Li",
+      "roleOrg": "奇点智能研究院院长 / CSDN 高级副总裁",
+      "bio": "Jianzhong Li 现任奇点智能研究院院长、CSDN 高级副总裁，长期关注人工智能、技术创新、产业生态与 AI 产品范式变迁。他于 2016 年发起奇点智能技术峰会，并参与 ISO C++ 标准社区工作。"
+    }
+  },
+  {
+    "sourceName": "Emily Chen",
+    "id": "emily-chen",
+    "en": {
+      "name": "Emily Chen",
+      "roleOrg": "Co-founder, RoboChallenge"
+    },
+    "zh": {
+      "name": "Emily Chen",
+      "roleOrg": "RoboChallenge 联合创始人",
+      "bio": "Emily Chen 负责 Dexmal 的开源战略与生态，并推动 RoboChallenge 评测平台和赛事体系建设。她长期参与全球开源社区，曾任开源社负责人，也是中国开源年度报告、COSCon 等项目的发起者之一，近年来专注于具身智能的真实机器人评测与开放基准。"
+    }
+  },
+  {
+    "sourceName": "Haibin Zhang",
+    "id": "haibin-zhang",
+    "en": {
+      "name": "Haibin Zhang",
+      "roleOrg": "AI Infrastructure & Open Source Lead, Dexmal"
+    },
+    "zh": {
+      "name": "Haibin Zhang",
+      "roleOrg": "Dexmal AI 基础设施与开源负责人",
+      "bio": "Haibin Zhang 负责 Dexmal 的 AI 基础设施以及 OpenDM、Dexbotic 等开源项目，当前专注于具身智能领域可扩展的数据、训练、评测与推理基础设施，曾参与 Brain++、MegEngine 和自动驾驶基础设施建设。"
+    }
+  },
+  {
+    "sourceName": "Longhang Deng",
+    "id": "longhang-deng",
+    "en": {
+      "name": "Longhang Deng",
+      "roleOrg": "Master's Student, Southeast University"
+    },
+    "zh": {
+      "name": "Longhang Deng",
+      "roleOrg": "东南大学硕士研究生",
+      "bio": "Longhang Deng 是东南大学硕士研究生，研究方向包括智能体操作系统与智能体安全，重点探索能够为内核漏洞自动生成并验证运行时防护的自主智能体。"
+    }
   }
 ]

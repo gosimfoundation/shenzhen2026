@@ -69,6 +69,18 @@ const PROGRAM_CATEGORIES = [
     nameZh: "vLLM 工作坊",
     group: "workshops",
   },
+  {
+    id: "ws-google-cloud",
+    name: "Google Cloud Workshop",
+    nameZh: "Google Cloud 工作坊",
+    group: "workshops",
+  },
+  {
+    id: "ws-kvcdn",
+    name: "KVCDN Workshop",
+    nameZh: "KVCDN 工作坊",
+    group: "workshops",
+  },
 ];
 
 const TRACK_ALIASES = new Map([
@@ -76,6 +88,8 @@ const TRACK_ALIASES = new Map([
   ["sz26-ws-ai-education-workshoip", "ws-ai-education"],
   ["sz26-ws-dora-workshop", "ws-dora"],
   ["sz26-ws-vllm-workshop", "ws-vllm"],
+  ["sz26-ws-google-cloud-workshop", "ws-google-cloud"],
+  ["sz26-ws-kvcdn-workshop", "ws-kvcdn"],
   ["sz26-special-keynote", "special-keynote"],
 ]);
 
@@ -86,7 +100,13 @@ const confirmedPhotoDirectory = path.join(
   "public/images/speakers/confirmed",
 );
 const photoInboxDirectory = path.join(projectRoot, "speaker-photo-inbox");
-const supportedPhotoExtensions = new Set([".jpg", ".jpeg", ".png", ".webp"]);
+const supportedPhotoExtensions = new Set([
+  ".jpg",
+  ".jpeg",
+  ".jfif",
+  ".png",
+  ".webp",
+]);
 const sourcePath = process.argv[2];
 const photosZipPath = process.argv[3];
 
@@ -345,7 +365,7 @@ if (photosZipPath) {
       if (path.basename(imageFile) !== imageFile) {
         throw new Error(`Unsafe image filename in photo manifest: ${imageFile}`);
       }
-      if (![".jpg", ".jpeg", ".png", ".webp"].includes(extension)) {
+      if (![".jpg", ".jpeg", ".jfif", ".png", ".webp"].includes(extension)) {
         throw new Error(`Unsupported speaker image format: ${imageFile}`);
       }
 
@@ -607,6 +627,7 @@ if (photosZipPath) {
       .jpeg({ quality: 92, mozjpeg: true })
       .toBuffer();
     stagedPhotos.push({ filename, buffer: editingCopy });
+    inboxFilenames.add(filename);
   }
 
   await Promise.all(
@@ -615,12 +636,22 @@ if (photosZipPath) {
     ),
   );
 
-  const acceptedPrimaryNames = new Set(
-    accepted.map((proposal) => cleanText(proposal.name).toLocaleLowerCase()),
-  );
-  const missingPhotos = [...acceptedPrimaryNames].filter(
-    (name) => !photosByName.has(name),
-  );
+  const missingPhotos = [
+    ...new Set(
+      accepted
+        .filter((proposal) => {
+          const sourceKey = speakerNameKey(proposal.name);
+          const speakerId = speakerIdBySourceNameKey.get(sourceKey);
+          return (
+            speakerId &&
+            !confirmedImagesById.has(speakerId) &&
+            !inboxFilenames.has(`${speakerId}.jpg`) &&
+            !photosByName.has(sourceKey)
+          );
+        })
+        .map((proposal) => cleanText(proposal.name)),
+    ),
+  ];
   if (missingPhotos.length) {
     console.warn(
       `No photo supplied for ${missingPhotos.length} accepted primary speaker(s): ${missingPhotos.join(", ")}`,

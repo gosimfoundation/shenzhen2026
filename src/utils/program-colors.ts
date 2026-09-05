@@ -21,6 +21,8 @@ export const PROGRAM_CATEGORY_COLORS: Readonly<Record<string, string>> = {
   "ws-ai-education": "#C97872",
   "ws-dora": "#5F9AA8",
   "ws-vllm": "#8C7BB3",
+  "ws-google-cloud": "#6F8CCB",
+  "ws-kvcdn": "#B98B55",
 };
 
 export const DEFAULT_PROGRAM_CATEGORY_COLOR = "#6B6450";
