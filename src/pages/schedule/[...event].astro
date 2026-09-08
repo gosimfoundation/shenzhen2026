@@ -103,7 +103,7 @@ export async function getStaticPaths() {
             title: talk.title.en,
             content: "",
             date: "date" in talk ? String(talk.date) : "",
-            timeSlot: "timeSlot" in talk ? `${talk.timeSlot} (UTC+8)` : "",
+            timeSlot: "timeSlot" in talk ? String(talk.timeSlot) : "",
             type: "talk",
             speakers: eventSpeakers,
             room: "",

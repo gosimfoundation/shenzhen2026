@@ -1,4 +1,5 @@
 ---
+import { conferenceDays, groupScheduleDays } from "utils/preview-schedule-days"
 import scheduleData from "json/ScheduleBilingual.json"
 import schedulePreview from "json/SchedulePreview.json"
 import speakersEn from "json/SpeakersCleaned.json"
@@ -27,7 +28,7 @@ const previewCopy = {
     workshops: "Workshops",
     sessions: (count: number) => `${count} talk${count === 1 ? "" : "s"}`,
     summary: (talks: number, categories: number) => `All ${talks} talks · ${categories} program categories`,
-    note: "All times are China Standard Time (UTC+8). Remaining dates, times, and rooms will be added once confirmed.",
+    note: "Remaining dates, times, and rooms will be added once confirmed.",
   },
   zh: {
     sidebarTitle: "筛选议程",
@@ -36,7 +37,7 @@ const previewCopy = {
     workshops: "工作坊",
     sessions: (count: number) => `${count} 场演讲`,
     summary: (talks: number, categories: number) => `全部共 ${talks} 场演讲 · ${categories} 个议程分类`,
-    note: "所有时间均为北京时间（UTC+8）。其余日期、时间与会场确认后将在此补充。",
+    note: "其余日期、时间与会场确认后将在此补充。",
   },
 }[previewLang]
 const previewTalkCount = schedulePreview.tracks.reduce(
@@ -491,7 +492,10 @@ const gridDays: GridDay[] = days.map(d => {
             </div>
           </div>
 
-          {schedulePreview.tracks.map((track, trackIndex) => (
+          {schedulePreview.tracks.map((track, trackIndex) => {
+            const groups = groupScheduleDays(track.talks)
+            const firstDay = groups.find((group) => group.talks.length > 0)?.date
+            return (
             <div
               class="preview-track-panel"
               data-preview-track-panel={track.id}
@@ -502,8 +506,23 @@ const gridDays: GridDay[] = days.map(d => {
                 <span>{previewCopy.sessions(track.talks.length)}</span>
               </div>
 
-              <div class="preview-session-list">
-                {track.talks.map((talk, talkIndex) => {
+              <div class="preview-day-nav" aria-label={previewLang === "zh" ? "选择日期" : "Choose day"}>
+                {groups.filter((group) => conferenceDays.some((day) => day.date === group.date) || group.talks.length > 0).map((group) => {
+                  const day = conferenceDays.find((day) => day.date === group.date)
+                  return (
+                    <button type="button" class="preview-day-button"
+                      data-preview-day-button={group.date}
+                      aria-pressed={group.date === firstDay ? "true" : "false"}
+                      disabled={group.talks.length === 0}>
+                      <strong>{day?.label || (group.date === "unscheduled" ? (previewLang === "zh" ? "日期待定" : "Date TBA") : group.date)}</strong>
+                      {day && <span>{day[previewLang]}</span>}
+                    </button>
+                  )
+                })}
+              </div>
+              {groups.filter((group) => group.talks.length > 0).map((group) => (
+              <div class="preview-session-list" data-preview-day-panel={group.date} hidden={group.date !== firstDay}>
+                {group.talks.map((talk) => {
                   const talkSpeakers = talk.speakers
                     .map((speakerId) => previewSpeakerById.get(speakerId))
                     .filter(Boolean) as any[]
@@ -514,12 +533,13 @@ const gridDays: GridDay[] = days.map(d => {
                         href={`${previewScheduleBasePath}${talk.slug}/`}
                         aria-label={talk.title[previewLang]}
                       ></a>
-                      <span class="preview-session-index">{String(talkIndex + 1).padStart(2, "0")}</span>
+                      <div class="preview-session-time">
+                        {"timeSlot" in talk && talk.timeSlot ? String(talk.timeSlot).split("-").map((time, index) => (
+                          <span class={index === 0 ? "preview-time-start" : "preview-time-end"}>{time}</span>
+                        )) : <span class="preview-time-pending">{previewLang === "zh" ? "时间待定" : "Time TBA"}</span>}
+                      </div>
                       <div class="preview-session-content">
                         <h3>{talk.title[previewLang]}</h3>
-                        {"date" in talk && "timeSlot" in talk && (
-                          <p class="preview-session-time">{talk.date} · {talk.timeSlot} · {previewLang === "zh" ? "北京时间" : "UTC+8"}</p>
-                        )}
                       </div>
                       <div class="preview-session-speakers">
                         {talkSpeakers.map((speaker) => (
@@ -544,8 +564,9 @@ const gridDays: GridDay[] = days.map(d => {
                   )
                 })}
               </div>
+              ))}
             </div>
-          ))}
+          )})}
 
           <p class="preview-note">{previewCopy.note}</p>
         </div>
@@ -1195,6 +1216,15 @@ const gridDays: GridDay[] = days.map(d => {
 
     const buttons = root.querySelectorAll<HTMLElement>("[data-preview-track-button]")
     const panels = root.querySelectorAll<HTMLElement>("[data-preview-track-panel]")
+    panels.forEach((panel) => {
+      const dayButtons = panel.querySelectorAll<HTMLButtonElement>("[data-preview-day-button]")
+      const dayPanels = panel.querySelectorAll<HTMLElement>("[data-preview-day-panel]")
+      dayButtons.forEach((button) => button.addEventListener("click", () => {
+        if (button.disabled) return
+        dayButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)))
+        dayPanels.forEach((item) => { item.hidden = item.dataset.previewDayPanel !== button.dataset.previewDayButton })
+      }))
+    })
     const availableTracks = new Set(
       Array.from(panels, (panel) => panel.dataset.previewTrackPanel).filter(Boolean),
     )
