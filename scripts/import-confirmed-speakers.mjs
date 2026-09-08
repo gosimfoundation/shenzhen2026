@@ -72,7 +72,7 @@ const PROGRAM_CATEGORIES = [
   {
     id: "ws-google-cloud",
     name: "Google Cloud Workshop",
-    nameZh: "Google Cloud 工作坊",
+    nameZh: "Google Cloud 动手实验室",
     group: "workshops",
   },
   {
@@ -675,10 +675,9 @@ await writeFile(
   serializedZh,
 );
 
-// Keep the temporary no-time schedule connected to the latest accepted CFP
-// proposals. Existing hand-reviewed title translations and bilingual talk
-// overviews are preserved by proposal reference; newly accepted proposals get
-// safe source-language content until those translations are reviewed.
+// Keep the schedule connected to the latest accepted CFP proposals. Existing
+// hand-reviewed copy, confirmed timing metadata, and explicitly marked manual
+// sessions are preserved across future imports.
 const schedulePreviewPath = path.join(
   projectRoot,
   "src/json/SchedulePreview.json",
@@ -735,6 +734,7 @@ try {
       : "en";
 
     updatedTalkByRef.set(ref, {
+      ...(existingTalk ?? {}),
       ref,
       originalTitle,
       originalLanguage: titleLanguage,
@@ -763,23 +763,31 @@ try {
     const proposalByRef = new Map(
       proposals.map((proposal) => [cleanText(proposal.ref), proposal]),
     );
+    const manualTalkByRef = new Map(
+      (existingTrack?.talks ?? [])
+        .filter((talk) => talk.manual === true)
+        .map((talk) => [cleanText(talk.ref), talk]),
+    );
     const orderedRefs = [
       ...(existingTrack?.talks ?? [])
         .map((talk) => cleanText(talk.ref))
-        .filter((ref) => proposalByRef.has(ref)),
+        .filter((ref) => proposalByRef.has(ref) || manualTalkByRef.has(ref)),
       ...proposals
         .map((proposal) => cleanText(proposal.ref))
         .filter((ref) => !(existingTrack?.talks ?? []).some((talk) => cleanText(talk.ref) === ref)),
     ];
 
     return {
+      ...(existingTrack ?? {}),
       id: cleanText(existingTrack?.id) || category.id,
       sourceId: category.id,
       name: {
         en: category.name,
         zh: category.nameZh,
       },
-      talks: orderedRefs.map((ref) => updatedTalkByRef.get(ref)),
+      talks: orderedRefs.map(
+        (ref) => updatedTalkByRef.get(ref) ?? manualTalkByRef.get(ref),
+      ),
       originalName: cleanText(existingTrack?.originalName) || category.name,
     };
   });

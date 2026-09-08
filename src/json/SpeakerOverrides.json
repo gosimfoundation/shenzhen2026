@@ -1059,9 +1059,9 @@
     "sourceName": "谭欣",
     "id": "xin-tan",
     "en": {
-      "name": "Xin Tan",
+      "name": "Justin Tan",
       "roleOrg": "Solutions Architect, Google Cloud",
-      "bio": "Xin Tan is a Solutions Architect at Google Cloud, focusing on applications of frontier AI technologies in the gaming industry."
+      "bio": "Justin Tan is a Solutions Architect at Google Cloud, focusing on applications of frontier AI technologies in the gaming industry."
     },
     "zh": {
       "name": "谭欣",
@@ -1260,6 +1260,97 @@
       "name": "Longhang Deng",
       "roleOrg": "东南大学硕士研究生",
       "bio": "Longhang Deng 是东南大学硕士研究生，研究方向包括智能体操作系统与智能体安全，重点探索能够为内核漏洞自动生成并验证运行时防护的自主智能体。"
+    }
+  },
+  {
+    "sourceName": "Zhenghao Chen",
+    "id": "zhenghao-chen",
+    "en": {
+      "name": "Zhenghao Chen",
+      "roleOrg": "Assistant Professor, University of Newcastle"
+    },
+    "zh": {
+      "name": "Zhenghao Chen",
+      "roleOrg": "纽卡斯尔大学助理教授",
+      "bio": "澳大利亚纽卡斯尔大学助理教授，研究方向涵盖生成式 AI、具身智能、AI for Science 与多媒体。他曾在 TikTok、悉尼大学、微软研究院和迪士尼研究院从事研究工作，长期关注高效且可部署的智能系统。"
+    }
+  },
+  {
+    "sourceName": "Guibin ZHANG",
+    "id": "guibin-zhang",
+    "en": {
+      "name": "Guibin Zhang",
+      "roleOrg": "PhD Student, National University of Singapore"
+    },
+    "zh": {
+      "name": "Guibin Zhang",
+      "roleOrg": "新加坡国立大学博士生",
+      "bio": "新加坡国立大学计算机学院博士生。"
+    }
+  },
+  {
+    "sourceName": "Jiahang Lin",
+    "id": "jiahang-lin",
+    "en": {
+      "name": "Jiahang Lin",
+      "roleOrg": "Master's Student, Fudan University"
+    },
+    "zh": {
+      "name": "Jiahang Lin",
+      "roleOrg": "复旦大学硕士研究生",
+      "bio": "复旦大学 FudanNLP 实验室硕士研究生，研究方向为自演进智能体与强化学习，具备 SFT、强化学习和 Harness Engineering 的完整实践经验，现于 NEX-AGI 从事研究实习。"
+    }
+  },
+  {
+    "sourceName": "Hongbo Kang",
+    "id": "hongbo-kang",
+    "en": {
+      "name": "Hongbo Kang",
+      "roleOrg": "LLM Systems Architect, Approaching.AI"
+    },
+    "zh": {
+      "name": "Hongbo Kang",
+      "roleOrg": "Approaching.AI 大模型系统架构师",
+      "bio": "Approaching.AI 架构师、清华大学计算机博士，研究涵盖大模型推理、AI 基础设施、存内计算、数据放置与任务调度。目前专注于跨平台大模型部署、推理优化及软硬件协同设计。"
+    }
+  },
+  {
+    "sourceName": "wan ying",
+    "id": "wan-ying",
+    "en": {
+      "name": "Ying Wan",
+      "roleOrg": "Associate Researcher, Southeast University"
+    },
+    "zh": {
+      "name": "Ying Wan",
+      "roleOrg": "东南大学副研究员",
+      "bio": "东南大学副研究员，清华大学博士，曾任中国移动云高级网络研究员。研究方向包括数据中心网络、AI 集群互联、软件定义网络和可编程数据平面。"
+    }
+  },
+  {
+    "sourceName": "Tian Ding",
+    "id": "tian-ding",
+    "en": {
+      "name": "Tian Ding",
+      "roleOrg": "Founder, Zhizi Xinyuan"
+    },
+    "zh": {
+      "name": "丁添",
+      "roleOrg": "智子芯元（深圳）科技有限责任公司创始人",
+      "bio": "智子芯元（深圳）科技有限责任公司创始人、深圳市大数据研究院副研究员，长期专注于大模型训练、运筹优化与计算加速研究，带领团队研发计算加速智能体 KernelCAT。"
+    }
+  },
+  {
+    "sourceName": "LEI BO",
+    "id": "lei-bo",
+    "en": {
+      "name": "Lei Bo",
+      "roleOrg": "Director, China Telecom Research Institute"
+    },
+    "zh": {
+      "name": "Lei Bo",
+      "roleOrg": "中国电信研究院互联网技术研究所主任",
+      "bio": "中国电信研究院互联网技术研究所主任，北京邮电大学硕士，主要从事算力网络、智算网络和智能体网络等新型网络技术研究。"
     }
   }
 ]

@@ -22,5 +22,37 @@
       "roleOrg": "Ruby on Rails 与 Omarchy 创建者",
       "bio": "David Heinemeier Hansson（DHH）是 Ruby on Rails 与 Omarchy 的创建者、37signals 的共同所有人兼联合创始人，也是畅销书作者。他与 Jason Fried 合著《REWORK》《REMOTE》《It Doesn't Have to Be Crazy at Work》和《Getting Real》，并担任 Rails Foundation 主席及 Shopify 董事。"
     }
+  },
+  {
+    "id": "jie-wang",
+    "tags": [
+      "ws-google-cloud"
+    ],
+    "en": {
+      "name": "Jie Wang",
+      "roleOrg": "Solutions Architect, Google Cloud",
+      "bio": ""
+    },
+    "zh": {
+      "name": "王捷",
+      "roleOrg": "Google Cloud 解决方案架构师",
+      "bio": ""
+    }
+  },
+  {
+    "id": "peace-he",
+    "tags": [
+      "ws-google-cloud"
+    ],
+    "en": {
+      "name": "Peace He",
+      "roleOrg": "Solutions Architect, Google Cloud",
+      "bio": ""
+    },
+    "zh": {
+      "name": "何平",
+      "roleOrg": "Google Cloud 解决方案架构师",
+      "bio": ""
+    }
   }
 ]

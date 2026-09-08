@@ -366,12 +366,89 @@
   {
     "ref": "P-134",
     "title": {
-      "en": "Getting Started with the Agent Development Kit (ADK)",
-      "zh": "Agent Development Kit（ADK）入门实践"
+      "en": "Get started with Agent Development Kit (ADK)",
+      "zh": "Agent Development Kit (ADK) 快速入门"
     },
     "overview": {
-      "en": "In this hands-on workshop, participants build a specialized research assistant with the Agent Development Kit. The session covers local setup, custom tools, dynamic agent workflows, and execution-trace inspection using the ADK browser UI, CLI, and Python.",
-      "zh": "本工作坊将带领参与者使用 Agent Development Kit 构建专用研究助理，内容涵盖本地环境配置、自定义工具、动态智能体工作流，以及通过 ADK 浏览器界面、CLI 和 Python 检查执行轨迹。"
+      "en": "Begin your journey with the Agent Development Kit (ADK) by building a specialized research assistant. You will configure a local environment, define agents with custom tools, design dynamic workflows, and inspect execution traces using the ADK browser UI, CLI, and Python.",
+      "zh": "快速入门 ADK 框架。你将配置本地开发环境，为智能体接入自定义工具以构建专属研究助手，并学习通过 ADK 浏览器 UI、CLI 及 Python 代码，高效执行与调试动态的多智能体工作流。"
+    }
+  },
+  {
+    "ref": "P-136",
+    "title": {
+      "en": "Rethinking the Efficiency Bottlenecks of Generative Robotic Manipulation",
+      "zh": "重新审视生成式机器人操作的效率瓶颈"
+    },
+    "overview": {
+      "en": "This talk examines two major barriers to deploying generative embodied AI on real robots: redundant multi-view sensory data and the complexity of large embodied models. It presents compression methods for 3D/4D Gaussian Splatting and device-conditioned once-for-all model compression to reduce storage, communication, training, and inference costs.",
+      "zh": "本次演讲聚焦生成式具身智能落地真实机器人时的两类核心瓶颈：多视角感知数据冗余与大型具身模型的复杂度。内容将介绍面向 3D/4D Gaussian Splatting 的压缩算法，以及设备条件化的一次训练、多端部署模型压缩方法，以降低存储、通信、训练与推理成本。"
+    }
+  },
+  {
+    "ref": "P-137",
+    "title": {
+      "en": "Introducing the Harness Intelligence Model: JIT-Agent",
+      "zh": "Harness 智能模型 JIT-Agent"
+    },
+    "overview": {
+      "en": "This talk introduces JIT-Agent, a model that generates task-adaptive agent harnesses on demand for off-the-shelf agentic LLMs. A fixed four-module protocol lets it customize harnesses for a task, repair them for reliable execution, and improve them by learning from prior configurations and performance signals.",
+      "zh": "本次演讲介绍 JIT-Agent：一种能够为现成智能体大模型按需生成任务自适应 Harness 的模型。它通过固定的四模块协议，根据任务定制 Harness、修复执行稳定性问题，并从历史配置与性能信号中持续演进。"
+    }
+  },
+  {
+    "ref": "P-139",
+    "title": {
+      "en": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses",
+      "zh": "智能体 Harness 工程：可观测性驱动的编码智能体 Harness 自动演进"
+    },
+    "overview": {
+      "en": "This talk presents Agentic Harness Engineering, a closed loop for automatically improving coding-agent harnesses. Component, experience, and decision observability make every edit explicit, evidence-based, reversible, and testable, enabling reliable evolution beyond manual trial and error.",
+      "zh": "本次演讲介绍 Agentic Harness Engineering，一套自动改进编码智能体 Harness 的闭环方法。组件、经验与决策三个层面的可观测性，让每次修改都可定位、有证据、可回滚并可验证，从而实现超越人工试错的可靠演进。"
+    }
+  },
+  {
+    "ref": "P-140",
+    "title": {
+      "en": "High-Quality Tokens: From Heterogeneous PD to Cross-Region AI Infrastructure",
+      "zh": "高质量 Token：从异构 PD 到跨区域 AI 基础设施"
+    },
+    "overview": {
+      "en": "This workshop explains how Prefill–Decode disaggregation and Mooncake KV-cache handoff allow heterogeneous resource pools to collaborate across locations. It shares thousand-accelerator commercial deployment experience and cross-building experiments that inform bandwidth and tail-latency planning for cross-region AI infrastructure.",
+      "zh": "本工作坊介绍 Prefill–Decode 分离与 Mooncake KV Cache 传递如何让异构资源池跨地域协作，并分享千卡规模商业部署经验及跨楼宇实验结果，为跨区域 AI 基础设施的带宽与尾延迟规划提供依据。"
+    }
+  },
+  {
+    "ref": "P-141",
+    "title": {
+      "en": "Turbo: Efficient Long-Context LLM Serving with In-Network Aggregation",
+      "zh": "Turbo：基于网内聚合的长上下文大模型高效服务"
+    },
+    "overview": {
+      "en": "This workshop presents Turbo, which offloads query multicast and partial-attention aggregation to programmable switches for context-parallel LLM inference. Online aggregation, rolling pipeline state, and load-aware aggregation trees reduce network traffic and decoding latency while preserving output quality.",
+      "zh": "本工作坊介绍 Turbo：在上下文并行大模型推理中，将查询组播和局部注意力结果聚合卸载到可编程交换机。系统通过在线聚合、流水线状态滚动与负载感知聚合树减少网络流量和解码延迟，同时保持模型输出质量。"
+    }
+  },
+  {
+    "ref": "P-146",
+    "title": {
+      "en": "KernelCAT: Practical AI for Computing",
+      "zh": "KernelCAT：AI for Computing 实践分享"
+    },
+    "overview": {
+      "en": "This talk explores how large AI models and mathematical optimization can accelerate operator development, model adaptation, and automated algorithm discovery. It presents practical KernelCAT agent cases and discusses the technical and industrial outlook for AI for Computing.",
+      "zh": "本次演讲分享如何将 AI 大模型与数学优化技术应用于算子开发、模型适配和算法自动发现等计算加速场景，介绍 KernelCAT 智能体的典型案例，并展望 AI for Computing 的技术与产业前景。"
+    }
+  },
+  {
+    "ref": "P-147",
+    "title": {
+      "en": "Research and Practice of Agent Networking",
+      "zh": "智能体网络的研究与实践"
+    },
+    "overview": {
+      "en": "This workshop explores research and practical work toward an Internet of agents, including the network technologies and infrastructure needed for agents to discover, communicate, and collaborate across systems.",
+      "zh": "本工作坊介绍面向智能体互联网的研究与实践，探讨支持智能体跨系统发现、通信与协作所需的网络技术和基础设施。"
     }
   }
 ]

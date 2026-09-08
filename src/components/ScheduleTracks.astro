@@ -27,7 +27,7 @@ const previewCopy = {
     workshops: "Workshops",
     sessions: (count: number) => `${count} talk${count === 1 ? "" : "s"}`,
     summary: (talks: number, categories: number) => `All ${talks} talks · ${categories} program categories`,
-    note: "Session dates, times, and rooms will be added once confirmed.",
+    note: "All times are China Standard Time (UTC+8). Remaining dates, times, and rooms will be added once confirmed.",
   },
   zh: {
     sidebarTitle: "筛选议程",
@@ -36,7 +36,7 @@ const previewCopy = {
     workshops: "工作坊",
     sessions: (count: number) => `${count} 场演讲`,
     summary: (talks: number, categories: number) => `全部共 ${talks} 场演讲 · ${categories} 个议程分类`,
-    note: "具体日期、时间与会场确认后将在此补充。",
+    note: "所有时间均为北京时间（UTC+8）。其余日期、时间与会场确认后将在此补充。",
   },
 }[previewLang]
 const previewTalkCount = schedulePreview.tracks.reduce(
@@ -517,6 +517,9 @@ const gridDays: GridDay[] = days.map(d => {
                       <span class="preview-session-index">{String(talkIndex + 1).padStart(2, "0")}</span>
                       <div class="preview-session-content">
                         <h3>{talk.title[previewLang]}</h3>
+                        {"date" in talk && "timeSlot" in talk && (
+                          <p class="preview-session-time">{talk.date} · {talk.timeSlot} · {previewLang === "zh" ? "北京时间" : "UTC+8"}</p>
+                        )}
                       </div>
                       <div class="preview-session-speakers">
                         {talkSpeakers.map((speaker) => (

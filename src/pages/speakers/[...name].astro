@@ -142,6 +142,10 @@ const speakerSessions = [
 // The notice concerns missing profile copy; image fallback happens in the browser.
 const isPlaceholder = !speaker.bio;
 
+const socialLinks = Object.entries(speaker.socialLinks || {}).filter(
+  ([_, url]) => typeof url === "string" && url.trim() !== "" && url.trim() !== "undefined"
+);
+
 // Social links mapping for icons
 const socialIconMap: Record<string, string> = {
   website: "/icons/icon-website.svg",
@@ -223,17 +227,14 @@ const socialIconMap: Record<string, string> = {
             </div>
           </div>
 
+          {socialLinks.length > 0 && (
           <div class="box-row box-row-tag">
             <div
               class="card-tags group-tags social-wrap"
               style="gap: 1rem; align-items: center;"
             >
               {
-                Object.entries(speaker.socialLinks || {})
-                  .filter(
-                    ([_, url]) =>
-                      url && url.trim() !== "" && url !== "undefined"
-                  )
+                socialLinks
                   .map(([platform, url]) => (
                     <a
                       href={url}
@@ -257,6 +258,7 @@ const socialIconMap: Record<string, string> = {
               }
             </div>
           </div>
+          )}
 
           {speaker.bio && (
             <div class="box-row box-row-text styled-content">

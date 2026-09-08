@@ -5,6 +5,8 @@ export const SPEAKER_IMAGE_FALLBACK_HANDLER =
   `this.onerror=null;this.src='${SPEAKER_PLACEHOLDER_IMAGE}'`;
 
 const SPEAKER_PLACEHOLDER_IDS = new Set([
+  "jie-wang",
+  "peace-he",
   "bartlomiej-szejny",
   "chenghao-rong",
   "chen-xin",

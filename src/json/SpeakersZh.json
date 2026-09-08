@@ -68,7 +68,7 @@
     {
       "id": "ws-google-cloud",
       "name": "Google Cloud Workshop",
-      "nameZh": "Google Cloud 工作坊",
+      "nameZh": "Google Cloud 动手实验室",
       "group": "workshops"
     },
     {
@@ -96,6 +96,34 @@
       "draft": false,
       "keynote": true,
       "image": "/images/speakers/confirmed/dhh.png"
+    },
+    {
+      "id": "jie-wang",
+      "name": "王捷",
+      "roleOrg": "Google Cloud 解决方案架构师",
+      "bio": "",
+      "nameEn": "Jie Wang",
+      "tags": [
+        "ws-google-cloud"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/jie-wang.png"
+    },
+    {
+      "id": "peace-he",
+      "name": "何平",
+      "roleOrg": "Google Cloud 解决方案架构师",
+      "bio": "",
+      "nameEn": "Peace He",
+      "tags": [
+        "ws-google-cloud"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/peace-he.png"
     },
     {
       "id": "charles-yang",
@@ -1346,7 +1374,7 @@
       "socialLinks": {},
       "draft": false,
       "image": "/images/speakers/confirmed/xin-tan.png",
-      "nameEn": "Xin Tan"
+      "nameEn": "Justin Tan"
     },
     {
       "id": "keshu-han",
@@ -1547,6 +1575,102 @@
       "draft": false,
       "image": "/images/speakers/confirmed/dongbiao-he.png",
       "nameEn": "Dongbiao He"
+    },
+    {
+      "id": "zhenghao-chen",
+      "name": "Zhenghao Chen",
+      "roleOrg": "纽卡斯尔大学助理教授",
+      "bio": "澳大利亚纽卡斯尔大学助理教授，研究方向涵盖生成式 AI、具身智能、AI for Science 与多媒体。他曾在 TikTok、悉尼大学、微软研究院和迪士尼研究院从事研究工作，长期关注高效且可部署的智能系统。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhenghao-chen.png",
+      "nameEn": "Zhenghao Chen"
+    },
+    {
+      "id": "guibin-zhang",
+      "name": "Guibin Zhang",
+      "roleOrg": "新加坡国立大学博士生",
+      "bio": "新加坡国立大学计算机学院博士生。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://guibinz.top/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/guibin-zhang.png",
+      "nameEn": "Guibin Zhang"
+    },
+    {
+      "id": "jiahang-lin",
+      "name": "Jiahang Lin",
+      "roleOrg": "复旦大学硕士研究生",
+      "bio": "复旦大学 FudanNLP 实验室硕士研究生，研究方向为自演进智能体与强化学习，具备 SFT、强化学习和 Harness Engineering 的完整实践经验，现于 NEX-AGI 从事研究实习。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://curry09.github.io/",
+        "github": "https://github.com/Curry09"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/jiahang-lin.png",
+      "nameEn": "Jiahang Lin"
+    },
+    {
+      "id": "hongbo-kang",
+      "name": "Hongbo Kang",
+      "roleOrg": "Approaching.AI 大模型系统架构师",
+      "bio": "Approaching.AI 架构师、清华大学计算机博士，研究涵盖大模型推理、AI 基础设施、存内计算、数据放置与任务调度。目前专注于跨平台大模型部署、推理优化及软硬件协同设计。",
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/hongbo-kang.png",
+      "nameEn": "Hongbo Kang"
+    },
+    {
+      "id": "wan-ying",
+      "name": "Ying Wan",
+      "roleOrg": "东南大学副研究员",
+      "bio": "东南大学副研究员，清华大学博士，曾任中国移动云高级网络研究员。研究方向包括数据中心网络、AI 集群互联、软件定义网络和可编程数据平面。",
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/wan-ying.png",
+      "nameEn": "Ying Wan"
+    },
+    {
+      "id": "tian-ding",
+      "name": "丁添",
+      "roleOrg": "智子芯元（深圳）科技有限责任公司创始人",
+      "bio": "智子芯元（深圳）科技有限责任公司创始人、深圳市大数据研究院副研究员，长期专注于大模型训练、运筹优化与计算加速研究，带领团队研发计算加速智能体 KernelCAT。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/tian-ding.png",
+      "nameEn": "Tian Ding"
+    },
+    {
+      "id": "lei-bo",
+      "name": "Lei Bo",
+      "roleOrg": "中国电信研究院互联网技术研究所主任",
+      "bio": "中国电信研究院互联网技术研究所主任，北京邮电大学硕士，主要从事算力网络、智算网络和智能体网络等新型网络技术研究。",
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/lei-bo.png",
+      "nameEn": "Lei Bo"
     }
   ]
 }
