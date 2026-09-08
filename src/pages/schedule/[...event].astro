@@ -27,6 +27,7 @@ type Event = {
   slug?: string
   categoryLabel?: string
   preview?: boolean
+  notice?: string
   overview?: string
 }
 
@@ -111,6 +112,7 @@ export async function getStaticPaths() {
             categoryLabel: track.name.en,
             preview: !("date" in talk && "timeSlot" in talk),
             overview: talk.overview.en,
+            notice: "notice" in track ? track.notice.en : "",
           },
           category: track.id,
         },
@@ -240,6 +242,8 @@ const eventCategory = (() => {
       {eventDetails.preview && (
         <p class="ev-preview-note">Date, time, and room will be added once confirmed.</p>
       )}
+
+      {eventDetails.notice && <p class="ev-preview-note">{eventDetails.notice}</p>}
 
       {eventDetails.overview && (
         <section class="ev-overview" aria-labelledby="talk-overview-heading">

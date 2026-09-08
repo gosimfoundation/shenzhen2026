@@ -506,6 +506,8 @@ const gridDays: GridDay[] = days.map(d => {
                 <span>{previewCopy.sessions(track.talks.length)}</span>
               </div>
 
+              {"notice" in track && <p class="preview-workshop-notice">{track.notice[previewLang]}</p>}
+
               <div class="preview-day-nav" aria-label={previewLang === "zh" ? "选择日期" : "Choose day"}>
                 {groups.filter((group) => conferenceDays.some((day) => day.date === group.date) || group.talks.length > 0).map((group) => {
                   const day = conferenceDays.find((day) => day.date === group.date)

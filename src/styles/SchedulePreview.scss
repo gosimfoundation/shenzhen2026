@@ -382,3 +382,10 @@
 .preview-day-button:disabled { opacity: 0.35; cursor: not-allowed; }
 .preview-day-button:focus-visible { outline: 2px solid #eeab71; outline-offset: 3px; }
 .preview-session-list[hidden] { display: none; }
+
+.preview-workshop-notice {
+  margin: 0 0 1rem;
+  color: var(--color-heading);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}

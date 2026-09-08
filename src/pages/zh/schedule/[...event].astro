@@ -22,6 +22,7 @@ type Event = {
   slug?: string
   categoryLabel?: string
   preview?: boolean
+  notice?: string
   overview?: string
 }
 
@@ -93,6 +94,7 @@ export async function getStaticPaths() {
             categoryLabel: track.name.zh,
             preview: !("date" in talk && "timeSlot" in talk),
             overview: talk.overview.zh,
+            notice: "notice" in track ? track.notice.zh : "",
           },
           category: track.id,
         },
@@ -250,6 +252,8 @@ const eventCategory = eventDetails.categoryLabel || (eventDetails.type === "keyn
       {eventDetails.preview && (
         <p class="ev-preview-note">具体日期、时间与会场确认后将在此补充。</p>
       )}
+
+      {eventDetails.notice && <p class="ev-preview-note">{eventDetails.notice}</p>}
 
       {eventDetails.overview && (
         <section class="ev-overview" aria-labelledby="talk-overview-heading">

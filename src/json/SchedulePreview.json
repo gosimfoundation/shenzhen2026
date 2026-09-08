@@ -1953,7 +1953,11 @@
       "originalName": "Google Cloud Workshop",
       "date": "2026-10-17",
       "timeSlot": "10:15-12:25",
-      "timezone": "Asia/Shanghai"
+      "timezone": "Asia/Shanghai",
+      "notice": {
+        "zh": "*此为动手实操活动，需要自备笔记本电脑。",
+        "en": "*This is a hands-on session, please bring your own laptop."
+      }
     },
     {
       "id": "ws-kvcdn",

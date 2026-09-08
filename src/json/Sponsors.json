@@ -72,6 +72,20 @@
       "name": "Kaiyuanshe",
       "logoClass": "community-logo-medium",
       "url": "https://kaiyuanshe.cn"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "async-community.png",
+      "name": "Epubit",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.epubit.com/"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "tsinghua-university-press.png",
+      "name": "Tsinghua University Press",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.tup.com.cn/"
     }
   ]
 }
