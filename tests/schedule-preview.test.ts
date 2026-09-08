@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import schedulePreview from "../src/json/SchedulePreview.json";
+import scheduleOverrides from "../src/json/SchedulePreviewOverrides.json";
 import speakersEn from "../src/json/SpeakersCleaned.json";
 import speakersZh from "../src/json/SpeakersZh.json";
 
@@ -57,6 +58,17 @@ describe("temporary schedule relationships", () => {
         expect(chineseSpeakerIds.has(speakerId), `${talk.ref}: ${speakerId} ZH`).toBe(true);
       }
     }
+  });
+
+  it("keeps all three confirmed presenters on both Google Cloud sessions", () => {
+    const workshop = schedulePreview.tracks.find((track) => track.id === "ws-google-cloud")!;
+    const confirmedSpeakers = ["xin-tan", "jie-wang", "peace-he"];
+    expect(workshop.talks).toHaveLength(2);
+    for (const talk of workshop.talks) {
+      expect(talk.speakers).toEqual(confirmedSpeakers);
+    }
+    expect(scheduleOverrides.find((entry) => entry.ref === "P-134"))
+      .toMatchObject({ speakers: confirmedSpeakers });
   });
 
   it("provides all current workshops to the homepage program section", () => {

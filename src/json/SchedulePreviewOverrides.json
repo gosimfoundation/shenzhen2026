@@ -372,7 +372,12 @@
     "overview": {
       "en": "Begin your journey with the Agent Development Kit (ADK) by building a specialized research assistant. You will configure a local environment, define agents with custom tools, design dynamic workflows, and inspect execution traces using the ADK browser UI, CLI, and Python.",
       "zh": "快速入门 ADK 框架。你将配置本地开发环境，为智能体接入自定义工具以构建专属研究助手，并学习通过 ADK 浏览器 UI、CLI 及 Python 代码，高效执行与调试动态的多智能体工作流。"
-    }
+    },
+    "speakers": [
+      "xin-tan",
+      "jie-wang",
+      "peace-he"
+    ]
   },
   {
     "ref": "P-136",

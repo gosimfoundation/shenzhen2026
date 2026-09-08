@@ -1910,7 +1910,9 @@
           },
           "slug": "p-134-get-started-with-agent-development-kit-adk",
           "speakers": [
-            "xin-tan"
+            "xin-tan",
+            "jie-wang",
+            "peace-he"
           ],
           "originalAbstract": "Begin your journey with the Agent Development Kit (ADK) by building a specialized research assistant. You will configure a local environment, define agents with custom tools, design dynamic workflows, and inspect execution traces using the ADK browser UI, CLI, and Python.",
           "originalAbstractLanguage": "en",

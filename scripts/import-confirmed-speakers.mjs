@@ -745,7 +745,8 @@ try {
       slug:
         cleanText(existingTalk?.slug) ||
         `${ref.toLowerCase()}-${slugify(originalTitle, ref)}`,
-      speakers: [...new Set(speakerIds)],
+      // Organizer-confirmed speaker lists take precedence over CFP submissions.
+      speakers: [...new Set(contentOverride?.speakers ?? speakerIds)],
       originalAbstract,
       originalAbstractLanguage: abstractLanguage,
       overview: contentOverride?.overview ?? existingTalk?.overview ?? {
