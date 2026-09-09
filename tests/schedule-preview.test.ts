@@ -34,7 +34,7 @@ describe("temporary schedule relationships", () => {
   });
 
   it("gives every accepted talk bilingual page content, a stable route, and a speaker", () => {
-    expect(talks).toHaveLength(99);
+    expect(talks).toHaveLength(105);
     expect(new Set(talks.map((talk) => talk.ref)).size).toBe(talks.length);
     expect(new Set(talks.map((talk) => talk.slug)).size).toBe(talks.length);
 

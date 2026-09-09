@@ -1,56 +1,41 @@
 ---
-// Scrolling "proudly supported by" strip — the top past sponsors/partners shown as
-// uniform white logos inside liquid-glass pills, gliding horizontally.
-// Logos are recoloured to white at render time (filter: brightness(0) invert(1))
-// so mixed-colour source PNGs read as one consistent set.
+// Current sponsors and partners share the sponsor page's data source.
+import sponsors from "json/Sponsors.json";
+
 interface Props {
   lead: string;
-  emphasis?: string;
+  href: string;
+  cta: string;
 }
-const { lead, emphasis } = Astro.props;
-
-// Top 20 past sponsors by significance (mirrors the ranking used on the
-// Past Sponsors page, trimmed to the most recognisable names).
-const TOP_20 = [
-  { image: "huawei.png", name: "Huawei" },
-  { image: "google.png", name: "Google" },
-  { image: "amazon.png", name: "Amazon" },
-  { image: "nvidia.png", name: "NVIDIA", big: true },
-  { image: "intel.png", name: "Intel" },
-  { image: "arm.png", name: "Arm" },
-  { image: "redhat.png", name: "Red Hat", big: true },
-  { image: "huggingface-strip.png", name: "Hugging Face", big: true },
-  { image: "bytedance.png", name: "ByteDance" },
-  { image: "databricks.png", name: "Databricks", big: true },
-  { image: "csdn.png", name: "CSDN" },
-  { image: "minimax.png", name: "MiniMax" },
-  { image: "kimi-strip.png", name: "Kimi" },
-  { image: "z-ai-strip.png", name: "Z.ai" },
-  { image: "baai.png", name: "BAAI" },
-  { image: "openbmb.png", name: "OpenBMB" },
-  { image: "modelbest.png", name: "ModelBest" },
-  { image: "second-state.png", name: "Second State" },
-  { image: "sgl.png", name: "SGLang" },
-  { image: "futurewei.png", name: "Futurewei", big: true },
-];
+const { lead, href, cta } = Astro.props;
+const partners = sponsors.partners.filter(
+  ({ category }) => category !== "host" && category !== "co-organizer"
+);
 
 // duplicated once for a seamless -50% loop
-const loop = [...TOP_20, ...TOP_20];
+const loop = [...partners, ...partners];
 ---
 
 <section class="psup" data-theme-section="dark" data-bg-section="lightgray">
   <p class="psup-eyebrow">
-    {lead}{emphasis && <> <em>{emphasis}</em></>}
+    <a href={href}>
+      <span>{lead}</span>
+      <span class="psup-cta">
+        {cta}
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+    </a>
   </p>
 
   <div class="psup-marquee">
     <div class="psup-row">
       {loop.map((l, i) => (
-        <span class="psup-pill" aria-hidden={i >= TOP_20.length ? "true" : undefined}>
+        <span class="psup-pill" aria-hidden={i >= partners.length ? "true" : undefined}>
           <img
             src={`/images/sponsors/${l.image}`}
-            alt={i >= TOP_20.length ? "" : l.name}
-            class={[l.raw && "is-raw", l.big && "is-big"].filter(Boolean).join(" ") || undefined}
+            alt={i >= partners.length ? "" : l.name}
             loading="lazy"
             decoding="async"
           />
@@ -83,11 +68,36 @@ const loop = [...TOP_20, ...TOP_20];
     color: var(--cream);
     padding: 0 1.5rem;
   }
-  .psup-eyebrow em {
-    font-family: Georgia, "Times New Roman", serif;
-    font-style: italic;
+  .psup-eyebrow a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: inherit;
+    text-decoration: none;
+  }
+  .psup-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1rem;
+    border: 1px solid rgba(234, 230, 210, 0.4);
+    border-radius: 999px;
+    background: rgba(234, 230, 210, 0.08);
+    font-size: 0.85rem;
     font-weight: 500;
-    color: rgba(234, 230, 210, 0.62);
+    letter-spacing: 0;
+    transition: background 180ms ease, border-color 180ms ease;
+  }
+  .psup-eyebrow a:hover .psup-cta,
+  .psup-eyebrow a:focus-visible .psup-cta {
+    background: rgba(234, 230, 210, 0.18);
+    border-color: var(--cream);
+  }
+  .psup-eyebrow a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 6px;
+    border-radius: 2px;
   }
 
   /* fade the strip into the background at both edges */
@@ -107,8 +117,7 @@ const loop = [...TOP_20, ...TOP_20];
     /* promote to its own GPU layer so pills don't drop out mid-scroll */
     transform: translateZ(0);
     backface-visibility: hidden;
-    /* 50s ≈ same px/s as the "大会内容" program marquee (matched by row width) */
-    animation: psup-scroll 50s linear infinite;
+    animation: psup-scroll 30s linear infinite;
   }
   @keyframes psup-scroll {
     from { transform: translateX(0); }
@@ -140,26 +149,16 @@ const loop = [...TOP_20, ...TOP_20];
   .psup-pill img {
     /* fit every logo into the same bounding box so they read at a consistent
        size and none get clipped (e.g. Hugging Face) */
-    max-height: 1.65rem;
+    max-height: 2.4rem;
     max-width: 8.2rem;
     width: auto;
     height: auto;
     object-fit: contain;
-    /* recolour any logo to a uniform white silhouette */
-    filter: brightness(0) invert(1);
+    /* Keep internal light/dark detail: a flat white silhouette erases enclosed
+       artwork in logos such as Kaiyuanshe. Invert grayscale for the dark strip. */
+    filter: grayscale(1) invert(1) brightness(1.6);
     opacity: 0.95;
   }
-  /* logos already styled for dark backgrounds (kept in their own colours) */
-  .psup-pill img.is-raw {
-    filter: none;
-    opacity: 1;
-  }
-  /* icon+wordmark logos that read small at the default size — scale them up */
-  .psup-pill img.is-big {
-    max-height: 2.5rem;
-    max-width: 9.8rem;
-  }
-
   @media (max-width: 640px) {
     .psup-pill {
       height: 3.7rem;
@@ -167,12 +166,13 @@ const loop = [...TOP_20, ...TOP_20];
       padding: 0 1rem;
     }
     .psup-pill img {
-      max-height: 1.35rem;
+      max-height: 2rem;
       max-width: 6.5rem;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .psup-row { animation: none; }
+    .psup-cta { transition: none; }
   }
 </style>

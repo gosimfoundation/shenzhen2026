@@ -1459,7 +1459,8 @@
         "sz26-agentic-ai-summit"
       ],
       "socialLinks": {
-        "website": "https://singintelligence.com/"
+        "website": "https://singintelligence.com/",
+        "linkedin": "https://linkedin.com/in/jianzhongli"
       },
       "draft": false,
       "image": "/images/speakers/confirmed/jianzhong-li.png",
@@ -1647,6 +1648,21 @@
       "nameEn": "Ying Wan"
     },
     {
+      "id": "weiyu-xie",
+      "name": "Weiyu Xie",
+      "roleOrg": "Approaching.AI 首席架构师",
+      "bio": "Approaching.AI 首席架构师，清华大学计算机科学与技术系高性能计算研究所博士，研究方向包括智能体系统、大语言模型推理、图计算与数据库。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/ErvinXie"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/weiyu-xie.png",
+      "nameEn": "Weiyu Xie"
+    },
+    {
       "id": "tian-ding",
       "name": "丁添",
       "roleOrg": "智子芯元（深圳）科技有限责任公司创始人",
@@ -1671,6 +1687,78 @@
       "draft": false,
       "image": "/images/speakers/confirmed/lei-bo.png",
       "nameEn": "Lei Bo"
+    },
+    {
+      "id": "feiqiang-sun",
+      "name": "孙飞强",
+      "roleOrg": "FlexKV 核心维护者、腾讯云高级工程师",
+      "bio": "腾讯云高级工程师，拥有九年云计算研发经验，长期从事高性能数据中心网络与存储、协议栈、RDMA 网络性能优化和 AI 基础设施研发。作为 FlexKV 开源社区核心维护者，推动大模型 KV Cache 优化技术在企业级产品中的落地。",
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/feiqiangs",
+        "linkedin": "https://www.linkedin.com/in/feiqiang-sun-5aa2951b0/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/feiqiang-sun.png",
+      "nameEn": "Feiqiang Sun"
+    },
+    {
+      "id": "zhifei-xie",
+      "name": "Zhifei Xie",
+      "roleOrg": "南洋理工大学博士研究员",
+      "bio": "南洋理工大学博士研究员，研究方向为音视频交互。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhifei-xie.png",
+      "nameEn": "Zhifei Xie"
+    },
+    {
+      "id": "yu-huang",
+      "name": "黄浴",
+      "roleOrg": "中国科大先进技术研究院研究员",
+      "bio": "中国科大先进技术研究院研究员，曾任上汽零束科技智驾首席科学家、黑芝麻智能科技研究副总裁和奇点汽车美研首席科学家兼总裁，也曾在百度美研、Intel、华为美研和三星美研工作。已发表四十余篇国际学术论文并获得十七项欧美专利。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/yu-huang.png",
+      "nameEn": "Yu Huang"
+    },
+    {
+      "id": "yongcheng-wei",
+      "name": "韦永成",
+      "roleOrg": "重庆邮电大学博士生",
+      "bio": "重庆邮电大学自动化学院在读博士生，研究方向为具身智能。",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/yongcheng-wei.png",
+      "nameEn": "Yongcheng Wei"
+    },
+    {
+      "id": "michael-yuan",
+      "name": "Michael Yuan",
+      "roleOrg": "Second State 创始人",
+      "bio": "Second State 创始人、投资人和智能体工程师，专注于开源 AI 与 Rust。",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/juntao",
+        "twitter": "https://x.com/juntao",
+        "linkedin": "https://linkedin.com/in/myuan"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/michael-yuan.png",
+      "nameEn": "Michael Yuan"
     }
   ]
 }

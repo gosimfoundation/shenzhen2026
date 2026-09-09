@@ -212,11 +212,17 @@ for (const entry of overrideData) {
   const sourceName = cleanText(entry.sourceName);
   if (!sourceName) throw new Error("Every speaker override needs a sourceName.");
 
-  const key = speakerNameKey(sourceName);
-  if (overridesBySourceName.has(key)) {
-    throw new Error(`Duplicate speaker override for ${sourceName}.`);
+  const sourceNames = [
+    sourceName,
+    ...(Array.isArray(entry.sourceNames) ? entry.sourceNames.map(cleanText) : []),
+  ].filter(Boolean);
+  for (const sourceNameAlias of sourceNames) {
+    const key = speakerNameKey(sourceNameAlias);
+    if (overridesBySourceName.has(key)) {
+      throw new Error(`Duplicate speaker override for ${sourceNameAlias}.`);
+    }
+    overridesBySourceName.set(key, entry);
   }
-  overridesBySourceName.set(key, entry);
 }
 
 const scheduleOverrideData = JSON.parse(

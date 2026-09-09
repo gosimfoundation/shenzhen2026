@@ -1211,6 +1211,9 @@
   },
   {
     "sourceName": "Jianzhong Li",
+    "sourceNames": [
+      "李建忠"
+    ],
     "id": "jianzhong-li",
     "en": {
       "name": "Jianzhong Li",
@@ -1351,6 +1354,89 @@
       "name": "Lei Bo",
       "roleOrg": "中国电信研究院互联网技术研究所主任",
       "bio": "中国电信研究院互联网技术研究所主任，北京邮电大学硕士，主要从事算力网络、智算网络和智能体网络等新型网络技术研究。"
+    }
+  },
+  {
+    "sourceName": "Weiyu Xie",
+    "id": "weiyu-xie",
+    "en": {
+      "name": "Weiyu Xie",
+      "roleOrg": "Chief Architect, Approaching.AI"
+    },
+    "zh": {
+      "name": "Weiyu Xie",
+      "roleOrg": "Approaching.AI 首席架构师",
+      "bio": "Approaching.AI 首席架构师，清华大学计算机科学与技术系高性能计算研究所博士，研究方向包括智能体系统、大语言模型推理、图计算与数据库。"
+    }
+  },
+  {
+    "sourceName": "sunfeiqiang",
+    "id": "feiqiang-sun",
+    "en": {
+      "name": "Feiqiang Sun",
+      "roleOrg": "FlexKV Core Maintainer & Senior Engineer, Tencent Cloud",
+      "bio": "Feiqiang Sun is a Senior Engineer at Tencent Cloud with nine years of cloud-computing R&D experience. His work covers high-performance data-center networking and storage, protocol stacks, RDMA optimization, and AI infrastructure. As a core maintainer of FlexKV, he advances enterprise adoption of KV-cache optimization technologies."
+    },
+    "zh": {
+      "name": "孙飞强",
+      "roleOrg": "FlexKV 核心维护者、腾讯云高级工程师",
+      "bio": "腾讯云高级工程师，拥有九年云计算研发经验，长期从事高性能数据中心网络与存储、协议栈、RDMA 网络性能优化和 AI 基础设施研发。作为 FlexKV 开源社区核心维护者，推动大模型 KV Cache 优化技术在企业级产品中的落地。"
+    }
+  },
+  {
+    "sourceName": "Xie Zhifei",
+    "id": "zhifei-xie",
+    "en": {
+      "name": "Zhifei Xie",
+      "roleOrg": "PhD Researcher, Nanyang Technological University",
+      "bio": "Zhifei Xie is a PhD researcher at Nanyang Technological University focusing on audio-visual interaction."
+    },
+    "zh": {
+      "name": "Zhifei Xie",
+      "roleOrg": "南洋理工大学博士研究员",
+      "bio": "南洋理工大学博士研究员，研究方向为音视频交互。"
+    }
+  },
+  {
+    "sourceName": "Yu Huang",
+    "id": "yu-huang",
+    "en": {
+      "name": "Yu Huang",
+      "roleOrg": "Researcher, Institute of Advanced Technology, USTC",
+      "bio": "Dr. Yu Huang is a researcher at the Institute of Advanced Technology, University of Science and Technology of China. He previously held senior autonomous-driving and research roles at SAIC Z-ONE, Black Sesame Technologies, Singulato, Baidu Research USA, Intel, Huawei Research USA, and Samsung Research USA."
+    },
+    "zh": {
+      "name": "黄浴",
+      "roleOrg": "中国科大先进技术研究院研究员",
+      "bio": "中国科大先进技术研究院研究员，曾任上汽零束科技智驾首席科学家、黑芝麻智能科技研究副总裁和奇点汽车美研首席科学家兼总裁，也曾在百度美研、Intel、华为美研和三星美研工作。已发表四十余篇国际学术论文并获得十七项欧美专利。"
+    }
+  },
+  {
+    "sourceName": "韦永成",
+    "id": "yongcheng-wei",
+    "en": {
+      "name": "Yongcheng Wei",
+      "roleOrg": "PhD Student, Chongqing University of Posts and Telecommunications",
+      "bio": "Yongcheng Wei is a PhD student in the School of Automation at Chongqing University of Posts and Telecommunications, focusing on embodied intelligence."
+    },
+    "zh": {
+      "name": "韦永成",
+      "roleOrg": "重庆邮电大学博士生",
+      "bio": "重庆邮电大学自动化学院在读博士生，研究方向为具身智能。"
+    }
+  },
+  {
+    "sourceName": "Michael Yuan",
+    "id": "michael-yuan",
+    "en": {
+      "name": "Michael Yuan",
+      "roleOrg": "Founder, Second State",
+      "bio": "Michael Yuan is a founder, investor, and agentic engineer focused on open-source AI and Rust."
+    },
+    "zh": {
+      "name": "Michael Yuan",
+      "roleOrg": "Second State 创始人",
+      "bio": "Second State 创始人、投资人和智能体工程师，专注于开源 AI 与 Rust。"
     }
   }
 ]

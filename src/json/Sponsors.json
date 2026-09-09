@@ -13,6 +13,10 @@
       "name": { "en": "Co-organizer", "zh": "承办", "fr": "Co-organisateur" }
     },
     {
+      "id": "chief",
+      "name": { "en": "Chief Sponsor", "zh": "首席赞助商", "fr": "Sponsor principal" }
+    },
+    {
       "id": "diamond",
       "name": { "en": "Diamond Sponsor", "zh": "钻石赞助商", "fr": "Sponsor Diamant" }
     },
@@ -22,7 +26,7 @@
     },
     {
       "id": "gold",
-      "name": { "en": "Gold Sponsor", "zh": "黄金赞助商", "fr": "Sponsor Or" }
+      "name": { "en": "Gold Sponsor", "zh": "金牌赞助商", "fr": "Sponsor Or" }
     },
     {
       "id": "silver",
@@ -45,6 +49,72 @@
       "image": "csdn.png",
       "name": "CSDN",
       "url": "https://www.csdn.net"
+    },
+    {
+      "category": "chief",
+      "image": "huawei-chief.png",
+      "name": "Huawei",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.huawei.com/en/"
+    },
+    {
+      "category": "gold",
+      "image": "google-cloud.png",
+      "name": "Google Cloud",
+      "logoClass": "partner-logo-wide",
+      "url": "https://cloud.google.com/"
+    },
+    {
+      "category": "gold",
+      "image": "asiainfo.png",
+      "name": "AsiaInfo",
+      "url": "https://www.asiainfo.com/"
+    },
+    {
+      "category": "gold",
+      "image": "minimax-company.png",
+      "name": "MiniMax",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.minimax.io/"
+    },
+    {
+      "category": "gold",
+      "image": "benq.png",
+      "name": "BenQ",
+      "url": "https://www.benq.com/"
+    },
+    {
+      "category": "silver",
+      "image": "taotoken.png",
+      "name": "TaoToken",
+      "logoClass": "partner-logo-wide",
+      "url": "https://taotoken.net/"
+    },
+    {
+      "category": "silver",
+      "image": "onlyoffice.png",
+      "name": "ONLYOFFICE",
+      "url": "https://www.onlyoffice.com/"
+    },
+    {
+      "category": "silver",
+      "image": "tsinghua-university-press.png",
+      "name": "Tsinghua University Press",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.tup.com.cn/"
+    },
+    {
+      "category": "silver",
+      "image": "async-community.png",
+      "name": "Epubit",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.epubit.com/"
+    },
+    {
+      "category": "silver",
+      "image": "cohdl.png",
+      "name": "CoHDL",
+      "url": "https://cohdl.org/"
     },
     {
       "category": "supporting-organizations",
@@ -75,17 +145,10 @@
     },
     {
       "category": "supporting-organizations",
-      "image": "async-community.png",
-      "name": "Epubit",
+      "image": "quanfa-supporting.png",
+      "name": "Association des Jeunes Chinois pour la Technologie et l'Innovation Scientifique en France",
       "logoClass": "partner-logo-wide",
-      "url": "https://www.epubit.com/"
-    },
-    {
-      "category": "supporting-organizations",
-      "image": "tsinghua-university-press.png",
-      "name": "Tsinghua University Press",
-      "logoClass": "partner-logo-wide",
-      "url": "https://www.tup.com.cn/"
+      "url": "https://www.jeveuxaider.gouv.fr/organisations/23335-association-des-jeunes-chinois-pour-la-technologie-et-linnovation-scientifique-en-france"
     }
   ]
 }

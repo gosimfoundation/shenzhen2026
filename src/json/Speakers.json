@@ -1366,7 +1366,8 @@
         "sz26-agentic-ai-summit"
       ],
       "socialLinks": {
-        "website": "https://singintelligence.com/"
+        "website": "https://singintelligence.com/",
+        "linkedin": "https://linkedin.com/in/jianzhongli"
       },
       "draft": false,
       "image": "/images/speakers/confirmed/jianzhong-li.png"
@@ -1540,6 +1541,20 @@
       "image": "/images/speakers/confirmed/wan-ying.png"
     },
     {
+      "id": "weiyu-xie",
+      "name": "Weiyu Xie",
+      "roleOrg": "Chief Architect, Approaching.AI",
+      "bio": "Weiyu Xie is Cheif Architect of Approaching.AI Ltd., He receives his Ph.D. degree in the Institute for High Performance Computing, Department of Computer Science and Technology, Tsinghua University. His research interests include agent systems, large language model (LLM) inference, graph computing, and databases.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/ErvinXie"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/weiyu-xie.png"
+    },
+    {
       "id": "tian-ding",
       "name": "Tian Ding",
       "roleOrg": "Founder, Zhizi Xinyuan",
@@ -1562,6 +1577,73 @@
       "socialLinks": {},
       "draft": false,
       "image": "/images/speakers/confirmed/lei-bo.png"
+    },
+    {
+      "id": "feiqiang-sun",
+      "name": "Feiqiang Sun",
+      "roleOrg": "FlexKV Core Maintainer & Senior Engineer, Tencent Cloud",
+      "bio": "Feiqiang Sun is a Senior Engineer at Tencent Cloud with nine years of cloud-computing R&D experience. His work covers high-performance data-center networking and storage, protocol stacks, RDMA optimization, and AI infrastructure. As a core maintainer of FlexKV, he advances enterprise adoption of KV-cache optimization technologies.",
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/feiqiangs",
+        "linkedin": "https://www.linkedin.com/in/feiqiang-sun-5aa2951b0/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/feiqiang-sun.png"
+    },
+    {
+      "id": "zhifei-xie",
+      "name": "Zhifei Xie",
+      "roleOrg": "PhD Researcher, Nanyang Technological University",
+      "bio": "Zhifei Xie is a PhD researcher at Nanyang Technological University focusing on audio-visual interaction.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhifei-xie.png"
+    },
+    {
+      "id": "yu-huang",
+      "name": "Yu Huang",
+      "roleOrg": "Researcher, Institute of Advanced Technology, USTC",
+      "bio": "Dr. Yu Huang is a researcher at the Institute of Advanced Technology, University of Science and Technology of China. He previously held senior autonomous-driving and research roles at SAIC Z-ONE, Black Sesame Technologies, Singulato, Baidu Research USA, Intel, Huawei Research USA, and Samsung Research USA.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/yu-huang.png"
+    },
+    {
+      "id": "yongcheng-wei",
+      "name": "Yongcheng Wei",
+      "roleOrg": "PhD Student, Chongqing University of Posts and Telecommunications",
+      "bio": "Yongcheng Wei is a PhD student in the School of Automation at Chongqing University of Posts and Telecommunications, focusing on embodied intelligence.",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/yongcheng-wei.png"
+    },
+    {
+      "id": "michael-yuan",
+      "name": "Michael Yuan",
+      "roleOrg": "Founder, Second State",
+      "bio": "Michael Yuan is a founder, investor, and agentic engineer focused on open-source AI and Rust.",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/juntao",
+        "twitter": "https://x.com/juntao",
+        "linkedin": "https://linkedin.com/in/myuan"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/michael-yuan.png"
     }
   ]
 }

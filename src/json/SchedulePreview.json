@@ -918,6 +918,25 @@
             "en": "This talk presents Agentic Harness Engineering, a closed loop for automatically improving coding-agent harnesses. Component, experience, and decision observability make every edit explicit, evidence-based, reversible, and testable, enabling reliable evolution beyond manual trial and error.",
             "zh": "本次演讲介绍 Agentic Harness Engineering，一套自动改进编码智能体 Harness 的闭环方法。组件、经验与决策三个层面的可观测性，让每次修改都可定位、有证据、可回滚并可验证，从而实现超越人工试错的可靠演进。"
           }
+        },
+        {
+          "ref": "P-145",
+          "originalTitle": "两次解耦，把 Coding Agent 带进日常应用",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Two Decouplings: Bringing Coding Agents into Everyday Applications",
+            "zh": "两次解耦：把 Coding Agent 带进日常应用"
+          },
+          "slug": "p-145-两次解耦-把-coding-agent-带进日常应用",
+          "speakers": [
+            "weiyu-xie"
+          ],
+          "originalAbstract": "如何把 Coding Agent 的能力迁移到编程之外，让它能够处理个人生活中的信息与任务？本次分享介绍我在实践中采用的两个步骤。\n\n  第一步是 Agent Context：将任务背景、规则、进展和执行结果持久化，使工作的连续性由上下文承载。每次 Agent 运行都从已有状态出发，把结果写回上下\n  文，并结合执行回执与重复操作检查，实现任务执行的幂等化，让运行时可以结束、重新启动或被替换。\n\n  第二步是 Agent as a Service（AaaS）：将 Agent 的运行硬件与它操作的数据、应用和设备分离。Agent 在服务端运行，通过协议访问客户端提供的上下文和\n  工具，实际操作由数据和设备所在的一端执行。\n\n  我将以 Android 应用 SuperMe（超我）为例，介绍这两步如何连接起来，并展示生活记录理解、饮食与运动管理、业务数据修改及跨 App 手机操作的实践，讨\n  论将 Coding Agent 迁移到其他领域时需要建立的上下文、执行与验证机制。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk presents two steps for moving coding-agent capabilities beyond programming. Agent Context separates durable task state from individual runs, while Agent as a Service separates execution hardware from the data, applications, and devices being operated. The SuperMe Android app demonstrates these ideas across personal records, business data, and cross-app phone actions.",
+            "zh": "本次演讲介绍将 Coding Agent 能力迁移到编程之外的两个步骤：通过 Agent Context 将持久任务状态与单次运行解耦，再通过 Agent as a Service 将运行硬件与被操作的数据、应用和设备解耦，并以 Android 应用 SuperMe 展示其在生活记录、业务数据和跨应用手机操作中的实践。"
+          }
         }
       ],
       "originalName": "Agentic OS & App"
@@ -1157,6 +1176,25 @@
           "overview": {
             "en": "The talk discusses six key industry shifts transforming Voice AI, including moving from intelligence to execution and from APIs to platforms. These changes, initially seen in enterprise voice agent deployments, signal the future of open-source AI infrastructure and consumer AI experiences. The focus is on evolving Voice AI from short interactions to long-term relationships.",
             "zh": "本次演讲探讨了六大行业趋势，正在重塑语音AI，包括从智能到执行、从语音到对话、从API到平台，最终从对话到长期关系。这些变化最初出现在企业语音智能体部署中，预示了开源AI基础设施和消费者AI体验的未来。演讲重点在于语音AI从短期互动向长期关系的演进。"
+          }
+        },
+        {
+          "ref": "P-154",
+          "originalTitle": "Physical Interfaces for Agentic Development",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Physical Interfaces for Agentic Development",
+            "zh": "面向智能体开发的物理交互界面"
+          },
+          "slug": "p-154-physical-interfaces-for-agentic-development",
+          "speakers": [
+            "michael-yuan"
+          ],
+          "originalAbstract": "Every developer running coding agents in parallel has learned the same ritual: alt-tab, scroll, squint, is it done, does it need me, alt-tab back. Attention research puts average screen focus at 47 seconds, and practitioners report a ceiling of three to five agents before supervision quality collapses. The solution to this cognitive overload is new hardware. OpenAI's Codex Micro keypad sold out in twelve hours. Anthropic created a desk pet that blinks when Claude needs approval, and a credit card-sized handheld computer (together with M5Stack).\n\nThis talk examines what these devices get right and where they are lacking. Then we dive into an open-source agentic device for developers, the VibeKeys device. It is an ESP32-S3 keypad with a status screen and microphone, firmware written in Rust, a 3D-printed case, and open-source plugins for Claude Code, Codex, Herdr, and Omarchy. On Omarchy, the device becomes a keyboard for shortcuts, a voice input device, and a status panel for the agents built into the OS. The malleable Omarchy OS enables users to speak to the device and change the OS itself. More than a thousand of these VibeKeys devices are on users' desks today.\n\nYou will leave with an understanding of peripheral awareness for agent supervision, and the source code repositories and tools to build your own agent devices.\n\nWho should attend: Developers who run two or more coding agents at once. Tool builders shipping agent UIs, terminal multiplexers, or IDE integrations. Embedded and Rust engineers curious about ESP32 firmware in Rust.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk explores dedicated hardware for supervising multiple coding agents without constant context switching. It examines recent agentic devices and presents VibeKeys, an open-source ESP32-S3 keypad with a status display, microphone, Rust firmware, and integrations for Claude Code, Codex, Herdr, and Omarchy.",
+            "zh": "本次演讲探讨如何通过专用硬件监督多个编码智能体，减少频繁切换窗口带来的注意力负担，并介绍开源设备 VibeKeys：一款配备状态屏、麦克风和 Rust 固件的 ESP32-S3 键盘，可连接 Claude Code、Codex、Herdr 与 Omarchy。"
           }
         }
       ],
@@ -1419,6 +1457,25 @@
           "overview": {
             "en": "This talk explores how large AI models and mathematical optimization can accelerate operator development, model adaptation, and automated algorithm discovery. It presents practical KernelCAT agent cases and discusses the technical and industrial outlook for AI for Computing.",
             "zh": "本次演讲分享如何将 AI 大模型与数学优化技术应用于算子开发、模型适配和算法自动发现等计算加速场景，介绍 KernelCAT 智能体的典型案例，并展望 AI for Computing 的技术与产业前景。"
+          }
+        },
+        {
+          "ref": "P-149",
+          "originalTitle": "Towards Interaction Intelligence",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Towards Interaction Intelligence",
+            "zh": "迈向交互智能"
+          },
+          "slug": "p-149-towards-interaction-intelligence",
+          "speakers": [
+            "zhifei-xie"
+          ],
+          "originalAbstract": "围绕NUS-LV lab 在音视频上的一系列工作，包含情感，鲁棒，主动，记忆和全新模型结构&范式定义。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk presents a series of audio-visual interaction research projects from the NUS-LV Lab, spanning affective understanding, robustness, proactive interaction, memory, and new model architectures and paradigms.",
+            "zh": "本次演讲围绕 NUS-LV Lab 的一系列音视频交互研究展开，涵盖情感理解、鲁棒性、主动交互、记忆，以及新的模型架构与研究范式。"
           }
         }
       ],
@@ -1741,6 +1798,25 @@
             "en": "This talk examines two major barriers to deploying generative embodied AI on real robots: redundant multi-view sensory data and the complexity of large embodied models. It presents compression methods for 3D/4D Gaussian Splatting and device-conditioned once-for-all model compression to reduce storage, communication, training, and inference costs.",
             "zh": "本次演讲聚焦生成式具身智能落地真实机器人时的两类核心瓶颈：多视角感知数据冗余与大型具身模型的复杂度。内容将介绍面向 3D/4D Gaussian Splatting 的压缩算法，以及设备条件化的一次训练、多端部署模型压缩方法，以降低存储、通信、训练与推理成本。"
           }
+        },
+        {
+          "ref": "P-150",
+          "originalTitle": "具身智能体驾驭：从大模型到安全、可靠的物理智能",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Harnessing Embodied Agents: From Foundation Models to Safe, Reliable Physical Intelligence",
+            "zh": "具身智能体驾驭：从大模型到安全、可靠的物理智能"
+          },
+          "slug": "p-150-具身智能体驾驭-从大模型到安全-可靠的物理智能",
+          "speakers": [
+            "yu-huang"
+          ],
+          "originalAbstract": "随着 LLM、VLM 和 VLA 的发展，机器人已经开始具备开放世界语义理解、任务规划和动作生成能力。然而，大模型的概率性、异步性和非实时特征，与机器人所面对的不可逆物理动作、毫秒级控制以及长期自主运行之间存在根本性鸿沟。本报告提出 Embodied Agentic Harness（具身智能体驾驭）：在 Foundation Model 与机器人技能/物理硬件之间引入一个新的运行时控制平面，将大模型产生的开放式语义意图转化为可验证、可执行、可恢复的物理行为。报告将介绍四层解耦架构，以及 LLM 到行为树的确定性编译、世界—动作模型（WAM）预测沙箱、预测/物理双重安全验证、长期记忆与局部 Self-Healing 等关键机制，并进一步讨论通过统一 Skill API 和 Embodiment Adapter 构建 Universal Embodied Agent OS（UEA-OS）的可能性。报告希望推动具身智能研究从单纯追求 Model Intelligence，进一步走向 System Intelligence、Physical Intelligence 与 Persistent Autonomy。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk proposes the Embodied Agentic Harness, a runtime control plane between foundation models and robot skills or hardware. It combines deterministic task compilation, world-action-model prediction, layered safety checks, long-term memory, and local self-healing to turn open-ended model intent into verifiable, recoverable physical behavior.",
+            "zh": "本次演讲提出具身智能体驾驭系统：位于基础模型与机器人技能或硬件之间的运行时控制平面。它结合确定性任务编译、世界—动作模型预测、分层安全验证、长期记忆与局部自愈，将开放式模型意图转化为可验证、可恢复的物理行为。"
+          }
         }
       ],
       "originalName": "Open Source Robotics"
@@ -1857,6 +1933,25 @@
           "overview": {
             "en": "This workshop shares how the DORA community connects open-source collaboration with real embodied-intelligence systems. It covers Chinese learning resources, university and hackathon programs, ecosystem partnerships, humanoid-robot deployments, and a hands-on path from data collection to physical-robot deployment.",
             "zh": "本工作坊分享 DORA 社区如何把开源共建与真实具身智能系统连接起来，涵盖中文课程、高校与黑客松活动、生态协作、人形机器人落地，以及从数据采集到真机部署的实践路径。"
+          }
+        },
+        {
+          "ref": "P-151",
+          "originalTitle": "从智能体编程走向机器人自动科研",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "From Agentic Programming to Autonomous Robotics Research",
+            "zh": "从智能体编程走向机器人自动科研"
+          },
+          "slug": "p-151-从智能体编程走向机器人自动科研",
+          "speakers": [
+            "yongcheng-wei"
+          ],
+          "originalAbstract": "Coding Agent正在将生成代码、操作实验、提升算法串联为自动化研究流程。然而，当研究对象从软件环境转向真实机器人，命令执行成功并不代表任务完成，要想将上述闭环运行，关键在于场景重置、可靠观测和结果验证。\n\n本报告以 ENPIRE 为切入点，介绍其利用物理反馈驱动策略自改进的框架，并分享在仿真环境与 RM65 机械臂上的复现探索。通过 RealPushT 任务中的成功案例与失败批次，讨论工作流跑通、单回合成功和稳定任务能力之间的区别，分析仿真到现实迁移中的观测、接触几何与评估问题。\n\n在此基础上，报告结合 Dora 数据流与记录回放机制，探讨如何关联策略版本、动作事件、传感器观测和任务判定，构建可靠复核的实验记录。我们希望为开源社区提供一个具体例子，让机器人自动科研在够持续运行的基础上，进一步能够留下可追溯、可检查、可复用的研究依据。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This workshop examines what autonomous research requires when coding agents move from software environments to real robots. Using ENPIRE, RealPushT, an RM65 robotic arm, and Dora dataflows, it explores scene reset, reliable observation, outcome verification, reproducible records, and the gap between a successful run and a stable robotic capability.",
+            "zh": "本工作坊探讨 Coding Agent 从软件环境走向真实机器人时，自动科研所需的场景重置、可靠观测与结果验证。内容结合 ENPIRE、RealPushT、RM65 机械臂和 Dora 数据流，分析单次成功与稳定机器人能力之间的差异，以及如何建立可复核、可追溯的实验记录。"
           }
         }
       ],
@@ -2041,6 +2136,25 @@
           "overview": {
             "en": "This workshop explores research and practical work toward an Internet of agents, including the network technologies and infrastructure needed for agents to discover, communicate, and collaborate across systems.",
             "zh": "本工作坊介绍面向智能体互联网的研究与实践，探讨支持智能体跨系统发现、通信与协作所需的网络技术和基础设施。"
+          }
+        },
+        {
+          "ref": "P-148",
+          "originalTitle": "聊聊运用 FlexKV 进行大模型 KVCache 池化的最佳实践",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Best Practices for Pooling LLM KV Cache with FlexKV",
+            "zh": "使用 FlexKV 实现大模型 KV Cache 池化的最佳实践"
+          },
+          "slug": "p-148-聊聊运用-flexkv-进行大模型-kvcache-池化的最佳实践",
+          "speakers": [
+            "feiqiang-sun"
+          ],
+          "originalAbstract": "在 Agentic AI 时代，超长上下文与多轮对话让 KVCache 规模急剧膨胀，其高效管理成为决定推理系统 TTFT、吞吐量与成本的关键。高效的 KVCache 复用能显著减少重复的 prefill 计算，在提升性能的同时降低成本。FlexKV 是一个引擎中立的 KVCache 管理框架，对 CPU 内存、SSD、分布式共享存储等多级介质上的 KVCache 进行统一管理与压缩，并通过池化实现机内与机间的高性能共享，同时提供多租户与多模型版本的缓存隔离能力。当前 FlexKV 已集成到 vLLM、SGLang、TensorRT-LLM 等主流开源推理框架，提供了一套面向企业级应用的 KVCache 管理解决方案。本次分享将结合我们在 KVCache 开发与落地过程中的真实挑战与实践经验，介绍 FlexKV 的核心设计与演进方向。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This workshop explains how FlexKV manages and compresses KV cache across GPU memory, CPU memory, SSDs, and distributed storage. It covers cross-node pooling, asynchronous transfer, namespace isolation, and integrations with vLLM, SGLang, TensorRT-LLM, and Dynamo, drawing on practical enterprise deployment experience.",
+            "zh": "本工作坊介绍 FlexKV 如何统一管理和压缩 GPU 显存、CPU 内存、SSD 与分布式存储中的 KV Cache，涵盖跨节点池化、异步传输、Namespace 隔离，以及与 vLLM、SGLang、TensorRT-LLM 和 Dynamo 的集成，并分享企业级落地实践。"
           }
         }
       ],

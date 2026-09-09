@@ -455,5 +455,71 @@
       "en": "This workshop explores research and practical work toward an Internet of agents, including the network technologies and infrastructure needed for agents to discover, communicate, and collaborate across systems.",
       "zh": "本工作坊介绍面向智能体互联网的研究与实践，探讨支持智能体跨系统发现、通信与协作所需的网络技术和基础设施。"
     }
+  },
+  {
+    "ref": "P-145",
+    "title": {
+      "en": "Two Decouplings: Bringing Coding Agents into Everyday Applications",
+      "zh": "两次解耦：把 Coding Agent 带进日常应用"
+    },
+    "overview": {
+      "en": "This talk presents two steps for moving coding-agent capabilities beyond programming. Agent Context separates durable task state from individual runs, while Agent as a Service separates execution hardware from the data, applications, and devices being operated. The SuperMe Android app demonstrates these ideas across personal records, business data, and cross-app phone actions.",
+      "zh": "本次演讲介绍将 Coding Agent 能力迁移到编程之外的两个步骤：通过 Agent Context 将持久任务状态与单次运行解耦，再通过 Agent as a Service 将运行硬件与被操作的数据、应用和设备解耦，并以 Android 应用 SuperMe 展示其在生活记录、业务数据和跨应用手机操作中的实践。"
+    }
+  },
+  {
+    "ref": "P-148",
+    "title": {
+      "en": "Best Practices for Pooling LLM KV Cache with FlexKV",
+      "zh": "使用 FlexKV 实现大模型 KV Cache 池化的最佳实践"
+    },
+    "overview": {
+      "en": "This workshop explains how FlexKV manages and compresses KV cache across GPU memory, CPU memory, SSDs, and distributed storage. It covers cross-node pooling, asynchronous transfer, namespace isolation, and integrations with vLLM, SGLang, TensorRT-LLM, and Dynamo, drawing on practical enterprise deployment experience.",
+      "zh": "本工作坊介绍 FlexKV 如何统一管理和压缩 GPU 显存、CPU 内存、SSD 与分布式存储中的 KV Cache，涵盖跨节点池化、异步传输、Namespace 隔离，以及与 vLLM、SGLang、TensorRT-LLM 和 Dynamo 的集成，并分享企业级落地实践。"
+    }
+  },
+  {
+    "ref": "P-149",
+    "title": {
+      "en": "Towards Interaction Intelligence",
+      "zh": "迈向交互智能"
+    },
+    "overview": {
+      "en": "This talk presents a series of audio-visual interaction research projects from the NUS-LV Lab, spanning affective understanding, robustness, proactive interaction, memory, and new model architectures and paradigms.",
+      "zh": "本次演讲围绕 NUS-LV Lab 的一系列音视频交互研究展开，涵盖情感理解、鲁棒性、主动交互、记忆，以及新的模型架构与研究范式。"
+    }
+  },
+  {
+    "ref": "P-150",
+    "title": {
+      "en": "Harnessing Embodied Agents: From Foundation Models to Safe, Reliable Physical Intelligence",
+      "zh": "具身智能体驾驭：从大模型到安全、可靠的物理智能"
+    },
+    "overview": {
+      "en": "This talk proposes the Embodied Agentic Harness, a runtime control plane between foundation models and robot skills or hardware. It combines deterministic task compilation, world-action-model prediction, layered safety checks, long-term memory, and local self-healing to turn open-ended model intent into verifiable, recoverable physical behavior.",
+      "zh": "本次演讲提出具身智能体驾驭系统：位于基础模型与机器人技能或硬件之间的运行时控制平面。它结合确定性任务编译、世界—动作模型预测、分层安全验证、长期记忆与局部自愈，将开放式模型意图转化为可验证、可恢复的物理行为。"
+    }
+  },
+  {
+    "ref": "P-151",
+    "title": {
+      "en": "From Agentic Programming to Autonomous Robotics Research",
+      "zh": "从智能体编程走向机器人自动科研"
+    },
+    "overview": {
+      "en": "This workshop examines what autonomous research requires when coding agents move from software environments to real robots. Using ENPIRE, RealPushT, an RM65 robotic arm, and Dora dataflows, it explores scene reset, reliable observation, outcome verification, reproducible records, and the gap between a successful run and a stable robotic capability.",
+      "zh": "本工作坊探讨 Coding Agent 从软件环境走向真实机器人时，自动科研所需的场景重置、可靠观测与结果验证。内容结合 ENPIRE、RealPushT、RM65 机械臂和 Dora 数据流，分析单次成功与稳定机器人能力之间的差异，以及如何建立可复核、可追溯的实验记录。"
+    }
+  },
+  {
+    "ref": "P-154",
+    "title": {
+      "en": "Physical Interfaces for Agentic Development",
+      "zh": "面向智能体开发的物理交互界面"
+    },
+    "overview": {
+      "en": "This talk explores dedicated hardware for supervising multiple coding agents without constant context switching. It examines recent agentic devices and presents VibeKeys, an open-source ESP32-S3 keypad with a status display, microphone, Rust firmware, and integrations for Claude Code, Codex, Herdr, and Omarchy.",
+      "zh": "本次演讲探讨如何通过专用硬件监督多个编码智能体，减少频繁切换窗口带来的注意力负担，并介绍开源设备 VibeKeys：一款配备状态屏、麦克风和 Rust 固件的 ESP32-S3 键盘，可连接 Claude Code、Codex、Herdr 与 Omarchy。"
+    }
   }
 ]
