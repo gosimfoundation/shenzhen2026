@@ -28,7 +28,9 @@ const docxMimePlugin = {
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [sitemap()],
+  integrations: [sitemap({
+    filter: (page) => !new URL(page).pathname.replace(/\/$/, '').endsWith('/sponsors-edit'),
+  })],
   site: "https://shenzhen2026.gosim.org/",
   vite: {
     plugins: [docxMimePlugin],

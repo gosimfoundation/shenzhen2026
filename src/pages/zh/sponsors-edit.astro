@@ -1,0 +1,64 @@
+---
+import sponsors from "json/Sponsors.json";
+import "styles/Fonts.scss";
+import "styles/SponsorEditor.css";
+const initialItems = sponsors.partners.map((partner, index) => ({
+  id: `original-${index}`, category: partner.category, name: partner.name,
+  image: `/images/sponsors/${partner.image}`,
+}));
+const categories = sponsors.categories.filter(({ id }) => id !== "all")
+  .map(({ id, name }) => ({ id, name: name.zh }));
+---
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>赞助商编排草稿 · GOSIM Shenzhen 2026</title>
+    <meta name="description" content="GOSIM 赞助商编排草稿工具" />
+  </head>
+  <body>
+    <main id="sponsor-editor" data-initial={JSON.stringify(initialItems)} data-categories={JSON.stringify(categories)}>
+      <header class="editor-header">
+        <div><p class="eyebrow">GOSIM · SHENZHEN 2026</p><h1>赞助商编排<span>草稿</span></h1></div>
+        <div class="toolbar">
+          <button id="undo" disabled>撤销</button>
+          <button id="reset" disabled>恢复正式名单</button>
+          <button id="preview" class="primary" disabled aria-pressed="false">截图预览</button>
+        </div>
+      </header>
+      <div class="editor-help">
+        <p>拖动卡片调整顺序或等级；点击左侧 ＋ 添加名称或上传 logo。点击卡片可修改、移动或删除。</p>
+        <p>草稿仅保存在当前浏览器，不会修改正式页面。排好后点击「截图预览」，将截图发给负责人。</p>
+        <label><input type="checkbox" id="show-empty" /> 显示空等级（钻石、白金等）</label>
+      </div>
+      <p id="save-status" role="status" aria-live="polite">正在加载草稿…</p>
+      <div id="board" aria-label="赞助商编排区域"></div>
+      <noscript>请启用 JavaScript 后使用拖拽编排功能。</noscript>
+      <p class="preview-note">编排草稿 · 仅供确认赞助等级与顺序</p>
+    </main>
+    <dialog id="item-dialog" aria-labelledby="dialog-title">
+      <form id="item-form">
+        <h2 id="dialog-title">添加赞助商</h2>
+        <label>赞助等级<select id="item-category"></select></label>
+        <label>名称<input id="item-name" maxlength="160" placeholder="例如：谷歌（可仅添加文字）" /></label>
+        <label>上传 logo<input id="item-file" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" /></label>
+        <p class="field-hint">支持 PNG、JPG、WebP、GIF、SVG，单张不超过 10 MB；图片仅保存在本机浏览器。未填写名称时使用文件名。</p>
+        <img id="file-preview" alt="待添加的 logo" hidden />
+        <button id="clear-image" type="button" hidden>移除图片，保留文字</button>
+        <div id="reorder-actions" hidden><button id="move-earlier" type="button">向前移一位</button> <button id="move-later" type="button">向后移一位</button></div>
+        <p id="form-error" role="alert"></p>
+        <div class="dialog-actions">
+          <button id="delete-item" type="button" class="danger" hidden>删除</button>
+          <button id="cancel" type="button">取消</button>
+          <button id="save-item" type="submit" class="primary">添加</button>
+        </div>
+      </form>
+    </dialog>
+    <script>
+      import { initSponsorEditor } from "../../scripts/sponsor-editor";
+      initSponsorEditor();
+    </script>
+  </body>
+</html>
