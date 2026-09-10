@@ -1361,7 +1361,7 @@
       "id": "jianzhong-li",
       "name": "Jianzhong Li",
       "roleOrg": "President, Singularity Intelligence Research Institute / Senior Vice President, CSDN",
-      "bio": "Jianzhong Li is President of the Singularity Intelligence Research Institute and Senior Vice President of CSDN. He founded the Singularity Intelligence Technology Summit in 2016 and focuses on artificial intelligence, technology innovation, industrial ecosystems, and shifts in the AI product paradigm. He is also a member of the ISO C++ standards community.",
+      "bio": "Jianzhong Li is President of the Singularity Intelligence Research Institute and Partner and Senior Vice President at CSDN, with extensive research and industry experience in artificial intelligence, technological innovation, and industrial ecosystems. In 2016, he founded the Singularity Intelligence Technology Conference, formerly the Global Machine Learning Technology Conference, which has become an influential forum for advanced technical exchange in the AI industry. His recent research focuses on artificial-intelligence paradigms centered on large models, and he proposed the Paradigm Shift Cube framework for technological innovation. In 2005, he initiated the first Global C++ and System Software Technology Conference, and he is a member of the ISO C++ international standards committee. He also serves on the AI Expert Committee of the Science and Technology Vision Forum at the Tengchong Scientists Forum, where he joined other scientists in publishing Technology Foresight and Future Vision 2049. Through the Singularity Intelligence Research Institute, he provides AI and innovation strategy consulting to organizations including Fortune Global 500 companies.",
       "tags": [
         "sz26-agentic-ai-summit"
       ],
@@ -1630,6 +1630,18 @@
       "image": "/images/speakers/confirmed/yongcheng-wei.png"
     },
     {
+      "id": "bangxu-yu",
+      "name": "Bangxu Yu",
+      "roleOrg": "CEO, AtomGit",
+      "bio": "Bangxu Yu is Senior Vice President of CSDN and CEO of AtomGit. He previously held technology management roles at Weibo, LeCloud, and iQIYI. He leads AtomGit's domestic open-source code platform and the AtomCode family of AI coding tools, advancing the platform toward AI agents and model engineering.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/bangxu-yu.png"
+    },
+    {
       "id": "michael-yuan",
       "name": "Michael Yuan",
       "roleOrg": "Founder, Second State",
@@ -1644,6 +1656,77 @@
       },
       "draft": false,
       "image": "/images/speakers/confirmed/michael-yuan.png"
+    },
+    {
+      "id": "hunter-bown",
+      "name": "Hunter Bown",
+      "roleOrg": "Founder, ShannonTek",
+      "bio": "Hunter Bown is the founder of ShannonTek and the creator of Codewhale (formerly DeepSeek-TUI), an open-source AI coding agent written in Rust. A musician and former high school band director, he came to software and AI through a broader interest in how people learn, create, and turn ideas into reality. His work brings together model-agnostic agent systems, open-source collaboration, and tools that make advanced capabilities accessible beyond specialist teams. Based in San Francisco, he is building toward a simple goal: helping more people turn what they know, notice, and imagine into things they can do.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://shannontek.com/",
+        "github": "https://github.com/hmbown/",
+        "twitter": "https://x.com/goodhunt",
+        "linkedin": "https://www.linkedin.com/in/hunterbown/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/hunter-bown.png"
+    },
+    {
+      "id": "frank-fan",
+      "name": "Frank Fan",
+      "roleOrg": "Principal Solutions Architect, AWS",
+      "bio": "Frank Fan, an AWS Principal Container Solution Architect in Australia, has 20+ years of experience in designing and implementing large-scale technology transformations. He specializes in containerization and driving migration initiatives. He has presented at significant IT events like AWS reInvent, AWS Summit and API days. Frank's Linkedin https://www.linkedin.com/in/frankfan7/",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/quickzebra",
+        "linkedin": "https://www.linkedin.com/in/frankfan7/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/frank-fan.png"
+    },
+    {
+      "id": "sheng-chen",
+      "name": "Sheng Chen",
+      "roleOrg": "Co-speaker",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/sheng-chen.png"
+    },
+    {
+      "id": "tao-pu",
+      "name": "Tao Pu",
+      "roleOrg": "R&D Director, X-Era Lab",
+      "bio": "Tao Pu is R&D Director at X-Era Lab and Co-founder of PhyAgentOS.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://putao537.github.io/",
+        "github": "https://github.com/putao537"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/tao-pu.png"
+    },
+    {
+      "id": "jiaju-zhang",
+      "name": "Jiaju Zhang",
+      "roleOrg": "CTO, Greater China, Red Hat",
+      "bio": "Jiaju Zhang is CTO for Greater China at Red Hat and a vLLM community ambassador. He has more than twenty years of experience in open-source software, Linux, distributed systems, storage, virtualization, cloud computing, containers, cloud-native technologies, and AI infrastructure.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/jiaju-zhang.png"
     }
   ]
 }

@@ -619,6 +619,26 @@
             "en": "This talk examines how liquid-cooled edge AI computing equipment can move from component-level breakthroughs to scalable complete systems. It covers integration, platform standardization, thermal efficiency, environmental adaptability, operational reliability, and real-world deployment scenarios.",
             "zh": "本次演讲探讨端侧 AI 液冷算力设备如何从部件级突破走向整机规模化，涵盖系统集成、平台化与标准化、散热效率、环境适应性、运维可靠性及实际应用场景。"
           }
+        },
+        {
+          "ref": "P-157",
+          "originalTitle": "Building Hybrid AI Systems: Edge Inferencing Meets Cloud Reasoning",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Building Hybrid AI Systems: Edge Inference Meets Cloud Reasoning",
+            "zh": "构建混合 AI 系统：边缘推理与云端推理协同"
+          },
+          "slug": "p-157-building-hybrid-ai-systems-edge-inferencing-meets-cloud-reasoning",
+          "speakers": [
+            "frank-fan",
+            "sheng-chen"
+          ],
+          "originalAbstract": "Modern AI applications increasingly need to run closer to where data is generated and decisions are made. This session presents an architectural pattern for hybrid AI systems that split latency-sensitive inference at the edge from cloud-native reasoning, connected through a shared memory layer.\nUsing a real-world warehouse safety monitoring system as the case study, we examine the trade-offs for placing a Vision Language Model (VLM) on edge GPUs using a hybrid Kubernetes architecture, while delegating summarisation and conversational retrieval to a cloud-based agent runtime.\nWe cover the decision framework for what runs where, agentic memory strategies, and cross-environment observability.\n\nKey takeaways:\n- A decision framework for what belongs at the edge vs. the cloud\n- Choosing the right models for your edge applications\n- Squeezing performance with quantisation, decoding and cold-start optimisation\n- Observing GPU and model health across hybrid environments\n- Using a shared memory layer to turn edge inference into business insight\n\nAttendees will leave with practical patterns for building their own hybrid AI systems - from the edge/cloud decision boundary through to agentic memory and cross-environment observability.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "Using warehouse safety monitoring as a case study, this talk presents a hybrid architecture that runs latency-sensitive vision-language inference on edge GPUs while delegating summarization and conversational retrieval to cloud agents. It covers workload placement, model selection, optimization, shared memory, and cross-environment observability.",
+            "zh": "本次演讲以仓库安全监控为案例，介绍一种混合架构：在边缘 GPU 上运行延迟敏感的视觉语言模型推理，并将摘要与对话检索交给云端智能体。内容涵盖工作负载划分、模型选择、性能优化、共享记忆和跨环境可观测性。"
+          }
         }
       ],
       "originalName": "Agentic AI on Edge"
@@ -936,6 +956,25 @@
           "overview": {
             "en": "This talk presents two steps for moving coding-agent capabilities beyond programming. Agent Context separates durable task state from individual runs, while Agent as a Service separates execution hardware from the data, applications, and devices being operated. The SuperMe Android app demonstrates these ideas across personal records, business data, and cross-app phone actions.",
             "zh": "本次演讲介绍将 Coding Agent 能力迁移到编程之外的两个步骤：通过 Agent Context 将持久任务状态与单次运行解耦，再通过 Agent as a Service 将运行硬件与被操作的数据、应用和设备解耦，并以 Android 应用 SuperMe 展示其在生活记录、业务数据和跨应用手机操作中的实践。"
+          }
+        },
+        {
+          "ref": "P-155",
+          "originalTitle": "A New Era of Inventors",
+          "originalLanguage": "en",
+          "title": {
+            "en": "A New Era of Inventors",
+            "zh": "发明者的新时代"
+          },
+          "slug": "p-155-a-new-era-of-inventors",
+          "speakers": [
+            "hunter-bown"
+          ],
+          "originalAbstract": "Who gets to be an inventor?\n\nAgentic AI invites a bigger question than how quickly we can write software: what happens when more people can turn an observation, a question, or an idea into something they can test?\n\nMy great-grandfather, Ralph Bown, was both an inventor in communications and a research leader at Bell Labs. His work offers a starting point for thinking about invention as more than an individual flash of brilliance: it also depends on collaborators, shared knowledge, and the freedom to pursue an idea.\n\nIn this talk, I connect that history to my own path from music and teaching to building Codewhale, an open-source agent written in Rust. What began as DeepSeek-TUI has become a provider-neutral project shaped by a global community, including its Chinese “Whale Brothers.” Through a concrete walkthrough, I will trace a task through model selection, tool use, execution, review, and iteration, showing the design decisions between a model response and useful action.\n\nSoftware is the starting point, not the boundary. We will examine what these capabilities could mean for scientific investigation, engineering, artistic creation, and everyday problem-solving, while distinguishing what can be demonstrated today from what still requires better tools, domain expertise, and real-world validation.\n\nThe central argument is that open models alone are not enough. To broaden participation in invention, we also need open, affordable, inspectable systems that help people act on what they know and imagine. Attendees will leave with a practical framework for designing those systems around model choice, visible actions, testable results, and meaningful human control.\n\nA new era of inventors should not be defined only by what AI can do, but by what more people become able to do.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk asks how agentic AI can help more people turn observations and ideas into testable creations. Through the history of invention and the development of Codewhale, an open-source Rust coding agent, it presents a practical framework built around model choice, visible actions, testable outcomes, open systems, and meaningful human control.",
+            "zh": "本次演讲探讨智能体 AI 如何让更多人把观察、问题和想法变成可验证的创造。内容结合发明史与开源 Rust 编码智能体 Codewhale 的开发实践，提出一套围绕模型选择、可见操作、可测试结果、开放系统和有效人类控制的设计框架。"
           }
         }
       ],
@@ -1477,6 +1516,44 @@
             "en": "This talk presents a series of audio-visual interaction research projects from the NUS-LV Lab, spanning affective understanding, robustness, proactive interaction, memory, and new model architectures and paradigms.",
             "zh": "本次演讲围绕 NUS-LV Lab 的一系列音视频交互研究展开，涵盖情感理解、鲁棒性、主动交互、记忆，以及新的模型架构与研究范式。"
           }
+        },
+        {
+          "ref": "P-152",
+          "originalTitle": "从开源模型到开发者生产力：AI 时代的开源基础设施重构",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "From Open Models to Developer Productivity: Rebuilding Open-Source Infrastructure for the AI Era",
+            "zh": "从开源模型到开发者生产力：AI 时代的开源基础设施重构"
+          },
+          "slug": "p-152-从开源模型到开发者生产力-ai-时代的开源基础设施重构",
+          "speakers": [
+            "bangxu-yu"
+          ],
+          "originalAbstract": "大模型正在重新定义开源，也在重新定义开发者基础设施。\n\n当开源对象从代码进一步延伸到模型、数据集、智能体与 AI 原生应用，开发者面对的问题已经不再只是“如何获取一个模型”，而是如何让模型真正进入开发、适配、部署、协作与创新的完整链路。与此同时，国产算力、大模型与 AI Coding 的快速发展，也正在推动传统开源平台从“代码协作工具”向“AI 时代开发者基础设施”演进。\n\n本次分享将结合 AtomGit 在开源模型社区、AtomCode AI 编程、国产算力适配及 CANN 开发者生态建设中的实践，探讨开源模型如何跨越从“可获取”到“可开发、可运行、可共创”的工程化鸿沟，以及 AI 时代的开源基础设施应该如何连接模型、代码、算力与开发者。\n\n当模型越来越多、能力越来越强，真正决定开源模型能否形成产业价值的，或许不只是模型本身，而是模型背后是否拥有一套足够开放、高效且繁荣的开发者基础设施。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk examines how open-source infrastructure must evolve as collaboration expands from code to models, datasets, agents, and AI-native applications. Drawing on AtomGit, AtomCode, domestic compute adaptation, and the CANN developer ecosystem, it explores how platforms can connect models, code, compute, and developers across the full engineering lifecycle.",
+            "zh": "本次演讲探讨当开源协作从代码扩展到模型、数据集、智能体和 AI 原生应用时，开发者基础设施应如何演进。内容结合 AtomGit、AtomCode、国产算力适配和 CANN 开发者生态实践，分析平台如何连接模型、代码、算力与开发者，打通完整工程化链路。"
+          }
+        },
+        {
+          "ref": "P-159",
+          "originalTitle": "llm-d：打造跨负载、跨模态、跨硬件、跨平台的分布式推理平面",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "llm-d: A Distributed Inference Plane Across Workloads, Modalities, Hardware, and Platforms",
+            "zh": "llm-d：打造跨负载、跨模态、跨硬件、跨平台的分布式推理平面"
+          },
+          "slug": "p-159-llm-d-打造跨负载-跨模态-跨硬件-跨平台的分布式推理平面",
+          "speakers": [
+            "jiaju-zhang"
+          ],
+          "originalAbstract": "当 LLM 推理从\"一个模型一个实例\"走向生产规模，真正的挑战不再是单个引擎跑得多快，而是集群层面的系统性异构：负载形态在异构——从短问答到长上下文 Agentic 会话，不同请求的计算与内存特征天差地别；模型模态在异构——多模态模型的视觉编码、Prefill、Decode 三个阶段各有资源脾气；底层硬件在异构——GPU、TPU、XPU 混部已成生产常态；运行平台也在异构——推理不再只发生在 Kubernetes 上，Slurm、Ray、裸金属乃至 RL 训练的 rollout 集群都在呼唤同一套服务能力。\n\n本次演讲将系统介绍 llm-d 的核心架构——智能路由器、端点选择器（EPP）、推理池与模型服务器，以及一组经过验证的\"Well-Lit Paths\"最佳实践路径：前缀感知与负载感知调度、基于延迟预测的调度、KV Cache 分层卸载、P/D 分离、面向 DeepSeek 级 MoE 模型的多节点宽专家并行（Wide EP）、流控与多模型路由、弹性扩缩容等，一套部署同时支撑交互对话、批处理、多模态与 Agentic 工作负载。\n\n演讲还将带来llm-d项目的最新进展：llm-d 正从\"推理平台\"演进为\"推理控制平面\"——默认对齐上游 vLLM、流控与批处理网关转入生产可用、多层级 KV Cache 与 Mooncake 传输引擎接入，并通过 EndpointDiscovery 机制摆脱对 Kubernetes 的依赖，让智能路由能力延伸至 Slurm、Ray 乃至裸金属环境，直接嵌入 RL 训练的 rollout 循环。最后展望llm-d即将发布版本的路线图。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk introduces llm-d's distributed inference control plane, including intelligent routing, endpoint selection, inference pools, model servers, prefix- and load-aware scheduling, hierarchical KV-cache offloading, Prefill–Decode disaggregation, expert parallelism, flow control, and elastic scaling across Kubernetes, Slurm, Ray, and bare metal.",
+            "zh": "本次演讲系统介绍 llm-d 分布式推理控制平面，包括智能路由、端点选择、推理池、模型服务器、前缀与负载感知调度、KV Cache 分层卸载、Prefill–Decode 分离、专家并行、流控与弹性扩缩容，并覆盖 Kubernetes、Slurm、Ray 和裸金属环境。"
+          }
         }
       ],
       "originalName": "Open Source Models & Infra"
@@ -1816,6 +1893,25 @@
           "overview": {
             "en": "This talk proposes the Embodied Agentic Harness, a runtime control plane between foundation models and robot skills or hardware. It combines deterministic task compilation, world-action-model prediction, layered safety checks, long-term memory, and local self-healing to turn open-ended model intent into verifiable, recoverable physical behavior.",
             "zh": "本次演讲提出具身智能体驾驭系统：位于基础模型与机器人技能或硬件之间的运行时控制平面。它结合确定性任务编译、世界—动作模型预测、分层安全验证、长期记忆与局部自愈，将开放式模型意图转化为可验证、可恢复的物理行为。"
+          }
+        },
+        {
+          "ref": "P-158",
+          "originalTitle": "PhyAgentOS：递归自进化物理智能体操作系统",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "PhyAgentOS: A Recursively Self-Evolving Operating System for Physical Agents",
+            "zh": "PhyAgentOS：递归自进化物理智能体操作系统"
+          },
+          "slug": "p-158-phyagentos-递归自进化物理智能体操作系统",
+          "speakers": [
+            "tao-pu"
+          ],
+          "originalAbstract": "本次演讲将分享 PhyAgentOS 在 Physical Agent Harness 方向的工程实践，涵盖异构机器人统一接入、Tool 与 Skill 组合、虚实迁移、任务验证与失败恢复，以及基于 Tool Use 和 Data Feedback 的持续进化，构建连接基础模型与真实物理世界的智能体基础设施。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk shares PhyAgentOS engineering practices for physical-agent harnesses, including unified access to heterogeneous robots, tool and skill composition, simulation-to-reality transfer, task verification, failure recovery, and continuous evolution driven by tool use and data feedback.",
+            "zh": "本次演讲分享 PhyAgentOS 在物理智能体 Harness 方向的工程实践，涵盖异构机器人统一接入、Tool 与 Skill 组合、虚实迁移、任务验证与失败恢复，以及由工具使用和数据反馈驱动的持续进化。"
           }
         }
       ],

@@ -521,5 +521,60 @@
       "en": "This talk explores dedicated hardware for supervising multiple coding agents without constant context switching. It examines recent agentic devices and presents VibeKeys, an open-source ESP32-S3 keypad with a status display, microphone, Rust firmware, and integrations for Claude Code, Codex, Herdr, and Omarchy.",
       "zh": "本次演讲探讨如何通过专用硬件监督多个编码智能体，减少频繁切换窗口带来的注意力负担，并介绍开源设备 VibeKeys：一款配备状态屏、麦克风和 Rust 固件的 ESP32-S3 键盘，可连接 Claude Code、Codex、Herdr 与 Omarchy。"
     }
+  },
+  {
+    "ref": "P-152",
+    "title": {
+      "en": "From Open Models to Developer Productivity: Rebuilding Open-Source Infrastructure for the AI Era",
+      "zh": "从开源模型到开发者生产力：AI 时代的开源基础设施重构"
+    },
+    "overview": {
+      "en": "This talk examines how open-source infrastructure must evolve as collaboration expands from code to models, datasets, agents, and AI-native applications. Drawing on AtomGit, AtomCode, domestic compute adaptation, and the CANN developer ecosystem, it explores how platforms can connect models, code, compute, and developers across the full engineering lifecycle.",
+      "zh": "本次演讲探讨当开源协作从代码扩展到模型、数据集、智能体和 AI 原生应用时，开发者基础设施应如何演进。内容结合 AtomGit、AtomCode、国产算力适配和 CANN 开发者生态实践，分析平台如何连接模型、代码、算力与开发者，打通完整工程化链路。"
+    }
+  },
+  {
+    "ref": "P-155",
+    "title": {
+      "en": "A New Era of Inventors",
+      "zh": "发明者的新时代"
+    },
+    "overview": {
+      "en": "This talk asks how agentic AI can help more people turn observations and ideas into testable creations. Through the history of invention and the development of Codewhale, an open-source Rust coding agent, it presents a practical framework built around model choice, visible actions, testable outcomes, open systems, and meaningful human control.",
+      "zh": "本次演讲探讨智能体 AI 如何让更多人把观察、问题和想法变成可验证的创造。内容结合发明史与开源 Rust 编码智能体 Codewhale 的开发实践，提出一套围绕模型选择、可见操作、可测试结果、开放系统和有效人类控制的设计框架。"
+    }
+  },
+  {
+    "ref": "P-157",
+    "title": {
+      "en": "Building Hybrid AI Systems: Edge Inference Meets Cloud Reasoning",
+      "zh": "构建混合 AI 系统：边缘推理与云端推理协同"
+    },
+    "overview": {
+      "en": "Using warehouse safety monitoring as a case study, this talk presents a hybrid architecture that runs latency-sensitive vision-language inference on edge GPUs while delegating summarization and conversational retrieval to cloud agents. It covers workload placement, model selection, optimization, shared memory, and cross-environment observability.",
+      "zh": "本次演讲以仓库安全监控为案例，介绍一种混合架构：在边缘 GPU 上运行延迟敏感的视觉语言模型推理，并将摘要与对话检索交给云端智能体。内容涵盖工作负载划分、模型选择、性能优化、共享记忆和跨环境可观测性。"
+    }
+  },
+  {
+    "ref": "P-158",
+    "title": {
+      "en": "PhyAgentOS: A Recursively Self-Evolving Operating System for Physical Agents",
+      "zh": "PhyAgentOS：递归自进化物理智能体操作系统"
+    },
+    "overview": {
+      "en": "This talk shares PhyAgentOS engineering practices for physical-agent harnesses, including unified access to heterogeneous robots, tool and skill composition, simulation-to-reality transfer, task verification, failure recovery, and continuous evolution driven by tool use and data feedback.",
+      "zh": "本次演讲分享 PhyAgentOS 在物理智能体 Harness 方向的工程实践，涵盖异构机器人统一接入、Tool 与 Skill 组合、虚实迁移、任务验证与失败恢复，以及由工具使用和数据反馈驱动的持续进化。"
+    }
+  },
+  {
+    "ref": "P-159",
+    "title": {
+      "en": "llm-d: A Distributed Inference Plane Across Workloads, Modalities, Hardware, and Platforms",
+      "zh": "llm-d：打造跨负载、跨模态、跨硬件、跨平台的分布式推理平面"
+    },
+    "overview": {
+      "en": "This talk introduces llm-d's distributed inference control plane, including intelligent routing, endpoint selection, inference pools, model servers, prefix- and load-aware scheduling, hierarchical KV-cache offloading, Prefill–Decode disaggregation, expert parallelism, flow control, and elastic scaling across Kubernetes, Slurm, Ray, and bare metal.",
+      "zh": "本次演讲系统介绍 llm-d 分布式推理控制平面，包括智能路由、端点选择、推理池、模型服务器、前缀与负载感知调度、KV Cache 分层卸载、Prefill–Decode 分离、专家并行、流控与弹性扩缩容，并覆盖 Kubernetes、Slurm、Ray 和裸金属环境。"
+    }
   }
 ]

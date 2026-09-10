@@ -1452,9 +1452,9 @@
     },
     {
       "id": "jianzhong-li",
-      "name": "Jianzhong Li",
-      "roleOrg": "奇点智能研究院院长 / CSDN 高级副总裁",
-      "bio": "Jianzhong Li 现任奇点智能研究院院长、CSDN 高级副总裁，长期关注人工智能、技术创新、产业生态与 AI 产品范式变迁。他于 2016 年发起奇点智能技术峰会，并参与 ISO C++ 标准社区工作。",
+      "name": "李建忠",
+      "roleOrg": "奇点智能研究院院长、CSDN 合伙人兼高级副总裁",
+      "bio": "李建忠，奇点智能研究院（Singularity Research）院长、CSDN 合伙人兼高级副总裁，在人工智能、技术创新和产业生态领域拥有丰富见解与深入研究经验。2016 年发起创办奇点智能技术大会（原全球机器学习技术大会），该大会已成为人工智能产业领域极具影响力的高端技术研讨与交流平台。近年来主要研究以大模型为主的人工智能范式，提出科技创新的“范式转换立方体”系统框架，相关研究和演讲引起业界广泛关注。2005 年发起举办第一届全球 C++ 及系统软件技术大会，并担任 ISO C++ 国际标准委员会委员。他也是腾冲科学家论坛科技愿景论坛人工智能专家委员会委员，曾联合多位科学家发布《科技预见与未来愿景 2049》。他创立的奇点智能研究院主要研究以大模型为主的人工智能范式，并为包括世界 500 强在内的多家企业提供 AI 与创新战略咨询。",
       "tags": [
         "sz26-agentic-ai-summit"
       ],
@@ -1744,6 +1744,19 @@
       "nameEn": "Yongcheng Wei"
     },
     {
+      "id": "bangxu-yu",
+      "name": "于邦旭",
+      "roleOrg": "AtomGit CEO、CSDN 高级副总裁",
+      "bio": "CSDN 高级副总裁、AtomGit CEO，曾任职于微博、乐视云和爱奇艺技术管理岗位，拥有云平台架构建设经验。现负责 AtomGit 国产开源代码平台及 AtomCode 系列 AI 编程工具，推动平台向 AI 智能体与模型工程化方向升级。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/bangxu-yu.png",
+      "nameEn": "Bangxu Yu"
+    },
+    {
       "id": "michael-yuan",
       "name": "Michael Yuan",
       "roleOrg": "Second State 创始人",
@@ -1759,6 +1772,82 @@
       "draft": false,
       "image": "/images/speakers/confirmed/michael-yuan.png",
       "nameEn": "Michael Yuan"
+    },
+    {
+      "id": "hunter-bown",
+      "name": "Hunter Bown",
+      "roleOrg": "ShannonTek 创始人",
+      "bio": "ShannonTek 创始人、开源 Rust AI 编码智能体 Codewhale（原 DeepSeek-TUI）的创建者。他曾是音乐人和高中乐队指导教师，现专注于模型无关的智能体系统、开源协作，以及让先进 AI 能力惠及更多人的开发工具。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://shannontek.com/",
+        "github": "https://github.com/hmbown/",
+        "twitter": "https://x.com/goodhunt",
+        "linkedin": "https://www.linkedin.com/in/hunterbown/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/hunter-bown.png",
+      "nameEn": "Hunter Bown"
+    },
+    {
+      "id": "frank-fan",
+      "name": "Frank Fan",
+      "roleOrg": "AWS 首席解决方案架构师",
+      "bio": "AWS 澳大利亚首席容器解决方案架构师，拥有二十余年大型技术转型设计与实施经验，专注于容器化和迁移实践，曾在 AWS re:Invent、AWS Summit 和 API Days 等技术活动发表演讲。",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/quickzebra",
+        "linkedin": "https://www.linkedin.com/in/frankfan7/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/frank-fan.png",
+      "nameEn": "Frank Fan"
+    },
+    {
+      "id": "sheng-chen",
+      "name": "Sheng Chen",
+      "roleOrg": "联合讲师",
+      "bio": "",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/sheng-chen.png",
+      "nameEn": "Sheng Chen"
+    },
+    {
+      "id": "tao-pu",
+      "name": "Tao Pu",
+      "roleOrg": "X-Era Lab 研发总监、PhyAgentOS 联合创始人",
+      "bio": "X-Era Lab 研发总监、PhyAgentOS 联合创始人。",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://putao537.github.io/",
+        "github": "https://github.com/putao537"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/tao-pu.png",
+      "nameEn": "Tao Pu"
+    },
+    {
+      "id": "jiaju-zhang",
+      "name": "Jiaju Zhang",
+      "roleOrg": "Red Hat 大中华区 CTO",
+      "bio": "Red Hat 大中华区 CTO、vLLM 社区大使，拥有二十余年开源软件、Linux、分布式系统、存储、高可用、虚拟化、云计算、容器、云原生和 AI 基础设施经验，致力于 AI 推理开源项目孵化、社区建设与产业落地。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/jiaju-zhang.png",
+      "nameEn": "Jiaju Zhang"
     }
   ]
 }
