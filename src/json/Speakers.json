@@ -138,42 +138,6 @@
       "image": "/images/speakers/confirmed/charles-yang.png"
     },
     {
-      "id": "xun-wang",
-      "name": "Xun Wang",
-      "roleOrg": "Co-speaker",
-      "bio": "",
-      "tags": [
-        "sz26-open-source-robotics"
-      ],
-      "socialLinks": {},
-      "draft": false,
-      "image": "/images/speakers/confirmed/xun-wang.png"
-    },
-    {
-      "id": "roy-wang",
-      "name": "Roy Wang",
-      "roleOrg": "Co-speaker",
-      "bio": "",
-      "tags": [
-        "sz26-open-source-robotics"
-      ],
-      "socialLinks": {},
-      "draft": false,
-      "image": "/images/speakers/confirmed/roy-wang.png"
-    },
-    {
-      "id": "george-wang",
-      "name": "George Wang",
-      "roleOrg": "Co-speaker",
-      "bio": "",
-      "tags": [
-        "sz26-open-source-robotics"
-      ],
-      "socialLinks": {},
-      "draft": false,
-      "image": "/images/speakers/confirmed/george-wang.png"
-    },
-    {
       "id": "peilin-li",
       "name": "Peilin Li",
       "roleOrg": "Ph.D. Student, Tsinghua University / Approaching AI",
@@ -1541,6 +1505,30 @@
       "image": "/images/speakers/confirmed/wan-ying.png"
     },
     {
+      "id": "赵悦-zhao-yue",
+      "name": "赵悦（ZHAO YUE）",
+      "roleOrg": "HAFleet 维护者, HAFleet 开源项目",
+      "bio": "赵悦（ZHAO YUE），HAFleet 开源项目维护者。关注多个 Agent 的组织与协作，围绕角色分工、群组沟通、任务交接和人类参与开展项目维护与探索。本次分享以 HAFleet 为核心，介绍组织 Agent 协作编程的实践，并结合 Robrix2 展示人和 Agent 在同一交流界面中协作的方式。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/赵悦-zhao-yue.png"
+    },
+    {
+      "id": "alex-wang",
+      "name": "Alex Wang",
+      "roleOrg": "Sotware Developer, Independent Developer",
+      "bio": "Agent爱好者",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/alex-wang.png"
+    },
+    {
       "id": "weiyu-xie",
       "name": "Weiyu Xie",
       "roleOrg": "Chief Architect, Approaching.AI",
@@ -1722,11 +1710,104 @@
       "roleOrg": "CTO, Greater China, Red Hat",
       "bio": "Jiaju Zhang is CTO for Greater China at Red Hat and a vLLM community ambassador. He has more than twenty years of experience in open-source software, Linux, distributed systems, storage, virtualization, cloud computing, containers, cloud-native technologies, and AI infrastructure.",
       "tags": [
-        "sz26-open-source-model"
+        "ws-vllm"
       ],
       "socialLinks": {},
       "draft": false,
       "image": "/images/speakers/confirmed/jiaju-zhang.png"
+    },
+    {
+      "id": "allen-chao",
+      "name": "Allen Chao",
+      "roleOrg": "Director of Sales & Marketing, M5Stack Technology Co., Ltd",
+      "bio": "Always curious about new things, a tech enthusiast, and a football fan",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "website": "https://www.m5stack.com/",
+        "linkedin": "https://www.linkedin.com/in/allen-chao-68401275"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/allen-chao.png"
+    },
+    {
+      "id": "郑仲鹏",
+      "name": "郑仲鹏",
+      "roleOrg": "CMO, 深圳词源开物科技有限公司",
+      "bio": "我是郑仲鹏Zayn，是深圳科创学院孵化的创业团队的联合创始人，我们的核心产品是PCB打印机和AI硬件IDE。官网iterx.ai",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/郑仲鹏.png"
+    },
+    {
+      "id": "lee-chun-pak",
+      "name": "Lee Chun Pak",
+      "roleOrg": "Overseas Market Strategist, Hiwonder",
+      "bio": "I am Pak, Overseas Market Strategist at Hiwonder. I lead overseas go-to-market for our open-source AI educational robots, and I work with schools and partners on how students can apply embodied AI on a robot.",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "linkedin": "https://www.linkedin.com/in/leechunpak/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/lee-chun-pak.png"
+    },
+    {
+      "id": "黄梓铭",
+      "name": "黄梓铭",
+      "roleOrg": "Member of technical staff, Inferact",
+      "bio": "Inferact工程师, vLLM社区贡献者",
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/黄梓铭.png"
+    },
+    {
+      "id": "tristan-ruoli-dai",
+      "name": "Tristan Ruoli Dai",
+      "roleOrg": "Founder/CEO, Noitom Robotics",
+      "bio": "Dr. Ruoli Dai, founder of Noitom Robotics and co-founder of Noitom Ltd., focuses on human motion digitization, human–machine interaction and robot learning. He earned his bachelor’s degree at USTC and Ph.D. at CUHK, with distinguished alumni honors from CUHK’s Department of Mechanical and Automation Engineering and Faculty of Engineering. He holds 50+ international patents and led motion capture development spanning inertial, optical and multi-sensor fusion technologies. At GOSIM CHINA 2024, he first proposed “A Mocap-based Data Factory for Embodied AI” and began putting it into practice. He founded Noitom Robotics in 2025, applying over a decade of human digitization expertise to embodied AI data infrastructure, multimodal human behavior data, robot teleoperation and large-scale data production. In 2026, he led ModalityNet’s launch and dataset open-sourcing to make the real world learnable by capturing and compiling human interactions into training data for robot foundation models.",
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://modalitynet.com/",
+        "github": "https://github.com/noitom-robotics",
+        "linkedin": "https://www.linkedin.com/in/tristan-ruoli-dai-b2369330/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/tristan-ruoli-dai.png"
+    },
+    {
+      "id": "chunxiaozheng",
+      "name": "chunxiaozheng",
+      "roleOrg": "Core Architect, LMCache",
+      "bio": "Chunxiao Zheng (GitHub: chunxiaozheng) is a maintainer and core architect of LMCache, an open-source KV cache management layer for LLM inference. He has landed 100+ PRs and he is the top 5 contributor, his contributions include MLA related support, DSA related support, IO process optimization, CLI related implementation, etc.",
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/chunxiaozheng.png"
+    },
+    {
+      "id": "yujie-sun",
+      "name": "Yujie Sun",
+      "roleOrg": "R&D Engineer, Daorui Intelligent Technology (Beijing) Co., Ltd.",
+      "bio": "Dora evangelist",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/yujie-sun.png"
     }
   ]
 }

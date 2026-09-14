@@ -576,5 +576,104 @@
       "en": "This talk introduces llm-d's distributed inference control plane, including intelligent routing, endpoint selection, inference pools, model servers, prefix- and load-aware scheduling, hierarchical KV-cache offloading, Prefill–Decode disaggregation, expert parallelism, flow control, and elastic scaling across Kubernetes, Slurm, Ray, and bare metal.",
       "zh": "本次演讲系统介绍 llm-d 分布式推理控制平面，包括智能路由、端点选择、推理池、模型服务器、前缀与负载感知调度、KV Cache 分层卸载、Prefill–Decode 分离、专家并行、流控与弹性扩缩容，并覆盖 Kubernetes、Slurm、Ray 和裸金属环境。"
     }
+  },
+  {
+    "ref": "P-143",
+    "title": {
+      "en": "HAFleet: Organizing AI Coding Assistants into a Team",
+      "zh": "HAFleet：把 AI 编程助手组织成团队"
+    },
+    "overview": {
+      "en": "This talk introduces HAFleet, an open-source system for organizing multiple coding agents around shared goals. It shows how agent identities, group and direct messaging, shared tasks, and dependencies connect agents across runtimes, while the Robrix2 Matrix client gives people a clear place to observe, participate, and make decisions.",
+      "zh": "本次演讲介绍开源项目 HAFleet 如何通过智能体身份、群组与私信、共享任务和依赖关系，将不同运行时的编码智能体组织成协作团队，并结合 Matrix 客户端 Robrix2 展示人如何观察进展、参与讨论和作出决策。"
+    }
+  },
+  {
+    "ref": "P-144",
+    "title": {
+      "en": "Putting Agents into the Operating System: How octos Assigns, Coordinates, and Verifies AI Work",
+      "zh": "把 Agent 装进操作系统：octos 如何让 AI 接活、分活、验活"
+    },
+    "overview": {
+      "en": "This talk presents octos, a Rust-based Agent OS, and its OctoLoop dual-loop workflow. A capable outer agent assigns and reviews work, lower-cost inner agents execute it, and a repository blackboard provides an auditable handoff. Real examples show how multiple agents can work for long periods while people retain control at the key decision points.",
+      "zh": "本次演讲介绍 Rust 编写的 Agent OS octos 及其 OctoLoop 双环工作流：能力更强的外环智能体负责派工和验收，成本更低的内环智能体负责执行，并通过仓库中的“黑板”完成可追踪的交接。真实案例将展示多个智能体如何长时间协作，同时让人保留关键决策权。"
+    }
+  },
+  {
+    "ref": "P-161",
+    "title": {
+      "en": "Building Infrastructure for an AI World",
+      "zh": "构建 AI 世界的基础设施"
+    },
+    "overview": {
+      "en": "This talk introduces M5Stack, explains why its modular hardware ecosystem is useful for rapid product development, and explores how M5Stack devices can serve as practical building blocks for AI applications.",
+      "zh": "本次演讲介绍 M5Stack 及其模块化硬件生态，说明它为何适合快速产品开发，并探讨 M5Stack 设备如何成为构建 AI 应用的实用基础模块。"
+    }
+  },
+  {
+    "ref": "P-162",
+    "title": {
+      "en": "IterxAI: Hardware Vibe Coding",
+      "zh": "词元开物 IterxAI：硬件 Vibe Coding"
+    },
+    "overview": {
+      "en": "This talk presents IterxAI, an end-to-end environment designed to help beginners create hardware prototypes. It covers AI-assisted requirements, component selection, coding, simulation, and PCB generation, together with a desktop PCB engraver and supply-chain data that connects designs directly to real components and vendors.",
+      "zh": "本次演讲介绍面向硬件开发新手的词元开物 IterxAI，覆盖需求梳理、元器件选型、代码编写、仿真和电路板生成，并结合桌面 PCB 雕刻机及真实供应链数据，让用户能够从设计直接连接到元器件和厂商。"
+    }
+  },
+  {
+    "ref": "P-163",
+    "title": {
+      "en": "How Hiwonder Helps Students Apply AI Agents on Robots",
+      "zh": "幻尔如何帮助学生将 AI 智能体应用于机器人"
+    },
+    "overview": {
+      "en": "This talk shows how Hiwonder uses ROS as the contract between an AI agent's reasoning and a robot's actions. It covers the path from voice, text, or OpenClaw input through an LLM or VLA planner, reusable skill nodes, and hardware drivers, with multimodal sensing, real-time control, and safety built into the system.",
+      "zh": "本次演讲介绍幻尔如何以 ROS 作为 AI 智能体“思考”与机器人“行动”之间的接口。从语音、文本或 OpenClaw 输入出发，系统连接 LLM 或 VLA 规划器、可复用技能节点与硬件驱动，并整合多模态感知、实时控制和安全机制。"
+    }
+  },
+  {
+    "ref": "P-164",
+    "title": {
+      "en": "Production-Grade Agent Inference for Kimi K3 with vLLM",
+      "zh": "基于 vLLM 的 Kimi K3 智能体生产级推理服务"
+    },
+    "overview": {
+      "en": "This workshop shares how the Inferact team built a large-scale, production-grade agent inference service for Kimi K3 on the open-source vLLM engine.",
+      "zh": "本工作坊分享 Inferact 团队如何基于开源 vLLM 引擎，为 Kimi K3 构建大规模、生产级的智能体推理服务。"
+    }
+  },
+  {
+    "ref": "P-165",
+    "title": {
+      "en": "From the Data Factory to the World Compiler",
+      "zh": "从数据工厂到世界编译器"
+    },
+    "overview": {
+      "en": "Starting from the data challenges of embodied AI, this talk shares Noitom Robotics' journey from large-scale data factories toward a World Compiler. It examines real-world collection, human motion and object interaction, multimodal production, standardization, and robot learning, and explains why data infrastructure must evolve from scale toward structured representations of the physical world.",
+      "zh": "本次演讲从具身智能的数据挑战出发，分享诺亦腾机器人从大规模“数据工厂”走向“世界编译器”的探索。内容涵盖真实世界数据采集、人体运动与人—物交互、多模态数据生产、标准化和机器人学习，并说明数据基础设施为何需要从追求规模进一步演进到对物理世界的结构化表达。"
+    }
+  },
+  {
+    "ref": "P-167",
+    "title": {
+      "en": "LMCache's Production-Grade Multi-Process KV Cache: Architecture, Observability, and Fault Tolerance",
+      "zh": "LMCache 生产级多进程 KV Cache：架构、可观测性与容错"
+    },
+    "overview": {
+      "en": "This workshop takes a deep look at LMCache's multi-process architecture and the systems engineering required to make KV-cache management observable, fault tolerant, and production ready at scale.",
+      "zh": "本工作坊深入解析 LMCache 的多进程架构，以及让 KV Cache 管理在大规模环境中具备可观测性、容错能力并达到生产可用水平所需的系统工程实践。"
+    }
+  },
+  {
+    "ref": "P-168",
+    "title": {
+      "en": "Robotic Teleoperation Data Collection and Multimodal Closed-Loop Control with DORA",
+      "zh": "DORA 架构下的机器人遥操作数据采集与多模态闭环控制"
+    },
+    "overview": {
+      "en": "This workshop presents robotic teleoperation data collection and multimodal closed-loop control under the DORA architecture. It covers sensor integration, time synchronization, low-latency dataflow, action mapping, real-time feedback, safety monitoring, and reproducible logging and replay for imitation learning, remote manipulation, and embodied-AI research.",
+      "zh": "本工作坊介绍 DORA 架构下的机器人遥操作数据采集与多模态闭环控制，涵盖传感器集成、时间同步、低延迟数据流、操作映射、实时反馈、安全监控，以及面向模仿学习、远程操控和具身智能研究的可复现记录与回放。"
+    }
   }
 ]

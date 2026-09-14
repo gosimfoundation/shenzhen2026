@@ -1127,6 +1127,9 @@
   },
   {
     "sourceName": "李扬",
+    "sourceNames": [
+      "李扬（Leon）"
+    ],
     "id": "yang-li",
     "en": {
       "name": "Yang Li",

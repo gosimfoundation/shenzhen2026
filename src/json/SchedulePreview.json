@@ -976,6 +976,44 @@
             "en": "This talk asks how agentic AI can help more people turn observations and ideas into testable creations. Through the history of invention and the development of Codewhale, an open-source Rust coding agent, it presents a practical framework built around model choice, visible actions, testable outcomes, open systems, and meaningful human control.",
             "zh": "本次演讲探讨智能体 AI 如何让更多人把观察、问题和想法变成可验证的创造。内容结合发明史与开源 Rust 编码智能体 Codewhale 的开发实践，提出一套围绕模型选择、可见操作、可测试结果、开放系统和有效人类控制的设计框架。"
           }
+        },
+        {
+          "ref": "P-143",
+          "originalTitle": "HAFleet：把 AI 编程助手组织成团队",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "HAFleet: Organizing AI Coding Assistants into a Team",
+            "zh": "HAFleet：把 AI 编程助手组织成团队"
+          },
+          "slug": "p-143-hafleet-把-ai-编程助手组织成团队",
+          "speakers": [
+            "赵悦-zhao-yue"
+          ],
+          "originalAbstract": "当多个 Agent 共同参与软件开发，如何赋予它们清晰的身份与分工，让它们围绕共同目标沟通、交接任务，并让人参与其中？本分享以开源项目 HAFleet 为核心，介绍面向 duoAgent 编程的多 Agent 组织与协作实践。\n\n我们将从协调、实现、审查等角色分工出发，介绍 HAFleet 如何通过 Agent 身份、群组与私信、共享任务和依赖关系，把不同运行时的 Agent 连接为协作团队。结合一个从需求提出到实现、复核和结果汇报的案例，讨论团队如何分工、如何交接，以及人如何观察进展、提供反馈和作出决策。\n\n分享还将简要介绍 Robrix2——基于 Rust 与 Makepad 的 Matrix 客户端，展示它作为人机交流入口与 HAFleet 配合的方式：人在房间中提出需求、参与讨论，Agent 在本地执行并将结果带回协作界面。\n\n听众将了解 HAFleet 的组织思路与实践方法，以及如何结合 Robrix2 构建人可以参与的多 Agent 编程协作环境。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk introduces HAFleet, an open-source system for organizing multiple coding agents around shared goals. It shows how agent identities, group and direct messaging, shared tasks, and dependencies connect agents across runtimes, while the Robrix2 Matrix client gives people a clear place to observe, participate, and make decisions.",
+            "zh": "本次演讲介绍开源项目 HAFleet 如何通过智能体身份、群组与私信、共享任务和依赖关系，将不同运行时的编码智能体组织成协作团队，并结合 Matrix 客户端 Robrix2 展示人如何观察进展、参与讨论和作出决策。"
+          }
+        },
+        {
+          "ref": "P-144",
+          "originalTitle": "把 agent 装进操作系统—— octos Agent OS 怎么让 AI 接活、分活、验活",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Putting Agents into the Operating System: How octos Assigns, Coordinates, and Verifies AI Work",
+            "zh": "把 Agent 装进操作系统：octos 如何让 AI 接活、分活、验活"
+          },
+          "slug": "p-144-把-agent-装进操作系统-octos-agent-os-怎么让-ai-接活-分活-验活",
+          "speakers": [
+            "alex-wang"
+          ],
+          "originalAbstract": "「让便宜的 AI 干活，让贵的 AI 当审查员，两边自动转起来，你只管睡觉和拍板。」这是 OctoLoop 作者的一句话，也是我过去一个月每天的工作方式。\n\noctos 是一个用 Rust 写的 Agent OS：agent 的目标、预算、工具权限、多模型车道都放在一个服务端里统一管理，终端只是它的一个客户端。OctoLoop 是 octos 自带的「双环」协议。外环是一个贵的、强的 agent，比如 Claude 或 Codex，负责写任务书、审查交付、决定要不要合入；内环是便宜的、可以反复重跑的 agent，比如跑着 Kimi K3 和 GLM 的 octoscode，或者 herdr 里的 codex、claude 窗格，负责真正干活。两环之间靠仓库里的一块「黑板」文件交接：外环贴任务，内环干完贴回执，外环复验后落判词。内环永远不能 push，每个进主线的 commit 都过两双眼睛。\n\n它解决的是一类很具体的问题：当你让 coding agent 长时间自己跑，谁来派活、谁来验收、便宜模型和贵模型怎么分工、两个 agent 同时改一个仓怎么不撞车、人到底要在哪几个点上出现。\n\n这场分享不讲源码，讲两个真实场景。第一个是默认形态「一外环一内环」：Claude Desktop 当外环，herdr 里开一个 octoscode 内环。我讲一个晚上发生的事：睡前下目标，内环连夜干，早上外环复验，我只按一个键。第二个是「一外环两内环」：Fable 5 当外环，codex 负责写代码，octoscode 用 Kimi K3 和 GLM 负责评审和调研，一天之内从设计稿到 64 个 commit 全部验收，中间还有两个内环在同一棵树上写字时怎么不撞车。故事里顺带讲清几条背后的原理：为什么「完成」只认黑板上的回执，为什么复审可以下放但验收的签字不能，为什么目标要从上下文窗口搬到服务端。\n\n组合是灵活的：外环可以是 Claude 也可以是 Codex；一个项目默认一外环一内环，也可以一外环带两个内环，内环可以是 octoscode、codex、claude 的任意组合。你带走的不是一套工具，是一种把 agent 当成一个班子来用的方法。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk presents octos, a Rust-based Agent OS, and its OctoLoop dual-loop workflow. A capable outer agent assigns and reviews work, lower-cost inner agents execute it, and a repository blackboard provides an auditable handoff. Real examples show how multiple agents can work for long periods while people retain control at the key decision points.",
+            "zh": "本次演讲介绍 Rust 编写的 Agent OS octos 及其 OctoLoop 双环工作流：能力更强的外环智能体负责派工和验收，成本更低的内环智能体负责执行，并通过仓库中的“黑板”完成可追踪的交接。真实案例将展示多个智能体如何长时间协作，同时让人保留关键决策权。"
+          }
         }
       ],
       "originalName": "Agentic OS & App"
@@ -1086,8 +1124,8 @@
         },
         {
           "ref": "P-89",
-          "originalTitle": "TBD",
-          "originalLanguage": "en",
+          "originalTitle": "开源硬件如何让 AI 从云端走向生活",
+          "originalLanguage": "zh",
           "title": {
             "en": "TBD",
             "zh": "待定"
@@ -1096,8 +1134,8 @@
           "speakers": [
             "tong-ling"
           ],
-          "originalAbstract": "TBD",
-          "originalAbstractLanguage": "en",
+          "originalAbstract": "以乐鑫 ESP32-S3 驱动的 M5Stack StackChan 为载体，结合 ESP RainMaker NEO 云端平台与开源 App，展示如何用低成本开源硬件 + MCP 协议 + 大模型，构建接地气的智能硬件。分享乐鑫开源生态如何让一个人借助 AI 完成从产品到落地的全流程，以及开源硬件如何让 AI 惠及更多场景。",
+          "originalAbstractLanguage": "zh",
           "overview": {
             "en": "Additional information about this talk will be published once confirmed.",
             "zh": "本场演讲的更多介绍将在内容确认后发布。"
@@ -1234,6 +1272,63 @@
           "overview": {
             "en": "This talk explores dedicated hardware for supervising multiple coding agents without constant context switching. It examines recent agentic devices and presents VibeKeys, an open-source ESP32-S3 keypad with a status display, microphone, Rust firmware, and integrations for Claude Code, Codex, Herdr, and Omarchy.",
             "zh": "本次演讲探讨如何通过专用硬件监督多个编码智能体，减少频繁切换窗口带来的注意力负担，并介绍开源设备 VibeKeys：一款配备状态屏、麦克风和 Rust 固件的 ESP32-S3 键盘，可连接 Claude Code、Codex、Herdr 与 Omarchy。"
+          }
+        },
+        {
+          "ref": "P-161",
+          "originalTitle": "Building the infrastructure for AI world",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Building Infrastructure for an AI World",
+            "zh": "构建 AI 世界的基础设施"
+          },
+          "slug": "p-161-building-the-infrastructure-for-ai-world",
+          "speakers": [
+            "allen-chao"
+          ],
+          "originalAbstract": "What's M5Stack? Why M5Stack? And M5Stack in AI.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk introduces M5Stack, explains why its modular hardware ecosystem is useful for rapid product development, and explores how M5Stack devices can serve as practical building blocks for AI applications.",
+            "zh": "本次演讲介绍 M5Stack 及其模块化硬件生态，说明它为何适合快速产品开发，并探讨 M5Stack 设备如何成为构建 AI 应用的实用基础模块。"
+          }
+        },
+        {
+          "ref": "P-162",
+          "originalTitle": "词元开物IterxAI——硬件vibe coding",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "IterxAI: Hardware Vibe Coding",
+            "zh": "词元开物 IterxAI：硬件 Vibe Coding"
+          },
+          "slug": "p-162-词元开物iterxai-硬件vibe-coding",
+          "speakers": [
+            "郑仲鹏"
+          ],
+          "originalAbstract": "词元开物IterxAI的目标是新手也能开发自己的硬件原型，产品覆盖AI硬件开发流程。包括软件、硬件、配套供应链服务。\n软件方面，词元开物提供了从需求梳理、选型、编写代码、运行仿真、生成电路板等全流程服务。硬件方面，词元开物提供了家庭化的个人PCB雕刻机。配套供应链服务中，词元开物提供了海量的硬件模块的真实数据，链接硬件厂商，用户在软件里直接就能够下单对应的选型。有了方案之后，不再为麻烦的下单流程感到烦恼。\n词元开物致力于用AI重新梳理硬件开发流程，让更多人能体验到硬件开发的乐趣。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk presents IterxAI, an end-to-end environment designed to help beginners create hardware prototypes. It covers AI-assisted requirements, component selection, coding, simulation, and PCB generation, together with a desktop PCB engraver and supply-chain data that connects designs directly to real components and vendors.",
+            "zh": "本次演讲介绍面向硬件开发新手的词元开物 IterxAI，覆盖需求梳理、元器件选型、代码编写、仿真和电路板生成，并结合桌面 PCB 雕刻机及真实供应链数据，让用户能够从设计直接连接到元器件和厂商。"
+          }
+        },
+        {
+          "ref": "P-163",
+          "originalTitle": "How Hiwonder Helps Students Apply AI Agents on Robots",
+          "originalLanguage": "en",
+          "title": {
+            "en": "How Hiwonder Helps Students Apply AI Agents on Robots",
+            "zh": "幻尔如何帮助学生将 AI 智能体应用于机器人"
+          },
+          "slug": "p-163-how-hiwonder-helps-students-apply-ai-agents-on-robots",
+          "speakers": [
+            "lee-chun-pak"
+          ],
+          "originalAbstract": "Large language models can write a plan. They cannot turn a wheel, close a gripper, or stop for a student who walks into the lab. This talk is about the missing layer: how Hiwonder helps students put an AI agent onto a real ROS robot.\nWe start from ROS as the contract between “think” and “act.” The features of node let vision, SLAM, Nav2, inverse kinematics, voice, and an LLM client share the same graph. Students do not rebuild the robot when the brain changes. They swap one node.\nEmbodied AI needs that contract. An agent must fuse LiDAR, depth, IMU, and joint feedback; split a spoken goal into tools; and run those tools at control rate. We show where the agent actually lives: interface (voice, text, OpenClaw chat) → agent brain (LLM / VLA plan) → skill nodes → hardware drivers → the physical body.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk shows how Hiwonder uses ROS as the contract between an AI agent's reasoning and a robot's actions. It covers the path from voice, text, or OpenClaw input through an LLM or VLA planner, reusable skill nodes, and hardware drivers, with multimodal sensing, real-time control, and safety built into the system.",
+            "zh": "本次演讲介绍幻尔如何以 ROS 作为 AI 智能体“思考”与机器人“行动”之间的接口。从语音、文本或 OpenClaw 输入出发，系统连接 LLM 或 VLA 规划器、可复用技能节点与硬件驱动，并整合多模态感知、实时控制和安全机制。"
           }
         }
       ],
@@ -1535,25 +1630,6 @@
             "en": "This talk examines how open-source infrastructure must evolve as collaboration expands from code to models, datasets, agents, and AI-native applications. Drawing on AtomGit, AtomCode, domestic compute adaptation, and the CANN developer ecosystem, it explores how platforms can connect models, code, compute, and developers across the full engineering lifecycle.",
             "zh": "本次演讲探讨当开源协作从代码扩展到模型、数据集、智能体和 AI 原生应用时，开发者基础设施应如何演进。内容结合 AtomGit、AtomCode、国产算力适配和 CANN 开发者生态实践，分析平台如何连接模型、代码、算力与开发者，打通完整工程化链路。"
           }
-        },
-        {
-          "ref": "P-159",
-          "originalTitle": "llm-d：打造跨负载、跨模态、跨硬件、跨平台的分布式推理平面",
-          "originalLanguage": "zh",
-          "title": {
-            "en": "llm-d: A Distributed Inference Plane Across Workloads, Modalities, Hardware, and Platforms",
-            "zh": "llm-d：打造跨负载、跨模态、跨硬件、跨平台的分布式推理平面"
-          },
-          "slug": "p-159-llm-d-打造跨负载-跨模态-跨硬件-跨平台的分布式推理平面",
-          "speakers": [
-            "jiaju-zhang"
-          ],
-          "originalAbstract": "当 LLM 推理从\"一个模型一个实例\"走向生产规模，真正的挑战不再是单个引擎跑得多快，而是集群层面的系统性异构：负载形态在异构——从短问答到长上下文 Agentic 会话，不同请求的计算与内存特征天差地别；模型模态在异构——多模态模型的视觉编码、Prefill、Decode 三个阶段各有资源脾气；底层硬件在异构——GPU、TPU、XPU 混部已成生产常态；运行平台也在异构——推理不再只发生在 Kubernetes 上，Slurm、Ray、裸金属乃至 RL 训练的 rollout 集群都在呼唤同一套服务能力。\n\n本次演讲将系统介绍 llm-d 的核心架构——智能路由器、端点选择器（EPP）、推理池与模型服务器，以及一组经过验证的\"Well-Lit Paths\"最佳实践路径：前缀感知与负载感知调度、基于延迟预测的调度、KV Cache 分层卸载、P/D 分离、面向 DeepSeek 级 MoE 模型的多节点宽专家并行（Wide EP）、流控与多模型路由、弹性扩缩容等，一套部署同时支撑交互对话、批处理、多模态与 Agentic 工作负载。\n\n演讲还将带来llm-d项目的最新进展：llm-d 正从\"推理平台\"演进为\"推理控制平面\"——默认对齐上游 vLLM、流控与批处理网关转入生产可用、多层级 KV Cache 与 Mooncake 传输引擎接入，并通过 EndpointDiscovery 机制摆脱对 Kubernetes 的依赖，让智能路由能力延伸至 Slurm、Ray 乃至裸金属环境，直接嵌入 RL 训练的 rollout 循环。最后展望llm-d即将发布版本的路线图。",
-          "originalAbstractLanguage": "zh",
-          "overview": {
-            "en": "This talk introduces llm-d's distributed inference control plane, including intelligent routing, endpoint selection, inference pools, model servers, prefix- and load-aware scheduling, hierarchical KV-cache offloading, Prefill–Decode disaggregation, expert parallelism, flow control, and elastic scaling across Kubernetes, Slurm, Ray, and bare metal.",
-            "zh": "本次演讲系统介绍 llm-d 分布式推理控制平面，包括智能路由、端点选择、推理池、模型服务器、前缀与负载感知调度、KV Cache 分层卸载、Prefill–Decode 分离、专家并行、流控与弹性扩缩容，并覆盖 Kubernetes、Slurm、Ray 和裸金属环境。"
-          }
         }
       ],
       "originalName": "Open Source Models & Infra"
@@ -1576,10 +1652,7 @@
           },
           "slug": "p-2-amd-rocm-and-radeon-powered-real2sim2real-vision-language-action-manipulation",
           "speakers": [
-            "charles-yang",
-            "xun-wang",
-            "roy-wang",
-            "george-wang"
+            "charles-yang"
           ],
           "originalAbstract": "This talk presents an end-to-end Real2Sim2Real embodied AI workflow built entirely on AMD ROCm and Radeon GPUs, spanning data generation, policy training, simulation validation, and real-world deployment. We begin by generating large-scale synthetic robot demonstrations in the Genesis physics simulator using GPU hardware rasterization, then convert them into the standard LeRobot dataset format. A SmolVLA-450M vision-language-action policy is fine-tuned entirely on the AMD platform using ROCm-native PyTorch. The trained policy is first validated through closed-loop evaluation in Genesis simulation, then deployed directly to a physical Franka robotic arm — completing a full real-to-sim-to-real loop that rigorously tests sim-to-real transfer and policy robustness.",
           "originalAbstractLanguage": "en",
@@ -1913,6 +1986,25 @@
             "en": "This talk shares PhyAgentOS engineering practices for physical-agent harnesses, including unified access to heterogeneous robots, tool and skill composition, simulation-to-reality transfer, task verification, failure recovery, and continuous evolution driven by tool use and data feedback.",
             "zh": "本次演讲分享 PhyAgentOS 在物理智能体 Harness 方向的工程实践，涵盖异构机器人统一接入、Tool 与 Skill 组合、虚实迁移、任务验证与失败恢复，以及由工具使用和数据反馈驱动的持续进化。"
           }
+        },
+        {
+          "ref": "P-165",
+          "originalTitle": "From the data factory to the world compiler",
+          "originalLanguage": "en",
+          "title": {
+            "en": "From the Data Factory to the World Compiler",
+            "zh": "从数据工厂到世界编译器"
+          },
+          "slug": "p-165-from-the-data-factory-to-the-world-compiler",
+          "speakers": [
+            "tristan-ruoli-dai"
+          ],
+          "originalAbstract": "Embodied AI faces a more complex challenge than language models do: how can robots understand the real world and continually learn from human behavior and real-world interactions? Starting with the data challenges of embodied AI, this talk shares Noitom Robotics’ experience and insights as it moves from building large-scale “data factories” to exploring the concept of a “World Compiler.” Drawing on practical work in real-world data collection, human motion and human–object interaction, multimodal data production, data standardization, and robot learning, it examines what kinds of data embodied AI needs—and why data infrastructure is evolving beyond scale alone toward structured representation and compilation of the real world.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "Starting from the data challenges of embodied AI, this talk shares Noitom Robotics' journey from large-scale data factories toward a World Compiler. It examines real-world collection, human motion and object interaction, multimodal production, standardization, and robot learning, and explains why data infrastructure must evolve from scale toward structured representations of the physical world.",
+            "zh": "本次演讲从具身智能的数据挑战出发，分享诺亦腾机器人从大规模“数据工厂”走向“世界编译器”的探索。内容涵盖真实世界数据采集、人体运动与人—物交互、多模态数据生产、标准化和机器人学习，并说明数据基础设施为何需要从追求规模进一步演进到对物理世界的结构化表达。"
+          }
         }
       ],
       "originalName": "Open Source Robotics"
@@ -2049,6 +2141,25 @@
             "en": "This workshop examines what autonomous research requires when coding agents move from software environments to real robots. Using ENPIRE, RealPushT, an RM65 robotic arm, and Dora dataflows, it explores scene reset, reliable observation, outcome verification, reproducible records, and the gap between a successful run and a stable robotic capability.",
             "zh": "本工作坊探讨 Coding Agent 从软件环境走向真实机器人时，自动科研所需的场景重置、可靠观测与结果验证。内容结合 ENPIRE、RealPushT、RM65 机械臂和 Dora 数据流，分析单次成功与稳定机器人能力之间的差异，以及如何建立可复核、可追溯的实验记录。"
           }
+        },
+        {
+          "ref": "P-168",
+          "originalTitle": "Key Technologies of Robotic Teleoperation Data Collection and Multimodal Closed-Loop Control under the DORA Architecture",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Robotic Teleoperation Data Collection and Multimodal Closed-Loop Control with DORA",
+            "zh": "DORA 架构下的机器人遥操作数据采集与多模态闭环控制"
+          },
+          "slug": "p-168-key-technologies-of-robotic-teleoperation-data-collection-and-multimodal-closed-loop-control-under-the-dora-architecture",
+          "speakers": [
+            "yujie-sun"
+          ],
+          "originalAbstract": "Teleoperation lets humans and robots work together: a human provides demonstrations and takes over when needed, while the robot executes tasks, collects data, and gradually learns to act on its own. This talk presents key technologies for robotic teleoperation data collection and multimodal closed-loop control under the DORA architecture. We cover multimodal sensor integration, time synchronization, low-latency dataflow, teleoperation-to-action mapping, real-time feedback and safety monitoring, and reproducible data logging and replay. We show how DORA enables modular, low-latency teleoperation pipelines for imitation learning, remote manipulation, and embodied AI research.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop presents robotic teleoperation data collection and multimodal closed-loop control under the DORA architecture. It covers sensor integration, time synchronization, low-latency dataflow, action mapping, real-time feedback, safety monitoring, and reproducible logging and replay for imitation learning, remote manipulation, and embodied-AI research.",
+            "zh": "本工作坊介绍 DORA 架构下的机器人遥操作数据采集与多模态闭环控制，涵盖传感器集成、时间同步、低延迟数据流、操作映射、实时反馈、安全监控，以及面向模仿学习、远程操控和具身智能研究的可复现记录与回放。"
+          }
         }
       ],
       "originalName": "DORA Workshop"
@@ -2078,6 +2189,44 @@
           "overview": {
             "en": "This workshop presents deep vLLM optimizations for cold-start latency, KV-cache efficiency, and distributed scheduling. It covers GPUDirect RDMA weight loading, stateless inference with advanced prefix caching, I/O preloading, and an event-driven no-wait scheduler for higher concurrency and GPU utilization.",
             "zh": "本工作坊介绍针对冷启动延迟、KV Cache 效率与分布式调度的 vLLM 深度优化，涵盖 GPUDirect RDMA 权重加载、结合高级前缀缓存的无状态推理、I/O 预加载，以及提升并发和 GPU 利用率的事件驱动无等待调度器。"
+          }
+        },
+        {
+          "ref": "P-159",
+          "originalTitle": "llm-d：打造跨负载、跨模态、跨硬件、跨平台的分布式推理平面",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "llm-d: A Distributed Inference Plane Across Workloads, Modalities, Hardware, and Platforms",
+            "zh": "llm-d：打造跨负载、跨模态、跨硬件、跨平台的分布式推理平面"
+          },
+          "slug": "p-159-llm-d-打造跨负载-跨模态-跨硬件-跨平台的分布式推理平面",
+          "speakers": [
+            "jiaju-zhang"
+          ],
+          "originalAbstract": "当 LLM 推理从\"一个模型一个实例\"走向生产规模，真正的挑战不再是单个引擎跑得多快，而是集群层面的系统性异构：负载形态在异构——从短问答到长上下文 Agentic 会话，不同请求的计算与内存特征天差地别；模型模态在异构——多模态模型的视觉编码、Prefill、Decode 三个阶段各有资源脾气；底层硬件在异构——GPU、TPU、XPU 混部已成生产常态；运行平台也在异构——推理不再只发生在 Kubernetes 上，Slurm、Ray、裸金属乃至 RL 训练的 rollout 集群都在呼唤同一套服务能力。\n\n本次演讲将系统介绍 llm-d 的核心架构——智能路由器、端点选择器（EPP）、推理池与模型服务器，以及一组经过验证的\"Well-Lit Paths\"最佳实践路径：前缀感知与负载感知调度、基于延迟预测的调度、KV Cache 分层卸载、P/D 分离、面向 DeepSeek 级 MoE 模型的多节点宽专家并行（Wide EP）、流控与多模型路由、弹性扩缩容等，一套部署同时支撑交互对话、批处理、多模态与 Agentic 工作负载。\n\n演讲还将带来llm-d项目的最新进展：llm-d 正从\"推理平台\"演进为\"推理控制平面\"——默认对齐上游 vLLM、流控与批处理网关转入生产可用、多层级 KV Cache 与 Mooncake 传输引擎接入，并通过 EndpointDiscovery 机制摆脱对 Kubernetes 的依赖，让智能路由能力延伸至 Slurm、Ray 乃至裸金属环境，直接嵌入 RL 训练的 rollout 循环。最后展望llm-d即将发布版本的路线图。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk introduces llm-d's distributed inference control plane, including intelligent routing, endpoint selection, inference pools, model servers, prefix- and load-aware scheduling, hierarchical KV-cache offloading, Prefill–Decode disaggregation, expert parallelism, flow control, and elastic scaling across Kubernetes, Slurm, Ray, and bare metal.",
+            "zh": "本次演讲系统介绍 llm-d 分布式推理控制平面，包括智能路由、端点选择、推理池、模型服务器、前缀与负载感知调度、KV Cache 分层卸载、Prefill–Decode 分离、专家并行、流控与弹性扩缩容，并覆盖 Kubernetes、Slurm、Ray 和裸金属环境。"
+          }
+        },
+        {
+          "ref": "P-164",
+          "originalTitle": "基于vLLM的Kimi K3智能体生产级推理服务",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Production-Grade Agent Inference for Kimi K3 with vLLM",
+            "zh": "基于 vLLM 的 Kimi K3 智能体生产级推理服务"
+          },
+          "slug": "p-164-基于vllm的kimi-k3智能体生产级推理服务",
+          "speakers": [
+            "黄梓铭"
+          ],
+          "originalAbstract": "分享Inferact团队如何基于开源vLLM引擎在Kimi K3模型上构建大规模智能体生产级推理服务",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This workshop shares how the Inferact team built a large-scale, production-grade agent inference service for Kimi K3 on the open-source vLLM engine.",
+            "zh": "本工作坊分享 Inferact 团队如何基于开源 vLLM 引擎，为 Kimi K3 构建大规模、生产级的智能体推理服务。"
           }
         }
       ],
@@ -2251,6 +2400,25 @@
           "overview": {
             "en": "This workshop explains how FlexKV manages and compresses KV cache across GPU memory, CPU memory, SSDs, and distributed storage. It covers cross-node pooling, asynchronous transfer, namespace isolation, and integrations with vLLM, SGLang, TensorRT-LLM, and Dynamo, drawing on practical enterprise deployment experience.",
             "zh": "本工作坊介绍 FlexKV 如何统一管理和压缩 GPU 显存、CPU 内存、SSD 与分布式存储中的 KV Cache，涵盖跨节点池化、异步传输、Namespace 隔离，以及与 vLLM、SGLang、TensorRT-LLM 和 Dynamo 的集成，并分享企业级落地实践。"
+          }
+        },
+        {
+          "ref": "P-167",
+          "originalTitle": "LMCache's Production-Grade Multi-Process KV Cache: Architecture, Observability & Fault Tolerance",
+          "originalLanguage": "en",
+          "title": {
+            "en": "LMCache's Production-Grade Multi-Process KV Cache: Architecture, Observability, and Fault Tolerance",
+            "zh": "LMCache 生产级多进程 KV Cache：架构、可观测性与容错"
+          },
+          "slug": "p-167-lmcache-s-production-grade-multi-process-kv-cache-architecture-observability-fault-tolerance",
+          "speakers": [
+            "chunxiaozheng"
+          ],
+          "originalAbstract": "A deep dive into LMCache’s Multi-Process mode architecture — the systems engineering that makes KV cache management production-ready at scale.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop takes a deep look at LMCache's multi-process architecture and the systems engineering required to make KV-cache management observable, fault tolerant, and production ready at scale.",
+            "zh": "本工作坊深入解析 LMCache 的多进程架构，以及让 KV Cache 管理在大规模环境中具备可观测性、容错能力并达到生产可用水平所需的系统工程实践。"
           }
         }
       ],
