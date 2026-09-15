@@ -6,13 +6,20 @@
       "name": "Bryce Adelstein Lelbach",
       "roleOrg": "NVIDIA 首席工程师",
       "bio": "Bryce Adelstein Lelbach 长期从事编程语言、编译器和基础库开发，致力于让并行编程更易于使用。他是 NVIDIA 首席工程师，创立了核心 C++ 计算库团队，目前负责推动 NVIDIA 在编程语言、编译器和核心库方面路线图的 Vanguard Programming 团队。他曾担任 C++ 库演进工作组及美国编程语言标准委员会主席，并参与并发原语、并行算法、sender 和多维数组等标准工作。"
+    },
+    "en": {
+      "name": "Bryce Adelstein Lelbach",
+      "roleOrg": "Principal Engineer, NVIDIA",
+      "bio": "Bryce Adelstein Lelbach has spent over a decade developing programming languages, compilers, and libraries. He is passionate about parallel programming and strives to make it more accessible for everyone.\n\nBryce is a Principal Engineer at NVIDIA, where he founded the Core C++ Compute Libraries team and now leads the Vanguard Programming group that drives NVIDIA's roadmap for programming languages, compilers, and core libraries.\n\nHe is a leader of the systems programming language community, having served as chair of the C++ Library Evolution and the US programming language standards committee. He has been an organizer and program chair for many conferences over the years. On the C++ committee, he has worked on concurrency primitives, parallel algorithms, senders, and multidimensional arrays.\n\nOutside of work, Bryce is passionate about airplanes and watches. He lives in Midtown Manhattan with his girlfriend and dog."
     }
   },
   {
     "sourceName": "Charles Yang",
     "id": "charles-yang",
     "en": {
-      "bio": "Charles Yang is a core technical instructor for Agentic AI and Physical AI at AMD China and an architect focused on AI ecosystem development."
+      "bio": "Charles Yang is a core technical instructor for Agentic AI and Physical AI at AMD China and an architect focused on AI ecosystem development.",
+      "name": "Charles Yang",
+      "roleOrg": "AI Solution Architect, AMD"
     },
     "zh": {
       "name": "Charles Yang",
@@ -48,7 +55,9 @@
     "sourceName": "Peilin Li",
     "id": "peilin-li",
     "en": {
-      "roleOrg": "Ph.D. Student, Tsinghua University / Approaching AI"
+      "roleOrg": "Ph.D. Student, Tsinghua University / Approaching AI",
+      "name": "Peilin Li",
+      "bio": "Peilin Li is a Ph.D. student at Tsinghua University, supervised by Mingxing Zhang, and a core contributor to KTransformers and LLaMA-Factory. His research focuses on inference and fine-tuning on heterogeneous GPU–CPU systems and inference optimization for large-scale clusters."
     },
     "zh": {
       "name": "Peilin Li",
@@ -60,7 +69,9 @@
     "sourceName": "Wilson Wang",
     "id": "wilson-wang",
     "en": {
-      "roleOrg": "Software Engineer, ByteDance"
+      "roleOrg": "Software Engineer, ByteDance",
+      "name": "Wilson Wang",
+      "bio": "Wilson Wang is a software engineer on ByteDance’s Global Traffic Infrastructure team, specializing in virtual machines and WebAssembly. His interests include operating systems, distributed systems, cloud-native technologies, edge computing, and serverless architectures."
     },
     "zh": {
       "name": "王潇爽",
@@ -73,7 +84,8 @@
     "id": "shiwei-liu",
     "en": {
       "roleOrg": "Group Leader, Max Planck Institute for Intelligent Systems / ELLIS Institute Tübingen",
-      "bio": "Shiwei Liu leads a research group at the Max Planck Institute for Intelligent Systems and is a Principal Investigator at the ELLIS Institute Tübingen. Previously, he was a Royal Society Newton International Fellow at the University of Oxford and a postdoctoral fellow at the University of Texas at Austin. He received his Ph.D. with Cum Laude honors from Eindhoven University of Technology in 2022. His work focuses broadly on the full lifecycle of large foundation models."
+      "bio": "Shiwei Liu leads a research group at the Max Planck Institute for Intelligent Systems and is a Principal Investigator at the ELLIS Institute Tübingen. Previously, he was a Royal Society Newton International Fellow at the University of Oxford and a postdoctoral fellow at the University of Texas at Austin. He received his Ph.D. with Cum Laude honors from Eindhoven University of Technology in 2022. His work focuses broadly on the full lifecycle of large foundation models.",
+      "name": "Shiwei Liu"
     },
     "zh": {
       "name": "刘世伟",
@@ -88,6 +100,11 @@
       "name": "郑嘉琦",
       "roleOrg": "南京大学副教授、博士生导师",
       "bio": "南京大学计算机学院副教授、博士生导师，研究方向聚焦超节点互连系统。主持国家自然科学基金优秀青年科学基金、面上项目和青年项目，以及华为、阿里巴巴、字节跳动、腾讯等企业创新基金；在 SIGCOMM、NSDI、NeurIPS 等国际会议发表论文百余篇，多次获得 CCF 推荐国际会议最佳论文奖。"
+    },
+    "en": {
+      "name": "Jiaqi Zheng",
+      "roleOrg": "Associate Professor, Nanjing University",
+      "bio": "Jiaqi Zheng is an associate professor and doctoral supervisor at the School of Computer Science, Nanjing University. His current research focuses on supernode interconnection systems. He has presided over projects funded by the National Natural Science Foundation of China, including the Excellent Young Scientists Fund, the General Program, and the Young Scientists Fund, as well as corporate innovation funds from Huawei, Alibaba, ByteDance, Tencent, and other companies. He has published over 100 academic papers in top-tier international venues such as SIGCOMM, NSDI, and NIPS, and has received the Best Paper Award at CCF-recommended international conferences three times. Three of his authorized patents have been transferred to Huawei Central Research Institute. His related achievements have been incorporated into core computer science curricula at leading universities in the United States, have been specially cited in the U.S. National Science Foundation's 2024 Milestone Report."
     }
   },
   {
@@ -108,7 +125,9 @@
     "sourceName": "Crozet Sébastien",
     "id": "sebastien-crozet",
     "en": {
-      "name": "Sébastien Crozet"
+      "name": "Sébastien Crozet",
+      "roleOrg": "Founder, Dimforge",
+      "bio": "Sébastien Crozet has been in love with the Rust programming language since its earliest days. He is the creator and maintainer of popular open-source libraries, including nalgebra and Rapier, for the Rust ecosystem that specialize in linear algebra, geometry, and physics. He is the founder of Dimforge where he focuses on contributing to the future of cross-platform scientific computing and AI."
     },
     "zh": {
       "name": "Sébastien Crozet",
@@ -121,7 +140,8 @@
     "id": "liuwang-kang",
     "en": {
       "roleOrg": "Associate Researcher, Shenzhen Institute of Artificial Intelligence and Robotics for Society",
-      "bio": "Liuwang Kang received his Ph.D. in Computer Science from the University of Virginia, where he also conducted postdoctoral research. He previously worked as a Senior Project Scientist at VMASC and as a Staff Engineer at Baidu. He is now an Associate Researcher at the Shenzhen Institute of Artificial Intelligence and Robotics for Society, focusing on multi-agent coordination, 6G-enabled embodied intelligence, and complex-system simulation."
+      "bio": "Liuwang Kang received his Ph.D. in Computer Science from the University of Virginia, where he also conducted postdoctoral research. He previously worked as a Senior Project Scientist at VMASC and as a Staff Engineer at Baidu. He is now an Associate Researcher at the Shenzhen Institute of Artificial Intelligence and Robotics for Society, focusing on multi-agent coordination, 6G-enabled embodied intelligence, and complex-system simulation.",
+      "name": "Liuwang Kang"
     },
     "zh": {
       "name": "Liuwang Kang",
@@ -133,12 +153,13 @@
     "sourceName": "Hongjun Zhou",
     "id": "hongjun-zhou",
     "en": {
-      "roleOrg": "Associate Researcher, Shenzhen Institute of Artificial Intelligence and Robotics for Society",
-      "bio": "Hongjun Zhou is an Associate Researcher at the Shenzhen Institute of Artificial Intelligence and Robotics for Society. His research focuses on robot perception, navigation, and bipedal robot control. He previously worked on service and home robot development at Alibaba and the ASUS Intelligent Robot Center."
+      "roleOrg": "Co-speaker",
+      "bio": "Hongjun Zhou is an Associate Researcher at the Shenzhen Institute of Artificial Intelligence and Robotics for Society. His research focuses on robot perception, navigation, and bipedal robot control. He previously worked on service and home robot development at Alibaba and the ASUS Intelligent Robot Center.",
+      "name": "Hongjun Zhou"
     },
     "zh": {
       "name": "Hongjun Zhou",
-      "roleOrg": "深圳市人工智能与机器人研究院副研究员",
+      "roleOrg": "联合讲师",
       "bio": "深圳市人工智能与机器人研究院副研究员，研究方向包括机器人感知、导航和双足机器人控制。曾在阿里巴巴和华硕智能机器人中心参与服务机器人与家庭机器人研发。"
     }
   },
@@ -149,13 +170,20 @@
       "name": "Tiberiu Socaci",
       "roleOrg": "Makeitfuture 联合创始人兼 CEO",
       "bio": "Makeitfuture 联合创始人兼 CEO，专注于利用 AI、Make.com、Airtable、n8n 和无代码工具帮助企业实现数字化转型与复杂流程自动化。其团队已交付超过 15,000 项自动化方案，并获 Make.com 评选为 2024 年度 AI 合作伙伴及欧洲、中东和非洲地区排名第一的无代码机构。他目前致力于构建能够从用户纠正中持续学习的自演进应用。"
+    },
+    "en": {
+      "name": "Tiberiu Socaci",
+      "roleOrg": "CEO & Co-Founder, Makeitfuture",
+      "bio": "I'm Tiberiu Socaci, CEO & Co-Founder of Makeitfuture — a leading AI and automation agency across the UK, France, Germany, and Romania. I'm passionate about digital transformation and helping businesses streamline complex workflows using AI, Make.com, Airtable, n8n, and no-code solutions. We worked with companies like Celonis, Avidly, BCG, and Billwerk to simplify processes and drive real growth. The whole thing started with Blu Coffee, Romania's first specialty coffee subscription, which I fully automated using Make.com. That turned into a company that's now delivered 15,000+ automations and been recognized by Make.com as their AI Partner of the Year and #1 No-Code Agency EMEA in 2024. Lately, I've been building a new type of application — self-evolving apps — that learn from user corrections without any machine learning. My mission is to empower organizations by making AI practical, accessible, and smarter with every use."
     }
   },
   {
     "sourceName": "Peter Ide-Kostic",
     "id": "peter-ide-kostic",
     "en": {
-      "roleOrg": "Head of EU Policy, OpenMined Foundation"
+      "roleOrg": "Head of EU Policy, OpenMined Foundation",
+      "name": "Peter Ide-Kostic",
+      "bio": "Peter Ide-Kostic is Head of EU Policy at the OpenMined Foundation, leading its European engagement on AI governance, data policy and privacy-enhancing technologies. He brings more than 15 years of EU technology-policy experience, including as a European Parliament official supporting the LIBE, IMCO and AIDA committee secretariats and the STOA Panel. An EU Fellow and former visiting scholar at UC San Diego, his work focuses on trustworthy AI, responsible data access and European technological sovereignty. He participates in a personal capacity in the European Commission’s Expert Forum on Frontier AI and represented OpenMined at the inaugural UN Global Dialogue on AI Governance in July 2026."
     },
     "zh": {
       "name": "Peter Ide-Kostic",
@@ -180,7 +208,9 @@
     "sourceName": "JACKY HSU",
     "id": "jacky-hsu",
     "en": {
-      "name": "Jacky Hsu"
+      "name": "Jacky Hsu",
+      "roleOrg": "Founder & CEO, Ingora",
+      "bio": "Jacky Hsu is the Founder of Ingora, an AI-native learning companion company building next-generation AI companion devices for children.\n\nPreviously, he spent over 20 years at Microsoft as a product leader, where he led product strategy and growth initiatives across multiple businesses including SharePoint Copilot and Agent. He played a key role in bringing Copilot and Agent experiences into real-world enterprise scenarios.\n\nJacky combines deep expertise in AI product design with a unique perspective on integrating agent systems, education, and hardware. At Ingora, he is exploring how AI companions can reshape how children learn, think, and grow."
     },
     "zh": {
       "name": "许建志",
@@ -193,7 +223,8 @@
     "id": "yuxuan-zhang",
     "en": {
       "roleOrg": "Technology Evangelist, Zhipu AI",
-      "bio": "Yuxuan Zhang is a Technology Evangelist at Zhipu AI."
+      "bio": "Yuxuan Zhang is a Technology Evangelist at Zhipu AI.",
+      "name": "Yuxuan Zhang"
     },
     "zh": {
       "name": "张昱轩",
@@ -219,15 +250,22 @@
     "id": "satya-mallick",
     "zh": {
       "name": "Satya Mallick",
-      "roleOrg": "OpenCV.org CEO",
+      "roleOrg": "OpenCV.org 首席执行官",
       "bio": "OpenCV.org CEO，长期从事人工智能、计算机视觉和机器学习领域的创业与研发。他曾联合创办 Sight Commerce，并打造服务超过一亿用户的 AI 产品；同时也是广受欢迎的计算机视觉与 AI 在线课程创作者。"
+    },
+    "en": {
+      "name": "Satya Mallick",
+      "roleOrg": "CEO, OpenCV.org",
+      "bio": "Dr. Satya Mallick is the CEO of OpenCV.org - the non-profit that maintains the largest computer vision library in the world. He is an entrepreneur in Artificial Intelligence, Computer Vision, and Machine Learning. Before starting his AI consulting company, Big Vision LLC, he co-founded Sight Commerce Inc (formerly Taaz Inc.), where he built AI products that reached over 100M users. His work has been covered in publications like TechCrunch, Huffington Post, NYTimes, and WSJ. Dr. Mallick is also the creator of some of the most popular online computer vision and AI courses. In 2017, IBM's AI Blog named Dr. Mallick as one of the top 20 people in AI to follow on Twitter."
     }
   },
   {
     "sourceName": "Kelly Policarpo",
     "id": "kelly-policarpo",
     "en": {
-      "roleOrg": "Founder & CEO, Lumo AI Compliance & Advisory"
+      "roleOrg": "Founder & CEO, Lumo AI Compliance & Advisory",
+      "name": "Kelly Policarpo",
+      "bio": "Kelly Policarpo is the founder of Lumo AI Compliance & Advisory and specializes in AI governance and entry into the European market. With a background in computer science and product management, she works across AI compliance, privacy, cybersecurity, and product strategy. Based in Portugal, she helps technology companies, particularly those from Asia and the Greater Bay Area, prepare for the EU AI Act and related governance requirements as they enter and grow in Europe."
     },
     "zh": {
       "name": "Kelly Policarpo",
@@ -239,7 +277,9 @@
     "sourceName": "Katarzyna Starosławska",
     "id": "katarzyna-starosławska",
     "en": {
-      "roleOrg": "AI, Data & HPC Expert, LUMI AI Factory / CYFRONET AGH / European Commission"
+      "roleOrg": "AI, Data & HPC Expert, LUMI AI Factory / CYFRONET AGH / European Commission",
+      "name": "Katarzyna Starosławska",
+      "bio": "Katarzyna Starosławska is a data, AI, and high-performance computing specialist with more than 20 years of experience across technology, strategy, and innovation. She advises corporate boards, public institutions, and the European Union on data quality, interoperability, and cross-sector collaboration. Her roles include work with the European Commission’s next-generation interoperability expert group and AI in Science working groups, EuroHPC / LUMI AI Factory at CYFRONET AGH, and Poland’s Ministry of Digital Affairs. She also serves on the business council of the Speakleash / Bielik.ai Foundation and advises research and health organizations."
     },
     "zh": {
       "name": "Katarzyna Starosławska",
@@ -254,6 +294,11 @@
       "name": "Qinying Liao",
       "roleOrg": "微软首席项目经理",
       "bio": "拥有十余年微软 Azure AI 经验的资深 AI 产品负责人，专注于语音 AI 与语音智能体。具备产品战略、从零到一产品开发和全球商业化经验，致力于将前沿 AI 技术转化为可规模化的产品和长期业务价值。"
+    },
+    "en": {
+      "name": "Qinying Liao",
+      "roleOrg": "Principal Program Manager, Microsoft",
+      "bio": "Senior AI Product Leader with 10+ years at Microsoft Azure AI, specializing in Speech AI and Voice Agents. Experienced in product strategy, 0-to-1 product development, and global commercialization. Combines B2B and B2C product expertise with deep strengths in human-centered design, AI product experience, and ecosystem development to transform cutting-edge AI technologies into scalable products and lasting business value."
     }
   },
   {
@@ -261,7 +306,8 @@
     "id": "feliana-citradewi",
     "en": {
       "roleOrg": "Founder & CEO, Global AI Assembly",
-      "bio": "Feliana Citradewi is the Founder and CEO of Global AI Assembly."
+      "bio": "Feliana Citradewi is the Founder and CEO of Global AI Assembly.",
+      "name": "Feliana Citradewi"
     },
     "zh": {
       "name": "Feliana Citradewi",
@@ -273,7 +319,9 @@
     "sourceName": "Markus Tavenrath",
     "id": "markus-tavenrath",
     "en": {
-      "roleOrg": "Principal Engineer, Developer Technology, NVIDIA"
+      "roleOrg": "Principal Engineer, Developer Technology, NVIDIA",
+      "name": "Markus Tavenrath",
+      "bio": "Markus Tavenrath is a Principal Engineer in Developer Technology at NVIDIA. He studied computer graphics at RWTH Aachen University and joined NVIDIA in 2008 to work on GPU-based real-time ray tracing. His work spans performance optimization for ray tracing, scene graphs, OpenGL, WebGL, Vulkan, and AI. He co-founded Vulkan-Hpp and chairs the Khronos Machine Learning Council."
     },
     "zh": {
       "name": "Markus Tavenrath",
@@ -288,6 +336,11 @@
       "name": "Igor Schwarzmann",
       "roleOrg": "Known Unknowns GmbH 负责人",
       "bio": "文化与技术交叉领域的战略顾问，拥有 20 年跨医疗、汽车、奢侈品、媒体和政府领域经验，曾服务全球科技公司、欧洲跨国企业及公共机构。他以开源、本地优先的智能体 AI 基础设施运营自己的咨询业务，并主持探讨文化现象与欧洲 AI 主权的播客 Follow the Rabbit。"
+    },
+    "en": {
+      "name": "Igor Schwarzmann",
+      "roleOrg": "Principal, Known Unknowns GmbH",
+      "bio": "Igor Schwarzmann is Principal of Known Unknowns GmbH in Berlin and a strategic advisor working at the intersection of culture and technology. He has 20 years of experience across healthcare, automotive, luxury, media, and government, working with technology companies, multinationals, and institutions internationally. He runs his practice on open-source, local-first agentic AI infrastructure and hosts Follow the Rabbit, a podcast about cultural phenomena and European AI sovereignty."
     }
   },
   {
@@ -323,7 +376,13 @@
     "id": "pieter-delobelle",
     "zh": {
       "name": "Pieter Delobelle",
-      "roleOrg": "讲师"
+      "roleOrg": "联合讲师",
+      "bio": "Pieter Delobelle 将在 GOSIM 深圳 2026 联合分享《SynthCommonCorpus：面向智能体模型构建的最大开放合成预训练语料库》。"
+    },
+    "en": {
+      "name": "Pieter Delobelle",
+      "roleOrg": "Co-speaker",
+      "bio": "Pieter Delobelle is a co-presenter of “SynthCommonCorpus: The Largest Open Synthetic Pretraining Corpus Built for Agentic Models” at GOSIM Shenzhen 2026."
     }
   },
   {
@@ -333,6 +392,11 @@
       "name": "Nouamane Tazi",
       "roleOrg": "Hugging Face 机器学习研究工程师",
       "bio": "Hugging Face 机器学习研究工程师，专注于大语言模型训练。他是 SmolLM3 和 The Ultra Scale Playbook 的共同作者，研究涵盖自然语言处理、深度学习和可扩展 AI 基础设施。"
+    },
+    "en": {
+      "name": "Nouamane Tazi",
+      "roleOrg": "ML Research Engineer, Hugging Face",
+      "bio": "Nouamane Tazi is a Machine Learning Research Engineer at Hugging Face, specializing in training large language models. He is a co-author of SmolLM3 and The Ultra Scale Playbook, and his research spans NLP, deep learning, and scalable AI infrastructure."
     }
   },
   {
@@ -342,6 +406,11 @@
       "name": "Martino Russi",
       "roleOrg": "Hugging Face 具身机器人工程师",
       "bio": "LeRobot 开源机器人库核心贡献者，负责构建和维护 Unitree G1 人形机器人技术栈，也是开源力反馈手部外骨骼 Project Homunculus 的创建者。他拥有神经科学、AI 和机器人学背景，致力于让具身智能技术更加普及。"
+    },
+    "en": {
+      "name": "Martino Russi",
+      "roleOrg": "Embodied Robotics Engineer, Hugging Face",
+      "bio": "Aspiring mad scientist, trying to create this generation's Pinocchio. Martino Russi is a core contributor to LeRobot, the open-source robotics library, where he built and maintains the Unitree G1 humanoid stack. He is the creator of Project Homunculus, an open-source force-feedback hand exoskeleton that subsequent academic work, including HOMIE, builds on. His background spans neuroscience, AI, and robotics; his goal is to make embodied intelligence affordable for everyone."
     }
   },
   {
@@ -405,7 +474,8 @@
     "id": "bartlomiej-szejny",
     "en": {
       "name": "Bartłomiej Szejny",
-      "roleOrg": "Board Member, AI Poland"
+      "roleOrg": "Board Member, AI Poland",
+      "bio": "Bartłomiej Szejny is a technology entrepreneur, independent AI researcher, and board member of AI Poland. He contributes to the development of Poland’s artificial intelligence ecosystem by combining business, technological, and strategic perspectives. His research interests focus on autonomous embodied AI agents and control mechanisms inspired by neurobiology.\n\nHe is the author of the position paper “Embodied Agents in Open-Ended Environments Require a Stress-Gated Homeostatic Meta-Controller,” submitted as a preprint in the cs.AI category. The paper introduces the SGHMC architecture, which uses a slowly evolving stress variable to coordinate reactive and deliberative behavior while maintaining explicitly defined safety boundaries. The work proposes a falsifiable research programme exploring machine homeostasis as a potential foundation for the safe autonomy of AI systems operating in open-ended and unpredictable environments."
     },
     "zh": {
       "name": "Bartłomiej Szejny",
@@ -418,12 +488,13 @@
     "id": "sean-dong",
     "en": {
       "name": "Sean Dong",
-      "roleOrg": "Director of Product Management, Huawei Cangjie Programming Language Team"
+      "roleOrg": "Program Director, Huawei Programming Language Lab",
+      "bio": "Sean Dong is a Program Director at Huawei Programming Language Lab, leading core technology development for programming languages and IDE infrastructure. He previously worked on Microsoft Azure and Dynamics 365, and later led initiatives across Huawei's mobile AI tools, Ascend AI toolchain, HarmonyOS toolchain, and company-wide AI development platforms."
     },
     "zh": {
       "name": "董鑫",
-      "roleOrg": "华为仓颉编程语言团队产品管理总监",
-      "bio": "曾任 Microsoft Azure 企业云专家，并负责华为移动 AI 工具、昇腾 MindStudio、HarmonyOS DevEco Studio 以及仓颉/毕昇 C 语言 IDE。自 2025 年初起探索 AI Agent 驱动的研发模式，并开源已被多个大型工程团队采用的 ACEHarness。"
+      "roleOrg": "华为编程语言实验室项目总监",
+      "bio": "现任华为编程语言实验室项目总监，负责编程语言与 IDE 基础软件的核心技术研发。曾参与 Microsoft Azure、Dynamics 365，以及华为移动 AI 研发工具、昇腾 AI 芯片工具链、HarmonyOS 工具链和公司级 AI 研发平台建设。"
     }
   },
   {
@@ -431,7 +502,8 @@
     "id": "birgitta-boeckeler",
     "en": {
       "name": "Birgitta Böckeler",
-      "roleOrg": "Distinguished Engineer"
+      "roleOrg": "Distinguished Engineer",
+      "bio": "Birgitta is a software developer, architect and technical leader with over 20 years of experience in technology and software consulting, during which she has seen many organisations and teams succeed and fail at delivering valuable software. Most recently she worked at Thoughtworks, where she was a Distinguished Engineer and subject matter expert for AI-assisted software delivery since 2023."
     },
     "zh": {
       "name": "Birgitta Böckeler",
@@ -474,6 +546,11 @@
       "name": "Chenghao Rong",
       "roleOrg": "华为高级软件工程师",
       "bio": "毕业于清华大学，2024 年加入华为，从事 AI 基础设施研发，重点关注后训练和大语言模型推理。"
+    },
+    "en": {
+      "name": "Chenghao Rong",
+      "roleOrg": "Senior Software Engineer, HUAWEI",
+      "bio": "Chenghao Rong graduated from Tsinghua University. He joined Huawei in 2024, where he works on the research and development of AI infrastructure, focusing on post-training and LLM inference."
     }
   },
   {
@@ -481,7 +558,13 @@
     "id": "yixiang-zhang",
     "zh": {
       "name": "Yixiang Zhang",
-      "roleOrg": "讲师"
+      "roleOrg": "联合讲师",
+      "bio": "Yixiang Zhang 将在 GOSIM 深圳 2026 联合分享《TransferQueue：面向后训练的异步高性能流式数据引擎》。"
+    },
+    "en": {
+      "name": "Yixiang Zhang",
+      "roleOrg": "Co-speaker",
+      "bio": "Yixiang Zhang is a co-presenter of “TransferQueue: An Asynchronous, High-Performance Streaming Data Engine for Post-Training” at GOSIM Shenzhen 2026."
     }
   },
   {
@@ -489,7 +572,13 @@
     "id": "yongqiang-ma",
     "zh": {
       "name": "Yongqiang Ma",
-      "roleOrg": "讲师"
+      "roleOrg": "联合讲师",
+      "bio": "Yongqiang Ma 将在 GOSIM 深圳 2026 联合分享《TransferQueue：面向后训练的异步高性能流式数据引擎》。"
+    },
+    "en": {
+      "name": "Yongqiang Ma",
+      "roleOrg": "Co-speaker",
+      "bio": "Yongqiang Ma is a co-presenter of “TransferQueue: An Asynchronous, High-Performance Streaming Data Engine for Post-Training” at GOSIM Shenzhen 2026."
     }
   },
   {
@@ -499,6 +588,11 @@
       "name": "Bardia Moshiri",
       "roleOrg": "Furi Labs 嵌入式软件工程师",
       "bio": "专注移动 GNU/Linux 系统的嵌入式软件工程师，拥有操作系统开发、硬件适配和平台集成经验。他的工作聚焦开源移动技术，以及 Linux 在下一代移动计算中的作用。"
+    },
+    "en": {
+      "name": "Bardia Moshiri",
+      "roleOrg": "Embedded Software Engineer, Furi Labs",
+      "bio": "Bardia Moshiri is an embedded software engineer at Furi Labs, specializing in mobile GNU/Linux systems. His experience spans operating-system development, hardware enablement, and platform integration. He works on open-source mobile technologies and the role of Linux in the next generation of mobile computing."
     }
   },
   {
@@ -506,7 +600,13 @@
     "id": "wayne-connolly",
     "zh": {
       "name": "Wayne Connolly",
-      "roleOrg": "讲师"
+      "roleOrg": "联合讲师",
+      "bio": "Wayne Connolly 将在 GOSIM 深圳 2026 联合分享《智能体 AI 如何为移动 Linux 作出贡献》。"
+    },
+    "en": {
+      "name": "Wayne Connolly",
+      "roleOrg": "Co-speaker",
+      "bio": "Wayne Connolly is a co-presenter of “Agentic AI as a Contributor to Mobile Linux” at GOSIM Shenzhen 2026."
     }
   },
   {
@@ -544,6 +644,11 @@
       "name": "Chris Simmonds",
       "roleOrg": "2net Ltd. 开源嵌入式系统专家",
       "bio": "软件顾问及开源嵌入式系统专家，拥有 20 多年开源嵌入式系统设计与开发经验。他是《Mastering Embedded Linux Programming》作者，也是 aosp-devs 开发者社区的主要推动者，曾多次在 Linux Foundation Embedded Linux Conference 和 FOSDEM 等会议演讲。"
+    },
+    "en": {
+      "name": "Chris Simmonds",
+      "roleOrg": "Professional Geek, 2net Ltd.",
+      "bio": "Chris Simmonds is a software consultant and professional geek living in Northern England. He has more than two decades of experience in designing and building open-source embedded systems. He is a big believer in Open Source and the importance of community.  He is the author of the book “Mastering Embedded Linux Programming”, and is the moving force behind the aosp-devs developer community. He is a frequent presenter at open source and embedded conferences, including the Linux Foundation Embedded Linux Conference and FOSDEM. You can see some of his work on the “Inner Penguin” blog at 2net.co.uk"
     }
   },
   {
@@ -551,8 +656,13 @@
     "id": "fanshi-zhang",
     "zh": {
       "name": "张凡石",
-      "roleOrg": "Moeru AI CTO",
+      "roleOrg": "Moeru AI 首席技术官",
       "bio": "全栈开发者和开源项目构建者，其项目累计获得超过 5 万颗 GitHub Star，工作领域涵盖 CNCF 生态、AI 训练与智能体技术。"
+    },
+    "en": {
+      "name": "Fanshi Zhang",
+      "roleOrg": "CTO, Moeru AI",
+      "bio": "Fanshi Zhang is CTO of Moeru AI and a full-stack developer. His open-source projects have collectively earned more than 50,000 GitHub stars. His work spans the CNCF ecosystem, AI training, and agent systems."
     }
   },
   {
@@ -560,7 +670,13 @@
     "id": "rin",
     "zh": {
       "name": "Rin",
-      "roleOrg": "讲师"
+      "roleOrg": "联合讲师",
+      "bio": "Rin 将在 GOSIM 深圳 2026 联合分享《游戏 AI 中的智能体：我们究竟走了多远？》。"
+    },
+    "en": {
+      "name": "Rin",
+      "roleOrg": "Co-speaker",
+      "bio": "Rin is a co-presenter of “Agentic AI in Games: How Far Have We Come?” at GOSIM Shenzhen 2026."
     }
   },
   {
@@ -570,6 +686,11 @@
       "name": "Hsuan Han Lai",
       "roleOrg": "涂鸦智能开发者生态负责人",
       "bio": "涂鸦智能开发者生态负责人、TuyaOpen 开源项目技术负责人及 Agent OS Foundation 架构师，专注构建下一代智能体 AI 硬件框架，曾任 Vibe Inc. 产品工程总监。"
+    },
+    "en": {
+      "name": "Hsuan Han Lai",
+      "roleOrg": "Lead of Developer Ecosystem, Tuya Smart Inc",
+      "bio": "Hsuan Han Lai leads the developer ecosystem at Tuya Smart and is the technical lead of TuyaOpen and an architect of the Agent OS Foundation. His work focuses on the next generation of agentic AI hardware frameworks. He previously served as Product Engineering Director at Vibe Inc."
     }
   },
   {
@@ -632,7 +753,14 @@
     "sourceName": "Yanwei Huang",
     "id": "yanwei-huang",
     "zh": {
-      "name": "黄言伟"
+      "name": "黄言伟",
+      "roleOrg": "联合讲师",
+      "bio": "黄言伟 将在 GOSIM 深圳 2026 联合分享《使用 DC-ROMA Mainboard III 在 RISC-V 上构建 AI 智能体设备》。"
+    },
+    "en": {
+      "name": "Yanwei Huang",
+      "roleOrg": "Co-speaker",
+      "bio": "Yanwei Huang is a co-presenter of “Building AI Agent Devices on RISC-V with DC-ROMA Mainboard III” at GOSIM Shenzhen 2026."
     }
   },
   {
@@ -795,12 +923,12 @@
     "en": {
       "name": "Kaiyan Zhang",
       "roleOrg": "Co-speaker",
-      "bio": ""
+      "bio": "Kaiyan Zhang is a co-presenter of “Teaching AI to Improve AI: From Experimental Feedback to Meta-Evolution” at GOSIM Shenzhen 2026."
     },
     "zh": {
       "name": "张开颜",
       "roleOrg": "联合讲师",
-      "bio": ""
+      "bio": "张开颜 将在 GOSIM 深圳 2026 联合分享《教 AI 改进 AI：从实验反馈到元进化》。"
     }
   },
   {
@@ -1061,7 +1189,7 @@
     "en": {
       "name": "Justin Tan",
       "roleOrg": "Solutions Architect, Google Cloud",
-      "bio": "Justin Tan is a Solutions Architect at Google Cloud, focusing on applications of frontier AI technologies in the gaming industry."
+      "bio": "Xin Tan is a Solutions Architect at Google Cloud, focusing on applications of frontier AI technologies in the gaming industry."
     },
     "zh": {
       "name": "谭欣",
@@ -1234,7 +1362,8 @@
     "id": "emily-chen",
     "en": {
       "name": "Emily Chen",
-      "roleOrg": "Co-founder, RoboChallenge"
+      "roleOrg": "Co-founder, RoboChallenge",
+      "bio": "Emily Chen is General Manager of Open Source Strategy & Ecosystem at Dexmal, where she leads the development of the RoboChallenge evaluation platform and competition program. She is a long-time open source practitioner and community leader, dedicated to advancing collaboration between China and the global open source ecosystem. Under her leadership, Kaiyuanshe became the first Chinese Affiliate Member of the Open Source Initiative (OSI). She also initiated several influential projects, including the China Open Source Annual Report and COSCon.\nEmily was a contributor to Mozilla, a GSoC mentor, and a TOC Mentor at the OpenAtom Foundation. Recently, she initiated the RoboChallenge platform and community, one of the first large scale real robot evaluation benchmarks for embodied intelligence. With over 20 years of experience, she worked at Sun Microsystems, Oracle, and Microsoft, with expertise in open source governance, cloud computing, and embodied AI."
     },
     "zh": {
       "name": "Emily Chen",
@@ -1247,7 +1376,8 @@
     "id": "haibin-zhang",
     "en": {
       "name": "Haibin Zhang",
-      "roleOrg": "AI Infrastructure & Open Source Lead, Dexmal"
+      "roleOrg": "AI Infrastructure & Open Source Lead, Dexmal",
+      "bio": "Haibin Zhang leads AI infrastructure and the OpenDM and Dexbotic open-source projects at Dexmal. His current work focuses on scalable data, training, evaluation, and inference infrastructure for embodied AI. He has previously worked on Brain++, MegEngine, and autonomous-driving infrastructure, with extensive experience in AI systems and data flywheels."
     },
     "zh": {
       "name": "Haibin Zhang",
@@ -1260,7 +1390,8 @@
     "id": "longhang-deng",
     "en": {
       "name": "Longhang Deng",
-      "roleOrg": "Master's Student, Southeast University"
+      "roleOrg": "Master's Student, Southeast University",
+      "bio": "Longhang Deng is a master’s student at Southeast University. His research focuses on agent operating systems and agent security, including autonomous agents that generate and validate runtime defenses for kernel vulnerabilities."
     },
     "zh": {
       "name": "Longhang Deng",
@@ -1273,7 +1404,8 @@
     "id": "zhenghao-chen",
     "en": {
       "name": "Zhenghao Chen",
-      "roleOrg": "Assistant Professor, University of Newcastle"
+      "roleOrg": "Assistant Professor, University of Newcastle",
+      "bio": "Zhenghao Chen is a Lecturer, equivalent to Assistant Professor, at the University of Newcastle, Australia. He received his bachelor’s degree with first-class honours and his Ph.D. from the University of Sydney in 2017 and 2022. He has worked at TikTok, the University of Sydney, Microsoft Research, and Disney Research. His research spans generative AI, embodied AI, AI for science, and multimedia, with publications in venues including CVPR, ICCV, ICML, ICLR, ECCV, and AAAI. He focuses on translating research into practical industrial and cross-disciplinary applications."
     },
     "zh": {
       "name": "Zhenghao Chen",
@@ -1286,7 +1418,8 @@
     "id": "guibin-zhang",
     "en": {
       "name": "Guibin Zhang",
-      "roleOrg": "PhD Student, National University of Singapore"
+      "roleOrg": "PhD Student, National University of Singapore",
+      "bio": "Guibin Zhang is a Ph.D. student in the School of Computing at the National University of Singapore."
     },
     "zh": {
       "name": "Guibin Zhang",
@@ -1299,7 +1432,8 @@
     "id": "jiahang-lin",
     "en": {
       "name": "Jiahang Lin",
-      "roleOrg": "Master's Student, Fudan University"
+      "roleOrg": "Master's Student, Fudan University",
+      "bio": "Jiahang Lin is a master’s student at Fudan University’s FudanNLP Lab, co-advised by Tao Gui and Xuanjing Huang. His research focuses on self-evolving agents and reinforcement learning. His experience spans supervised fine-tuning with DeepSpeed and LLaMA-Factory, reinforcement learning with verl and trl, and agent harness engineering. He is a research intern at NEX-AGI and previously interned at Huawei’s Computing Research Department. He received his bachelor’s degree from Fudan University in 2025."
     },
     "zh": {
       "name": "Jiahang Lin",
@@ -1312,7 +1446,8 @@
     "id": "hongbo-kang",
     "en": {
       "name": "Hongbo Kang",
-      "roleOrg": "LLM Systems Architect, Approaching.AI"
+      "roleOrg": "LLM Systems Architect, Approaching.AI",
+      "bio": "Hongbo Kang is an architect at Approaching.AI and holds a Ph.D. in Computer Science from Tsinghua University. His work spans large language model inference, AI infrastructure, processing-in-memory, high-performance in-memory indexing, data placement, and task scheduling. His research has appeared in SPAA, PVLDB/VLDB, The VLDB Journal, and PPoPP, with PIM-tree receiving the VLDB 2023 Best Research Paper Runner-up Award. He was a Research Fellow at the Simons Institute for the Theory of Computing at UC Berkeley. His current focus is on cross-platform LLM deployment, inference optimization, and software–hardware co-design for emerging computing platforms."
     },
     "zh": {
       "name": "Hongbo Kang",
@@ -1325,7 +1460,8 @@
     "id": "wan-ying",
     "en": {
       "name": "Ying Wan",
-      "roleOrg": "Associate Researcher, Southeast University"
+      "roleOrg": "Associate Researcher, Southeast University",
+      "bio": "Ying Wan is an Associate Researcher at Southeast University. He received his Ph.D. from Tsinghua University and was a visiting scholar at the University of Victoria. Before joining Southeast University, he was a Senior Network Researcher at China Mobile Cloud. His research focuses on data center networking, AI cluster interconnects, software-defined networking, and programmable data planes, with particular interests in high-speed network measurement, and traffic scheduling for large-scale AI systems. He has published 28 papers in venues including ACM SIGCOMM, USENIX NSDI, IEEE INFOCOM and IEEE/ACM ToN."
     },
     "zh": {
       "name": "Ying Wan",
@@ -1338,12 +1474,13 @@
     "id": "tian-ding",
     "en": {
       "name": "Tian Ding",
-      "roleOrg": "Founder, Zhizi Xinyuan"
+      "roleOrg": "Founder, Zhizi Xinyuan",
+      "bio": "Tian Ding is the founder of Zhizi Xinyuan and an Associate Researcher at the Shenzhen Institute of Big Data. His research focuses on large-model training, operations research, and computational acceleration. He leads the development of KernelCAT, an AI agent for kernel development, model migration, framework tuning, and deployment optimization, with adaptations for domestic chips."
     },
     "zh": {
       "name": "丁添",
       "roleOrg": "智子芯元（深圳）科技有限责任公司创始人",
-      "bio": "智子芯元（深圳）科技有限责任公司创始人、深圳市大数据研究院副研究员，长期专注于大模型训练、运筹优化与计算加速研究，带领团队研发计算加速智能体 KernelCAT。"
+      "bio": "丁添博士是智子芯元（深圳）科技有限责任公司创始人、深圳市大数据研究院副研究员，长期专注于大模型训练、运筹优化与计算加速。他带领团队研发计算加速智能体 KernelCAT，覆盖算子开发、模型迁移、框架调优与部署优化，并针对国产芯片特性进行优化。"
     }
   },
   {
@@ -1351,7 +1488,8 @@
     "id": "lei-bo",
     "en": {
       "name": "Lei Bo",
-      "roleOrg": "Director, China Telecom Research Institute"
+      "roleOrg": "Director, China Telecom Research Institute",
+      "bio": "Lei Bo, Director of the Internet Technology Research Institute at the Research Institute of China Telecom Corporation Limited. He graduated from Beijing University of Posts and Telecommunications (BUPT) with a master's degree, and is mainly engaged in research on new network technologies, including computing power networks, intelligent computing networks, and agent networks."
     },
     "zh": {
       "name": "Lei Bo",
@@ -1364,7 +1502,8 @@
     "id": "weiyu-xie",
     "en": {
       "name": "Weiyu Xie",
-      "roleOrg": "Chief Architect, Approaching.AI"
+      "roleOrg": "Chief Architect, Approaching.AI",
+      "bio": "Weiyu Xie is Chief Architect at Approaching.AI. He received his Ph.D. from the Institute for High Performance Computing in Tsinghua University’s Department of Computer Science and Technology. His research interests include agent systems, large language model inference, graph computing, and databases."
     },
     "zh": {
       "name": "Weiyu Xie",
@@ -1461,7 +1600,8 @@
     "id": "hunter-bown",
     "en": {
       "name": "Hunter Bown",
-      "roleOrg": "Founder, ShannonTek"
+      "roleOrg": "Founder, ShannonTek",
+      "bio": "Hunter Bown is the founder of ShannonTek and the creator of Codewhale (formerly DeepSeek-TUI), an open-source AI coding agent written in Rust. A musician and former high school band director, he came to software and AI through a broader interest in how people learn, create, and turn ideas into reality. His work brings together model-agnostic agent systems, open-source collaboration, and tools that make advanced capabilities accessible beyond specialist teams. Based in San Francisco, he is building toward a simple goal: helping more people turn what they know, notice, and imagine into things they can do."
     },
     "zh": {
       "name": "Hunter Bown",
@@ -1474,7 +1614,8 @@
     "id": "frank-fan",
     "en": {
       "name": "Frank Fan",
-      "roleOrg": "Principal Solutions Architect, AWS"
+      "roleOrg": "Principal Solutions Architect, AWS",
+      "bio": "Frank Fan is a Principal Container Solutions Architect at AWS in Australia, with more than 20 years of experience designing and implementing large-scale technology transformations. He specializes in containerization and migration and has spoken at AWS re:Invent, AWS Summit, and API Days."
     },
     "zh": {
       "name": "Frank Fan",
@@ -1515,11 +1656,13 @@
     "sourceName": "Chenzhou Jiang",
     "en": {
       "name": "Chenzhou Jiang",
-      "roleOrg": "vLLM AFD-Plugin Committer, Engineer at Huawei"
+      "roleOrg": "vLLM AFD-Plugin Committer, Engineer at Huawei",
+      "bio": "Chenzhou Jiang is an AI Infrastructure Engineer at Huawei and a maintainer of the afd-plugin repository in the vLLM community. He earned his master’s degree from the Department of Computer Science at Nanjing University in 2020 and previously contributed to HarmonyOS research and development. His current work focuses on AI inference, with a particular interest in disaggregated inference architectures, including Attention–FFN Disaggregation (AFD) and Encoder–Prefill–Decode (EPD) disaggregation."
     },
     "zh": {
       "name": "江晨舟",
-      "roleOrg": "vLLM AFD-Plugin Committer、华为工程师"
+      "roleOrg": "vLLM AFD-Plugin 代码提交者、华为工程师",
+      "bio": "江晨舟是华为 AI 基础设施工程师，也是 vLLM 社区 afd-plugin 仓库的维护者。他于 2020 年获南京大学计算机系硕士学位，此前参与 HarmonyOS 研发。目前专注于 AI 推理，重点研究 Attention–FFN 分离（AFD）和编码–预填充–解码分离（EPD）等推理架构。"
     }
   },
   {
@@ -1527,11 +1670,13 @@
     "sourceName": "landojiang",
     "en": {
       "name": "landojiang",
-      "roleOrg": "Senior Inference Engineer, Tencent Hunyuan Team"
+      "roleOrg": "Senior Inference Engineer, Tencent Hunyuan Team",
+      "bio": "landojiang is a Senior Inference Engineer on Tencent’s Hunyuan team and holds a master’s degree from Peking University. His work focuses on high-performance computing, inference-system optimization, and GPU kernel development. As a core developer, he has contributed to inference optimization across multiple generations of Hunyuan models and to the development and open-sourcing of HPC-Ops, a high-performance kernel library used as an official backend by vLLM and SGLang."
     },
     "zh": {
       "name": "landojiang",
-      "roleOrg": "腾讯混元团队高级推理工程师"
+      "roleOrg": "腾讯混元团队高级推理工程师",
+      "bio": "landojiang 是腾讯混元团队高级推理工程师，硕士毕业于北京大学，专注于高性能计算、推理系统优化和 GPU 算子开发。他作为核心开发者，参与多代混元模型的推理优化，以及高性能算子库 HPC-Ops 的研发与开源工作；该算子库已成为 vLLM 与 SGLang 的官方后端。"
     }
   },
   {
@@ -1602,6 +1747,258 @@
       "name": "赵靖文",
       "roleOrg": "华为工程师",
       "bio": "赵靖文是华为工程师。"
+    }
+  },
+  {
+    "sourceName": "Yujie Yang",
+    "id": "yujie-yang",
+    "en": {
+      "name": "Yujie Yang",
+      "roleOrg": "Co-speaker",
+      "bio": "Yujie Yang is a co-presenter of “KTransformers: The Fine-Tuning-to-Inference Closed Loop for Full-Precision 1T-Class MoE Models on Consumer Hardware” at GOSIM Shenzhen 2026."
+    },
+    "zh": {
+      "name": "Yujie Yang",
+      "roleOrg": "联合讲师",
+      "bio": "Yujie Yang 将在 GOSIM 深圳 2026 联合分享《KTransformers：消费级硬件上全精度万亿参数级 MoE 模型的微调到推理闭环》。"
+    }
+  },
+  {
+    "sourceName": "Alexy Khrabrov",
+    "id": "alexy-khrabrov",
+    "en": {
+      "name": "Alexy Khrabrov",
+      "roleOrg": "Head of Ecosystems, LakeSail",
+      "bio": "Alexy Khrabrov is the Head of Ecosystems at LakeSail, the AI-native Lakehouse that rebuilds Spark in Rust.  Alexy is the founding Chair of Open-Source Science at NumFOCUS, and a cofounder of the AI Alliance. Alexy was the founding Chair of the Generative AI Commons at the Linux Foundation for AI and Data (LFAI) and now represents Neo4j at LFAI.  Alexy is the founder and organizer of Bay Area AI and AI Agent SF meetups, as well as the Scale/Data/AI By the Bay conferences, the independent OSS AI conference running since 2013."
+    },
+    "zh": {
+      "name": "Alexy Khrabrov",
+      "roleOrg": "LakeSail 生态负责人",
+      "bio": "Alexy Khrabrov 是 LakeSail 生态负责人。LakeSail 是以 Rust 重构 Spark 的 AI 原生湖仓平台。他是 NumFOCUS 开源科学项目的创始主席、AI Alliance 联合创始人，曾担任 Linux Foundation AI & Data（LF AI & Data）生成式 AI 公共社区的创始主席，目前代表 Neo4j 参与 LF AI & Data。他还创办并组织 Bay Area AI、AI Agent SF 技术聚会，以及自 2013 年持续举办的 Scale/Data/AI By the Bay 开源技术大会。"
+    }
+  },
+  {
+    "sourceName": "Dongbiao He",
+    "id": "dongbiao-he",
+    "en": {
+      "name": "Dongbiao He",
+      "roleOrg": "Co-speaker",
+      "bio": "Dongbiao He is a co-presenter of “An Autonomous Runtime Shielding Agent for Linux Kernel Vulnerabilities” at GOSIM Shenzhen 2026."
+    },
+    "zh": {
+      "name": "Dongbiao He",
+      "roleOrg": "联合讲师",
+      "bio": "Dongbiao He 将在 GOSIM 深圳 2026 联合分享《面向 Linux 内核漏洞的自主运行时防护智能体》。"
+    }
+  },
+  {
+    "sourceName": "赵悦（ZHAO YUE）",
+    "id": "赵悦-zhao-yue",
+    "en": {
+      "name": "Yue Zhao",
+      "roleOrg": "Maintainer, HAFleet",
+      "bio": "Yue Zhao maintains the HAFleet open-source project, focusing on the organization and coordination of multiple AI agents through role assignment, group communication, task handoffs, and human participation. The session presents collaborative coding with HAFleet and shows how people and agents can work together in a shared interface using Robrix2."
+    },
+    "zh": {
+      "name": "赵悦",
+      "roleOrg": "HAFleet 开源项目维护者",
+      "bio": "赵悦是 HAFleet 开源项目维护者，关注多智能体的组织与协作，围绕角色分工、群组沟通、任务交接和人类参与开展项目维护与探索。本次分享以 HAFleet 为核心，介绍智能体协作编程的实践，并结合 Robrix2 展示人和智能体在同一界面中协作的方式。"
+    }
+  },
+  {
+    "sourceName": "Alex Wang",
+    "id": "alex-wang",
+    "en": {
+      "name": "Alex Wang",
+      "roleOrg": "Independent Software Developer",
+      "bio": "Alex Wang is an independent software developer and AI agent enthusiast."
+    },
+    "zh": {
+      "name": "Alex Wang",
+      "roleOrg": "独立软件开发者",
+      "bio": "Alex Wang 是独立软件开发者，也是一名 AI 智能体爱好者。"
+    }
+  },
+  {
+    "sourceName": "Sheng Chen",
+    "id": "sheng-chen",
+    "en": {
+      "name": "Sheng Chen",
+      "roleOrg": "Co-speaker",
+      "bio": "Sheng Chen is a co-presenter of “Building Hybrid AI Systems: Edge Inference Meets Cloud Reasoning” at GOSIM Shenzhen 2026."
+    },
+    "zh": {
+      "name": "Sheng Chen",
+      "roleOrg": "联合讲师",
+      "bio": "Sheng Chen 将在 GOSIM 深圳 2026 联合分享《构建混合 AI 系统：边缘推理与云端推理协同》。"
+    }
+  },
+  {
+    "sourceName": "Allen Chao",
+    "id": "allen-chao",
+    "en": {
+      "name": "Allen Chao",
+      "roleOrg": "Director of Sales & Marketing, M5Stack Technology Co., Ltd",
+      "bio": "Allen Chao is Director of Sales and Marketing at M5Stack. He is a technology enthusiast and football fan with a curiosity for new ideas."
+    },
+    "zh": {
+      "name": "Allen Chao",
+      "roleOrg": "M5Stack 销售与市场总监",
+      "bio": "Allen Chao 是 M5Stack 销售与市场总监，也是一名科技爱好者和足球迷，始终对新事物保持好奇。"
+    }
+  },
+  {
+    "sourceName": "郑仲鹏",
+    "id": "郑仲鹏",
+    "en": {
+      "name": "Zhongpeng Zheng (Zayn)",
+      "roleOrg": "Chief Marketing Officer, Shenzhen Ciyuan Kaiwu Technology",
+      "bio": "Zhongpeng Zheng, also known as Zayn, is a co-founder of a startup incubated by the Shenzhen Kechuang Academy. The team develops PCB printers and an AI-assisted hardware IDE under the IterxAI project."
+    },
+    "zh": {
+      "name": "郑仲鹏",
+      "roleOrg": "深圳词源开物科技有限公司首席市场官",
+      "bio": "郑仲鹏（Zayn）是深圳科创学院孵化创业团队的联合创始人，团队围绕 IterxAI 开发 PCB 打印机与 AI 硬件集成开发环境，帮助用户将硬件创意转化为原型。"
+    }
+  },
+  {
+    "sourceName": "Lee Chun Pak",
+    "id": "lee-chun-pak",
+    "en": {
+      "name": "Lee Chun Pak",
+      "roleOrg": "Overseas Market Strategist, Hiwonder",
+      "bio": "Lee Chun Pak leads overseas market strategy at Hiwonder, bringing open-source AI educational robots to international markets. He works with schools and partners to help students apply embodied AI to robots."
+    },
+    "zh": {
+      "name": "Lee Chun Pak",
+      "roleOrg": "幻尔海外市场策略负责人",
+      "bio": "Lee Chun Pak 负责幻尔的海外市场策略，推动开源 AI 教育机器人进入国际市场，并与学校及合作伙伴协作，帮助学生将具身智能应用于机器人。"
+    }
+  },
+  {
+    "sourceName": "黄梓铭",
+    "id": "黄梓铭",
+    "en": {
+      "name": "Ziming Huang",
+      "roleOrg": "Engineer, Inferact",
+      "bio": "Ziming Huang is an engineer at Inferact and a contributor to the vLLM community."
+    },
+    "zh": {
+      "name": "黄梓铭",
+      "roleOrg": "Inferact 工程师",
+      "bio": "黄梓铭是 Inferact 工程师，也是 vLLM 社区贡献者。"
+    }
+  },
+  {
+    "sourceName": "Tristan Ruoli Dai",
+    "id": "tristan-ruoli-dai",
+    "en": {
+      "name": "Tristan Ruoli Dai",
+      "roleOrg": "Founder/CEO, Noitom Robotics",
+      "bio": "Dr. Ruoli Dai, founder of Noitom Robotics and co-founder of Noitom Ltd., focuses on human motion digitization, human–machine interaction and robot learning. He earned his bachelor’s degree at USTC and Ph.D. at CUHK, with distinguished alumni honors from CUHK’s Department of Mechanical and Automation Engineering and Faculty of Engineering. He holds 50+ international patents and led motion capture development spanning inertial, optical and multi-sensor fusion technologies. At GOSIM CHINA 2024, he first proposed “A Mocap-based Data Factory for Embodied AI” and began putting it into practice. He founded Noitom Robotics in 2025, applying over a decade of human digitization expertise to embodied AI data infrastructure, multimodal human behavior data, robot teleoperation and large-scale data production. In 2026, he led ModalityNet’s launch and dataset open-sourcing to make the real world learnable by capturing and compiling human interactions into training data for robot foundation models."
+    },
+    "zh": {
+      "name": "Tristan Ruoli Dai",
+      "roleOrg": "Noitom Robotics 创始人兼首席执行官",
+      "bio": "Tristan Ruoli Dai 博士是 Noitom Robotics 创始人、Noitom 联合创始人，专注于人体运动数字化、人机交互和机器人学习。他本科毕业于中国科学技术大学，获香港中文大学博士学位，并获该校机械与自动化工程学系及工程学院杰出校友荣誉。他拥有 50 余项国际专利，曾主导惯性、光学及多传感器融合动作捕捉技术研发。2024 年，他在 GOSIM CHINA 首次提出并实践“基于动作捕捉的具身智能数据工厂”。2025 年创立 Noitom Robotics，将十余年人体数字化经验应用于具身智能数据基础设施、多模态人体行为数据、机器人遥操作和规模化数据生产。2026 年，他带领团队发布 ModalityNet 并开放数据集，将真实世界中的人类交互转化为机器人基础模型的训练数据。"
+    }
+  },
+  {
+    "sourceName": "chunxiaozheng",
+    "id": "chunxiaozheng",
+    "en": {
+      "name": "Chunxiao Zheng",
+      "roleOrg": "Core Architect, LMCache",
+      "bio": "Chunxiao Zheng (GitHub: chunxiaozheng) is a maintainer and core architect of LMCache, an open-source KV-cache management layer for LLM inference. With more than 100 merged pull requests, he is among the project’s top five contributors. His work includes MLA and DSA support, I/O optimization, and command-line tooling."
+    },
+    "zh": {
+      "name": "Chunxiao Zheng",
+      "roleOrg": "LMCache 核心架构师",
+      "bio": "Chunxiao Zheng（GitHub：chunxiaozheng）是大语言模型推理开源 KV Cache 管理层 LMCache 的维护者和核心架构师，已合入 100 余项代码贡献，位列项目前五位贡献者。他的工作包括 MLA 与 DSA 支持、I/O 流程优化和命令行工具开发。"
+    }
+  },
+  {
+    "sourceName": "Yujie Sun",
+    "id": "yujie-sun",
+    "en": {
+      "name": "Yujie Sun",
+      "roleOrg": "R&D Engineer, Daorui Intelligent Technology (Beijing) Co., Ltd.",
+      "bio": "Yujie Sun is an R&D engineer at Daorui Intelligent Technology (Beijing) and an advocate for the DORA project."
+    },
+    "zh": {
+      "name": "Yujie Sun",
+      "roleOrg": "Daorui Intelligent Technology（北京）研发工程师",
+      "bio": "Yujie Sun 是 Daorui Intelligent Technology（北京）的研发工程师，也是 DORA 项目的技术布道者。"
+    }
+  },
+  {
+    "sourceName": "Yichi Zhang",
+    "id": "yichi-zhang",
+    "en": {
+      "name": "Yichi Zhang",
+      "roleOrg": "Member of Technical Staff, RadixArk",
+      "bio": "Yichi Zhang is an SGLang developer focused on efficient LLM inference, with an interest in KV cache management and optimization. He is also a core developer of sglang-omni, building inference engines for omni-modal, TTS, and ASR models. He leads community education and developer relations efforts within the SGLang community and is the initiator and a core developer of zero-to-sglang, SGLang’s official course."
+    },
+    "zh": {
+      "name": "Yichi Zhang",
+      "roleOrg": "RadixArk 技术团队成员",
+      "bio": "Yichi Zhang 是 SGLang 开发者，专注于高效大语言模型推理，尤其关注 KV Cache 管理与优化。他也是 sglang-omni 核心开发者，参与全模态、文本转语音（TTS）和自动语音识别（ASR）模型推理引擎的建设。他负责 SGLang 社区的教育与开发者关系工作，是官方课程 zero-to-sglang 的发起者和核心开发者。"
+    }
+  },
+  {
+    "sourceName": "qiuqinlun",
+    "id": "qiuqinlun",
+    "en": {
+      "name": "Qiu Qinlun",
+      "roleOrg": "Founder, Boao Open School",
+      "bio": "Qiu Qinlun is an industry–education collaboration specialist with nearly 30 years of experience in IT education. He co-founded Easthome, an IT certification training institution, and co-established a software school with the Open University of China. In 2025, he founded Boao Open School to develop AI-interactive classrooms around self-learning, co-learning, and leading others in learning. His work combines open-source tools, interactive teaching, and industry partnerships to help learners become active participants in AI-assisted creation."
+    },
+    "zh": {
+      "name": "Qiu Qinlun",
+      "roleOrg": "Boao Open School 创始人",
+      "bio": "Qiu Qinlun 是产教融合专家，拥有近 30 年 IT 教育经验。他曾联合创办 IT 认证培训机构 Easthome，并与国家开放大学共同创办软件学院。2025 年，他创立 Boao Open School，以 AI 交互式课堂推动“自学—共学—领学”的递进学习方法。他的工作结合开源工具、互动教学和产教融合，帮助学习者从被动接收内容转向主动参与 AI 辅助的共同创作。"
+    }
+  },
+  {
+    "sourceName": "赵仲夏",
+    "id": "赵仲夏",
+    "en": {
+      "name": "Zhongxia Zhao",
+      "roleOrg": "Co-Founder & COO, EvoPhys AI",
+      "bio": "Zhongxia Zhao is Co-Founder and COO of EvoPhys AI. He holds a master’s degree from Peking University and previously served as a technology director at a listed AI company and an embodied-AI researcher at the Beijing Academy of Artificial Intelligence. He is also an embodied-technology advisor to ITU. With ten years of experience deploying robotics and AI systems, he has contributed to dozens of robotics patents and more than ten embodied-AI standards. His work focuses on physical AGI, five-dimensional world models, real-world spatial modeling, and multi-robot coordination across home, industrial, and rail-transit applications."
+    },
+    "zh": {
+      "name": "赵仲夏",
+      "roleOrg": "宇万智能 EvoPhys 联合创始人兼首席运营官",
+      "bio": "赵仲夏是宇万智能 EvoPhys 联合创始人兼首席运营官，北京大学硕士，曾任 AI 上市公司技术总监、智源研究院具身智能研究员，并担任 ITU 具身技术顾问。他拥有十年机器人与人工智能落地经验，参与数十项机器人专利及十余项具身智能标准制定，专注于物理 AGI 与五维世界模型，主导实景空间建模、多机器人协同等系统研发，应用覆盖家庭、工业和轨道交通等场景。"
+    }
+  },
+  {
+    "sourceName": "Slava Tykhonov",
+    "id": "slava-tykhonov",
+    "en": {
+      "name": "Slava Tykhonov",
+      "roleOrg": "Head of AI & Interoperability, CODATA",
+      "bio": "Head of AI and Interoperability at CODATA. With over 25 years’ experience in software development, data science, and European research infrastructures (EOSC), Slava is an innovator, IT architect, and mentor who has focused much of his career on research and education through experimentation, pilot projects, and inventive problem-solving methods. He is a Harvard Dataverse Ambassador (since June 2025) and co-author of the Google-initiated CroissantML standard for AI."
+    },
+    "zh": {
+      "name": "Slava Tykhonov",
+      "roleOrg": "CODATA 人工智能与互操作性负责人",
+      "bio": "Slava Tykhonov 是 CODATA 人工智能与互操作性负责人，拥有超过 25 年软件开发、数据科学及欧洲科研基础设施（EOSC）经验。他兼任技术架构师与导师，长期通过实验和试点项目推动科研与教育创新。自 2025 年 6 月起，他担任 Harvard Dataverse 大使，并参与编写由 Google 发起的 AI 数据标准 CroissantML。"
+    }
+  },
+  {
+    "sourceName": "Rik Arends",
+    "id": "rik-arends",
+    "en": {
+      "name": "Rik Arends",
+      "roleOrg": "Co-Founder, Makepad",
+      "bio": "Rik Arends is a co-founder of Makepad with more than 20 years of experience developing in C/C++, JavaScript, and Rust. His work focuses on high-performance visual and audio applications and the tools needed to build them. He previously developed VJ software, web interfaces, and the Cloud9 web IDE. At Makepad, he is rethinking Rust development workflows and exploring how AI can help developers write Rust and user-interface code."
+    },
+    "zh": {
+      "name": "Rik Arends",
+      "roleOrg": "Makepad 联合创始人",
+      "bio": "Rik Arends 是 Makepad 联合创始人，拥有超过 20 年 C/C++、JavaScript 和 Rust 开发经验，长期关注高性能视觉、音频应用及其开发工具。他曾开发 VJ 视觉演出软件、Web 界面和 Cloud9 在线集成开发环境。目前，他通过 Makepad 探索新的 Rust 开发工作流，以及如何利用 AI 编写 Rust 和用户界面代码。"
     }
   }
 ]

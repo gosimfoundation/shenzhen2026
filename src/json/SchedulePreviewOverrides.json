@@ -36,11 +36,11 @@
     "ref": "P-77",
     "title": {
       "en": "Effective and High-Performance Human–Agent Interaction",
-      "zh": "高效、高性能的人机智能体交互"
+      "zh": "高效、高性能的人与智能体交互"
     },
     "overview": {
       "en": "Using uni03C0, a macOS client for the Pi coding agent, this talk explores how human–agent interfaces can move beyond chat and terminal conventions. It focuses on practical ways to improve interaction performance, precision, usability, and security.",
-      "zh": "本次演讲以 Pi 编程智能体的 macOS 客户端 uni03C0 为例，探讨人机智能体界面如何突破传统聊天框和终端模式，并通过实际设计提升交互效率、精确度、易用性与安全性。"
+      "zh": "本次演讲以 Pi 编程智能体的 macOS 客户端 uni03C0 为例，探讨人与智能体的交互界面如何突破传统聊天框和终端模式，并通过实际设计提升交互效率、精确度、易用性与安全性。"
     }
   },
   {
@@ -493,11 +493,11 @@
     "ref": "P-150",
     "title": {
       "en": "Harnessing Embodied Agents: From Foundation Models to Safe, Reliable Physical Intelligence",
-      "zh": "具身智能体驾驭：从大模型到安全、可靠的物理智能"
+      "zh": "具身智能体执行框架：从基础模型到安全、可靠的物理智能"
     },
     "overview": {
       "en": "This talk proposes the Embodied Agentic Harness, a runtime control plane between foundation models and robot skills or hardware. It combines deterministic task compilation, world-action-model prediction, layered safety checks, long-term memory, and local self-healing to turn open-ended model intent into verifiable, recoverable physical behavior.",
-      "zh": "本次演讲提出具身智能体驾驭系统：位于基础模型与机器人技能或硬件之间的运行时控制平面。它结合确定性任务编译、世界—动作模型预测、分层安全验证、长期记忆与局部自愈，将开放式模型意图转化为可验证、可恢复的物理行为。"
+      "zh": "本次演讲提出具身智能体执行框架（Embodied Agentic Harness）：位于基础模型与机器人技能或硬件之间的运行时控制平面。它结合确定性任务编译、世界—动作模型预测、分层安全验证、长期记忆与局部自愈，将开放式模型意图转化为可验证、可恢复的物理行为。"
     }
   },
   {
@@ -563,7 +563,7 @@
     },
     "overview": {
       "en": "This talk shares PhyAgentOS engineering practices for physical-agent harnesses, including unified access to heterogeneous robots, tool and skill composition, simulation-to-reality transfer, task verification, failure recovery, and continuous evolution driven by tool use and data feedback.",
-      "zh": "本次演讲分享 PhyAgentOS 在物理智能体 Harness 方向的工程实践，涵盖异构机器人统一接入、Tool 与 Skill 组合、虚实迁移、任务验证与失败恢复，以及由工具使用和数据反馈驱动的持续进化。"
+      "zh": "本次演讲分享 PhyAgentOS 在物理智能体 Harness 方向的工程实践，涵盖异构机器人统一接入、工具与技能组合、虚实迁移、任务验证与失败恢复，以及由工具使用和数据反馈驱动的持续进化。"
     }
   },
   {
@@ -636,7 +636,7 @@
     "ref": "P-164",
     "title": {
       "en": "Production-Grade Inference Service for Kimi K3 Agent Based on vLLM",
-      "zh": "基于vLLM的Kimi K3智能体生产级推理服务"
+      "zh": "基于 vLLM 的 Kimi K3 智能体生产级推理服务"
     },
     "overview": {
       "en": "This workshop shares how the Inferact team built a large-scale, production-grade agent inference service for Kimi K3 on the open-source vLLM engine.",
@@ -830,7 +830,7 @@
       "zh": "九问智能体记忆系统"
     },
     "overview": {
-      "en": "This talk introduces Jiuwen Agent Memory, a user-centered memory system for more personalized and proactive long-running agents. The submitted proposal emphasizes accuracy, performance, security, and configurability.",
+      "en": "This talk introduces Jiuwen Agent Memory, a user-centered memory system for personalized, proactive, long-running agents. It explores how accuracy, performance, security, and configurability support agents that retain useful context over time.",
       "zh": "本次演讲介绍以用户为中心的九问智能体记忆系统，探讨如何通过高精度、高性能、安全且可配置的记忆能力，支持智能体向个性化、主动式和长期陪伴型应用演进。"
     }
   },
@@ -843,6 +843,633 @@
     "overview": {
       "en": "This workshop examines the growing demand for people trained across mechanics, electronics, automation, and computer science as embodied AI develops. Drawing on Shenlan Academy's nine years in AI, robotics, and autonomous-driving education, it shares practices for preparing engineers for robotics and embodied-AI work.",
       "zh": "本工作坊探讨具身智能作为机械、电子、自动化与计算机交叉领域，如何应对快速增长的人才需求，并结合深蓝学院九年来在人工智能、机器人及自动驾驶教育中的经验，分享机器人与具身智能人才培养实践。"
+    }
+  },
+  {
+    "ref": "P-18",
+    "title": {
+      "en": "Self-Evolving Apps: Building Software That Gets Smarter Every Time You Use It",
+      "zh": "自进化应用：构建每次使用都会变得更智能的软件"
+    },
+    "overview": {
+      "en": "Self-evolving apps improve with each use by learning from user corrections, not through code updates. This intelligence operates as a separate, updatable layer that uses past corrections to enhance decision-making without requiring machine learning or data science teams. The talk covers design, development, licensing models, and lessons learned from real-world applications.",
+      "zh": "自进化应用通过学习用户的修正来不断改进，而不是通过代码更新。这种智能以独立可更新的层形式存在，利用过往修正提升决策能力，无需机器学习或数据科学团队。本次演讲将介绍自进化应用的设计、开发、授权模式及实际应用中的经验教训。"
+    }
+  },
+  {
+    "ref": "P-19",
+    "title": {
+      "en": "Network-Sourced AI: Open Ensembles, Private Data, and a Reproducible Path to the Frontier",
+      "zh": "Network-Sourced AI：开放模型集成、私有数据与可复现的前沿 AI"
+    },
+    "overview": {
+      "en": "This talk introduces Network-Sourced AI from the OpenMined Foundation, which combines diverse models in open ensembles. Structured Transparency and privacy-enhancing technologies support reproducible results while letting data owners control access. The session demonstrates an open-source toolkit and public leaderboard for building and reproducing advanced model systems while preserving data privacy.",
+      "zh": "本次演讲介绍 OpenMined 基金会的 Network-Sourced AI：通过开放的模型集成组合多种模型能力，并利用结构化透明机制与隐私增强技术支持结果复现，让数据所有者掌握访问权限。现场将展示开源工具包和公开排行榜，介绍如何在保护数据隐私的前提下构建和复现先进模型系统。"
+    }
+  },
+  {
+    "ref": "P-21",
+    "title": {
+      "en": "AI-Native Company Operating System: How Open Source Agents Transform Startup Workflows",
+      "zh": "AI 原生公司操作系统：开源智能体如何重塑初创企业工作流"
+    },
+    "overview": {
+      "en": "AI is transforming how companies are organized, moving from traditional human-centric structures to AI-native systems where knowledge is structured memory and workflows become intelligent, self-improving systems. Jacky Hsu will discuss how Ingora leverages open-source agents, coding assistants, and knowledge systems to rapidly develop Qrio, an AI learning companion for children and families. This approach treats the company itself as an AI-powered operating system, enhancing execution and organizational intelligence through AI agents.",
+      "zh": "AI 正在改变企业的组织方式：企业正从传统、以人为中心的结构，转向把知识作为结构化记忆、把工作流构建为智能且持续改进的系统。Jacky Hsu 将分享 Ingora 如何利用开源智能体、编程助手和知识系统，快速开发面向儿童与家庭的 AI 学习伙伴 Qrio。这种方法把公司本身视为由 AI 驱动的操作系统，并通过智能体提升执行能力与组织智能。"
+    }
+  },
+  {
+    "ref": "P-29",
+    "title": {
+      "en": "Your AI Product Is Ready. Is Your Company Ready for Europe?",
+      "zh": "你的 AI 产品准备好了，你的公司准备好进入欧洲了吗？"
+    },
+    "overview": {
+      "en": "Europe is a highly attractive market for AI companies, but entering it requires more than just a great product. Companies must ensure their governance, operations, and compliance are ready for Europe's regulatory environment. This session explores key questions AI firms should address before expanding into Europe, including regulatory status, risk categories, and governance requirements. It also discusses how emerging technologies like Agentic AI may influence market entry strategies and regulatory readiness.",
+      "zh": "欧洲是 AI 企业拓展业务的重要市场。进入欧洲除了需要成熟的产品，也需要治理、运营和合规方面的准备。本次演讲探讨企业出海前需要厘清的监管定位、风险分类与治理要求，以及智能体 AI 等新技术如何影响市场进入策略。"
+    }
+  },
+  {
+    "ref": "P-30",
+    "title": {
+      "en": "Next-Generation System Interoperability: AI Agents as the Universal Integration Layer",
+      "zh": "下一代系统互操作性：AI 智能体成为通用集成层"
+    },
+    "overview": {
+      "en": "Traditional interoperability methods like APIs and ESBs are struggling with today's dynamic and autonomous systems. This talk introduces agent-mediated interoperability, where AI agents dynamically discover, translate, and orchestrate system interactions, offering a flexible and universal integration solution.",
+      "zh": "面对动态变化、自主运行的系统，传统 API 和企业服务总线（ESB）等集成方式正面临新的挑战。本次演讲介绍由智能体协调的互操作方案：通过 AI 智能体动态发现系统、转换信息并编排交互，构建更灵活的通用集成层。"
+    }
+  },
+  {
+    "ref": "P-33",
+    "title": {
+      "en": "The Sovereignty Layer: Why Open Source Is How the Global South Shapes AI",
+      "zh": "主权层：为什么开源是全球南方塑造 AI 的方式"
+    },
+    "overview": {
+      "en": "The talk discusses how open source can empower the Global South in shaping AI governance. It introduces the Global AI Assembly model, which focuses on education, giving voice to users, and influencing AI development through structured participation. The speaker argues that open source is not just about code but about democratizing decision-making in AI.",
+      "zh": "本次演讲探讨开源如何帮助全球南方参与塑造 AI 治理。演讲将介绍 Global AI Assembly 模式及其三大支柱：教育非技术人群、汇集用户声音，并通过结构化参与影响政府、企业和标准组织。演讲者认为，开源不只是开放代码与权重，更是让更多人共同参与 AI 决策的基础。"
+    }
+  },
+  {
+    "ref": "P-40",
+    "title": {
+      "en": "Building a Knowledge-Work Harness: From Coding Agents to Executable Strategy",
+      "zh": "构建知识工作执行框架：从编程智能体到可执行战略"
+    },
+    "overview": {
+      "en": "Building a knowledge-work harness requires addressing the verification gap, as decisions lack the automated checks found in coding. This talk shares insights from a year of running an open-source, local-first agent system, focusing on components that survive the transition and the role of strategy as a protocol. A live demo illustrates an agent making a gated decision based on plain-text rules.",
+      "zh": "知识工作中的决策通常缺少软件测试那样的自动验证机制。本次演讲结合一年来运行开源、本地优先智能体系统的经验，探讨哪些编程智能体组件可以用于知识工作，以及如何把战略规则转化为可执行的协议。现场演示将展示智能体如何依据纯文本规则，在满足审批条件后作出决策。"
+    }
+  },
+  {
+    "ref": "P-1",
+    "title": {
+      "en": "Accelerating Algorithm Autoresearch",
+      "zh": "加速算法自动研究"
+    },
+    "overview": {
+      "en": "Optimizing software with agentic AI is more complex than it seems. Autoresearch, which uses agents to iteratively modify and test code, faces challenges like reward hacking and overfitting. This talk explores these issues and how to turn autoresearch results into production-ready solutions, using examples from open-source GPU kernel competitions and infrastructure.",
+      "zh": "利用智能体 AI 优化软件比想象中复杂。Autoresearch 通过智能体迭代修改和测试代码，但面临奖励作弊（reward hacking）、过拟合等挑战。本次演讲将结合开源 GPU 内核竞赛和基础设施的实例，探讨这些问题以及如何将 Autoresearch 成果转化为生产可用的方案。"
+    }
+  },
+  {
+    "ref": "P-52",
+    "title": {
+      "en": "Latest LF Research Reports on Agentic AI and AI Coding",
+      "zh": "LF 最新智能体 AI 与 AI 编程研究报告"
+    },
+    "overview": {
+      "en": "The conference talk presents the latest LF Research reports on Agentic AI and AI coding. It covers findings from two key papers: \"Enterprise Transitions to Agentic AI Era\" and \"Generative AI's impact on Open Source Software.\" The reports highlight the evolving role of AI in enterprise systems and its influence on open source development.",
+      "zh": "本次演讲介绍 LF Research 最新发布的智能体 AI 与 AI 编程研究报告。报告涵盖两项研究：“企业向智能体 AI 时代转型”和“生成式 AI 对开源软件的影响”，重点讨论 AI 在企业系统中的演变及其对开源开发的影响。"
+    }
+  },
+  {
+    "ref": "P-56",
+    "title": {
+      "en": "Agent-Centric Engineering — From Personal Productivity to Organizational Capability",
+      "zh": "以智能体为中心的工程实践——从个人生产力到组织能力"
+    },
+    "overview": {
+      "en": "This talk presents Agent-Centric Engineering (ACE), a framework for turning individual AI-assisted productivity into organizational capability. It introduces ACEHarness, an open-source platform for specification-driven development and multi-agent collaboration, and shares compiler-optimization and hash-library case studies. The session explains how people define goals, quality boundaries, and acceptance criteria while agents carry out engineering work.",
+      "zh": "本次演讲介绍以智能体为中心的工程方法（ACE），探讨如何将个人使用 AI 的效率提升转化为组织能力。内容包括支持规约驱动开发和多智能体协作的开源平台 ACEHarness，以及编译器优化、哈希库性能优化等案例，重点说明如何由人设定目标、质量边界和验收标准，再由智能体执行工程任务。"
+    }
+  },
+  {
+    "ref": "P-57",
+    "title": {
+      "en": "State of Harness Engineering",
+      "zh": "Harness 工程现状"
+    },
+    "overview": {
+      "en": "State of harness engineering explores the challenges of effectively managing coding agents. While models improve, teams find that better models alone aren't enough; they need structured practices to guide and refine agent behavior. The talk introduces a mental model for harness engineering, emphasizing feedback mechanisms and control systems to enhance reliability.",
+      "zh": "模型能力提升并不意味着编程智能体能够可靠地完成任务，团队还需要完善的执行环境、反馈机制和控制流程。本次演讲梳理 Harness 工程的现状，介绍用于理解和设计智能体执行框架的思维模型，以及提升运行可靠性的工程实践。"
+    }
+  },
+  {
+    "ref": "P-76",
+    "title": {
+      "en": "The “Spear” and “Shield” of Cybersecurity in the AI Era",
+      "zh": "AI 时代网络安全的“矛”与“盾”"
+    },
+    "overview": {
+      "en": "Drawing on frontline cybersecurity experience, the speaker explains how AI is reshaping attack chains and presents a practical framework based on real-world data and cases from QI-ANXIN and other security companies. The talk examines the imbalance created by AI-driven attacks and proposes a \"rebalance\" strategy for moving from reactive patching to proactive defense.",
+      "zh": "本次演讲结合一线网络安全攻防经验，分析 AI 如何重塑攻击链，并基于奇安信等安全企业的实战数据与案例，提出可落地的防御建设路径。内容聚焦 AI 带来的攻防失衡，探讨如何推动防御体系从被动修补转向主动防御。"
+    }
+  },
+  {
+    "ref": "P-84",
+    "title": {
+      "en": "Mapping the Open Agentic AI Landscape: From Open Models to Cross-Foundation Architectures",
+      "zh": "绘制开放智能体 AI 全景图：从开放模型到跨基金会架构"
+    },
+    "overview": {
+      "en": "The talk explores the open agentic AI landscape, emphasizing the need for transparent, open-weight models and an open supply chain to ensure technical sovereignty. It outlines the ecosystem, including PyTorch Foundation, CNCF, and AAIF, which together enable secure, scalable agentic systems through integrated compute, orchestration, and protocol standards.",
+      "zh": "本次演讲梳理开放智能体 AI 的生态系统，强调透明度、开放权重模型和开放供应链对技术主权的重要性。演讲介绍 PyTorch 基金会、CNCF 和 AAIF 等生态组成部分，以及它们如何整合计算、编排和协议标准，共同支撑安全、可扩展的智能体系统。"
+    }
+  },
+  {
+    "ref": "P-3",
+    "title": {
+      "en": "KTransformers: The Fine-Tuning-to-Inference Closed Loop for Full-Precision 1T-Class MoE Models on Consumer Hardware",
+      "zh": "KTransformers：消费级硬件上全精度万亿参数级 MoE 模型的微调到推理闭环"
+    },
+    "overview": {
+      "en": "KTransformers enables efficient local inference for 1T-class MoE models on consumer hardware by leveraging CPU-GPU heterogeneous computing. It supports a full fine-tuning-to-inference loop, allowing model serving, feedback collection, and deployment back to the system. This approach makes large-scale model iteration accessible to small teams and researchers without high hardware costs.",
+      "zh": "KTransformers 利用 CPU–GPU 异构计算，在消费级硬件上支持万亿参数级 MoE 模型的高效本地推理。本次演讲介绍从模型服务、反馈收集、微调到重新部署的完整闭环，帮助小型团队和研究者以较低硬件成本迭代大型模型。"
+    }
+  },
+  {
+    "ref": "P-4",
+    "title": {
+      "en": "Agentic AI on Global Edge: Deploying SPEAR-Powered Operations Agents with MCP",
+      "zh": "全球边缘环境中的智能体 AI：借助 MCP 部署由 SPEAR 驱动的运维智能体"
+    },
+    "overview": {
+      "en": "ByteDance's global edge infrastructure faces challenges with centralized operations due to latency and fragmented scenarios. By deploying lightweight AI operations agents on the SPEAR platform with MCP support, they achieve real-time monitoring, root cause analysis, and automated resolution at the edge, reducing latency and manual effort. The talk covers SPEAR's edge AI architecture, MCP-based agent development, and production insights on resource optimization and network resilience.",
+      "zh": "字节跳动的全球边缘基础设施面临集中式运维带来的延迟和场景碎片化问题。通过在 SPEAR 平台部署支持 MCP 的轻量级 AI 运维智能体，可在边缘端实现实时监控、根因分析和自动化处置，降低延迟与人工成本。本次演讲将介绍 SPEAR 的边缘 AI 运行架构、基于 MCP 的智能体开发模式，以及全球生产部署中的资源优化与网络韧性实践。"
+    }
+  },
+  {
+    "ref": "P-5",
+    "title": {
+      "en": "DHttp: From Partial Connectivity to Omniconnectivity",
+      "zh": "DHttp：从部分连接到全域互联"
+    },
+    "overview": {
+      "en": "DHttp addresses the limitations of traditional HTTP by enabling peer-to-peer communication and end-to-end encryption. It extends DNS to support universal endpoint addresses, allowing edge AI devices to act as both clients and servers, achieving true equality in network interactions. This protocol simplifies secure, identity-based communication across diverse networks, paving the way for a more interconnected future.",
+      "zh": "DHttp 解决了传统 HTTP 的局限性，实现了点对点通信和端到端加密。它扩展了 DNS 以支持泛端点网络地址，使边缘 AI 设备能够同时作为客户端和服务端，实现网络交互的真正平等。该协议通过简化安全、基于身份的通信，解决了复杂设计带来的诸多问题，为万物互联的未来铺平道路。"
+    }
+  },
+  {
+    "ref": "P-26",
+    "title": {
+      "en": "OpenCV 5: What’s New—and How to Prepare Your Company for the Upgrade",
+      "zh": "OpenCV 5：有哪些新变化，以及企业应如何为升级做好准备"
+    },
+    "overview": {
+      "en": "OpenCV 5 represents a major modernization of the leading open-source computer vision library, introducing updates to its foundation, DNN stack, and local features. The talk provides a practical guide for companies to upgrade smoothly, including migration strategies and risk mitigation.",
+      "zh": "OpenCV 5 是近年来对领先开源计算机视觉库的重大现代化更新，包含基础架构、深度学习栈和局部特征的改进。本次演讲为公司提供了一套实用的升级指南，涵盖迁移策略和风险缓解方法。"
+    }
+  },
+  {
+    "ref": "P-37",
+    "title": {
+      "en": "RustNN at the Edge: WebNN as Infrastructure for Local AI Agents",
+      "zh": "边缘端 RustNN：以 WebNN 作为本地 AI 智能体的基础设施"
+    },
+    "overview": {
+      "en": "RustNN and the W3C WebNN standard provide a unified solution for running AI agents locally. The RustNN ecosystem allows developers to write ML workloads once in Rust and deploy them across three environments: desktop, Node.js, and WebAssembly. This approach enables hardware acceleration across different platforms without code duplication.",
+      "zh": "RustNN 和 W3C WebNN 标准为本地运行 AI 智能体提供了统一的解决方案。RustNN 生态系统允许开发者在 Rust 中编写一次机器学习任务，并部署到桌面、Node.js 和 WebAssembly 三种环境中。这种方法可以在不同平台实现硬件加速，而无需代码重复。"
+    }
+  },
+  {
+    "ref": "P-78",
+    "title": {
+      "en": "From Khronos AI Ecosystem Research Insights to Edge AI Inference with Vulkan",
+      "zh": "从 Khronos AI 生态研究洞察到基于 Vulkan 的边缘 AI 推理"
+    },
+    "overview": {
+      "en": "As AI and real-time graphics converge, portable AI inference is transitioning from research to real-world deployment. This talk presents insights from the Khronos AI Ecosystem Research Project, open-source frameworks for Vulkan-based AI inference, and emerging trends in machine learning and neural graphics. Use cases such as texture compression, LLM inference, image upscaling, and frame interpolation are highlighted.",
+      "zh": "随着 AI 与实时图形技术融合，可移植的 AI 推理正从研究走向实际部署。本次演讲分享 Khronos AI 生态研究项目的发现，介绍支持 Vulkan 推理的开源框架，以及机器学习和神经图形领域的发展趋势，并展示纹理压缩、大语言模型推理、图像超分辨率和帧插值等应用场景。"
+    }
+  },
+  {
+    "ref": "P-71",
+    "title": {
+      "en": "Which Operating System Is Best for Agentic Mobile Devices?",
+      "zh": "哪种操作系统最适合智能体移动设备？"
+    },
+    "overview": {
+      "en": "The talk explores alternative operating systems for agentic mobile devices, highlighting Sailfish OS, Ubuntu Touch, and postMarketOS, all rooted in open-source principles. These systems offer flexibility and avoid vendor lock-in, contrasting with Android's current dominance but unnecessary complexity. The discussion aims to identify the best fit for future AI-centric mobile devices.",
+      "zh": "当以 AI 为中心的移动设备逐渐区别于智能手机，我们有机会重新考虑操作系统的选择。本次演讲将比较 Sailfish OS、Ubuntu Touch 和 postmarketOS 等成熟的替代方案；它们建立在开源组件之上，可避免被单一贡献者锁定。演讲也会说明 Android 的硬件支持优势、面向应用的冗余负担，以及不同方案各自的权衡。"
+    }
+  },
+  {
+    "ref": "P-58",
+    "title": {
+      "en": "SpecArtisans: A Verifiable Spec-Driven Development Paradigm for AI Coding",
+      "zh": "SpecArtisans：面向 AI 编程的可验证规约驱动开发范式"
+    },
+    "overview": {
+      "en": "SpecArtisans is a Spec-Driven development paradigm for AI programming, aiming to ensure AI accurately follows original requirements throughout the software development process. It introduces structured, verifiable software specifications between natural language requirements and code, enabling consistent tracking and validation across design, implementation, and testing. By integrating these specifications into an end-to-end workflow, SpecArtisans enhances the reliability of AI-native software engineering.",
+      "zh": "SpecArtisans 是一种面向 AI 编程的 规约驱动开发范式，旨在确保 AI 在软件开发各阶段准确遵循原始需求。它在自然语言需求与代码之间引入结构化、可验证的软件规约，实现需求在设计、实现和测试中的持续传递与验证。通过构建端到端的工作流并封装为可复用的技能（Skill），SpecArtisans 推动 AI 编程从生成代码向基于明确、可追踪、可验证需求的软件开发演进。"
+    }
+  },
+  {
+    "ref": "P-62",
+    "title": {
+      "en": "Agentic AI as a Contributor to Mobile Linux",
+      "zh": "智能体 AI 如何为移动 Linux 作出贡献"
+    },
+    "overview": {
+      "en": "Agentic AI is helping simplify contributions to Mobile Linux by assisting with code understanding, navigation, debugging, and idea implementation. It makes open-source development more accessible, especially for newcomers. This talk explores how agentic AI is already supporting contributions and its potential to enhance collaboration in the Mobile Linux community.",
+      "zh": "智能体 AI 能协助开发者理解代码、定位实现、调试问题和实现想法，降低参与移动 Linux 开源开发的门槛。本次演讲介绍这些工具已有的应用，尤其是它们如何帮助新贡献者入门，以及如何改善移动 Linux 社区的协作。"
+    }
+  },
+  {
+    "ref": "P-72",
+    "title": {
+      "en": "Agentic AI in Games: How Far Have We Come?",
+      "zh": "游戏 AI 中的智能体：我们究竟走了多远？"
+    },
+    "overview": {
+      "en": "This talk demonstrates progress in applying agentic AI to games and discusses how the demonstrations can be extended into environments and datasets for reinforcement learning across different models.",
+      "zh": "本次演讲展示智能体 AI 在游戏中的应用进展，并讨论如何将相关演示扩展为适用于不同模型的强化学习环境和数据集。"
+    }
+  },
+  {
+    "ref": "P-80",
+    "title": {
+      "en": "Your Agent's History Is Infrastructure, Not Logs — Building a Queryable Evidence Layer over Coding Agent Sessions",
+      "zh": "智能体历史记录是基础设施，而非日志——为编程智能体会话构建可查询的证据层"
+    },
+    "overview": {
+      "en": "Obelisk transforms scattered coding agent session histories into a unified, queryable infrastructure using SQLite and FTS5. It enables both agents and humans to interact with session data through code or a desktop app, supporting advanced features like failure analysis and memory management. The system is open source, with a multi-provider architecture designed for extension.",
+      "zh": "Obelisk 将分散的编程智能体会话历史转化为统一的可查询基础设施，使用 SQLite 和 FTS5 实现。它通过代码或桌面应用支持智能体和人类交互，具备故障分析、显式记忆层等高级功能。系统完全开源，采用多提供者架构，便于扩展。"
+    }
+  },
+  {
+    "ref": "P-81",
+    "title": {
+      "en": "PenguinHarness: An Efficient Self-Evolving Agent Harness for 1,000+ Models",
+      "zh": "PenguinHarness：面向 1000+ 模型的高效自进化 Agent Harness"
+    },
+    "overview": {
+      "en": "PenguinHarness is an open-source self-evolving agent framework developed by the LlamaFactory team, supporting over 1,000 models with minimal hardware requirements. It enables agents to autonomously perform training, deployment, evaluation, and application development through a minimal toolset and multi-agent collaboration. The talk will present how to rapidly build production-ready AI applications and evaluate self-evolving agents using the GDPevo Benchmark, showing an 18.8% accuracy improvement and 7.5% cost reduction.",
+      "zh": "PenguinHarness 是由 LlamaFactory 团队开发的开源自进化智能体框架，支持 1000 多种模型，仅需单 CPU 即可部署。它通过最小工具集和多智能体协作机制，使智能体能自主完成训练、部署、评估等任务。本次演讲将介绍如何快速构建生产级 AI 应用，并通过 GDPevo Benchmark 评估自进化能力，实验显示准确率提升 18.8%，Token 成本降低 7.5%。"
+    }
+  },
+  {
+    "ref": "P-91",
+    "title": {
+      "en": "MemOS 2.0: Key Technical Challenges and the Evolution of Memory Systems",
+      "zh": "MemOS 2.0：记忆系统关键技术挑战与演进"
+    },
+    "overview": {
+      "en": "MemOS 2.0 addresses the evolution of memory systems from static management to runtime state control, focusing on long-term state maintenance, dynamic scheduling, and memory governance. It introduces runtime memory management, versioning, native models, and a foundational memory model, with applications in agent, companion, and enterprise services.",
+      "zh": "MemOS 2.0 从静态记忆管理升级为运行时状态管理，强调长期状态维护、动态调度与记忆治理。它引入运行态记忆管理、记忆版本化、原生模型及 Memory 基础模型底座，并结合 Agent、陪伴及企业服务等场景探讨下一代记忆系统的技术路径与落地机会。"
+    }
+  },
+  {
+    "ref": "P-53",
+    "title": {
+      "en": "AI Creations for Developers: Co-Building AI Hardware from a Technical Community Perspective",
+      "zh": "开发者的 AI 造物：技术社区视角下的 AI 硬件共建之路"
+    },
+    "overview": {
+      "en": "AI is moving from the cloud to edge devices and from software to physical entities. The technical community is becoming a key driver of AI hardware innovation, enabling developers to become \"AI creators\" through the combination of large models and open-source hardware. The LiChuang open hardware platform, with over 800,000 monthly active users and more than 100,000 open-source projects, is building a path to turn AI ideas into physical hardware through its closed-loop model of open community, EDA tools, and supply chain manufacturing.",
+      "zh": "AI 正从云端走向端侧，从软件扩展到实体设备。立创开源硬件平台拥有超过 80 万月活跃用户和 10 万个开源项目，通过“开源社区、EDA 工具、供应链制造”的协作模式，帮助开发者将 AI 创意转化为硬件产品。本次演讲从技术社区的角度分享 AI 硬件共建实践。"
+    }
+  },
+  {
+    "ref": "P-59",
+    "title": {
+      "en": "From Device Connectivity to Device Collaboration: Building an A2A Distributed Intelligent Hardware Network with EMQ Device Agent",
+      "zh": "从设备联网到设备协作：EMQ Device Agent 构建 A2A 分布式智能硬件网络"
+    },
+    "overview": {
+      "en": "The talk discusses how EMQ Device Agent transforms physical devices into AI agents with command, property, and event semantics, enabling cross-brand, cross-protocol device collaboration through MQTT and A2A protocols. It explores key technologies like semantic modeling, agent runtime, and A2A service discovery, focusing on building a distributed intelligent hardware network for applications in smart hardware, industrial production, energy management, and medical devices.",
+      "zh": "本次演讲介绍如何利用 EMQ Device Agent，将物理设备抽象为具备命令、属性和事件语义的 AI 智能体，并通过 MQTT 与 A2A 协议实现跨品牌、跨协议的设备协作。内容涵盖设备语义建模、智能体运行时、服务发现和任务编排，以及智能硬件、工业生产、能源管理和医疗辅助设备等场景中的工程实践。"
+    }
+  },
+  {
+    "ref": "P-69",
+    "title": {
+      "en": "Open-Source Hardware Integration Practices for Agora Conversational AI",
+      "zh": "基于 Agora 对话式 AI 的开源硬件接入实践"
+    },
+    "overview": {
+      "en": "This talk explores the practical implementation of integrating open-source hardware with Agora's conversational AI to build real-time voice intelligent devices. It covers audio integration, agent session management, user interruptions, brief reconnections, and real-time experience optimization.",
+      "zh": "本次演讲介绍如何将开源硬件接入 Agora 对话式 AI，构建实时语音交互设备。内容涵盖音频接入、智能体会话管理、用户打断、短时断线重连，以及实时交互体验优化。"
+    }
+  },
+  {
+    "ref": "P-75",
+    "title": {
+      "en": "From Connecting to Thinking: TuyaOpen's Agent-First OS for the Physical AI Era",
+      "zh": "从连接到思考：面向物理 AI 时代的 TuyaOpen 智能体优先操作系统"
+    },
+    "overview": {
+      "en": "TuyaOpen introduces an open-source A-IoT operating system designed for the Physical AI era, shifting from device connectivity to autonomous, thinking agents. It features a native multi-modal AI stack and a standardized Model Context Protocol, enabling LLMs to control hardware on embedded devices. The system supports a unified hardware abstraction layer, edge-cloud-device inference, and TClaw for running ReAct agent loops on low-cost MCUs, with real-world applications like AI fridges and companion robots already in mass production.",
+      "zh": "TuyaOpen 是一个专为物理 AI 时代设计的开源 A-IoT 操作系统，从设备连接转向自主思考的智能体。它包含原生多模态 AI 栈和标准化的模型上下文协议，使大语言模型能够控制嵌入式硬件。系统支持统一的硬件抽象层、端—边—云协同推理以及 TClaw 框架，可在低成本 MCU 上运行 ReAct 智能体循环，已有 AI 冰箱、3D 打印机等实际产品投入量产。"
+    }
+  },
+  {
+    "ref": "P-79",
+    "title": {
+      "en": "Building AI Agent Devices on RISC-V with DC-ROMA Mainboard III",
+      "zh": "使用 DC-ROMA Mainboard III 在 RISC-V 上构建 AI 智能体设备"
+    },
+    "overview": {
+      "en": "The talk discusses the use of RISC-V architecture in building AI agent devices, focusing on the DC-ROMA Mainboard III powered by SpacemiT K3 AI SoC. It explores how modular RISC-V platforms enable local AI and agent development, emphasizing the integration of AI capabilities into edge computing devices.",
+      "zh": "本次演讲介绍如何在 RISC-V 架构上构建 AI 智能体设备，重点讲解采用 SpacemiT K3 AI SoC 的 DC-ROMA Mainboard III。内容包括模块化 RISC-V 平台如何支持本地 AI 与智能体开发，以及将 AI 能力集成到边缘设备中的实践。"
+    }
+  },
+  {
+    "ref": "P-89",
+    "title": {
+      "en": "TBD",
+      "zh": "待定"
+    },
+    "overview": {
+      "en": "Additional information about this talk will be published once confirmed.",
+      "zh": "本场演讲的更多介绍将在内容确认后发布。"
+    }
+  },
+  {
+    "ref": "P-31",
+    "title": {
+      "en": "Voice AI Is Entering Its Second Generation: Lessons from Enterprise Voice Agent Deployments",
+      "zh": "语音 AI 正迈入第二代：企业级语音智能体部署经验"
+    },
+    "overview": {
+      "en": "The talk discusses six key industry shifts transforming Voice AI, including moving from intelligence to execution and from APIs to platforms. These changes, initially seen in enterprise voice agent deployments, signal the future of open-source AI infrastructure and consumer AI experiences. The focus is on evolving Voice AI from short interactions to long-term relationships.",
+      "zh": "本次演讲梳理推动语音 AI 发展的六项行业变化，包括从理解到执行、从语音到对话，以及从 API 到平台。这些变化最先体现在企业语音智能体的部署实践中，也为开源 AI 基础设施和消费级产品提供了参考。演讲重点探讨语音 AI 如何从短时交互走向长期服务关系。"
+    }
+  },
+  {
+    "ref": "P-6",
+    "title": {
+      "en": "Rethinking Residual Connections: Toward Depth-Effective Language Model Scaling",
+      "zh": "重新思考残差连接：让语言模型的深度扩展真正有效"
+    },
+    "overview": {
+      "en": "Researchers explore whether recent residual-connection designs can enable effective depth scaling in language models. They evaluate various methods across different model depths and parameter scales, finding that only some designs sustain meaningful contributions from deeper layers. These results highlight residual architecture as a key factor in model scaling, alongside width, data, and compute.",
+      "zh": "研究人员探讨近期残差连接设计是否能实现语言模型的有效深度扩展。他们在不同模型深度和参数规模下评估多种方法，发现只有部分设计能维持深层网络的有效贡献。这些结果强调残差架构是模型扩展的关键因素之一，与模型宽度、数据和计算资源并列。"
+    }
+  },
+  {
+    "ref": "P-8",
+    "title": {
+      "en": "Scale-up Interconnect System for Supernodes",
+      "zh": "面向超级节点的 Scale-up 互联系统"
+    },
+    "overview": {
+      "en": "The talk discusses the challenges and optimizations in scaling up interconnect systems for supernodes, focusing on how architectural transitions and communication strategies impact performance. As model architectures shift to sparse/linear attention, reducing KV Cache pressure, tensor and sequence parallelism increase collective communication demands. The interconnect system must balance performance, cost, and ecosystem to support both training and inference efficiently.",
+      "zh": "本次演讲探讨了超节点互连系统扩展中的挑战与优化，重点分析了架构转变和通信策略对性能的影响。随着模型架构转向稀疏/线性注意力，KV Cache 压力降低，但张量并行和序列并行显著增加了集合通信需求。互连系统需在性能、成本和生态系统间取得平衡，以高效支持训练和推理需求。"
+    }
+  },
+  {
+    "ref": "P-43",
+    "title": {
+      "en": "Building and Evolving the Ascend Open-Source Training Ecosystem",
+      "zh": "昇腾开源训练生态建设与演进"
+    },
+    "overview": {
+      "en": "As a computing power provider, embracing open-source communities and maintaining openness is essential to meet customer needs. Ascend has been continuously investing in open-source training, adopting a strategy of \"bottom-up, native-first, plugin-enhancement\" to actively engage with third-party communities. This talk will cover how Ascend builds a solid training backend through foundational technology compatibility, participates in community development, and contributes additional performance and accuracy features beyond standard compatibility.",
+      "zh": "作为算力厂商，积极拥抱开源社区、坚持对外开放是满足客户需求的必然选择。昇腾多年来持续投入开源训练，采用“自底向上、原生优先、插件增强”策略，积极融入第三方开源社区。本次分享将介绍昇腾如何通过底层技术兼容构建扎实的训练后端，参与社区建设并持续维护，同时在社区基础适配之外贡献关键性能与精度特性。"
+    }
+  },
+  {
+    "ref": "P-46",
+    "title": {
+      "en": "AI-Ready Data Production and Dynamic Data Training for Open-Source Models",
+      "zh": "面向开源模型的 AI-Ready 数据生产与动态数据训练"
+    },
+    "overview": {
+      "en": "The talk discusses the paradigm shift toward high-quality data dependency for model performance, introducing a unified data flywheel with DataFlow L0–L7 open-source infrastructure. It explores agentic execution through agents, skills, and harnesses, along with a closed-loop evolution driven by evaluation. The session also covers engineering practices for implementing a data-centric AI open ecosystem.",
+      "zh": "本次演讲探讨了模型性能日益依赖高质量训练数据的范式转变，介绍了涵盖 DataFlow L0–L7 的统一数据飞轮开源基础设施。演讲还涉及通过 Agent、Skills 与 Harness 实现的智能执行，以及由评估驱动的数据闭环进化。最后，分享了数据驱动 AI 开源生态的工程实践与未来演进。"
+    }
+  },
+  {
+    "ref": "P-47",
+    "title": {
+      "en": "SynthCommonCorpus: The Largest Open Synthetic Pretraining Corpus Built for Agentic Models",
+      "zh": "SynthCommonCorpus：面向智能体模型构建的最大开放合成预训练语料库"
+    },
+    "overview": {
+      "en": "This talk introduces SynthCommonCorpus, an open synthetic pretraining corpus designed for agentic models and planned for release in autumn 2026. It incorporates tool calls, multi-step task decomposition, and adversarial examples into pretraining data to study how models learn to act. The session explains how synthetic generation and traceable, licensed seed data support reproducibility and the measurement of memorization and data contamination.",
+      "zh": "本次演讲介绍计划于 2026 年秋季发布的 SynthCommonCorpus，一个面向智能体模型的开放合成预训练语料库。它将工具调用、多步骤任务分解和对抗性示例纳入预训练数据，以研究模型如何学习行动。内容包括合成数据生成方法，以及如何通过可追溯的授权种子数据支持结果复现、记忆行为分析和数据污染评估。"
+    }
+  },
+  {
+    "ref": "P-48",
+    "title": {
+      "en": "The Smol Training Handbook: One Tradeoff, Any Scale",
+      "zh": "Smol 训练手册：一个权衡，适用于任意规模"
+    },
+    "overview": {
+      "en": "Training state-of-the-art LLMs involves balancing memory, compute, and communication across different scales. The talk explores parallelism strategies like data, context, and pipeline parallelism, emphasizing the importance of infrastructure understanding and practical open-source tools. It concludes with guidance on selecting the right strategy and profiling techniques for production environments.",
+      "zh": "训练先进大语言模型，需要在不同规模下平衡内存、计算与通信开销。本次演讲介绍数据并行、上下文并行和流水线并行等策略，说明底层基础设施与开源工具如何影响训练效率，并分享面向生产环境的并行策略选择和性能分析方法。"
+    }
+  },
+  {
+    "ref": "P-11",
+    "title": {
+      "en": "Mechanism-Based Compliance Auditing and Intrinsic Security Hardening",
+      "zh": "机理合规审计与内生安全加固"
+    },
+    "overview": {
+      "en": "The talk examines intrinsic security risks in large language models and explains why output-level constraints cannot guarantee trustworthy behavior. It introduces the theory of equivalent interaction mechanism interpretation and its applications to formal mechanism auditing, intrinsic security hardening, and training-efficiency optimization. The session also covers findings on risky mechanisms in open-source models, model generalization, and mechanism-alignment training.",
+      "zh": "本次讲座聚焦大语言模型的内生安全问题，提出等效交互机理解释理论，系统突破传统方法局限，为模型安全审计、内生安全加固及训练效率优化提供解决方案。内容涵盖神经网络决策逻辑解构、形式化审计方案构建、泛化能力分析及机理对齐训练范式验证。"
+    }
+  },
+  {
+    "ref": "P-60",
+    "title": {
+      "en": "TransferQueue: An Asynchronous, High-Performance Streaming Data Engine for Post-Training",
+      "zh": "TransferQueue：面向后训练的异步高性能流式数据引擎"
+    },
+    "overview": {
+      "en": "TransferQueue is an asynchronous, high-performance streaming data engine designed for post-training workflows. It separates data and control flow, enabling efficient data routing and minimizing task blocking. By acting as a transit port for data, TransferQueue supports dynamic scheduling and automatic pipelining in large model computing systems, offering improved resource utilization and communication efficiency.",
+      "zh": "TransferQueue 是面向后训练工作流的异步高性能流式数据引擎。它将数据流与控制流分离，以实现高效数据路由并减少任务阻塞。作为数据中转层，TransferQueue 支持动态调度和自动流水线，改善大模型计算系统的资源利用率与通信效率。"
+    }
+  },
+  {
+    "ref": "P-93",
+    "title": {
+      "en": "C-to-Rust Code Translation: A Three-Stage Curriculum of Pretraining, Debugging-Aware SFT, and Task-Specific SFT",
+      "zh": "C 到 Rust 代码翻译：预训练、调试感知监督微调与任务专项微调的三阶段训练"
+    },
+    "overview": {
+      "en": "Translating C code into safe Rust is a key goal for improving software safety. This talk presents a three-stage training approach for Qwen3-27B, including Rust-focused pretraining, debugging-aware SFT, and task-specific SFT. The model is evaluated using SACTOR, showing improved success rates and idiomatic code quality compared to baselines.",
+      "zh": "将 C 代码转换为安全、符合 Rust 习惯的代码，是提升软件安全性的重要目标。本次演讲介绍面向 Qwen3-27B 的三阶段训练方法，包括 Rust 专项预训练、调试感知的监督微调和任务特定微调。通过 SACTOR 框架评估，该模型在成功率和代码规范性方面优于基线模型。"
+    }
+  },
+  {
+    "ref": "P-100",
+    "title": {
+      "en": "Teaching AI to Improve AI: From Experimental Feedback to Meta-Evolution",
+      "zh": "教 AI 改进 AI：从实验反馈到元进化"
+    },
+    "overview": {
+      "en": "Large language models are evolving from coding assistants to research agents capable of proposing solutions, running experiments, and iteratively improving results. This talk discusses how execution-based experimentation can be transformed into reusable improvement capabilities, using the AI4AI loop and case studies from NatureBench. It also explores the potential for recursive self-improvement in AI systems.",
+      "zh": "大语言模型正从编程助手发展为能够提出方案、运行实验并迭代结果的研究智能体。本次演讲结合 AI4AI 循环与 NatureBench 案例，探讨如何将实验执行与反馈转化为可复用的改进能力，并分析 AI 系统递归自我改进的潜力。"
+    }
+  },
+  {
+    "ref": "P-99",
+    "title": {
+      "en": "Building Self-Improving and Long-Horizon Agents",
+      "zh": "构建可自我改进的长时程智能体"
+    },
+    "overview": {
+      "en": "Building Self-Improving and Long-Horizon Agents explores how large language models can autonomously enhance their operational systems. The talk introduces Self Harness, where an LLM acts as its own harness engineer, and Harness of Harness, enabling continuous improvement over extended periods. It also touches on applying these methods to theoretical computer science for AI-assisted research.",
+      "zh": "本次演讲探讨如何让大语言模型自主改进其运行框架。内容包括让模型担任自身执行框架工程师的 Self Harness，以及支持长期持续改进的 Harness of Harness，并分享将这些方法用于理论计算机科学研究的探索。"
+    }
+  },
+  {
+    "ref": "P-2",
+    "title": {
+      "en": "AMD ROCm and Radeon-Powered Real2Sim2Real Vision-Language-Action Manipulation",
+      "zh": "AMD ROCm 与 Radeon 驱动的 Real2Sim2Real 视觉-语言-动作操控"
+    },
+    "overview": {
+      "en": "AMD ROCm and Radeon GPUs enable an end-to-end Real2Sim2Real workflow for embodied AI, covering data generation, policy training, simulation validation, and real-world deployment. Synthetic robot demonstrations are generated using GPU hardware rasterization and converted to LeRobot format. A SmolVLA-450M policy is fine-tuned on AMD hardware, validated in simulation, and deployed on a Franka robotic arm, demonstrating effective sim-to-real transfer and policy robustness.",
+      "zh": "AMD ROCm 和 Radeon GPU 实现了端到端的 Real2Sim2Real 具身智能工作流，涵盖数据生成、策略训练、仿真验证和实际部署。该工作流利用 GPU 硬件光栅化生成大规模合成机器人演示，并转换为 LeRobot 格式；SmolVLA-450M 策略则在 AMD 硬件上微调，经仿真验证后部署到 Franka 机械臂，展示仿真到现实迁移与策略鲁棒性。"
+    }
+  },
+  {
+    "ref": "P-13",
+    "title": {
+      "en": "Nexus: A New Cross-Platform GPU-Based Rust Multiphysics Simulator for Robotics and Training Dataset Generation",
+      "zh": "Nexus：面向机器人与训练数据生成的全新跨平台 GPU Rust 多物理场模拟器"
+    },
+    "overview": {
+      "en": "Nexus is a cross-platform, GPU-based multiphysics simulator written in Rust for robotics and training-data generation. This talk introduces its design and explains how Rust and rust-gpu support high-performance simulation across GPU platforms, including the web, as an alternative to simulators such as Newton and Genesis.",
+      "zh": "Nexus 是以 Rust 编写、基于 GPU 的跨平台多物理场模拟器，面向机器人与训练数据生成。本次演讲介绍其设计，说明如何利用 Rust 和 rust-gpu 在包括 Web 在内的 GPU 平台上实现高性能仿真，为 Newton、Genesis 等模拟器提供另一种选择。"
+    }
+  },
+  {
+    "ref": "P-16",
+    "title": {
+      "en": "From Single-Robot Intelligence to Multi-Agent Coordination: The Evolution of AIRSEAI",
+      "zh": "从单机器人智能到多智能体协同：AIRSEAI 的演进"
+    },
+    "overview": {
+      "en": "The talk discusses the evolution of AIRSEAI from single-robot intelligence to multi-agent coordination, highlighting its modular pipeline, multimodal sensing, and support for multi-agent task coordination and constrained decision-making. It also addresses challenges in interoperability, simulation, and real-world deployment.",
+      "zh": "本次演讲介绍 AIRSEAI 如何从单机器人智能演进为多智能体协同系统，重点讲解模块化处理流程、多模态感知、协同任务执行和约束条件下的决策，并讨论异构系统互操作、仿真与实际部署中的挑战。"
+    }
+  },
+  {
+    "ref": "P-45",
+    "title": {
+      "en": "Train It or Code It? Let the Robot Decide",
+      "zh": "训练还是编程？让机器人自己决定"
+    },
+    "overview": {
+      "en": "At GOSIM Paris, the speaker introduced Skill Foundry, an embodied learning loop enabling AI coding agents to operate across robot software, training, execution, and skill libraries. Recent developments from NVIDIA, CMU, and Berkeley show coding agents evolving into operators of robot learning, with Skill Foundry offering a framework where adaptation methods are dynamically chosen based on the task. The system uses embodied feedback and a shared skill abstraction to enable flexible problem-solving and skill reuse.",
+      "zh": "本次演讲介绍 Skill Foundry 具身学习闭环，探讨编程智能体如何根据任务在编程与训练之间选择合适的方法。内容结合机器人软件、训练、执行与技能库，说明如何利用具身反馈和统一的技能抽象，实现灵活适应与技能复用。"
+    }
+  },
+  {
+    "ref": "P-49",
+    "title": {
+      "en": "Project Homunculus: Open Source Force Feedback Glove for Humanoid Teleoperation",
+      "zh": "Homunculus 项目：用于人形机器人遥操作的开源力反馈手套"
+    },
+    "overview": {
+      "en": "This talk presents Project Homunculus, a low-cost, open-source force-feedback hand exoskeleton for humanoid teleoperation. It covers commodity hardware, 330 Hz joint sensing, 1.5 g micro servos, and an ESP32-based 500 kbaud protocol. The exoskeleton maps operator input to a Unitree G1 and returns robot-state feedback to the hand, while the SONIC whole-body controller maintains robot balance and safety. A live demonstration accompanies the hardware and firmware discussion.",
+      "zh": "本次演讲介绍 Project Homunculus：一款用于人形机器人遥操作的低成本开源力反馈手部外骨骼。内容涵盖通用硬件、330 Hz 关节传感、1.5 克微型伺服电机，以及基于 ESP32 的 500 kbaud 通信协议。外骨骼将操作者输入映射为 Unitree G1 的动作，并把机器人状态反馈到手部；SONIC 全身控制器则负责机器人的平衡与安全。演讲将结合硬件、固件讲解和现场演示。"
+    }
+  },
+  {
+    "ref": "P-54",
+    "title": {
+      "en": "From Intelligence to Autonomy: The Case for Homeostatic AI Stress-Gated Control for Embodied Agents in Open-Ended Environments",
+      "zh": "从智能到自主：面向开放环境具身智能体的稳态 AI 应激门控控制"
+    },
+    "overview": {
+      "en": "The talk discusses the need for homeostatic AI stress-gated control to enable embodied agents to operate autonomously while preserving human control. It introduces the Stress-Gated Homeostatic Meta-Controller (SGHMC), which balances long-term reasoning with rapid response. The architecture highlights the risk of agents prioritizing self-preservation over human intent, emphasizing the need for externally editable viability parameters and override mechanisms.",
+      "zh": "本次演讲探讨了如何通过稳态 AI 应激门控控制，使具身智能体在开放环境中实现自主运行，同时保持人类控制。演讲介绍了应激门控稳态元控制器（SGHMC），该架构平衡长期推理与快速响应。该架构揭示了智能体在维护自身生存时可能优先于人类意图的风险，强调了需保留外部可编辑的生存参数和强制关闭机制。"
+    }
+  },
+  {
+    "ref": "P-61",
+    "title": {
+      "en": "From Prediction to Consequence: A New Evaluation Paradigm for Embodied AI",
+      "zh": "从预测到后果：具身 AI 的新评测范式"
+    },
+    "overview": {
+      "en": "Modern AI excels at predicting actions from offline data, but embodied systems require evaluating how predictions affect real-world outcomes. This talk introduces a new evaluation framework that combines open-loop and closed-loop methods to assess prediction-to-consequence alignment. It uses autonomous driving and AlpaBridge, an external-driver interface, to demonstrate how policies behave differently when actions influence environment dynamics.",
+      "zh": "离线数据上的动作预测准确，并不意味着具身系统在真实环境中表现可靠。本次演讲介绍结合开环与闭环方法的评测框架，检查模型预测与实际行为后果是否一致，并通过自动驾驶及外部驾驶控制接口 AlpaBridge，展示动作改变环境状态后对策略表现的影响。"
+    }
+  },
+  {
+    "ref": "P-63",
+    "title": {
+      "en": "Full-Stack Embodied AI OS — Introducing openEuler Intelligence Boom Robot (IB-Robot)",
+      "zh": "具身智能 OS 全栈——openEuler Intelligence Boom Robot（IB-Robot）介绍"
+    },
+    "overview": {
+      "en": "IB-Robot is a full-stack embodied AI OS developed by the OpenAtom openEuler community, offering an end-to-end solution from hardware to algorithms for developers and industry partners. It represents a comprehensive platform for advancing intelligent systems through integrated software and hardware technologies.",
+      "zh": "IB-Robot 是 OpenAtom openEuler 社区孵化的具身智能操作系统全栈方案，为开发者和行业伙伴提供从底层硬件到上层算法的端到端支持。本次演讲介绍这一平台如何通过软硬件协同支撑具身智能系统开发。"
+    }
+  },
+  {
+    "ref": "P-90",
+    "title": {
+      "en": "Co-Building a New Paradigm of Physical Intelligence: Situation Awareness-Based Jiuwen Symbiosis",
+      "zh": "共建物理智能新范式：基于情境感知的九问共生"
+    },
+    "overview": {
+      "en": "The talk introduces Jiuwen Symbiosis, an open-source agent architecture designed for advanced Physical AI, enabling AI to transition from the digital to the physical world through natural language-driven perception and control. It covers the origin, technical structure, key technologies, and demos of Jiuwen Symbiosis, along with an overview of the openJiuwen community.",
+      "zh": "本次演讲介绍九问共生（Jiuwen Symbiosis）开源智能体架构，探讨如何通过自然语言驱动感知与控制，让 AI 从数字环境走向物理世界。内容涵盖项目起源、技术架构、关键技术与演示，并介绍 openJiuwen 社区。"
+    }
+  },
+  {
+    "ref": "P-94",
+    "title": {
+      "en": "“World Model for All”: Towards Unified Generation, Navigation and Control",
+      "zh": "“人人可用的世界模型”：迈向生成、导航与控制的统一"
+    },
+    "overview": {
+      "en": "The talk presents a world model that integrates generation, navigation, and control, addressing limitations in previous models through innovations in representation and physical perception. A framework combining flow matching and direct preference optimization (DPO) enhances continuous generation and physical understanding, achieving state-of-the-art results in open-source video generation. The researchers also developed a comprehensive benchmark system to evaluate physical perception across multiple domains, and demonstrated the integration of a world model with robotic systems for real-world applications.",
+      "zh": "本次演讲介绍了一种整合生成、导航和控制的世界模型，通过表示和物理感知方面的创新解决了先前模型的局限。结合流匹配与直接偏好优化（DPO）的框架提升了连续生成和物理理解能力，在开源视频生成方面达到最先进水平。研究者还开发了全面的基准系统，用于评估物理感知能力，并展示了世界模型与机器人系统的集成应用。"
+    }
+  },
+  {
+    "ref": "P-96",
+    "title": {
+      "en": "Maintaining Dora with Agentic Engineering",
+      "zh": "使用智能体工程维护 Dora"
+    },
+    "overview": {
+      "en": "Dora is a Rust-based dataflow framework for robotics and AI, offering low-latency communication across languages. It leverages agentic engineering to manage its complexity, with 87% of commits authored by AI agents. The framework includes automated review routines and a multi-stage test system to catch bugs and regressions, ensuring reliable development despite its distributed nature.",
+      "zh": "Dora 是一个基于 Rust 的数据流框架，用于机器人和人工智能应用，支持跨语言的低延迟通信。它通过智能体工程管理其复杂性，其中 87% 的提交由 AI 智能体完成。该框架包含自动审查流程和多阶段测试系统，用于检测错误和回归问题，确保在分布式架构下的可靠开发。"
+    }
+  },
+  {
+    "ref": "P-101",
+    "title": {
+      "en": "VLA",
+      "zh": "视觉-语言-动作（VLA）"
+    },
+    "overview": {
+      "en": "This talk introduces a VLA algorithm for embodied intelligence. Further details will be published as the session content is confirmed.",
+      "zh": "本次演讲将介绍用于具身智能的 VLA 算法；更完整的内容将在议题信息确认后发布。"
+    }
+  },
+  {
+    "ref": "P-95",
+    "title": {
+      "en": "AgentOS: Transforming Autonomous Programming Platforms into a New Type of Operating System",
+      "zh": "AgentOS：将自主编程平台转变为一种新型操作系统"
+    },
+    "overview": {
+      "en": "AgentOS is a new type of operating system designed to transform autonomous programming platforms. The talk outlines its ecosystem path, inspired by Linux's open-source success, and covers six core topics including R&D automation needs, reference architecture, multi-agent engineering, and future development.",
+      "zh": "AgentOS 是一种新型操作系统，旨在转变自主编程平台。本次演讲将围绕其生态系统路径展开，借鉴 Linux 开源成功经验，涵盖六大核心主题，包括研发自动化需求、参考架构、多智能体工程及未来开发路线图。"
     }
   }
 ]

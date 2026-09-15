@@ -31,12 +31,12 @@
     "en": {
       "name": "Jie Wang",
       "roleOrg": "Solutions Architect, Google Cloud",
-      "bio": ""
+      "bio": "Jie Wang is a Solutions Architect at Google Cloud."
     },
     "zh": {
       "name": "王捷",
       "roleOrg": "Google Cloud 解决方案架构师",
-      "bio": ""
+      "bio": "王捷是 Google Cloud 解决方案架构师。"
     }
   },
   {
@@ -47,12 +47,12 @@
     "en": {
       "name": "Peace He",
       "roleOrg": "Solutions Architect, Google Cloud",
-      "bio": ""
+      "bio": "Peace He is a Solutions Architect at Google Cloud."
     },
     "zh": {
       "name": "何平",
       "roleOrg": "Google Cloud 解决方案架构师",
-      "bio": ""
+      "bio": "何平是 Google Cloud 解决方案架构师。"
     }
   },
   {
@@ -63,12 +63,12 @@
     "en": {
       "name": "Hongsheng Liu",
       "roleOrg": "vLLM-Omni Core Maintainer, Chief Architect of InferMatrix Project",
-      "bio": ""
+      "bio": "Hongsheng Liu is a core maintainer of vLLM-Omni and Chief Architect of the InferMatrix Project."
     },
     "zh": {
       "name": "刘红升",
-      "roleOrg": "vLLM-Omni 核心 Maintainer、InferMatrix Project 首席架构师",
-      "bio": ""
+      "roleOrg": "vLLM-Omni 核心维护者、InferMatrix Project 首席架构师",
+      "bio": "刘红升是 vLLM-Omni 核心维护者、InferMatrix Project 首席架构师。"
     }
   },
   {
@@ -79,12 +79,12 @@
     "en": {
       "name": "Jiangyun Zhu",
       "roleOrg": "Engineer at Inferact, vLLM Community Contributor",
-      "bio": ""
+      "bio": "Jiangyun Zhu is an engineer at Inferact and a contributor to the vLLM community."
     },
     "zh": {
       "name": "朱江云",
       "roleOrg": "Inferact 工程师、vLLM 社区贡献者",
-      "bio": ""
+      "bio": "朱江云是 Inferact 工程师，也是 vLLM 社区贡献者。"
     }
   },
   {
