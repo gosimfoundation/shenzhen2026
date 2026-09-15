@@ -575,6 +575,22 @@
       "image": "/images/speakers/confirmed/quanshi-zhang.png"
     },
     {
+      "id": "yuxuan-zhang",
+      "name": "Yuxuan Zhang",
+      "roleOrg": "Technology Evangelist, Zhipu AI",
+      "bio": "Yuxuan Zhang is a Technology Evangelist at Zhipu AI.",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/zRzRzRzRzRzRzR",
+        "twitter": "https://x.com/zRdianjiao",
+        "linkedin": "https://www.linkedin.com/in/yuxuan-zhang-86a124282/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yuxuan-zhang.png"
+    },
+    {
       "id": "susanna-wong",
       "name": "Susanna Wong",
       "roleOrg": "Staff AI Engineer, Typeform",
@@ -812,6 +828,24 @@
       "socialLinks": {},
       "draft": false,
       "image": "/images/speakers/confirmed/rin.png"
+    },
+    {
+      "id": "alexy-khrabrov",
+      "name": "Alexy Khrabrov",
+      "roleOrg": "Head of Ecosystems, LakeSail",
+      "bio": "Alexy Khrabrov is the Head of Ecosystems at LakeSail, the AI-native Lakehouse that rebuilds Spark in Rust.  Alexy is the founding Chair of Open-Source Science at NumFOCUS, and a cofounder of the AI Alliance. Alexy was the founding Chair of the Generative AI Commons at the Linux Foundation for AI and Data (LFAI) and now represents Neo4j at LFAI.  Alexy is the founder and organizer of Bay Area AI and AI Agent SF meetups, as well as the Scale/Data/AI By the Bay conferences, the independent OSS AI conference running since 2013.",
+      "tags": [
+        "sz26-open-source-model",
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "website": "https://chiefscientist.org/",
+        "github": "https://github.com/alexy",
+        "twitter": "https://x.com/chiefscientist",
+        "linkedin": "https://linkedin.com/in/chiefscientist"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/alexy-khrabrov.png"
     },
     {
       "id": "hsuan-han-lai",
@@ -1056,7 +1090,7 @@
       "roleOrg": "Research Scientist, Shanghai AI Lab",
       "bio": "Shuyue Hu is a research scientist at Shanghai Artificial Intelligence Laboratory. Her research focuses on agents, multi-agent systems, large language models, and game theory. She received her Ph.D. from the Chinese University of Hong Kong in 2019 and was a research fellow at the National University of Singapore. Her work has received the First Prize of the Natural Science Award from the Chinese Institute of Electronics, the DAI 2025 Best Paper Award, an AAMAS 2026 Best Student Paper nomination, and the AAMAS 2026 Best System Demonstration Award.",
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-open-source-model"
       ],
       "socialLinks": {},
       "draft": false,
@@ -1808,6 +1842,104 @@
       "socialLinks": {},
       "draft": false,
       "image": "/images/speakers/confirmed/yujie-sun.png"
+    },
+    {
+      "id": "yichi-zhang",
+      "name": "Yichi Zhang",
+      "roleOrg": "Member of Technical Staff, RadixArk",
+      "bio": "Yichi Zhang is an SGLang developer focused on efficient LLM inference, with an interest in KV cache management and optimization. He is also a core developer of sglang-omni, building inference engines for omni-modal, TTS, and ASR models. He leads community education and developer relations efforts within the SGLang community and is the initiator and a core developer of zero-to-sglang, SGLang’s official course.",
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {
+        "website": "https://yichizhang.dev/",
+        "github": "https://github.com/Ccyest",
+        "twitter": "https://x.com/YichiZ03",
+        "linkedin": "https://www.linkedin.com/in/yichi-zhang2003/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/yichi-zhang.png"
+    },
+    {
+      "id": "chenzhou-jiang",
+      "name": "Chenzhou Jiang",
+      "roleOrg": "AI Infra Engineer, Huawei",
+      "bio": "Chenzhou Jiang is an AI Infrastructure Engineer at Huawei and a maintainer of the afd-plugin repository in the vLLM community. He earned his master’s degree from the Department of Computer Science at Nanjing University in 2020 and previously contributed to HarmonyOS research and development. His current work focuses on AI inference, with a particular interest in disaggregated inference architectures, including Attention–FFN Disaggregation (AFD) and Encoder–Prefill–Decode (EPD) disaggregation.",
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/chenzhou-jiang.png"
+    },
+    {
+      "id": "landojiang",
+      "name": "landojiang",
+      "roleOrg": "腾讯混元团队高级推理工程师, Tencent",
+      "bio": "北京大学硕士毕业，专注高性能计算，推理系统优化和GPU 算子开发，致力于为大模型提供高效的推理服务。作为核心开发者，参与多代混元模型推理优化工作，以及高性能算子库 HPC-Ops 的研发和开源工作，该算子库已成为 vLLM 与 SGLang 两大主流推理框架的官方后端。",
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/landojiang.png"
+    },
+    {
+      "id": "qiuqinlun",
+      "name": "qiuqinlun",
+      "roleOrg": "founder, boao open school",
+      "bio": "Qiu Qinlun is an industry-education integration expert with nearly 30 years of experience in IT education. He co-founded Easthome , one of China's leading IT certification training institutions, and co-established a software school with the Open University of China.  In 2025 he founded Boao Open School, which uses AI-interactive future classrooms as a vehicle to advance a progressive AI learning methodology of Self-learning → Co-learning → Leadlearning. His work sits at the intersection of open-source tooling, interactive pedagogy, and industry-education integration, helping learners move from passive content consumption to active, AI-augmented co-creation.",
+      "tags": [
+        "ws-ai-education"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/qiuqinlun.png"
+    },
+    {
+      "id": "赵仲夏",
+      "name": "赵仲夏",
+      "roleOrg": "COO, EvoPhys AI",
+      "bio": "赵仲夏｜宇万智能 EvoPhys 联合创始人 & COO\n北大硕士，前 AI 上市公司技术总监，ITU 具身技术顾问、前智源研究院具身研究员。十年机器人与人工智能技术落地经验，数十项机器人专利、十余项具身标准制定参与者，专注物理 AGI 与五维世界模型，主导实景空间建模、多机器人协同等系统研发，横跨家用、工业、轨交等场景落地。",
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/赵仲夏.png"
+    },
+    {
+      "id": "slava-tykhonov",
+      "name": "Slava Tykhonov",
+      "roleOrg": "Head of AI, CODATA",
+      "bio": "Head of AI and Interoperability at CODATA. With over 25 years’ experience in software development, data science, and European research infrastructures (EOSC), Slava is an innovator, IT architect, and mentor who has focused much of his career on research and education through experimentation, pilot projects, and inventive problem-solving methods. He is a Harvard Dataverse Ambassador (since June 2025) and co-author of the Google-initiated CroissantML standard for AI.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/4tikhonov",
+        "twitter": "https://x.com/4tykhonov",
+        "linkedin": "https://www.linkedin.com/in/vyacheslavtikhonov/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/slava-tykhonov.png"
+    },
+    {
+      "id": "rik-arends",
+      "name": "Rik Arends",
+      "roleOrg": "Co-Founder, Makepad",
+      "bio": "With 20+ years’ experience as a C/C++, JavaScript and more recently Rust developer, I've always been excited by using computation for visuals and audio. For this to work you need performance, and a smooth workflow enabled by the right tooling. After having everything I wanted with C except stable code I moved to JavaScript and web technologies. However, this never got to the point of being able to make fast applications that use modern CPU and GPU power. Now with Rust we have a new chance. I've been an entrepreneur my entire life building VJ software in the 00's, then web UI technology and web IDEs with Cloud9, and am now reimagining the developer workflow in Rust with Makepad. And lately how to leverage AI to write Rust and UI code.",
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "website": "https://makepad.nl/",
+        "github": "https://github.com/makepad/makepad",
+        "twitter": "https://x.com/rikarends",
+        "linkedin": "https://www.linkedin.com/in/arendsrik/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/rik-arends.png"
     }
   ]
 }

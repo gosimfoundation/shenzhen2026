@@ -639,6 +639,25 @@
             "en": "Using warehouse safety monitoring as a case study, this talk presents a hybrid architecture that runs latency-sensitive vision-language inference on edge GPUs while delegating summarization and conversational retrieval to cloud agents. It covers workload placement, model selection, optimization, shared memory, and cross-environment observability.",
             "zh": "本次演讲以仓库安全监控为案例，介绍一种混合架构：在边缘 GPU 上运行延迟敏感的视觉语言模型推理，并将摘要与对话检索交给云端智能体。内容涵盖工作负载划分、模型选择、性能优化、共享记忆和跨环境可观测性。"
           }
+        },
+        {
+          "ref": "P-175",
+          "originalTitle": "Makepad Ai Hub, accessing local AI from your own device cloud",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Makepad AI Hub: Accessing Local AI from Your Personal Device Cloud",
+            "zh": "Makepad AI Hub：从个人设备云访问本地 AI"
+          },
+          "slug": "p-175-makepad-ai-hub-accessing-local-ai-from-your-own-device-cloud",
+          "speakers": [
+            "rik-arends"
+          ],
+          "originalAbstract": "In this talk i will show how to use Makepads AI Hub, a component that allows sharing of local AI compute between your devices. Use heavy voice recognition models or OCR, llms or generative models from your more capable laptop from your phone or other devices.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk demonstrates Makepad AI Hub, which shares local AI compute across a person's devices. Phones and other lightweight devices can use a more capable laptop to run demanding speech recognition, OCR, language, and generative models while keeping the compute within the user's own device cloud.",
+            "zh": "本次演讲演示 Makepad AI Hub 如何在个人设备之间共享本地 AI 算力，让手机等轻量设备调用性能更强的笔记本电脑运行语音识别、OCR、大语言模型和生成式模型，同时将计算保留在用户自己的设备云中。"
+          }
         }
       ],
       "originalName": "Agentic AI on Edge"
@@ -765,25 +784,6 @@
           "overview": {
             "en": "MemOS 2.0 addresses the evolution of memory systems from static management to runtime state control, focusing on long-term state maintenance, dynamic scheduling, and memory governance. It introduces runtime memory management, versioning, native models, and a foundational memory model, with applications in agent, companion, and enterprise services.",
             "zh": "MemOS 2.0 从静态记忆管理升级为运行时状态管理，强调长期状态维护、动态调度与记忆治理。它引入运行态记忆管理、记忆版本化、原生模型及 Memory 基础模型底座，并结合 Agent、陪伴及企业服务等场景探讨下一代记忆系统的技术路径与落地机会。"
-          }
-        },
-        {
-          "ref": "P-99",
-          "originalTitle": "Building Self-Improving and Long-Horizon Agents",
-          "originalLanguage": "en",
-          "title": {
-            "en": "Building Self-Improving and Long-Horizon Agents",
-            "zh": "构建可自我改进的长时程智能体"
-          },
-          "slug": "p-99-building-self-improving-and-long-horizon-agents",
-          "speakers": [
-            "shuyue-hu"
-          ],
-          "originalAbstract": "The rapid advancement of large language models has enabled powerful AI agents with reasoning, planning, and coding capabilities. However, agent behavior is shaped not only by the base model, but also by its harness—the surrounding system that mediates the model’s interaction with the environment. In this talk, we will present our recent explorations of agent harness. First, we will introduce Self Harness, a new paradigm in which an LLM agent acts as its own harness engineer, autonomously improving the harness that supports its operation. Second, we will present Harness of Harness, exploring how to scale autonomous software development from hours to days while enabling continuous improvement. Finally, we will briefly share our recent explorations of agent harness for theoretical computer science, investigating how harness-based approaches can enable new forms of AI-assisted research and discovery.",
-          "originalAbstractLanguage": "en",
-          "overview": {
-            "en": "Building Self-Improving and Long-Horizon Agents explores how large language models can autonomously enhance their operational systems. The talk introduces Self Harness, where an LLM acts as its own harness engineer, and Harness of Harness, enabling continuous improvement over extended periods. It also touches on applying these methods to theoretical computer science for AI-assisted research.",
-            "zh": "本次演讲探讨了如何让大语言模型自主提升其运行系统。演讲介绍了Self Harness，即让LLM充当自身系统工程师，并展示了Harness of Harness，实现长时间持续改进。此外，还简要分享了在理论计算机科学中应用这些方法进行AI辅助研究的探索。"
           }
         },
         {
@@ -1013,6 +1013,26 @@
           "overview": {
             "en": "This talk presents octos, a Rust-based Agent OS, and its OctoLoop dual-loop workflow. A capable outer agent assigns and reviews work, lower-cost inner agents execute it, and a repository blackboard provides an auditable handoff. Real examples show how multiple agents can work for long periods while people retain control at the key decision points.",
             "zh": "本次演讲介绍 Rust 编写的 Agent OS octos 及其 OctoLoop 双环工作流：能力更强的外环智能体负责派工和验收，成本更低的内环智能体负责执行，并通过仓库中的“黑板”完成可追踪的交接。真实案例将展示多个智能体如何长时间协作，同时让人保留关键决策权。"
+          }
+        },
+        {
+          "ref": "P-174",
+          "originalTitle": "Semantic Croissant, QueryGraph and the Cross-Domain Interoperability Framework (CDIF)",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Semantic Croissant, QueryGraph, and the Cross-Domain Interoperability Framework",
+            "zh": "Semantic Croissant、QueryGraph 与跨领域互操作框架"
+          },
+          "slug": "p-174-semantic-croissant-querygraph-and-the-cross-domain-interoperability-framework-cdif",
+          "speakers": [
+            "slava-tykhonov",
+            "alexy-khrabrov"
+          ],
+          "originalAbstract": "This talk presents an architecture for trustworthy, AI-ready data based on three complementary layers. CDIF enables interoperability across domains, systems, and data formats. **Semantic Croissant**, combined with ODRL, adds machine-actionable semantics, provenance, and usage policies. QueryGraph extends this foundation to AI agents by integrating identity, access control, governance, and lineage directly into the semantic infrastructure. Together, these technologies enable AI systems to discover, understand, and use data while ensuring that trust, provenance, and authorization are enforced by design.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk presents a three-layer architecture for trustworthy, AI-ready data. CDIF provides cross-domain interoperability, Semantic Croissant with ODRL adds machine-actionable semantics, provenance, and usage policies, and QueryGraph extends the foundation with agent identity, access control, governance, and lineage so trust and authorization are enforced by design.",
+            "zh": "本次演讲介绍面向可信 AI 就绪数据的三层架构：CDIF 实现跨领域互操作，Semantic Croissant 与 ODRL 提供机器可执行的语义、数据来源和使用策略，QueryGraph 则进一步加入智能体身份、访问控制、治理与数据血缘，让信任和授权成为基础设施的内建能力。"
           }
         }
       ],
@@ -1630,6 +1650,82 @@
             "en": "This talk examines how open-source infrastructure must evolve as collaboration expands from code to models, datasets, agents, and AI-native applications. Drawing on AtomGit, AtomCode, domestic compute adaptation, and the CANN developer ecosystem, it explores how platforms can connect models, code, compute, and developers across the full engineering lifecycle.",
             "zh": "本次演讲探讨当开源协作从代码扩展到模型、数据集、智能体和 AI 原生应用时，开发者基础设施应如何演进。内容结合 AtomGit、AtomCode、国产算力适配和 CANN 开发者生态实践，分析平台如何连接模型、代码、算力与开发者，打通完整工程化链路。"
           }
+        },
+        {
+          "ref": "P-22",
+          "originalTitle": "从适配到共建：GLM 与开源社区的协作实践",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "From Adaptation to Co-Creation: How GLM Collaborates with Open-Source Communities",
+            "zh": "从适配到共建：GLM 与开源社区的协作实践"
+          },
+          "slug": "p-22-从适配到共建-glm-与开源社区的协作实践",
+          "speakers": [
+            "yuxuan-zhang"
+          ],
+          "originalAbstract": "本次演讲将回顾 2026 年以来的多次深度协作。在模型研发阶段，我们即与 SGLang、vLLM 等推理框架同步推进适配，使新模型在发布当天具备可用的高性能推理支持；围绕投机解码、量化、PD 分离部署等关键路径，我们和社区一起，贡献了大量优化、精度对齐与性能调优，这些工作合入了框架主干，惠及所有模型的使用者。我们也希望让共建的收益尽可能外溢，通过开放模型权重与技术报告，分享模型部署踩的最佳实践，让高性能，高质量推理和模型体验不仅属于少数人，最后将分享我们的社区建设路线与未来展望。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk reviews GLM's collaboration with inference communities including SGLang and vLLM. It covers release-day model support, speculative decoding, quantization, Prefill–Decode disaggregation, accuracy alignment, performance tuning, and how upstream contributions and open technical reports make high-quality inference practices available to the broader ecosystem.",
+            "zh": "本次演讲回顾 GLM 与 SGLang、vLLM 等推理框架社区的深度协作，涵盖模型发布日适配、投机解码、量化、Prefill–Decode 分离、精度对齐和性能调优，并介绍如何通过上游贡献、开放模型权重与技术报告，让高性能推理实践惠及更广泛的开源生态。"
+          }
+        },
+        {
+          "ref": "P-73",
+          "originalTitle": "QueryGraph: AI-Native, Typesafe Semantic Layer for Agentic Lakehouse",
+          "originalLanguage": "en",
+          "title": {
+            "en": "QueryGraph: An AI-Native, Type-Safe Semantic Layer for the Agentic Lakehouse",
+            "zh": "QueryGraph：面向智能体 Lakehouse 的 AI 原生类型安全语义层"
+          },
+          "slug": "p-73-querygraph-ai-native-typesafe-semantic-layer-for-agentic-lakehouse",
+          "speakers": [
+            "alexy-khrabrov"
+          ],
+          "originalAbstract": "QueryGraph (QueryGraph.ai) is an OSS AI platform that builds on a series of open-source projects, together comprising an AI-native Lakehouse with type-safe Semantic Layer.\n\nIt is an international collaboration between US (Northeastern University and LakeSail), EU (CODATA and International Science Consul, based in Paris), and the government of Japan (OpenDataSpaces).  The goal is to build agentic environments with industry-centric ontologies and type-level governance, auditability, and lineage.\n\nQueryGraph.ai is a multi-layer stack with context graphs, type-level agentic protocols, cognitive memory, a new governance catalog with unforgeable lineage, and semantic layer with typesafe access control over the agentic lakehouse.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This talk introduces QueryGraph, an open-source AI-native lakehouse platform built through international collaboration. Its multilayer stack combines context graphs, type-level agent protocols, cognitive memory, governance catalogs, verifiable lineage, and type-safe access control to support auditable agentic environments centered on industry ontologies.",
+            "zh": "本次演讲介绍由国际团队协作构建的开源 AI 原生 Lakehouse 平台 QueryGraph。其多层架构融合上下文图、类型级智能体协议、认知记忆、治理目录、可验证数据血缘与类型安全访问控制，为以行业本体为中心、可审计的智能体环境提供基础设施。"
+          }
+        },
+        {
+          "ref": "P-99",
+          "originalTitle": "Building Self-Improving and Long-Horizon Agents",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Building Self-Improving and Long-Horizon Agents",
+            "zh": "构建可自我改进的长时程智能体"
+          },
+          "slug": "p-99-building-self-improving-and-long-horizon-agents",
+          "speakers": [
+            "shuyue-hu"
+          ],
+          "originalAbstract": "The rapid advancement of large language models has enabled powerful AI agents with reasoning, planning, and coding capabilities. However, agent behavior is shaped not only by the base model, but also by its harness—the surrounding system that mediates the model’s interaction with the environment. In this talk, we will present our recent explorations of agent harness. First, we will introduce Self Harness, a new paradigm in which an LLM agent acts as its own harness engineer, autonomously improving the harness that supports its operation. Second, we will present Harness of Harness, exploring how to scale autonomous software development from hours to days while enabling continuous improvement. Finally, we will briefly share our recent explorations of agent harness for theoretical computer science, investigating how harness-based approaches can enable new forms of AI-assisted research and discovery.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "Building Self-Improving and Long-Horizon Agents explores how large language models can autonomously enhance their operational systems. The talk introduces Self Harness, where an LLM acts as its own harness engineer, and Harness of Harness, enabling continuous improvement over extended periods. It also touches on applying these methods to theoretical computer science for AI-assisted research.",
+            "zh": "本次演讲探讨了如何让大语言模型自主提升其运行系统。演讲介绍了Self Harness，即让LLM充当自身系统工程师，并展示了Harness of Harness，实现长时间持续改进。此外，还简要分享了在理论计算机科学中应用这些方法进行AI辅助研究的探索。"
+          }
+        },
+        {
+          "ref": "P-173",
+          "originalTitle": "EvoPhys-World, the first 5D world model for Physical AGI",
+          "originalLanguage": "en",
+          "title": {
+            "en": "EvoPhys-World: A 5D World Model for Physical AGI",
+            "zh": "EvoPhys-World：面向物理 AGI 的五维世界模型"
+          },
+          "slug": "p-173-evophys-world-the-first-5d-world-model-for-physical-agi",
+          "speakers": [
+            "赵仲夏"
+          ],
+          "originalAbstract": "本文提出 EvoPhys‑World，首个面向物理通用人工智能的五维世界模型，指出现有 AI 仅实现三维空间加时间的四维建模，缺失表征物理因果的第五维 —— 因果世界线。文章以人类运动控制系统的层级调控、多感官闭环整合等生理机制为基础，结合莫拉维克悖论，揭示当前 AI 存在发育错配：人类智能由行动演化出认知，而多数具身 AI 采用认知优先、再输出动作的路径。现有视觉语言行动模型只能表征当下场景，无法建模动作触发后的多种未来可能性。该五维框架包含 3D 空间、时间与因果世界线，依靠世界线发散生成多种潜在未来状态，通过世界线坍缩确定可执行的实际状态。模型拥有世界引擎、世界策略双模式，借助 Phy‑JEPA 实现物理表征解耦，依托自监督 4D 记忆大幅降低数据需求，构建预测‑反馈双向自进化闭环，可从大规模人类交互视频学习，无需大量真实机器人数据，在导航、物体操作、软体流体交互等场景完成初步验证，为实现物理通用人工智能提供新范式。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk proposes EvoPhys-World, a five-dimensional world model that adds causal worldlines to three-dimensional space and time. Inspired by human motor control and multisensory feedback, it uses branching and collapsing worldlines, a dual world-engine and world-policy design, Phy-JEPA representation decoupling, and self-supervised 4D memory to learn physical intelligence from large-scale human-interaction video.",
+            "zh": "本次演讲提出 EvoPhys-World：在三维空间与时间之外加入因果世界线的五维世界模型。该框架借鉴人类运动控制与多感官反馈机制，通过世界线发散与坍缩、世界引擎与世界策略双模式、Phy-JEPA 表征解耦及自监督 4D 记忆，从大规模人类交互视频中学习物理智能。"
+          }
         }
       ],
       "originalName": "Open Source Models & Infra"
@@ -2054,6 +2150,25 @@
             "en": "AgentOS is a new type of operating system designed to transform autonomous programming platforms. The talk outlines its ecosystem path, inspired by Linux's open-source success, and covers six core topics including R&D automation needs, reference architecture, multi-agent engineering, and future development.",
             "zh": "AgentOS 是一种新型操作系统，旨在转变自主编程平台。本次演讲将围绕其生态系统路径展开，借鉴 Linux 开源成功经验，涵盖六大核心主题，包括研发自动化需求、参考架构、多智能体工程及未来开发路线图。"
           }
+        },
+        {
+          "ref": "P-172",
+          "originalTitle": "From Passive Lectures to Active Co-Learning: The AI-Interactive Future Classroom",
+          "originalLanguage": "en",
+          "title": {
+            "en": "From Passive Lectures to Active Co-Learning: The AI-Interactive Future Classroom",
+            "zh": "从被动听讲到主动共学：AI 交互式未来课堂"
+          },
+          "slug": "p-172-from-passive-lectures-to-active-co-learning-the-ai-interactive-future-classroom",
+          "speakers": [
+            "qiuqinlun"
+          ],
+          "originalAbstract": "The classroom hasn't changed in a century—but the learner has. This talk shares a practical blueprint from Boao AI School for rebuilding learning around AI-interactive future classrooms. We present a three-stage learning loop—Self-learning, Co-learning, and Leading-learning—where AI acts not as an answer machine but as a tireless tutor, discussion partner, and coach. Through role-based interactive courseware, real-time personalized feedback, and open educational tools, passive audiences become active co-creators. We discuss what it takes to scale this across K-12, higher education, and workforce upskilling, and leave attendees with a reusable framework for designing AI-native learning experiences plus hard lessons from running it with thousands of learners.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "Using experience from Boao AI School, this workshop presents an AI-interactive classroom built around a three-stage loop of self-learning, co-learning, and leading-learning. It combines role-based courseware, personalized real-time feedback, and open educational tools, and shares practical lessons for scaling AI-native learning across schools, universities, and workforce training.",
+            "zh": "本工作坊结合博鳌 AI 学校的实践，介绍由自主学习、协作学习和引领学习构成的三阶段 AI 交互式课堂。内容涵盖角色化互动课件、实时个性化反馈和开放教育工具，并分享将 AI 原生学习模式扩展到基础教育、高等教育和职业培训的实践经验。"
+          }
         }
       ],
       "originalName": "AI Education Workshop"
@@ -2227,6 +2342,44 @@
           "overview": {
             "en": "This workshop shares how the Inferact team built a large-scale, production-grade agent inference service for Kimi K3 on the open-source vLLM engine.",
             "zh": "本工作坊分享 Inferact 团队如何基于开源 vLLM 引擎，为 Kimi K3 构建大规模、生产级的智能体推理服务。"
+          }
+        },
+        {
+          "ref": "P-170",
+          "originalTitle": "AFD Plugin: Attention–FFN Disaggregation in vLLM",
+          "originalLanguage": "en",
+          "title": {
+            "en": "AFD Plugin: Attention–FFN Disaggregation in vLLM",
+            "zh": "AFD Plugin：vLLM 中的 Attention–FFN 分离"
+          },
+          "slug": "p-170-afd-plugin-attention-ffn-disaggregation-in-vllm",
+          "speakers": [
+            "chenzhou-jiang"
+          ],
+          "originalAbstract": "As context lengths grow, Attention and mixture-of-experts (MoE) layers face increasingly different resource demands: Attention requires more memory for the KV cache, while MoE computation benefits from larger batches for efficient expert execution. Running both on the same devices couples their resource allocation and can limit serving efficiency.\n\nThis talk introduces AFD Plugin, an external vLLM plugin that separates Attention and FFN/MoE execution into independently configurable roles without modifying the vLLM or vLLM-Ascend source tree. We will explain the architecture, the connector abstraction for exchanging activations and results, and the execution strategies behind synchronous decode and asynchronous prefill. We will also explore how microbatching and communication–computation overlap reduce idle time, and how disaggregation enables flexible Attention-to-FFN resource ratios and opportunities for hardware specialization.\n\nUsing DeepSeek-V3.2 experiments on Ascend 910C, we will examine throughput, time to first token, and goodput under latency targets, alongside the conditions and tradeoffs behind these results. Attendees will leave with a practical understanding of how AFD works, how to configure separate Attention and FFN instances, and what remains to be validated for broader deployment.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop introduces AFD Plugin, an external vLLM plugin that separates Attention and FFN or MoE execution into independently configurable roles. It explains activation exchange, synchronous decode, asynchronous prefill, microbatching, communication–computation overlap, and performance tradeoffs demonstrated with DeepSeek-V3.2 on Ascend 910C.",
+            "zh": "本工作坊介绍 AFD Plugin：一个无需修改 vLLM 或 vLLM-Ascend 源码，即可将 Attention 与 FFN/MoE 执行拆分为独立角色的外部插件。内容涵盖激活值交换、同步 Decode、异步 Prefill、微批处理、通信计算重叠，以及在昇腾 910C 上运行 DeepSeek-V3.2 的性能与取舍。"
+          }
+        },
+        {
+          "ref": "P-171",
+          "originalTitle": "从单点加速到系统最优：大模型推理的全栈优化实践",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "From Local Acceleration to System-Wide Optimization: Full-Stack LLM Inference in Practice",
+            "zh": "从单点加速到系统最优：大模型推理的全栈优化实践"
+          },
+          "slug": "p-171-从单点加速到系统最优-大模型推理的全栈优化实践",
+          "speakers": [
+            "landojiang"
+          ],
+          "originalAbstract": "随着大模型应用向长上下文和规模化服务拓展，推理优化的关注点正从单个算子的性能提升，延伸至计算、访存、通信与调度的全栈协同。然而，局部性能优势并不必然转化为端到端收益：并行策略需要适配模型架构与推理阶段，显存节省需要兼顾数据搬运开销，吞吐提升也需要满足响应时延与模型质量要求。本次分享以混元大模型推理优化实践为背景，结合团队系统优化案例与GPU研发经验，围绕“目标与瓶颈分析—算子级优化—系统级协同—端到端验证”展开，系统介绍从底层算子到推理框架的优化思路、关键取舍与适用边界，帮助开发者建立以服务目标为导向的性能优化方法，将局部加速有效转化为可验证的系统收益。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "Drawing on Hunyuan inference and GPU engineering experience, this workshop presents a service-goal-oriented method for LLM optimization. It moves from bottleneck analysis and kernel optimization to coordinated compute, memory, communication, and scheduling, emphasizing the tradeoffs required to turn local speedups into measurable end-to-end gains.",
+            "zh": "本工作坊结合混元大模型推理与 GPU 研发实践，介绍以服务目标为导向的全栈优化方法。从目标与瓶颈分析、算子级优化延伸到计算、访存、通信和调度协同，重点讨论如何权衡并行策略、显存开销、吞吐、延迟与模型质量，将局部加速转化为可验证的端到端收益。"
           }
         }
       ],
@@ -2419,6 +2572,25 @@
           "overview": {
             "en": "This workshop takes a deep look at LMCache's multi-process architecture and the systems engineering required to make KV-cache management observable, fault tolerant, and production ready at scale.",
             "zh": "本工作坊深入解析 LMCache 的多进程架构，以及让 KV Cache 管理在大规模环境中具备可观测性、容错能力并达到生产可用水平所需的系统工程实践。"
+          }
+        },
+        {
+          "ref": "P-169",
+          "originalTitle": "KV Cache Usage in SGLang",
+          "originalLanguage": "en",
+          "title": {
+            "en": "KV Cache Usage in SGLang",
+            "zh": "SGLang 中的 KV Cache 应用"
+          },
+          "slug": "p-169-kv-cache-usage-in-sglang",
+          "speakers": [
+            "yichi-zhang"
+          ],
+          "originalAbstract": "KV Cache in SGLang: From Prefix Reuse to Hierarchical Caching\nCovering topic:\nRadixAttention & Unified RadixAttention - Cache reuse\nHiCache - Cache moving across storage\nUnified Memory Pool - for hybrid attention model",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop explains how SGLang uses KV cache from prefix reuse to hierarchical caching. It covers RadixAttention and Unified RadixAttention for cache reuse, HiCache for moving cache across storage tiers, and the Unified Memory Pool for hybrid-attention models.",
+            "zh": "本工作坊介绍 SGLang 如何使用 KV Cache，从前缀复用延伸到分层缓存，涵盖用于缓存复用的 RadixAttention 与 Unified RadixAttention、跨存储层迁移缓存的 HiCache，以及面向混合注意力模型的 Unified Memory Pool。"
           }
         }
       ],
