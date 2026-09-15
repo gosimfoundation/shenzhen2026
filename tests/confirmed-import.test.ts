@@ -28,7 +28,8 @@ describe("single-source CFP import", () => {
       originalTitle: "Changed CFP title", originalAbstract: "Changed CFP abstract",
     });
     expect(imported.speakers).toEqual(speakers);
-    expect(imported.schedule.tracks.flatMap((t) => t.talks)).toHaveLength(138);
+    expect(imported.schedule.tracks.flatMap((t) => t.talks.map((talk) => talk.ref)))
+      .toEqual(current.tracks.flatMap((t) => t.talks.map((talk) => talk.ref)));
     expect(imported.report.sourceChanges).toEqual(["P-164"]);
     expect(imported.report.speakerAssignmentChanges).toEqual(["P-164"]);
     expect(current.tracks.find((t) => t.id === "ws-vllm")!.talks.find((t) => t.ref === "P-164")).toEqual(talk);
