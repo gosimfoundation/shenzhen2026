@@ -2564,27 +2564,6 @@
           },
           "date": "2026-10-17",
           "timeSlot": "16:40-17:10"
-        },
-        {
-          "ref": "VLLM-NVIDIA-TOPIC",
-          "slug": "vllm-nvidia-topic",
-          "manual": true,
-          "type": "pending",
-          "title": {
-            "en": "Nvidia Topic",
-            "zh": "Nvidia 议题"
-          },
-          "originalTitle": "Nvidia Topic",
-          "originalLanguage": "en",
-          "speakers": [],
-          "date": "2026-10-17",
-          "timeSlot": "17:10-17:40",
-          "originalAbstract": "Nvidia topic. Speaker and session details to be announced.",
-          "originalAbstractLanguage": "en",
-          "overview": {
-            "en": "Nvidia topic. Speaker and session details to be announced.",
-            "zh": "Nvidia 议题，讲师及具体内容待公布。"
-          }
         }
       ],
       "originalName": "vLLM Workshop",
