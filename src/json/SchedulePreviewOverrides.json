@@ -279,7 +279,7 @@
     "ref": "P-126",
     "title": {
       "en": "Scaling vLLM System-Wide: From Network I/O to Distributed Scheduling",
-      "zh": "vLLM 全系统扩展：从网络 I/O 到分布式调度"
+      "zh": "vLLM 系统级扩展：从网络 I/O 到分布式调度"
     },
     "overview": {
       "en": "This workshop presents deep vLLM optimizations for cold-start latency, KV-cache efficiency, and distributed scheduling. It covers GPUDirect RDMA weight loading, stateless inference with advanced prefix caching, I/O preloading, and an event-driven no-wait scheduler for higher concurrency and GPU utilization.",
@@ -569,7 +569,7 @@
   {
     "ref": "P-159",
     "title": {
-      "en": "llm-d: A Distributed Inference Plane Across Workloads, Modalities, Hardware, and Platforms",
+      "en": "llm-d: Building a Cross-Workload, Cross-Modal, Cross-Hardware, and Cross-Platform Distributed Inference Control Plane",
       "zh": "llm-d：打造跨负载、跨模态、跨硬件、跨平台的分布式推理平面"
     },
     "overview": {
@@ -635,13 +635,16 @@
   {
     "ref": "P-164",
     "title": {
-      "en": "Production-Grade Agent Inference for Kimi K3 with vLLM",
-      "zh": "基于 vLLM 的 Kimi K3 智能体生产级推理服务"
+      "en": "Production-Grade Inference Service for Kimi K3 Agent Based on vLLM",
+      "zh": "基于vLLM的Kimi K3智能体生产级推理服务"
     },
     "overview": {
       "en": "This workshop shares how the Inferact team built a large-scale, production-grade agent inference service for Kimi K3 on the open-source vLLM engine.",
       "zh": "本工作坊分享 Inferact 团队如何基于开源 vLLM 引擎，为 Kimi K3 构建大规模、生产级的智能体推理服务。"
-    }
+    },
+    "speakers": [
+      "jiangyun-zhu"
+    ]
   },
   {
     "ref": "P-165",
@@ -714,7 +717,7 @@
     "ref": "P-170",
     "title": {
       "en": "AFD Plugin: Attention–FFN Disaggregation in vLLM",
-      "zh": "AFD Plugin：vLLM 中的 Attention–FFN 分离"
+      "zh": "AFD 插件：vLLM 中的 Attention 与 FFN 分离"
     },
     "overview": {
       "en": "This workshop introduces AFD Plugin, an external vLLM plugin that separates Attention and FFN or MoE execution into independently configurable roles. It explains activation exchange, synchronous decode, asynchronous prefill, microbatching, communication–computation overlap, and performance tradeoffs demonstrated with DeepSeek-V3.2 on Ascend 910C.",
@@ -724,7 +727,7 @@
   {
     "ref": "P-171",
     "title": {
-      "en": "From Local Acceleration to System-Wide Optimization: Full-Stack LLM Inference in Practice",
+      "en": "From Single-Point Acceleration to System-Wide Optimization: Full-Stack Optimization Practices for LLM Inference",
       "zh": "从单点加速到系统最优：大模型推理的全栈优化实践"
     },
     "overview": {
@@ -774,6 +777,72 @@
     "overview": {
       "en": "This talk demonstrates Makepad AI Hub, which shares local AI compute across a person's devices. Phones and other lightweight devices can use a more capable laptop to run demanding speech recognition, OCR, language, and generative models while keeping the compute within the user's own device cloud.",
       "zh": "本次演讲演示 Makepad AI Hub 如何在个人设备之间共享本地 AI 算力，让手机等轻量设备调用性能更强的笔记本电脑运行语音识别、OCR、大语言模型和生成式模型，同时将计算保留在用户自己的设备云中。"
+    }
+  },
+  {
+    "ref": "P-116",
+    "title": {
+      "en": "From DORA-NAV to OCTOS: AI Task Orchestration and Hierarchical Navigation",
+      "zh": "从 DORA-NAV 到 OCTOS：AI 任务编排与分层导航"
+    },
+    "overview": {
+      "en": "This workshop builds on the open-source DORA-NAV robotics navigation framework and OCTOS to introduce LLM-based task orchestration and hierarchical navigation. It explains task decomposition, navigation scheduling, and engineering lessons from the framework.",
+      "zh": "本工作坊基于开源机器人导航框架 DORA-NAV 与 OCTOS，介绍由大语言模型驱动的任务编排和分层导航，分享任务分解、导航调度的实现方法及开源框架的工程实践。"
+    }
+  },
+  {
+    "ref": "P-176",
+    "title": {
+      "en": "Dataflow-Driven Robotic Navigation: From Perception to Control in DORA",
+      "zh": "数据流驱动的机器人导航：DORA 架构下从感知到控制"
+    },
+    "overview": {
+      "en": "This workshop examines DORA's dataflow-driven approach to robotic navigation, connecting perception and control through efficient, low-latency, composable components. It discusses measured advantages over traditional middleware and future work on ecosystem development and computation offloading.",
+      "zh": "本工作坊介绍 DORA 如何通过数据流架构，将机器人的感知与控制连接为高效、低延迟且可组合的导航系统，并讨论相较传统中间件的性能优势，以及生态建设和计算卸载的下一步方向。"
+    }
+  },
+  {
+    "ref": "P-177",
+    "title": {
+      "en": "Inside ROCm 10.0: Building an Open GPU Software Platform for the Agentic AI Era",
+      "zh": "深入 ROCm 10.0：为智能体 AI 时代构建开放的 GPU 软件平台"
+    },
+    "overview": {
+      "en": "This workshop explores ROCm 10.0 from GPU drivers, runtimes, compilers, and optimized libraries to AI frameworks. It also introduces TheRock's unified build and release infrastructure and the emerging ROCm.AI developer experience, showing how AMD's open GPU stack is evolving into a platform for AI and HPC workloads.",
+      "zh": "本工作坊从 GPU 驱动、运行时、编译器和优化库到 AI 框架，介绍 ROCm 10.0 的完整软件栈，并分享 TheRock 的统一构建与发布基础设施以及 ROCm.AI 开发者体验，探讨这一开放 GPU 计算平台如何服务 AI 与高性能计算。"
+    }
+  },
+  {
+    "ref": "P-178",
+    "title": {
+      "en": "Beyond Compression Ratio: Service-Aware KV Cache Compression for Distributed LLM Serving",
+      "zh": "超越压缩率：面向分布式大模型服务的 KV Cache 压缩"
+    },
+    "overview": {
+      "en": "This workshop presents KVServe's service-oriented approach to KV-cache compression, where end-to-end serving performance matters more than compression ratio alone. It covers faster compression, integration with vLLM and Mooncake, and deployment across heterogeneous platforms.",
+      "zh": "本工作坊介绍 KVServe 面向服务性能的 KV Cache 压缩方法：目标不只是提高压缩率，更是改善端到端推理效率。内容涵盖更快的压缩方法、与 vLLM 和 Mooncake 的集成，以及异构平台部署。"
+    }
+  },
+  {
+    "ref": "P-180",
+    "title": {
+      "en": "Jiuwen Agent Memory System",
+      "zh": "九问智能体记忆系统"
+    },
+    "overview": {
+      "en": "This talk introduces Jiuwen Agent Memory, a user-centered memory system for more personalized and proactive long-running agents. The submitted proposal emphasizes accuracy, performance, security, and configurability.",
+      "zh": "本次演讲介绍以用户为中心的九问智能体记忆系统，探讨如何通过高精度、高性能、安全且可配置的记忆能力，支持智能体向个性化、主动式和长期陪伴型应用演进。"
+    }
+  },
+  {
+    "ref": "P-182",
+    "title": {
+      "en": "Talent Demand in Embodied AI",
+      "zh": "具身智能领域的人才需求"
+    },
+    "overview": {
+      "en": "This workshop examines the growing demand for people trained across mechanics, electronics, automation, and computer science as embodied AI develops. Drawing on Shenlan Academy's nine years in AI, robotics, and autonomous-driving education, it shares practices for preparing engineers for robotics and embodied-AI work.",
+      "zh": "本工作坊探讨具身智能作为机械、电子、自动化与计算机交叉领域，如何应对快速增长的人才需求，并结合深蓝学院九年来在人工智能、机器人及自动驾驶教育中的经验，分享机器人与具身智能人才培养实践。"
     }
   }
 ]

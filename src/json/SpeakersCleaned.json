@@ -123,6 +123,48 @@
       "image": "/images/speakers/confirmed/peace-he.png"
     },
     {
+      "id": "hongsheng-liu",
+      "name": "Hongsheng Liu",
+      "roleOrg": "vLLM-Omni Core Maintainer, Chief Architect of InferMatrix Project",
+      "bio": "",
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/hongsheng-liu.png"
+    },
+    {
+      "id": "jiangyun-zhu",
+      "name": "Jiangyun Zhu",
+      "roleOrg": "Engineer at Inferact, vLLM Community Contributor",
+      "bio": "",
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/jiangyun-zhu.png"
+    },
+    {
+      "id": "wei-cai",
+      "name": "Wei Cai",
+      "roleOrg": "Product Application Engineer, AMD",
+      "bio": "Wei Cai is a Product Application Engineer at AMD, focusing on AI and high-performance computing solutions. She helps developers use AI frameworks, libraries, and tools to build efficient, reliable applications.",
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/Vivicai1005",
+        "linkedin": "https://www.linkedin.com/in/wei-cai-1005"
+      },
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/wei-cai.png"
+    },
+    {
       "id": "charles-yang",
       "name": "Charles Yang",
       "roleOrg": "AI Solution Architect, AMD",
@@ -1287,6 +1329,21 @@
       "image": "/images/speakers/confirmed/xin-tan.png"
     },
     {
+      "id": "ruping-cen",
+      "name": "Ruping Cen",
+      "roleOrg": "PhD, Chongqing University of Posts and Telecommunications",
+      "bio": "Ruping Cen is affiliated with the School of Automation at Chongqing University of Posts and Telecommunications. His research focuses on mobile robot navigation and multi-sensor localization. He created MickRobot, an open-source dual-arm humanoid robotics project spanning mechanical design, hardware integration, perception, and navigation.",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {
+        "website": "https://blog.csdn.net/crp997576280?type=blog",
+        "github": "https://github.com/RuPingCen"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/ruping-cen.png"
+    },
+    {
       "id": "keshu-han",
       "name": "Keshu Han",
       "roleOrg": "Embodied AI Developer, Beijing Dora Intelligence",
@@ -1741,7 +1798,7 @@
     {
       "id": "jiaju-zhang",
       "name": "Jiaju Zhang",
-      "roleOrg": "CTO, Greater China, Red Hat",
+      "roleOrg": "vLLM Community Ambassador, CTO of Red Hat Greater China",
       "bio": "Jiaju Zhang is CTO for Greater China at Red Hat and a vLLM community ambassador. He has more than twenty years of experience in open-source software, Linux, distributed systems, storage, virtualization, cloud computing, containers, cloud-native technologies, and AI infrastructure.",
       "tags": [
         "ws-vllm"
@@ -1863,7 +1920,7 @@
     {
       "id": "chenzhou-jiang",
       "name": "Chenzhou Jiang",
-      "roleOrg": "AI Infra Engineer, Huawei",
+      "roleOrg": "vLLM AFD-Plugin Committer, Engineer at Huawei",
       "bio": "Chenzhou Jiang is an AI Infrastructure Engineer at Huawei and a maintainer of the afd-plugin repository in the vLLM community. He earned his master’s degree from the Department of Computer Science at Nanjing University in 2020 and previously contributed to HarmonyOS research and development. His current work focuses on AI inference, with a particular interest in disaggregated inference architectures, including Attention–FFN Disaggregation (AFD) and Encoder–Prefill–Decode (EPD) disaggregation.",
       "tags": [
         "ws-vllm"
@@ -1875,7 +1932,7 @@
     {
       "id": "landojiang",
       "name": "landojiang",
-      "roleOrg": "腾讯混元团队高级推理工程师, Tencent",
+      "roleOrg": "Senior Inference Engineer, Tencent Hunyuan Team",
       "bio": "北京大学硕士毕业，专注高性能计算，推理系统优化和GPU 算子开发，致力于为大模型提供高效的推理服务。作为核心开发者，参与多代混元模型推理优化工作，以及高性能算子库 HPC-Ops 的研发和开源工作，该算子库已成为 vLLM 与 SGLang 两大主流推理框架的官方后端。",
       "tags": [
         "ws-vllm"
@@ -1940,6 +1997,59 @@
       },
       "draft": false,
       "image": "/images/speakers/confirmed/rik-arends.png"
+    },
+    {
+      "id": "wencheng-xiao",
+      "name": "Wencheng Xiao",
+      "roleOrg": "PhD Candidate, Shijiazhuang Tiedao University",
+      "bio": "Wencheng Xiao is a PhD candidate at Shijiazhuang Tiedao University.",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/wencheng-xiao.png"
+    },
+    {
+      "id": "zedong-liu",
+      "name": "Zedong Liu",
+      "roleOrg": "PhD Student, Institute of Computing Technology, Chinese Academy of Sciences",
+      "bio": "Zedong Liu is a PhD student at the Institute of Computing Technology, Chinese Academy of Sciences. He studies LLM inference optimization and KV-cache compression for efficient distributed serving. His research has appeared at ACM SIGCOMM, ACM PPoPP, SC, and NeurIPS.",
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {
+        "website": "https://zedong-liu.github.io/",
+        "github": "https://github.com/Zedong-Liu"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/zedong-liu.png"
+    },
+    {
+      "id": "赵靖文",
+      "name": "Jingwen Zhao",
+      "roleOrg": "Engineer, Huawei",
+      "bio": "Jingwen Zhao is an engineer at Huawei.",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/赵靖文.png"
+    },
+    {
+      "id": "zhao-song",
+      "name": "Zhao Song",
+      "roleOrg": "Co-founder & CEO, Shenlan Academy",
+      "bio": "Zhao Song is co-founder and CEO of Shenlan Academy. He holds a master's degree from the Institute of Automation, Chinese Academy of Sciences, and has worked in AI and robotics research and development since 2012. Shenlan Academy focuses on education in AI, robotics, and autonomous driving.",
+      "tags": [
+        "ws-ai-education"
+      ],
+      "socialLinks": {
+        "website": "https://www.shenlanxueyuan.com/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhao-song.png"
     }
   ]
 }

@@ -126,6 +126,51 @@
       "image": "/images/speakers/confirmed/peace-he.png"
     },
     {
+      "id": "hongsheng-liu",
+      "name": "刘红升",
+      "roleOrg": "vLLM-Omni 核心 Maintainer、InferMatrix Project 首席架构师",
+      "bio": "",
+      "nameEn": "Hongsheng Liu",
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/hongsheng-liu.png"
+    },
+    {
+      "id": "jiangyun-zhu",
+      "name": "朱江云",
+      "roleOrg": "Inferact 工程师、vLLM 社区贡献者",
+      "bio": "",
+      "nameEn": "Jiangyun Zhu",
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/jiangyun-zhu.png"
+    },
+    {
+      "id": "wei-cai",
+      "name": "蔡薇",
+      "roleOrg": "AMD 产品应用工程师",
+      "bio": "蔡薇是 AMD 产品应用工程师，专注于人工智能与高性能计算解决方案，帮助开发者使用 AI 框架、软件库和工具构建高效、可靠的应用。",
+      "nameEn": "Wei Cai",
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/Vivicai1005",
+        "linkedin": "https://www.linkedin.com/in/wei-cai-1005"
+      },
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/wei-cai.png"
+    },
+    {
       "id": "charles-yang",
       "name": "Charles Yang",
       "roleOrg": "AMD AI 解决方案架构师",
@@ -1374,6 +1419,22 @@
       "nameEn": "Justin Tan"
     },
     {
+      "id": "ruping-cen",
+      "name": "Ruping Cen",
+      "roleOrg": "重庆邮电大学自动化学院博士",
+      "bio": "Ruping Cen 任职于重庆邮电大学自动化学院，研究方向为移动机器人导航及多传感器融合定位。他创建了开源双臂人形机器人项目 MickRobot，涵盖机械设计、硬件集成、感知定位与导航控制。",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {
+        "website": "https://blog.csdn.net/crp997576280?type=blog",
+        "github": "https://github.com/RuPingCen"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/ruping-cen.png",
+      "nameEn": "Ruping Cen"
+    },
+    {
       "id": "keshu-han",
       "name": "韩可树",
       "roleOrg": "北京道瑞智能具身智能开发者",
@@ -1465,7 +1526,7 @@
     },
     {
       "id": "zhenwei-pi",
-      "name": "Zhenwei Pi",
+      "name": "皮振伟",
       "roleOrg": "Tensorfer 创始人",
       "bio": "AI 基础设施创业公司 Tensorfer 创始人，曾联合创建字节跳动 IaaS 业务的计算体系，也是长期的 Linux 内核与 QEMU 贡献者。当前专注于大规模大模型推理中的系统级性能瓶颈，包括 GPUDirect RDMA 权重加载与分布式调度。",
       "tags": [
@@ -1861,8 +1922,8 @@
     },
     {
       "id": "jiaju-zhang",
-      "name": "Jiaju Zhang",
-      "roleOrg": "Red Hat 大中华区 CTO",
+      "name": "张家驹",
+      "roleOrg": "vLLM 社区大使、红帽大中华区 CTO",
       "bio": "Red Hat 大中华区 CTO、vLLM 社区大使，拥有二十余年开源软件、Linux、分布式系统、存储、高可用、虚拟化、云计算、容器、云原生和 AI 基础设施经验，致力于 AI 推理开源项目孵化、社区建设与产业落地。",
       "tags": [
         "ws-vllm"
@@ -1992,8 +2053,8 @@
     },
     {
       "id": "chenzhou-jiang",
-      "name": "Chenzhou Jiang",
-      "roleOrg": "AI Infra Engineer, Huawei",
+      "name": "江晨舟",
+      "roleOrg": "vLLM AFD-Plugin Committer、华为工程师",
       "bio": "Chenzhou Jiang is an AI Infrastructure Engineer at Huawei and a maintainer of the afd-plugin repository in the vLLM community. He earned his master’s degree from the Department of Computer Science at Nanjing University in 2020 and previously contributed to HarmonyOS research and development. His current work focuses on AI inference, with a particular interest in disaggregated inference architectures, including Attention–FFN Disaggregation (AFD) and Encoder–Prefill–Decode (EPD) disaggregation.",
       "tags": [
         "ws-vllm"
@@ -2006,7 +2067,7 @@
     {
       "id": "landojiang",
       "name": "landojiang",
-      "roleOrg": "腾讯混元团队高级推理工程师, Tencent",
+      "roleOrg": "腾讯混元团队高级推理工程师",
       "bio": "北京大学硕士毕业，专注高性能计算，推理系统优化和GPU 算子开发，致力于为大模型提供高效的推理服务。作为核心开发者，参与多代混元模型推理优化工作，以及高性能算子库 HPC-Ops 的研发和开源工作，该算子库已成为 vLLM 与 SGLang 两大主流推理框架的官方后端。",
       "tags": [
         "ws-vllm"
@@ -2076,6 +2137,63 @@
       "draft": false,
       "image": "/images/speakers/confirmed/rik-arends.png",
       "nameEn": "Rik Arends"
+    },
+    {
+      "id": "wencheng-xiao",
+      "name": "Wencheng Xiao",
+      "roleOrg": "石家庄铁道大学博士研究生",
+      "bio": "Wencheng Xiao 是石家庄铁道大学博士研究生。",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/wencheng-xiao.png",
+      "nameEn": "Wencheng Xiao"
+    },
+    {
+      "id": "zedong-liu",
+      "name": "Zedong Liu",
+      "roleOrg": "中国科学院计算技术研究所博士研究生",
+      "bio": "Zedong Liu 是中国科学院计算技术研究所博士研究生，研究大模型推理优化与 KV Cache 压缩，致力于构建高效、可扩展的分布式推理系统。其研究成果发表于 ACM SIGCOMM、ACM PPoPP、SC 和 NeurIPS。",
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {
+        "website": "https://zedong-liu.github.io/",
+        "github": "https://github.com/Zedong-Liu"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/zedong-liu.png",
+      "nameEn": "Zedong Liu"
+    },
+    {
+      "id": "赵靖文",
+      "name": "赵靖文",
+      "roleOrg": "华为工程师",
+      "bio": "赵靖文是华为工程师。",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/赵靖文.png",
+      "nameEn": "Jingwen Zhao"
+    },
+    {
+      "id": "zhao-song",
+      "name": "赵松",
+      "roleOrg": "深蓝学院联合创始人兼 CEO",
+      "bio": "赵松是深蓝学院联合创始人兼 CEO，中国科学院自动化研究所硕士，自 2012 年起从事人工智能与机器人研发。深蓝学院长期专注于人工智能、机器人和自动驾驶教育。",
+      "tags": [
+        "ws-ai-education"
+      ],
+      "socialLinks": {
+        "website": "https://www.shenlanxueyuan.com/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhao-song.png",
+      "nameEn": "Zhao Song"
     }
   ]
 }

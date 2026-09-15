@@ -1165,7 +1165,7 @@
       "bio": "Zhenwei Pi is the founder of Tensorfer, an AI infrastructure startup. He previously co-founded the compute pillar of ByteDance's IaaS business and is a long-time Linux kernel and QEMU contributor. His current work focuses on system-level performance bottlenecks in large-scale LLM inference, including GPUDirect RDMA weight loading and distributed scheduling."
     },
     "zh": {
-      "name": "Zhenwei Pi",
+      "name": "皮振伟",
       "roleOrg": "Tensorfer 创始人",
       "bio": "AI 基础设施创业公司 Tensorfer 创始人，曾联合创建字节跳动 IaaS 业务的计算体系，也是长期的 Linux 内核与 QEMU 贡献者。当前专注于大规模大模型推理中的系统级性能瓶颈，包括 GPUDirect RDMA 权重加载与分布式调度。"
     }
@@ -1501,13 +1501,107 @@
     "id": "jiaju-zhang",
     "en": {
       "name": "Jiaju Zhang",
-      "roleOrg": "CTO, Greater China, Red Hat",
+      "roleOrg": "vLLM Community Ambassador, CTO of Red Hat Greater China",
       "bio": "Jiaju Zhang is CTO for Greater China at Red Hat and a vLLM community ambassador. He has more than twenty years of experience in open-source software, Linux, distributed systems, storage, virtualization, cloud computing, containers, cloud-native technologies, and AI infrastructure."
     },
     "zh": {
-      "name": "Jiaju Zhang",
-      "roleOrg": "Red Hat 大中华区 CTO",
+      "name": "张家驹",
+      "roleOrg": "vLLM 社区大使、红帽大中华区 CTO",
       "bio": "Red Hat 大中华区 CTO、vLLM 社区大使，拥有二十余年开源软件、Linux、分布式系统、存储、高可用、虚拟化、云计算、容器、云原生和 AI 基础设施经验，致力于 AI 推理开源项目孵化、社区建设与产业落地。"
+    }
+  },
+  {
+    "id": "chenzhou-jiang",
+    "sourceName": "Chenzhou Jiang",
+    "en": {
+      "name": "Chenzhou Jiang",
+      "roleOrg": "vLLM AFD-Plugin Committer, Engineer at Huawei"
+    },
+    "zh": {
+      "name": "江晨舟",
+      "roleOrg": "vLLM AFD-Plugin Committer、华为工程师"
+    }
+  },
+  {
+    "id": "landojiang",
+    "sourceName": "landojiang",
+    "en": {
+      "name": "landojiang",
+      "roleOrg": "Senior Inference Engineer, Tencent Hunyuan Team"
+    },
+    "zh": {
+      "name": "landojiang",
+      "roleOrg": "腾讯混元团队高级推理工程师"
+    }
+  },
+  {
+    "id": "zhao-song",
+    "sourceName": "Zhao Song",
+    "en": {
+      "name": "Zhao Song",
+      "roleOrg": "Co-founder & CEO, Shenlan Academy",
+      "bio": "Zhao Song is co-founder and CEO of Shenlan Academy. He holds a master's degree from the Institute of Automation, Chinese Academy of Sciences, and has worked in AI and robotics research and development since 2012. Shenlan Academy focuses on education in AI, robotics, and autonomous driving."
+    },
+    "zh": {
+      "name": "赵松",
+      "roleOrg": "深蓝学院联合创始人兼 CEO",
+      "bio": "赵松是深蓝学院联合创始人兼 CEO，中国科学院自动化研究所硕士，自 2012 年起从事人工智能与机器人研发。深蓝学院长期专注于人工智能、机器人和自动驾驶教育。"
+    }
+  },
+  {
+    "id": "ruping-cen",
+    "sourceName": "Ruping Cen",
+    "en": {
+      "name": "Ruping Cen",
+      "roleOrg": "PhD, Chongqing University of Posts and Telecommunications",
+      "bio": "Ruping Cen is affiliated with the School of Automation at Chongqing University of Posts and Telecommunications. His research focuses on mobile robot navigation and multi-sensor localization. He created MickRobot, an open-source dual-arm humanoid robotics project spanning mechanical design, hardware integration, perception, and navigation."
+    },
+    "zh": {
+      "name": "Ruping Cen",
+      "roleOrg": "重庆邮电大学自动化学院博士",
+      "bio": "Ruping Cen 任职于重庆邮电大学自动化学院，研究方向为移动机器人导航及多传感器融合定位。他创建了开源双臂人形机器人项目 MickRobot，涵盖机械设计、硬件集成、感知定位与导航控制。"
+    }
+  },
+  {
+    "id": "wencheng-xiao",
+    "sourceName": "Wencheng XIAO",
+    "en": {
+      "name": "Wencheng Xiao",
+      "roleOrg": "PhD Candidate, Shijiazhuang Tiedao University",
+      "bio": "Wencheng Xiao is a PhD candidate at Shijiazhuang Tiedao University."
+    },
+    "zh": {
+      "name": "Wencheng Xiao",
+      "roleOrg": "石家庄铁道大学博士研究生",
+      "bio": "Wencheng Xiao 是石家庄铁道大学博士研究生。"
+    }
+  },
+  {
+    "id": "zedong-liu",
+    "sourceName": "Zedong Liu",
+    "en": {
+      "name": "Zedong Liu",
+      "roleOrg": "PhD Student, Institute of Computing Technology, Chinese Academy of Sciences",
+      "bio": "Zedong Liu is a PhD student at the Institute of Computing Technology, Chinese Academy of Sciences. He studies LLM inference optimization and KV-cache compression for efficient distributed serving. His research has appeared at ACM SIGCOMM, ACM PPoPP, SC, and NeurIPS."
+    },
+    "zh": {
+      "name": "Zedong Liu",
+      "roleOrg": "中国科学院计算技术研究所博士研究生",
+      "bio": "Zedong Liu 是中国科学院计算技术研究所博士研究生，研究大模型推理优化与 KV Cache 压缩，致力于构建高效、可扩展的分布式推理系统。其研究成果发表于 ACM SIGCOMM、ACM PPoPP、SC 和 NeurIPS。"
+    }
+  },
+  {
+    "id": "赵靖文",
+    "sourceName": "赵靖文",
+    "en": {
+      "name": "Jingwen Zhao",
+      "roleOrg": "Engineer, Huawei",
+      "bio": "Jingwen Zhao is an engineer at Huawei."
+    },
+    "zh": {
+      "name": "赵靖文",
+      "roleOrg": "华为工程师",
+      "bio": "赵靖文是华为工程师。"
     }
   }
 ]

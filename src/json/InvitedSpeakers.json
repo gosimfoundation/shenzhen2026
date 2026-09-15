@@ -54,5 +54,56 @@
       "roleOrg": "Google Cloud 解决方案架构师",
       "bio": ""
     }
+  },
+  {
+    "id": "hongsheng-liu",
+    "tags": [
+      "ws-vllm"
+    ],
+    "en": {
+      "name": "Hongsheng Liu",
+      "roleOrg": "vLLM-Omni Core Maintainer, Chief Architect of InferMatrix Project",
+      "bio": ""
+    },
+    "zh": {
+      "name": "刘红升",
+      "roleOrg": "vLLM-Omni 核心 Maintainer、InferMatrix Project 首席架构师",
+      "bio": ""
+    }
+  },
+  {
+    "id": "jiangyun-zhu",
+    "tags": [
+      "ws-vllm"
+    ],
+    "en": {
+      "name": "Jiangyun Zhu",
+      "roleOrg": "Engineer at Inferact, vLLM Community Contributor",
+      "bio": ""
+    },
+    "zh": {
+      "name": "朱江云",
+      "roleOrg": "Inferact 工程师、vLLM 社区贡献者",
+      "bio": ""
+    }
+  },
+  {
+    "id": "wei-cai",
+    "sourceNames": [
+      "Wei Cai"
+    ],
+    "tags": [
+      "ws-vllm"
+    ],
+    "en": {
+      "name": "Wei Cai",
+      "roleOrg": "Product Application Engineer, AMD",
+      "bio": "Wei Cai is a Product Application Engineer at AMD, focusing on AI and high-performance computing solutions. She helps developers use AI frameworks, libraries, and tools to build efficient, reliable applications."
+    },
+    "zh": {
+      "name": "蔡薇",
+      "roleOrg": "AMD 产品应用工程师",
+      "bio": "蔡薇是 AMD 产品应用工程师，专注于人工智能与高性能计算解决方案，帮助开发者使用 AI 框架、软件库和工具构建高效、可靠的应用。"
+    }
   }
 ]

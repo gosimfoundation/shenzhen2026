@@ -1034,6 +1034,25 @@
             "en": "This talk presents a three-layer architecture for trustworthy, AI-ready data. CDIF provides cross-domain interoperability, Semantic Croissant with ODRL adds machine-actionable semantics, provenance, and usage policies, and QueryGraph extends the foundation with agent identity, access control, governance, and lineage so trust and authorization are enforced by design.",
             "zh": "本次演讲介绍面向可信 AI 就绪数据的三层架构：CDIF 实现跨领域互操作，Semantic Croissant 与 ODRL 提供机器可执行的语义、数据来源和使用策略，QueryGraph 则进一步加入智能体身份、访问控制、治理与数据血缘，让信任和授权成为基础设施的内建能力。"
           }
+        },
+        {
+          "ref": "P-180",
+          "originalTitle": "Jiuwen Agent Memory记忆系统",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Jiuwen Agent Memory System",
+            "zh": "九问智能体记忆系统"
+          },
+          "slug": "p-180-jiuwen-agent-memory记忆系统",
+          "speakers": [
+            "赵靖文"
+          ],
+          "originalAbstract": "记忆系统是下一代Agent的核心基础设施，支控Agent从工具行助手想个性化、主动式、长期陪件型智能休演进。Jjuwen Agent Memory旨在打造以用户为中心，高精准、高性能、安全、可配置的Agent记忆系统。",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This talk introduces Jiuwen Agent Memory, a user-centered memory system for more personalized and proactive long-running agents. The submitted proposal emphasizes accuracy, performance, security, and configurability.",
+            "zh": "本次演讲介绍以用户为中心的九问智能体记忆系统，探讨如何通过高精度、高性能、安全且可配置的记忆能力，支持智能体向个性化、主动式和长期陪伴型应用演进。"
+          }
         }
       ],
       "originalName": "Agentic OS & App"
@@ -2169,6 +2188,25 @@
             "en": "Using experience from Boao AI School, this workshop presents an AI-interactive classroom built around a three-stage loop of self-learning, co-learning, and leading-learning. It combines role-based courseware, personalized real-time feedback, and open educational tools, and shares practical lessons for scaling AI-native learning across schools, universities, and workforce training.",
             "zh": "本工作坊结合博鳌 AI 学校的实践，介绍由自主学习、协作学习和引领学习构成的三阶段 AI 交互式课堂。内容涵盖角色化互动课件、实时个性化反馈和开放教育工具，并分享将 AI 原生学习模式扩展到基础教育、高等教育和职业培训的实践经验。"
           }
+        },
+        {
+          "ref": "P-182",
+          "originalTitle": "具身智能领域人才需求 Talent Demand in the Field of Embodied AI",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Talent Demand in Embodied AI",
+            "zh": "具身智能领域的人才需求"
+          },
+          "slug": "p-182-具身智能领域人才需求-talent-demand-in-the-field-of-embodied-ai",
+          "speakers": [
+            "zhao-song"
+          ],
+          "originalAbstract": "具身智能是集机械、电子、自动化、计算机等方向于一体的综合性交叉领域。随着行业的快速发展，具身智能人才需求的数量与质量都在快速增加，面向这一领域的人才该如何培养，是教育界面临的困境。深蓝学院成立9年来，始终专注于人工智能、机器人与自动驾驶教育，为行业培养了12万工程师群体，通过本次分享，我们将与大家交流我们团队在机器人与具身智能领域人才培养的最佳实践。\nEmbodied AI is a multidisciplinary field integrating mechanics, electronics, automation, computer science, and other disciplines. With the industry's rapid expansion, the demand for talent in this sector is surging in both quantity and quality; consequently, the education community faces the challenge of determining how best to cultivate professionals for this field. Since its inception nine years ago, Shenlan Academy has focused steadfastly on education in artificial intelligence, robotics, and autonomous driving, training a workforce of 120,000 engineers for the industry. In this session, we will share our team's best practices regarding talent development in the realms of robotics and embodied AI.",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This workshop examines the growing demand for people trained across mechanics, electronics, automation, and computer science as embodied AI develops. Drawing on Shenlan Academy's nine years in AI, robotics, and autonomous-driving education, it shares practices for preparing engineers for robotics and embodied-AI work.",
+            "zh": "本工作坊探讨具身智能作为机械、电子、自动化与计算机交叉领域，如何应对快速增长的人才需求，并结合深蓝学院九年来在人工智能、机器人及自动驾驶教育中的经验，分享机器人与具身智能人才培养实践。"
+          }
         }
       ],
       "originalName": "AI Education Workshop"
@@ -2275,6 +2313,44 @@
             "en": "This workshop presents robotic teleoperation data collection and multimodal closed-loop control under the DORA architecture. It covers sensor integration, time synchronization, low-latency dataflow, action mapping, real-time feedback, safety monitoring, and reproducible logging and replay for imitation learning, remote manipulation, and embodied-AI research.",
             "zh": "本工作坊介绍 DORA 架构下的机器人遥操作数据采集与多模态闭环控制，涵盖传感器集成、时间同步、低延迟数据流、操作映射、实时反馈、安全监控，以及面向模仿学习、远程操控和具身智能研究的可复现记录与回放。"
           }
+        },
+        {
+          "ref": "P-116",
+          "originalTitle": "From DORA‑NAV to OCTOS Workshop: Exploring New Paradigms of AI Task Orchestration and Hierarchical Navigation",
+          "originalLanguage": "en",
+          "title": {
+            "en": "From DORA-NAV to OCTOS: AI Task Orchestration and Hierarchical Navigation",
+            "zh": "从 DORA-NAV 到 OCTOS：AI 任务编排与分层导航"
+          },
+          "slug": "p-116-from-dora-nav-to-octos-workshop-exploring-new-paradigms-of-ai-task-orchestration-and-hierarchical-navigation",
+          "speakers": [
+            "ruping-cen"
+          ],
+          "originalAbstract": "Based on OCTOS and our previously open‑sourced robotic navigation framework DORA‑NAV (https://github.com/dora‑rs/DORA_NAV), this talk introduces newly‑added LLM‑based task orchestration capabilities and presents an AI hierarchical navigation framework. For robotic navigation tasks, it illustrates implementation details of LLM task decomposition and hierarchical navigation scheduling, and shares engineering practices and insights from the open‑source framework.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop builds on the open-source DORA-NAV robotics navigation framework and OCTOS to introduce LLM-based task orchestration and hierarchical navigation. It explains task decomposition, navigation scheduling, and engineering lessons from the framework.",
+            "zh": "本工作坊基于开源机器人导航框架 DORA-NAV 与 OCTOS，介绍由大语言模型驱动的任务编排和分层导航，分享任务分解、导航调度的实现方法及开源框架的工程实践。"
+          }
+        },
+        {
+          "ref": "P-176",
+          "originalTitle": "Dataflow-Driven Robotic Navigation: From Perception to Control in the DORA Architecture",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Dataflow-Driven Robotic Navigation: From Perception to Control in DORA",
+            "zh": "数据流驱动的机器人导航：DORA 架构下从感知到控制"
+          },
+          "slug": "p-176-dataflow-driven-robotic-navigation-from-perception-to-control-in-the-dora-architecture",
+          "speakers": [
+            "wencheng-xiao"
+          ],
+          "originalAbstract": "Through its dataflow-driven architectural paradigm, DORA provides an efficient, low-latency, and composable technical path for robotic navigation from perception to control. Its significant performance advantages over traditional middleware have been empirically validated, while improving its ecosystem and enhancing its computation offloading capabilities will be key directions for the next stage of development.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop examines DORA's dataflow-driven approach to robotic navigation, connecting perception and control through efficient, low-latency, composable components. It discusses measured advantages over traditional middleware and future work on ecosystem development and computation offloading.",
+            "zh": "本工作坊介绍 DORA 如何通过数据流架构，将机器人的感知与控制连接为高效、低延迟且可组合的导航系统，并讨论相较传统中间件的性能优势，以及生态建设和计算卸载的下一步方向。"
+          }
         }
       ],
       "originalName": "DORA Workshop"
@@ -2288,30 +2364,77 @@
       },
       "talks": [
         {
-          "ref": "P-126",
-          "originalTitle": "Scaling vLLM System-Wide: From Network I/O to Distributed Scheduling",
-          "originalLanguage": "en",
+          "ref": "VLLM-CHECK-IN",
+          "slug": "vllm-check-in",
+          "manual": true,
+          "type": "check-in",
           "title": {
-            "en": "Scaling vLLM System-Wide: From Network I/O to Distributed Scheduling",
-            "zh": "vLLM 全系统扩展：从网络 I/O 到分布式调度"
+            "en": "Workshop Check-in",
+            "zh": "签到"
           },
-          "slug": "p-126-scaling-vllm-system-wide-from-network-i-o-to-distributed-scheduling",
-          "speakers": [
-            "zhenwei-pi"
-          ],
-          "originalAbstract": "This talk presents our optimizations on vLLM for large-scale LLM inference, targeting three critical performance bottlenecks: cold-start latency, KV cache efficiency, and scheduling improvement — all addressed through deep vLLM internal customizations.\n\nFirst, we achieved a sub-3-second end-to-end cold start for the QWEN3 32B model (62GB weights) — including safetensors header parsing, JSON metadata loading, and the full weight loading path from remote storage into GPU HBM — by enabling on-demand high-speed loading over a 400Gbps network with GPUDirect RDMA. This allows model weights to be written directly from the NIC into GPU memory, bypassing the entire OS kernel I/O stack, CPU, and any user-space memory copies. We'll share how we extended vLLM's model loader to support this remote direct-to-HBM weight loading path.\n\nSecond, we rebuilt the inference architecture on top of vLLM into a stateless model with advanced prefix caching, achieving 100% KV cache hit rate for historical sessions and over 98% average hit rate across all requests — significantly reducing vLLM's prefill overhead and improving TTFT.\n\nThird, we implemented I/O preloading within vLLM's execution loop to overlap data transfer with GPU computation, delivering measurable throughput gains (over 3% in our tests). We also replaced vLLM's default scheduler with an event-driven \"no-wait\" policy combined with a greedy distributed scheduling strategy, which significantly improves concurrency and overall GPU utilization.\n\nOur practices demonstrate that meaningful performance gains can be achieved through careful orchestration of vLLM internals — from model loader and scheduler to KV cache manager — providing actionable insights for developers seeking to maximize inference efficiency in production environments.",
+          "originalTitle": "Workshop Check-in",
+          "originalLanguage": "en",
+          "speakers": [],
+          "date": "2026-10-17",
+          "timeSlot": "13:10-13:40",
+          "originalAbstract": "Check in for the vLLM Workshop.",
           "originalAbstractLanguage": "en",
           "overview": {
-            "en": "This workshop presents deep vLLM optimizations for cold-start latency, KV-cache efficiency, and distributed scheduling. It covers GPUDirect RDMA weight loading, stateless inference with advanced prefix caching, I/O preloading, and an event-driven no-wait scheduler for higher concurrency and GPU utilization.",
-            "zh": "本工作坊介绍针对冷启动延迟、KV Cache 效率与分布式调度的 vLLM 深度优化，涵盖 GPUDirect RDMA 权重加载、结合高级前缀缓存的无状态推理、I/O 预加载，以及提升并发和 GPU 利用率的事件驱动无等待调度器。"
+            "en": "Check in for the vLLM Workshop.",
+            "zh": "vLLM 工作坊签到。"
           }
+        },
+        {
+          "ref": "VLLM-OPENING-REMARKS",
+          "slug": "vllm-opening-remarks",
+          "manual": true,
+          "type": "opening",
+          "title": {
+            "en": "Opening Remarks",
+            "zh": "开场致辞"
+          },
+          "originalTitle": "Opening Remarks",
+          "originalLanguage": "en",
+          "speakers": [
+            "hongsheng-liu",
+            "jiaju-zhang"
+          ],
+          "date": "2026-10-17",
+          "timeSlot": "13:40-13:50",
+          "originalAbstract": "Opening remarks by Hongsheng Liu and Jiaju Zhang.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "Opening remarks by Hongsheng Liu and Jiaju Zhang.",
+            "zh": "刘红升、张家驹为 vLLM 工作坊致开场辞。"
+          }
+        },
+        {
+          "ref": "P-164",
+          "originalTitle": "基于vLLM的Kimi K3智能体生产级推理服务",
+          "originalLanguage": "zh",
+          "title": {
+            "en": "Production-Grade Inference Service for Kimi K3 Agent Based on vLLM",
+            "zh": "基于vLLM的Kimi K3智能体生产级推理服务"
+          },
+          "slug": "p-164-基于vllm的kimi-k3智能体生产级推理服务",
+          "speakers": [
+            "jiangyun-zhu"
+          ],
+          "originalAbstract": "分享Inferact团队如何基于开源vLLM引擎在Kimi K3模型上构建大规模智能体生产级推理服务",
+          "originalAbstractLanguage": "zh",
+          "overview": {
+            "en": "This workshop shares how the Inferact team built a large-scale, production-grade agent inference service for Kimi K3 on the open-source vLLM engine.",
+            "zh": "本工作坊分享 Inferact 团队如何基于开源 vLLM 引擎，为 Kimi K3 构建大规模、生产级的智能体推理服务。"
+          },
+          "date": "2026-10-17",
+          "timeSlot": "13:50-14:20"
         },
         {
           "ref": "P-159",
           "originalTitle": "llm-d：打造跨负载、跨模态、跨硬件、跨平台的分布式推理平面",
           "originalLanguage": "zh",
           "title": {
-            "en": "llm-d: A Distributed Inference Plane Across Workloads, Modalities, Hardware, and Platforms",
+            "en": "llm-d: Building a Cross-Workload, Cross-Modal, Cross-Hardware, and Cross-Platform Distributed Inference Control Plane",
             "zh": "llm-d：打造跨负载、跨模态、跨硬件、跨平台的分布式推理平面"
           },
           "slug": "p-159-llm-d-打造跨负载-跨模态-跨硬件-跨平台的分布式推理平面",
@@ -2323,26 +2446,9 @@
           "overview": {
             "en": "This talk introduces llm-d's distributed inference control plane, including intelligent routing, endpoint selection, inference pools, model servers, prefix- and load-aware scheduling, hierarchical KV-cache offloading, Prefill–Decode disaggregation, expert parallelism, flow control, and elastic scaling across Kubernetes, Slurm, Ray, and bare metal.",
             "zh": "本次演讲系统介绍 llm-d 分布式推理控制平面，包括智能路由、端点选择、推理池、模型服务器、前缀与负载感知调度、KV Cache 分层卸载、Prefill–Decode 分离、专家并行、流控与弹性扩缩容，并覆盖 Kubernetes、Slurm、Ray 和裸金属环境。"
-          }
-        },
-        {
-          "ref": "P-164",
-          "originalTitle": "基于vLLM的Kimi K3智能体生产级推理服务",
-          "originalLanguage": "zh",
-          "title": {
-            "en": "Production-Grade Agent Inference for Kimi K3 with vLLM",
-            "zh": "基于 vLLM 的 Kimi K3 智能体生产级推理服务"
           },
-          "slug": "p-164-基于vllm的kimi-k3智能体生产级推理服务",
-          "speakers": [
-            "黄梓铭"
-          ],
-          "originalAbstract": "分享Inferact团队如何基于开源vLLM引擎在Kimi K3模型上构建大规模智能体生产级推理服务",
-          "originalAbstractLanguage": "zh",
-          "overview": {
-            "en": "This workshop shares how the Inferact team built a large-scale, production-grade agent inference service for Kimi K3 on the open-source vLLM engine.",
-            "zh": "本工作坊分享 Inferact 团队如何基于开源 vLLM 引擎，为 Kimi K3 构建大规模、生产级的智能体推理服务。"
-          }
+          "date": "2026-10-17",
+          "timeSlot": "14:20-14:50"
         },
         {
           "ref": "P-170",
@@ -2350,7 +2456,7 @@
           "originalLanguage": "en",
           "title": {
             "en": "AFD Plugin: Attention–FFN Disaggregation in vLLM",
-            "zh": "AFD Plugin：vLLM 中的 Attention–FFN 分离"
+            "zh": "AFD 插件：vLLM 中的 Attention 与 FFN 分离"
           },
           "slug": "p-170-afd-plugin-attention-ffn-disaggregation-in-vllm",
           "speakers": [
@@ -2361,6 +2467,29 @@
           "overview": {
             "en": "This workshop introduces AFD Plugin, an external vLLM plugin that separates Attention and FFN or MoE execution into independently configurable roles. It explains activation exchange, synchronous decode, asynchronous prefill, microbatching, communication–computation overlap, and performance tradeoffs demonstrated with DeepSeek-V3.2 on Ascend 910C.",
             "zh": "本工作坊介绍 AFD Plugin：一个无需修改 vLLM 或 vLLM-Ascend 源码，即可将 Attention 与 FFN/MoE 执行拆分为独立角色的外部插件。内容涵盖激活值交换、同步 Decode、异步 Prefill、微批处理、通信计算重叠，以及在昇腾 910C 上运行 DeepSeek-V3.2 的性能与取舍。"
+          },
+          "date": "2026-10-17",
+          "timeSlot": "14:50-15:20"
+        },
+        {
+          "ref": "VLLM-TEA-BREAK",
+          "slug": "vllm-tea-break",
+          "manual": true,
+          "type": "break",
+          "title": {
+            "en": "Tea Break",
+            "zh": "茶歇"
+          },
+          "originalTitle": "Tea Break",
+          "originalLanguage": "en",
+          "speakers": [],
+          "date": "2026-10-17",
+          "timeSlot": "15:20-15:40",
+          "originalAbstract": "Tea break.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "Tea break.",
+            "zh": "茶歇。"
           }
         },
         {
@@ -2368,7 +2497,7 @@
           "originalTitle": "从单点加速到系统最优：大模型推理的全栈优化实践",
           "originalLanguage": "zh",
           "title": {
-            "en": "From Local Acceleration to System-Wide Optimization: Full-Stack LLM Inference in Practice",
+            "en": "From Single-Point Acceleration to System-Wide Optimization: Full-Stack Optimization Practices for LLM Inference",
             "zh": "从单点加速到系统最优：大模型推理的全栈优化实践"
           },
           "slug": "p-171-从单点加速到系统最优-大模型推理的全栈优化实践",
@@ -2380,6 +2509,72 @@
           "overview": {
             "en": "Drawing on Hunyuan inference and GPU engineering experience, this workshop presents a service-goal-oriented method for LLM optimization. It moves from bottleneck analysis and kernel optimization to coordinated compute, memory, communication, and scheduling, emphasizing the tradeoffs required to turn local speedups into measurable end-to-end gains.",
             "zh": "本工作坊结合混元大模型推理与 GPU 研发实践，介绍以服务目标为导向的全栈优化方法。从目标与瓶颈分析、算子级优化延伸到计算、访存、通信和调度协同，重点讨论如何权衡并行策略、显存开销、吞吐、延迟与模型质量，将局部加速转化为可验证的端到端收益。"
+          },
+          "date": "2026-10-17",
+          "timeSlot": "15:40-16:10"
+        },
+        {
+          "ref": "P-177",
+          "slug": "p-177-inside-rocm-10-building-an-open-gpu-software-platform-for-the-agentic-ai-era",
+          "type": "talk",
+          "title": {
+            "en": "Inside ROCm 10.0: Building an Open GPU Software Platform for the Agentic AI Era",
+            "zh": "深入 ROCm 10.0：为智能体 AI 时代构建开放的 GPU 软件平台"
+          },
+          "originalTitle": "Inside ROCm 10.0: Building an Open GPU Software Platform for the Agentic AI Era",
+          "originalLanguage": "en",
+          "speakers": [
+            "wei-cai"
+          ],
+          "date": "2026-10-17",
+          "timeSlot": "16:10-16:40",
+          "originalAbstract": "ROCm 10.0 marks a decade of AMD’s open GPU computing platform and a major evolution in how the stack is built, delivered, and used. This talk explores ROCm 10.0 from drivers, runtimes, compilers, and optimized libraries up to AI frameworks, while also looking at TheRock’s unified build and release infrastructure and the emerging ROCm.AI developer experience. Through this end-to-end view, we’ll see how ROCm is evolving from an open GPU compute stack into a unified platform for modern AI and HPC workloads.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop explores ROCm 10.0 from GPU drivers, runtimes, compilers, and optimized libraries to AI frameworks. It also introduces TheRock's unified build and release infrastructure and the emerging ROCm.AI developer experience, showing how AMD's open GPU stack is evolving into a platform for AI and HPC workloads.",
+            "zh": "本工作坊从 GPU 驱动、运行时、编译器和优化库到 AI 框架，介绍 ROCm 10.0 的完整软件栈，并分享 TheRock 的统一构建与发布基础设施以及 ROCm.AI 开发者体验，探讨这一开放 GPU 计算平台如何服务 AI 与高性能计算。"
+          }
+        },
+        {
+          "ref": "P-126",
+          "originalTitle": "Scaling vLLM System-Wide: From Network I/O to Distributed Scheduling",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Scaling vLLM System-Wide: From Network I/O to Distributed Scheduling",
+            "zh": "vLLM 系统级扩展：从网络 I/O 到分布式调度"
+          },
+          "slug": "p-126-scaling-vllm-system-wide-from-network-i-o-to-distributed-scheduling",
+          "speakers": [
+            "zhenwei-pi"
+          ],
+          "originalAbstract": "This talk presents our optimizations on vLLM for large-scale LLM inference, targeting three critical performance bottlenecks: cold-start latency, KV cache efficiency, and scheduling improvement — all addressed through deep vLLM internal customizations.\n\nFirst, we achieved a sub-3-second end-to-end cold start for the QWEN3 32B model (62GB weights) — including safetensors header parsing, JSON metadata loading, and the full weight loading path from remote storage into GPU HBM — by enabling on-demand high-speed loading over a 400Gbps network with GPUDirect RDMA. This allows model weights to be written directly from the NIC into GPU memory, bypassing the entire OS kernel I/O stack, CPU, and any user-space memory copies. We'll share how we extended vLLM's model loader to support this remote direct-to-HBM weight loading path.\n\nSecond, we rebuilt the inference architecture on top of vLLM into a stateless model with advanced prefix caching, achieving 100% KV cache hit rate for historical sessions and over 98% average hit rate across all requests — significantly reducing vLLM's prefill overhead and improving TTFT.\n\nThird, we implemented I/O preloading within vLLM's execution loop to overlap data transfer with GPU computation, delivering measurable throughput gains (over 3% in our tests). We also replaced vLLM's default scheduler with an event-driven \"no-wait\" policy combined with a greedy distributed scheduling strategy, which significantly improves concurrency and overall GPU utilization.\n\nOur practices demonstrate that meaningful performance gains can be achieved through careful orchestration of vLLM internals — from model loader and scheduler to KV cache manager — providing actionable insights for developers seeking to maximize inference efficiency in production environments.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop presents deep vLLM optimizations for cold-start latency, KV-cache efficiency, and distributed scheduling. It covers GPUDirect RDMA weight loading, stateless inference with advanced prefix caching, I/O preloading, and an event-driven no-wait scheduler for higher concurrency and GPU utilization.",
+            "zh": "本工作坊介绍针对冷启动延迟、KV Cache 效率与分布式调度的 vLLM 深度优化，涵盖 GPUDirect RDMA 权重加载、结合高级前缀缓存的无状态推理、I/O 预加载，以及提升并发和 GPU 利用率的事件驱动无等待调度器。"
+          },
+          "date": "2026-10-17",
+          "timeSlot": "16:40-17:10"
+        },
+        {
+          "ref": "VLLM-NVIDIA-TOPIC",
+          "slug": "vllm-nvidia-topic",
+          "manual": true,
+          "type": "pending",
+          "title": {
+            "en": "Nvidia Topic",
+            "zh": "Nvidia 议题"
+          },
+          "originalTitle": "Nvidia Topic",
+          "originalLanguage": "en",
+          "speakers": [],
+          "date": "2026-10-17",
+          "timeSlot": "17:10-17:40",
+          "originalAbstract": "Nvidia topic. Speaker and session details to be announced.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "Nvidia topic. Speaker and session details to be announced.",
+            "zh": "Nvidia 议题，讲师及具体内容待公布。"
           }
         }
       ],
@@ -2591,6 +2786,25 @@
           "overview": {
             "en": "This workshop explains how SGLang uses KV cache from prefix reuse to hierarchical caching. It covers RadixAttention and Unified RadixAttention for cache reuse, HiCache for moving cache across storage tiers, and the Unified Memory Pool for hybrid-attention models.",
             "zh": "本工作坊介绍 SGLang 如何使用 KV Cache，从前缀复用延伸到分层缓存，涵盖用于缓存复用的 RadixAttention 与 Unified RadixAttention、跨存储层迁移缓存的 HiCache，以及面向混合注意力模型的 Unified Memory Pool。"
+          }
+        },
+        {
+          "ref": "P-178",
+          "originalTitle": "Beyond Compression Ratio: Service-Aware KV Cache Compression for Distributed LLM Serving",
+          "originalLanguage": "en",
+          "title": {
+            "en": "Beyond Compression Ratio: Service-Aware KV Cache Compression for Distributed LLM Serving",
+            "zh": "超越压缩率：面向分布式大模型服务的 KV Cache 压缩"
+          },
+          "slug": "p-178-beyond-compression-ratio-service-aware-kv-cache-compression-for-distributed-llm-serving",
+          "speakers": [
+            "zedong-liu"
+          ],
+          "originalAbstract": "As LLM serving becomes increasingly disaggregated, KV cache is no longer just an internal model state—it is becoming a large-scale data object that must be transferred, reused, and managed across the system. This shift makes communication efficiency a first-class serving challenge. In this talk, I will present KVServe, which rethinks KV cache compression from a service perspective: the goal is not simply to maximize compression ratio, but to improve end-to-end serving performance. I will then discuss our recent work on faster KV compression, integration with vLLM and Mooncake, and deployment across heterogeneous platforms. These efforts suggest a broader direction in which KV compression becomes a native and portable component of distributed LLM serving systems.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "This workshop presents KVServe's service-oriented approach to KV-cache compression, where end-to-end serving performance matters more than compression ratio alone. It covers faster compression, integration with vLLM and Mooncake, and deployment across heterogeneous platforms.",
+            "zh": "本工作坊介绍 KVServe 面向服务性能的 KV Cache 压缩方法：目标不只是提高压缩率，更是改善端到端推理效率。内容涵盖更快的压缩方法、与 vLLM 和 Mooncake 的集成，以及异构平台部署。"
           }
         }
       ],

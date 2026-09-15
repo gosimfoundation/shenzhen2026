@@ -34,7 +34,7 @@ describe("temporary schedule relationships", () => {
   });
 
   it("gives every accepted talk bilingual page content, a stable route, and a speaker", () => {
-    expect(talks).toHaveLength(128);
+    expect(talks).toHaveLength(138);
     expect(new Set(talks.map((talk) => talk.ref)).size).toBe(talks.length);
     expect(new Set(talks.map((talk) => talk.slug)).size).toBe(talks.length);
 
@@ -46,8 +46,12 @@ describe("temporary schedule relationships", () => {
       expect(talk.overview.en.trim()).not.toBe("");
       expect(talk.overview.zh.trim()).not.toBe("");
       expect(talk.overview.zh).toMatch(/[\u3400-\u9fff]/u);
-      expect(talk.slug).toMatch(/^(?:p-\d+-|google-cloud-)/);
-      expect(talk.speakers.length).toBeGreaterThan(0);
+      expect(talk.slug).toMatch(/^(?:p-\d+-|google-cloud-|vllm-)/);
+      if ("type" in talk && ["check-in", "break", "pending"].includes(talk.type)) {
+        expect(talk.speakers).toEqual([]);
+      } else {
+        expect(talk.speakers.length).toBeGreaterThan(0);
+      }
     }
   });
 
@@ -58,6 +62,19 @@ describe("temporary schedule relationships", () => {
         expect(chineseSpeakerIds.has(speakerId), `${talk.ref}: ${speakerId} ZH`).toBe(true);
       }
     }
+  });
+
+  it("replaces the manual ROCm entry with Wei Cai's accepted CFP proposal", () => {
+    const rocmTalks = talks.filter((talk) => talk.ref === "P-177");
+    expect(rocmTalks).toHaveLength(1);
+    expect(talks.some((talk) => talk.ref === "VLLM-INSIDE-ROCM-10")).toBe(false);
+    expect(rocmTalks[0]).toMatchObject({
+      speakers: ["wei-cai"],
+      date: "2026-10-17",
+      timeSlot: "16:10-16:40",
+    });
+    expect(speakersEn.speakers.filter((speaker) => speaker.id === "wei-cai")).toHaveLength(1);
+    expect(speakersZh.speakers.find((speaker) => speaker.id === "wei-cai")?.name).toBe("蔡薇");
   });
 
   it("keeps all three confirmed presenters on both Google Cloud sessions", () => {

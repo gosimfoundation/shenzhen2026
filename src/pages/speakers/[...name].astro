@@ -109,11 +109,11 @@ const speakerSessions = [
             speakers.speakers.find((profile) => profile.id === speakerId)?.name ||
             speakerId,
         })),
-        date: "",
-        timeSlot: "",
+        date: "date" in talk ? String(talk.date) : "",
+        timeSlot: "timeSlot" in talk ? String(talk.timeSlot) : "",
         category: track.name.en,
         slug: talk.slug,
-        preview: true,
+        preview: !("date" in talk && "timeSlot" in talk),
       })),
   ),
   // Get sessions from forum schedule
