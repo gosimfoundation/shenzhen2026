@@ -1,14 +1,11 @@
 import { describe, expect, it } from "vitest";
-import schedulePreview from "../src/json/SchedulePreview.json";
-import scheduleOverrides from "../src/json/SchedulePreviewOverrides.json";
-import speakersEn from "../src/json/SpeakersCleaned.json";
-import speakersZh from "../src/json/SpeakersZh.json";
+import { schedule as schedulePreview, speakersEn, speakersZh } from "../src/utils/conference";
 
 const talks = schedulePreview.tracks.flatMap((track) => track.talks);
 const englishSpeakerIds = new Set(speakersEn.speakers.map((speaker) => speaker.id));
 const chineseSpeakerIds = new Set(speakersZh.speakers.map((speaker) => speaker.id));
 
-describe("temporary schedule relationships", () => {
+describe("published schedule relationships", () => {
   it("shows the keynote plenary first and assigns DHH only to it", () => {
     expect(schedulePreview.tracks[0]).toMatchObject({
       id: "special-keynote",
@@ -84,8 +81,6 @@ describe("temporary schedule relationships", () => {
     for (const talk of workshop.talks) {
       expect(talk.speakers).toEqual(confirmedSpeakers);
     }
-    expect(scheduleOverrides.find((entry) => entry.ref === "P-134"))
-      .toMatchObject({ speakers: confirmedSpeakers });
   });
 
   it("provides all current workshops to the homepage program section", () => {

@@ -1,7 +1,6 @@
-export const conferenceDays = [
-  { date: "2026-10-16", label: "Day 1", en: "Oct 16", zh: "10 月 16 日" },
-  { date: "2026-10-17", label: "Day 2", en: "Oct 17", zh: "10 月 17 日" },
-];
+import schedule from "../json/Schedule.json";
+
+export const conferenceDays = schedule.days;
 
 type ScheduledTalk = { date?: string; timeSlot?: string };
 

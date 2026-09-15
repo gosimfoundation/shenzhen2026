@@ -1,174 +1,20 @@
 ---
-// Packages
-import { Picture } from "astro:assets"
-import type { ImageMetadata } from "astro"
+import Layout from "layouts/LayoutLanding.astro";
+import { getEventPaths, speakersEn as speakers, schedule } from "utils/conference";
+import { getSpeakerImagePath, SPEAKER_IMAGE_FALLBACK_HANDLER } from "utils/speaker-images";
 
-// Components
-import Layout from "layouts/LayoutLanding.astro"
-import schedule from "json/ScheduleBilingual.json"
-import scheduleForum from "json/Schedule-forum.json"
-import schedulePreview from "json/SchedulePreview.json"
-import speakers from "json/SpeakersCleaned.json"
-import {
-  getSpeakerImagePath,
-  SPEAKER_IMAGE_FALLBACK_HANDLER,
-} from "utils/speaker-images"
-
-// Types
-type Event = {
-  title: string
-  content: string
-  date: string
-  timeSlot: string
-  type?: string
-  speakers?: { name: string; image?: string; roleOrg: string; id?: string }[]
-  room?: string
-  signupUrl?: string
-  slug?: string
-  categoryLabel?: string
-  preview?: boolean
-  notice?: string
-  overview?: string
-}
-
-// Generate static paths for events
 export async function getStaticPaths() {
-  const events: {
-    params: { event: string }
-    props: { event: Event; category: string }
-  }[] = []
-
-  const createSlug = (title: string) => {
-    return title
-      .toLowerCase()
-      .replace(/[^\w\s\u4e00-\u9fff-]/g, "") // Keep ASCII word chars, spaces, Chinese chars, and hyphens
-      .replace(/\s+/g, "-")
-      .replace(/-+/g, "-")
-      .replace(/^-+|-+$/g, "") // Remove leading/trailing hyphens
-      .trim()
-  }
-
-  // Collect all sessions from all categories in main schedule (bilingual structure)
-  Object.entries(schedule.sessions).forEach(([category, categoryEvents]) => {
-    categoryEvents.forEach((event: any) => {
-      const eventTitle =
-        typeof event.title === "string" ? event.title : event.title?.en || ""
-      const transformedEvent = {
-        title: eventTitle,
-        content:
-          typeof event.content === "string"
-            ? event.content
-            : event.content?.en || "",
-        date:
-          typeof event.date === "string" ? event.date : event.date?.en || "",
-        timeSlot: event.timeSlot,
-        type: event.type,
-        speakers:
-          event.speakers?.map((s: any) => ({
-            name: typeof s.name === "string" ? s.name : s.name?.en || "",
-            image: s.image,
-            roleOrg:
-              typeof s.roleOrg === "string" ? s.roleOrg : s.roleOrg?.en ||
-              (typeof s.title === "string" ? s.title : (s.title as any)?.en || ""),
-            id: s.id,
-          })) || [],
-        room:
-          typeof event.room === "string" ? event.room : event.room?.en || "",
-        signupUrl: event.signupUrl || "",
-      }
-      events.push({
-        params: {
-          event: createSlug(eventTitle),
-        },
-        props: { event: transformedEvent, category },
-      })
-    })
-  })
-
-  // Temporary no-time sessions use the same detail route as the full schedule.
-  schedulePreview.tracks.forEach((track) => {
-    track.talks.forEach((talk) => {
-      const eventSpeakers = talk.speakers
-        .map((speakerId) => speakers.speakers.find((speaker) => speaker.id === speakerId))
-        .filter(Boolean)
-        .map((speaker) => ({
-          id: speaker!.id,
-          name: speaker!.name,
-          image: speaker!.image,
-          roleOrg: speaker!.roleOrg,
-        }))
-      events.push({
-        params: { event: talk.slug },
-        props: {
-          event: {
-            title: talk.title.en,
-            content: "",
-            date: "date" in talk ? String(talk.date) : "",
-            timeSlot: "timeSlot" in talk ? String(talk.timeSlot) : "",
-            type: "talk",
-            speakers: eventSpeakers,
-            room: "",
-            slug: talk.slug,
-            categoryLabel: track.name.en,
-            preview: !("date" in talk && "timeSlot" in talk),
-            overview: talk.overview.en,
-            notice: "notice" in track ? track.notice.en : "",
-          },
-          category: track.id,
-        },
-      })
-    })
-  })
-
-  // Add forum events
-  scheduleForum.forEach((event: Event) => {
-    events.push({
-      params: {
-        event: createSlug(event.title),
-      },
-      props: { event, category: "Forum" },
-    })
-  })
-
-  return events
+  return getEventPaths("en");
 }
+const { event: eventDetails, category } = Astro.props;
+const allEvents = schedule.tracks.flatMap((track) =>
+  track.talks.map((talk) => ({ slug: talk.slug, title: talk.title.en })),
+);
+const currentIndex = allEvents.findIndex((event) => event.slug === eventDetails.slug);
+const prevEvent = allEvents[(currentIndex - 1 + allEvents.length) % allEvents.length];
+const nextEvent = allEvents[(currentIndex + 1) % allEvents.length];
+const eventCategory = eventDetails.categoryLabel;
 
-// Get the event from the route parameter
-const { event: eventDetails, category } = Astro.props as {
-  event: Event
-  category: string
-}
-
-// Build flat ordered list of all events for prev/next navigation
-const createSlugNav = (title: string) =>
-  title.toLowerCase().replace(/[^\w\s\u4e00-\u9fff-]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-").replace(/^-+|-+$/g, "").trim()
-
-const allEvents: { slug: string; title: string }[] = []
-Object.entries(schedule.sessions).forEach(([_cat, categoryEvents]) => {
-  ;(categoryEvents as any[]).forEach((ev) => {
-    const title = typeof ev.title === "string" ? ev.title : ev.title?.en || ""
-    if (title) allEvents.push({ slug: createSlugNav(title), title })
-  })
-})
-schedulePreview.tracks.forEach((track) => {
-  track.talks.forEach((talk) => {
-    allEvents.push({ slug: talk.slug, title: talk.title.en })
-  })
-})
-
-const currentSlug = eventDetails.slug || createSlugNav(eventDetails.title)
-const currentIndex = allEvents.findIndex((e) => e.slug === currentSlug)
-const prevEvent = currentIndex > 0 ? allEvents[currentIndex - 1] : allEvents[allEvents.length - 1]
-const nextEvent = currentIndex < allEvents.length - 1 ? allEvents[currentIndex + 1] : allEvents[0]
-
-// Find the human-readable category label
-const eventCategory = (() => {
-  if (eventDetails.categoryLabel) return eventDetails.categoryLabel
-  if (eventDetails.type === "keynote") return "Keynote"
-  const cat = schedule.categories.find((c) => c.id === category)
-  if (cat?.name) return typeof cat.name === "string" ? cat.name : (cat.name as any)?.en || category
-  return category || "Uncategorized"
-})()
 ---
 
 <Layout
@@ -229,11 +75,7 @@ const eventCategory = (() => {
           <span class="ev-meta-item">
             <span class="ev-meta-label">Location</span>
             <span class="ev-meta-value">
-              {eventDetails.room || (() => {
-                const cat = schedule.categories.find((c) => c.id === category)
-                if (cat?.room) return typeof cat.room === "string" ? cat.room : cat.room?.en || ""
-                return "TBA"
-              })()}
+              {eventDetails.room || "TBA"}
             </span>
           </span>
         </div>

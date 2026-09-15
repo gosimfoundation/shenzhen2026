@@ -42,25 +42,10 @@ const syncPortraits = (speakerData) => {
   }
 };
 
-const englishData = JSON.parse(
-  await readFile(path.join(projectRoot, "src/json/SpeakersCleaned.json"), "utf8"),
-);
-const chineseData = JSON.parse(
-  await readFile(path.join(projectRoot, "src/json/SpeakersZh.json"), "utf8"),
-);
-syncPortraits(englishData);
-syncPortraits(chineseData);
-
-const serialized = `${JSON.stringify(englishData, null, 2)}\n`;
-const outputPaths = [
-  path.join(projectRoot, "src/json/Speakers.json"),
-  path.join(projectRoot, "src/json/SpeakersCleaned.json"),
-];
-await Promise.all(outputPaths.map((outputPath) => writeFile(outputPath, serialized)));
-await writeFile(
-  path.join(projectRoot, "src/json/SpeakersZh.json"),
-  `${JSON.stringify(chineseData, null, 2)}\n`,
-);
+const speakerPath = path.join(projectRoot, "src/json/Speakers.json");
+const speakers = JSON.parse(await readFile(speakerPath, "utf8"));
+syncPortraits(speakers);
+await writeFile(speakerPath, `${JSON.stringify(speakers, null, 2)}\n`);
 
 let clearedInboxCount = 0;
 for (const id of portraitsById.keys()) {

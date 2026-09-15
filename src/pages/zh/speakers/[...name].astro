@@ -1,10 +1,8 @@
 ---
 // Components
 import Layout from "layouts/LayoutLandingZh.astro";
-import speakers from "json/SpeakersZh.json";
-import schedule from "json/ScheduleBilingual.json";
-import scheduleForum from "json/Schedule-forum.json";
-import schedulePreview from "json/SchedulePreview.json";
+import { speakersZh as speakers } from "utils/conference";
+import { schedule as schedulePreview } from "utils/conference";
 import {
   getSpeakerImagePath,
   SPEAKER_IMAGE_FALLBACK_HANDLER,
@@ -65,99 +63,16 @@ const nextSpeaker = currentIndex < allSpeakers.length - 1 ? allSpeakers[currentI
 
 // For images in public directory, we can reference them directly
 
-// Find speaker's sessions across all categories and forum schedule
-const speakerSessions = [
-  // Get sessions from main schedule (bilingual structure)
-  ...Object.entries(schedule.sessions).reduce(
-    (acc: Session[], [category, sessions]: [string, Session[]]) => {
-      const matchingSessions = sessions
-        .filter((session) =>
-          session.speakers.some((s) => {
-            const sessionSpeakerName =
-              typeof s.name === "string" ? s.name : s.name?.zh || s.name?.en;
-            const sessionSpeakerId = s.id;
-            return (
-              sessionSpeakerName === (speaker.nameEn || speaker.name) ||
-              sessionSpeakerId === speaker.id
-            );
-          })
-        )
-        .map((session) => ({
-          title:
-            typeof session.title === "string"
-              ? session.title
-              : session.title?.zh || session.title?.en || "",
-          titleForUrl:
-            typeof session.title === "string"
-              ? session.title
-              : session.title?.en || session.title?.zh || "",
-          speakers: session.speakers.map((s) => ({
-            name:
-              typeof s.name === "string"
-                ? s.name
-                : s.name?.zh || s.name?.en || "",
-          })),
-          date:
-            typeof session.date === "string"
-              ? session.date
-              : session.date?.zh || session.date?.en || "",
-          timeSlot: session.timeSlot,
-          category: (() => {
-            if ((session as any).type === 'keynote') return 'Keynote'
-            const cat = (schedule as any).categories?.find((c: any) => c.id === category)
-            if (cat?.name) return typeof cat.name === 'string' ? cat.name : cat.name?.en || category
-            return category
-          })(),
-        }));
-
-      return [...acc, ...matchingSessions];
-    },
-    []
-  ),
-  // 尚未排定时间的议题也继续使用讲师页原有的日程关联区域。
-  ...schedulePreview.tracks.flatMap((track) =>
-    track.talks
-      .filter((talk) => talk.speakers.includes(speaker.id))
-      .map((talk) => ({
-        title: talk.title.zh,
-        titleForUrl: talk.title.en,
-        speakers: talk.speakers.map((speakerId) => ({
-          name:
-            speakers.speakers.find((profile) => profile.id === speakerId)?.name ||
-            speakerId,
-        })),
-        date: "date" in talk ? String(talk.date) : "",
-        timeSlot: "timeSlot" in talk ? String(talk.timeSlot) : "",
-        category: track.name.zh,
-        slug: talk.slug,
-        preview: !("date" in talk && "timeSlot" in talk),
-      })),
-  ),
-  // Get sessions from forum schedule
-  ...scheduleForum
-    .filter(
-      (session) =>
-        session.speakers &&
-        session.speakers.some(
-          (s) => s.name === speaker.name || s.name === speaker.nameEn
-        )
-    )
-    .map((session) => ({
-      title: session.title,
-      titleForUrl: session.title,
-      speakers: session.speakers,
-      date: session.date,
-      timeSlot: session.timeSlot,
-      category: "Forum",
-    })),
-].filter((session, index, arr) =>
-  arr.findIndex((s) => s.title === session.title && s.timeSlot === session.timeSlot && s.date === session.date) === index
-).sort((a, b) => {
-  const dayA = parseInt(a.date.replace(/\D/g, '')) || 0;
-  const dayB = parseInt(b.date.replace(/\D/g, '')) || 0;
-  if (dayA !== dayB) return dayA - dayB;
-  return (a.timeSlot || '').localeCompare(b.timeSlot || '');
-});
+const speakerSessions = schedulePreview.tracks.flatMap((track) =>
+  track.talks.filter((talk) => talk.speakers.includes(speaker.id)).map((talk) => ({
+    title: talk.title.zh,
+    titleForUrl: talk.title.en,
+    date: talk.date || "",
+    timeSlot: talk.timeSlot || "",
+    category: track.name.zh,
+    slug: talk.slug,
+  })),
+).sort((a, b) => a.date.localeCompare(b.date) || a.timeSlot.localeCompare(b.timeSlot));
 
 // The notice concerns missing profile copy; image fallback happens in the browser.
 const isPlaceholder = !speaker.bio;

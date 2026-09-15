@@ -47,7 +47,8 @@
           }
         }
       ],
-      "originalName": "Keynote Plenary"
+      "originalName": "Keynote Plenary",
+      "group": "tracks"
     },
     {
       "id": "agentic-ai-summit",
@@ -419,7 +420,8 @@
           }
         }
       ],
-      "originalName": "Agentic AI Summit"
+      "originalName": "Agentic AI Summit",
+      "group": "tracks"
     },
     {
       "id": "agentic-ai-on-edge",
@@ -660,7 +662,8 @@
           }
         }
       ],
-      "originalName": "Agentic AI on Edge"
+      "originalName": "Agentic AI on Edge",
+      "group": "tracks"
     },
     {
       "id": "ai-generative-app",
@@ -1055,7 +1058,8 @@
           }
         }
       ],
-      "originalName": "Agentic OS & App"
+      "originalName": "Agentic OS & App",
+      "group": "tracks"
     },
     {
       "id": "agentic-device",
@@ -1371,7 +1375,8 @@
           }
         }
       ],
-      "originalName": "Agentic Device"
+      "originalName": "Agentic Device",
+      "group": "tracks"
     },
     {
       "id": "open-source-model",
@@ -1747,7 +1752,8 @@
           }
         }
       ],
-      "originalName": "Open Source Models & Infra"
+      "originalName": "Open Source Models & Infra",
+      "group": "tracks"
     },
     {
       "id": "open-source-robotics",
@@ -2122,7 +2128,8 @@
           }
         }
       ],
-      "originalName": "Open Source Robotics"
+      "originalName": "Open Source Robotics",
+      "group": "tracks"
     },
     {
       "id": "ws-ai-education",
@@ -2209,7 +2216,8 @@
           }
         }
       ],
-      "originalName": "AI Education Workshop"
+      "originalName": "AI Education Workshop",
+      "group": "workshops"
     },
     {
       "id": "ws-dora",
@@ -2353,7 +2361,8 @@
           }
         }
       ],
-      "originalName": "DORA Workshop"
+      "originalName": "DORA Workshop",
+      "group": "workshops"
     },
     {
       "id": "ws-vllm",
@@ -2578,7 +2587,8 @@
           }
         }
       ],
-      "originalName": "vLLM Workshop"
+      "originalName": "vLLM Workshop",
+      "group": "workshops"
     },
     {
       "id": "ws-google-cloud",
@@ -2645,7 +2655,8 @@
       "notice": {
         "zh": "*此为动手实操活动，需要自备笔记本电脑。",
         "en": "*This is a hands-on session, please bring your own laptop."
-      }
+      },
+      "group": "workshops"
     },
     {
       "id": "ws-kvcdn",
@@ -2808,7 +2819,22 @@
           }
         }
       ],
-      "originalName": "KVCDN Workshop"
+      "originalName": "KVCDN Workshop",
+      "group": "workshops"
+    }
+  ],
+  "days": [
+    {
+      "date": "2026-10-16",
+      "label": "Day 1",
+      "en": "Oct 16",
+      "zh": "10 月 16 日"
+    },
+    {
+      "date": "2026-10-17",
+      "label": "Day 2",
+      "en": "Oct 17",
+      "zh": "10 月 17 日"
     }
   ]
 }

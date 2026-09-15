@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import speakersEn from "../src/json/Speakers.json";
-import speakersZh from "../src/json/SpeakersZh.json";
+import { speakersEn } from "../src/utils/conference";
+import { speakersZh as speakersZh } from "../src/utils/conference";
 
 const bilingualNames: Record<string, [english: string, chinese: string]> = {
   "baofeng-wang": ["Baofeng Wang", "王宝峰"],

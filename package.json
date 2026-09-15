@@ -8,7 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "validate-schedule": "node scripts/validate-schedule.js",
-    "validate-schedule:bilingual": "node scripts/validate-schedule.js src/json/ScheduleBilingual.json",
+    "validate-schedule:bilingual": "npm run validate-schedule",
     "test-error-handling": "node scripts/test-error-handling.js",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -17,7 +17,7 @@
     "import-speakers": "node scripts/import-confirmed-speakers.mjs",
     "sync-speaker-images": "node scripts/sync-speaker-images.mjs",
     "update-stars": "node scripts/update-marquee-stars.js",
-    "prebuild": "npm run validate-schedule:bilingual && npm run test"
+    "prebuild": "npm run validate-schedule && npm run test"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",

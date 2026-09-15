@@ -172,7 +172,7 @@ export async function testWithRealScheduleData(): Promise<void> {
     console.log('Loading schedule data...')
     
     // In a real scenario, you would:
-    // import scheduleData from '../json/ScheduleBilingual.json'
+    // import scheduleData from '../json/Schedule.json'
     // const validation = validateBilingualScheduleData(scheduleData as BilingualScheduleData)
     
     console.log('✅ Real data testing would be performed here')

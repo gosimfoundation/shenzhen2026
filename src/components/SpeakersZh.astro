@@ -1,7 +1,7 @@
 ---
 // Import the speakers data
-import speakersData from "json/SpeakersZh.json";
-import canonicalSpeakersData from "json/SpeakersCleaned.json";
+import { speakersZh as speakersData } from "utils/conference";
+import { speakersEn as canonicalSpeakersData } from "utils/conference";
 import {
   getSpeakerImagePath,
   SPEAKER_IMAGE_FALLBACK_HANDLER,
