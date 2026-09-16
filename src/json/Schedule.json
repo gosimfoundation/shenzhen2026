@@ -2564,6 +2564,27 @@
           },
           "date": "2026-10-17",
           "timeSlot": "16:40-17:10"
+        },
+        {
+          "ref": "VLLM-CORE-TEAM-AMA",
+          "slug": "vllm-core-team-ama",
+          "manual": true,
+          "type": "ama",
+          "title": {
+            "en": "AMA with the vLLM Core Team",
+            "zh": "和 vLLM 核心团队自由交流"
+          },
+          "originalTitle": "AMA with the vLLM Core Team",
+          "originalLanguage": "en",
+          "speakers": [],
+          "date": "2026-10-17",
+          "timeSlot": "17:10-17:30",
+          "originalAbstract": "An open Q&A with the vLLM core team.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "An open Q&A with the vLLM core team.",
+            "zh": "与 vLLM 核心团队自由交流、提问。"
+          }
         }
       ],
       "originalName": "vLLM Workshop",

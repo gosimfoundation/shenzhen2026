@@ -68,7 +68,7 @@ export function validateContent(speakers, schedule) {
         if (!people.has(id)) errors.push(`${talk.ref}: missing speaker ${id}`);
         else if (!talk.draft && people.get(id).draft) errors.push(`${talk.ref}: published talk references draft speaker ${id}`);
       }
-      if (!talk.draft && !talk.speakers.length && !['check-in', 'break', 'pending'].includes(talk.type)) errors.push(`${talk.ref}: speaker required`);
+      if (!talk.draft && !talk.speakers.length && !['check-in', 'break', 'pending', 'ama'].includes(talk.type)) errors.push(`${talk.ref}: speaker required`);
       if (talk.date && !schedule.days.some((d) => d.date === talk.date)) errors.push(`${talk.ref}: unknown conference day ${talk.date}`);
       if (talk.timeSlot) {
         const match = /^(\d{2}):(\d{2})\s*-\s*(\d{2}):(\d{2})$/.exec(talk.timeSlot);

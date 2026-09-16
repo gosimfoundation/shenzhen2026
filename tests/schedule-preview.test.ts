@@ -44,7 +44,7 @@ describe("published schedule relationships", () => {
       expect(talk.overview.zh.trim()).not.toBe("");
       expect(talk.overview.zh).toMatch(/[\u3400-\u9fff]/u);
       expect(talk.slug).toMatch(/^(?:p-\d+-|google-cloud-|vllm-)/);
-      if ("type" in talk && ["check-in", "break", "pending"].includes(talk.type)) {
+      if ("type" in talk && ["check-in", "break", "pending", "ama"].includes(talk.type)) {
         expect(talk.speakers).toEqual([]);
       } else {
         expect(talk.speakers.length).toBeGreaterThan(0);
