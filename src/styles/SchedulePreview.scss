@@ -20,18 +20,14 @@
 }
 
 .preview-sidebar {
-  position: sticky;
-  top: 6rem;
+  /* Let the full category list grow and scroll with the page. */
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  max-height: calc(100vh - 7.5rem);
-  overflow-y: auto;
-  overscroll-behavior: contain;
   padding: 1.25rem;
   border-radius: var(--border-radius);
   background: var(--color-surface);
-  scrollbar-width: thin;
 }
 
 .preview-sidebar-heading {

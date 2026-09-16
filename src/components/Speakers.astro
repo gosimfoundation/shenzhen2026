@@ -426,13 +426,9 @@ const categoryColor = programCategoryColor;
   }
 
   .speaker-filter-sidebar {
-    position: sticky;
-    top: 6rem;
+    /* Keep every category in page flow, including at enlarged text sizes. */
+    position: relative;
     z-index: 2;
-    max-height: calc(100vh - 7.5rem);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: thin;
   }
 
   .speaker-results {
