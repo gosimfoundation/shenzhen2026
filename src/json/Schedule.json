@@ -306,25 +306,6 @@
           }
         },
         {
-          "ref": "P-55",
-          "originalTitle": "Cangjie and the New Frontier of Programming Languages in the AI Era",
-          "originalLanguage": "en",
-          "title": {
-            "en": "Cangjie and the New Frontier of Programming Languages in the AI Era",
-            "zh": "仓颉与 AI 时代编程语言的新前沿"
-          },
-          "slug": "p-55-cangjie-and-the-new-frontier-of-programming-languages-in-the-ai-era",
-          "speakers": [
-            "sean-dong"
-          ],
-          "originalAbstract": "In the AI era, program execution has evolved into a \"CPU + LLM Co-execution\" paradigm. Programming languages must now serve two masters: human developers and AI Agents. This talk explores how the Cangjie language is being reimagined for AI-native affinity.\nAI-Friendly Infrastructure Overhaul\nZhan outlines a three-pronged transformation of Cangjie's toolchain: upgrading the compiler, LSP, and testing framework to become first-class citizens for AI consumption; building a tree-structured AI skill library (knowledge base) for structured capability reuse; and introducing Speclang, a semi-formal design description language that translates natural language requirements into verifiable specification constraints—directly addressing the core pain point of intent ambiguity in AI coding.\nToward a New Agent Language\nLooking beyond today's languages, the lab is prototyping a novel Agent Language that balances deterministic CPU execution with the flexible reasoning of large models. The design targets workflow programming, fine-grained context control, and visual multi-Agent collaboration—enabling a new class of software where human intent, formal verification, and LLM improvisation coexist in a single executable fabric.\nAudience Takeaway\nAttendees will gain insight into how programming languages are being reinvented for the \"CPU + LLM\" era, with concrete examples of AI-friendly infrastructure, intent-formalization techniques, and a glimpse of the emerging Agent-oriented programming paradigm.",
-          "originalAbstractLanguage": "en",
-          "overview": {
-            "en": "As software moves toward CPU and LLM co-execution, programming languages must serve both developers and AI agents. This talk presents Cangjie's AI-friendly compiler, LSP and testing infrastructure, a structured skill library, Speclang for verifiable specifications, and early work on an Agent-oriented language.",
-            "zh": "随着软件进入 CPU 与大模型协同执行的新阶段，编程语言需要同时服务开发者与 AI 智能体。本次演讲介绍仓颉面向 AI 的编译器、LSP、测试基础设施、结构化技能库、可验证规格语言 Speclang，以及智能体语言的早期探索。"
-          }
-        },
-        {
           "ref": "P-102",
           "originalTitle": "Evaluation You Can Audit: Eclipse PanEval as Shared Infrastructure",
           "originalLanguage": "en",
