@@ -195,7 +195,11 @@ footer {
 
 .main-nav-bar .sub-links {
    position: absolute;
-   width: 100%;
+   /* Size to the labels instead of the trigger; wrap on smaller viewports. */
+   width: max-content;
+   max-width: min(36rem, 50vw);
+   white-space: normal;
+   overflow-wrap: anywhere;
    max-height: 0;
    overflow: hidden;
    opacity: 0;

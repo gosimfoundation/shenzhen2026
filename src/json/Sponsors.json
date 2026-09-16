@@ -105,13 +105,6 @@
     },
     {
       "category": "silver",
-      "image": "async-community.png",
-      "name": "Epubit",
-      "logoClass": "partner-logo-wide",
-      "url": "https://www.epubit.com/"
-    },
-    {
-      "category": "silver",
       "image": "cohdl.png",
       "name": "CoHDL",
       "url": "https://cohdl.org/"
