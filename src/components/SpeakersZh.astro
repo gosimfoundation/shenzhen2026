@@ -694,11 +694,12 @@ const categoryColor = programCategoryColor;
     .speaker-results :global(.speakers-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 
-  /* Fix scrolling issues */
+  /* Clip horizontal overflow without creating a nested body scroll container.
+     Chromium touch scrolling must reach the document viewport. */
   html,
   body {
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
+    overflow-x: clip;
+    overflow-y: visible;
     height: auto !important;
     min-height: 100vh !important;
   }
