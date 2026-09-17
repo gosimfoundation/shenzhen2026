@@ -2403,8 +2403,8 @@
           "originalTitle": "基于vLLM的Kimi K3智能体生产级推理服务",
           "originalLanguage": "zh",
           "title": {
-            "en": "Production-Grade Inference Service for Kimi K3 Agent Based on vLLM",
-            "zh": "基于 vLLM 的 Kimi K3 智能体生产级推理服务"
+            "en": "vLLM Latest Update and Roadmap",
+            "zh": "vLLM 项目最新特性和未来展望"
           },
           "slug": "p-164-基于vllm的kimi-k3智能体生产级推理服务",
           "speakers": [
@@ -2413,8 +2413,8 @@
           "originalAbstract": "分享Inferact团队如何基于开源vLLM引擎在Kimi K3模型上构建大规模智能体生产级推理服务",
           "originalAbstractLanguage": "zh",
           "overview": {
-            "en": "This workshop shares how the Inferact team built a large-scale, production-grade agent inference service for Kimi K3 on the open-source vLLM engine.",
-            "zh": "本工作坊分享 Inferact 团队如何基于开源 vLLM 引擎，为 Kimi K3 构建大规模、生产级的智能体推理服务。"
+            "en": "Jiangyun Zhu presents the latest vLLM features and its future roadmap.",
+            "zh": "朱江云介绍 vLLM 项目的最新特性与未来发展规划。"
           },
           "date": "2026-10-17",
           "timeSlot": "13:50-14:20"

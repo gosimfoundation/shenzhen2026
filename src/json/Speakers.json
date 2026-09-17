@@ -119,12 +119,12 @@
         "zh": "朱江云"
       },
       "roleOrg": {
-        "en": "Engineer at Inferact, vLLM Community Contributor",
-        "zh": "Inferact 工程师、vLLM 社区贡献者"
+        "en": "Engineer at Inferact, vLLM Core Maintainer",
+        "zh": "Inferact 工程师、vLLM 核心维护者"
       },
       "bio": {
-        "en": "Jiangyun Zhu is an engineer at Inferact and a contributor to the vLLM community.",
-        "zh": "朱江云是 Inferact 工程师，也是 vLLM 社区贡献者。"
+        "en": "Jiangyun Zhu is an engineer at Inferact and a core maintainer of vLLM.",
+        "zh": "朱江云是 Inferact 工程师，也是 vLLM 核心维护者。"
       },
       "tags": [
         "ws-vllm"
@@ -3675,12 +3675,12 @@
         "zh": "江晨舟"
       },
       "roleOrg": {
-        "en": "vLLM AFD-Plugin Committer, Engineer at Huawei",
-        "zh": "vLLM AFD-Plugin 代码提交者、华为工程师"
+        "en": "vLLM AFD-Plugin Core Maintainer, Engineer at Huawei",
+        "zh": "vLLM AFD-Plugin 核心维护者、华为工程师"
       },
       "bio": {
-        "en": "Chenzhou Jiang is an AI Infrastructure Engineer at Huawei and a maintainer of the afd-plugin repository in the vLLM community. He earned his master’s degree from the Department of Computer Science at Nanjing University in 2020 and previously contributed to HarmonyOS research and development. His current work focuses on AI inference, with a particular interest in disaggregated inference architectures, including Attention–FFN Disaggregation (AFD) and Encoder–Prefill–Decode (EPD) disaggregation.",
-        "zh": "江晨舟是华为 AI 基础设施工程师，也是 vLLM 社区 afd-plugin 仓库的维护者。他于 2020 年获南京大学计算机系硕士学位，此前参与 HarmonyOS 研发。目前专注于 AI 推理，重点研究 Attention–FFN 分离（AFD）和编码–预填充–解码分离（EPD）等推理架构。"
+        "en": "Chenzhou Jiang is an AI Infrastructure Engineer at Huawei and a core maintainer of the afd-plugin repository in the vLLM community. He earned his master’s degree from the Department of Computer Science at Nanjing University in 2020 and previously contributed to HarmonyOS research and development. His current work focuses on AI inference, with a particular interest in disaggregated inference architectures, including Attention–FFN Disaggregation (AFD) and Encoder–Prefill–Decode (EPD) disaggregation.",
+        "zh": "江晨舟是华为 AI 基础设施工程师，也是 vLLM 社区 afd-plugin 仓库的核心维护者。他于 2020 年获南京大学计算机系硕士学位，此前参与 HarmonyOS 研发。目前专注于 AI 推理，重点研究 Attention–FFN 分离（AFD）和编码–预填充–解码分离（EPD）等推理架构。"
       },
       "tags": [
         "ws-vllm"
@@ -3697,16 +3697,16 @@
     {
       "id": "landojiang",
       "name": {
-        "en": "landojiang",
-        "zh": "landojiang"
+        "en": "Donghua Jiang",
+        "zh": "蒋东桦"
       },
       "roleOrg": {
         "en": "Senior Inference Engineer, Tencent Hunyuan Team",
         "zh": "腾讯混元团队高级推理工程师"
       },
       "bio": {
-        "en": "landojiang is a Senior Inference Engineer on Tencent’s Hunyuan team and holds a master’s degree from Peking University. His work focuses on high-performance computing, inference-system optimization, and GPU kernel development. As a core developer, he has contributed to inference optimization across multiple generations of Hunyuan models and to the development and open-sourcing of HPC-Ops, a high-performance kernel library used as an official backend by vLLM and SGLang.",
-        "zh": "landojiang 是腾讯混元团队高级推理工程师，硕士毕业于北京大学，专注于高性能计算、推理系统优化和 GPU 算子开发。他作为核心开发者，参与多代混元模型的推理优化，以及高性能算子库 HPC-Ops 的研发与开源工作；该算子库已成为 vLLM 与 SGLang 的官方后端。"
+        "en": "Donghua Jiang is a Senior Inference Engineer on Tencent’s Hunyuan team and holds a master’s degree from Peking University. His work focuses on high-performance computing, inference-system optimization, and GPU kernel development. As a core developer, he has contributed to inference optimization across multiple generations of Hunyuan models and to the development and open-sourcing of HPC-Ops, a high-performance kernel library used as an official backend by vLLM and SGLang.",
+        "zh": "蒋东桦 是腾讯混元团队高级推理工程师，硕士毕业于北京大学，专注于高性能计算、推理系统优化和 GPU 算子开发。他作为核心开发者，参与多代混元模型的推理优化，以及高性能算子库 HPC-Ops 的研发与开源工作；该算子库已成为 vLLM 与 SGLang 的官方后端。"
       },
       "tags": [
         "ws-vllm"
@@ -3715,7 +3715,9 @@
       "draft": false,
       "image": "/images/speakers/confirmed/landojiang.png",
       "sourceNames": [
-        "landojiang"
+        "landojiang",
+        "Donghua Jiang",
+        "蒋东桦"
       ],
       "source": "cfp"
     },
