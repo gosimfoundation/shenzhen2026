@@ -2,35 +2,15 @@
 import Layout from "layouts/LayoutLanding.astro";
 import VolunteerPage from "components/VolunteerPage.astro";
 import HeroText from "components/HeroText.astro";
-import Button from "components/Button.astro";
-import GetTickets from "components/GetTickets.astro";
 ---
 
 <Layout
   title="Volunteers – GOSIM Shenzhen 2026"
-  description="Apply to volunteer at GOSIM Shenzhen 2026 on October 16–17, 2026. Open to current undergraduate and graduate students interested in open source and AI."
+  description="Volunteer recruitment for GOSIM Shenzhen 2026 is full. Learn about the volunteer program and conference."
   navDarkMode={true}
   navBackground="header-home"
   pageTransitionName="Volunteers"
 >
-  <HeroText title="Volunteer Recruitment" lightgray>
-    <Button
-      text="Apply to Volunteer"
-      link="https://marketing.csdn.net/questions/Q2607211202017553510"
-      class="btn primary glass-orange xl btn-hover"
-      openInNewTab
-    />
-  </HeroText>
+  <HeroText title="Volunteer Recruitment" text="Volunteer spots for GOSIM Shenzhen 2026 are full. Thank you for your interest." lightgray />
   <VolunteerPage lang="en" />
-  <GetTickets
-    title="Volunteer Recruitment Now Open"
-    location="ADEN Hotel Shenzhen Nanshan"
-    date="October 15-17, 2026"
-    text="We are recruiting university students with a strong interest in open source and AI to volunteer at GOSIM Shenzhen 2026."
-    ctaButton={{
-      text: "Apply to Volunteer",
-      link: "https://marketing.csdn.net/questions/Q2607211202017553510",
-      openInNewTab: true,
-    }}
-  />
 </Layout>
