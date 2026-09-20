@@ -203,6 +203,7 @@
           "speakers": [
             "bryce-adelstein-lelbach"
           ],
+          "draft": true,
           "originalAbstract": "Optimizing software has never been easier with the advent of agentic AI... right? It turns out it's not quite that simple!\n\nAutoresearch is a powerful technique for optimization; an agent iteratively modifies, tests, and benchmarks changes to the codebase with the goal of maximizing the benchmark score.\n\nWhile powerful, this process faces challenges, especially at scale:\n- Cheating / reward hacking (just as in reinforcement learning).\n- Overfitting to benchmark's inputs.\n- Tradeoffs between input breadth and build/test/benchmark cost.\n- Local maximums.\n\nIn this talk, we'll discuss some of these challenges and how to overcome them, based on examples from the open source GPUMODE kernel competitions and infrastructure.\nWe'll explore how to take autoresearch results from \"cool idea\" to \"shipped in production\".",
           "originalAbstractLanguage": "en",
           "overview": {
@@ -1475,6 +1476,7 @@
           "speakers": [
             "nouamane-tazi"
           ],
+          "draft": true,
           "originalAbstract": "Training state-of-the-art LLMs means solving the same problem at every scale: memory is fixed, compute is expensive, and you must trade off communication against computation under that constraint. This talk walks through the choices that problem forces, from optimizing a single GPU (activation recomputation, flash-attention, roofline profiling) to scaling across thousands (data, context, tensor, pipeline, and expert parallelism).\nYou'll see how each parallelism strategy makes the same memory-compute-communication tradeoff visible in different ways, why combining all five requires understanding your infrastructure, and which open-source frameworks and playbooks actually work in production.\nThe audience leaves knowing which parallelism strategy fits which constraint, how to profile for it with the roofline model, and why NCCL flags and infrastructure setup are not optional.",
           "originalAbstractLanguage": "en",
           "overview": {

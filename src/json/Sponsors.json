@@ -142,6 +142,20 @@
       "name": "Association des Jeunes Chinois pour la Technologie et l'Innovation Scientifique en France",
       "logoClass": "partner-logo-wide",
       "url": "https://www.jeveuxaider.gouv.fr/organisations/23335-association-des-jeunes-chinois-pour-la-technologie-et-linnovation-scientifique-en-france"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "vacat.png",
+      "name": "VACAT AI Visual Creative Competition",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.lg.gov.cn/zwfw/zdyw/calendar/content/post_12435122.html"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "shenzhen-software-industry-association.png",
+      "name": "Shenzhen Software Industry Association",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.ssia.org.cn/"
     }
   ]
 }

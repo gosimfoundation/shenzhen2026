@@ -920,7 +920,7 @@
         "twitter": "https://x.com/NouamaneTazi",
         "linkedin": "https://www.linkedin.com/in/nouamanetazi/"
       },
-      "draft": false,
+      "draft": true,
       "image": "/images/speakers/confirmed/nouamane-tazi.png",
       "sourceNames": [
         "Nouamane Tazi"
@@ -1004,7 +1004,7 @@
         "twitter": "https://twitter.com/blelbach",
         "linkedin": "https://www.linkedin.com/in/brycelelbach"
       },
-      "draft": false,
+      "draft": true,
       "image": "/images/speakers/confirmed/bryce-adelstein-lelbach.png",
       "sourceNames": [
         "Bryce Adelstein Lelbach"

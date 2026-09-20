@@ -27,6 +27,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
   class="section section-home-header full-height"
   data-theme-section="dark"
   data-bg-section="header-home"
+  data-hero-video={video ? "" : undefined}
 >
   <div class="overlay overlay-background overlay-background-video">
     {video ? (
@@ -49,6 +50,13 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     )}
     <div class="overlay overlay-gradient-v2"></div>
   </div>
+
+  {video && (
+    <button type="button" class="hero-video-play" data-video-play hidden>
+      <span aria-hidden="true">▶</span>
+      {Astro.url.pathname.startsWith('/zh/') ? '播放背景视频' : 'Play background video'}
+    </button>
+  )}
 
   <div class="container">
     <div class="row">
@@ -97,7 +105,32 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
   </div>
 </section>
 
+<script>
+  import { setupHeroVideos } from "../scripts/hero-video";
+  setupHeroVideos();
+  document.addEventListener("astro:page-load", setupHeroVideos);
+</script>
+
 <style>
+  .hero-video-play {
+    position: absolute;
+    top: calc(var(--nav-bar-height, 6rem) + 1rem);
+    left: var(--container-padding);
+    z-index: 6;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .hero-video-play[hidden] { display: none; }
+
   .overlay-background-video {
     opacity: 0.9;
     z-index: 0;
