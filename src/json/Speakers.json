@@ -3725,7 +3725,7 @@
       "id": "qiuqinlun",
       "name": {
         "en": "Qiu Qinlun",
-        "zh": "Qiu Qinlun"
+        "zh": "邱钦伦"
       },
       "roleOrg": {
         "en": "Founder, Boao Open School",
@@ -3743,7 +3743,8 @@
       "image": "/images/speakers/confirmed/qiuqinlun.png",
       "sourceNames": [
         "qiuqinlun",
-        "Qiu Qinlun"
+        "Qiu Qinlun",
+        "邱钦伦"
       ],
       "source": "cfp"
     },
@@ -4056,6 +4057,325 @@
         "Joaquin Salvachua",
         "Joaquín Salvachúa"
       ]
+    },
+    {
+      "id": "daryl-wong",
+      "name": {
+        "en": "Daryl Wong",
+        "zh": "Daryl Wong"
+      },
+      "roleOrg": {
+        "en": "Co-Founder, GENMETA TECH LIMITED",
+        "zh": "GENMETA TECH LIMITED 联合创始人"
+      },
+      "bio": {
+        "en": "Co-Founder of Genmeta Tech | DHttp Evangelist",
+        "zh": "Genmeta Tech 联合创始人、DHttp 布道者。"
+      },
+      "tags": [
+        "sz26-agentic-ai-on-edge"
+      ],
+      "socialLinks": {
+        "website": "https://www.dhttp.net",
+        "github": "https://github.com/genmeta"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/daryl-wong.png",
+      "sourceNames": [
+        "Daryl Wong"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "xinxin-fan",
+      "name": {
+        "en": "Xinxin Fan",
+        "zh": "Xinxin Fan"
+      },
+      "roleOrg": {
+        "en": "Maintainer, openUBMC AI SIG, Huawei Technologies Co., Ltd.",
+        "zh": "华为技术有限公司 openUBMC AI SIG 维护者"
+      },
+      "bio": {
+        "en": "As a community developer of openUBMC and maintainer of the openUBMC AI‑SIG, I am committed to building the fault‑localization harness for BMC scenarios to realize automatic fault localization and self‑healing, as well as constructing and deploying the AI‑assisted BMC development toolchain. The goal is to improve BMC firmware debugging efficiency, reduce hardware troubleshooting costs, and advance the intelligence of out‑of‑band management and operation workflows.",
+        "zh": "openUBMC 社区开发者及 openUBMC AI SIG 维护者，致力于构建面向 BMC 场景的故障定位与自愈能力，以及 AI 辅助的 BMC 开发工具链，以提升固件调试效率、降低硬件排障成本，并推动带外管理与运维流程智能化。"
+      },
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/xinxin-fan.png",
+      "sourceNames": [
+        "Xinxin Fan"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "wei-wang-王伟",
+      "name": {
+        "en": "Wei Wang",
+        "zh": "王伟"
+      },
+      "roleOrg": {
+        "en": "Director, Open Source Technical Committee, Singularity Intelligence Research Institute; Professor, East China Normal University",
+        "zh": "奇点智能研究院开源技术委员会主任, 华东师范大学"
+      },
+      "bio": {
+        "en": "Wei Wang directs the Open Source Technical Committee at the Singularity Intelligence Research Institute and is a professor at East China Normal University. His work focuses on open-source governance and evaluation. He led the development of China's first series of open-source governance standards and has published more than 100 papers in venues including ICSE, WWW, and ACL.",
+        "zh": "王伟，奇点智能研究院开源技术委员会主任，中国软件行业协会开发者生态专业委员会副主任，中国科协联合国咨商开源创新专委会秘书长，华东师范大学教授，CCF杰出会员。牵头制定中国首套开源治理系列标准，研究聚焦开源治理与开源评价。在 ICSE、WWW、ACL 等顶会期刊发表论文百余篇，入选国家级创新人才项目、获国家级教学成果二等奖、上海开源创新卓越成果奖特等奖。"
+      },
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/wei-wang-王伟.png",
+      "sourceNames": [
+        "Wei Wang（王伟）"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "杨振宇",
+      "name": {
+        "en": "Zhenyu Yang",
+        "zh": "杨振宇"
+      },
+      "roleOrg": {
+        "en": "Founder and CEO, Shenzhen Ciyuan Kaiwu Technology Co., Ltd.",
+        "zh": "CEO, 深圳词源开物科技有限公司"
+      },
+      "bio": {
+        "en": "Zhenyu Yang is the founder and CEO of Shenzhen Ciyuan Kaiwu Technology and IterXAI. His team develops AI-assisted design software and desktop hardware fabrication equipment that help makers, students, and innovation teams turn ideas into working prototypes. He has cross-disciplinary experience in embedded systems, mechanical hardware, and AI algorithms, as well as end-to-end product development from requirements and DVT prototypes to delivery.",
+        "zh": "本人杨振宇，深圳词元开物 IterXAI 创始人/CEO。我们团队致力于让人人都能创造硬件，依托AI辅助设计工具与自研桌面硬件制作设备，帮助创客、在校学生与创新团队把创意想法快速转化为可使用的实物产品，切实降低硬件创新的开发门槛，推动硬件创意高效落地。\n \n具备嵌入式、结构硬件、AI算法跨领域技术背景，拥有多年机器人竞赛与硬件全链路开发经验，完整经历从需求定义、DVT样机迭代到产品落地的完整流程。擅长硬件整机方案设计、AI‑硬件融合产品研发与早期项目产品化。"
+      },
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/杨振宇.png",
+      "sourceNames": [
+        "杨振宇",
+        "Zhenyu Yang"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "曾辉",
+      "name": {
+        "en": "Hui Zeng",
+        "zh": "曾辉"
+      },
+      "roleOrg": {
+        "en": "Developer Community Operations Lead, Shenzhen Chengtech Technology Co., Ltd.",
+        "zh": "承泰科技开发者社区运营负责人, 深圳承泰科技股份有限公司"
+      },
+      "bio": {
+        "en": "Hui Zeng leads developer community operations and ecosystem development for Chengtech's SuperRadar technical community, focusing on AI Radar, Physical AI, open millimeter-wave radar development, and the connection between AI and real-world perception. Previously, he managed the SecretFlow community at Ant Group and led global community operations for open-source projects including Apache DolphinScheduler and Apache SeaTunnel.",
+        "zh": "现负责承泰科技 SuperRadar 技术社区的社区运营与开发者生态建设，关注 AI Radar、Physical AI、毫米波雷达开放开发及 AI 与真实世界感知的结合。\n\n前蚂蚁集团 隐语 SecretFlow 社区经理、白鲸开源高级社区经理，负责 Apache DolphinScheduler、Apache SeaTunnel 等开源项目的全球化社区运营与生态建设，长期参与开源社区治理、开发者运营、技术布道及全球社区建设，并持续探索如何通过社区与开放生态，让新技术从少数专业开发者走向更广泛的开发者群体。\n\n目前正在 SuperRadar 推动毫米波雷达从传统传感器走向开放的 AI 感知平台，并关注 Radar × AI、具身智能与 Physical AI 时代新的开发者生态。"
+      },
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/Niko-Zeng",
+        "linkedin": "https://www.linkedin.com/in/niko-zeng/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/曾辉.png",
+      "sourceNames": [
+        "曾辉",
+        "Hui Zeng"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "teng-ma",
+      "name": {
+        "en": "Teng Ma",
+        "zh": "Teng Ma"
+      },
+      "roleOrg": {
+        "en": "Maintainer, Mooncake Community",
+        "zh": "Mooncake 社区维护者"
+      },
+      "bio": {
+        "en": "Teng Ma received my Ph.D. from Tsinghua University in 2021. He builds innovative software systems exploiting new hardware and kernel features in novel architectures such as memory disaggregation and LLM, and maintains and contributes to open-source projects including Mooncake, SGLang, vLLM, Dynamo, Tokenspeed, and AIGW.",
+        "zh": "Teng Ma 于 2021 年获得清华大学博士学位，致力于利用新型硬件与内核能力构建创新软件系统，研究涵盖内存解耦与大语言模型等架构。他维护并参与 Mooncake、SGLang、vLLM、Dynamo、Tokenspeed 和 AIGW 等开源项目。"
+      },
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {
+        "website": "https://stmatengss.github.io/",
+        "github": "https://github.com/stmatengss",
+        "twitter": "https://x.com/TengMa3577"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/teng-ma.png",
+      "sourceNames": [
+        "Teng Ma"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "谭棋洋",
+      "name": {
+        "en": "Qiyang Tan",
+        "zh": "谭棋洋"
+      },
+      "roleOrg": {
+        "en": "Dev, Dora",
+        "zh": "Dora 开发者"
+      },
+      "bio": {
+        "en": "Full stack engineering.",
+        "zh": "全栈工程师。"
+      },
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/谭棋洋.png",
+      "sourceNames": [
+        "谭棋洋",
+        "Qiyang Tan"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "liyun-yang",
+      "name": {
+        "en": "Liyun Yang",
+        "zh": "Liyun Yang"
+      },
+      "roleOrg": {
+        "en": "Director, Open Source Research Office, China Electronics Standardization Institute",
+        "zh": "中国电子技术标准化研究院开源研究室主任"
+      },
+      "bio": {
+        "en": "Over ten‑year track record in leading China’s cloud computing standardization, covering organization for development of more than 80 national, industrial and association standards and delivery of nearly 20 key standard projects. Past chairmanship of the ISO/IEC JTC 1/SC38 China National Mirror Committee and China’s Head of Delegation for SC38 plenary sessions, with a Chinese‑origin proposal promoted and approved as SC38 NWI in 2025. Ongoing open‑source standardization research undertaken under SC38 AG5. Founder of the Mulan Open Source Community, with delivery of MulanPSL, China’s first OSI‑approved open‑source license. Core positions held in multiple open‑source organizations, together with solid practical experience in open‑source community construction, license research and open‑source governance.",
+        "zh": "Liyun Yang 长期负责中国云计算标准化工作，组织制定 80 余项国家、行业与团体标准，并承担近 20 项重点标准项目。曾任 ISO/IEC JTC 1/SC 38 中国对口工作组组长及中国代表团团长，持续参与开源标准化研究。他创立了木兰开源社区，并推动中国首个获 OSI 批准的开源许可证 MulanPSL，在开源社区建设、许可证研究与开源治理方面拥有丰富经验。"
+      },
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/liyun-yang.png",
+      "sourceNames": [
+        "Liyun Yang"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "周茂华",
+      "name": {
+        "en": "Maohua Zhou",
+        "zh": "周茂华"
+      },
+      "roleOrg": {
+        "en": "Deputy Director, Artificial Intelligence Innovation Center, Shenzhen No. 2 Senior High School",
+        "zh": "人工智能创新中心副主任, 深圳市第二高级中学"
+      },
+      "bio": {
+        "en": "Maohua Zhou is the deputy director of the Artificial Intelligence Innovation Center at Shenzhen No. 2 Senior High School. He served as chief editor of a national high-school information technology textbook on open-hardware project design, leads a Guangdong science and technology education studio, and co-initiated the domestically developed open-hardware board ControlBoard. He advocates the idea that conversation is creation and develops AI-agent tools that help teachers and students turn natural-language ideas into physical projects.",
+        "zh": "全国普通高中《信息技术·选择性必修6·开源硬件项目设计》（人教地图版）教科书分册主编，广东省科技教育名师工作室主持人，深圳科技创新教育领军人物，首款国产开源硬件掌控板项目联合发起人，掌问造物智能体开发者。长期深耕中小学人工智能与创客教育一线，提出\"对话即创造\"科技教育理念。他主导开发的掌问基于大模型多智能体架构，让教师仅凭自然语言对话即可完成开源硬件项目从创意到实物的完整闭环，已支撑深港中学生创客营等多个跨地域科创项目。"
+      },
+      "tags": [
+        "ws-ai-education"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/周茂华.png",
+      "sourceNames": [
+        "周茂华",
+        "Maohua Zhou"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "jennie-wang",
+      "name": {
+        "en": "Jennie Wang",
+        "zh": "Jennie Wang"
+      },
+      "roleOrg": {
+        "en": "AI Robotics Product Marketing, Seeed Studio",
+        "zh": "矽递科技 AI 机器人产品市场"
+      },
+      "bio": {
+        "en": "Dive into the Physical AI ecosystem at Seeed Studio, particularly in product marketing and partnership/dev community expansion. Delighted to focus on robotics applications (including but not limited to humanoid robots, robot arms, and robot basements) deployed with reThings series edge devices powered by NVIDIA Jetson as the robot's powerful \"brain\". Keep learning and researching machine learning, foundation models, multimodal architecture, and model quantization methods.",
+        "zh": "Jennie Wang 在矽递科技深耕 Physical AI 生态，负责产品市场、合作伙伴和开发者社区拓展，重点关注搭载 NVIDIA Jetson 边缘设备的机器人应用，包括人形机器人、机械臂与移动机器人底盘。她持续研究机器学习、基础模型、多模态架构与模型量化方法。"
+      },
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {
+        "website": "https://www.seeedstudio.com/blog/author/jennie-wang/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/jennie-wang.png",
+      "sourceNames": [
+        "Jennie Wang"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "秦志强",
+      "name": {
+        "en": "Zhiqiang Qin",
+        "zh": "秦志强"
+      },
+      "roleOrg": {
+        "en": "Founder, QTSTEAM",
+        "zh": "全童科教创始人, 全童科教QTSTEAM"
+      },
+      "bio": {
+        "en": "Dr. Zhiqiang Qin is the founder of QTSTEAM and initiator of the Educational Robotics Competition of China. With 25 years of experience teaching robotics and artificial intelligence at the university level, he co-founded QTSTEAM with Professor Zexiang Li of the Hong Kong University of Science and Technology and the Songshan Lake XbotPark robotics base. His work develops a continuous pathway for science and technology education from K–12 through university, employment, and entrepreneurship.",
+        "zh": "秦志强博士，全童科教创始人，中国教育机器人大赛（ERCC）发起人。拥有25年大学机器人、人工智能教学经验，联合香港科技大学李泽湘教授及松山湖XbotPark机器人基地共同创办全童科教，构建了从K12到大学再到就业和创业的全周期科创人才贯通培养生态。其创办的中国教育机器人大赛已连续举办十五届，大赛奖项被南京大学、东南大学等名校列为自主招生加分项。"
+      },
+      "tags": [
+        "ws-ai-education"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/秦志强.png",
+      "sourceNames": [
+        "秦志强",
+        "Zhiqiang Qin"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "bella-ren",
+      "name": {
+        "en": "Bella Ren",
+        "zh": "Bella Ren"
+      },
+      "roleOrg": {
+        "en": "AI-Native Content Growth Expert, Blink Studio",
+        "zh": "Blink Studio AI 原生内容增长专家"
+      },
+      "bio": {
+        "en": "AI-Native Content Growth Expert | Former AI Algorithm Engineer at Huawei\n\nex Co-founder of an AI product that reached $1M ARR within one year\n\nGlobal growth advisor to leading AI software and hardware brands, specializing in AI-driven content growth and marketing efficiency",
+        "zh": "Bella Ren 是 AI 原生内容增长专家，曾任华为 AI 算法工程师，也曾联合创办一家在一年内达到 100 万美元年度经常性收入的 AI 产品公司。她为领先的 AI 软件与硬件品牌提供全球增长咨询，专注于以 AI 驱动内容增长与营销效率。"
+      },
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://www.xiaohongshu.com/user/profile/559a06fda75c9501d076e103?xsec_token=YBdBUv358YkEybLh3iFNdz582M-LvBcLKWmEErCZdISKw=&xsec_source=app_share&xhsshare=CopyLink&shareRedId=Nzs7QTM7Sk1HPjpFQj0wN0ozQ"
+      },
+      "draft": true,
+      "image": "/images/speakers/confirmed/bella-ren.png",
+      "sourceNames": [
+        "Bella Ren"
+      ],
+      "source": "cfp"
     }
   ]
 }

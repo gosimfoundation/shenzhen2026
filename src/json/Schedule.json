@@ -400,6 +400,66 @@
             "en": "This talk looks beyond incremental Agent product features to examine a broader paradigm shift: software is moving from passive response to proactive action, from delivering fixed functions to generating capabilities, and from one-time delivery to continuous evolution. It explores how this shift will redefine product value, interaction, business models, and competitive advantage.",
             "zh": "本次演讲跳出 Agent 产品的局部功能创新，从更长周期和更底层的视角讨论产品范式的变化：软件正从被动响应走向主动行动，从功能交付走向能力生成，从一次性交付走向持续进化，并由此重新定义产品价值、交互方式、商业模式与竞争壁垒。"
           }
+        },
+        {
+          "ref": "P-117",
+          "originalTitle": "The Agentic AI Developer Economy: Building a Meritocratic Open Source Ecosystem",
+          "originalLanguage": "en",
+          "originalAbstract": "As artificial intelligence transitions from Generative AI to Agentic AI, open source communities are emerging as the critical infrastructure for future technological competitiveness. However, developers face significant barriers posed by entrenched ecosystems like CUDA and a pressing need for enhanced developer experiences. We argue that sustaining this shift requires more than just code; it demands innovative incentive structures.\n\nLeveraging the OSIDX framework introduced at the UN \"AI for Good\" summit, this keynote presents the \"Developer Influence Map,\" a novel mechanism designed to render invisible contributions visible and quantifiable. To validate this approach, we examine OpenShare, a pioneering platform operationalizing the 'Million Cash Reward Program.' By systematically tracking and benchmarking contributions such as code commits, model fine-tuning, and documentation, OpenShare maps developer activity to tangible financial rewards, demonstrating how meritocracy drives both ecosystem growth and commercial sustainability.\n\nThrough systematic comparison with established leaders (CUDA, PyTorch) and emerging Agentic ecosystems, we introduce an empirically grounded \"Agentic AI Developer Economy Model.\" This model establishes a fair reputation system that aligns individual professional growth with ecosystem prosperity, directly addressing the fundamental question: \"Why should developers choose to use and contribute?\" We outline a replicable pathway toward a resilient, inclusive, and commercially viable open source paradigm.",
+          "originalAbstractLanguage": "en",
+          "slug": "p-117-the-agentic-ai-developer-economy-building-a-meritocratic-open-source-ecosystem",
+          "title": {
+            "en": "The Agentic AI Developer Economy: Building a Meritocratic Open Source Ecosystem",
+            "zh": "智能体 AI 开发者经济：构建以贡献为核心的开源生态"
+          },
+          "overview": {
+            "en": "As artificial intelligence transitions from Generative AI to Agentic AI, open source communities are emerging as the critical infrastructure for future technological competitiveness. However, developers face significant barriers posed by entrenched ecosystems like CUDA and a pressing need for enhanced developer experiences. We argue that sustaining this shift requires more than just code; it demands innovative incentive structures.\n\nLeveraging the OSIDX framework introduced at the UN \"AI for Good\" summit, this keynote presents the \"Developer Influence Map,\" a novel mechanism designed to render invisible contributions visible and quantifiable. To validate this approach, we examine OpenShare, a pioneering platform operationalizing the 'Million Cash Reward Program.' By systematically tracking and benchmarking contributions such as code commits, model fine-tuning, and documentation, OpenShare maps developer activity to tangible financial rewards, demonstrating how meritocracy drives both ecosystem growth and commercial sustainability.\n\nThrough systematic comparison with established leaders (CUDA, PyTorch) and emerging Agentic ecosystems, we introduce an empirically grounded \"Agentic AI Developer Economy Model.\" This model establishes a fair reputation system that aligns individual professional growth with ecosystem prosperity, directly addressing the fundamental question: \"Why should developers choose to use and contribute?\" We outline a replicable pathway toward a resilient, inclusive, and commercially viable open source paradigm.",
+            "zh": "随着人工智能从生成式 AI 迈向智能体 AI，开源社区正在成为未来技术竞争力的关键基础设施。本次演讲基于在联合国“AI for Good”峰会上提出的 OSIDX 框架，介绍“开发者影响力图谱”及 OpenShare 的实践，探索如何量化代码、模型微调和文档等贡献，并将其转化为可验证的声誉与激励。演讲还将对比 CUDA、PyTorch 及新兴智能体生态，提出兼顾开发者成长、生态繁荣与商业可持续性的智能体 AI 开发者经济模型。"
+          },
+          "speakers": [
+            "wei-wang-王伟"
+          ],
+          "draft": false
+        },
+        {
+          "ref": "P-189",
+          "originalTitle": "Open source, Openness and Standardization of Large Models",
+          "originalLanguage": "en",
+          "originalAbstract": "Current Status of China’s Open‑Source Large‑model Industry and Standardization Research Achievements on Openness Grading Specification for Large‑model Technical System.",
+          "originalAbstractLanguage": "en",
+          "slug": "p-189-open-source-openness-and-standardization-of-large-models",
+          "title": {
+            "en": "Open source, Openness and Standardization of Large Models",
+            "zh": "大模型的开源、开放与标准化"
+          },
+          "overview": {
+            "en": "Current Status of China’s Open‑Source Large‑model Industry and Standardization Research Achievements on Openness Grading Specification for Large‑model Technical System.",
+            "zh": "本次演讲介绍中国开源大模型产业的发展现状，以及围绕大模型技术体系开放度分级规范所开展的标准化研究与阶段性成果。"
+          },
+          "speakers": [
+            "liyun-yang"
+          ],
+          "draft": false
+        },
+        {
+          "ref": "P-195",
+          "originalTitle": "How to Tell Better Stories for AI Products",
+          "originalLanguage": "en",
+          "originalAbstract": "AI products are often hard to market because brands focus too much on features and technology. This talk shares a practical framework for turning AI software and hardware into simple, relatable stories that people can understand, remember, and act on.",
+          "originalAbstractLanguage": "en",
+          "slug": "p-195-how-to-tell-better-stories-for-ai-products",
+          "title": {
+            "en": "How to Tell Better Stories for AI Products",
+            "zh": "如何为 AI 产品讲好故事"
+          },
+          "overview": {
+            "en": "AI products are often hard to market because brands focus too much on features and technology. This talk shares a practical framework for turning AI software and hardware into simple, relatable stories that people can understand, remember, and act on.",
+            "zh": "AI 产品往往难以营销，是因为品牌过度强调功能与技术。本次演讲将分享一套实用框架，把 AI 软件与硬件转化为简单、贴近用户的故事，让受众能够理解、记住并采取行动。"
+          },
+          "speakers": [
+            "bella-ren"
+          ],
+          "draft": true
         }
       ],
       "originalName": "Agentic AI Summit",
@@ -454,17 +514,17 @@
         },
         {
           "ref": "P-5",
-          "originalTitle": "DHttp: From Partial Connectivity to Omniconnectivity",
-          "originalLanguage": "en",
+          "originalTitle": "DHttp: From Partial Connectivity to Omniconnectivity DHttp: 从部分互联到全域互联",
+          "originalLanguage": "zh",
           "title": {
             "en": "DHttp: From Partial Connectivity to Omniconnectivity",
             "zh": "DHttp：从部分连接到全域互联"
           },
           "slug": "p-5-dhttp-from-partial-connectivity-to-omniconnectivity",
           "speakers": [
-            "peng-zhang"
+            "daryl-wong"
           ],
-          "originalAbstract": "智能体互联网时代，为什么需要新的互联网，传统的万维网又有哪些缺陷？回顾互联网的发展史，会发现传输层以下都是公平的——任何一个网络设备都有 IP 地址、MAC 地址，每个不同的软件和硬件都被平等地对待；然而到了应用层，就不公平了：域名并非任意设备都能拥有，DNS 仅服务于数据中心网络环境中的节点，这对移动网络、家庭网络中的边缘智能体一点都不公平！而这一切在万维网的 HTTP 协议提出来之时就注定了，服务端上升到云端，客户端下沉到边缘，两者从一出生阶级差异就存在了。然而，谁说边缘 AI 不是服务端呢？Agent 要调用的工具、数据和设备，往往不在云上，而在用户身边。DHttp 协议正是为了破解这一难题，为阶级平等而来。DHttp 并不是重新发明 Http，而是在QUIC 和 HTTP3 的基础上实现了点到点通信、端到端加密，扩展 DNS 协议使其支持泛端点网络地址，进而融合客户端与服务端为一体，客户端即服务端，让域名、私钥、证书这套完美的 TLS 身份普适化到任何一个边缘 AI 上。它们产生了奇妙的组合反应，天然具备身份认证、安全传输、数据完整性，轻松解决了通过堆砌冗杂设计才解决的一系列难题。DHttp 将为我们揭开两两之间皆可互连的“真互联”世界的帷幕，开启万智互联全新体验！",
+          "originalAbstract": "The Era of the Agent Internet: Why We Need a New Network Architecture and the Flaws of the Traditional World Wide Web\n\nLooking back at the history of the Internet, layers below the Transport Layer are inherently fair—every network device possesses an IP address and a MAC address, ensuring all software and hardware are treated equally. However, this equality breaks down at the Application Layer: domain names are not accessible to arbitrary devices, and DNS exclusively serves nodes within data center network environments. This creates significant barriers for edge agents operating in mobile networks, home networks, and VPN virtual networks. How did the network architecture evolve into this state?\n\nYet, who says edge AI cannot act as a server? The tools, data, and devices that an Agent needs to invoke are often located not in the cloud, but directly beside the user.\n\nDHttp was created specifically as a patch to address this challenge. DHttp does not reinvent HTTP; instead, built on top of QUIC and HTTP/3, it implements peer-to-peer communication and end-to-end encryption. By extending the DNS protocol to support generalized endpoint network addresses, DHttp merges the client and server into a single unified entity—where the client is the server. It makes the proven mTLS identity model — the  domain names, private keys, and certificates — universal across edge AI.\n\nTogether, these capabilities generate a synergistic effect—natively providing identity authentication, secure transmission, and data integrity. This effortlessly resolves a series of complex issues that previously required layering redundant architectural designs. DHttp unveils a \"truly interconnected\" world where any two endpoints can connect directly, unlocking a brand-new paradigm for the Internet of Intelligence.\n\n智能体互联网时代，为什么需要新的互联网，传统的万维网又有哪些缺陷？回顾互联网的发展史，会发现传输层以下都是公平的——任何一个网络设备都有 IP 地址、MAC 地址，每个不同的软件和硬件都被平等地对待；然而到了应用层，就不公平了：域名并非任意设备都能拥有，DNS 仅服务于数据中心网络环境中的节点，这对移动网络、家庭网络中的边缘智能体一点都不公平！而这一切在万维网的 HTTP 协议提出来之时就注定了，服务端上升到云端，客户端下沉到边缘，两者从一出生阶级差异就存在了。然而，谁说边缘 AI 不是服务端呢？Agent 要调用的工具、数据和设备，往往不在云上，而在用户身边。DHttp 协议正是为了破解这一难题，为阶级平等而来。DHttp 并不是重新发明 Http，而是在QUIC 和 HTTP3 的基础上实现了点到点通信、端到端加密，扩展 DNS 协议使其支持泛端点网络地址，进而融合客户端与服务端为一体，客户端即服务端，让域名、私钥、证书这套完美的 TLS 身份普适化到任何一个边缘 AI 上。它们产生了奇妙的组合反应，天然具备身份认证、安全传输、数据完整性，轻松解决了通过堆砌冗杂设计才解决的一系列难题。DHttp 将为我们揭开两两之间皆可互连的“真互联”世界的帷幕，开启万智互联全新体验！",
           "originalAbstractLanguage": "zh",
           "overview": {
             "en": "DHttp addresses the limitations of traditional HTTP by enabling peer-to-peer communication and end-to-end encryption. It extends DNS to support universal endpoint addresses, allowing edge AI devices to act as both clients and servers, achieving true equality in network interactions. This protocol simplifies secure, identity-based communication across diverse networks, paving the way for a more interconnected future.",
@@ -1038,6 +1098,26 @@
             "en": "This talk introduces Jiuwen Agent Memory, a user-centered memory system for personalized, proactive, long-running agents. It explores how accuracy, performance, security, and configurability support agents that retain useful context over time.",
             "zh": "本次演讲介绍以用户为中心的九问智能体记忆系统，探讨如何通过高精度、高性能、安全且可配置的记忆能力，支持智能体向个性化、主动式和长期陪伴型应用演进。"
           }
+        },
+        {
+          "ref": "P-67",
+          "originalTitle": "Agent Harness for Autonomous Server Operations: An End-to-End Approach from Fault Detection to Remediation and Validation",
+          "originalLanguage": "en",
+          "originalAbstract": "In BMC firmware development and operations, general-purpose coding agents often lack a deep understanding of the openUBMC technology stack, system architecture, and diagnostic logic. As a result, troubleshooting relies heavily on trial-and-error exploration, leading to repeated failed attempts, excessive token consumption, limited support for BMC-specific commands, and poor execution observability. These limitations make it difficult to identify root causes accurately or establish a closed-loop fault-handling process.\n\nThis talk presents a domain-specific Agent Harness built on openUBMC Studio. The system integrates an openUBMC RAG knowledge base, device connectivity and state-observation capabilities, BMC-specific commands and diagnostic tools, and standardized, orchestratable agent workflows derived from expert knowledge. Together, these components equip agents with domain understanding, environment awareness, specialized tool use, and autonomous decision-making capabilities.\n\nIn server firmware development and operations, general-purpose coding agents often lack a deep understanding of BMC technologies, hardware–software architectures, and domain-specific diagnostic logic. When operating on physical devices, these agents tend to rely on trial-and-error exploration, resulting in repeated ineffective attempts, excessive token consumption, limited support for specialized debugging commands, and poor execution observability. These limitations make it difficult to identify root causes accurately or establish a reliable closed-loop fault-handling process.\n\nThis talk presents a domain-specific Agent Harness designed for server out-of-band management. The system is built around four core capabilities: domain knowledge, specialized tools, state observability, and workflow orchestration. A RAG knowledge base equips agents with server management and diagnostic expertise; standardized tools provide controlled access to device connectivity, log collection, state inspection, and firmware debugging; continuous observation captures device and task execution states; and expert troubleshooting practices are encoded into orchestratable, repeatable, and verifiable agent workflows.\n\nWith this Agent Harness, agents can autonomously execute an end-to-end process covering fault detection and reproduction, evidence collection, root-cause analysis, remediation, regression testing, and final validation. This approach advances server fault handling from assisted diagnosis toward an automated closed loop. It reduces ineffective exploration and resource consumption, accelerates fault localization and remediation, and improves end-to-end observability, traceability, and auditability. The practices presented in this talk provide a reusable and extensible engineering blueprint for applying Agent Harnesses to servers, embedded systems, and other complex hardware–software operational environments.",
+          "originalAbstractLanguage": "en",
+          "slug": "p-67-agent-harness-for-autonomous-server-operations-an-end-to-end-approach-from-fault-detection-to-remediation-and-validation",
+          "title": {
+            "en": "Agent Harness for Autonomous Server Operations: An End-to-End Approach from Fault Detection to Remediation and Validation",
+            "zh": "面向服务器自主运维的 Agent Harness：从故障检测到修复与验证的端到端实践"
+          },
+          "overview": {
+            "en": "In BMC firmware development and operations, general-purpose coding agents often lack a deep understanding of the openUBMC technology stack, system architecture, and diagnostic logic. As a result, troubleshooting relies heavily on trial-and-error exploration, leading to repeated failed attempts, excessive token consumption, limited support for BMC-specific commands, and poor execution observability. These limitations make it difficult to identify root causes accurately or establish a closed-loop fault-handling process.\n\nThis talk presents a domain-specific Agent Harness built on openUBMC Studio. The system integrates an openUBMC RAG knowledge base, device connectivity and state-observation capabilities, BMC-specific commands and diagnostic tools, and standardized, orchestratable agent workflows derived from expert knowledge. Together, these components equip agents with domain understanding, environment awareness, specialized tool use, and autonomous decision-making capabilities.\n\nIn server firmware development and operations, general-purpose coding agents often lack a deep understanding of BMC technologies, hardware–software architectures, and domain-specific diagnostic logic. When operating on physical devices, these agents tend to rely on trial-and-error exploration, resulting in repeated ineffective attempts, excessive token consumption, limited support for specialized debugging commands, and poor execution observability. These limitations make it difficult to identify root causes accurately or establish a reliable closed-loop fault-handling process.\n\nThis talk presents a domain-specific Agent Harness designed for server out-of-band management. The system is built around four core capabilities: domain knowledge, specialized tools, state observability, and workflow orchestration. A RAG knowledge base equips agents with server management and diagnostic expertise; standardized tools provide controlled access to device connectivity, log collection, state inspection, and firmware debugging; continuous observation captures device and task execution states; and expert troubleshooting practices are encoded into orchestratable, repeatable, and verifiable agent workflows.\n\nWith this Agent Harness, agents can autonomously execute an end-to-end process covering fault detection and reproduction, evidence collection, root-cause analysis, remediation, regression testing, and final validation. This approach advances server fault handling from assisted diagnosis toward an automated closed loop. It reduces ineffective exploration and resource consumption, accelerates fault localization and remediation, and improves end-to-end observability, traceability, and auditability. The practices presented in this talk provide a reusable and extensible engineering blueprint for applying Agent Harnesses to servers, embedded systems, and other complex hardware–software operational environments.",
+            "zh": "通用编程智能体往往缺乏对 BMC 技术、软硬件架构和领域诊断逻辑的深入理解，在物理设备上排障时容易陷入低效试错。本次演讲介绍基于 openUBMC Studio 构建的服务器带外管理专用 Agent Harness，围绕领域知识、专用工具、状态可观测性与工作流编排四项核心能力，整合 RAG 知识库、设备连接、日志采集、固件调试和专家工作流，实现从故障检测与复现、证据收集、根因分析，到修复、回归测试和最终验证的自动化闭环。"
+          },
+          "speakers": [
+            "xinxin-fan"
+          ],
+          "draft": false
         }
       ],
       "originalName": "Agentic OS & App",
@@ -1328,9 +1408,9 @@
           },
           "slug": "p-162-词元开物iterxai-硬件vibe-coding",
           "speakers": [
-            "郑仲鹏"
+            "杨振宇"
           ],
-          "originalAbstract": "词元开物IterxAI的目标是新手也能开发自己的硬件原型，产品覆盖AI硬件开发流程。包括软件、硬件、配套供应链服务。\n软件方面，词元开物提供了从需求梳理、选型、编写代码、运行仿真、生成电路板等全流程服务。硬件方面，词元开物提供了家庭化的个人PCB雕刻机。配套供应链服务中，词元开物提供了海量的硬件模块的真实数据，链接硬件厂商，用户在软件里直接就能够下单对应的选型。有了方案之后，不再为麻烦的下单流程感到烦恼。\n词元开物致力于用AI重新梳理硬件开发流程，让更多人能体验到硬件开发的乐趣。",
+          "originalAbstract": "词元开物IterxAI的目标是新手也能开发自己的硬件原型，产品覆盖AI硬件开发流程。包括软件、硬件、配套供应链服务。\n软件方面，词元开物设计了从需求梳理、选型、编写代码、运行仿真、生成电路板等全流程的一体化软件。硬件方面，词元开物提供了家庭化的个人PCB雕刻机，让用户在家里也能制造出PCB。配套供应链服务中，词元开物提供了海量的硬件模块的真实数据，链接硬件厂商，用户在软件里直接就能够下单对应的选型。有了方案之后，不再为麻烦的下单流程感到烦恼。\n词元开物致力于用AI重新梳理硬件开发流程，让更多人能体验到硬件创造的乐趣。",
           "originalAbstractLanguage": "zh",
           "overview": {
             "en": "This talk presents IterxAI, an end-to-end environment designed to help beginners create hardware prototypes. It covers AI-assisted requirements, component selection, coding, simulation, and PCB generation, together with a desktop PCB engraver and supply-chain data that connects designs directly to real components and vendors.",
@@ -1355,6 +1435,26 @@
             "en": "This talk shows how Hiwonder uses ROS as the contract between an AI agent's reasoning and a robot's actions. It covers the path from voice, text, or OpenClaw input through an LLM or VLA planner, reusable skill nodes, and hardware drivers, with multimodal sensing, real-time control, and safety built into the system.",
             "zh": "本次演讲介绍幻尔如何以 ROS 作为 AI 智能体“思考”与机器人“行动”之间的接口。从语音、文本或 OpenClaw 输入出发，系统连接 LLM 或 VLA 规划器、可复用技能节点与硬件驱动，并整合多模态感知、实时控制和安全机制。"
           }
+        },
+        {
+          "ref": "P-185",
+          "originalTitle": "AI雷达 — 感知 + 计算带来的行业变革",
+          "originalLanguage": "zh",
+          "originalAbstract": "随着 AI 从数字世界走向物理世界，感知正在成为连接模型与真实环境的重要入口。\n\n过去，毫米波雷达更多被视为一种完成测距、测速和目标检测的传感器，其能力很大程度上由硬件架构和预设算法决定。但随着高性能计算、开放数据和 AI 模型逐步进入雷达系统，雷达正在从单一的感知器件，演进为“感知 + 计算”融合的智能感知平台。\n\n本次分享将从这一变化出发，讨论什么是 AI 雷达，以及“感知 + 计算”为什么可能成为雷达技术发展的一个重要分水岭。我们将结合毫米波雷达从目标级数据、点云到原始 ADC 数据逐步开放的发展趋势，探讨 AI 如何改变雷达的开发方式、能力边界与应用场景，并进一步分析 Radar × AI 在机器人、具身智能和 Physical AI 等新兴领域中的潜在价值。",
+          "originalAbstractLanguage": "zh",
+          "slug": "p-185-ai雷达-感知-计算带来的行业变革",
+          "title": {
+            "en": "AI Radar: Industry Transformation Through Perception and Computing",
+            "zh": "AI雷达 — 感知 + 计算带来的行业变革"
+          },
+          "overview": {
+            "en": "As AI moves from the digital world into the physical world, perception is becoming a key bridge between models and real environments. This talk explains how millimeter-wave radar is evolving from a sensor for ranging, velocity measurement, and object detection into an intelligent perception platform that combines sensing and computing. It explores the opening of radar data from object-level outputs and point clouds to raw ADC data, and examines the potential of Radar × AI in robotics, embodied intelligence, and Physical AI.",
+            "zh": "随着 AI 从数字世界走向物理世界，感知正在成为连接模型与真实环境的重要入口。\n\n过去，毫米波雷达更多被视为一种完成测距、测速和目标检测的传感器，其能力很大程度上由硬件架构和预设算法决定。但随着高性能计算、开放数据和 AI 模型逐步进入雷达系统，雷达正在从单一的感知器件，演进为“感知 + 计算”融合的智能感知平台。\n\n本次分享将从这一变化出发，讨论什么是 AI 雷达，以及“感知 + 计算”为什么可能成为雷达技术发展的一个重要分水岭。我们将结合毫米波雷达从目标级数据、点云到原始 ADC 数据逐步开放的发展趋势，探讨 AI 如何改变雷达的开发方式、能力边界与应用场景，并进一步分析 Radar × AI 在机器人、具身智能和 Physical AI 等新兴领域中的潜在价值。"
+          },
+          "speakers": [
+            "曾辉"
+          ],
+          "draft": false
         }
       ],
       "originalName": "Agentic Device",
@@ -2109,6 +2209,26 @@
             "en": "Starting from the data challenges of embodied AI, this talk shares Noitom Robotics' journey from large-scale data factories toward a World Compiler. It examines real-world collection, human motion and object interaction, multimodal production, standardization, and robot learning, and explains why data infrastructure must evolve from scale toward structured representations of the physical world.",
             "zh": "本次演讲从具身智能的数据挑战出发，分享诺亦腾机器人从大规模“数据工厂”走向“世界编译器”的探索。内容涵盖真实世界数据采集、人体运动与人—物交互、多模态数据生产、标准化和机器人学习，并说明数据基础设施为何需要从追求规模进一步演进到对物理世界的结构化表达。"
           }
+        },
+        {
+          "ref": "P-193",
+          "originalTitle": "Everyone Can Build an Open-Source Robot",
+          "originalLanguage": "en",
+          "originalAbstract": "We still don’t know what the most successful robots of the future will look like — a humanoid, a robotic arm, a mobile manipulator, or perhaps something we haven’t imagined yet. As robots enter our homes, factories, and everyday spaces, being open, controllable, modifiable, and free from lock-in becomes increasingly important.\nAt Seeed Studio, our mission has always been to make technology accessible. Today, we work closely with ecosystems such as NVIDIA and Hugging Face to lower the barriers to building robots — connecting open-source hardware with LeRobot, VLA models, NVIDIA Isaac Sim, and other emerging technologies in Physical AI.\nFor the past 18 years, Seeed has been helping millions of developers turn ideas into real hardware. Based in Shenzhen, we connect global innovation with a highly responsive engineering and supply-chain ecosystem, helping developers move from idea to prototype, and from prototype to scalable manufacturing.\nThrough Seeed’s open-source robotics journey and our reBot robotic arm, this talk explores how open-source communities, AI, open hardware, and agile manufacturing can come together to lower the barriers to robotics — enabling a future where everyone can build an open-source robot.",
+          "originalAbstractLanguage": "en",
+          "slug": "p-193-everyone-can-build-an-open-source-robot",
+          "title": {
+            "en": "Everyone Can Build an Open-Source Robot",
+            "zh": "人人都能打造开源机器人"
+          },
+          "overview": {
+            "en": "We still don’t know what the most successful robots of the future will look like — a humanoid, a robotic arm, a mobile manipulator, or perhaps something we haven’t imagined yet. As robots enter our homes, factories, and everyday spaces, being open, controllable, modifiable, and free from lock-in becomes increasingly important.\nAt Seeed Studio, our mission has always been to make technology accessible. Today, we work closely with ecosystems such as NVIDIA and Hugging Face to lower the barriers to building robots — connecting open-source hardware with LeRobot, VLA models, NVIDIA Isaac Sim, and other emerging technologies in Physical AI.\nFor the past 18 years, Seeed has been helping millions of developers turn ideas into real hardware. Based in Shenzhen, we connect global innovation with a highly responsive engineering and supply-chain ecosystem, helping developers move from idea to prototype, and from prototype to scalable manufacturing.\nThrough Seeed’s open-source robotics journey and our reBot robotic arm, this talk explores how open-source communities, AI, open hardware, and agile manufacturing can come together to lower the barriers to robotics — enabling a future where everyone can build an open-source robot.",
+            "zh": "未来最成功的机器人可能是人形机器人、机械臂、移动操作机器人，也可能是尚未出现的新形态。随着机器人进入家庭、工厂和日常空间，开放、可控、可修改且不被单一平台锁定愈发重要。本次演讲将以矽递科技的开源机器人实践和 reBot 机械臂为例，介绍如何连接开源硬件、LeRobot、VLA 模型、NVIDIA Isaac Sim 与敏捷制造，让开发者更容易把创意转化为原型并实现规模化生产。"
+          },
+          "speakers": [
+            "jennie-wang"
+          ],
+          "draft": false
         }
       ],
       "originalName": "Open Source Robotics",
@@ -2197,6 +2317,46 @@
             "en": "This workshop examines the growing demand for people trained across mechanics, electronics, automation, and computer science as embodied AI develops. Drawing on Shenlan Academy's nine years in AI, robotics, and autonomous-driving education, it shares practices for preparing engineers for robotics and embodied-AI work.",
             "zh": "本工作坊探讨具身智能作为机械、电子、自动化与计算机交叉领域，如何应对快速增长的人才需求，并结合深蓝学院九年来在人工智能、机器人及自动驾驶教育中的经验，分享机器人与具身智能人才培养实践。"
           }
+        },
+        {
+          "ref": "P-190",
+          "originalTitle": "对话即创造：用 AI 智能体重构中小学科技教育",
+          "originalLanguage": "zh",
+          "originalAbstract": "面向中小学人工智能通识教育与科技教育的规模化落地，让每位教师都能带学生\"从创意到实物\"是绕不开的一课——但开源硬件与 3D 打印的造物实践，长期将非技术背景教师拒之门外。为此，我们开发出了掌问造物智能体：基于大模型多智能体架构，以\"对话即创造\"为核心理念，由问题引导师、智能工程师、结构工程师三位 AI 工程师协同，用自然语言对话替代传统代码编写与三维建模，让零基础教师也能体验从一句话创意到实物落地的完整创造流程，将传统 2 周的造物流程缩短至 20 分钟。本次分享通过真实跨学科项目案例，贯通开源硬件开发与三维建模的全流程，展示掌问如何助力跨学科项目自由开发，为人工智能通识教育与科技教育提供项目实践支撑——当技术门槛被抹平，教育的重心将回归思维培养，人人敢发明。",
+          "originalAbstractLanguage": "zh",
+          "slug": "p-190-对话即创造-用-ai-智能体重构中小学科技教育",
+          "title": {
+            "en": "Conversation Is Creation: Reimagining K–12 Technology Education with AI Agents",
+            "zh": "对话即创造：用 AI 智能体重构中小学科技教育"
+          },
+          "overview": {
+            "en": "Scaling AI literacy and technology education in primary and secondary schools requires enabling every teacher to guide students from an idea to a physical result. This workshop introduces Zhangwen, a multi-agent creation assistant built around the idea that conversation is creation. Three AI roles—a question guide, intelligent engineer, and structural engineer—replace traditional coding and 3D modeling with natural-language dialogue, allowing teachers without technical backgrounds to turn a one-sentence idea into a working object and reduce a typical two-week creation process to about 20 minutes.",
+            "zh": "面向中小学人工智能通识教育与科技教育的规模化落地，让每位教师都能带学生\"从创意到实物\"是绕不开的一课——但开源硬件与 3D 打印的造物实践，长期将非技术背景教师拒之门外。为此，我们开发出了掌问造物智能体：基于大模型多智能体架构，以\"对话即创造\"为核心理念，由问题引导师、智能工程师、结构工程师三位 AI 工程师协同，用自然语言对话替代传统代码编写与三维建模，让零基础教师也能体验从一句话创意到实物落地的完整创造流程，将传统 2 周的造物流程缩短至 20 分钟。本次分享通过真实跨学科项目案例，贯通开源硬件开发与三维建模的全流程，展示掌问如何助力跨学科项目自由开发，为人工智能通识教育与科技教育提供项目实践支撑——当技术门槛被抹平，教育的重心将回归思维培养，人人敢发明。"
+          },
+          "speakers": [
+            "周茂华"
+          ],
+          "draft": false
+        },
+        {
+          "ref": "P-194",
+          "originalTitle": "开源机器人与AI教育的全学段贯通实践",
+          "originalLanguage": "zh",
+          "originalAbstract": "人工智能技术快速迭代背景下，机器人与 AI 素养已经成为青少年科创能力的重要组成部分，但当前很多科创教育存在学段割裂、课程断层、项目与升学需求脱节等现实问题：低学段偏重拼装玩乐，高学段直接切入复杂算法开发，缺少循序渐进的能力阶梯，学生难以形成完整工程思维链条。本演讲立足全童科教二十余年开源机器人教育实践，探讨如何依托开源硬件和开放代码生态构建从小学、初中、高中到本科阶段的全学段贯通培养体系。遵循认知发展规律分层设计教学目标。",
+          "originalAbstractLanguage": "zh",
+          "slug": "p-194-开源机器人与ai教育的全学段贯通实践",
+          "title": {
+            "en": "A Cross-Stage Practice for Open-Source Robotics and AI Education",
+            "zh": "开源机器人与AI教育的全学段贯通实践"
+          },
+          "overview": {
+            "en": "As artificial intelligence evolves rapidly, robotics and AI literacy have become essential parts of young people's innovation skills. Yet many programs remain fragmented across school stages: younger learners focus on assembly and play, while older learners are pushed directly into complex algorithms without a progressive engineering pathway. Drawing on more than 20 years of open-source robotics education at QTSTEAM, this workshop presents a continuous curriculum from primary school through university, built on open hardware, open code, and developmentally appropriate learning goals.",
+            "zh": "人工智能技术快速迭代背景下，机器人与 AI 素养已经成为青少年科创能力的重要组成部分，但当前很多科创教育存在学段割裂、课程断层、项目与升学需求脱节等现实问题：低学段偏重拼装玩乐，高学段直接切入复杂算法开发，缺少循序渐进的能力阶梯，学生难以形成完整工程思维链条。本演讲立足全童科教二十余年开源机器人教育实践，探讨如何依托开源硬件和开放代码生态构建从小学、初中、高中到本科阶段的全学段贯通培养体系。遵循认知发展规律分层设计教学目标。"
+          },
+          "speakers": [
+            "秦志强"
+          ],
+          "draft": false
         }
       ],
       "originalName": "AI Education Workshop",
@@ -2342,6 +2502,46 @@
             "en": "This workshop examines DORA's dataflow-driven approach to robotic navigation, connecting perception and control through efficient, low-latency, composable components. It discusses measured advantages over traditional middleware and future work on ecosystem development and computation offloading.",
             "zh": "本工作坊介绍 DORA 如何通过数据流架构，将机器人的感知与控制连接为高效、低延迟且可组合的导航系统，并讨论相较传统中间件的性能优势，以及生态建设和计算卸载的下一步方向。"
           }
+        },
+        {
+          "ref": "P-188",
+          "originalTitle": "Robotic Learning with AI",
+          "originalLanguage": "en",
+          "originalAbstract": "Another way.",
+          "originalAbstractLanguage": "en",
+          "slug": "p-188-robotic-learning-with-ai",
+          "title": {
+            "en": "Robotic Learning with AI",
+            "zh": "AI 驱动的机器人学习"
+          },
+          "overview": {
+            "en": "Another way.",
+            "zh": "探索 AI 驱动机器人学习的另一种方式。"
+          },
+          "speakers": [
+            "谭棋洋"
+          ],
+          "draft": false
+        },
+        {
+          "ref": "P-191",
+          "originalTitle": "VLN 与 DORA-NAV：新一代 AI 导航框架解析",
+          "originalLanguage": "zh",
+          "originalAbstract": "机器人导航正从传统几何 SLAM、规划，走向融合视觉、语言与大模型的具身智能导航范式。本讲座围绕VLN 视觉语言导航与开源框架DORA-NAV展开，解析新一代 AI 导航框架的核心思想。讲座首先介绍 VLN 任务定义、空间语义推理机制与现有方案的瓶颈，阐释如何将自然语言指令转化为机器人可执行的空间导航行为；随后深入剖析 DORA-NAV AI 原生数据流架构，讲解其如何集成 LLM 任务编排、分层导航规划与多模态感知，实现开放环境下语言驱动的机器人自主导航。\n对比传统导航框架与 VLN 范式的差异，结合工程实践讨论大模型引入后带来的实时性、可靠性与落地难点，并展望具身导航未来发展方向。本报告适合机器人、自动驾驶、具身智能方向的研究生与开发者。",
+          "originalAbstractLanguage": "zh",
+          "slug": "p-191-vln-与-dora-nav-新一代-ai-导航框架解析",
+          "title": {
+            "en": "VLN and DORA-NAV: Understanding the Next Generation of AI Navigation Frameworks",
+            "zh": "VLN 与 DORA-NAV：新一代 AI 导航框架解析"
+          },
+          "overview": {
+            "en": "Robot navigation is moving beyond geometric SLAM and conventional planning toward embodied navigation that combines vision, language, and large models. This workshop introduces Visual-Language Navigation and the open-source DORA-NAV framework, covering spatial semantic reasoning, language-to-action translation, LLM-based task orchestration, hierarchical navigation planning, and multimodal perception. It also compares traditional navigation with VLN and discusses the real-time, reliability, and deployment challenges introduced by large models.",
+            "zh": "机器人导航正从传统几何 SLAM、规划，走向融合视觉、语言与大模型的具身智能导航范式。本讲座围绕VLN 视觉语言导航与开源框架DORA-NAV展开，解析新一代 AI 导航框架的核心思想。讲座首先介绍 VLN 任务定义、空间语义推理机制与现有方案的瓶颈，阐释如何将自然语言指令转化为机器人可执行的空间导航行为；随后深入剖析 DORA-NAV AI 原生数据流架构，讲解其如何集成 LLM 任务编排、分层导航规划与多模态感知，实现开放环境下语言驱动的机器人自主导航。\n对比传统导航框架与 VLN 范式的差异，结合工程实践讨论大模型引入后带来的实时性、可靠性与落地难点，并展望具身导航未来发展方向。本报告适合机器人、自动驾驶、具身智能方向的研究生与开发者。"
+          },
+          "speakers": [
+            "ruping-cen"
+          ],
+          "draft": false
         }
       ],
       "originalName": "DORA Workshop",
@@ -2405,18 +2605,18 @@
           "originalTitle": "基于vLLM的Kimi K3智能体生产级推理服务",
           "originalLanguage": "zh",
           "title": {
-            "en": "vLLM Latest Update and Roadmap",
-            "zh": "vLLM 项目最新特性和未来展望"
+            "en": "Production-Grade Inference Service for Kimi K3 Agents Based on vLLM",
+            "zh": "基于 vLLM 的 Kimi K3 智能体生产级推理服务"
           },
           "slug": "p-164-基于vllm的kimi-k3智能体生产级推理服务",
           "speakers": [
-            "jiangyun-zhu"
+            "黄梓铭"
           ],
           "originalAbstract": "分享Inferact团队如何基于开源vLLM引擎在Kimi K3模型上构建大规模智能体生产级推理服务",
           "originalAbstractLanguage": "zh",
           "overview": {
-            "en": "Jiangyun Zhu presents the latest vLLM features and its future roadmap.",
-            "zh": "朱江云介绍 vLLM 项目的最新特性与未来发展规划。"
+            "en": "This talk shares how the Inferact team built a large-scale, production-grade inference service for Kimi K3 agents using the open-source vLLM engine.",
+            "zh": "本次分享介绍 Inferact 团队如何基于开源 vLLM 引擎，为 Kimi K3 模型构建大规模、生产级的智能体推理服务。"
           },
           "date": "2026-10-17",
           "timeSlot": "13:50-14:20"
@@ -2800,6 +3000,26 @@
             "en": "This workshop presents KVServe's service-oriented approach to KV-cache compression, where end-to-end serving performance matters more than compression ratio alone. It covers faster compression, integration with vLLM and Mooncake, and deployment across heterogeneous platforms.",
             "zh": "本工作坊介绍 KVServe 面向服务性能的 KV Cache 压缩方法：目标不只是提高压缩率，更是改善端到端推理效率。内容涵盖更快的压缩方法、与 vLLM 和 Mooncake 的集成，以及异构平台部署。"
           }
+        },
+        {
+          "ref": "P-186",
+          "originalTitle": "Mooncake Store for Agentic RL in Disaggregated Architectures",
+          "originalLanguage": "en",
+          "originalAbstract": "Mooncake primarily provides a high-performance data plane in reinforcement learning (RL): it optimizes rollout data transmission via structured objects, DataProto/typed-ragged, BufferPool, and RDMA, and integrates with Miles to replace the Ray Object Store while supporting both synchronous and fully asynchronous modes. For weight updates, it supports NCCL broadcast, Mooncake TransferEngine P2P RDMA, and disk-delta, achieving approximately a 7x speedup with P2P on Kimi-K2. Additionally, it supports heterogeneous resharding for TP/PP/EP/DP, Store weight snapshots, and MoE sparse deltas. Its production capabilities are utilized across ecosystems such as Miles, SGLang, and vLLM.",
+          "originalAbstractLanguage": "en",
+          "slug": "p-186-mooncake-store-for-agentic-rl-in-disaggregated-architectures",
+          "title": {
+            "en": "Mooncake Store for Agentic RL in Disaggregated Architectures",
+            "zh": "面向解耦架构智能体强化学习的 Mooncake Store"
+          },
+          "overview": {
+            "en": "Mooncake primarily provides a high-performance data plane in reinforcement learning (RL): it optimizes rollout data transmission via structured objects, DataProto/typed-ragged, BufferPool, and RDMA, and integrates with Miles to replace the Ray Object Store while supporting both synchronous and fully asynchronous modes. For weight updates, it supports NCCL broadcast, Mooncake TransferEngine P2P RDMA, and disk-delta, achieving approximately a 7x speedup with P2P on Kimi-K2. Additionally, it supports heterogeneous resharding for TP/PP/EP/DP, Store weight snapshots, and MoE sparse deltas. Its production capabilities are utilized across ecosystems such as Miles, SGLang, and vLLM.",
+            "zh": "Mooncake 为强化学习提供高性能数据平面，通过结构化对象、DataProto/typed-ragged、BufferPool 与 RDMA 优化 rollout 数据传输，并与 Miles 集成以替代 Ray Object Store，同时支持同步和全异步模式。在权重更新方面，它支持 NCCL 广播、Mooncake TransferEngine P2P RDMA 与磁盘增量方案，并在 Kimi-K2 上通过 P2P 实现约 7 倍加速。此外，它还支持 TP/PP/EP/DP 异构重分片、Store 权重快照与 MoE 稀疏增量，相关生产能力已应用于 Miles、SGLang 和 vLLM 等生态。"
+          },
+          "speakers": [
+            "teng-ma"
+          ],
+          "draft": false
         }
       ],
       "originalName": "KVCDN Workshop",

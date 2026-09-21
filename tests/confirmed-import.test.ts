@@ -15,6 +15,7 @@ describe("single-source CFP import", () => {
     const current = structuredClone(schedule);
     const track = current.tracks.find((t) => t.id === "ws-vllm")!;
     const talk = track.talks.find((t) => t.ref === "P-164")!;
+    talk.speakers = ["jiangyun-zhu"];
     talk.title = {en: "Manually edited title", zh: "人工修订标题"};
     talk.overview = {en: "Manually edited description.", zh: "人工修订介绍。"};
     const imported = mergeConfirmedContent(speakers, current, [proposal({
@@ -55,10 +56,10 @@ describe("single-source CFP import", () => {
   });
 
   it("adds a changed co-presenter for review without replacing the published assignment", () => {
-    const result = mergeConfirmedContent(speakers, schedule, [proposal({ref: "P-164", name: "朱江云", coSpeakers: [{name: "New Copresenter"}]})]);
+    const result = mergeConfirmedContent(speakers, schedule, [proposal({ref: "P-164", name: "黄梓铭", coSpeakers: [{name: "New Copresenter"}]})]);
     expect(result.report.newSpeakers).toEqual(["new-copresenter"]);
     expect(result.report.speakerAssignmentChanges).toEqual(["P-164"]);
-    expect(result.schedule.tracks.find((t) => t.id === "ws-vllm").talks.find((t) => t.ref === "P-164").speakers).toEqual(["jiangyun-zhu"]);
+    expect(result.schedule.tracks.find((t) => t.id === "ws-vllm").talks.find((t) => t.ref === "P-164").speakers).toEqual(["黄梓铭"]);
   });
 
   it("never copies a Chinese CFP biography into the English field", () => {
