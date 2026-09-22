@@ -112,6 +112,13 @@
     },
     {
       "category": "silver",
+      "image": "broadview.png",
+      "name": "Broadview",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.broadview.com.cn/"
+    },
+    {
+      "category": "silver",
       "image": "cohdl.png",
       "name": "CoHDL",
       "url": "https://cohdl.org/"
