@@ -163,6 +163,13 @@
       "name": "Shenzhen Software Industry Association",
       "logoClass": "partner-logo-wide",
       "url": "https://www.ssia.org.cn/"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "shenzhen-university-entrepreneur-alliance.png",
+      "name": "Shenzhen University Entrepreneur Alliance",
+      "logoClass": "partner-logo-wide",
+      "url": "https://cxcy.szu.edu.cn/xsst/cyzlm.htm"
     }
   ]
 }
