@@ -59,6 +59,13 @@
     },
     {
       "category": "gold",
+      "image": "kimi.png",
+      "name": "Kimi",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.kimi.com/"
+    },
+    {
+      "category": "gold",
       "image": "google-cloud.png",
       "name": "Google Cloud",
       "logoClass": "partner-logo-wide",
