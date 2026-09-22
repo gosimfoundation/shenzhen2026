@@ -17,13 +17,16 @@ const surnameCollator = new Intl.Collator("en", {
 const surnameOverrides: Record<string, string> = {
   "alba-maria-tellez-fernandez": "Téllez Fernández",
   "bryce-adelstein-lelbach": "Adelstein Lelbach",
+  "cen-ming": "Cen",
   "chen-xin": "Chen",
+  "zhifei-xie": "Xie",
   codingma: "Ma",
 };
 
-const isCoSpeaker = (speaker: SpeakerForSorting) => {
-  const role = speaker.roleOrg?.trim().toLocaleLowerCase() || "";
-  return role === "co-speaker" || role === "联合讲师";
+const featuredSpeakerIds = ["dhh", "michael-yuan", "jiang-tao"];
+const featuredRank = (id: string) => {
+  const index = featuredSpeakerIds.indexOf(id);
+  return index < 0 ? featuredSpeakerIds.length : index;
 };
 
 const getSurname = (
@@ -43,11 +46,8 @@ export const compareSpeakersBySurname = (
   b: SpeakerForSorting,
   canonicalNamesById?: CanonicalNamesById,
 ) => {
-  const keynoteOrder = Number(b.keynote === true) - Number(a.keynote === true);
-  if (keynoteOrder !== 0) return keynoteOrder;
-
-  const speakerTypeOrder = Number(isCoSpeaker(a)) - Number(isCoSpeaker(b));
-  if (speakerTypeOrder !== 0) return speakerTypeOrder;
+  const featuredOrder = featuredRank(a.id) - featuredRank(b.id);
+  if (featuredOrder !== 0) return featuredOrder;
 
   const surnameOrder = surnameCollator.compare(
     getSurname(a, canonicalNamesById),

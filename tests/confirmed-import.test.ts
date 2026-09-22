@@ -15,6 +15,8 @@ describe("single-source CFP import", () => {
     const current = structuredClone(schedule);
     const track = current.tracks.find((t) => t.id === "ws-vllm")!;
     const talk = track.talks.find((t) => t.ref === "P-164")!;
+    talk.date = "2026-10-17";
+    talk.timeSlot = "13:50-14:20";
     talk.speakers = ["jiangyun-zhu"];
     talk.title = {en: "Manually edited title", zh: "人工修订标题"};
     talk.overview = {en: "Manually edited description.", zh: "人工修订介绍。"};

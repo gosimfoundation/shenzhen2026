@@ -6,7 +6,7 @@ const englishSpeakerIds = new Set(speakersEn.speakers.map((speaker) => speaker.i
 const chineseSpeakerIds = new Set(speakersZh.speakers.map((speaker) => speaker.id));
 
 describe("published schedule relationships", () => {
-  it("shows the keynote plenary first and assigns DHH only to it", () => {
+  it("shows the keynote plenary first and includes DHH's summit fireside chat", () => {
     expect(schedulePreview.tracks[0]).toMatchObject({
       id: "special-keynote",
       name: {
@@ -18,16 +18,21 @@ describe("published schedule relationships", () => {
     const dhhTrackIds = schedulePreview.tracks
       .filter((track) => track.talks.some((talk) => talk.speakers.includes("dhh")))
       .map((track) => track.id);
-    expect(dhhTrackIds).toEqual(["special-keynote"]);
+    expect(dhhTrackIds).toEqual(["special-keynote", "agentic-ai-summit"]);
+    expect(talks.find((talk) => talk.ref === "SUMMIT-FIRESIDE-CHAT")).toMatchObject({
+      speakers: ["dhh", "michael-yuan"],
+      date: "2026-10-17",
+      timeSlot: "11:35-12:15",
+    });
 
     expect(speakersEn.categories[1]).toMatchObject({
       id: "special-keynote",
       group: "tracks",
     });
     expect(speakersEn.speakers.find((speaker) => speaker.id === "dhh")?.tags)
-      .toEqual(["special-keynote"]);
+      .toEqual(["special-keynote", "sz26-agentic-ai-summit"]);
     expect(speakersZh.speakers.find((speaker) => speaker.id === "dhh")?.tags)
-      .toEqual(["special-keynote"]);
+      .toEqual(["special-keynote", "sz26-agentic-ai-summit"]);
   });
 
   it("gives every accepted talk bilingual page content, a stable route, and a speaker", () => {
@@ -43,7 +48,8 @@ describe("published schedule relationships", () => {
       expect(talk.overview.en.trim()).not.toBe("");
       expect(talk.overview.zh.trim()).not.toBe("");
       expect(talk.overview.zh).toMatch(/[\u3400-\u9fff]/u);
-      expect(talk.slug).toMatch(/^(?:p-\d+-|google-cloud-|vllm-)/);
+      expect(talk.slug).toMatch(/^[\p{Letter}\p{Number}_-]+$/u);
+      if (!talk.manual) expect(talk.slug).toMatch(/^p-\d+-/);
       if ("type" in talk && ["check-in", "break", "pending", "ama"].includes(talk.type)) {
         expect(talk.speakers).toEqual([]);
       } else {

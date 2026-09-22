@@ -8,7 +8,7 @@ const canonicalNamesById = new Map([
 ]);
 
 describe("speaker surname sorting", () => {
-  it("places keynote speakers before other primary speakers", () => {
+  it("places DHH, Michael Yuan and Tao Jiang first in that order", () => {
     const speakers = [
       { id: "peng-zhang", name: "Peng Zhang", roleOrg: "Founder" },
       {
@@ -18,12 +18,18 @@ describe("speaker surname sorting", () => {
         keynote: true,
       },
       { id: "pieter-delobelle", name: "Pieter Delobelle", roleOrg: "Co-speaker" },
+      { id: "jiang-tao", name: "Tao Jiang" },
+      { id: "michael-yuan", name: "Michael Yuan" },
+      { id: "other-keynote", name: "Other Zulu", keynote: true },
     ];
 
     expect(speakers.sort(compareSpeakersBySurname).map((speaker) => speaker.id)).toEqual([
       "dhh",
-      "peng-zhang",
+      "michael-yuan",
+      "jiang-tao",
       "pieter-delobelle",
+      "peng-zhang",
+      "other-keynote",
     ]);
   });
 
@@ -43,7 +49,7 @@ describe("speaker surname sorting", () => {
     ).toEqual(["sebastien-crozet", "shiwei-liu", "peng-zhang"]);
   });
 
-  it("keeps all co-speakers after primary speakers", () => {
+  it("sorts co-speakers and primary speakers together by surname", () => {
     const speakers = [
       { id: "xun-wang", name: "Xun Wang", roleOrg: "联合讲师" },
       { id: "peng-zhang", name: "Peng Zhang", roleOrg: "Founder" },
@@ -52,10 +58,10 @@ describe("speaker surname sorting", () => {
     ];
 
     expect(speakers.sort(compareSpeakersBySurname).map((speaker) => speaker.id)).toEqual([
-      "shiwei-liu",
-      "peng-zhang",
       "pieter-delobelle",
+      "shiwei-liu",
       "xun-wang",
+      "peng-zhang",
     ]);
   });
 
@@ -63,13 +69,17 @@ describe("speaker surname sorting", () => {
     const speakers = [
       { id: "sebastien-crozet", name: "Sébastien Crozet" },
       { id: "chen-xin", name: "Chen Xin" },
+      { id: "cen-ming", name: "Cen Ming" },
+      { id: "zhifei-xie", name: "Xie Zhifei" },
       { id: "bryce-adelstein-lelbach", name: "Bryce Adelstein Lelbach" },
     ];
 
     expect(speakers.sort(compareSpeakersBySurname).map((speaker) => speaker.id)).toEqual([
       "bryce-adelstein-lelbach",
+      "cen-ming",
       "chen-xin",
       "sebastien-crozet",
+      "zhifei-xie",
     ]);
   });
 });

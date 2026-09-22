@@ -1,6 +1,6 @@
 ---
 // Import the speakers data
-import { speakersZh as speakersData } from "utils/conference";
+import { speakersZh as speakersData, speakerIdsWithPublishedTalks } from "utils/conference";
 import { speakersEn as canonicalSpeakersData } from "utils/conference";
 import {
   getSpeakerImagePath,
@@ -15,9 +15,9 @@ const canonicalNamesById = new Map(
   canonicalSpeakersData.speakers.map((speaker) => [speaker.id, speaker.name]),
 );
 
-// Filter speakers to only include those where draft is false and id is not "tbd"
+// List only speakers participating in the published program.
 const filteredSpeakers = speakersData.speakers
-  .filter((speaker) => speaker.draft !== true && speaker.id !== "tbd")
+  .filter((speaker) => speaker.draft !== true && speaker.id !== "tbd" && speakerIdsWithPublishedTalks.has(speaker.id))
   .sort((a, b) => compareSpeakersBySurname(a, b, canonicalNamesById));
 
 const eventCategoryIds = new Set([

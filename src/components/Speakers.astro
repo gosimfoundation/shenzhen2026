@@ -1,6 +1,6 @@
 ---
 // Import the speakers data
-import { speakersEn as speakersData } from "utils/conference";
+import { speakersEn as speakersData, speakerIdsWithPublishedTalks } from "utils/conference";
 import {
   getSpeakerImagePath,
   SPEAKER_IMAGE_FALLBACK_HANDLER,
@@ -46,9 +46,9 @@ const speakerCardText: Record<string, { role?: string; company?: string }> = {
   "joaquin-salvachua": { company: "Polytechnic Univ. Madrid" },
 };
 
-// Filter speakers to only include those where draft is false and id is not "tbd"
+// List only speakers participating in the published program.
 const filteredSpeakers = speakersData.speakers
-  .filter((speaker) => speaker.draft !== true && speaker.id !== "tbd")
+  .filter((speaker) => speaker.draft !== true && speaker.id !== "tbd" && speakerIdsWithPublishedTalks.has(speaker.id))
   .sort((a, b) => compareSpeakersBySurname(a, b));
 
 const eventCategoryIds = new Set([

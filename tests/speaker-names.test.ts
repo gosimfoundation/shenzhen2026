@@ -8,7 +8,7 @@ const bilingualNames: Record<string, [english: string, chinese: string]> = {
   "bohua-zhan": ["Bohua Zhan", "詹博华"],
   "cen-ming": ["Cen Ming", "岑明"],
   "chao-du": ["Chao Du", "杜超"],
-  "chenzhe-jing": ["Chenzhe Jing", "井晨哲"],
+  "chenzhe-jing": ["Cenzhe Chase Jing", "井晨哲"],
   "cong-wang": ["Cong Wang", "王聪"],
   "fahua-jin": ["Fahua Jin", "金发华"],
   "fanshi-zhang": ["Fanshi Zhang", "张凡石"],

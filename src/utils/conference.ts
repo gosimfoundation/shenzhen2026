@@ -54,6 +54,10 @@ export const schedule = {
   })),
 };
 
+export const speakerIdsWithPublishedTalks = new Set(
+  schedule.tracks.flatMap((track) => track.talks.flatMap((talk) => talk.speakers)),
+);
+
 export function localizeSpeakers(lang: Language) {
   return {
     categories: [

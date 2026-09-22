@@ -15,7 +15,8 @@
         "zh": "David Heinemeier Hansson（DHH）是 Ruby on Rails 与 Omarchy 的创建者、37signals 的共同所有人兼联合创始人，也是畅销书作者。他与 Jason Fried 合著《REWORK》《REMOTE》《It Doesn't Have to Be Crazy at Work》和《Getting Real》，并担任 Rails Foundation 主席及 Shopify 董事。"
       },
       "tags": [
-        "special-keynote"
+        "special-keynote",
+        "sz26-agentic-ai-summit"
       ],
       "socialLinks": {
         "website": "https://dhh.dk/",
@@ -173,7 +174,7 @@
       "id": "charles-yang",
       "name": {
         "en": "Charles Yang",
-        "zh": "Charles Yang"
+        "zh": "杨庆"
       },
       "roleOrg": {
         "en": "AI Solution Architect, AMD",
@@ -193,7 +194,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/charles-yang.png",
       "sourceNames": [
-        "Charles Yang"
+        "Charles Yang",
+        "杨庆"
       ],
       "source": "cfp"
     },
@@ -201,7 +203,7 @@
       "id": "peilin-li",
       "name": {
         "en": "Peilin Li",
-        "zh": "Peilin Li"
+        "zh": "李沛霖"
       },
       "roleOrg": {
         "en": "Ph.D. Student, Tsinghua University / Approaching AI",
@@ -220,7 +222,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/peilin-li.png",
       "sourceNames": [
-        "Peilin Li"
+        "Peilin Li",
+        "李沛霖"
       ],
       "source": "cfp"
     },
@@ -228,7 +231,7 @@
       "id": "yujie-yang",
       "name": {
         "en": "Yujie Yang",
-        "zh": "Yujie Yang"
+        "zh": "杨宇杰"
       },
       "roleOrg": {
         "en": "Co-speaker",
@@ -245,7 +248,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/yujie-yang.png",
       "sourceNames": [
-        "Yujie Yang"
+        "Yujie Yang",
+        "杨宇杰"
       ],
       "source": "cfp"
     },
@@ -341,7 +345,7 @@
       "id": "jiaqi-zheng",
       "name": {
         "en": "Jiaqi Zheng",
-        "zh": "郑嘉琦"
+        "zh": "郑嘉琪"
       },
       "roleOrg": {
         "en": "Associate Professor, Nanjing University",
@@ -362,7 +366,8 @@
       "image": "/images/speakers/confirmed/jiaqi-zheng.png",
       "sourceNames": [
         "Jiaqi Zheng",
-        "郑嘉琦"
+        "郑嘉琦",
+        "郑嘉琪"
       ],
       "source": "cfp"
     },
@@ -399,7 +404,7 @@
       "id": "liuwang-kang",
       "name": {
         "en": "Liuwang Kang",
-        "zh": "Liuwang Kang"
+        "zh": "康留旺"
       },
       "roleOrg": {
         "en": "Associate Researcher, Shenzhen Institute of Artificial Intelligence and Robotics for Society",
@@ -416,7 +421,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/liuwang-kang.png",
       "sourceNames": [
-        "Liuwang Kang"
+        "Liuwang Kang",
+        "康留旺"
       ],
       "source": "cfp"
     },
@@ -424,7 +430,7 @@
       "id": "hongjun-zhou",
       "name": {
         "en": "Hongjun Zhou",
-        "zh": "Hongjun Zhou"
+        "zh": "周鸿钧"
       },
       "roleOrg": {
         "en": "Co-speaker",
@@ -441,7 +447,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/hongjun-zhou.png",
       "sourceNames": [
-        "Hongjun Zhou"
+        "Hongjun Zhou",
+        "周鸿钧"
       ],
       "source": "cfp"
     },
@@ -518,7 +525,7 @@
         "zh": "Ingora 创始人兼 CEO，致力于打造面向儿童的新一代 AI 学习伙伴设备。此前在微软拥有超过 20 年产品领导经验，曾负责 SharePoint Copilot 与 Agent 等业务的产品战略和增长。目前探索智能体系统、教育与硬件的结合，以及 AI 伙伴如何重塑儿童的学习和成长方式。"
       },
       "tags": [
-        "sz26-agentic-ai-summit"
+        "sz26-agentic-os-app"
       ],
       "socialLinks": {
         "website": "https://ingora.ai/",
@@ -623,7 +630,7 @@
       "id": "qinying-liao",
       "name": {
         "en": "Qinying Liao",
-        "zh": "Qinying Liao"
+        "zh": "廖勤樱"
       },
       "roleOrg": {
         "en": "Principal Program Manager, Microsoft",
@@ -634,7 +641,7 @@
         "zh": "拥有十余年微软 Azure AI 经验的资深 AI 产品负责人，专注于语音 AI 与语音智能体。具备产品战略、从零到一产品开发和全球商业化经验，致力于将前沿 AI 技术转化为可规模化的产品和长期业务价值。"
       },
       "tags": [
-        "sz26-agentic-device"
+        "sz26-agentic-os-app"
       ],
       "socialLinks": {
         "linkedin": "https://www.linkedin.com/in/qinying-liao-7458b358/"
@@ -642,7 +649,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/qinying-liao.png",
       "sourceNames": [
-        "Qinying Liao"
+        "Qinying Liao",
+        "廖勤樱"
       ],
       "source": "cfp"
     },
@@ -877,7 +885,7 @@
       "id": "pieter-delobelle",
       "name": {
         "en": "Pieter Delobelle",
-        "zh": "Pieter Delobelle"
+        "zh": "彼得·德洛贝勒"
       },
       "roleOrg": {
         "en": "Co-speaker",
@@ -894,7 +902,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/pieter-delobelle.png",
       "sourceNames": [
-        "Pieter Delobelle"
+        "Pieter Delobelle",
+        "彼得·德洛贝勒"
       ],
       "source": "cfp"
     },
@@ -1290,7 +1299,7 @@
       "id": "chenghao-rong",
       "name": {
         "en": "Chenghao Rong",
-        "zh": "Chenghao Rong"
+        "zh": "荣程浩"
       },
       "roleOrg": {
         "en": "Senior Software Engineer, HUAWEI",
@@ -1307,7 +1316,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/chenghao-rong.png",
       "sourceNames": [
-        "Chenghao Rong"
+        "Chenghao Rong",
+        "荣程浩"
       ],
       "source": "cfp"
     },
@@ -1315,7 +1325,7 @@
       "id": "yixiang-zhang",
       "name": {
         "en": "Yixiang Zhang",
-        "zh": "Yixiang Zhang"
+        "zh": "张懿翔"
       },
       "roleOrg": {
         "en": "Co-speaker",
@@ -1332,7 +1342,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/yixiang-zhang.png",
       "sourceNames": [
-        "Yixiang Zhang"
+        "Yixiang Zhang",
+        "张懿翔"
       ],
       "source": "cfp"
     },
@@ -1340,7 +1351,7 @@
       "id": "yongqiang-ma",
       "name": {
         "en": "Yongqiang Ma",
-        "zh": "Yongqiang Ma"
+        "zh": "马勇强"
       },
       "roleOrg": {
         "en": "Co-speaker",
@@ -1357,7 +1368,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/yongqiang-ma.png",
       "sourceNames": [
-        "Yongqiang Ma"
+        "Yongqiang Ma",
+        "马勇强"
       ],
       "source": "cfp"
     },
@@ -1376,7 +1388,7 @@
         "zh": "专注移动 GNU/Linux 系统的嵌入式软件工程师，拥有操作系统开发、硬件适配和平台集成经验。他的工作聚焦开源移动技术，以及 Linux 在下一代移动计算中的作用。"
       },
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-device"
       ],
       "socialLinks": {
         "github": "https://github.com/fakeshell",
@@ -1404,7 +1416,7 @@
         "zh": "Wayne Connolly 将在 GOSIM 深圳 2026 联合分享《智能体 AI 如何为移动 Linux 作出贡献》。"
       },
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-device"
       ],
       "socialLinks": {},
       "draft": false,
@@ -1417,8 +1429,8 @@
     {
       "id": "chen-xin",
       "name": {
-        "en": "Chen Xin",
-        "zh": "Chen Xin"
+        "en": "Xin Chen",
+        "zh": "陈鑫"
       },
       "roleOrg": {
         "en": "Engineer, Huawei Technologies",
@@ -1436,7 +1448,9 @@
       "image": "/images/speakers/confirmed/chen-xin.png",
       "sourceNames": [
         "chenxin852",
-        "Chen Xin"
+        "Chen Xin",
+        "Xin Chen",
+        "陈鑫"
       ],
       "source": "cfp"
     },
@@ -1566,7 +1580,7 @@
       },
       "tags": [
         "sz26-open-source-model",
-        "sz26-agentic-os-app"
+        "sz26-agentic-ai-summit"
       ],
       "socialLinks": {
         "website": "https://chiefscientist.org/",
@@ -1651,7 +1665,7 @@
         "zh": "FOSS（上海）技术咨询创始人，也是 Servo 浏览器引擎维护者。"
       },
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-ai-on-edge"
       ],
       "socialLinks": {
         "github": "https://github.com/gterzian"
@@ -2238,7 +2252,7 @@
     {
       "id": "chenzhe-jing",
       "name": {
-        "en": "Chenzhe Jing",
+        "en": "Cenzhe Chase Jing",
         "zh": "井晨哲"
       },
       "roleOrg": {
@@ -2257,7 +2271,8 @@
       "image": "/images/speakers/confirmed/chenzhe-jing.png",
       "sourceNames": [
         "井晨哲",
-        "Chenzhe Jing"
+        "Chenzhe Jing",
+        "Cenzhe Chase Jing"
       ],
       "source": "cfp"
     },
@@ -2435,7 +2450,7 @@
         "zh": "独立开源与智能体 AI 顾问、DeerFlow 维护者。曾任字节跳动 OSPO 开源布道师和 Apache 软件基金会董事，并长期参与 Apache Camel、CXF、ServiceMix 与 ServiceComb 等项目。此前曾任华为开源技术专家及 Red Hat 首席工程师。"
       },
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-ai-summit"
       ],
       "socialLinks": {
         "website": "https://willemjiang.github.io/",
@@ -2481,7 +2496,7 @@
       "id": "ruping-cen",
       "name": {
         "en": "Ruping Cen",
-        "zh": "Ruping Cen"
+        "zh": "岑汝平"
       },
       "roleOrg": {
         "en": "PhD, Chongqing University of Posts and Telecommunications",
@@ -2501,7 +2516,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/ruping-cen.png",
       "sourceNames": [
-        "Ruping Cen"
+        "Ruping Cen",
+        "岑汝平"
       ],
       "source": "cfp"
     },
@@ -2567,7 +2583,7 @@
       "id": "canran-tang",
       "name": {
         "en": "Canran Tang",
-        "zh": "Canran Tang"
+        "zh": "唐粲然"
       },
       "roleOrg": {
         "en": "Graduate Student, University of Science and Technology of China",
@@ -2586,7 +2602,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/canran-tang.png",
       "sourceNames": [
-        "Canran Tang"
+        "Canran Tang",
+        "唐粲然"
       ],
       "source": "cfp"
     },
@@ -2623,7 +2640,7 @@
     {
       "id": "jiang-tao",
       "name": {
-        "en": "Jiang Tao",
+        "en": "Tao Jiang",
         "zh": "蒋涛"
       },
       "roleOrg": {
@@ -2643,7 +2660,8 @@
       "sourceNames": [
         "jiangtao",
         "Jiang Tao",
-        "蒋涛"
+        "蒋涛",
+        "Tao Jiang"
       ],
       "source": "cfp"
     },
@@ -2764,7 +2782,7 @@
       "id": "emily-chen",
       "name": {
         "en": "Emily Chen",
-        "zh": "Emily Chen"
+        "zh": "陈阳"
       },
       "roleOrg": {
         "en": "Co-founder, RoboChallenge",
@@ -2781,7 +2799,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/emily-chen.png",
       "sourceNames": [
-        "Emily Chen"
+        "Emily Chen",
+        "陈阳"
       ],
       "source": "cfp"
     },
@@ -2789,7 +2808,7 @@
       "id": "haibin-zhang",
       "name": {
         "en": "Haibin Zhang",
-        "zh": "Haibin Zhang"
+        "zh": "张海滨"
       },
       "roleOrg": {
         "en": "AI Infrastructure & Open Source Lead, Dexmal",
@@ -2808,7 +2827,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/haibin-zhang.png",
       "sourceNames": [
-        "Haibin Zhang"
+        "Haibin Zhang",
+        "张海滨"
       ],
       "source": "cfp"
     },
@@ -2892,7 +2912,7 @@
       "id": "zhenghao-chen",
       "name": {
         "en": "Zhenghao Chen",
-        "zh": "Zhenghao Chen"
+        "zh": "陈郑豪"
       },
       "roleOrg": {
         "en": "Assistant Professor, University of Newcastle",
@@ -2909,7 +2929,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/zhenghao-chen.png",
       "sourceNames": [
-        "Zhenghao Chen"
+        "Zhenghao Chen",
+        "陈郑豪"
       ],
       "source": "cfp"
     },
@@ -2917,7 +2938,7 @@
       "id": "guibin-zhang",
       "name": {
         "en": "Guibin Zhang",
-        "zh": "Guibin Zhang"
+        "zh": "张桂彬"
       },
       "roleOrg": {
         "en": "PhD Student, National University of Singapore",
@@ -2937,7 +2958,8 @@
       "image": "/images/speakers/confirmed/guibin-zhang.png",
       "sourceNames": [
         "Guibin ZHANG",
-        "Guibin Zhang"
+        "Guibin Zhang",
+        "张桂彬"
       ],
       "source": "cfp"
     },
@@ -2945,7 +2967,7 @@
       "id": "jiahang-lin",
       "name": {
         "en": "Jiahang Lin",
-        "zh": "Jiahang Lin"
+        "zh": "林佳航"
       },
       "roleOrg": {
         "en": "Master's Student, Fudan University",
@@ -2965,7 +2987,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/jiahang-lin.png",
       "sourceNames": [
-        "Jiahang Lin"
+        "Jiahang Lin",
+        "林佳航"
       ],
       "source": "cfp"
     },
@@ -2973,7 +2996,7 @@
       "id": "hongbo-kang",
       "name": {
         "en": "Hongbo Kang",
-        "zh": "Hongbo Kang"
+        "zh": "康鸿博"
       },
       "roleOrg": {
         "en": "LLM Systems Architect, Approaching.AI",
@@ -2990,7 +3013,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/hongbo-kang.png",
       "sourceNames": [
-        "Hongbo Kang"
+        "Hongbo Kang",
+        "康鸿博"
       ],
       "source": "cfp"
     },
@@ -2998,7 +3022,7 @@
       "id": "wan-ying",
       "name": {
         "en": "Ying Wan",
-        "zh": "Ying Wan"
+        "zh": "万颖"
       },
       "roleOrg": {
         "en": "Associate Researcher, Southeast University",
@@ -3016,7 +3040,8 @@
       "image": "/images/speakers/confirmed/wan-ying.png",
       "sourceNames": [
         "wan ying",
-        "Ying Wan"
+        "Ying Wan",
+        "万颖"
       ],
       "source": "cfp"
     },
@@ -3076,7 +3101,7 @@
       "id": "weiyu-xie",
       "name": {
         "en": "Weiyu Xie",
-        "zh": "Weiyu Xie"
+        "zh": "谢威宇"
       },
       "roleOrg": {
         "en": "Chief Architect, Approaching.AI",
@@ -3095,7 +3120,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/weiyu-xie.png",
       "sourceNames": [
-        "Weiyu Xie"
+        "Weiyu Xie",
+        "谢威宇"
       ],
       "source": "cfp"
     },
@@ -3129,7 +3155,7 @@
       "id": "lei-bo",
       "name": {
         "en": "Lei Bo",
-        "zh": "Lei Bo"
+        "zh": "雷波"
       },
       "roleOrg": {
         "en": "Director, China Telecom Research Institute",
@@ -3147,7 +3173,8 @@
       "image": "/images/speakers/confirmed/lei-bo.png",
       "sourceNames": [
         "LEI BO",
-        "Lei Bo"
+        "Lei Bo",
+        "雷波"
       ],
       "source": "cfp"
     },
@@ -3184,8 +3211,8 @@
     {
       "id": "zhifei-xie",
       "name": {
-        "en": "Zhifei Xie",
-        "zh": "Zhifei Xie"
+        "en": "Xie Zhifei",
+        "zh": "谢之非"
       },
       "roleOrg": {
         "en": "PhD Researcher, Nanyang Technological University",
@@ -3203,7 +3230,8 @@
       "image": "/images/speakers/confirmed/zhifei-xie.png",
       "sourceNames": [
         "Xie Zhifei",
-        "Zhifei Xie"
+        "Zhifei Xie",
+        "谢之非"
       ],
       "source": "cfp"
     },
@@ -3300,7 +3328,8 @@
         "zh": "Second State 创始人、投资人和智能体工程师，专注于开源 AI 与 Rust。"
       },
       "tags": [
-        "sz26-agentic-device"
+        "sz26-agentic-device",
+        "sz26-agentic-ai-summit"
       ],
       "socialLinks": {
         "github": "https://github.com/juntao",
@@ -3348,7 +3377,7 @@
       "id": "frank-fan",
       "name": {
         "en": "Frank Fan",
-        "zh": "Frank Fan"
+        "zh": "范军"
       },
       "roleOrg": {
         "en": "Principal Solutions Architect, AWS",
@@ -3368,7 +3397,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/frank-fan.png",
       "sourceNames": [
-        "Frank Fan"
+        "Frank Fan",
+        "范军"
       ],
       "source": "cfp"
     },
@@ -3401,7 +3431,7 @@
       "id": "tao-pu",
       "name": {
         "en": "Tao Pu",
-        "zh": "Tao Pu"
+        "zh": "蒲韬"
       },
       "roleOrg": {
         "en": "R&D Director, X-Era Lab",
@@ -3421,7 +3451,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/tao-pu.png",
       "sourceNames": [
-        "Tao Pu"
+        "Tao Pu",
+        "蒲韬"
       ],
       "source": "cfp"
     },
@@ -3562,7 +3593,7 @@
       "id": "tristan-ruoli-dai",
       "name": {
         "en": "Tristan Ruoli Dai",
-        "zh": "Tristan Ruoli Dai"
+        "zh": "戴若犁"
       },
       "roleOrg": {
         "en": "Founder/CEO, Noitom Robotics",
@@ -3583,7 +3614,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/tristan-ruoli-dai.png",
       "sourceNames": [
-        "Tristan Ruoli Dai"
+        "Tristan Ruoli Dai",
+        "戴若犁"
       ],
       "source": "cfp"
     },
@@ -3591,7 +3623,7 @@
       "id": "chunxiaozheng",
       "name": {
         "en": "Chunxiao Zheng",
-        "zh": "Chunxiao Zheng"
+        "zh": "郑春晓"
       },
       "roleOrg": {
         "en": "Core Architect, LMCache",
@@ -3609,7 +3641,8 @@
       "image": "/images/speakers/confirmed/chunxiaozheng.png",
       "sourceNames": [
         "chunxiaozheng",
-        "Chunxiao Zheng"
+        "Chunxiao Zheng",
+        "郑春晓"
       ],
       "source": "cfp"
     },
@@ -3617,7 +3650,7 @@
       "id": "yujie-sun",
       "name": {
         "en": "Yujie Sun",
-        "zh": "Yujie Sun"
+        "zh": "孙玉杰"
       },
       "roleOrg": {
         "en": "R&D Engineer, Daorui Intelligent Technology (Beijing) Co., Ltd.",
@@ -3634,7 +3667,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/yujie-sun.png",
       "sourceNames": [
-        "Yujie Sun"
+        "Yujie Sun",
+        "孙玉杰"
       ],
       "source": "cfp"
     },
@@ -3642,7 +3676,7 @@
       "id": "yichi-zhang",
       "name": {
         "en": "Yichi Zhang",
-        "zh": "Yichi Zhang"
+        "zh": "张亦弛"
       },
       "roleOrg": {
         "en": "Member of Technical Staff, RadixArk",
@@ -3664,7 +3698,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/yichi-zhang.png",
       "sourceNames": [
-        "Yichi Zhang"
+        "Yichi Zhang",
+        "张亦弛"
       ],
       "source": "cfp"
     },
@@ -3724,7 +3759,7 @@
     {
       "id": "qiuqinlun",
       "name": {
-        "en": "Qiu Qinlun",
+        "en": "Qinlun Qiu",
         "zh": "邱钦伦"
       },
       "roleOrg": {
@@ -3744,7 +3779,8 @@
       "sourceNames": [
         "qiuqinlun",
         "Qiu Qinlun",
-        "邱钦伦"
+        "邱钦伦",
+        "Qinlun Qiu"
       ],
       "source": "cfp"
     },
@@ -3789,7 +3825,7 @@
         "zh": "Slava Tykhonov 是 CODATA 人工智能与互操作性负责人，拥有超过 25 年软件开发、数据科学及欧洲科研基础设施（EOSC）经验。他兼任技术架构师与导师，长期通过实验和试点项目推动科研与教育创新。自 2025 年 6 月起，他担任 Harvard Dataverse 大使，并参与编写由 Google 发起的 AI 数据标准 CroissantML。"
       },
       "tags": [
-        "sz26-agentic-os-app"
+        "sz26-agentic-ai-summit"
       ],
       "socialLinks": {
         "github": "https://github.com/4tikhonov",
@@ -3837,7 +3873,7 @@
       "id": "wencheng-xiao",
       "name": {
         "en": "Wencheng Xiao",
-        "zh": "Wencheng Xiao"
+        "zh": "肖文程"
       },
       "roleOrg": {
         "en": "PhD Candidate, Shijiazhuang Tiedao University",
@@ -3855,7 +3891,8 @@
       "image": "/images/speakers/confirmed/wencheng-xiao.png",
       "sourceNames": [
         "Wencheng XIAO",
-        "Wencheng Xiao"
+        "Wencheng Xiao",
+        "肖文程"
       ],
       "source": "cfp"
     },
@@ -3863,7 +3900,7 @@
       "id": "zedong-liu",
       "name": {
         "en": "Zedong Liu",
-        "zh": "Zedong Liu"
+        "zh": "刘泽栋"
       },
       "roleOrg": {
         "en": "PhD Student, Institute of Computing Technology, Chinese Academy of Sciences",
@@ -3883,7 +3920,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/zedong-liu.png",
       "sourceNames": [
-        "Zedong Liu"
+        "Zedong Liu",
+        "刘泽栋"
       ],
       "source": "cfp"
     },
@@ -3916,7 +3954,7 @@
     {
       "id": "zhao-song",
       "name": {
-        "en": "Zhao Song",
+        "en": "Song Zhao",
         "zh": "赵松"
       },
       "roleOrg": {
@@ -3937,7 +3975,8 @@
       "image": "/images/speakers/confirmed/zhao-song.png",
       "sourceNames": [
         "Zhao Song",
-        "赵松"
+        "赵松",
+        "Song Zhao"
       ],
       "source": "cfp"
     },
@@ -4090,7 +4129,7 @@
       "id": "xinxin-fan",
       "name": {
         "en": "Xinxin Fan",
-        "zh": "Xinxin Fan"
+        "zh": "范信鑫"
       },
       "roleOrg": {
         "en": "Maintainer, openUBMC AI SIG, Huawei Technologies Co., Ltd.",
@@ -4107,7 +4146,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/xinxin-fan.png",
       "sourceNames": [
-        "Xinxin Fan"
+        "Xinxin Fan",
+        "范信鑫"
       ],
       "source": "cfp"
     },
@@ -4195,7 +4235,7 @@
       "id": "teng-ma",
       "name": {
         "en": "Teng Ma",
-        "zh": "Teng Ma"
+        "zh": "马腾"
       },
       "roleOrg": {
         "en": "Maintainer, Mooncake Community",
@@ -4216,7 +4256,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/teng-ma.png",
       "sourceNames": [
-        "Teng Ma"
+        "Teng Ma",
+        "马腾"
       ],
       "source": "cfp"
     },
@@ -4250,7 +4291,7 @@
       "id": "liyun-yang",
       "name": {
         "en": "Liyun Yang",
-        "zh": "Liyun Yang"
+        "zh": "杨丽蕴"
       },
       "roleOrg": {
         "en": "Director, Open Source Research Office, China Electronics Standardization Institute",
@@ -4267,7 +4308,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/liyun-yang.png",
       "sourceNames": [
-        "Liyun Yang"
+        "Liyun Yang",
+        "杨丽蕴"
       ],
       "source": "cfp"
     },
@@ -4376,6 +4418,114 @@
         "Bella Ren"
       ],
       "source": "cfp"
+    },
+    {
+      "id": "cong-li",
+      "name": {
+        "en": "Cong Li",
+        "zh": "李聪"
+      },
+      "roleOrg": {
+        "en": "Deputy Director, Future Network Research Center, China Telecom Research Institute",
+        "zh": "中国电信研究院未来网络研究中心副总监"
+      },
+      "bio": {
+        "en": "Cong Li is Deputy Director of the Future Network Research Center at China Telecom Research Institute.",
+        "zh": "李聪是中国电信研究院未来网络研究中心副总监。"
+      },
+      "tags": [
+        "ws-kvcdn"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/cong-li.png",
+      "sourceNames": [
+        "Cong Li",
+        "李聪"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "qinghua-li",
+      "name": {
+        "en": "Qinghua Li",
+        "zh": "李庆华"
+      },
+      "roleOrg": {
+        "en": "BMC Engineer, Core Maintainer of the openUBMC AI-SIG",
+        "zh": "BMC 工程师、openUBMC AI-SIG 核心维护者"
+      },
+      "bio": {
+        "en": "Qinghua Li is a BMC engineer and core maintainer of the openUBMC AI-SIG.",
+        "zh": "李庆华是 BMC 工程师，也是 openUBMC AI-SIG 核心维护者。"
+      },
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/qinghua-li.png",
+      "sourceNames": [
+        "Qinghua Li",
+        "李庆华"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "ziyan-wang",
+      "name": {
+        "en": "Ziyan Wang",
+        "zh": "王子燕"
+      },
+      "roleOrg": {
+        "en": "Education Director, NGO UNESCO Avicenne",
+        "zh": "UNESCO 阿维森纳协会（NGO）教育总监"
+      },
+      "bio": {
+        "en": "Ziyan Wang is Education Director at NGO UNESCO Avicenne.",
+        "zh": "王子燕是 UNESCO 阿维森纳协会（NGO）教育总监。"
+      },
+      "tags": [
+        "ws-ai-education"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/ziyan-wang.png",
+      "sourceNames": [
+        "Ziyan Wang",
+        "王子燕"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "yun-lin",
+      "name": {
+        "en": "Yun Lin",
+        "zh": "林云"
+      },
+      "roleOrg": {
+        "en": "Associate Professor, Shanghai Jiao Tong University; Co-Organizer of the Agentic Software Engineering Hackathon",
+        "zh": "上海交通大学副教授、智能体软件工程黑客松联合组织者"
+      },
+      "bio": {
+        "en": "Yun Lin is an associate professor at Shanghai Jiao Tong University and co-organizer of the Agentic Software Engineering Hackathon.",
+        "zh": "林云是上海交通大学副教授，也是智能体软件工程黑客松联合组织者。"
+      },
+      "tags": [
+        "ws-ai-education"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "keynote": false,
+      "image": "/images/speakers/confirmed/yun-lin.png",
+      "sourceNames": [
+        "Yun Lin",
+        "林云"
+      ],
+      "source": "invited"
     }
   ]
 }
