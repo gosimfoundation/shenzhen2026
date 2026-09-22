@@ -9,6 +9,7 @@ import EventGallery from "components/EventGallery.astro"
 import PreviousEvents from "components/PreviousEvents.astro"
 import GetTickets from "components/GetTickets.astro"
 import ProudlySupported from "components/ProudlySupported.astro"
+import { hackathonHighlights } from "utils/hackathons"
 
 // Images
 import GosimShanghai from "images/homepage/gosim-shanghai.png"
@@ -126,14 +127,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
         link: "https://spotlight.gosim.org/shenzhen2026/",
         linkLabel: "Explore Spotlight",
       },
-      {
-        badge: "OAIC Agentic Factory Hackathon",
-        status: "Registration opens soon",
-        title: "International Hackathon for Agentic Factory",
-        text: "A global Harness Engineering competition with an online qualifier and Grand Challenge leading to Demo Day at GOSIM Shenzhen 2026.",
-        link: "https://create.gosim.org/factory26/",
-        linkLabel: "View hackathon",
-      },
+      ...hackathonHighlights("en"),
     ]}
     enterLabel="Learn more"
   />

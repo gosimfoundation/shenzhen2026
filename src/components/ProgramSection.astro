@@ -228,7 +228,7 @@ const trackIcons = [
               {item.link && (
                 <span class="ps-compact-foot" aria-hidden="true">
                   <span></span>
-                  <span>{compactCopy.view}</span>
+                  <span>{item.linkLabel ?? enterLabel}</span>
                 </span>
               )}
             </Tag>
@@ -712,6 +712,16 @@ const trackIcons = [
   .ps-spot-status {
     color: rgba(234, 230, 210, 0.42);
     text-align: right;
+  }
+
+  .ps-spotlight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 760px) {
+    .ps-spotlight-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 560px) {

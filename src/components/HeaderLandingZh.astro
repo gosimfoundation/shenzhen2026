@@ -3,6 +3,7 @@
 import Button from "components/Button.astro";
 import Logo from "./Logo.astro";
 import NotificationBar from "components/NotificationBar.astro";
+import { hackathonNavLinks } from "utils/hackathons";
 
 const hasNotificationBar = false; // Set this to false when NotificationBar is removed or page will crash
 
@@ -46,21 +47,7 @@ const links = [
         link: "https://rustchinaconf.org/zh-CN/",
         openInNewTab: true,
       },
-      {
-        text: "黑客松 · Agentic App",
-        link: "https://create.gosim.org/agenticapp26/",
-        openInNewTab: true,
-      },
-      {
-        text: "黑客松 · Agent Observer",
-        link: "https://create.gosim.org/factory26/",
-        openInNewTab: true,
-      },
-      {
-        text: "黑客松 · 智能巡天",
-        link: "https://create.gosim.org/survey26/",
-        openInNewTab: true,
-      },
+      ...hackathonNavLinks("zh"),
     ],
   },
   {
