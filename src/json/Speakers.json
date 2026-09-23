@@ -2072,11 +2072,11 @@
       },
       "roleOrg": {
         "en": "Director of Ecosystem & Technology, Magic Data",
-        "zh": "Magic Data 生态与技术总监、算法工程负责人"
+        "zh": "Magic Data 生态与技术总监"
       },
       "bio": {
-        "en": "Jiechen Liu is Director of Ecosystem and Technology and Head of Algorithm Engineering at Magic Data. He leads AI data infrastructure, industry AI solutions, and ecosystem partnerships, with a focus on embodied intelligence and voice agents for intelligent cockpits and home-service robots. His expertise includes multimodal dataset construction, voice-interaction optimization, domain-shift mitigation, and compliant data strategies.",
-        "zh": "Magic Data 生态与技术总监、算法工程负责人，负责 AI 数据基础设施、行业解决方案和跨行业生态合作。其工作聚焦具身智能，以及智能座舱和家庭服务机器人等设备中的语音智能体，专长包括多模态高质量数据集建设、语音交互优化、域偏移缓解和合规数据策略。"
+        "en": "Jiechen Liu is Director of Ecosystem and Technology at Magic Data. He leads AI data infrastructure, industry AI solutions, and ecosystem partnerships, with a focus on embodied intelligence and voice agents for intelligent cockpits and home-service robots. His expertise includes multimodal dataset construction, voice-interaction optimization, domain-shift mitigation, and compliant data strategies.",
+        "zh": "Magic Data 生态与技术总监，负责 AI 数据基础设施、行业解决方案和跨行业生态合作。其工作聚焦具身智能，以及智能座舱和家庭服务机器人等设备中的语音智能体，专长包括多模态高质量数据集建设、语音交互优化、域偏移缓解和合规数据策略。"
       },
       "tags": [
         "sz26-open-source-model"
