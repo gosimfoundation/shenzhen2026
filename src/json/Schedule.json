@@ -2604,22 +2604,22 @@
           "timeSlot": "10:15-10:45"
         },
         {
-          "ref": "P-90",
-          "originalTitle": "Co-building a New Paradigm of Physical Intelligence: Situation Awareness-based Jiuwen Symbiosis",
-          "originalLanguage": "en",
+          "ref": "P-201",
+          "originalTitle": "共建具身智能新范式：基于态势感知的九问共生",
+          "originalLanguage": "zh",
           "title": {
             "en": "Co-building a New Paradigm of Physical Intelligence: Situation Awareness-based Jiuwen Symbiosis",
             "zh": "共建具身智能新范式：基于态势感知的九问共生"
           },
           "slug": "p-90-co-building-a-new-paradigm-of-physical-intelligence-situation-awareness-based-jiuwen-symbiosis",
           "speakers": [
-            "xin-liu"
+            "jiahun-zhang"
           ],
-          "originalAbstract": "Jiuwen Symbiosis is a symbiotic agent architecture built by the openJiuwen open-source community specifically for advanced Physical AI. It aims to transition AI from the digital world to the physical world, enabling natural language-driven autonomous perception and physical control. This presentation will introduce the origin, technical architecture, key technologies, key demos of Jiuwen Symbiosis, and provide a brief overview of the openJiuwen community.",
-          "originalAbstractLanguage": "en",
+          "originalAbstract": "AI Agent 已经能够在数字环境中展现出不错的能力，比如写代码、查资料、调用工具、整理内容等。不过，这些能力大多仍停留软件与屏幕之内，还没有真正走进物理世界。下一步的重要方向，是让智能体从 “数字助手” 走向 “物理世界的执行者”。用户只需通过自然语言下达指令，智能体就能够结合对真实环境的感知与理解，自主完成相应的物理操作，并把任务在现实场景中真正落地执行。Jiuwen Symbiosis 正是围绕这一方向展开的一套面向 Physical AI 的 Agent 框架。它的目标不是简单地让 AI\"动手\"，而是让 AI 真正读懂物理世界、自主操控现实环境，像一个熟练工人那样听懂任务、直接上手。当前的一些主流方法采用端到端具身大模型的方案，例如 VLA，将 “感知理解 → 任务规划 → 动作执行” 完整压缩进一个 Transformer，并通过端到端方式直接输出关节位姿，这看起来是一条足够优雅的路线，但在真实机器人系统中仍然面临几个绕不开的关键挑战。第一，跨本体、跨环境与跨任务的泛化能力有限。二，长程复合任务能力不足。第三，成功率低，稳定性差。Jiuwen Symbiosis 不再追求把所有能力塞进一个网络，而是走 “物理感知 - 动态编排 - 物理执行 - 观测反馈” 分层解耦的技术路线，提出以 “端到端智能体（Agent）系统” 替代 “单一端到端模型” 的技术范式，通过 Physical Harness + Adapter + 异构本体 SDK，实现复杂长程物理任务下高稳定与强泛化能力。",
+          "originalAbstractLanguage": "zh",
           "overview": {
-            "en": "The talk introduces Jiuwen Symbiosis, an open-source agent architecture designed for advanced Physical AI, enabling AI to transition from the digital to the physical world through natural language-driven perception and control. It covers the origin, technical structure, key technologies, and demos of Jiuwen Symbiosis, along with an overview of the openJiuwen community.",
-            "zh": "本次演讲介绍九问共生（Jiuwen Symbiosis）开源智能体架构，探讨如何通过自然语言驱动感知与控制，让 AI 从数字环境走向物理世界。内容涵盖项目起源、技术架构、关键技术与演示，并介绍 openJiuwen 社区。"
+            "en": "This talk introduces Jiuwen Symbiosis, a Physical AI Agent framework that helps agents move from digital assistants to executors in the physical world, using natural language instructions and situational awareness to perform real-world tasks. It examines the challenges facing end-to-end embodied models such as VLA: limited generalization across robot embodiments, environments, and tasks; insufficient capabilities for long-horizon composite tasks; and low success rates and poor stability. Jiuwen Symbiosis proposes an end-to-end Agent system built on decoupled layers of physical perception, dynamic orchestration, physical execution, and observation feedback. Through Physical Harness, Adapter, and an SDK for heterogeneous robot embodiments, it aims to deliver stability and generalization for complex, long-horizon physical tasks.",
+            "zh": "本次演讲介绍面向 Physical AI 的 Agent 框架 Jiuwen Symbiosis，探讨如何让智能体从“数字助手”走向“物理世界的执行者”，结合自然语言指令与态势感知，自主完成现实场景中的物理任务。针对 VLA 等端到端具身模型在跨本体、跨环境与跨任务泛化、长程复合任务能力，以及成功率和稳定性方面的挑战，Jiuwen Symbiosis 提出以“端到端智能体（Agent）系统”替代“单一端到端模型”，采用“物理感知—动态编排—物理执行—观测反馈”的分层解耦架构，通过 Physical Harness + Adapter + 异构本体 SDK，提升复杂长程物理任务的稳定性与泛化能力。"
           },
           "date": "2026-10-16",
           "timeSlot": "10:45-11:15"

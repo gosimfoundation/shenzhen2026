@@ -1919,11 +1919,37 @@
         "sz26-open-source-robotics"
       ],
       "socialLinks": {},
-      "draft": false,
+      "draft": true,
       "image": "/images/speakers/confirmed/xin-liu.png",
       "sourceNames": [
         "Xin Liu",
         "刘鑫"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "jiahun-zhang",
+      "name": {
+        "en": "Jiahun Zhang",
+        "zh": "张珈珲"
+      },
+      "roleOrg": {
+        "en": "Expert, Huawei",
+        "zh": "华为专家"
+      },
+      "bio": {
+        "en": "Jiahun Zhang is a Jiuwen Symbiosis SIG Maintainer. He has long focused on building Physical AI Agent capabilities and is responsible for the overall technical design and competitiveness of Jiuwen Symbiosis.",
+        "zh": "Jiuwen Symbiosis SIG Maintainer，长期专注于 Physical AI Agent 能力构建，现负责 Jiuwen Symbiosis 技术整体设计与竞争力构建。"
+      },
+      "tags": [
+        "sz26-open-source-robotics"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/jiahun-zhang.png",
+      "sourceNames": [
+        "张珈珲",
+        "Jiahun Zhang"
       ],
       "source": "cfp"
     },
