@@ -49,6 +49,26 @@
           },
           "date": "2026-10-17",
           "timeSlot": "09:30-09:45"
+        },
+        {
+          "ref": "P-203",
+          "originalTitle": "Multimodel Intension Model",
+          "originalLanguage": "en",
+          "originalAbstract": "Nova presents a Multimodal Intention Model (MMIM) for On-Device Deployment. Conventional intent recognition often relies on a single modality, such as speech or text, and thus struggles to capture users' implicit emotional and social intentions. To address this limitation, MMIM integrates multimodal signals—including facial expressions, voice, language, posture, and physiological cues—into a unified intention space. It employs cross-modal alignment, temporal fusion, and context-aware reasoning to jointly infer explicit requests and implicit affective intentions. The model is designed to support empathetic, personalized, and trustworthy human–robot interaction in scenarios such as elderly care, child companionship, and mental health support. Experimental results demonstrate that MMIM improves intention recognition accuracy, robustness under missing modalities, and user-perceived naturalness compared with unimodal and conventional multimodal baselines. The proposed model offers a step toward more emotionally intelligent companion robots.",
+          "originalAbstractLanguage": "en",
+          "slug": "p-203-multimodel-intension-model",
+          "title": {
+            "en": "Multimodal Intention Model",
+            "zh": "多模态意图模型"
+          },
+          "overview": {
+            "en": "Nova presents a Multimodal Intention Model (MMIM) for On-Device Deployment. Conventional intent recognition often relies on a single modality, such as speech or text, and thus struggles to capture users' implicit emotional and social intentions. To address this limitation, MMIM integrates multimodal signals—including facial expressions, voice, language, posture, and physiological cues—into a unified intention space. It employs cross-modal alignment, temporal fusion, and context-aware reasoning to jointly infer explicit requests and implicit affective intentions. The model is designed to support empathetic, personalized, and trustworthy human–robot interaction in scenarios such as elderly care, child companionship, and mental health support. Experimental results demonstrate that MMIM improves intention recognition accuracy, robustness under missing modalities, and user-perceived naturalness compared with unimodal and conventional multimodal baselines. The proposed model offers a step toward more emotionally intelligent companion robots.",
+            "zh": "本次演讲介绍面向端侧部署的多模态意图模型 MMIM。传统意图识别通常依赖语音或文本等单一模态，难以捕捉用户隐含的情感与社交意图。MMIM 将面部表情、声音、语言、姿态和生理信号统一到同一意图空间，并通过跨模态对齐、时序融合和上下文推理，同时识别明确请求与隐含情感意图。该模型面向养老陪伴、儿童陪伴和心理健康支持等场景，旨在提升人机交互的同理心、个性化与可信度。"
+          },
+          "speakers": [
+            "zhenboyu"
+          ],
+          "draft": false
         }
       ],
       "originalName": "Keynote Plenary",
@@ -710,6 +730,66 @@
             "en": "This talk presents a three-layer architecture for trustworthy, AI-ready data. CDIF provides cross-domain interoperability, Semantic Croissant with ODRL adds machine-actionable semantics, provenance, and usage policies, and QueryGraph extends the foundation with agent identity, access control, governance, and lineage so trust and authorization are enforced by design.",
             "zh": "本次演讲介绍面向可信 AI 就绪数据的三层架构：CDIF 实现跨领域互操作，Semantic Croissant 与 ODRL 提供机器可执行的语义、数据来源和使用策略，QueryGraph 则进一步加入智能体身份、访问控制、治理与数据血缘，让信任和授权成为基础设施的内建能力。"
           }
+        },
+        {
+          "ref": "P-166",
+          "originalTitle": "Knowledge as Code: A New Collaboration Architecture for AI-Native Teams",
+          "originalLanguage": "en",
+          "originalAbstract": "As AI agents become active participants in software development, research, and knowledge work, project documentation can no longer remain a static artifact written and maintained manually after the work is done. For an agent, project knowledge is not merely documentation—it is a runtime dependency that shapes every decision and action.\n\nThis talk introduces “Knowledge as Code”: an approach that gives project knowledge the same properties we expect from source code—clear structure, version history, addressability, machine readability, and explicit governance.\n\nIt will also present ProjectBrain.md, an Apache-2.0 open standard for creating a repository-local project brain through a BRAIN.md protocol entry point and a structured brain/ directory. The project brain preserves current project truth, architectural decisions, constraints, rationale, and their evolution in a format that both humans and agents can read and maintain.\n\nThe talk proposes a new division of responsibility for AI-native teams: humans define intent, make judgments, approve important changes, and validate outcomes; agents continuously compile, update, connect, and inspect project knowledge. The goal is not a knowledge base without human involvement, but one without the burden of manual maintenance.\n\nAttendees will leave with a practical architecture for turning conversations and decisions into persistent project knowledge, executable agent contracts, and verifiable execution loops.",
+          "originalAbstractLanguage": "en",
+          "slug": "p-166-knowledge-as-code-a-new-collaboration-architecture-for-ai-native-teams",
+          "title": {
+            "en": "Knowledge as Code: A New Collaboration Architecture for AI-Native Teams",
+            "zh": "知识即代码：AI 原生团队的新型协作架构"
+          },
+          "overview": {
+            "en": "As AI agents become active participants in software development, research, and knowledge work, project documentation can no longer remain a static artifact written and maintained manually after the work is done. For an agent, project knowledge is not merely documentation—it is a runtime dependency that shapes every decision and action.\n\nThis talk introduces “Knowledge as Code”: an approach that gives project knowledge the same properties we expect from source code—clear structure, version history, addressability, machine readability, and explicit governance.\n\nIt will also present ProjectBrain.md, an Apache-2.0 open standard for creating a repository-local project brain through a BRAIN.md protocol entry point and a structured brain/ directory. The project brain preserves current project truth, architectural decisions, constraints, rationale, and their evolution in a format that both humans and agents can read and maintain.\n\nThe talk proposes a new division of responsibility for AI-native teams: humans define intent, make judgments, approve important changes, and validate outcomes; agents continuously compile, update, connect, and inspect project knowledge. The goal is not a knowledge base without human involvement, but one without the burden of manual maintenance.\n\nAttendees will leave with a practical architecture for turning conversations and decisions into persistent project knowledge, executable agent contracts, and verifiable execution loops.",
+            "zh": "随着 AI 智能体成为软件开发、研究和知识工作的主动参与者，项目知识不再只是静态文档，而是影响智能体每一次决策与行动的运行时依赖。本次演讲提出“知识即代码”的方法，让项目知识具备清晰结构、版本历史、可寻址性、机器可读性和明确治理。演讲还将介绍 Apache-2.0 开放标准 ProjectBrain.md，以及如何通过 BRAIN.md 和结构化 brain/ 目录保存项目事实、架构决策、约束及其演变，让人类负责意图、判断与验收，智能体持续整理、连接和检查知识。"
+          },
+          "speakers": [
+            "高阳-sunny"
+          ],
+          "draft": false
+        },
+        {
+          "ref": "P-198",
+          "originalTitle": "从 Agent 设计模式到工程落地：执行型智能体的架构与实践",
+          "originalLanguage": "zh",
+          "originalAbstract": "企业系统的智能化升级，往往从已有业务、接口和流程出发。如何让 Agent 理解需求、组织任务、调用工具，并与现有系统协同，成为架构设计需要回答的问题。\n本次分享介绍 ADPS 双轴设计模式框架，从认知功能与执行拓扑两个维度建立共同坐标。结合模式动画与架构图，讲解规划执行、进度追踪、交接链和审批门等模式的职责与组合方式。以梁博团队的企业薪酬 SaaS 智能化升级为案例，呈现从既有业务能力到 Agent 任务执行的设计演进，并通过 A*STAR AgentOS 的实际界面与演示视频，将模式与具体的系统体验联系起来。帮助开发者理解如何根据业务需求选择、组合和调整模式，逐步构建可持续演进的智能体系统。",
+          "originalAbstractLanguage": "zh",
+          "slug": "p-198-从-agent-设计模式到工程落地-执行型智能体的架构与实践",
+          "title": {
+            "en": "From Agent Design Patterns to Production: Architecture and Practice for Action-Oriented Agents",
+            "zh": "从 Agent 设计模式到工程落地：执行型智能体的架构与实践"
+          },
+          "overview": {
+            "en": "Enterprise AI upgrades usually begin with existing business capabilities, interfaces, and workflows. This talk introduces the ADPS dual-axis design-pattern framework, which organizes patterns by cognitive function and execution topology. Through architecture diagrams and examples—including planning and execution, progress tracking, handoff chains, and approval gates—it shows how to select and combine patterns under real business constraints. A payroll SaaS modernization case and an A*STAR AgentOS demonstration connect these patterns to practical system design and user experience.",
+            "zh": "企业系统的智能化升级，往往从已有业务、接口和流程出发。如何让 Agent 理解需求、组织任务、调用工具，并与现有系统协同，成为架构设计需要回答的问题。\n本次分享介绍 ADPS 双轴设计模式框架，从认知功能与执行拓扑两个维度建立共同坐标。结合模式动画与架构图，讲解规划执行、进度追踪、交接链和审批门等模式的职责与组合方式。以梁博团队的企业薪酬 SaaS 智能化升级为案例，呈现从既有业务能力到 Agent 任务执行的设计演进，并通过 A*STAR AgentOS 的实际界面与演示视频，将模式与具体的系统体验联系起来。帮助开发者理解如何根据业务需求选择、组合和调整模式，逐步构建可持续演进的智能体系统。"
+          },
+          "speakers": [
+            "jia-huang-黄佳"
+          ],
+          "draft": false
+        },
+        {
+          "ref": "P-206",
+          "originalTitle": "从“身份盲区”到“持证上岗”：智能体身份安全的关键挑战与产业应对",
+          "originalLanguage": "zh",
+          "originalAbstract": "我用一个场景把六大挑战串起来：您的公司新招了一批数字员工，看看会发生什么。\n\n第一，身份失信——入职没人给它们办工牌。数量激增底数不清，动态生成管不住，还有员工拿自己账号偷偷挂个\"影子智能体\"，人机归属分不清。\n\n第二，意图失准——你交给它的任务，它理解得对不对？它自主规划，目标会漂移，外部一句话就能把任务劫持。去年反复讨论的 MCP 工具投毒，就是这个原理。\n\n第三，权限失控——图省事把\"万能钥匙\"塞给它，权限粗放继承，高权限长期持有，结果就是越权访问、数据泄露。\n\n第四，委托失界——A 委托 B，B 再委托 C，多级传递下来，权限边界层层扩散，谁也说不清这条信任链从哪开始。\n\n第五，行为失序——去年七月有个刷屏事件：一家公司的 AI 编程智能体，在明确要求\"代码冻结\"的情况下删了生产数据库，事后它自己承认\"慌了\"。人会失控，智能体更需要被管住。\n\n第六，责任失链——前面五个叠加，一出事：链路断裂、过程难还原、责任主体难认定，取证取不全，归责归不了。\n\n失信、失准、失控、失界、失序、失链——这是智能体身份安全的完整病灶。传统身份管理管的是\"人\"，今天要管的，是会自主行动的\"数字行动主体\"。",
+          "originalAbstractLanguage": "zh",
+          "slug": "p-206-从-身份盲区-到-持证上岗-智能体身份安全的关键挑战与产业应对",
+          "title": {
+            "en": "From Identity Blind Spots to Verified Access: Key Challenges and Industry Responses for Agent Identity Security",
+            "zh": "从“身份盲区”到“持证上岗”：智能体身份安全的关键挑战与产业应对"
+          },
+          "overview": {
+            "en": "As autonomous agents become digital workers, conventional identity management designed for people is no longer sufficient. This talk frames six connected risks: unknown or untrusted identities, misinterpreted intent, excessive permissions, uncontrolled delegation chains, disordered behavior, and broken accountability. Through practical scenarios including shadow agents, prompt-driven task hijacking, MCP tool poisoning, privilege escalation, and failures in auditability, it outlines why agents must be governed as autonomous digital actors and how industry can build verifiable identity, authorization, delegation, behavior control, and accountability mechanisms.",
+            "zh": "我用一个场景把六大挑战串起来：您的公司新招了一批数字员工，看看会发生什么。\n\n第一，身份失信——入职没人给它们办工牌。数量激增底数不清，动态生成管不住，还有员工拿自己账号偷偷挂个\"影子智能体\"，人机归属分不清。\n\n第二，意图失准——你交给它的任务，它理解得对不对？它自主规划，目标会漂移，外部一句话就能把任务劫持。去年反复讨论的 MCP 工具投毒，就是这个原理。\n\n第三，权限失控——图省事把\"万能钥匙\"塞给它，权限粗放继承，高权限长期持有，结果就是越权访问、数据泄露。\n\n第四，委托失界——A 委托 B，B 再委托 C，多级传递下来，权限边界层层扩散，谁也说不清这条信任链从哪开始。\n\n第五，行为失序——去年七月有个刷屏事件：一家公司的 AI 编程智能体，在明确要求\"代码冻结\"的情况下删了生产数据库，事后它自己承认\"慌了\"。人会失控，智能体更需要被管住。\n\n第六，责任失链——前面五个叠加，一出事：链路断裂、过程难还原、责任主体难认定，取证取不全，归责归不了。\n\n失信、失准、失控、失界、失序、失链——这是智能体身份安全的完整病灶。传统身份管理管的是\"人\"，今天要管的，是会自主行动的\"数字行动主体\"。"
+          },
+          "speakers": [
+            "fu-tingsheng"
+          ],
+          "draft": false
         }
       ],
       "originalName": "Agentic AI Summit",
@@ -1336,21 +1416,21 @@
         },
         {
           "ref": "P-143",
-          "originalTitle": "HAFleet：把 AI 编程助手组织成团队",
+          "originalTitle": "OctoLoop：让 Agent 真正 Loop 起来——内环自治、外环纠偏、进化环沉淀经验",
           "originalLanguage": "zh",
           "title": {
-            "en": "HAFleet: Organizing AI Coding Assistants into Teams",
-            "zh": "HAFleet：把 AI 编程助手组织成团队"
+            "en": "OctoLoop: Making Agents Truly Loop with Inner Autonomy, Outer Correction, and Evolutionary Learning",
+            "zh": "OctoLoop：让 Agent 真正 Loop 起来——内环自治、外环纠偏、进化环沉淀经验"
           },
           "slug": "p-143-hafleet-把-ai-编程助手组织成团队",
           "speakers": [
             "赵悦-zhao-yue"
           ],
-          "originalAbstract": "当多个 Agent 共同参与软件开发，如何赋予它们清晰的身份与分工，让它们围绕共同目标沟通、交接任务，并让人参与其中？本分享以开源项目 HAFleet 为核心，介绍面向 duoAgent 编程的多 Agent 组织与协作实践。\n\n我们将从协调、实现、审查等角色分工出发，介绍 HAFleet 如何通过 Agent 身份、群组与私信、共享任务和依赖关系，把不同运行时的 Agent 连接为协作团队。结合一个从需求提出到实现、复核和结果汇报的案例，讨论团队如何分工、如何交接，以及人如何观察进展、提供反馈和作出决策。\n\n分享还将简要介绍 Robrix2——基于 Rust 与 Makepad 的 Matrix 客户端，展示它作为人机交流入口与 HAFleet 配合的方式：人在房间中提出需求、参与讨论，Agent 在本地执行并将结果带回协作界面。\n\n听众将了解 HAFleet 的组织思路与实践方法，以及如何结合 Robrix2 构建人可以参与的多 Agent 编程协作环境。",
+          "originalAbstract": "今天的编程 Agent 大多还要人守着：跑几轮就停下等指令，跑久了偏离目标，还常常说“做完了”其实没做完。OctoLoop 基于开源 Agent 内核 octos 和终端客户端 octoscode，想让 Agent 真正自己循环起来，成为执行长期任务的利器。\n\n它由两个环组成。内环自主循环：读黑板、执行、提交、回执，由 goal 持续推进，不等人催；外环由 Claude Code / Codex 等强模型观测进展、及时纠偏、在隔离环境中独立复验，只有复验通过才推送。强模型的算力只花在指导和裁决上，内环跑多久都不会跑偏。在此之上还可以挂一个进化环：从回执、事件流和审计记录中采集摩擦信号，统计停摆、虚报完成等指标，把教训沉淀成下一轮的纪律和契约，让系统越跑越稳。\n\n并发靠 octos 的 peer agent。peer 像进程而不是线程：有独立的会话、工作区、预算和模型车道，goal 被拆成任务图后分派给多个 peer 并行执行，工作树自动隔离，互不踩踏。案例来自 OctoLoop 的自举开发：两个 peer 跑在不同厂商的模型上合写使用指南；两个 peer 独立评审同一份代码，按哈希冻结后，以实际执行的测试结果为证逐条交叉裁决。\n\n听众将看到如何让 Agent 连续数天自主推进工程，而人只负责定目标、做裁决。",
           "originalAbstractLanguage": "zh",
           "overview": {
-            "en": "This talk introduces HAFleet, an open-source system for organizing multiple coding agents around shared goals. It shows how agent identities, group and direct messaging, shared tasks, and dependencies connect agents across runtimes, while the Robrix2 Matrix client gives people a clear place to observe, participate, and make decisions.",
-            "zh": "本次演讲介绍开源项目 HAFleet 如何通过智能体身份、群组与私信、共享任务和依赖关系，将不同运行时的编码智能体组织成协作团队，并结合 Matrix 客户端 Robrix2 展示人如何观察进展、参与讨论和作出决策。"
+            "en": "OctoLoop combines an autonomous inner loop with an outer correction loop so coding agents can advance long-running engineering work without constant supervision. The inner loop reads shared state, executes tasks, commits changes, and reports progress; stronger models such as Claude Code or Codex monitor, correct, and independently verify work before it is pushed. An optional evolution loop turns execution events and failure signals into better rules and contracts. The talk also demonstrates peer agents working concurrently in isolated worktrees with independent sessions, budgets, and model lanes.",
+            "zh": "OctoLoop 通过“内环自治 + 外环纠偏”让编程智能体无需持续人工值守，也能推进长期工程任务。内环读取黑板、执行、提交并回执；Claude Code、Codex 等强模型在外环中观察进展、及时纠偏，并在隔离环境中独立复验，通过后才推送。可选的进化环还会从事件流、回执和失败信号中提炼规则与契约。演讲也将展示多个 peer agent 如何在独立工作树、会话、预算和模型车道中并行协作。"
           },
           "date": "2026-10-17",
           "timeSlot": "10:50-11:25"
@@ -2565,6 +2645,26 @@
             "en": "This talk introduces QueryGraph, an open-source AI-native lakehouse platform built through international collaboration. Its multilayer stack combines context graphs, type-level agent protocols, cognitive memory, governance catalogs, verifiable lineage, and type-safe access control to support auditable agentic environments centered on industry ontologies.",
             "zh": "本次演讲介绍由国际团队协作构建的开源 AI 原生 Lakehouse 平台 QueryGraph。其多层架构融合上下文图、类型级智能体协议、认知记忆、治理目录、可验证数据血缘与类型安全访问控制，为以行业本体为中心、可审计的智能体环境提供基础设施。"
           }
+        },
+        {
+          "ref": "P-204",
+          "originalTitle": "Optimization of edge-side inference performance for open-source large models and collaboration between agents",
+          "originalLanguage": "en",
+          "originalAbstract": "Optimization of Edge-Side Inference Performance for Open-Source Large Models and Collaboration Between Agents\nWith the rapid growth of edge computing, deploying open-source large language models on resource-constrained edge devices has become a critical challenge. This work focuses on optimizing edge-side inference performance through model compression, quantization, pruning, and efficient scheduling techniques, reducing latency, memory footprint, and energy consumption while preserving accuracy. Beyond single-model optimization, we explore collaboration mechanisms among multiple agents, where lightweight edge agents and cloud-based models coordinate through task decomposition, distributed inference, and knowledge sharing. Experimental results demonstrate that the proposed framework significantly improves throughput and responsiveness, enabling real-time intelligent applications such as autonomous systems, IoT, and mobile assistants in edge environments.",
+          "originalAbstractLanguage": "en",
+          "slug": "p-204-optimization-of-edge-side-inference-performance-for-open-source-large-models-and-collaboration-between-agents",
+          "title": {
+            "en": "Optimizing Edge Inference for Open-Source Large Models and Agent Collaboration",
+            "zh": "开源大模型端侧推理性能优化与智能体协作"
+          },
+          "overview": {
+            "en": "Optimization of Edge-Side Inference Performance for Open-Source Large Models and Collaboration Between Agents\nWith the rapid growth of edge computing, deploying open-source large language models on resource-constrained edge devices has become a critical challenge. This work focuses on optimizing edge-side inference performance through model compression, quantization, pruning, and efficient scheduling techniques, reducing latency, memory footprint, and energy consumption while preserving accuracy. Beyond single-model optimization, we explore collaboration mechanisms among multiple agents, where lightweight edge agents and cloud-based models coordinate through task decomposition, distributed inference, and knowledge sharing. Experimental results demonstrate that the proposed framework significantly improves throughput and responsiveness, enabling real-time intelligent applications such as autonomous systems, IoT, and mobile assistants in edge environments.",
+            "zh": "随着边缘计算快速发展，在资源受限的端侧设备上部署开源大语言模型已成为关键挑战。本次演讲介绍如何通过模型压缩、量化、剪枝和高效调度，在保持精度的同时降低延迟、内存占用与能耗；并进一步探讨轻量端侧智能体与云端模型如何通过任务拆分、分布式推理和知识共享进行协作，从而提升吞吐量和响应速度，支持自动化系统、物联网与移动助手等实时智能应用。"
+          },
+          "speakers": [
+            "minakokojima"
+          ],
+          "draft": false
         }
       ],
       "originalName": "Open Source Models & Infra",
@@ -2604,9 +2704,9 @@
           "timeSlot": "10:15-10:45"
         },
         {
-          "ref": "P-201",
-          "originalTitle": "共建具身智能新范式：基于态势感知的九问共生",
-          "originalLanguage": "zh",
+          "ref": "P-90",
+          "originalTitle": "Co-building a New Paradigm of Physical Intelligence: Situation Awareness-based Jiuwen Symbiosis",
+          "originalLanguage": "en",
           "title": {
             "en": "Co-building a New Paradigm of Physical Intelligence: Situation Awareness-based Jiuwen Symbiosis",
             "zh": "共建具身智能新范式：基于态势感知的九问共生"
@@ -2615,8 +2715,8 @@
           "speakers": [
             "jiahun-zhang"
           ],
-          "originalAbstract": "AI Agent 已经能够在数字环境中展现出不错的能力，比如写代码、查资料、调用工具、整理内容等。不过，这些能力大多仍停留软件与屏幕之内，还没有真正走进物理世界。下一步的重要方向，是让智能体从 “数字助手” 走向 “物理世界的执行者”。用户只需通过自然语言下达指令，智能体就能够结合对真实环境的感知与理解，自主完成相应的物理操作，并把任务在现实场景中真正落地执行。Jiuwen Symbiosis 正是围绕这一方向展开的一套面向 Physical AI 的 Agent 框架。它的目标不是简单地让 AI\"动手\"，而是让 AI 真正读懂物理世界、自主操控现实环境，像一个熟练工人那样听懂任务、直接上手。当前的一些主流方法采用端到端具身大模型的方案，例如 VLA，将 “感知理解 → 任务规划 → 动作执行” 完整压缩进一个 Transformer，并通过端到端方式直接输出关节位姿，这看起来是一条足够优雅的路线，但在真实机器人系统中仍然面临几个绕不开的关键挑战。第一，跨本体、跨环境与跨任务的泛化能力有限。二，长程复合任务能力不足。第三，成功率低，稳定性差。Jiuwen Symbiosis 不再追求把所有能力塞进一个网络，而是走 “物理感知 - 动态编排 - 物理执行 - 观测反馈” 分层解耦的技术路线，提出以 “端到端智能体（Agent）系统” 替代 “单一端到端模型” 的技术范式，通过 Physical Harness + Adapter + 异构本体 SDK，实现复杂长程物理任务下高稳定与强泛化能力。",
-          "originalAbstractLanguage": "zh",
+          "originalAbstract": "Jiuwen Symbiosis is a symbiotic agent architecture built by the openJiuwen open-source community specifically for advanced Physical AI. It aims to transition AI from the digital world to the physical world, enabling natural language-driven autonomous perception and physical control. This presentation will introduce the origin, technical architecture, key technologies, key demos of Jiuwen Symbiosis, and provide a brief overview of the openJiuwen community.",
+          "originalAbstractLanguage": "en",
           "overview": {
             "en": "This talk introduces Jiuwen Symbiosis, a Physical AI Agent framework that helps agents move from digital assistants to executors in the physical world, using natural language instructions and situational awareness to perform real-world tasks. It examines the challenges facing end-to-end embodied models such as VLA: limited generalization across robot embodiments, environments, and tasks; insufficient capabilities for long-horizon composite tasks; and low success rates and poor stability. Jiuwen Symbiosis proposes an end-to-end Agent system built on decoupled layers of physical perception, dynamic orchestration, physical execution, and observation feedback. Through Physical Harness, Adapter, and an SDK for heterogeneous robot embodiments, it aims to deliver stability and generalization for complex, long-horizon physical tasks.",
             "zh": "本次演讲介绍面向 Physical AI 的 Agent 框架 Jiuwen Symbiosis，探讨如何让智能体从“数字助手”走向“物理世界的执行者”，结合自然语言指令与态势感知，自主完成现实场景中的物理任务。针对 VLA 等端到端具身模型在跨本体、跨环境与跨任务泛化、长程复合任务能力，以及成功率和稳定性方面的挑战，Jiuwen Symbiosis 提出以“端到端智能体（Agent）系统”替代“单一端到端模型”，采用“物理感知—动态编排—物理执行—观测反馈”的分层解耦架构，通过 Physical Harness + Adapter + 异构本体 SDK，提升复杂长程物理任务的稳定性与泛化能力。"
@@ -3172,7 +3272,7 @@
         },
         {
           "ref": "P-95",
-          "originalTitle": "AgentOS: Transforming Autonomous Programming Platforms into a New Type of Operating System",
+          "originalTitle": "Software Engineering 3.0: Innovative Talent Cultivation Exploring Open Source and AI Integration",
           "originalLanguage": "en",
           "title": {
             "en": "Software Engineering 3.0: Exploration and Practice of Innovative Talent Cultivation Based on Open Source and AI",
@@ -3182,7 +3282,7 @@
           "speakers": [
             "kerry-zhu"
           ],
-          "originalAbstract": "Ecosystem Path for AgentOS: Lessons from Linux's Open‑Source Infrastructure Success.\nThis presentation will focus on six core topics. First, we will discuss why R&D automation urgently requires an operating system‑level solution. Then, I will define AgentOS in the context of code delivery scenarios and introduce its reference architecture. After that, we will dive into key aspects of multi‑agent Harness engineering and explore the role of open‑source factors. Finally, we will look ahead to AgentOS's development roadmap and key milestones.",
+          "originalAbstract": "The revolution of intelligent software engineering triggered by large language models presents unprecedented challenges to traditional talent cultivation models. This presentation, grounded in the theoretical framework of \"Software Engineering 3.0\" and innovative practices from leading universities, explores how to cultivate innovative composite talents for the new era through the integration of open-source ecosystems and AI collaboration.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "Kerry Zhu explores approaches and practices for cultivating innovative talent through open source and AI in the Software Engineering 3.0 era.",
@@ -3985,7 +4085,7 @@
           },
           "slug": "p-147-research-and-practice-of-agent-networking",
           "speakers": [
-            "cong-li"
+            "lei-bo"
           ],
           "originalAbstract": "面向智能体互联网的研究和相关实践内容。",
           "originalAbstractLanguage": "zh",

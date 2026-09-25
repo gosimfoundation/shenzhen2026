@@ -1930,7 +1930,7 @@
     {
       "id": "jiahun-zhang",
       "name": {
-        "en": "Jiahun Zhang",
+        "en": "Jiahui Zhang",
         "zh": "张珈珲"
       },
       "roleOrg": {
@@ -1949,7 +1949,8 @@
       "image": "/images/speakers/confirmed/jiahun-zhang.png",
       "sourceNames": [
         "张珈珲",
-        "Jiahun Zhang"
+        "Jiahun Zhang",
+        "Jiahui Zhang"
       ],
       "source": "cfp"
     },
@@ -3078,12 +3079,12 @@
         "zh": "赵悦"
       },
       "roleOrg": {
-        "en": "Maintainer, HAFleet",
-        "zh": "HAFleet 开源项目维护者"
+        "en": "Software Engineer, octos Open Source Community",
+        "zh": "octos 开源社区软件工程师"
       },
       "bio": {
-        "en": "Yue Zhao maintains the HAFleet open-source project, focusing on the organization and coordination of multiple AI agents through role assignment, group communication, task handoffs, and human participation. The session presents collaborative coding with HAFleet and shows how people and agents can work together in a shared interface using Robrix2.",
-        "zh": "赵悦是 HAFleet 开源项目维护者，关注多智能体的组织与协作，围绕角色分工、群组沟通、任务交接和人类参与开展项目维护与探索。本次分享以 HAFleet 为核心，介绍智能体协作编程的实践，并结合 Robrix2 展示人和智能体在同一界面中协作的方式。"
+        "en": "Yue Zhao is a software engineer and member of the octos open-source community, specializing in operating-system-level and cross-platform compatibility engineering with Rust. Recently, Zhao has combined Claude Code and Codex with octos and octoscode to build a dual-loop agent workflow for engineering tasks that run continuously for days, developing practical experience in task dispatch, independent verification, and failure-mode governance.",
+        "zh": "赵悦是软件工程师、octos 开源社区成员，主攻操作系统层与跨平台兼容工程，也是 Rust 开发者。近期将 Claude Code、Codex 与 octos / octoscode 组合成双环 Agent 工作流，用于连续推进数天的长程工程任务，并积累了从任务派发、独立复验到失败模式治理的一线经验。"
       },
       "tags": [
         "sz26-agentic-os-app"
@@ -4552,6 +4553,150 @@
         "林云"
       ],
       "source": "invited"
+    },
+    {
+      "id": "高阳-sunny",
+      "name": {
+        "en": "Sunny Gao",
+        "zh": "高阳"
+      },
+      "roleOrg": {
+        "en": "Founder & CEO, MindMux.ai",
+        "zh": "MindMux.ai 创始人兼 CEO"
+      },
+      "bio": {
+        "en": "Sunny Gao is the founder and CEO of MindFly Lab (MindMux.ai), where he is building a persistent context layer for AI-native teams — a project brain that lets developers and AI agents inherit decisions, constraints and execution memory instead of starting from zero every session.\n\nHe previously co-founded SegmentFault, China's largest developer community, serving 10M+ developers, and led it as CEO until its acquisition in 2022. He is also the founder of Apache Answer, which graduated as an Apache Software Foundation Top-Level Project in January 2025 with 15K+ GitHub stars and contributors from around the world. He was named to Forbes China 30 Under 30 (2014) and featured on the cover of Bloomberg Businessweek 25 Under 25 (2015).",
+        "zh": "高阳是 MindFly Lab（MindMux.ai）创始人兼 CEO，正在为 AI 原生团队构建持久上下文层，让开发者和 AI 智能体能够继承项目决策、约束与执行记忆，而不必在每次会话中从零开始。他曾联合创办 SegmentFault 并担任 CEO，直至公司于 2022 年被收购；也是 Apache Answer 的创始人，该项目于 2025 年 1 月毕业成为 Apache 软件基金会顶级项目。他曾入选 2014 福布斯中国 30 Under 30，并登上 2015 彭博商业周刊 25 Under 25 封面。"
+      },
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://sunnygao.com",
+        "github": "https://github.com/sunshineg",
+        "twitter": "https://x.com/sunnyygao",
+        "linkedin": "https://www.linkedin.com/in/sunnygao"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/高阳-sunny.png",
+      "sourceNames": [
+        "高阳 Sunny",
+        "Sunny Gao",
+        "高阳"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "jia-huang-黄佳",
+      "name": {
+        "en": "Jia Huang",
+        "zh": "黄佳"
+      },
+      "roleOrg": {
+        "en": "Chief Technology Consultant, Singularity Intelligence Research Institute",
+        "zh": "首席技术咨询师, 奇点智能研究院"
+      },
+      "bio": {
+        "en": "Jia Huang is an AI researcher at A*STAR, Singapore, and a technical author who writes about how AI agents are engineered. He is the author of the Designing AI Agents, The Claude Code Operating Model,  and RAG from First Principles.\n\nHe proposed the dual-axis framework for agent design patterns, which classifies patterns by cognitive function and execution topology, and the Pattern Selection Card, a practical method for choosing patterns under real cost and latency constraints. His work focuses on the engineering that surrounds the model rather than the model itself: context, tools, execution environments, and governance. He writes in both Chinese and English.",
+        "zh": "黄佳是新加坡 A*STAR 的 AI 研究员和技术作者，著有《Designing AI Agents》《The Claude Code Operating Model》和《RAG from First Principles》。他提出了智能体设计模式双轴框架，从认知功能与执行拓扑两个维度对模式进行分类，并提出 Pattern Selection Card，帮助团队在真实成本和延迟约束下选择模式。他关注模型之外的工程体系，包括上下文、工具、执行环境与治理。"
+      },
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {
+        "website": "https://kage-ai.com/",
+        "github": "https://github.com/huangjia2019",
+        "linkedin": "https://www.linkedin.com/in/jia-huang-adps/"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/jia-huang-黄佳.png",
+      "sourceNames": [
+        "Jia Huang (黄佳)",
+        "Jia Huang",
+        "黄佳"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "zhenboyu",
+      "name": {
+        "en": "Zhenbo Yu",
+        "zh": "Zhenbo Yu"
+      },
+      "roleOrg": {
+        "en": "CEO, NOVA CORE",
+        "zh": "NOVA CORE 首席执行官"
+      },
+      "bio": {
+        "en": "Zhenbo Yu was in the first cohort of the Wu Wenjun Artificial Intelligence Honorary Doctoral Program at Shanghai Jiao Tong University and studied under Academician Wenjun Zhang. He was a three-time consecutive world champion in the ImageNet International Competition and formerly led the virtual human team at Huawei HiSilicon. He currently heads the MetaCube Laboratory at the Future Media Collaborative Center of Shanghai Jiao Tong University and mentors the university's Guozhi Class. He was named to the 2023 Forbes China 30 Under 30, the 2023 Hurun 30 Under 30 Entrepreneurial Pioneers, and the 2024 Yangtze River Delta U30 Youth List.",
+        "zh": "Zhenbo Yu 是上海交通大学吴文俊人工智能荣誉博士班首届成员，师从张文军院士，曾连续三届获得 ImageNet 国际竞赛世界冠军，并曾任华为海思虚拟人团队负责人。现任上海交通大学未来媒体协同中心 MetaCube 实验室负责人，同时担任上海交通大学人工智能本科重点班“国智班”导师。他曾入选 2023 福布斯中国 30 Under 30、2023 胡润 U30 创业先锋和 2024 长三角 U30 青年榜单。"
+      },
+      "tags": [
+        "special-keynote"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhenboyu.png",
+      "sourceNames": [
+        "zhenboyu",
+        "Zhenbo Yu"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "minakokojima",
+      "name": {
+        "en": "Minako Kojima",
+        "zh": "Minako Kojima"
+      },
+      "roleOrg": {
+        "en": "Head of Developer Relations, Moonshot AI",
+        "zh": "月之暗面开发者关系负责人"
+      },
+      "bio": {
+        "en": "I'm the Head of Developer Relations at Kimi, where I've also held positions in post-training and infrastructure. Prior to joining Kimi, I worked as an algorithm engineer at Google. I won several gold medals at ACM ICPC regional contests during college.",
+        "zh": "Minako Kojima 是 Kimi 开发者关系负责人，也曾在公司从事后训练与基础设施相关工作。加入 Kimi 之前，曾任 Google 算法工程师；大学期间曾多次获得 ACM ICPC 区域赛金牌。"
+      },
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/lychees",
+        "twitter": "https://x.com/MinakoOikawa"
+      },
+      "draft": false,
+      "image": "/images/speakers/confirmed/minakokojima.png",
+      "sourceNames": [
+        "minakokojima",
+        "Minako Kojima"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "fu-tingsheng",
+      "name": {
+        "en": "Tingsheng Fu",
+        "zh": "Tingsheng Fu"
+      },
+      "roleOrg": {
+        "en": "Senior Vice President, AsiaInfo Security",
+        "zh": "高级副总裁, 亚信安全"
+      },
+      "bio": {
+        "en": "Tingsheng Fu is Senior Vice President at AsiaInfo Security.",
+        "zh": "亚信安全高级副总裁"
+      },
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/fu-tingsheng.png",
+      "sourceNames": [
+        "fu tingsheng",
+        "Tingsheng Fu"
+      ],
+      "source": "cfp"
     }
   ]
 }
