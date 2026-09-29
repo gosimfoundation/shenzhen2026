@@ -4480,12 +4480,12 @@
         "zh": "李庆华"
       },
       "roleOrg": {
-        "en": "BMC Engineer, Core Maintainer of the openUBMC AI-SIG",
-        "zh": "BMC 工程师、openUBMC AI-SIG 核心维护者"
+        "en": "BMC R&D Engineer, iSoftStone Huafang; Maintainer, openUBMC AI SIG",
+        "zh": "软通华方 BMC 研发工程师、openUBMC AI SIG 维护者"
       },
       "bio": {
-        "en": "Qinghua Li is a BMC engineer and core maintainer of the openUBMC AI-SIG.",
-        "zh": "李庆华是 BMC 工程师，也是 openUBMC AI-SIG 核心维护者。"
+        "en": "Qinghua Li is a BMC R&D engineer at iSoftStone Huafang, an openUBMC community developer, and a maintainer of the openUBMC AI SIG. He explores the integration of AI agents into BMC R&D workflows to improve development efficiency and engineering delivery quality.",
+        "zh": "软通华方 BMC 研发工程师。openUBMC 社区开发者及 openUBMC AI SIG 维护者，探索 Agent 与 BMC 研发场景融合，致力于提升 BMC 研发效率和工程交付质量。"
       },
       "tags": [
         "sz26-agentic-os-app"
