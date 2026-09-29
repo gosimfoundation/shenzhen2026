@@ -3959,12 +3959,12 @@
         "zh": "赵靖文"
       },
       "roleOrg": {
-        "en": "Engineer, Huawei",
-        "zh": "华为工程师"
+        "en": "Technical Expert, Huawei openJiuwen",
+        "zh": "华为 openJiuwen 技术专家"
       },
       "bio": {
-        "en": "Jingwen Zhao is an engineer at Huawei.",
-        "zh": "赵靖文是华为工程师。"
+        "en": "Jingwen Zhao is a technical expert for openJiuwen at Huawei and holds a Ph.D. from Zhejiang University. Their work focuses on agent memory, high-performance retrieval, and AI infrastructure, with an emphasis on memory management, vector retrieval, distributed systems, and hardware–software co-optimization. They work to bring technical solutions into production and contribute to open-source ecosystem development and technical talent training.",
+        "zh": "华为 openJiuwen 技术专家，浙江大学博士，主要从事智能体记忆、高性能检索与 AI 基础设施方向，聚焦记忆管理、向量检索、分布式系统及软硬协同优化，推动技术方案工程化，并参与开源生态建设与技术人才培养。"
       },
       "tags": [
         "sz26-agentic-os-app"
