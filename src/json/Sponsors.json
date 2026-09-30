@@ -14,7 +14,7 @@
     },
     {
       "id": "chief",
-      "name": { "en": "Chief Sponsor", "zh": "首席赞助商", "fr": "Sponsor principal" }
+      "name": { "en": "Platinum Sponsor", "zh": "白金赞助商", "fr": "Sponsor Platine" }
     },
     {
       "id": "diamond",
@@ -51,7 +51,7 @@
       "url": "https://www.csdn.net"
     },
     {
-      "category": "platinum",
+      "category": "chief",
       "image": "huawei-chief.png",
       "name": "Huawei",
       "logoClass": "partner-logo-wide",
