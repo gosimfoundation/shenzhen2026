@@ -79,6 +79,13 @@
     },
     {
       "category": "gold",
+      "image": "china-unidata.png",
+      "name": "China Unidata Logistics Information Co., Ltd.",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.chinaunidata.com/"
+    },
+    {
+      "category": "gold",
       "image": "minimax-company.png",
       "name": "MiniMax",
       "logoClass": "partner-logo-wide",
@@ -96,6 +103,13 @@
       "name": "TaoToken",
       "logoClass": "partner-logo-wide",
       "url": "https://taotoken.net/"
+    },
+    {
+      "category": "silver",
+      "image": "trae.png",
+      "name": "TRAE",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.trae.ai/"
     },
     {
       "category": "silver",
