@@ -433,8 +433,8 @@
         "zh": "周鸿钧"
       },
       "roleOrg": {
-        "en": "Co-speaker",
-        "zh": "联合讲师"
+        "en": "Associate Researcher, Shenzhen Institute of Artificial Intelligence and Robotics for Society",
+        "zh": "深圳市人工智能与机器人研究院副研究员"
       },
       "bio": {
         "en": "Hongjun Zhou is an Associate Researcher at the Shenzhen Institute of Artificial Intelligence and Robotics for Society. His research focuses on robot perception, navigation, and bipedal robot control. He previously worked on service and home robot development at Alibaba and the ASUS Intelligent Robot Center.",
@@ -2917,8 +2917,8 @@
         "zh": "Dongbiao He"
       },
       "roleOrg": {
-        "en": "Co-speaker",
-        "zh": "联合讲师"
+        "en": "Associate Professor, Southeast University",
+        "zh": "东南大学副教授"
       },
       "bio": {
         "en": "Dongbiao He is a co-presenter of “An Autonomous Runtime Shielding Agent for Linux Kernel Vulnerabilities” at GOSIM Shenzhen 2026.",
@@ -4507,12 +4507,12 @@
         "zh": "王子燕"
       },
       "roleOrg": {
-        "en": "Education Director, NGO UNESCO Avicenne",
-        "zh": "UNESCO 阿维森纳协会（NGO）教育总监"
+        "en": "Head of Education, NGO UNESCO Avicenne",
+        "zh": "联合国教科文组织相关非政府组织 AVICENNE 教育负责人"
       },
       "bio": {
-        "en": "Ziyan Wang is Education Director at NGO UNESCO Avicenne.",
-        "zh": "王子燕是 UNESCO 阿维森纳协会（NGO）教育总监。"
+        "en": "Ziyan Wang is Head of Education at UNESCO-related NGO AVICENNE, where she has led digital education initiatives across Africa and the Middle East since 2023. Since 2025, she has also been developing academic and educational cooperation with China, including initiatives with Jinan University and preparatory work for future UNESCO Chair collaboration. She lectures on Strategy and Innovation at Paris 12 University, with a particular interest in AI, digital education, international cooperation and cross-cultural innovation.",
+        "zh": "王子燕是联合国教科文组织相关非政府组织 AVICENNE 的教育负责人，自 2023 年起推动非洲和中东地区的数字教育项目。自 2025 年起，她也致力于发展与中国的学术及教育合作，包括与暨南大学开展项目，并为未来的联合国教科文组织教席合作做准备。她在巴黎第十二大学讲授战略与创新课程，关注 AI、数字教育、国际合作与跨文化创新。"
       },
       "tags": [
         "ws-ai-education"
@@ -4523,7 +4523,8 @@
       "image": "/images/speakers/confirmed/ziyan-wang.png",
       "sourceNames": [
         "Ziyan Wang",
-        "王子燕"
+        "王子燕",
+        "wang ziyan"
       ],
       "source": "invited"
     },
@@ -4695,6 +4696,59 @@
       "sourceNames": [
         "fu tingsheng",
         "Tingsheng Fu"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "赵普",
+      "name": {
+        "en": "Pu Zhao",
+        "zh": "赵普"
+      },
+      "roleOrg": {
+        "en": "Professor, Southeast University",
+        "zh": "东南大学教授"
+      },
+      "bio": {
+        "en": "Pu Zhao is a professor at Southeast University and a co-presenter of “C-to-Rust Code Translation: A Three-Stage Curriculum of Pretraining, Debugging-Aware SFT, and Task-Specific SFT.” His research focuses on inclusive AI, including model pruning, architecture search, quantization, model security, token compression, diffusion models, and efficient large language models.",
+        "zh": "赵普是东南大学计算机科学与工程学院、软件学院、人工智能学院教授，将联合分享《C 到 Rust 代码翻译：预训练、调试感知 SFT 与任务特定 SFT 的三阶段课程》。他的研究聚焦 Inclusive AI，涵盖模型剪枝、架构搜索、量化、模型安全、Token 压缩、Diffusion Models 与大语言模型高效化。"
+      },
+      "tags": [
+        "sz26-open-source-model"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/赵普.png",
+      "sourceNames": [
+        "赵普",
+        "Pu Zhao"
+      ],
+      "source": "cfp"
+    },
+    {
+      "id": "chen-haibo",
+      "name": {
+        "en": "Haibo Chen",
+        "zh": "陈海波"
+      },
+      "roleOrg": {
+        "en": "Chair, OpenHarmony Technical Steering Committee",
+        "zh": "OpenHarmony 技术指导委员会主席"
+      },
+      "bio": {
+        "en": "Haibo Chen chairs the OpenHarmony Technical Steering Committee and ACM SIGOPS. He is an ACM Fellow, IEEE Fellow, and Distinguished Professor at Shanghai Jiao Tong University.",
+        "zh": "陈海波是 OpenHarmony 技术指导委员会主席、ACM SIGOPS 主席，ACM Fellow、IEEE Fellow，并任上海交通大学特聘教授。"
+      },
+      "tags": [
+        "special-keynote"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/chen-haibo.png",
+      "sourceNames": [
+        "Chen Haibo",
+        "Haibo Chen",
+        "陈海波"
       ],
       "source": "cfp"
     }

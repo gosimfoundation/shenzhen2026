@@ -69,6 +69,26 @@
             "zhenboyu"
           ],
           "draft": false
+        },
+        {
+          "ref": "P-218",
+          "originalTitle": "TBD",
+          "originalLanguage": "en",
+          "originalAbstract": "TBD",
+          "originalAbstractLanguage": "en",
+          "slug": "p-218-tbd",
+          "title": {
+            "en": "TBD",
+            "zh": ""
+          },
+          "overview": {
+            "en": "TBD",
+            "zh": ""
+          },
+          "speakers": [
+            "chen-haibo"
+          ],
+          "draft": true
         }
       ],
       "originalName": "Keynote Plenary",
@@ -2512,7 +2532,8 @@
           },
           "slug": "p-93-c-to-rust-code-translation-a-three-stage-curriculum-of-pretraining-debugging-aware-sft-and-task-specific-sft",
           "speakers": [
-            "yanzhi-wang"
+            "yanzhi-wang",
+            "赵普"
           ],
           "originalAbstract": "Translating C code into safe, idiomatic Rust is a longstanding software-engineering goal because it can eliminate entire classes of memory-safety vulnerabilities while preserving the functional behavior of legacy systems. Large language models (LLMs) have shown promise for this task but typically underperform when applied off-the-shelf, since general-purpose pretraining rarely emphasizes idiomatic Rust generation, cross-language semantic equivalence, or the ability to reason about and repair compiler/runtime feedback. In this report we describe a three-stage fine-tuning curriculum applied to Qwen3-27B that is designed to progressively specialize the model for the C-to-Rust (C2Rust) translation task: (1) continued pretraining on Rust-centric corpora to strengthen the model's prior over idiomatic Rust syntax and standard-library usage; (2) supervised fine-tuning (SFT) on the microsoft/Verus_Training_Data dataset to instill debugging and self-repair behavior over Rust code; and (3) task-specific SFT on paired C/Rust solutions derived from LeetCode problems to teach direct semantic translation. We evaluate the resulting model using the agentic, static-analysis-guided verification framework of SACTOR, which performs structure-aware, two-phase (unidiomatic to idiomatic) translation with foreign-function-interface (FFI)-based end-to-end (E2E) testing. We report success rate, idiomaticity (Clippy lint counts, unsafe-code fraction), and failure-mode analyses, and compare our fine-tuned model against baseline Qwen3-27B and other LLMs evaluated under the same framework.",
           "originalAbstractLanguage": "en",
@@ -2665,6 +2686,26 @@
             "minakokojima"
           ],
           "draft": false
+        },
+        {
+          "ref": "P-217",
+          "originalTitle": "C 到 Rust 代码翻译：预训练、调试感知 SFT 与任务特定 SFT 的三阶段课程",
+          "originalLanguage": "zh",
+          "originalAbstract": "将C代码翻译为安全、符合习惯用法的Rust代码，是一个长期存在的软件工程目标，它能够消除整类内存安全漏洞，同时保留系统的功能。大型语言模型在这一任务上展现出了潜力，但在直接使用时通常表现不佳，因为通用预训练很少强调符合习惯用法的Rust生成、跨语言语义等价性。我们提出了了一种应用于Qwen3-27B的三阶段微调方法，旨在逐步使模型专门化以适应C到Rust（C2Rust）翻译任务：（1）在以Rust为中心的语料上进行持续预训练，以增强模型对符合习惯用法的Rust语法和标准库使用的先验；（2）在Verus Training Data数据集上进行监督微调（SFT），以灌输针对Rust代码的调试和自我修复行为；（3）在源自LeetCode问题的成对C/Rust解决方案上进行任务特定的SFT，以学习直接的语义翻译。我们使用SACTOR的智能体式、静态分析引导的验证框架来评估所得模型，该框架执行结构感知的两阶段（非惯用→惯用）翻译，并带有基于外部函数接口（FFI）的端到端（E2E）测试。作为王言治老师的co-speaker。",
+          "originalAbstractLanguage": "zh",
+          "slug": "p-217-c-到-rust-代码翻译-预训练-调试感知-sft-与任务特定-sft-的三阶段课程",
+          "title": {
+            "en": "",
+            "zh": "C 到 Rust 代码翻译：预训练、调试感知 SFT 与任务特定 SFT 的三阶段课程"
+          },
+          "overview": {
+            "en": "",
+            "zh": "将C代码翻译为安全、符合习惯用法的Rust代码，是一个长期存在的软件工程目标，它能够消除整类内存安全漏洞，同时保留系统的功能。大型语言模型在这一任务上展现出了潜力，但在直接使用时通常表现不佳，因为通用预训练很少强调符合习惯用法的Rust生成、跨语言语义等价性。我们提出了了一种应用于Qwen3-27B的三阶段微调方法，旨在逐步使模型专门化以适应C到Rust（C2Rust）翻译任务：（1）在以Rust为中心的语料上进行持续预训练，以增强模型对符合习惯用法的Rust语法和标准库使用的先验；（2）在Verus Training Data数据集上进行监督微调（SFT），以灌输针对Rust代码的调试和自我修复行为；（3）在源自LeetCode问题的成对C/Rust解决方案上进行任务特定的SFT，以学习直接的语义翻译。我们使用SACTOR的智能体式、静态分析引导的验证框架来评估所得模型，该框架执行结构感知的两阶段（非惯用→惯用）翻译，并带有基于外部函数接口（FFI）的端到端（E2E）测试。作为王言治老师的co-speaker。"
+          },
+          "speakers": [
+            "赵普"
+          ],
+          "draft": true
         }
       ],
       "originalName": "Open Source Models & Infra",
@@ -3404,6 +3445,26 @@
           },
           "date": "2026-10-17",
           "timeSlot": "16:40-17:30"
+        },
+        {
+          "ref": "P-181",
+          "originalTitle": "From AI Access to AI Impact: Building Inclusive Education Across Cultures",
+          "originalLanguage": "en",
+          "originalAbstract": "Artificial intelligence is rapidly expanding access to knowledge, but access alone does not guarantee educational impact. AI education must also respond to differences in language, culture, digital infrastructure, teacher capacity and local learning needs.\n\nDrawing on digital education initiatives across Africa and the Middle East since 2023, university teaching in France, and emerging academic cooperation with China, this session will explore how AI can move from a universal technology to a locally meaningful educational tool.\n\nThe talk will focus on three practical questions: How can AI support multilingual and cross-cultural learning? How should universities and international organizations adapt AI education to different regional contexts? And how can partnerships between Europe, China, Africa and the Middle East help reduce rather than widen educational inequality?\n\nThe session will also discuss the role of universities, educators and international institutions in building responsible AI learning ecosystems, including teacher development, culturally relevant content, international knowledge exchange and new models of academic cooperation.\n\nThe central message is simple: the future of AI in education is not only about smarter technology, but about making knowledge more accessible, adaptable and meaningful across cultures.",
+          "originalAbstractLanguage": "en",
+          "slug": "p-181-from-ai-access-to-ai-impact-building-inclusive-education-across-cultures",
+          "title": {
+            "en": "From AI Access to AI Impact: Building Inclusive Education Across Cultures",
+            "zh": "从接触 AI 到发挥 AI 影响力：构建跨文化的包容性教育"
+          },
+          "overview": {
+            "en": "Artificial intelligence is rapidly expanding access to knowledge, but access alone does not guarantee educational impact. AI education must also respond to differences in language, culture, digital infrastructure, teacher capacity and local learning needs.\n\nDrawing on digital education initiatives across Africa and the Middle East since 2023, university teaching in France, and emerging academic cooperation with China, this session will explore how AI can move from a universal technology to a locally meaningful educational tool.\n\nThe talk will focus on three practical questions: How can AI support multilingual and cross-cultural learning? How should universities and international organizations adapt AI education to different regional contexts? And how can partnerships between Europe, China, Africa and the Middle East help reduce rather than widen educational inequality?\n\nThe session will also discuss the role of universities, educators and international institutions in building responsible AI learning ecosystems, including teacher development, culturally relevant content, international knowledge exchange and new models of academic cooperation.\n\nThe central message is simple: the future of AI in education is not only about smarter technology, but about making knowledge more accessible, adaptable and meaningful across cultures.",
+            "zh": "人工智能正在快速扩大知识获取渠道，但能够接触 AI 并不等于产生教育成效。AI 教育还必须回应语言、文化、数字基础设施、教师能力和本地学习需求的差异。本次分享结合自 2023 年以来在非洲和中东开展的数字教育项目、法国大学教学经验，以及与中国逐步展开的学术合作，探讨如何让 AI 从通用技术转化为具有本地意义的教育工具，并分析多语言学习、跨文化教育、教师发展和国际合作如何帮助缩小而不是扩大教育不平等。"
+          },
+          "speakers": [
+            "ziyan-wang"
+          ],
+          "draft": false
         }
       ],
       "originalName": "AI Education Workshop",
