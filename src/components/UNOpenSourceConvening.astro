@@ -1,0 +1,317 @@
+---
+import Button from "components/Button.astro";
+
+interface Props {
+  lang: "en" | "zh";
+  compact?: boolean;
+}
+
+const { lang, compact = false } = Astro.props;
+const isZh = lang === "zh";
+const detailsPath = `${isZh ? "/zh" : ""}/un-open-source-convening/`;
+const registrationUrl = "https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696";
+const copy = isZh
+  ? {
+      eyebrow: "GOSIM Shenzhen 2026 · 同期活动",
+      subtitle: "联合国开源交流会",
+      summary: "联合国数字和新兴技术办公室邀请开源社区各方代表相聚深圳，了解联合国当前推进的开源工作，共同探讨未来参与方式与合作机会。",
+      dateLabel: "活动日期",
+      date: "2026 年 10 月 16 日",
+      timeLabel: "活动时间",
+      time: "10:00–12:00（北京时间，UTC+8）",
+      locationLabel: "活动地点",
+      location: "中国 · 深圳",
+      logistics: "具体会务安排将在参会确认后提供。",
+      details: "查看活动详情",
+      register: "在百格报名",
+      registrationNote: "进入百格大会购票页面后，请选择 UN Open Source Convening 的单独审核通道提交报名。",
+      topicsLabel: "交流议题",
+      topicsIntro: "本次交流会将在 GOSIM 大会期间举行，介绍联合国牵头推进的开源工作，并围绕以下议题展开讨论：",
+      topics: [
+        {
+          title: "联合国开源周",
+          text: "联合国开源周的相关工作，以及合作伙伴参与 2027 年活动的机会。",
+        },
+        {
+          title: "面向科研、教育与创新的开放计算",
+          text: "面向科研、教育与创新的开放计算工作组的相关工作。",
+        },
+        {
+          title: "开源 AI 工作组",
+          text: "关于设立开源 AI 工作组的持续讨论。",
+        },
+        {
+          title: "APEC 期间的深圳开源 AI 活动",
+          text: "拟于 2026 年 11 月 20 日在深圳 APEC 期间举办的开源 AI 活动，议题包括开放 AI 技术栈、开源 AI 治理及其经济价值。",
+        },
+        {
+          title: "联合国融合大会",
+          text: "筹备中的联合国融合大会（United Nations Conference on Convergence），聚焦数字和新兴技术的融合，以及开源在其中的定位。",
+        },
+      ],
+      convenedBy: "召集方",
+      organizer: "联合国数字和新兴技术办公室",
+    }
+  : {
+      eyebrow: "GOSIM Shenzhen 2026 · Co-located Event",
+      subtitle: "United Nations Open Source Convening",
+      summary: "The United Nations Office for Digital and Emerging Technologies invites the open source community to Shenzhen to explore UN-led open source workstreams, shape future engagement, and identify opportunities for collaboration.",
+      dateLabel: "Date",
+      date: "October 16, 2026",
+      timeLabel: "Time",
+      time: "10:00–12:00 (China Standard Time, UTC+8)",
+      locationLabel: "Location",
+      location: "Shenzhen, China",
+      logistics: "Further logistical details will be shared upon confirmation of attendance.",
+      details: "Explore the convening",
+      register: "Register on BagEvent",
+      registrationNote: "On the BagEvent conference ticketing page, select the separate application option for UN Open Source Convening to submit your registration for review.",
+      topicsLabel: "Discussion topics",
+      topicsIntro: "Held on the margins of GOSIM, the convening will present the open source workstreams currently led by the United Nations. Topics for presentation and discussion include:",
+      topics: [
+        {
+          title: "UN Open Source Week",
+          text: "The UN Open Source Week and opportunities for partners to engage in its 2027 edition.",
+        },
+        {
+          title: "Open Compute for Research, Education and Innovation",
+          text: "The work of the Working Group on Open Compute for Research, Education and Innovation.",
+        },
+        {
+          title: "An open source AI working group",
+          text: "Ongoing discussions on the establishment of a working group on open source AI.",
+        },
+        {
+          title: "Open source AI in Shenzhen during APEC",
+          text: "The open source AI event planned for November 20, 2026 in Shenzhen during APEC, addressing an open AI stack, the governance of open source AI, and the economic value of open source AI.",
+        },
+        {
+          title: "United Nations Conference on Convergence",
+          text: "The planned United Nations Conference on Convergence, exploring the convergence of digital and emerging technologies and the positioning of open source within it.",
+        },
+      ],
+      convenedBy: "Convened by",
+      organizer: "United Nations Office for Digital and Emerging Technologies",
+    };
+const Heading = compact ? "h2" : "h1";
+---
+
+<section
+  id="un-open-source-convening"
+  class:list={["un-convening", { "is-compact": compact }]}
+  data-theme-section="dark"
+  data-bg-section="dark-tint"
+  aria-labelledby="un-convening-title"
+>
+  <div class="container wide">
+    <p class="event-eyebrow">{copy.eyebrow}</p>
+    <div class="event-overview">
+      <div class="event-copy">
+        <Heading id="un-convening-title">UN Open Source Convening</Heading>
+        <p class="event-subtitle">{copy.subtitle}</p>
+        <p class="event-summary">{copy.summary}</p>
+      </div>
+      <div class="event-attendance">
+        <dl class="event-facts">
+          <div>
+            <dt>{copy.dateLabel}</dt>
+            <dd><time datetime="2026-10-16">{copy.date}</time></dd>
+          </div>
+          <div>
+            <dt>{copy.timeLabel}</dt>
+            <dd>{copy.time}</dd>
+          </div>
+          <div>
+            <dt>{copy.locationLabel}</dt>
+            <dd>{copy.location}</dd>
+          </div>
+        </dl>
+        {!compact && <p class="event-note">{copy.logistics}</p>}
+        <div class="event-actions">
+          <Button
+            text={compact ? copy.details : copy.register}
+            link={compact ? detailsPath : registrationUrl}
+            openInNewTab={!compact}
+            class="btn primary xl btn-hover glass-orange"
+          />
+        </div>
+        {!compact && <p class="event-note">{copy.registrationNote}</p>}
+      </div>
+    </div>
+
+    {!compact && (
+      <div class="event-program">
+        <section aria-labelledby="un-convening-topics">
+          <h2 id="un-convening-topics">{copy.topicsLabel}</h2>
+          <p class="program-intro">{copy.topicsIntro}</p>
+          <ol class="event-topics">
+            {copy.topics.map((topic, index) => (
+              <li>
+                <span class="topic-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{topic.title}</h3>
+                  <p>{topic.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+        <aside class="event-organizer">
+          <p class="event-eyebrow">{copy.convenedBy}</p>
+          <p>{copy.organizer}</p>
+        </aside>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .un-convening {
+    padding: calc(var(--nav-bar-height) + 3rem) 0 5rem;
+    background: radial-gradient(ellipse at top right, rgba(248, 74, 16, 0.09), transparent 60%), #141209;
+    color: #f6f3e7;
+  }
+
+  .un-convening.is-compact {
+    padding-block: clamp(3rem, 5vw, 5rem);
+    border-bottom: 1px solid rgba(246, 243, 231, 0.14);
+  }
+
+  .event-eyebrow {
+    margin: 0 0 1.5rem;
+    color: #f84a10;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .event-overview,
+  .event-program {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 6rem);
+  }
+
+  .event-copy h1,
+  .event-copy h2 {
+    max-width: 15ch;
+    margin: 0;
+    color: #f6f3e7;
+    font-size: clamp(2.6rem, 5.4vw, 5.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+
+  .is-compact .event-copy h2 {
+    font-size: clamp(2.4rem, 4.15vw, 4.6rem);
+  }
+
+  .event-subtitle {
+    margin: 1.2rem 0 0;
+    color: #f6f3e7;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .event-summary,
+  .program-intro,
+  .event-topics p {
+    margin: 1.2rem 0 0;
+    color: rgba(246, 243, 231, 0.76);
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .event-facts {
+    display: grid;
+    gap: 1.3rem;
+    margin: 0;
+  }
+
+  .event-facts dt {
+    margin-bottom: 0.4rem;
+    color: rgba(246, 243, 231, 0.6);
+    font-size: 0.8rem;
+  }
+
+  .event-facts dd {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  .event-actions {
+    display: flex;
+    margin-top: 2rem;
+  }
+
+  .event-note {
+    margin: 1rem 0 0;
+    color: rgba(246, 243, 231, 0.6);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .event-program {
+    margin-top: clamp(3rem, 6vw, 6rem);
+    padding-top: 3rem;
+    border-top: 1px solid rgba(246, 243, 231, 0.18);
+  }
+
+  .event-program h2 {
+    margin: 0;
+    color: #f6f3e7;
+    font-size: 2rem;
+  }
+
+  .event-topics {
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .event-topics li {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(246, 243, 231, 0.14);
+  }
+
+  .topic-number {
+    padding-top: 0.2rem;
+    color: #f84a10;
+    font-size: 0.8rem;
+  }
+
+  .event-topics h3 {
+    margin: 0;
+    color: #f6f3e7;
+    font-size: 1.2rem;
+    line-height: 1.45;
+  }
+
+  .event-topics p {
+    margin-top: 0.6rem;
+  }
+
+  .event-organizer > p:last-child {
+    margin: 0;
+    color: #f6f3e7;
+    font-size: 1.1rem;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 800px) {
+    .event-overview,
+    .event-program {
+      grid-template-columns: 1fr;
+    }
+
+    .un-convening {
+      padding-top: calc(var(--nav-bar-height) + 2rem);
+    }
+  }
+</style>
