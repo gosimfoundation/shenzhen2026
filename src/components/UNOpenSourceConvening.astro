@@ -12,6 +12,8 @@ const { lang, compact = false } = Astro.props;
 const isZh = lang === "zh";
 const detailsPath = `${isZh ? "/zh" : ""}/un-open-source-convening/`;
 const registrationUrl = "https://www.bagevent.com/event/9228523?discountCode=UNOPENSOURCECONVENTING";
+const ticketsUrl = "https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696";
+const photoSourceUrl = "https://www.facebook.com/photo/?fbid=10160988638280820&set=a.577863084369721";
 const copy = isZh
   ? {
       eyebrow: "GOSIM Shenzhen 2026 · 同期边会",
@@ -19,6 +21,7 @@ const copy = isZh
       subtitle: "United Nations Open Source Convening",
       photoAlt: "纽约联合国总部大楼及各国国旗",
       photoCaption: "联合国总部 · 纽约",
+      photoSourceLabel: "查看 Facebook 原图 · UN Photo/Rick Bajornas",
       summary: "GOSIM Shenzhen 2026 大会官方同期高端边会，面向全球开源、AI 与数字技术领域的产业决策者、科研专家及国际合作机构，探讨联合国开源工作与国际协作机遇。参会须经审核，凭正式确认通知入场。",
       introductionLabel: "会议背景",
       introduction: "本次会议为 GOSIM Shenzhen 2026 大会官方同期高端边会，旨在面向全球开源生态、人工智能、数字技术领域的产业决策者、顶尖科研专家与国际合作机构，搭建联合国主导的开源治理与国际协作交流平台。会议将系统发布联合国现阶段开源体系建设成果，凝聚全球核心参与主体，共同规划未来开源生态建设路径、探索跨国产学研协同合作机遇。",
@@ -35,6 +38,7 @@ const copy = isZh
       admissionNote: "报名须经审核；审核通过后，凭主办方发送的正式参会确认通知入场。",
       details: "查看活动详情",
       register: "申请参会",
+      tickets: "购买大会门票",
       registrationNote: "进入百格大会购票页面后，请选择 UN Open Source Convening 的单独审核通道提交报名。",
       topicsLabel: "核心研讨内容",
       topicsIntro: "本次专题会议将集中展示与深度研讨联合国开源生态重点工作，核心议题包括：",
@@ -68,6 +72,7 @@ const copy = isZh
       subtitle: "Official high-level side event",
       photoAlt: "United Nations Headquarters in New York with national flags in the foreground",
       photoCaption: "United Nations Headquarters · New York",
+      photoSourceLabel: "View original photo on Facebook · UN Photo/Rick Bajornas",
       summary: "An official high-level side event of GOSIM Shenzhen 2026 for industry decision-makers, leading researchers and international organisations to explore UN open source initiatives and collaboration. Applications are subject to review; an official confirmation notice is required for entry.",
       introductionLabel: "Event Introduction",
       introduction: "This convening is an official high-level side event of GOSIM Shenzhen 2026. It creates a UN-lead platform for industry decision-makers, leading researchers and international collaborative organisations within the global open source, AI and digital technology ecosystem. The session will share progress of ongoing UN open source initiatives, bring together key global stakeholders to shape the roadmap of open source ecosystem development, and identify cross-border, academia-industry-research collaboration opportunities.",
@@ -84,6 +89,7 @@ const copy = isZh
       admissionNote: "Applications are subject to review. Approved applicants must present the organisers' official confirmation notice for entry.",
       details: "Explore the convening",
       register: "Apply to attend",
+      tickets: "Buy conference tickets",
       registrationNote: "On the BagEvent conference ticketing page, select the separate application option for UN Open Source Convening to submit your registration for review.",
       topicsLabel: "Key Discussion Topics",
       topicsIntro: "The convening will showcase and dive deep into priority UN open source workstreams, covering:",
@@ -122,68 +128,43 @@ const Heading = compact ? "h2" : "h1";
   aria-labelledby="un-convening-title"
 >
   <div class="container wide">
-    <p class="event-eyebrow">{copy.eyebrow}</p>
-    <div class="event-overview">
-      <div class="event-copy">
-        <div class="event-heading">
-          <Heading id="un-convening-title" class="event-title">{copy.title}</Heading>
-          <p class="event-subtitle">{copy.subtitle}</p>
-        </div>
-        <div class="event-introduction">
-          {!compact && <h2 class="event-intro-label">{copy.introductionLabel}</h2>}
-          <p class="event-summary">{compact ? copy.summary : copy.introduction}</p>
-          {!compact && copy.introductionNotes.map((paragraph) => (
-            <p class="event-summary">{paragraph}</p>
-          ))}
-        </div>
-      </div>
+    <div class="event-hero">
       {!compact && (
         <figure class="event-photo">
-          <div class="event-photo-frame">
+          <div class="event-photo-background">
             <Picture
               src={unHeadquarters}
               alt={copy.photoAlt}
               formats={["webp"]}
-              widths={[360, 600, 960, 1200]}
-              sizes="(max-width: 800px) min(22rem, calc(100vw - 3rem)), 36vw"
+              widths={[600, 900, 1200]}
+              sizes="(max-width: 1100px) 100vw, 75vw"
               loading="eager"
+              fetchpriority="high"
               decoding="async"
             />
           </div>
           <figcaption>
             <span>{copy.photoCaption}</span>
-            <span>UN Photo/Rick Bajornas</span>
+            <a href={photoSourceUrl} target="_blank" rel="noopener noreferrer" aria-label={copy.photoSourceLabel}>UN Photo/Rick Bajornas ↗</a>
           </figcaption>
         </figure>
       )}
-      <div class="event-attendance">
-        <dl class="event-facts">
-          <div>
-            <dt>{copy.dateLabel}</dt>
-            <dd><time datetime="2026-10-16">{copy.date}</time></dd>
+      <p class="event-eyebrow">{copy.eyebrow}</p>
+      <div class="event-overview">
+        <div class="event-copy">
+          <div class="event-heading">
+            <Heading id="un-convening-title" class="event-title">{copy.title}</Heading>
+            <p class="event-subtitle">{copy.subtitle}</p>
           </div>
-          <div>
-            <dt>{copy.timeLabel}</dt>
-            <dd>{copy.time}</dd>
+          <div class="event-introduction">
+            {!compact && <h2 class="event-intro-label">{copy.introductionLabel}</h2>}
+            <p class="event-summary">{compact ? copy.summary : copy.introduction}</p>
+            {!compact && copy.introductionNotes.map((paragraph) => (
+              <p class="event-summary">{paragraph}</p>
+            ))}
           </div>
-          <div>
-            <dt>{copy.locationLabel}</dt>
-            <dd>{copy.location}</dd>
-          </div>
-          {!compact && (
-            <div>
-              <dt>{copy.hostLabel}</dt>
-              <dd>{copy.organizer}</dd>
-            </div>
-          )}
-        </dl>
-        <div class="event-registration">
-          {!compact && (
-            <div class="event-registration-copy">
-              <p class="event-note">{copy.admissionNote}</p>
-              <p class="event-note">{copy.registrationNote}</p>
-            </div>
-          )}
+        </div>
+        <div class="event-attendance">
           <div class="event-actions">
             <Button
               text={compact ? copy.details : copy.register}
@@ -191,7 +172,36 @@ const Heading = compact ? "h2" : "h1";
               openInNewTab={!compact}
               class="btn primary xl btn-hover glass-orange"
             />
+            {!compact && <a class="event-tickets" href={ticketsUrl} target="_blank" rel="noopener noreferrer">{copy.tickets} ↗</a>}
           </div>
+          <div class="event-logistics">
+            <dl class="event-facts">
+              <div>
+                <dt>{copy.dateLabel}</dt>
+                <dd><time datetime="2026-10-16">{copy.date}</time></dd>
+              </div>
+              <div>
+                <dt>{copy.timeLabel}</dt>
+                <dd>{copy.time}</dd>
+              </div>
+              <div>
+                <dt>{copy.locationLabel}</dt>
+                <dd>{copy.location}</dd>
+              </div>
+              {!compact && (
+                <div>
+                  <dt>{copy.hostLabel}</dt>
+                  <dd>{copy.organizer}</dd>
+                </div>
+              )}
+            </dl>
+          </div>
+          {!compact && (
+            <div class="event-registration-copy">
+              <p class="event-note">{copy.admissionNote}</p>
+              <p class="event-note">{copy.registrationNote}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -235,6 +245,21 @@ const Heading = compact ? "h2" : "h1";
     border-bottom: 1px solid rgba(246, 243, 231, 0.14);
   }
 
+  .un-convening:not(.is-compact) {
+    padding-top: calc(var(--nav-bar-height) + 0.5rem);
+    background: #141209;
+  }
+
+  .un-convening:not(.is-compact) .event-hero {
+    position: relative;
+    isolation: isolate;
+    padding-bottom: 2.5rem;
+  }
+
+  .un-convening:not(.is-compact) .event-eyebrow {
+    margin-bottom: 0.85rem;
+  }
+
   .event-eyebrow {
     margin: 0 0 1.5rem;
     color: #f84a10;
@@ -257,56 +282,116 @@ const Heading = compact ? "h2" : "h1";
     align-items: start;
   }
 
-  .event-photo {
-    min-width: 0;
-    margin: 0;
+  .un-convening:not(.is-compact) .event-overview {
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 3vw, 3rem);
   }
 
-  .event-photo-frame {
-    padding: 0.5rem;
-    border: 1px solid rgba(246, 243, 231, 0.18);
-    background: rgba(246, 243, 231, 0.04);
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  .event-photo {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  .event-photo-background {
+    position: absolute;
+    inset: calc(-1 * (var(--nav-bar-height) + 0.5rem)) calc(-1 * var(--container-padding)) -2rem 25%;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #000 25%);
+  }
+
+  .event-photo-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(0deg, #141209, transparent 25%),
+      linear-gradient(90deg, #141209, rgba(20, 18, 9, 0.85) 30%, rgba(20, 18, 9, 0.4) 75%, rgba(20, 18, 9, 0.25));
   }
 
   .event-photo :global(img) {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 90%;
+  }
+
+  .event-photo :global(picture) {
+    display: block;
+    height: 100%;
   }
 
   .event-photo figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 0.25rem 1rem;
-    margin-top: 0.85rem;
-    color: rgba(246, 243, 231, 0.6);
-    font-size: 0.72rem;
-    line-height: 1.6;
+    justify-content: flex-end;
+    gap: 0.25rem 0.75rem;
+    color: rgba(246, 243, 231, 0.8);
+    font-size: 0.68rem;
+    line-height: 1.45;
+    pointer-events: auto;
+  }
+
+  .event-photo figcaption a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .event-photo figcaption a:hover,
+  .event-photo figcaption a:focus-visible {
+    color: #f6f3e7;
+  }
+
+  .event-attendance {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .is-compact .event-actions {
+    order: 1;
   }
 
   .un-convening:not(.is-compact) .event-attendance {
-    grid-column: 1 / -1;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(246, 243, 231, 0.18);
+    gap: 1rem;
+    padding: clamp(1rem, 1.5vw, 1.25rem);
+    border: 1px solid rgba(246, 243, 231, 0.18);
+    background: rgba(20, 18, 9, 0.66);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.12);
   }
 
   .un-convening:not(.is-compact) .event-facts {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.5rem 2rem;
+    gap: 0.85rem;
   }
 
-  .un-convening:not(.is-compact) .event-registration {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem 2rem;
-    margin-top: 2rem;
+  .un-convening:not(.is-compact) .event-facts dt {
+    margin-bottom: 0.25rem;
+    color: rgba(246, 243, 231, 0.76);
+    font-size: 0.7rem;
+  }
+
+  .un-convening:not(.is-compact) .event-facts dd {
+    font-size: 0.95rem;
+    line-height: 1.45;
   }
 
   .event-registration-copy {
-    max-width: 52rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(246, 243, 231, 0.12);
+  }
+
+  .event-registration-copy .event-note {
+    margin-top: 0.5rem;
+    color: rgba(246, 243, 231, 0.76);
+    font-size: 0.82rem;
+    line-height: 1.5;
   }
 
   .event-registration-copy .event-note:first-child {
@@ -314,8 +399,23 @@ const Heading = compact ? "h2" : "h1";
   }
 
   .un-convening:not(.is-compact) .event-actions {
-    flex-shrink: 0;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.25rem;
     margin-top: 0;
+  }
+
+  .event-tickets {
+    color: #f6f3e7;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  .event-tickets:hover,
+  .event-tickets:focus-visible {
+    color: #ff9b70;
   }
 
   .event-title {
@@ -330,6 +430,25 @@ const Heading = compact ? "h2" : "h1";
 
   .is-compact .event-title {
     font-size: clamp(2.4rem, 4.15vw, 4.6rem);
+  }
+
+  .un-convening:not(.is-compact) .event-title {
+    font-size: clamp(2.1rem, 3.3vw, 3.1rem);
+  }
+
+  .un-convening:not(.is-compact) .event-subtitle {
+    margin-top: 0.85rem;
+    font-size: 1.1rem;
+  }
+
+  .un-convening:not(.is-compact) .event-intro-label {
+    margin-top: 1rem;
+  }
+
+  .un-convening:not(.is-compact) .event-introduction .event-summary {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
   }
 
   .event-subtitle {
@@ -428,10 +547,27 @@ const Heading = compact ? "h2" : "h1";
     margin-top: 0.6rem;
   }
 
-  @media (max-width: 800px) {
-    .event-overview,
-    .event-program {
+  @media (max-width: 1100px) {
+    .event-photo-background {
+      left: calc(-1 * var(--container-padding));
+      max-height: 60rem;
+      mask-image: none;
+    }
+
+    .event-photo-background::after {
+      background:
+        linear-gradient(0deg, #141209, transparent 35%),
+        linear-gradient(90deg, rgba(20, 18, 9, 0.85), rgba(20, 18, 9, 0.55));
+    }
+
+    .event-photo figcaption {
+      justify-content: flex-start;
+      left: 0;
+    }
+
+    .un-convening:not(.is-compact) .event-overview {
       grid-template-columns: 1fr;
+      row-gap: 1.5rem;
     }
 
     .un-convening:not(.is-compact) .event-copy {
@@ -442,31 +578,24 @@ const Heading = compact ? "h2" : "h1";
       order: 1;
     }
 
-    .event-photo {
+    .event-attendance {
       order: 2;
-      width: min(100%, 22rem);
-      justify-self: center;
     }
 
     .event-introduction {
       order: 3;
     }
 
-    .event-intro-label {
+    .un-convening:not(.is-compact) .event-intro-label {
       margin-top: 0;
     }
 
-    .event-attendance {
-      order: 4;
-    }
+  }
 
-    .un-convening:not(.is-compact) .event-facts {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .un-convening:not(.is-compact) .event-registration {
-      align-items: flex-start;
-      flex-direction: column;
+  @media (max-width: 800px) {
+    .event-overview,
+    .event-program {
+      grid-template-columns: 1fr;
     }
 
     .un-convening {
@@ -474,9 +603,4 @@ const Heading = compact ? "h2" : "h1";
     }
   }
 
-  @media (max-width: 520px) {
-    .un-convening:not(.is-compact) .event-facts {
-      grid-template-columns: 1fr;
-    }
-  }
 </style>
