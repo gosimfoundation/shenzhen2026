@@ -1,5 +1,7 @@
 ---
 import Button from "components/Button.astro";
+import { Picture } from "astro:assets";
+import unHeadquarters from "images/events/un-headquarters.jpg";
 
 interface Props {
   lang: "en" | "zh";
@@ -15,6 +17,8 @@ const copy = isZh
       eyebrow: "GOSIM Shenzhen 2026 · 同期边会",
       title: "联合国开源专题会议",
       subtitle: "United Nations Open Source Convening",
+      photoAlt: "纽约联合国总部大楼及各国国旗",
+      photoCaption: "联合国总部 · 纽约",
       summary: "GOSIM Shenzhen 2026 大会官方同期高端边会，面向全球开源、AI 与数字技术领域的产业决策者、科研专家及国际合作机构，探讨联合国开源工作与国际协作机遇。参会须经审核，凭正式确认通知入场。",
       introductionLabel: "会议背景",
       introduction: "本次会议为 GOSIM Shenzhen 2026 大会官方同期高端边会，旨在面向全球开源生态、人工智能、数字技术领域的产业决策者、顶尖科研专家与国际合作机构，搭建联合国主导的开源治理与国际协作交流平台。会议将系统发布联合国现阶段开源体系建设成果，凝聚全球核心参与主体，共同规划未来开源生态建设路径、探索跨国产学研协同合作机遇。",
@@ -62,6 +66,8 @@ const copy = isZh
       eyebrow: "Side Event of GOSIM Shenzhen 2026",
       title: "United Nations Open Source Convening",
       subtitle: "Official high-level side event",
+      photoAlt: "United Nations Headquarters in New York with national flags in the foreground",
+      photoCaption: "United Nations Headquarters · New York",
       summary: "An official high-level side event of GOSIM Shenzhen 2026 for industry decision-makers, leading researchers and international organisations to explore UN open source initiatives and collaboration. Applications are subject to review; an official confirmation notice is required for entry.",
       introductionLabel: "Event Introduction",
       introduction: "This convening is an official high-level side event of GOSIM Shenzhen 2026. It creates a UN-lead platform for industry decision-makers, leading researchers and international collaborative organisations within the global open source, AI and digital technology ecosystem. The session will share progress of ongoing UN open source initiatives, bring together key global stakeholders to shape the roadmap of open source ecosystem development, and identify cross-border, academia-industry-research collaboration opportunities.",
@@ -119,14 +125,37 @@ const Heading = compact ? "h2" : "h1";
     <p class="event-eyebrow">{copy.eyebrow}</p>
     <div class="event-overview">
       <div class="event-copy">
-        <Heading id="un-convening-title" class="event-title">{copy.title}</Heading>
-        <p class="event-subtitle">{copy.subtitle}</p>
-        {!compact && <h2 class="event-intro-label">{copy.introductionLabel}</h2>}
-        <p class="event-summary">{compact ? copy.summary : copy.introduction}</p>
-        {!compact && copy.introductionNotes.map((paragraph) => (
-          <p class="event-summary">{paragraph}</p>
-        ))}
+        <div class="event-heading">
+          <Heading id="un-convening-title" class="event-title">{copy.title}</Heading>
+          <p class="event-subtitle">{copy.subtitle}</p>
+        </div>
+        <div class="event-introduction">
+          {!compact && <h2 class="event-intro-label">{copy.introductionLabel}</h2>}
+          <p class="event-summary">{compact ? copy.summary : copy.introduction}</p>
+          {!compact && copy.introductionNotes.map((paragraph) => (
+            <p class="event-summary">{paragraph}</p>
+          ))}
+        </div>
       </div>
+      {!compact && (
+        <figure class="event-photo">
+          <div class="event-photo-frame">
+            <Picture
+              src={unHeadquarters}
+              alt={copy.photoAlt}
+              formats={["webp"]}
+              widths={[360, 600, 960, 1200]}
+              sizes="(max-width: 800px) min(22rem, calc(100vw - 3rem)), 36vw"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+          <figcaption>
+            <span>{copy.photoCaption}</span>
+            <span>UN Photo/Rick Bajornas</span>
+          </figcaption>
+        </figure>
+      )}
       <div class="event-attendance">
         <dl class="event-facts">
           <div>
@@ -148,16 +177,22 @@ const Heading = compact ? "h2" : "h1";
             </div>
           )}
         </dl>
-        {!compact && <p class="event-note">{copy.admissionNote}</p>}
-        <div class="event-actions">
-          <Button
-            text={compact ? copy.details : copy.register}
-            link={compact ? detailsPath : registrationUrl}
-            openInNewTab={!compact}
-            class="btn primary xl btn-hover glass-orange"
-          />
+        <div class="event-registration">
+          {!compact && (
+            <div class="event-registration-copy">
+              <p class="event-note">{copy.admissionNote}</p>
+              <p class="event-note">{copy.registrationNote}</p>
+            </div>
+          )}
+          <div class="event-actions">
+            <Button
+              text={compact ? copy.details : copy.register}
+              link={compact ? detailsPath : registrationUrl}
+              openInNewTab={!compact}
+              class="btn primary xl btn-hover glass-orange"
+            />
+          </div>
         </div>
-        {!compact && <p class="event-note">{copy.registrationNote}</p>}
       </div>
     </div>
 
@@ -215,6 +250,72 @@ const Heading = compact ? "h2" : "h1";
     display: grid;
     grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
     gap: clamp(2rem, 6vw, 6rem);
+  }
+
+  .event-overview {
+    row-gap: 3rem;
+    align-items: start;
+  }
+
+  .event-photo {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .event-photo-frame {
+    padding: 0.5rem;
+    border: 1px solid rgba(246, 243, 231, 0.18);
+    background: rgba(246, 243, 231, 0.04);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  }
+
+  .event-photo :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .event-photo figcaption {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin-top: 0.85rem;
+    color: rgba(246, 243, 231, 0.6);
+    font-size: 0.72rem;
+    line-height: 1.6;
+  }
+
+  .un-convening:not(.is-compact) .event-attendance {
+    grid-column: 1 / -1;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(246, 243, 231, 0.18);
+  }
+
+  .un-convening:not(.is-compact) .event-facts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+  }
+
+  .un-convening:not(.is-compact) .event-registration {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem 2rem;
+    margin-top: 2rem;
+  }
+
+  .event-registration-copy {
+    max-width: 52rem;
+  }
+
+  .event-registration-copy .event-note:first-child {
+    margin-top: 0;
+  }
+
+  .un-convening:not(.is-compact) .event-actions {
+    flex-shrink: 0;
+    margin-top: 0;
   }
 
   .event-title {
@@ -333,8 +434,49 @@ const Heading = compact ? "h2" : "h1";
       grid-template-columns: 1fr;
     }
 
+    .un-convening:not(.is-compact) .event-copy {
+      display: contents;
+    }
+
+    .event-heading {
+      order: 1;
+    }
+
+    .event-photo {
+      order: 2;
+      width: min(100%, 22rem);
+      justify-self: center;
+    }
+
+    .event-introduction {
+      order: 3;
+    }
+
+    .event-intro-label {
+      margin-top: 0;
+    }
+
+    .event-attendance {
+      order: 4;
+    }
+
+    .un-convening:not(.is-compact) .event-facts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .un-convening:not(.is-compact) .event-registration {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
     .un-convening {
       padding-top: calc(var(--nav-bar-height) + 2rem);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .un-convening:not(.is-compact) .event-facts {
+      grid-template-columns: 1fr;
     }
   }
 </style>
