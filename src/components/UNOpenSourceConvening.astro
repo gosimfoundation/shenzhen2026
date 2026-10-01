@@ -17,7 +17,11 @@ const copy = isZh
       subtitle: "United Nations Open Source Convening",
       summary: "GOSIM Shenzhen 2026 大会官方同期高端边会，面向全球开源、AI 与数字技术领域的产业决策者、科研专家及国际合作机构，探讨联合国开源工作与国际协作机遇。参会须经审核，凭正式确认通知入场。",
       introductionLabel: "会议背景",
-      introduction: "本次会议为 GOSIM Shenzhen 2026 大会官方同期高端边会，旨在面向全球开源生态、人工智能、数字技术领域的产业决策者、顶尖科研专家与国际合作机构，搭建联合国层面的开源治理与国际协作交流平台。会议将系统发布联合国现阶段开源体系建设成果，凝聚全球核心参与主体，共同规划未来开源生态建设路径、探索跨国产学研协同合作机遇。",
+      introduction: "本次会议为 GOSIM Shenzhen 2026 大会官方同期高端边会，旨在面向全球开源生态、人工智能、数字技术领域的产业决策者、顶尖科研专家与国际合作机构，搭建联合国主导的开源治理与国际协作交流平台。会议将系统发布联合国现阶段开源体系建设成果，凝聚全球核心参与主体，共同规划未来开源生态建设路径、探索跨国产学研协同合作机遇。",
+      introductionNotes: [
+        "名额有限，请点击“申请参会”提交申请，我们将对您的申请进行审核。审核通过后，GOSIM 大会组委会将向您发送后续邮件，告知会议地点。",
+        "这是了解联合国对开源的支持，以及您如何参与联合国未来开源倡议的良好机会。",
+      ],
       dateLabel: "活动日期",
       date: "2026 年 10 月 16 日",
       timeLabel: "活动时间",
@@ -47,10 +51,6 @@ const copy = isZh
           title: "APEC 深圳峰会配套开源 AI 专项活动",
           text: "2026 年 11 月 20 日 APEC 深圳峰会配套开源 AI 专项活动筹备工作，聚焦开放 AI 技术栈体系、开源 AI 全球治理规则、开源人工智能产业经济价值。",
         },
-        {
-          title: "2027 年联合国数字与新兴技术融合大会",
-          text: "2027 年联合国数字与新兴技术融合大会筹备规划，明确开源技术在全球数字技术融合体系中的核心定位与应用价值。",
-        },
       ],
       hostLabel: "主办机构",
       organizer: "联合国数字与新兴技术办公室",
@@ -64,7 +64,11 @@ const copy = isZh
       subtitle: "Official high-level side event",
       summary: "An official high-level side event of GOSIM Shenzhen 2026 for industry decision-makers, leading researchers and international organisations to explore UN open source initiatives and collaboration. Applications are subject to review; an official confirmation notice is required for entry.",
       introductionLabel: "Event Introduction",
-      introduction: "This convening is an official high-level side event of GOSIM Shenzhen 2026. It creates a UN-backed platform for industry decision-makers, leading researchers and international collaborative organisations within the global open source, AI and digital technology ecosystem. The session will share progress of ongoing UN open source initiatives, bring together key global stakeholders to shape the roadmap of open source ecosystem development, and identify cross-border, academia-industry-research collaboration opportunities.",
+      introduction: "This convening is an official high-level side event of GOSIM Shenzhen 2026. It creates a UN-lead platform for industry decision-makers, leading researchers and international collaborative organisations within the global open source, AI and digital technology ecosystem. The session will share progress of ongoing UN open source initiatives, bring together key global stakeholders to shape the roadmap of open source ecosystem development, and identify cross-border, academia-industry-research collaboration opportunities.",
+      introductionNotes: [
+        "The space is limited. Please “Apply to attend” and your application will be reviewed. Once it’s approved, the GOSIM Event Committee will send you a follow-up email with the meeting location.",
+        "This is a great opportunity to learn about United Nation’s support in Open Source and how you can play a part in future United Nation’s Open Source initiatives.",
+      ],
       dateLabel: "Date",
       date: "October 16, 2026",
       timeLabel: "Time",
@@ -94,10 +98,6 @@ const copy = isZh
           title: "Open source AI in Shenzhen during APEC",
           text: "Preparation for the open-source AI session during APEC 2026 in Shenzhen on 20 November, covering open AI stack, governance of open-source AI, and the economic value of open-source AI.",
         },
-        {
-          title: "2027 United Nations Conference on Convergence",
-          text: "Planning for the 2027 United Nations Conference on Convergence for digital and emerging technologies, and the positioning of open source within this agenda.",
-        },
       ],
       hostLabel: "Host",
       organizer: "United Nations Office for Digital and Emerging Technologies",
@@ -123,6 +123,9 @@ const Heading = compact ? "h2" : "h1";
         <p class="event-subtitle">{copy.subtitle}</p>
         {!compact && <h2 class="event-intro-label">{copy.introductionLabel}</h2>}
         <p class="event-summary">{compact ? copy.summary : copy.introduction}</p>
+        {!compact && copy.introductionNotes.map((paragraph) => (
+          <p class="event-summary">{paragraph}</p>
+        ))}
       </div>
       <div class="event-attendance">
         <dl class="event-facts">
