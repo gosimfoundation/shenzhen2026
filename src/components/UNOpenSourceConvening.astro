@@ -12,86 +12,98 @@ const detailsPath = `${isZh ? "/zh" : ""}/un-open-source-convening/`;
 const registrationUrl = "https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696";
 const copy = isZh
   ? {
-      eyebrow: "GOSIM Shenzhen 2026 · 同期活动",
-      subtitle: "联合国开源交流会",
-      summary: "联合国数字和新兴技术办公室邀请开源社区各方代表相聚深圳，了解联合国当前推进的开源工作，共同探讨未来参与方式与合作机会。",
+      eyebrow: "GOSIM Shenzhen 2026 · 同期边会",
+      title: "联合国开源专题会议",
+      subtitle: "United Nations Open Source Convening",
+      summary: "GOSIM Shenzhen 2026 大会官方同期高端边会，面向全球开源、AI 与数字技术领域的产业决策者、科研专家及国际合作机构，探讨联合国开源工作与国际协作机遇。参会须经审核，凭正式确认通知入场。",
+      introductionLabel: "会议背景",
+      introduction: "本次会议为 GOSIM Shenzhen 2026 大会官方同期高端边会，旨在面向全球开源生态、人工智能、数字技术领域的产业决策者、顶尖科研专家与国际合作机构，搭建联合国层面的开源治理与国际协作交流平台。会议将系统发布联合国现阶段开源体系建设成果，凝聚全球核心参与主体，共同规划未来开源生态建设路径、探索跨国产学研协同合作机遇。",
       dateLabel: "活动日期",
       date: "2026 年 10 月 16 日",
       timeLabel: "活动时间",
       time: "10:00–12:00（北京时间，UTC+8）",
       locationLabel: "活动地点",
       location: "中国 · 深圳",
-      logistics: "具体会务安排将在参会确认后提供。",
+      admissionNote: "报名须经审核；审核通过后，凭主办方发送的正式参会确认通知入场。",
       details: "查看活动详情",
-      register: "在百格报名",
+      register: "申请参会",
       registrationNote: "进入百格大会购票页面后，请选择 UN Open Source Convening 的单独审核通道提交报名。",
-      topicsLabel: "交流议题",
-      topicsIntro: "本次交流会将在 GOSIM 大会期间举行，介绍联合国牵头推进的开源工作，并围绕以下议题展开讨论：",
+      topicsLabel: "核心研讨内容",
+      topicsIntro: "本次专题会议将集中展示与深度研讨联合国开源生态重点工作，核心议题包括：",
       topics: [
         {
           title: "联合国开源周",
-          text: "联合国开源周的相关工作，以及合作伙伴参与 2027 年活动的机会。",
+          text: "联合国开源周整体规划，以及 2027 年联合国开源周的全球合作伙伴招募与参与机制。",
         },
         {
           title: "面向科研、教育与创新的开放计算",
-          text: "面向科研、教育与创新的开放计算工作组的相关工作。",
+          text: "科研、教育与创新领域开放计算工作组的建设成果与落地推进计划。",
         },
         {
-          title: "开源 AI 工作组",
-          text: "关于设立开源 AI 工作组的持续讨论。",
+          title: "联合国开源人工智能专项工作组",
+          text: "联合国开源人工智能专项工作组的筹建研讨与发展方向。",
         },
         {
-          title: "APEC 期间的深圳开源 AI 活动",
-          text: "拟于 2026 年 11 月 20 日在深圳 APEC 期间举办的开源 AI 活动，议题包括开放 AI 技术栈、开源 AI 治理及其经济价值。",
+          title: "APEC 深圳峰会配套开源 AI 专项活动",
+          text: "2026 年 11 月 20 日 APEC 深圳峰会配套开源 AI 专项活动筹备工作，聚焦开放 AI 技术栈体系、开源 AI 全球治理规则、开源人工智能产业经济价值。",
         },
         {
-          title: "联合国融合大会",
-          text: "筹备中的联合国融合大会（United Nations Conference on Convergence），聚焦数字和新兴技术的融合，以及开源在其中的定位。",
+          title: "2027 年联合国数字与新兴技术融合大会",
+          text: "2027 年联合国数字与新兴技术融合大会筹备规划，明确开源技术在全球数字技术融合体系中的核心定位与应用价值。",
         },
       ],
-      convenedBy: "召集方",
-      organizer: "联合国数字和新兴技术办公室",
+      hostLabel: "主办机构",
+      organizer: "联合国数字与新兴技术办公室",
+      participationLabel: "参会报名说明",
+      participation: "本次会议对外开放报名，面向全球开源领域中高端专业人士，重点邀请企业开源负责人、技术决策者、C 级高管，可对企业高层决策产生影响力的产业领袖，以及高校、科研机构的资深科研负责人与学科带头人，同时包含行业组织负责人与国际机构代表。所有报名参会人员将进行审核制，审核通过后，主办方将统一发送正式参会确认通知，凭通知入场参会。",
+      invitation: "会议诚挚邀请各界核心决策者参会交流，汇聚全球顶层智慧，共建开放、合规、普惠的全球开源与 AI 创新生态。",
     }
   : {
-      eyebrow: "GOSIM Shenzhen 2026 · Co-located Event",
-      subtitle: "United Nations Open Source Convening",
-      summary: "The United Nations Office for Digital and Emerging Technologies invites the open source community to Shenzhen to explore UN-led open source workstreams, shape future engagement, and identify opportunities for collaboration.",
+      eyebrow: "Side Event of GOSIM Shenzhen 2026",
+      title: "United Nations Open Source Convening",
+      subtitle: "Official high-level side event",
+      summary: "An official high-level side event of GOSIM Shenzhen 2026 for industry decision-makers, leading researchers and international organisations to explore UN open source initiatives and collaboration. Applications are subject to review; an official confirmation notice is required for entry.",
+      introductionLabel: "Event Introduction",
+      introduction: "This convening is an official high-level side event of GOSIM Shenzhen 2026. It creates a UN-backed platform for industry decision-makers, leading researchers and international collaborative organisations within the global open source, AI and digital technology ecosystem. The session will share progress of ongoing UN open source initiatives, bring together key global stakeholders to shape the roadmap of open source ecosystem development, and identify cross-border, academia-industry-research collaboration opportunities.",
       dateLabel: "Date",
       date: "October 16, 2026",
       timeLabel: "Time",
       time: "10:00–12:00 (China Standard Time, UTC+8)",
       locationLabel: "Location",
       location: "Shenzhen, China",
-      logistics: "Further logistical details will be shared upon confirmation of attendance.",
+      admissionNote: "Applications are subject to review. Approved applicants must present the organisers' official confirmation notice for entry.",
       details: "Explore the convening",
-      register: "Register on BagEvent",
+      register: "Apply to attend",
       registrationNote: "On the BagEvent conference ticketing page, select the separate application option for UN Open Source Convening to submit your registration for review.",
-      topicsLabel: "Discussion topics",
-      topicsIntro: "Held on the margins of GOSIM, the convening will present the open source workstreams currently led by the United Nations. Topics for presentation and discussion include:",
+      topicsLabel: "Key Discussion Topics",
+      topicsIntro: "The convening will showcase and dive deep into priority UN open source workstreams, covering:",
       topics: [
         {
           title: "UN Open Source Week",
-          text: "The UN Open Source Week and opportunities for partners to engage in its 2027 edition.",
+          text: "The overall roadmap for UN Open Source Week and partnership engagement framework for its 2027 edition.",
         },
         {
           title: "Open Compute for Research, Education and Innovation",
-          text: "The work of the Working Group on Open Compute for Research, Education and Innovation.",
+          text: "Progress and implementation plan of the Working Group on Open Compute for Research, Education and Innovation.",
         },
         {
           title: "An open source AI working group",
-          text: "Ongoing discussions on the establishment of a working group on open source AI.",
+          text: "Discussions on the formation of the working group focused on open-source AI.",
         },
         {
           title: "Open source AI in Shenzhen during APEC",
-          text: "The open source AI event planned for November 20, 2026 in Shenzhen during APEC, addressing an open AI stack, the governance of open source AI, and the economic value of open source AI.",
+          text: "Preparation for the open-source AI session during APEC 2026 in Shenzhen on 20 November, covering open AI stack, governance of open-source AI, and the economic value of open-source AI.",
         },
         {
-          title: "United Nations Conference on Convergence",
-          text: "The planned United Nations Conference on Convergence, exploring the convergence of digital and emerging technologies and the positioning of open source within it.",
+          title: "2027 United Nations Conference on Convergence",
+          text: "Planning for the 2027 United Nations Conference on Convergence for digital and emerging technologies, and the positioning of open source within this agenda.",
         },
       ],
-      convenedBy: "Convened by",
+      hostLabel: "Host",
       organizer: "United Nations Office for Digital and Emerging Technologies",
+      participationLabel: "Participation Notice",
+      participation: "This event is open for applications. We target senior professionals across the global open source ecosystem, with priority given to enterprise open source leads, technical decision-makers, C-suite executives, industry leaders with influence over corporate strategic decisions, principal investigators and academic leaders from universities and research institutions, as well as heads of industry associations and representatives of international organisations. All applications will undergo a formal eligibility review. Upon approval, applicants will receive an official confirmation notice from the organisers, which is required for on-site entry.",
+      invitation: "We warmly invite cross-sector decision-makers to join this exchange. Together we leverage global insights to build an open, compliant and inclusive global open source and AI innovation ecosystem.",
     };
 const Heading = compact ? "h2" : "h1";
 ---
@@ -107,9 +119,10 @@ const Heading = compact ? "h2" : "h1";
     <p class="event-eyebrow">{copy.eyebrow}</p>
     <div class="event-overview">
       <div class="event-copy">
-        <Heading id="un-convening-title">UN Open Source Convening</Heading>
+        <Heading id="un-convening-title" class="event-title">{copy.title}</Heading>
         <p class="event-subtitle">{copy.subtitle}</p>
-        <p class="event-summary">{copy.summary}</p>
+        {!compact && <h2 class="event-intro-label">{copy.introductionLabel}</h2>}
+        <p class="event-summary">{compact ? copy.summary : copy.introduction}</p>
       </div>
       <div class="event-attendance">
         <dl class="event-facts">
@@ -125,8 +138,14 @@ const Heading = compact ? "h2" : "h1";
             <dt>{copy.locationLabel}</dt>
             <dd>{copy.location}</dd>
           </div>
+          {!compact && (
+            <div>
+              <dt>{copy.hostLabel}</dt>
+              <dd>{copy.organizer}</dd>
+            </div>
+          )}
         </dl>
-        {!compact && <p class="event-note">{copy.logistics}</p>}
+        {!compact && <p class="event-note">{copy.admissionNote}</p>}
         <div class="event-actions">
           <Button
             text={compact ? copy.details : copy.register}
@@ -156,10 +175,11 @@ const Heading = compact ? "h2" : "h1";
             ))}
           </ol>
         </section>
-        <aside class="event-organizer">
-          <p class="event-eyebrow">{copy.convenedBy}</p>
-          <p>{copy.organizer}</p>
-        </aside>
+        <section class="event-participation" aria-labelledby="un-convening-participation">
+          <h2 id="un-convening-participation">{copy.participationLabel}</h2>
+          <p>{copy.participation}</p>
+          <p>{copy.invitation}</p>
+        </section>
       </div>
     )}
   </div>
@@ -194,8 +214,7 @@ const Heading = compact ? "h2" : "h1";
     gap: clamp(2rem, 6vw, 6rem);
   }
 
-  .event-copy h1,
-  .event-copy h2 {
+  .event-title {
     max-width: 15ch;
     margin: 0;
     color: #f6f3e7;
@@ -205,7 +224,7 @@ const Heading = compact ? "h2" : "h1";
     text-wrap: balance;
   }
 
-  .is-compact .event-copy h2 {
+  .is-compact .event-title {
     font-size: clamp(2.4rem, 4.15vw, 4.6rem);
   }
 
@@ -216,9 +235,17 @@ const Heading = compact ? "h2" : "h1";
     line-height: 1.5;
   }
 
+  .event-intro-label {
+    margin: 2rem 0 0;
+    color: #f6f3e7;
+    font-size: 1.2rem;
+    line-height: 1.45;
+  }
+
   .event-summary,
   .program-intro,
-  .event-topics p {
+  .event-topics p,
+  .event-participation p {
     margin: 1.2rem 0 0;
     color: rgba(246, 243, 231, 0.76);
     font-size: 1.05rem;
@@ -295,13 +322,6 @@ const Heading = compact ? "h2" : "h1";
 
   .event-topics p {
     margin-top: 0.6rem;
-  }
-
-  .event-organizer > p:last-child {
-    margin: 0;
-    color: #f6f3e7;
-    font-size: 1.1rem;
-    line-height: 1.65;
   }
 
   @media (max-width: 800px) {
