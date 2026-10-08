@@ -1810,21 +1810,21 @@
         },
         {
           "ref": "P-69",
-          "originalTitle": "基于Agora对话式AI的开源硬件接入实践",
+          "originalTitle": "从听懂你，到看见你 —— 实时多模态，让AI进入真实世界",
           "originalLanguage": "zh",
           "title": {
-            "en": "From Understanding You to Seeing You: Where True Companionship Begins",
-            "zh": "从听懂你，到看见你，陪伴才真正开始"
+            "en": "From Understanding You to Seeing You — Real-Time Multimodality Brings AI into the Real World",
+            "zh": "从听懂你，到看见你 —— 实时多模态，让AI进入真实世界"
           },
           "slug": "p-69-open-source-hardware-integration-practices-for-agora-conversational-ai",
           "speakers": [
             "xiaodong-feng"
           ],
-          "originalAbstract": "介绍如何将开源硬件接入 Agora 对话式 AI，构建实时语音智能体设备。分享设备音频接入、Agent 会话管理、用户打断、短暂重连和实时体验优化等实践。",
+          "originalAbstract": "过去两年，大模型让AI从“指令工具”变成了“对话对象”。但一个只会听的AI，永远只能拿到用户转述的世界——它不知道你正在看书、骑车、陪孩子写作业，还是在家里走动。如果AI要真正成为最懂你的伙伴，它必须获得与你相同的上下文及给予反馈：视觉、声音、空间、动作、表情、环境。\n\n这正是声网 Physical AI正在推进的方向：从实时对话式AI，迈向实时多模态AI。\n\n本次演讲将预告声网在实时多模态领域的最新成果——R2开发套件。这不是一个普通的口袋机器人硬件开发套件，而是一个让AI看见、理解并进入真实世界的开放载体。它集成了摄像头、屏幕、多自由度运动、步进电机、多麦克风阵列、多种传感器，并搭载了独立的端侧算力，支持从人脸识别到声源定位等本地感知能力。\n\n更重要的是，R2并非孤立的硬件。它完整对接了声网的实时对话式AI引擎，通过音频、视频、数据三通道并行传输，实现“大脑”（云端LLM/Agent）与“小脑”（端侧视觉与运动控制）的实时协同。配合Botstation智能体平台与MCP工具生态，开发者可以在数天内将一个创意变成可交互的多模态机器人原型。\n\n我们将分享这一路走来的思考：为什么AI需要进入真实世界？为什么我们选择做一个开放的开发底座，而不是一个封闭的机器人产品？我们如何从开发者真实痛点出发，解决现有方案的噪声、算力、量产、隐私等问题？以及，当实时多模态成为AI的新基础设施，教育、骑行、安防、办公等场景将迎来怎样的改变？\n\n这场演讲不仅是一次产品发布，更是一次关于“AI下一站”的探讨。我们相信，AI的未来不在云端，而在你身边。",
           "originalAbstractLanguage": "zh",
           "overview": {
-            "en": "Xiaodong Feng, Head of the Physical AI Product Line at Agora, presents \"From Understanding You to Seeing You: Where True Companionship Begins\".",
-            "zh": "声网 Physical AI 产品线负责人冯晓东分享：从听懂你，到看见你，陪伴才真正开始。"
+            "en": "Over the past two years, large language models have transformed AI from a tool that follows commands into a conversational partner. But an AI that can only listen will always receive the world through the user's descriptions. It cannot tell whether you are reading, cycling, helping a child with homework, or walking around your home. To become the companion that understands you best, AI must share your context and respond to it: vision, sound, space, movement, facial expressions, and the surrounding environment.\n\nThis is the direction Agora's Physical AI team is pursuing: moving from real-time conversational AI to real-time multimodal AI.\n\nThis talk will preview Agora's latest development in real-time multimodality: the R2 development kit. More than a conventional hardware development kit for a pocket robot, R2 is an open platform that enables AI to see, understand, and enter the real world. It integrates a camera, a screen, motion with multiple degrees of freedom, stepper motors, a multi-microphone array, and a range of sensors. Dedicated on-device computing supports local perception capabilities from facial recognition to sound source localization.\n\nR2 is also part of a broader system. It fully integrates with Agora's real-time conversational AI engine, transmitting audio, video, and data over three parallel channels to coordinate the “brain” — a cloud-based LLM or agent — with the “cerebellum” — on-device vision and motion control — in real time. Combined with the Botstation agent platform and the MCP tool ecosystem, developers can turn an idea into an interactive multimodal robot prototype within days.\n\nWe will share the thinking behind this journey: Why does AI need to enter the real world? Why build an open development foundation rather than a closed robot product? How can we address developers' real challenges with noise, computing power, mass production, and privacy? And as real-time multimodality becomes new infrastructure for AI, how will it change education, cycling, security, office work, and other applications?\n\nThis talk is both a product launch and an exploration of AI's next destination. We believe AI's future is by your side, beyond the cloud.",
+            "zh": "过去两年，大模型让AI从“指令工具”变成了“对话对象”。但一个只会听的AI，永远只能拿到用户转述的世界——它不知道你正在看书、骑车、陪孩子写作业，还是在家里走动。如果AI要真正成为最懂你的伙伴，它必须获得与你相同的上下文及给予反馈：视觉、声音、空间、动作、表情、环境。\n\n这正是声网 Physical AI正在推进的方向：从实时对话式AI，迈向实时多模态AI。\n\n本次演讲将预告声网在实时多模态领域的最新成果——R2开发套件。这不是一个普通的口袋机器人硬件开发套件，而是一个让AI看见、理解并进入真实世界的开放载体。它集成了摄像头、屏幕、多自由度运动、步进电机、多麦克风阵列、多种传感器，并搭载了独立的端侧算力，支持从人脸识别到声源定位等本地感知能力。\n\n更重要的是，R2并非孤立的硬件。它完整对接了声网的实时对话式AI引擎，通过音频、视频、数据三通道并行传输，实现“大脑”（云端LLM/Agent）与“小脑”（端侧视觉与运动控制）的实时协同。配合Botstation智能体平台与MCP工具生态，开发者可以在数天内将一个创意变成可交互的多模态机器人原型。\n\n我们将分享这一路走来的思考：为什么AI需要进入真实世界？为什么我们选择做一个开放的开发底座，而不是一个封闭的机器人产品？我们如何从开发者真实痛点出发，解决现有方案的噪声、算力、量产、隐私等问题？以及，当实时多模态成为AI的新基础设施，教育、骑行、安防、办公等场景将迎来怎样的改变？\n\n这场演讲不仅是一次产品发布，更是一次关于“AI下一站”的探讨。我们相信，AI的未来不在云端，而在你身边。"
           },
           "date": "2026-10-16",
           "timeSlot": "15:10-15:45"
