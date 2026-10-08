@@ -1813,18 +1813,18 @@
           "originalTitle": "基于Agora对话式AI的开源硬件接入实践",
           "originalLanguage": "zh",
           "title": {
-            "en": "Open-Source Hardware Integration Built on Agora Conversational AI",
-            "zh": "基于 Agora 对话式 AI 的开源硬件接入实践"
+            "en": "From Understanding You to Seeing You: Where True Companionship Begins",
+            "zh": "从听懂你，到看见你，陪伴才真正开始"
           },
           "slug": "p-69-open-source-hardware-integration-practices-for-agora-conversational-ai",
           "speakers": [
-            "zhichao-jiao"
+            "xiaodong-feng"
           ],
           "originalAbstract": "介绍如何将开源硬件接入 Agora 对话式 AI，构建实时语音智能体设备。分享设备音频接入、Agent 会话管理、用户打断、短暂重连和实时体验优化等实践。",
           "originalAbstractLanguage": "zh",
           "overview": {
-            "en": "This talk explores the practical implementation of integrating open-source hardware with Agora's conversational AI to build real-time voice intelligent devices. It covers audio integration, agent session management, user interruptions, brief reconnections, and real-time experience optimization.",
-            "zh": "本次演讲介绍如何将开源硬件接入 Agora 对话式 AI，构建实时语音交互设备。内容涵盖音频接入、智能体会话管理、用户打断、短时断线重连，以及实时交互体验优化。"
+            "en": "Xiaodong Feng, Head of the Physical AI Product Line at Agora, presents \"From Understanding You to Seeing You: Where True Companionship Begins\".",
+            "zh": "声网 Physical AI 产品线负责人冯晓东分享：从听懂你，到看见你，陪伴才真正开始。"
           },
           "date": "2026-10-16",
           "timeSlot": "15:10-15:45"

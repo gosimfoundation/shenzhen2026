@@ -1481,6 +1481,32 @@
       "source": "cfp"
     },
     {
+      "id": "xiaodong-feng",
+      "name": {
+        "en": "Xiaodong Feng",
+        "zh": "冯晓东"
+      },
+      "roleOrg": {
+        "en": "Head of the Physical AI Product Line, Agora",
+        "zh": "声网 / Physical AI 产品线负责人"
+      },
+      "bio": {
+        "en": "A graduate of Harbin Institute of Technology, Xiaodong Feng currently leads Physical AI products at Agora. He has more than 10 years of industry experience and previously worked on IoT product development at Honeywell and UCloud. His work focuses on multimodal interaction and real-time voice technology, driving conversational AI innovation in companionship, education, robotics, and other applications.",
+        "zh": "哈尔滨工业大学毕业，现任声网 Physical AI 产品负责人。拥有超 10 年行业经验，曾于霍尼韦尔、UCloud 负责物联网产品开发。深耕多模态交互与实时语音技术，聚焦对话式 AI 赛道，推动其在陪伴、教育、机器人等场景的创新落地。"
+      },
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/xiaodong-feng.png",
+      "sourceNames": [
+        "冯晓东",
+        "Xiaodong Feng"
+      ],
+      "source": "invited"
+    },
+    {
       "id": "chris-simmonds",
       "name": {
         "en": "Chris Simmonds",
