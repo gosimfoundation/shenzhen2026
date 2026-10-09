@@ -26,8 +26,8 @@
             "en": "AI is pushing open source from software collaboration toward intelligence collaboration. This keynote explores how code generation, agents, and autonomous execution are redefining software creation, community collaboration, and the boundary between developers and machines—and what new opportunities this shift creates.",
             "zh": "AI 正推动开源从“软件协作”走向“智能协作”。本次主旨演讲探讨代码生成、智能体与自主执行如何重新定义软件创造、社区协作及人与机器的边界，并分析这场变化为开发者带来的新机会。"
           },
-          "date": "2026-10-16",
-          "timeSlot": "09:30-09:45"
+          "date": "2026-10-17",
+          "timeSlot": "09:25-09:40"
         },
         {
           "ref": "P-123",
@@ -48,7 +48,7 @@
             "zh": "智能体时代需要 AI 原生操作系统。DHH 将介绍 Omarchy：一个美观、有趣且面向智能体的 Linux 环境，让用户能够借助 AI 编程塑造并定制自己的计算机。"
           },
           "date": "2026-10-17",
-          "timeSlot": "09:30-09:45"
+          "timeSlot": "09:10-09:25"
         },
         {
           "ref": "P-203",
@@ -68,7 +68,9 @@
           "speakers": [
             "zhenboyu"
           ],
-          "draft": false
+          "draft": false,
+          "date": "2026-10-17",
+          "timeSlot": "09:40-09:55"
         },
         {
           "ref": "P-218",
@@ -78,25 +80,87 @@
           "originalAbstractLanguage": "en",
           "slug": "p-218-tbd",
           "title": {
-            "en": "TBD",
-            "zh": ""
+            "en": "Empowering a Connected Intelligent World: The Symbiotic Evolution of OpenHarmony and AI",
+            "zh": "开源鸿蒙与AI共生演进，共筑万物智联数字底座"
           },
           "overview": {
-            "en": "TBD",
-            "zh": ""
+            "en": "Empowering a Connected Intelligent World: The Symbiotic Evolution of OpenHarmony and AI",
+            "zh": "开源鸿蒙与AI共生演进，共筑万物智联数字底座"
           },
           "speakers": [
             "chen-haibo"
           ],
-          "draft": true
+          "draft": false,
+          "date": "2026-10-16",
+          "timeSlot": "09:10-09:25"
+        },
+        {
+          "ref": "KEYNOTE-MEHDI-SNENE",
+          "slug": "keynote-mehdi-snene",
+          "manual": true,
+          "type": "talk",
+          "title": {
+            "en": "Keynote — Topic to Be Announced",
+            "zh": "主旨演讲：题目待公布"
+          },
+          "overview": {
+            "en": "Keynote by Mehdi Snene. The topic will be announced.",
+            "zh": "Mehdi Snene 主旨演讲，具体题目待公布。"
+          },
+          "speakers": [
+            "mehdi-snene"
+          ],
+          "date": "2026-10-16",
+          "timeSlot": "09:25-09:40",
+          "originalTitle": "Keynote — Topic to Be Announced",
+          "originalLanguage": "en",
+          "originalAbstract": "Keynote by Mehdi Snene. The topic will be announced.",
+          "originalAbstractLanguage": "en",
+          "draft": false
+        },
+        {
+          "ref": "KEYNOTE-LIXIN-SHAO",
+          "slug": "keynote-lixin-shao",
+          "manual": true,
+          "type": "talk",
+          "title": {
+            "en": "Open-Sourcing CANN to Foster Fertile Ground for AI Talent Development and Innovation",
+            "zh": "CANN开源开放打造AI人才培养和创新黑土地"
+          },
+          "overview": {
+            "en": "Open-Sourcing CANN to Foster Fertile Ground for AI Talent Development and Innovation",
+            "zh": "CANN开源开放打造AI人才培养和创新黑土地"
+          },
+          "speakers": [
+            "lixin-shao"
+          ],
+          "date": "2026-10-16",
+          "timeSlot": "09:40-09:55",
+          "originalTitle": "Open-Sourcing CANN to Foster Fertile Ground for AI Talent Development and Innovation",
+          "originalLanguage": "en",
+          "originalAbstract": "Open-Sourcing CANN to Foster Fertile Ground for AI Talent Development and Innovation",
+          "originalAbstractLanguage": "en",
+          "draft": false
         }
       ],
       "originalName": "Keynote Plenary",
       "group": "tracks",
       "room": {
-        "en": "3F – ADEN 1",
-        "zh": "3楼-伊敦1厅"
-      }
+        "en": "3F – ADEN (full hall)",
+        "zh": "3楼-伊敦厅（全厅）"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "09:10-09:55"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "09:10-09:55"
+        }
+      ],
+      "programOrder": 10,
+      "editorialNote": "Decision 2A: partition ADEN into halls 1 and 2 between 09:55 and 10:15; venue must confirm the 20-minute changeover."
     },
     {
       "id": "agentic-ai-summit",
@@ -125,7 +189,8 @@
             "zh": "介绍 OAIC 并发布 ASE 白皮书，讲者待公布。"
           },
           "date": "2026-10-16",
-          "timeSlot": "11:35-12:15"
+          "timeSlot": "11:35-12:15",
+          "draft": true
         },
         {
           "ref": "AGENTIC-AI-SUMMIT-OCT-16-LUNCH",
@@ -167,7 +232,7 @@
             "zh": "本次演讲跳出 Agent 产品的局部功能创新，从更长周期和更底层的视角讨论产品范式的变化：软件正从被动响应走向主动行动，从功能交付走向能力生成，从一次性交付走向持续进化，并由此重新定义产品价值、交互方式、商业模式与竞争壁垒。"
           },
           "date": "2026-10-16",
-          "timeSlot": "14:00-14:20"
+          "timeSlot": "10:40-11:05"
         },
         {
           "ref": "P-56",
@@ -188,7 +253,7 @@
             "zh": "本次演讲介绍以智能体为中心的工程方法（ACE），探讨如何将个人使用 AI 的效率提升转化为组织能力。内容包括支持规约驱动开发和多智能体协作的开源平台 ACEHarness，以及编译器优化、哈希库性能优化等案例，重点说明如何由人设定目标、质量边界和验收标准，再由智能体执行工程任务。"
           },
           "date": "2026-10-16",
-          "timeSlot": "14:20-14:40"
+          "timeSlot": "11:05-11:30"
         },
         {
           "ref": "P-76",
@@ -209,7 +274,7 @@
             "zh": "本次演讲结合一线网络安全攻防经验，分析 AI 如何重塑攻击链，并基于奇安信等安全企业的实战数据与案例，提出可落地的防御建设路径。内容聚焦 AI 带来的攻防失衡，探讨如何推动防御体系从被动修补转向主动防御。"
           },
           "date": "2026-10-16",
-          "timeSlot": "14:40-15:00"
+          "timeSlot": "14:50-15:15"
         },
         {
           "ref": "P-30",
@@ -229,8 +294,8 @@
             "en": "Traditional interoperability methods like APIs and ESBs are struggling with today's dynamic and autonomous systems. This talk introduces agent-mediated interoperability, where AI agents dynamically discover, translate, and orchestrate system interactions, offering a flexible and universal integration solution.",
             "zh": "面对动态变化、自主运行的系统，传统 API 和企业服务总线（ESB）等集成方式正面临新的挑战。本次演讲介绍由智能体协调的互操作方案：通过 AI 智能体动态发现系统、转换信息并编排交互，构建更灵活的通用集成层。"
           },
-          "date": "2026-10-16",
-          "timeSlot": "15:00-15:20"
+          "date": "2026-10-17",
+          "timeSlot": "10:40-11:05"
         },
         {
           "ref": "P-18",
@@ -238,7 +303,7 @@
           "originalLanguage": "en",
           "title": {
             "en": "Self-Evolving Apps: Building Software That Gets Smarter Every Time You Use It",
-            "zh": "每次使用都会变得更聪明的自进化应用：构建持续进化的软件"
+            "zh": "自我进化型应用：构建每次使用都变得更智能的软件"
           },
           "slug": "p-18-self-evolving-apps-building-software-that-gets-smarter-every-time-you-use-it",
           "speakers": [
@@ -251,7 +316,7 @@
             "zh": "自进化应用通过学习用户的修正来不断改进，而不是通过代码更新。这种智能以独立可更新的层形式存在，利用过往修正提升决策能力，无需机器学习或数据科学团队。本次演讲将介绍自进化应用的设计、开发、授权模式及实际应用中的经验教训。"
           },
           "date": "2026-10-16",
-          "timeSlot": "15:20-15:40"
+          "timeSlot": "15:15-15:40"
         },
         {
           "ref": "AGENTIC-AI-SUMMIT-OCT-16-TEA-BREAK",
@@ -272,7 +337,8 @@
             "zh": "茶歇休息。"
           },
           "date": "2026-10-16",
-          "timeSlot": "15:40-16:00"
+          "timeSlot": "15:40-16:00",
+          "draft": true
         },
         {
           "ref": "P-40",
@@ -280,7 +346,7 @@
           "originalLanguage": "en",
           "title": {
             "en": "Building a Knowledge-Work Harness: From Coding Agents to Executable Strategy",
-            "zh": "构建知识工作Harness：从Coding Agent到可执行战略"
+            "zh": "构建知识工作Harness：从编程智能体到可执行战略"
           },
           "slug": "p-40-building-a-knowledge-work-harness-from-coding-agents-to-executable-strategy",
           "speakers": [
@@ -293,7 +359,7 @@
             "zh": "知识工作中的决策通常缺少软件测试那样的自动验证机制。本次演讲结合一年来运行开源、本地优先智能体系统的经验，探讨哪些编程智能体组件可以用于知识工作，以及如何把战略规则转化为可执行的协议。现场演示将展示智能体如何依据纯文本规则，在满足审批条件后作出决策。"
           },
           "date": "2026-10-16",
-          "timeSlot": "16:20-16:40"
+          "timeSlot": "16:05-16:30"
         },
         {
           "ref": "SUMMIT-ENTERPRISE-PANEL",
@@ -314,7 +380,8 @@
             "zh": "围绕 Agentic AI 企业应用展开圆桌讨论，嘉宾待公布。"
           },
           "date": "2026-10-16",
-          "timeSlot": "16:40-17:30"
+          "timeSlot": "16:40-17:30",
+          "draft": true
         },
         {
           "ref": "P-84",
@@ -335,7 +402,11 @@
             "zh": "本次演讲梳理开放智能体 AI 的生态系统，强调透明度、开放权重模型和开放供应链对技术主权的重要性。演讲介绍 PyTorch 基金会、CNCF 和 AAIF 等生态组成部分，以及它们如何整合计算、编排和协议标准，共同支撑安全、可扩展的智能体系统。"
           },
           "date": "2026-10-17",
-          "timeSlot": "10:15-10:35"
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:40",
+            "reason": "outside-final-program-window"
+          },
+          "timeSlot": "10:15-10:40"
         },
         {
           "ref": "P-102",
@@ -356,7 +427,7 @@
             "zh": "本次演讲介绍用于语言与视觉模型可审计评测的开源框架 Eclipse PanEval，讲解其解耦架构、跨区域协作方式、中立治理模式，以及社区如何共同建设共享评测基础设施。"
           },
           "date": "2026-10-17",
-          "timeSlot": "10:35-10:55"
+          "timeSlot": "14:00-14:25"
         },
         {
           "ref": "P-110",
@@ -376,8 +447,12 @@
             "en": "As AI glasses move toward the mass market, competition is shifting from the number of features to the depth of memory. This talk argues that long-term memory is becoming core AI infrastructure and may define the next generation of wearable agents.",
             "zh": "随着 AI 眼镜走向大众市场，竞争重点正从“功能数量”转向“记忆深度”。本次演讲探讨长期记忆如何成为 AI 基础设施的核心能力，并定义下一代可穿戴智能体。"
           },
-          "date": "2026-10-17",
-          "timeSlot": "10:55-11:15"
+          "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "17:20-17:45",
+            "reason": "outside-final-program-window"
+          },
+          "timeSlot": "17:20-17:45"
         },
         {
           "ref": "P-52",
@@ -398,7 +473,7 @@
             "zh": "本次演讲介绍 LF Research 最新发布的智能体 AI 与 AI 编程研究报告。报告涵盖两项研究：“企业向智能体 AI 时代转型”和“生成式 AI 对开源软件的影响”，重点讨论 AI 在企业系统中的演变及其对开源开发的影响。"
           },
           "date": "2026-10-17",
-          "timeSlot": "11:15-11:35"
+          "timeSlot": "14:25-14:50"
         },
         {
           "ref": "SUMMIT-FIRESIDE-CHAT",
@@ -422,7 +497,7 @@
             "zh": "David Heinemeier Hansson（DHH）与任旭东炉边对谈。"
           },
           "date": "2026-10-17",
-          "timeSlot": "11:35-12:15"
+          "timeSlot": "11:05-12:00"
         },
         {
           "ref": "AGENTIC-AI-SUMMIT-OCT-17-LUNCH",
@@ -464,7 +539,7 @@
             "zh": "随着软件进入 CPU 与大模型协同执行的新阶段，编程语言需要同时服务开发者与 AI 智能体。本次演讲介绍仓颉面向 AI 的编译器、LSP、测试基础设施、结构化技能库、可验证规格语言 Speclang，以及智能体语言的早期探索。"
           },
           "date": "2026-10-17",
-          "timeSlot": "14:20-14:40"
+          "timeSlot": "15:15-15:40"
         },
         {
           "ref": "P-29",
@@ -485,7 +560,7 @@
             "zh": "欧洲是 AI 企业拓展业务的重要市场。进入欧洲除了需要成熟的产品，也需要治理、运营和合规方面的准备。本次演讲探讨企业出海前需要厘清的监管定位、风险分类与治理要求，以及智能体 AI 等新技术如何影响市场进入策略。"
           },
           "date": "2026-10-17",
-          "timeSlot": "14:40-15:00"
+          "timeSlot": "16:05-16:30"
         },
         {
           "ref": "P-19",
@@ -506,7 +581,7 @@
             "zh": "本次演讲介绍 OpenMined 基金会的 Network-Sourced AI：通过开放的模型集成组合多种模型能力，并利用结构化透明机制与隐私增强技术支持结果复现，让数据所有者掌握访问权限。现场将展示开源工具包和公开排行榜，介绍如何在保护数据隐私的前提下构建和复现先进模型系统。"
           },
           "date": "2026-10-17",
-          "timeSlot": "15:00-15:20"
+          "timeSlot": "14:50-15:15"
         },
         {
           "ref": "P-33",
@@ -527,7 +602,7 @@
             "zh": "本次演讲探讨开源如何帮助全球南方参与塑造 AI 治理。演讲将介绍 Global AI Assembly 模式及其三大支柱：教育非技术人群、汇集用户声音，并通过结构化参与影响政府、企业和标准组织。演讲者认为，开源不只是开放代码与权重，更是让更多人共同参与 AI 决策的基础。"
           },
           "date": "2026-10-17",
-          "timeSlot": "15:20-15:40"
+          "timeSlot": "16:30-16:55"
         },
         {
           "ref": "AGENTIC-AI-SUMMIT-OCT-17-TEA-BREAK",
@@ -548,7 +623,8 @@
             "zh": "茶歇休息。"
           },
           "date": "2026-10-17",
-          "timeSlot": "15:40-16:00"
+          "timeSlot": "15:40-16:00",
+          "draft": true
         },
         {
           "ref": "P-57",
@@ -568,8 +644,12 @@
             "en": "State of harness engineering explores the challenges of effectively managing coding agents. While models improve, teams find that better models alone aren't enough; they need structured practices to guide and refine agent behavior. The talk introduces a mental model for harness engineering, emphasizing feedback mechanisms and control systems to enhance reliability.",
             "zh": "模型能力提升并不意味着编程智能体能够可靠地完成任务，团队还需要完善的执行环境、反馈机制和控制流程。本次演讲梳理 Harness 工程的现状，介绍用于理解和设计智能体执行框架的思维模型，以及提升运行可靠性的工程实践。"
           },
-          "date": "2026-10-17",
-          "timeSlot": "16:00-16:20"
+          "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:40",
+            "reason": "outside-final-program-window"
+          },
+          "timeSlot": "10:15-10:40"
         },
         {
           "ref": "SUMMIT-BUILD-BUY-PARTNER-PANEL",
@@ -590,7 +670,8 @@
             "zh": "探讨企业、OPC 与 AI Startup 面向出海的共创路径，嘉宾待公布。"
           },
           "date": "2026-10-17",
-          "timeSlot": "16:40-17:30"
+          "timeSlot": "16:40-17:30",
+          "draft": true
         },
         {
           "ref": "SUMMIT-CLOSING-CEREMONY",
@@ -611,7 +692,11 @@
             "zh": "GOSIM 深圳 2026 闭幕式。"
           },
           "date": "2026-10-17",
-          "timeSlot": "17:30-18:00"
+          "timingReview": {
+            "previousTimeSlot": "17:30-18:00",
+            "reason": "outside-final-program-window"
+          },
+          "timeSlot": "17:25-17:30"
         },
         {
           "ref": "P-1",
@@ -650,7 +735,9 @@
           "overview": {
             "en": "Drawing on real enterprise deployments, this talk explores how organizations change when execution can be delegated to teams of agents. It covers the new human role, management through task definition and acceptance, parallel organizational structures, FDE capabilities, and controlled agent deployment in regulated industries.",
             "zh": "本次演讲结合真实企业落地经验，探讨当执行能力可以交给智能体团队后，组织结构将如何变化。内容涵盖人的新角色、以任务定义和验收为核心的管理方式、并行组织、FDE 能力，以及合规行业中的可控智能体上线。"
-          }
+          },
+          "draft": true,
+          "editorialNote": "Not scheduled in the October 9 detailed program; unpublished by organizer decision 15A."
         },
         {
           "ref": "P-117",
@@ -661,7 +748,7 @@
           "slug": "p-117-the-agentic-ai-developer-economy-building-a-meritocratic-open-source-ecosystem",
           "title": {
             "en": "The Agentic AI Developer Economy: Building a Meritocratic Open Source Ecosystem",
-            "zh": "智能体 AI 开发者经济：构建以贡献为核心的开源生态"
+            "zh": "智能体AI开发者经济：构建一个以贡献和能力为导向的开源生态"
           },
           "overview": {
             "en": "As artificial intelligence transitions from Generative AI to Agentic AI, open source communities are emerging as the critical infrastructure for future technological competitiveness. However, developers face significant barriers posed by entrenched ecosystems like CUDA and a pressing need for enhanced developer experiences. We argue that sustaining this shift requires more than just code; it demands innovative incentive structures.\n\nLeveraging the OSIDX framework introduced at the UN \"AI for Good\" summit, this keynote presents the \"Developer Influence Map,\" a novel mechanism designed to render invisible contributions visible and quantifiable. To validate this approach, we examine OpenShare, a pioneering platform operationalizing the 'Million Cash Reward Program.' By systematically tracking and benchmarking contributions such as code commits, model fine-tuning, and documentation, OpenShare maps developer activity to tangible financial rewards, demonstrating how meritocracy drives both ecosystem growth and commercial sustainability.\n\nThrough systematic comparison with established leaders (CUDA, PyTorch) and emerging Agentic ecosystems, we introduce an empirically grounded \"Agentic AI Developer Economy Model.\" This model establishes a fair reputation system that aligns individual professional growth with ecosystem prosperity, directly addressing the fundamental question: \"Why should developers choose to use and contribute?\" We outline a replicable pathway toward a resilient, inclusive, and commercially viable open source paradigm.",
@@ -670,7 +757,9 @@
           "speakers": [
             "wei-wang-王伟"
           ],
-          "draft": false
+          "draft": false,
+          "date": "2026-10-17",
+          "timeSlot": "15:40-16:05"
         },
         {
           "ref": "P-189",
@@ -690,7 +779,9 @@
           "speakers": [
             "liyun-yang"
           ],
-          "draft": false
+          "draft": false,
+          "date": "2026-10-16",
+          "timeSlot": "11:30-12:00"
         },
         {
           "ref": "P-195",
@@ -717,7 +808,7 @@
           "originalTitle": "Agent First, Workflow Later：DeerFlow 的企业级智能体实践",
           "originalLanguage": "zh",
           "title": {
-            "en": "Agent First, Workflow Later: Enterprise Agent Practices with DeerFlow",
+            "en": "Agent First, Workflow Later: Enterprise Agentic AI Practices with DeerFlow",
             "zh": "Agent First, Workflow Later：DeerFlow 的企业级智能体实践"
           },
           "slug": "p-113-agent-first-workflow-later-deerflow-的企业级智能体实践",
@@ -729,27 +820,30 @@
           "overview": {
             "en": "Drawing on DeerFlow deployments in large enterprises, this talk explains how to build a Super Agent environment with reusable skills, MCP and CLI integrations, identity-aware IM gateways, and human confirmation for critical actions. It also explores how successful agent trajectories can later become reviewed workflows and test assets.",
             "zh": "本次演讲结合 DeerFlow 在大型企业中的实践，介绍如何通过可复用 Skill、MCP 与 CLI 集成、贯通身份权限的 IM 网关及关键操作人工确认，构建企业级 Super Agent 环境，并将稳定的成功轨迹沉淀为经审核的工作流和测试资产。"
-          }
+          },
+          "date": "2026-10-16",
+          "timeSlot": "15:40-16:05"
         },
         {
           "ref": "P-174",
           "originalTitle": "Semantic Croissant, QueryGraph and the Cross-Domain Interoperability Framework (CDIF)",
           "originalLanguage": "en",
           "title": {
-            "en": "Semantic Croissant, QueryGraph, and the Cross-Domain Interoperability Framework",
-            "zh": "Semantic Croissant、QueryGraph 与跨领域互操作框架"
+            "en": "Semantic Croissant, QueryGraph and the Cross-Domain Interoperability Framework (CDIF)",
+            "zh": "Semantic Croissant、QueryGraph与跨领域互操作框架（CDIF）"
           },
           "slug": "p-174-semantic-croissant-querygraph-and-the-cross-domain-interoperability-framework-cdif",
           "speakers": [
-            "slava-tykhonov",
-            "alexy-khrabrov"
+            "slava-tykhonov"
           ],
           "originalAbstract": "This talk presents an architecture for trustworthy, AI-ready data based on three complementary layers. CDIF enables interoperability across domains, systems, and data formats. **Semantic Croissant**, combined with ODRL, adds machine-actionable semantics, provenance, and usage policies. QueryGraph extends this foundation to AI agents by integrating identity, access control, governance, and lineage directly into the semantic infrastructure. Together, these technologies enable AI systems to discover, understand, and use data while ensuring that trust, provenance, and authorization are enforced by design.",
           "originalAbstractLanguage": "en",
           "overview": {
             "en": "This talk presents a three-layer architecture for trustworthy, AI-ready data. CDIF provides cross-domain interoperability, Semantic Croissant with ODRL adds machine-actionable semantics, provenance, and usage policies, and QueryGraph extends the foundation with agent identity, access control, governance, and lineage so trust and authorization are enforced by design.",
             "zh": "本次演讲介绍面向可信 AI 就绪数据的三层架构：CDIF 实现跨领域互操作，Semantic Croissant 与 ODRL 提供机器可执行的语义、数据来源和使用策略，QueryGraph 则进一步加入智能体身份、访问控制、治理与数据血缘，让信任和授权成为基础设施的内建能力。"
-          }
+          },
+          "date": "2026-10-16",
+          "timeSlot": "16:55-17:20"
         },
         {
           "ref": "P-166",
@@ -760,7 +854,7 @@
           "slug": "p-166-knowledge-as-code-a-new-collaboration-architecture-for-ai-native-teams",
           "title": {
             "en": "Knowledge as Code: A New Collaboration Architecture for AI-Native Teams",
-            "zh": "知识即代码：AI 原生团队的新型协作架构"
+            "zh": "知识即代码：面向AI原生团队的新型协作架构"
           },
           "overview": {
             "en": "As AI agents become active participants in software development, research, and knowledge work, project documentation can no longer remain a static artifact written and maintained manually after the work is done. For an agent, project knowledge is not merely documentation—it is a runtime dependency that shapes every decision and action.\n\nThis talk introduces “Knowledge as Code”: an approach that gives project knowledge the same properties we expect from source code—clear structure, version history, addressability, machine readability, and explicit governance.\n\nIt will also present ProjectBrain.md, an Apache-2.0 open standard for creating a repository-local project brain through a BRAIN.md protocol entry point and a structured brain/ directory. The project brain preserves current project truth, architectural decisions, constraints, rationale, and their evolution in a format that both humans and agents can read and maintain.\n\nThe talk proposes a new division of responsibility for AI-native teams: humans define intent, make judgments, approve important changes, and validate outcomes; agents continuously compile, update, connect, and inspect project knowledge. The goal is not a knowledge base without human involvement, but one without the burden of manual maintenance.\n\nAttendees will leave with a practical architecture for turning conversations and decisions into persistent project knowledge, executable agent contracts, and verifiable execution loops.",
@@ -769,7 +863,9 @@
           "speakers": [
             "高阳-sunny"
           ],
-          "draft": false
+          "draft": false,
+          "date": "2026-10-16",
+          "timeSlot": "14:00-14:25"
         },
         {
           "ref": "P-198",
@@ -779,7 +875,7 @@
           "originalAbstractLanguage": "zh",
           "slug": "p-198-从-agent-设计模式到工程落地-执行型智能体的架构与实践",
           "title": {
-            "en": "From Agent Design Patterns to Production: Architecture and Practice for Action-Oriented Agents",
+            "en": "From Agent Design Patterns to Engineering Implementation: Architecture and Practices of Execution-Oriented Agents",
             "zh": "从 Agent 设计模式到工程落地：执行型智能体的架构与实践"
           },
           "overview": {
@@ -789,7 +885,9 @@
           "speakers": [
             "jia-huang-黄佳"
           ],
-          "draft": false
+          "draft": false,
+          "date": "2026-10-16",
+          "timeSlot": "16:30-16:55"
         },
         {
           "ref": "P-206",
@@ -799,7 +897,7 @@
           "originalAbstractLanguage": "zh",
           "slug": "p-206-从-身份盲区-到-持证上岗-智能体身份安全的关键挑战与产业应对",
           "title": {
-            "en": "From Identity Blind Spots to Verified Access: Key Challenges and Industry Responses for Agent Identity Security",
+            "en": "From “Identity Blind Spots” to “Certified Agents”: Key Challenges and Industry Responses in Agent Identity Security",
             "zh": "从“身份盲区”到“持证上岗”：智能体身份安全的关键挑战与产业应对"
           },
           "overview": {
@@ -809,6 +907,55 @@
           "speakers": [
             "fu-tingsheng"
           ],
+          "draft": false,
+          "date": "2026-10-16",
+          "timeSlot": "14:25-14:50"
+        },
+        {
+          "ref": "SUMMIT-HACKATHON-AWARDS",
+          "slug": "summit-hackathon-awards",
+          "manual": true,
+          "type": "talk",
+          "title": {
+            "en": "Hackathon Summary and Awards Ceremony",
+            "zh": "黑客松总结及颁奖"
+          },
+          "speakers": [
+            "zonghuan-wu"
+          ],
+          "originalTitle": "Hackathon Summary and Awards Ceremony",
+          "originalLanguage": "en",
+          "originalAbstract": "Hackathon summary and awards ceremony with Yun Lin and Zonghuan Wu.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "Hackathon summary and awards ceremony with Zonghuan Wu.",
+            "zh": "由吴宗寰参与的黑客松总结及颁奖环节。"
+          },
+          "date": "2026-10-17",
+          "timeSlot": "16:55-17:15",
+          "draft": false,
+          "editorialNote": "Decision 8B: Yun Lin remains on the AI Education panel; Zonghuan Wu handles awards."
+        },
+        {
+          "ref": "SUMMIT-SPOTLIGHT-AWARDS",
+          "slug": "summit-spotlight-awards",
+          "manual": true,
+          "type": "pending",
+          "title": {
+            "en": "Spotlight Shenzhen 2026: Next-Gen AI-Native Products Awards Ceremony",
+            "zh": "Spotlight Shenzhen 2026：下一代AI原生产品颁奖仪式"
+          },
+          "speakers": [],
+          "originalTitle": "Spotlight Shenzhen 2026: Next-Gen AI-Native Products Awards Ceremony",
+          "originalLanguage": "en",
+          "originalAbstract": "The awards ceremony for Spotlight Shenzhen 2026: Next-Gen AI-Native Products.",
+          "originalAbstractLanguage": "en",
+          "overview": {
+            "en": "The awards ceremony for Spotlight Shenzhen 2026: Next-Gen AI-Native Products.",
+            "zh": "Spotlight Shenzhen 2026：下一代 AI 原生产品颁奖仪式。"
+          },
+          "date": "2026-10-17",
+          "timeSlot": "17:15-17:25",
           "draft": false
         }
       ],
@@ -817,7 +964,18 @@
       "room": {
         "en": "3F – ADEN 1",
         "zh": "3楼-伊敦1厅"
-      }
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:15-17:45"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:15-17:30"
+        }
+      ],
+      "programOrder": 11
     },
     {
       "id": "agentic-ai-on-edge",
@@ -846,6 +1004,10 @@
             "zh": "本次演讲探讨在严格内存与模型规模限制下完成端侧智能体知识工作的系统方法，结合缓存增强生成、递归语言模型和有依据的评测，并展示树莓派法律分析与 Android 课程检索等案例。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:50",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:15-10:50"
         },
         {
@@ -888,7 +1050,7 @@
             "zh": "RustNN 和 W3C WebNN 标准为本地运行 AI 智能体提供了统一的解决方案。RustNN 生态系统允许开发者在 Rust 中编写一次机器学习任务，并部署到桌面、Node.js 和 WebAssembly 三种环境中。这种方法可以在不同平台实现硬件加速，而无需代码重复。"
           },
           "date": "2026-10-16",
-          "timeSlot": "11:25-12:00"
+          "timeSlot": "15:10-15:45"
         },
         {
           "ref": "AGENTIC-AI-ON-EDGE-OCT-16-LUNCH",
@@ -973,7 +1135,7 @@
             "zh": "KTransformers 利用 CPU–GPU 异构计算，在消费级硬件上支持万亿参数级 MoE 模型的高效本地推理。本次演讲介绍从模型服务、反馈收集、微调到重新部署的完整闭环，帮助小型团队和研究者以较低硬件成本迭代大型模型。"
           },
           "date": "2026-10-16",
-          "timeSlot": "15:10-15:45"
+          "timeSlot": "11:25-12:00"
         },
         {
           "ref": "AGENTIC-AI-ON-EDGE-OCT-16-TEA-BREAK",
@@ -1006,8 +1168,7 @@
           },
           "slug": "p-157-building-hybrid-ai-systems-edge-inferencing-meets-cloud-reasoning",
           "speakers": [
-            "frank-fan",
-            "sheng-chen"
+            "frank-fan"
           ],
           "originalAbstract": "Modern AI applications increasingly need to run closer to where data is generated and decisions are made. This session presents an architectural pattern for hybrid AI systems that split latency-sensitive inference at the edge from cloud-native reasoning, connected through a shared memory layer.\nUsing a real-world warehouse safety monitoring system as the case study, we examine the trade-offs for placing a Vision Language Model (VLM) on edge GPUs using a hybrid Kubernetes architecture, while delegating summarisation and conversational retrieval to a cloud-based agent runtime.\nWe cover the decision framework for what runs where, agentic memory strategies, and cross-environment observability.\n\nKey takeaways:\n- A decision framework for what belongs at the edge vs. the cloud\n- Choosing the right models for your edge applications\n- Squeezing performance with quantisation, decoding and cold-start optimisation\n- Observing GPU and model health across hybrid environments\n- Using a shared memory layer to turn edge inference into business insight\n\nAttendees will leave with practical patterns for building their own hybrid AI systems - from the edge/cloud decision boundary through to agentic memory and cross-environment observability.",
           "originalAbstractLanguage": "en",
@@ -1079,6 +1240,10 @@
             "zh": "字节跳动的全球边缘基础设施面临集中式运维带来的延迟和场景碎片化问题。通过在 SPEAR 平台部署支持 MCP 的轻量级 AI 运维智能体，可在边缘端实现实时监控、根因分析和自动化处置，降低延迟与人工成本。本次演讲将介绍 SPEAR 的边缘 AI 运行架构、基于 MCP 的智能体开发模式，以及全球生产部署中的资源优化与网络韧性实践。"
           },
           "date": "2026-10-17",
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:45",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:15-10:45"
         },
         {
@@ -1163,7 +1328,12 @@
             "zh": "午餐休息。"
           },
           "date": "2026-10-17",
-          "timeSlot": "12:15-14:00"
+          "timeSlot": "12:15-14:00",
+          "timingReview": {
+            "previousTimeSlot": "12:15-14:00",
+            "reason": "outside-final-program-window"
+          },
+          "draft": true
         }
       ],
       "originalName": "Agentic AI on Edge",
@@ -1171,7 +1341,18 @@
       "room": {
         "en": "3F – MING HUA",
         "zh": "3楼-明华厅"
-      }
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:15-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:15-12:15"
+        }
+      ],
+      "programOrder": 13
     },
     {
       "id": "ai-generative-app",
@@ -1200,6 +1381,10 @@
             "zh": "本次演讲介绍 Agentic Harness Engineering，一套自动改进编码智能体 Harness 的闭环方法。组件、经验与决策三个层面的可观测性，让每次修改都可定位、有证据、可回滚并可验证，从而实现超越人工试错的可靠演进。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:50",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:15-10:50"
         },
         {
@@ -1221,6 +1406,10 @@
             "zh": "PenguinHarness 是由 LlamaFactory 团队开发的开源自进化智能体框架，支持 1000 多种模型，仅需单 CPU 即可部署。它通过最小工具集和多智能体协作机制，使智能体能自主完成训练、部署、评估等任务。本次演讲将介绍如何快速构建生产级 AI 应用，并通过 GDPevo Benchmark 评估自进化能力，实验显示准确率提升 18.8%，Token 成本降低 7.5%。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "10:50-11:25",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:50-11:25"
         },
         {
@@ -1242,6 +1431,10 @@
             "zh": "本次演讲探讨智能体 AI 如何让更多人把观察、问题和想法变成可验证的创造。内容结合发明史与开源 Rust 编码智能体 Codewhale 的开发实践，提出一套围绕模型选择、可见操作、可测试结果、开放系统和有效人类控制的设计框架。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "11:25-12:00",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "11:25-12:00"
         },
         {
@@ -1263,7 +1456,12 @@
             "zh": "午餐休息。"
           },
           "date": "2026-10-16",
-          "timeSlot": "12:00-14:00"
+          "timeSlot": "12:00-14:00",
+          "timingReview": {
+            "previousTimeSlot": "12:00-14:00",
+            "reason": "outside-final-program-window"
+          },
+          "draft": false
         },
         {
           "ref": "P-58",
@@ -1284,7 +1482,7 @@
             "zh": "SpecArtisans 是一种面向 AI 编程的 规约驱动开发范式，旨在确保 AI 在软件开发各阶段准确遵循原始需求。它在自然语言需求与代码之间引入结构化、可验证的软件规约，实现需求在设计、实现和测试中的持续传递与验证。通过构建端到端的工作流并封装为可复用的技能（Skill），SpecArtisans 推动 AI 编程从生成代码向基于明确、可追踪、可验证需求的软件开发演进。"
           },
           "date": "2026-10-16",
-          "timeSlot": "14:00-14:35"
+          "timeSlot": "14:35-15:10"
         },
         {
           "ref": "P-72",
@@ -1306,7 +1504,7 @@
             "zh": "本次演讲展示智能体 AI 在游戏中的应用进展，并讨论如何将相关演示扩展为适用于不同模型的强化学习环境和数据集。"
           },
           "date": "2026-10-16",
-          "timeSlot": "14:35-15:10"
+          "timeSlot": "15:10-15:45"
         },
         {
           "ref": "P-21",
@@ -1327,7 +1525,7 @@
             "zh": "AI 正在改变企业的组织方式：企业正从传统、以人为中心的结构，转向把知识作为结构化记忆、把工作流构建为智能且持续改进的系统。Jacky Hsu 将分享 Ingora 如何利用开源智能体、编程助手和知识系统，快速开发面向儿童与家庭的 AI 学习伙伴 Qrio。这种方法把公司本身视为由 AI 驱动的操作系统，并通过智能体提升执行能力与组织智能。"
           },
           "date": "2026-10-16",
-          "timeSlot": "15:10-15:45"
+          "timeSlot": "14:00-14:35"
         },
         {
           "ref": "AI-GENERATIVE-APP-OCT-16-TEA-BREAK",
@@ -1432,6 +1630,10 @@
             "zh": "本次演讲探讨多人、多 AI 智能体协作场景中的 Agent Harness 设计。"
           },
           "date": "2026-10-17",
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:50",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:15-10:50"
         },
         {
@@ -1439,7 +1641,7 @@
           "originalTitle": "OctoLoop：让 Agent 真正 Loop 起来——内环自治、外环纠偏、进化环沉淀经验",
           "originalLanguage": "zh",
           "title": {
-            "en": "OctoLoop: Making Agents Truly Loop with Inner Autonomy, Outer Correction, and Evolutionary Learning",
+            "en": "OctoLoop: Making Agents Truly Loop — Inner-Loop Autonomy, Outer-Loop Correction, and Evolution-Loop Experience Accumulation",
             "zh": "OctoLoop：让 Agent 真正 Loop 起来——内环自治、外环纠偏、进化环沉淀经验"
           },
           "slug": "p-143-hafleet-把-ai-编程助手组织成团队",
@@ -1453,6 +1655,10 @@
             "zh": "OctoLoop 通过“内环自治 + 外环纠偏”让编程智能体无需持续人工值守，也能推进长期工程任务。内环读取黑板、执行、提交并回执；Claude Code、Codex 等强模型在外环中观察进展、及时纠偏，并在隔离环境中独立复验，通过后才推送。可选的进化环还会从事件流、回执和失败信号中提炼规则与契约。演讲也将展示多个 peer agent 如何在独立工作树、会话、预算和模型车道中并行协作。"
           },
           "date": "2026-10-17",
+          "timingReview": {
+            "previousTimeSlot": "10:50-11:25",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:50-11:25"
         },
         {
@@ -1465,16 +1671,21 @@
           },
           "slug": "p-91-memos-2-0-key-technical-challenges-and-the-evolution-of-memory-systems",
           "speakers": [
-            "bo-tang"
+            "guomian-zhuang"
           ],
           "originalAbstract": "随着大模型从一次性问答走向持续交互、复杂任务执行与多智能体协作，记忆正在从外挂能力演变为 Agent 长期运行和持续进化的基础设施。MemOS 1.0—2.0 以多种记忆的统一管理和运行态治理为基础，完成了从记忆条目到用户、Agent、任务与 Session 状态的系统演进。\n本次分享将重点讨论记忆如何推动 Agent 成长：MSCE 将执行轨迹逐层沉淀为可验证技能，PHASE-Tree 让角色状态在长期交互中保持身份稳定并持续变化；进一步结合以 Metis 为代表的记忆原生模型，探索如何让高频记忆状态和记忆操作参与模型前向。由此讨论下一代记忆系统的统一形态：记忆原生模型负责高密度、低延迟的模型内执行，外置记忆系统负责长期记忆、证据链、技能与角色状态的版本化治理，二者通过统一调度实现准入、同步、冲突处理、回退与重建。",
           "originalAbstractLanguage": "zh",
           "overview": {
-            "en": "Bo Tang introduces MemOS as a next-generation memory system for autonomous agent evolution.",
-            "zh": "唐波介绍面向智能体自主进化的下一代记忆系统 MemOS。"
+            "en": "Guomian Zhuang introduces MemOS as a next-generation memory system for autonomous agent evolution.",
+            "zh": "庄郭冕介绍面向智能体自主进化的下一代记忆系统 MemOS。"
           },
           "date": "2026-10-17",
-          "timeSlot": "11:25-12:00"
+          "timingReview": {
+            "previousTimeSlot": "11:25-12:00",
+            "reason": "outside-final-program-window"
+          },
+          "timeSlot": "11:25-12:00",
+          "editorialNote": "Bo Tang withdrew; Guomian Zhuang presents MemOS in the October 9 program."
         },
         {
           "ref": "AI-GENERATIVE-APP-OCT-17-LUNCH",
@@ -1495,7 +1706,12 @@
             "zh": "午餐休息。"
           },
           "date": "2026-10-17",
-          "timeSlot": "12:00-14:00"
+          "timeSlot": "12:00-14:00",
+          "timingReview": {
+            "previousTimeSlot": "12:00-14:00",
+            "reason": "outside-final-program-window"
+          },
+          "draft": false
         },
         {
           "ref": "P-137",
@@ -1664,7 +1880,9 @@
           "overview": {
             "en": "This talk presents octos, a Rust-based Agent OS, and its OctoLoop dual-loop workflow. A capable outer agent assigns and reviews work, lower-cost inner agents execute it, and a repository blackboard provides an auditable handoff. Real examples show how multiple agents can work for long periods while people retain control at the key decision points.",
             "zh": "本次演讲介绍 Rust 编写的 Agent OS octos 及其 OctoLoop 双环工作流：能力更强的外环智能体负责派工和验收，成本更低的内环智能体负责执行，并通过仓库中的“黑板”完成可追踪的交接。真实案例将展示多个智能体如何长时间协作，同时让人保留关键决策权。"
-          }
+          },
+          "draft": true,
+          "editorialNote": "Not scheduled in the October 9 detailed program; unpublished by organizer decision 15A."
         }
       ],
       "originalName": "Agentic OS & App",
@@ -1672,7 +1890,18 @@
       "room": {
         "en": "2F – HAI XIA 2",
         "zh": "2楼-海厦2厅"
-      }
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:15-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:15-17:30"
+        }
+      ],
+      "programOrder": 25
     },
     {
       "id": "agentic-device",
@@ -1701,6 +1930,10 @@
             "zh": "本次演讲介绍小米开源 AIoT 操作系统 openvela 如何演进为 AI 硬件智能体的基础底座，涵盖发展历程、核心技术优势、大规模量产实践、开源生态建设与未来规划。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:50",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:15-10:50"
         },
         {
@@ -1722,6 +1955,10 @@
             "zh": "凌通分享开源硬件如何让 AI 从云端走向生活。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "10:50-11:25",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:50-11:25"
         },
         {
@@ -1743,6 +1980,10 @@
             "zh": "TuyaOpen 是一个专为物理 AI 时代设计的开源 A-IoT 操作系统，从设备连接转向自主思考的智能体。它包含原生多模态 AI 栈和标准化的模型上下文协议，使大语言模型能够控制嵌入式硬件。系统支持统一的硬件抽象层、端—边—云协同推理以及 TClaw 框架，可在低成本 MCU 上运行 ReAct 智能体循环，已有 AI 冰箱、3D 打印机等实际产品投入量产。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "11:25-12:00",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "11:25-12:00"
         },
         {
@@ -1764,7 +2005,12 @@
             "zh": "午餐休息。"
           },
           "date": "2026-10-16",
-          "timeSlot": "12:00-14:00"
+          "timeSlot": "12:00-14:00",
+          "timingReview": {
+            "previousTimeSlot": "12:00-14:00",
+            "reason": "outside-final-program-window"
+          },
+          "draft": false
         },
         {
           "ref": "P-59",
@@ -1797,7 +2043,8 @@
           },
           "slug": "p-154-physical-interfaces-for-agentic-development",
           "speakers": [
-            "michael-yuan"
+            "michael-yuan",
+            "siheng-chen"
           ],
           "originalAbstract": "Every developer running coding agents in parallel has learned the same ritual: alt-tab, scroll, squint, is it done, does it need me, alt-tab back. Attention research puts average screen focus at 47 seconds, and practitioners report a ceiling of three to five agents before supervision quality collapses. The solution to this cognitive overload is new hardware. OpenAI's Codex Micro keypad sold out in twelve hours. Anthropic created a desk pet that blinks when Claude needs approval, and a credit card-sized handheld computer (together with M5Stack).\n\nThis talk examines what these devices get right and where they are lacking. Then we dive into an open-source agentic device for developers, the VibeKeys device. It is an ESP32-S3 keypad with a status screen and microphone, firmware written in Rust, a 3D-printed case, and open-source plugins for Claude Code, Codex, Herdr, and Omarchy. On Omarchy, the device becomes a keyboard for shortcuts, a voice input device, and a status panel for the agents built into the OS. The malleable Omarchy OS enables users to speak to the device and change the OS itself. More than a thousand of these VibeKeys devices are on users' desks today.\n\nYou will leave with an understanding of peripheral awareness for agent supervision, and the source code repositories and tools to build your own agent devices.\n\nWho should attend: Developers who run two or more coding agents at once. Tool builders shipping agent UIs, terminal multiplexers, or IDE integrations. Embedded and Rust engineers curious about ESP32 firmware in Rust.",
           "originalAbstractLanguage": "en",
@@ -1912,7 +2159,8 @@
             "zh": "本时段议题待公布。"
           },
           "date": "2026-10-16",
-          "timeSlot": "17:00-17:30"
+          "timeSlot": "17:00-17:30",
+          "draft": true
         },
         {
           "ref": "P-53",
@@ -1933,6 +2181,10 @@
             "zh": "AI 正从云端走向端侧，从软件扩展到实体设备。立创开源硬件平台拥有超过 80 万月活跃用户和 10 万个开源项目，通过“开源社区、EDA 工具、供应链制造”的协作模式，帮助开发者将 AI 创意转化为硬件产品。本次演讲从技术社区的角度分享 AI 硬件共建实践。"
           },
           "date": "2026-10-17",
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:50",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:15-10:50"
         },
         {
@@ -1954,6 +2206,10 @@
             "zh": "本次演讲提出一套让现实世界成为 AI 眼镜交互界面的产品与生态框架，通过开放协议连接多模态设备、智能体、工具、开发者与服务，并讨论延迟、续航、隐私、权限、安全和开发体验等落地问题。"
           },
           "date": "2026-10-17",
+          "timingReview": {
+            "previousTimeSlot": "10:50-11:25",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:50-11:25"
         },
         {
@@ -1976,6 +2232,10 @@
             "zh": "本次演讲介绍如何在 RISC-V 架构上构建 AI 智能体设备，重点讲解采用 SpacemiT K3 AI SoC 的 DC-ROMA Mainboard III。内容包括模块化 RISC-V 平台如何支持本地 AI 与智能体开发，以及将 AI 能力集成到边缘设备中的实践。"
           },
           "date": "2026-10-17",
+          "timingReview": {
+            "previousTimeSlot": "11:25-12:00",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "11:25-12:00"
         },
         {
@@ -1997,7 +2257,12 @@
             "zh": "午餐休息。"
           },
           "date": "2026-10-17",
-          "timeSlot": "12:00-14:00"
+          "timeSlot": "12:00-14:00",
+          "timingReview": {
+            "previousTimeSlot": "12:00-14:00",
+            "reason": "outside-final-program-window"
+          },
+          "draft": false
         },
         {
           "ref": "P-86",
@@ -2101,8 +2366,8 @@
             "en": "Drawing on product work in brain–computer interfaces and AI wearables, this talk explores how agentic devices can continuously sense user states and deliver personalized services. It follows the path from user needs and product definition through scenario design and commercialization.",
             "zh": "本次演讲结合脑机接口与 AI 可穿戴设备的产品实践，探讨智能体设备如何持续感知用户状态并提供个性化服务，覆盖用户需求、产品定义、场景设计与商业落地的完整路径。"
           },
-          "date": "2026-10-17",
-          "timeSlot": "16:00-16:30"
+          "date": "2026-10-16",
+          "timeSlot": "17:00-17:30"
         },
         {
           "ref": "P-163",
@@ -2123,7 +2388,7 @@
             "zh": "本次演讲介绍幻尔如何以 ROS 作为 AI 智能体“思考”与机器人“行动”之间的接口。从语音、文本或 OpenClaw 输入出发，系统连接 LLM 或 VLA 规划器、可复用技能节点与硬件驱动，并整合多模态感知、实时控制和安全机制。"
           },
           "date": "2026-10-17",
-          "timeSlot": "16:30-17:00"
+          "timeSlot": "16:00-16:30"
         },
         {
           "ref": "AGENTIC-DEVICE-OCT-17-RESERVED",
@@ -2144,7 +2409,8 @@
             "zh": "本时段议题待公布。"
           },
           "date": "2026-10-17",
-          "timeSlot": "17:00-17:30"
+          "timeSlot": "17:00-17:30",
+          "draft": true
         },
         {
           "ref": "P-185",
@@ -2154,7 +2420,7 @@
           "originalAbstractLanguage": "zh",
           "slug": "p-185-ai雷达-感知-计算带来的行业变革",
           "title": {
-            "en": "AI Radar: Industry Transformation Through Perception and Computing",
+            "en": "AI Radar — Industry Transformation Driven by Sensing + Computing",
             "zh": "AI雷达 — 感知 + 计算带来的行业变革"
           },
           "overview": {
@@ -2164,7 +2430,9 @@
           "speakers": [
             "曾辉"
           ],
-          "draft": false
+          "draft": false,
+          "date": "2026-10-17",
+          "timeSlot": "16:30-17:00"
         }
       ],
       "originalName": "Agentic Device",
@@ -2172,7 +2440,18 @@
       "room": {
         "en": "2F – KAI XUAN 1",
         "zh": "2楼-凯旋1厅"
-      }
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:15-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:15-17:00"
+        }
+      ],
+      "programOrder": 26
     },
     {
       "id": "open-source-model",
@@ -2201,6 +2480,10 @@
             "zh": "研究人员探讨近期残差连接设计是否能实现语言模型的有效深度扩展。他们在不同模型深度和参数规模下评估多种方法，发现只有部分设计能维持深层网络的有效贡献。这些结果强调残差架构是模型扩展的关键因素之一，与模型宽度、数据和计算资源并列。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:50",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:15-10:50"
         },
         {
@@ -2307,7 +2590,7 @@
             "zh": "本次演讲回顾 GLM 与 SGLang、vLLM 等推理框架社区的深度协作，涵盖模型发布日适配、投机解码、量化、Prefill–Decode 分离、精度对齐和性能调优，并介绍如何通过上游贡献、开放模型权重与技术报告，让高性能推理实践惠及更广泛的开源生态。"
           },
           "date": "2026-10-16",
-          "timeSlot": "14:35-15:10"
+          "timeSlot": "16:00-16:30"
         },
         {
           "ref": "P-11",
@@ -2370,7 +2653,7 @@
             "zh": "本次演讲分享如何将 AI 大模型与数学优化技术应用于算子开发、模型适配和算法自动发现等计算加速场景，介绍 KernelCAT 智能体的典型案例，并展望 AI for Computing 的技术与产业前景。"
           },
           "date": "2026-10-16",
-          "timeSlot": "16:00-16:30"
+          "timeSlot": "17:00-17:30"
         },
         {
           "ref": "P-173",
@@ -2411,8 +2694,8 @@
             "en": "This talk examines how open-source infrastructure must evolve as collaboration expands from code to models, datasets, agents, and AI-native applications. Drawing on AtomGit, AtomCode, domestic compute adaptation, and the CANN developer ecosystem, it explores how platforms can connect models, code, compute, and developers across the full engineering lifecycle.",
             "zh": "本次演讲探讨当开源协作从代码扩展到模型、数据集、智能体和 AI 原生应用时，开发者基础设施应如何演进。内容结合 AtomGit、AtomCode、国产算力适配和 CANN 开发者生态实践，分析平台如何连接模型、代码、算力与开发者，打通完整工程化链路。"
           },
-          "date": "2026-10-16",
-          "timeSlot": "17:00-17:30"
+          "date": "2026-10-17",
+          "timeSlot": "11:25-12:00"
         },
         {
           "ref": "P-100",
@@ -2420,7 +2703,7 @@
           "originalLanguage": "en",
           "title": {
             "en": "Teaching AI to Improve AI: From Experimental Feedback to Meta-Evolution",
-            "zh": "教 AI 改进 AI：从实验反馈到元进化"
+            "zh": "教AI改 AI：从实验反馈到元进化"
           },
           "slug": "p-100-teaching-ai-to-improve-ai-from-experimental-feedback-to-meta-evolution",
           "speakers": [
@@ -2434,6 +2717,10 @@
             "zh": "大语言模型正从编程助手发展为能够提出方案、运行实验并迭代结果的研究智能体。本次演讲结合 AI4AI 循环与 NatureBench 案例，探讨如何将实验执行与反馈转化为可复用的改进能力，并分析 AI 系统递归自我改进的潜力。"
           },
           "date": "2026-10-17",
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:50",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:15-10:50"
         },
         {
@@ -2605,7 +2892,7 @@
             "zh": "本次演讲探讨高质量真实世界多模态数据如何帮助语音智能体从“能对话”走向具身系统中的可靠行动。内容涵盖智能座舱和家庭服务机器人，并讨论自然交互、指令理解、安全执行、多语言覆盖及合规数据建设。"
           },
           "date": "2026-10-17",
-          "timeSlot": "16:30-17:00"
+          "timeSlot": "17:00-17:30"
         },
         {
           "ref": "P-46",
@@ -2626,7 +2913,7 @@
             "zh": "本次演讲探讨了模型性能日益依赖高质量训练数据的范式转变，介绍了涵盖 DataFlow L0–L7 的统一数据飞轮开源基础设施。演讲还涉及通过 Agent、Skills 与 Harness 实现的智能执行，以及由评估驱动的数据闭环进化。最后，分享了数据驱动 AI 开源生态的工程实践与未来演进。"
           },
           "date": "2026-10-17",
-          "timeSlot": "17:00-17:30"
+          "timeSlot": "16:30-17:00"
         },
         {
           "ref": "P-48",
@@ -2665,7 +2952,9 @@
           "overview": {
             "en": "This talk introduces QueryGraph, an open-source AI-native lakehouse platform built through international collaboration. Its multilayer stack combines context graphs, type-level agent protocols, cognitive memory, governance catalogs, verifiable lineage, and type-safe access control to support auditable agentic environments centered on industry ontologies.",
             "zh": "本次演讲介绍由国际团队协作构建的开源 AI 原生 Lakehouse 平台 QueryGraph。其多层架构融合上下文图、类型级智能体协议、认知记忆、治理目录、可验证数据血缘与类型安全访问控制，为以行业本体为中心、可审计的智能体环境提供基础设施。"
-          }
+          },
+          "draft": true,
+          "editorialNote": "Speaker registry marks Alexy Khrabrov as not speaking."
         },
         {
           "ref": "P-204",
@@ -2675,8 +2964,8 @@
           "originalAbstractLanguage": "en",
           "slug": "p-204-optimization-of-edge-side-inference-performance-for-open-source-large-models-and-collaboration-between-agents",
           "title": {
-            "en": "Optimizing Edge Inference for Open-Source Large Models and Agent Collaboration",
-            "zh": "开源大模型端侧推理性能优化与智能体协作"
+            "en": "Optimization of Edge-Side Inference Performance for Open-Source Large Models and Collaboration Between Agents",
+            "zh": "开源大模型端侧推理性能优化与Agent协同"
           },
           "overview": {
             "en": "Optimization of Edge-Side Inference Performance for Open-Source Large Models and Collaboration Between Agents\nWith the rapid growth of edge computing, deploying open-source large language models on resource-constrained edge devices has become a critical challenge. This work focuses on optimizing edge-side inference performance through model compression, quantization, pruning, and efficient scheduling techniques, reducing latency, memory footprint, and energy consumption while preserving accuracy. Beyond single-model optimization, we explore collaboration mechanisms among multiple agents, where lightweight edge agents and cloud-based models coordinate through task decomposition, distributed inference, and knowledge sharing. Experimental results demonstrate that the proposed framework significantly improves throughput and responsiveness, enabling real-time intelligent applications such as autonomous systems, IoT, and mobile assistants in edge environments.",
@@ -2685,7 +2974,9 @@
           "speakers": [
             "minakokojima"
           ],
-          "draft": false
+          "draft": false,
+          "date": "2026-10-16",
+          "timeSlot": "14:35-15:10"
         },
         {
           "ref": "P-217",
@@ -2713,7 +3004,18 @@
       "room": {
         "en": "3F – ADEN 2",
         "zh": "3楼-伊敦2厅"
-      }
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:15-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:15-17:30"
+        }
+      ],
+      "programOrder": 12
     },
     {
       "id": "open-source-robotics",
@@ -2741,8 +3043,12 @@
             "en": "This talk traces RoboChallenge's evolution from real-robot benchmarks and global leaderboards toward neutral, open evaluation infrastructure for embodied AI. It covers benchmark design, reproducible real-world evaluation, international competitions, community building, EAI Bench, and emerging work on shared evaluation methods and standards.",
             "zh": "本次演讲介绍 RoboChallenge 如何从真实机器人基准与全球排行榜，发展为中立、开放的具身智能评测基础设施，涵盖基准设计、可复现的真实环境评测、国际赛事、全球社区建设、EAI Bench，以及评测方法与国际标准的探索。"
           },
-          "date": "2026-10-16",
-          "timeSlot": "10:15-10:45"
+          "date": "2026-10-17",
+          "timingReview": {
+            "previousTimeSlot": "11:45-12:15",
+            "reason": "outside-final-program-window"
+          },
+          "timeSlot": "11:45-12:15"
         },
         {
           "ref": "P-90",
@@ -2763,6 +3069,10 @@
             "zh": "本次演讲介绍面向 Physical AI 的 Agent 框架 Jiuwen Symbiosis，探讨如何让智能体从“数字助手”走向“物理世界的执行者”，结合自然语言指令与态势感知，自主完成现实场景中的物理任务。针对 VLA 等端到端具身模型在跨本体、跨环境与跨任务泛化、长程复合任务能力，以及成功率和稳定性方面的挑战，Jiuwen Symbiosis 提出以“端到端智能体（Agent）系统”替代“单一端到端模型”，采用“物理感知—动态编排—物理执行—观测反馈”的分层解耦架构，通过 Physical Harness + Adapter + 异构本体 SDK，提升复杂长程物理任务的稳定性与泛化能力。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "10:45-11:15",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:45-11:15"
         },
         {
@@ -2784,6 +3094,10 @@
             "zh": "本次演讲从具身智能的数据挑战出发，分享诺亦腾机器人从大规模“数据工厂”走向“世界编译器”的探索。内容涵盖真实世界数据采集、人体运动与人—物交互、多模态数据生产、标准化和机器人学习，并说明数据基础设施为何需要从追求规模进一步演进到对物理世界的结构化表达。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "11:15-11:45",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "11:15-11:45"
         },
         {
@@ -2805,6 +3119,10 @@
             "zh": "本次演讲提出具身智能体执行框架（Embodied Agentic Harness）：位于基础模型与机器人技能或硬件之间的运行时控制平面。它结合确定性任务编译、世界—动作模型预测、分层安全验证、长期记忆与局部自愈，将开放式模型意图转化为可验证、可恢复的物理行为。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "11:45-12:15",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "11:45-12:15"
         },
         {
@@ -2826,7 +3144,12 @@
             "zh": "午餐休息。"
           },
           "date": "2026-10-16",
-          "timeSlot": "12:00-14:00"
+          "timeSlot": "12:15-14:00",
+          "timingReview": {
+            "previousTimeSlot": "12:15-14:00",
+            "reason": "outside-final-program-window"
+          },
+          "draft": false
         },
         {
           "ref": "P-96",
@@ -2996,6 +3319,10 @@
             "zh": "本次演讲介绍了一种整合生成、导航和控制的世界模型，通过表示和物理感知方面的创新解决了先前模型的局限。结合流匹配与直接偏好优化（DPO）的框架提升了连续生成和物理理解能力，在开源视频生成方面达到最先进水平。研究者还开发了全面的基准系统，用于评估物理感知能力，并展示了世界模型与机器人系统的集成应用。"
           },
           "date": "2026-10-17",
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:45",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:15-10:45"
         },
         {
@@ -3017,6 +3344,10 @@
             "zh": "本次演讲将介绍用于具身智能的 VLA 算法；更完整的内容将在议题信息确认后发布。"
           },
           "date": "2026-10-17",
+          "timingReview": {
+            "previousTimeSlot": "10:45-11:15",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "10:45-11:15"
         },
         {
@@ -3038,7 +3369,11 @@
             "zh": "本次演讲分享 PhyAgentOS 在物理智能体 Harness 方向的工程实践，涵盖异构机器人统一接入、工具与技能组合、虚实迁移、任务验证与失败恢复，以及由工具使用和数据反馈驱动的持续进化。"
           },
           "date": "2026-10-17",
-          "timeSlot": "11:15-11:45"
+          "timingReview": {
+            "previousTimeSlot": "11:15-11:45",
+            "reason": "outside-final-program-window"
+          },
+          "timeSlot": "16:30-17:00"
         },
         {
           "ref": "P-131",
@@ -3058,8 +3393,12 @@
             "en": "This talk presents the engineering practices behind DM0.5, OpenDM, and Dexbotic across the complete VLA lifecycle. It covers heterogeneous robot data, reproducible training, scalable evaluation, low-latency inference, and the infrastructure needed to build efficient, reliable, and extensible embodied-AI systems.",
             "zh": "本次演讲分享 DM0.5、OpenDM 与 Dexbotic 背后的工程实践，覆盖 VLA 全生命周期，包括异构机器人数据、可复现训练、可扩展评测、低延迟推理，以及构建高效、可靠、可扩展具身智能系统所需的基础设施。"
           },
-          "date": "2026-10-17",
-          "timeSlot": "11:45-12:15"
+          "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "10:15-10:45",
+            "reason": "outside-final-program-window"
+          },
+          "timeSlot": "10:15-10:45"
         },
         {
           "ref": "OPEN-SOURCE-ROBOTICS-OCT-17-LUNCH",
@@ -3080,7 +3419,12 @@
             "zh": "午餐休息。"
           },
           "date": "2026-10-17",
-          "timeSlot": "12:00-14:00"
+          "timeSlot": "12:15-14:00",
+          "timingReview": {
+            "previousTimeSlot": "12:15-14:00",
+            "reason": "outside-final-program-window"
+          },
+          "draft": false
         },
         {
           "ref": "P-16",
@@ -3208,7 +3552,7 @@
           ],
           "draft": false,
           "date": "2026-10-17",
-          "timeSlot": "16:30-17:00"
+          "timeSlot": "11:15-11:45"
         },
         {
           "ref": "P-63",
@@ -3237,7 +3581,18 @@
       "room": {
         "en": "2F – HAI XIA 1",
         "zh": "2楼-海厦1厅"
-      }
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:15-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:15-17:30"
+        }
+      ],
+      "programOrder": 24
     },
     {
       "id": "ws-ai-education",
@@ -3464,7 +3819,8 @@
           "speakers": [
             "ziyan-wang"
           ],
-          "draft": false
+          "draft": true,
+          "editorialNote": "Duplicate unscheduled education proposal; the scheduled education session remains published (decision 15A)."
         }
       ],
       "originalName": "AI Education Workshop",
@@ -3472,7 +3828,14 @@
       "room": {
         "en": "3F – HAI LIAO",
         "zh": "3楼-海辽厅"
-      }
+      },
+      "sessions": [
+        {
+          "date": "2026-10-17",
+          "timeSlot": "14:00-17:30"
+        }
+      ],
+      "programOrder": 18
     },
     {
       "id": "ws-dora",
@@ -3500,9 +3863,10 @@
           "speakers": [
             "ruping-cen"
           ],
-          "draft": false,
+          "draft": true,
           "date": "2026-10-16",
-          "timeSlot": "10:15-10:30"
+          "timeSlot": "10:15-10:30",
+          "editorialNote": "Ruping Cen withdrew; replaced by the revised DORA program."
         },
         {
           "ref": "P-122",
@@ -3523,7 +3887,7 @@
             "zh": "本工作坊分享 DORA 社区如何把开源共建与真实具身智能系统连接起来，涵盖中文课程、高校与黑客松活动、生态协作、人形机器人落地，以及从数据采集到真机部署的实践路径。"
           },
           "date": "2026-10-16",
-          "timeSlot": "10:30-10:45"
+          "timeSlot": "10:15-10:30"
         },
         {
           "ref": "P-176",
@@ -3650,6 +4014,10 @@
             "zh": "本工作坊探讨 Coding Agent 从软件环境走向真实机器人时，自动科研所需的场景重置、可靠观测与结果验证。内容结合 ENPIRE、RealPushT、RM65 机械臂和 Dora 数据流，分析单次成功与稳定机器人能力之间的差异，以及如何建立可复核、可追溯的实验记录。"
           },
           "date": "2026-10-16",
+          "timingReview": {
+            "previousTimeSlot": "12:00-12:15",
+            "reason": "outside-final-program-window"
+          },
           "timeSlot": "12:00-12:15"
         },
         {
@@ -3669,7 +4037,33 @@
           "overview": {
             "en": "This workshop builds on the open-source DORA-NAV robotics navigation framework and OCTOS to introduce LLM-based task orchestration and hierarchical navigation. It explains task decomposition, navigation scheduling, and engineering lessons from the framework.",
             "zh": "本工作坊基于开源机器人导航框架 DORA-NAV 与 OCTOS，介绍由大语言模型驱动的任务编排和分层导航，分享任务分解、导航调度的实现方法及开源框架的工程实践。"
-          }
+          },
+          "draft": true,
+          "editorialNote": "Ruping Cen withdrew; old unscheduled DORA proposal retained for history."
+        },
+        {
+          "ref": "DORA-QIUJI-CHEN",
+          "slug": "dora-qiuji-chen",
+          "manual": true,
+          "type": "talk",
+          "title": {
+            "en": "A DORA-Based 3D Navigation Framework: From LiDAR Point Clouds to Trajectory Planning",
+            "zh": "基于 DORA 的三维导航框架：从激光雷达点云到轨迹规划"
+          },
+          "overview": {
+            "en": "A DORA-Based 3D Navigation Framework: From LiDAR Point Clouds to Trajectory Planning",
+            "zh": "基于 DORA 的三维导航框架：从激光雷达点云到轨迹规划"
+          },
+          "speakers": [
+            "qiuji-chen"
+          ],
+          "date": "2026-10-16",
+          "timeSlot": "10:30-10:45",
+          "originalTitle": "A DORA-Based 3D Navigation Framework: From LiDAR Point Clouds to Trajectory Planning",
+          "originalLanguage": "en",
+          "originalAbstract": "A DORA-Based 3D Navigation Framework: From LiDAR Point Clouds to Trajectory Planning",
+          "originalAbstractLanguage": "en",
+          "draft": false
         }
       ],
       "originalName": "DORA Workshop",
@@ -3677,7 +4071,14 @@
       "room": {
         "en": "2F – KAI XUAN 2",
         "zh": "2楼-凯旋2厅"
-      }
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:15-12:15"
+        }
+      ],
+      "programOrder": 27
     },
     {
       "id": "ws-vllm",
@@ -3920,7 +4321,9 @@
           "overview": {
             "en": "This talk shares how the Inferact team built a large-scale, production-grade inference service for Kimi K3 agents using the open-source vLLM engine.",
             "zh": "本次分享介绍 Inferact 团队如何基于开源 vLLM 引擎，为 Kimi K3 模型构建大规模、生产级的智能体推理服务。"
-          }
+          },
+          "draft": true,
+          "editorialNote": "Not scheduled in the October 9 detailed program; unpublished by organizer decision 15A."
         }
       ],
       "originalName": "vLLM Workshop",
@@ -3928,6 +4331,17 @@
       "room": {
         "en": "3F – MING HUA",
         "zh": "3楼-明华厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-17",
+          "timeSlot": "13:40-17:30"
+        }
+      ],
+      "programOrder": 14,
+      "notice": {
+        "en": "Check-in: 13:10–13:40. The workshop begins at 13:40.",
+        "zh": "13:10–13:40 签到，工作坊于 13:40 正式开始。"
       }
     },
     {
@@ -3984,14 +4398,15 @@
             "zh": "学习使用 ADK 编排复杂的多智能体系统。你将创建父子智能体层级结构，利用会话状态字典管理多轮对话记忆，并通过工作流智能体传递上下文，构建强大的交互式 AI 应用。"
           },
           "date": "2026-10-17",
-          "timeSlot": "11:25-12:25",
-          "timezone": "Asia/Shanghai"
+          "timezone": "Asia/Shanghai",
+          "timingReview": {
+            "previousTimeSlot": "11:25-12:25",
+            "reason": "outside-final-program-window"
+          },
+          "timeSlot": "11:25-12:25"
         }
       ],
       "originalName": "Google Cloud Workshop",
-      "date": "2026-10-17",
-      "timeSlot": "10:15-12:25",
-      "timezone": "Asia/Shanghai",
       "notice": {
         "zh": "*此为动手实操活动，需要自备笔记本电脑。",
         "en": "*This is a hands-on session, please bring your own laptop."
@@ -4000,7 +4415,14 @@
       "room": {
         "en": "3F – HAI LIAO",
         "zh": "3楼-海辽厅"
-      }
+      },
+      "sessions": [
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:15-12:25"
+        }
+      ],
+      "programOrder": 17
     },
     {
       "id": "ws-kvcdn",
@@ -4146,7 +4568,7 @@
           },
           "slug": "p-147-research-and-practice-of-agent-networking",
           "speakers": [
-            "lei-bo"
+            "cong-li"
           ],
           "originalAbstract": "面向智能体互联网的研究和相关实践内容。",
           "originalAbstractLanguage": "zh",
@@ -4155,7 +4577,8 @@
             "zh": "本工作坊介绍面向智能体互联网的研究与实践，探讨支持智能体跨系统发现、通信与协作所需的网络技术和基础设施。"
           },
           "date": "2026-10-17",
-          "timeSlot": "15:10-15:45"
+          "timeSlot": "15:10-15:45",
+          "editorialNote": "Lei Bo replaced by Cong Li in the October 9 workshop program and speaker registry."
         },
         {
           "ref": "WS-KVCDN-OCT-17-TEA-BREAK",
@@ -4248,6 +4671,105 @@
       "room": {
         "en": "2F – KAI XUAN 2",
         "zh": "2楼-凯旋2厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:15-17:30"
+        }
+      ],
+      "programOrder": 29
+    },
+    {
+      "id": "ws-gaussdb",
+      "sourceId": "ws-gaussdb",
+      "name": {
+        "en": "openGauss Database & Ecosystem Forum",
+        "zh": "openGauss 数据库与生态协同论坛"
+      },
+      "originalName": "Huawei GaussDB Workshop",
+      "group": "workshops",
+      "room": {
+        "en": "3F – HAI LIAO",
+        "zh": "3楼-海辽厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "14:00-17:30"
+        }
+      ],
+      "programOrder": 15,
+      "talks": []
+    },
+    {
+      "id": "ws-ascend",
+      "sourceId": "ws-ascend",
+      "name": {
+        "en": "Agentic AI Infrastructure Forum",
+        "zh": "Agentic 基础设施论坛"
+      },
+      "originalName": "Huawei Ascend Workshop",
+      "group": "workshops",
+      "room": {
+        "en": "3F – HAI LIAO",
+        "zh": "3楼-海辽厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:15-12:00"
+        }
+      ],
+      "programOrder": 16,
+      "talks": []
+    },
+    {
+      "id": "ws-cann",
+      "sourceId": "ws-cann",
+      "name": {
+        "en": "Huawei CANN Workshop",
+        "zh": "华为 CANN 工作坊"
+      },
+      "originalName": "Huawei CANN Workshop",
+      "group": "workshops",
+      "room": {
+        "en": "2F – KAI XUAN 2",
+        "zh": "2楼-凯旋2厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "14:00-17:30"
+        }
+      ],
+      "programOrder": 28,
+      "talks": []
+    },
+    {
+      "id": "ws-rust-training",
+      "sourceId": "ws-rust-training",
+      "name": {
+        "en": "Rust Instructor Training & Workshop",
+        "zh": "Rust 师资培训与教学研讨会"
+      },
+      "originalName": "Rust Training",
+      "group": "workshops",
+      "room": {
+        "en": "2F – HAI HAN",
+        "zh": "2楼-海汉厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-17",
+          "timeSlot": "09:30-18:00"
+        }
+      ],
+      "programOrder": 32,
+      "talks": [],
+      "notice": {
+        "en": "Invitation only. Internal workshop details are not published.",
+        "zh": "邀请制闭门研讨会，内部议程不公开。"
       }
     }
   ],
@@ -4264,5 +4786,374 @@
       "en": "Oct 17",
       "zh": "10 月 17 日"
     }
-  ]
+  ],
+  "activities": [
+    {
+      "id": "ai-vision-forum",
+      "name": {
+        "en": "AI Vision Forum",
+        "zh": "AI 人工智能愿景论坛"
+      },
+      "group": "side-events",
+      "room": {
+        "en": "Angsana Zhuhai Phoenix Bay – 4F, Egret Hall",
+        "zh": "珠海凤凰湾悦椿酒店 · 4楼白鹭厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-14",
+          "timeSlot": "09:30-17:00"
+        },
+        {
+          "date": "2026-10-15",
+          "timeSlot": "09:30-17:00"
+        }
+      ],
+      "programOrder": 0,
+      "notice": {
+        "en": "Closed-door forum. Registration begins at 09:00 on both days.",
+        "zh": "闭门论坛。两天均于 09:00 开始签到。"
+      }
+    },
+    {
+      "id": "vision-forum-lunch",
+      "name": {
+        "en": "AI Vision Forum · Buffet Lunch",
+        "zh": "AI 愿景论坛 · 中午自助餐"
+      },
+      "group": "meals",
+      "room": {
+        "en": "Angsana Zhuhai Phoenix Bay – 1F, JI SHI Restaurant",
+        "zh": "珠海凤凰湾悦椿酒店 · 一楼集食餐厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-14",
+          "timeSlot": "12:15-14:00"
+        },
+        {
+          "date": "2026-10-15",
+          "timeSlot": "12:00-14:00"
+        }
+      ],
+      "programOrder": 1
+    },
+    {
+      "id": "vision-forum-dinner",
+      "name": {
+        "en": "AI Vision Forum · Round-table Dinner",
+        "zh": "AI 愿景论坛 · 晚上圆桌餐"
+      },
+      "group": "meals",
+      "room": {
+        "en": "Angsana Zhuhai Phoenix Bay – 6F, HE HUA Hall",
+        "zh": "珠海凤凰湾悦椿酒店 · 六楼荷花厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-14",
+          "timeSlot": "17:00-19:00"
+        },
+        {
+          "date": "2026-10-15",
+          "timeSlot": "17:00-18:30"
+        }
+      ],
+      "programOrder": 2
+    },
+    {
+      "id": "cruise-dinner",
+      "name": {
+        "en": "Cruise Dinner",
+        "zh": "邮轮晚宴"
+      },
+      "group": "side-events",
+      "room": {
+        "en": "Shenzhen Cruise",
+        "zh": "深圳邮轮"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "startTime": "18:30"
+        }
+      ],
+      "programOrder": 3,
+      "notice": {
+        "en": "Invited guests only. End time to be confirmed.",
+        "zh": "仅限受邀嘉宾，结束时间待确认。"
+      }
+    },
+    {
+      "id": "spotlight-talks",
+      "name": {
+        "en": "Spotlight Shenzhen 2026: Next-Gen AI-Native Products",
+        "zh": "Spotlight Shenzhen 2026：下一代 AI 原生产品"
+      },
+      "group": "showcases",
+      "room": {
+        "en": "3F – ADEN 1",
+        "zh": "3楼-伊敦1厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "12:20-13:40"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "12:20-13:40"
+        }
+      ],
+      "programOrder": 19
+    },
+    {
+      "id": "exhibition-3f",
+      "name": {
+        "en": "Company Exhibition · 3F",
+        "zh": "企业展区 · 三楼"
+      },
+      "group": "exhibitions",
+      "room": {
+        "en": "3F – Foyer",
+        "zh": "3楼序厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "09:00-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "09:00-17:30"
+        }
+      ],
+      "programOrder": 20
+    },
+    {
+      "id": "hackathon-simulation",
+      "name": {
+        "en": "Embodied AI Simulation",
+        "zh": "具身智能仿真"
+      },
+      "group": "hackathons",
+      "room": {
+        "en": "Event exhibition area",
+        "zh": "外场"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:20-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:20-17:00"
+        }
+      ],
+      "programOrder": 21,
+      "notice": {
+        "en": "On October 17, submissions and judging finish before the 16:55 awards ceremony. Demonstrations remain open until 17:00.",
+        "zh": "10月17日提交及评审在 16:55 颁奖前完成，现场展示持续至 17:00。"
+      }
+    },
+    {
+      "id": "hackathon-real-robot",
+      "name": {
+        "en": "Multi-Agent Collaborative",
+        "zh": "多机协同智能体"
+      },
+      "group": "hackathons",
+      "room": {
+        "en": "Event exhibition area",
+        "zh": "外场"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:20-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:20-17:00"
+        }
+      ],
+      "programOrder": 22,
+      "notice": {
+        "en": "On October 17, submissions and judging finish before the 16:55 awards ceremony. Demonstrations remain open until 17:00.",
+        "zh": "10月17日提交及评审在 16:55 颁奖前完成，现场展示持续至 17:00。"
+      }
+    },
+    {
+      "id": "hackathon-agent-os",
+      "name": {
+        "en": "Agentic App Hackathon",
+        "zh": "Agentic App 黑客松"
+      },
+      "group": "hackathons",
+      "room": {
+        "en": "Event exhibition area",
+        "zh": "外场"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:20-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:20-17:00"
+        }
+      ],
+      "programOrder": 23,
+      "notice": {
+        "en": "On October 17, submissions and judging finish before the 16:55 awards ceremony. Demonstrations remain open until 17:00.",
+        "zh": "10月17日提交及评审在 16:55 颁奖前完成，现场展示持续至 17:00。"
+      }
+    },
+    {
+      "id": "un-open-source-convening",
+      "name": {
+        "en": "United Nations Open Source Convening",
+        "zh": "联合国开源专题会议"
+      },
+      "group": "side-events",
+      "room": {
+        "en": "2F – HAI HAN",
+        "zh": "2楼-海汉厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:15-12:00"
+        }
+      ],
+      "programOrder": 30,
+      "notice": {
+        "en": "Applications are reviewed. Admission requires approval and an official invitation.",
+        "zh": "接受参会申请，须通过审核并收到正式邀请后入场。"
+      },
+      "url": "/un-open-source-convening/"
+    },
+    {
+      "id": "closed-door-meeting-2",
+      "name": {
+        "en": "Closed-door Meeting 2",
+        "zh": "闭门会2"
+      },
+      "group": "side-events",
+      "room": {
+        "en": "2F – HAI HAN",
+        "zh": "2楼-海汉厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "13:30-17:30"
+        }
+      ],
+      "programOrder": 31,
+      "draft": true,
+      "editorialNote": "Old placeholder absent from the latest overall program; no public session announced."
+    },
+    {
+      "id": "rust-con",
+      "name": {
+        "en": "Rust Con",
+        "zh": "Rust Con"
+      },
+      "group": "side-events",
+      "room": {
+        "en": "2F – QI HANG 1, 2 & 3",
+        "zh": "2楼-启航1、2、3厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16"
+        },
+        {
+          "date": "2026-10-17"
+        }
+      ],
+      "programOrder": 33
+    },
+    {
+      "id": "exhibition-2f",
+      "name": {
+        "en": "Company Exhibition · 2F",
+        "zh": "企业展区 · 二楼"
+      },
+      "group": "exhibitions",
+      "room": {
+        "en": "2F – Foyer",
+        "zh": "2楼序厅"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "09:00-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "09:00-17:30"
+        }
+      ],
+      "programOrder": 34
+    },
+    {
+      "id": "hackathon-factory",
+      "name": {
+        "en": "Agentic Software Factory",
+        "zh": "智能体软件工厂"
+      },
+      "group": "hackathons",
+      "room": {
+        "en": "Event exhibition area",
+        "zh": "外场"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:20-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:20-17:00"
+        }
+      ],
+      "programOrder": 35,
+      "notice": {
+        "en": "On October 17, submissions and judging finish before the 16:55 awards ceremony. Demonstrations remain open until 17:00.",
+        "zh": "10月17日提交及评审在 16:55 颁奖前完成，现场展示持续至 17:00。"
+      }
+    },
+    {
+      "id": "hackathon-observer",
+      "name": {
+        "en": "Agentic Cosmos",
+        "zh": "智能体巡天"
+      },
+      "group": "hackathons",
+      "room": {
+        "en": "Event exhibition area",
+        "zh": "外场"
+      },
+      "sessions": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "10:20-17:30"
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "10:20-17:00"
+        }
+      ],
+      "programOrder": 36,
+      "notice": {
+        "en": "On October 17, submissions and judging finish before the 16:55 awards ceremony. Demonstrations remain open until 17:00.",
+        "zh": "10月17日提交及评审在 16:55 颁奖前完成，现场展示持续至 17:00。"
+      }
+    }
+  ],
+  "timezone": "Asia/Shanghai"
 }

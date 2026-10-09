@@ -23,18 +23,20 @@ const previewCopy = {
     sidebarAria: "Schedule categories",
     tracks: "Tracks",
     workshops: "Workshops",
-    sessions: (count: number) => `${count} talk${count === 1 ? "" : "s"}`,
-    summary: (talks: number, categories: number) => `All ${talks} talks · ${categories} program categories`,
-    note: "Remaining dates, times, and rooms will be added once confirmed.",
+    arrangement: "Program",
+    sessions: (count: number) => `${count} session${count === 1 ? "" : "s"}`,
+    summary: (talks: number, categories: number) => `${talks} sessions · ${categories} program categories`,
+    note: "All times are China Standard Time (UTC+8). The program is subject to updates.",
   },
   zh: {
     sidebarTitle: "筛选议程",
     sidebarAria: "议程分类",
     tracks: "分论坛主题",
     workshops: "工作坊",
-    sessions: (count: number) => `${count} 场演讲`,
-    summary: (talks: number, categories: number) => `全部共 ${talks} 场演讲 · ${categories} 个议程分类`,
-    note: "其余日期、时间与会场确认后将在此补充。",
+    arrangement: "活动安排",
+    sessions: (count: number) => `${count} 场议程`,
+    summary: (talks: number, categories: number) => `共 ${talks} 场议程 · ${categories} 个议程分类`,
+    note: "所有时间均为北京时间（UTC+8）。日程如有调整将在此更新。",
   },
 }[previewLang]
 const previewTalkCount = schedulePreview.tracks.reduce(
@@ -42,16 +44,17 @@ const previewTalkCount = schedulePreview.tracks.reduce(
   0,
 )
 const previewFirstTrackId = schedulePreview.tracks[0]?.id
+const previewPrograms = schedulePreview.tracks
 const previewSidebarGroups = [
   {
     id: "tracks",
     label: previewCopy.tracks,
-    tracks: schedulePreview.tracks.filter((track) => !track.id.startsWith("ws-")),
+    tracks: previewPrograms.filter((track) => track.group === "tracks"),
   },
   {
     id: "workshops",
     label: previewCopy.workshops,
-    tracks: schedulePreview.tracks.filter((track) => track.id.startsWith("ws-")),
+    tracks: previewPrograms.filter((track) => track.group === "workshops"),
   },
 ].filter((group) => group.tracks.length > 0)
 const previewSpeakerData = previewLang === "zh" ? speakersZh : speakersEn
@@ -62,6 +65,9 @@ const previewScheduleBasePath = previewLang === "zh" ? "/zh/schedule/" : "/sched
 const previewSpeakerBasePath = previewLang === "zh" ? "/zh/speakers/" : speakerBasePath
 
 const trackColor = programCategoryColor
+const dateLabel = (date: string) => previewLang === "zh"
+  ? `${Number(date.slice(5, 7))}月${Number(date.slice(8))}日`
+  : new Date(`${date}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })
 ---
 
 <section class="schedule-preview-mode" data-bg-section="lightgray" data-theme-section="light">
@@ -71,7 +77,7 @@ const trackColor = programCategoryColor
           <div class="preview-sidebar-heading">
             <p class="preview-sidebar-title">{previewCopy.sidebarTitle}</p>
             <p class="preview-sidebar-summary">
-              {previewCopy.summary(previewTalkCount, schedulePreview.tracks.length)}
+              {previewCopy.summary(previewTalkCount, previewPrograms.length)}
             </p>
           </div>
           {previewSidebarGroups.map((group) => (
@@ -96,9 +102,9 @@ const trackColor = programCategoryColor
 
         <div class="preview-main">
           <div class="preview-mobile-tracks">
-            <p class="preview-group-label">{previewCopy.tracks}</p>
+            <p class="preview-group-label">{previewCopy.sidebarAria}</p>
             <div class="preview-mobile-pills">
-              {schedulePreview.tracks.map((track, index) => (
+              {previewPrograms.map((track, index) => (
                 <button
                   class={`preview-mobile-pill${index === 0 ? " active" : ""}`}
                   data-preview-track-button={track.id}
@@ -111,7 +117,7 @@ const trackColor = programCategoryColor
             </div>
           </div>
 
-          {schedulePreview.tracks.map((track, trackIndex) => {
+          {previewPrograms.map((track, trackIndex) => {
             const groups = groupScheduleDays(track.talks)
             const firstDay = groups.find((group) => group.talks.length > 0)?.date
             return (
@@ -122,12 +128,19 @@ const trackColor = programCategoryColor
             >
               <div class="preview-panel-header" style={`--tc: ${trackColor(track.id)}`}>
                 <h2>{track.name[previewLang]}</h2>
-                <span>{previewCopy.sessions(track.talks.length)}</span>
+                <span>{track.talks.length ? previewCopy.sessions(track.talks.length) : previewCopy.arrangement}</span>
               </div>
 
-              {"notice" in track && <p class="preview-workshop-notice">{track.notice[previewLang]}</p>}
+              {track.room && <p class="preview-program-room">{track.room[previewLang]}</p>}
+              {track.sessions && <ul class="preview-program-times">
+                {track.sessions.map((session) => <li>
+                  <time datetime={session.date}>{dateLabel(session.date)}</time>
+                  <span>{session.timeSlot?.replace("-", "–") || (session.startTime ? `${session.startTime} ${previewLang === "zh" ? "开始" : "onwards"}` : (previewLang === "zh" ? "时间待定" : "Time TBA"))}</span>
+                </li>)}
+              </ul>}
+              {track.notice && <p class="preview-workshop-notice">{track.notice[previewLang]}</p>}
 
-              <div class="preview-day-nav" aria-label={previewLang === "zh" ? "选择日期" : "Choose day"}>
+              {track.talks.length > 0 && <div class="preview-day-nav" aria-label={previewLang === "zh" ? "选择日期" : "Choose day"}>
                 {groups.filter((group) => conferenceDays.some((day) => day.date === group.date) || group.talks.length > 0).map((group) => {
                   const day = conferenceDays.find((day) => day.date === group.date)
                   return (
@@ -140,7 +153,7 @@ const trackColor = programCategoryColor
                     </button>
                   )
                 })}
-              </div>
+              </div>}
               {groups.filter((group) => group.talks.length > 0).map((group) => (
               <div class="preview-session-list" data-preview-day-panel={group.date} hidden={group.date !== firstDay}>
                 {group.talks.map((talk) => {

@@ -3593,8 +3593,8 @@
     {
       "id": "lee-chun-pak",
       "name": {
-        "en": "Lee Chun Pak",
-        "zh": "Lee Chun Pak"
+        "en": "Chun Pak Lee",
+        "zh": "Chun Pak Lee"
       },
       "roleOrg": {
         "en": "Overseas Market Strategist, Hiwonder",
@@ -3613,7 +3613,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/lee-chun-pak.png",
       "sourceNames": [
-        "Lee Chun Pak"
+        "Lee Chun Pak",
+        "Chun Pak Lee"
       ],
       "source": "cfp"
     },
@@ -4397,7 +4398,7 @@
       "id": "jennie-wang",
       "name": {
         "en": "Jennie Wang",
-        "zh": "Jennie Wang"
+        "zh": "王嘉琳"
       },
       "roleOrg": {
         "en": "AI Robotics Product Marketing, Seeed Studio",
@@ -4416,7 +4417,8 @@
       "draft": false,
       "image": "/images/speakers/confirmed/jennie-wang.png",
       "sourceNames": [
-        "Jennie Wang"
+        "Jennie Wang",
+        "王嘉琳"
       ],
       "source": "cfp"
     },
@@ -4570,7 +4572,8 @@
         "zh": "林云是上海交通大学副教授，也是智能体软件工程黑客松联合组织者。"
       },
       "tags": [
-        "ws-ai-education"
+        "ws-ai-education",
+        "sz26-agentic-ai-summit"
       ],
       "socialLinks": {},
       "draft": false,
@@ -4649,7 +4652,7 @@
       "id": "zhenboyu",
       "name": {
         "en": "Zhenbo Yu",
-        "zh": "Zhenbo Yu"
+        "zh": "郁振波"
       },
       "roleOrg": {
         "en": "CEO, NOVA CORE",
@@ -4667,7 +4670,8 @@
       "image": "/images/speakers/confirmed/zhenboyu.png",
       "sourceNames": [
         "zhenboyu",
-        "Zhenbo Yu"
+        "Zhenbo Yu",
+        "郁振波"
       ],
       "source": "cfp"
     },
@@ -4780,6 +4784,32 @@
       "source": "cfp"
     },
     {
+      "id": "zonghuan-wu",
+      "name": {
+        "en": "Zonghuan Wu",
+        "zh": "吴宗寰"
+      },
+      "roleOrg": {
+        "en": "Leader, MoFA.AI; Hackathon Co-organizer",
+        "zh": "MoFA.AI 负责人、黑客松联合组织者"
+      },
+      "bio": {
+        "en": "Zonghuan Wu leads MoFA.AI and is a hackathon co-organizer.",
+        "zh": "吴宗寰是 MoFA.AI 负责人、黑客松联合组织者。"
+      },
+      "image": "/images/speakers/confirmed/zonghuan-wu.png",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "sourceNames": [
+        "Zonghuan Wu",
+        "吴宗寰"
+      ],
+      "source": "invited",
+      "draft": false
+    },
+    {
       "id": "xudong-ren",
       "name": {
         "en": "Bill Ren",
@@ -4802,6 +4832,136 @@
         "Bill Ren",
         "Xudong Ren",
         "任旭东"
+      ],
+      "source": "invited",
+      "draft": false
+    },
+    {
+      "id": "guomian-zhuang",
+      "name": {
+        "en": "Guomian Zhuang",
+        "zh": "庄郭冕"
+      },
+      "roleOrg": {
+        "en": "Head of MemOS R&D, Memory Tensor",
+        "zh": "记忆张量 MemOS 研发负责人"
+      },
+      "bio": {
+        "en": "Guomian Zhuang. Head of MemOS R&D, Memory Tensor.",
+        "zh": "庄郭冕，记忆张量 MemOS 研发负责人。"
+      },
+      "image": "/images/speakers/confirmed/guomian-zhuang.png",
+      "tags": [
+        "sz26-agentic-os-app"
+      ],
+      "socialLinks": {},
+      "sourceNames": [
+        "Guomian Zhuang",
+        "庄郭冕"
+      ],
+      "source": "invited",
+      "draft": false
+    },
+    {
+      "id": "siheng-chen",
+      "name": {
+        "en": "Siheng Chen",
+        "zh": "陈思衡"
+      },
+      "roleOrg": {
+        "en": "Engineer, Second State",
+        "zh": "Second State 工程师"
+      },
+      "bio": {
+        "en": "Siheng Chen. Engineer, Second State.",
+        "zh": "陈思衡，Second State 工程师。"
+      },
+      "image": "/images/speakers/confirmed/siheng-chen.png",
+      "tags": [
+        "sz26-agentic-device"
+      ],
+      "socialLinks": {},
+      "sourceNames": [
+        "Siheng Chen",
+        "陈思衡"
+      ],
+      "source": "invited",
+      "draft": false
+    },
+    {
+      "id": "qiuji-chen",
+      "name": {
+        "en": "Qiuji Chen",
+        "zh": "陈秋吉"
+      },
+      "roleOrg": {
+        "en": "Student, Chongqing University of Posts and Telecommunications",
+        "zh": "重庆邮电大学学生"
+      },
+      "bio": {
+        "en": "Qiuji Chen. Student, Chongqing University of Posts and Telecommunications.",
+        "zh": "陈秋吉，重庆邮电大学学生。"
+      },
+      "image": "/images/speakers/confirmed/qiuji-chen.png",
+      "tags": [
+        "ws-dora"
+      ],
+      "socialLinks": {},
+      "sourceNames": [
+        "Qiuji Chen",
+        "陈秋吉"
+      ],
+      "source": "invited",
+      "draft": false,
+      "editorialNote": "Decision 12A: use the Chinese student role; English Lecturer in the source conflicts and awaits speaker confirmation."
+    },
+    {
+      "id": "mehdi-snene",
+      "name": {
+        "en": "Mehdi Snene",
+        "zh": "Mehdi Snene"
+      },
+      "roleOrg": {
+        "en": "Chief AI Officer, Digital infrastructure and emerging technologies, UN",
+        "zh": "联合国技术特使办公室首席人工智能官"
+      },
+      "bio": {
+        "en": "Mehdi Snene. Chief AI Officer, Digital infrastructure and emerging technologies, UN.",
+        "zh": "Mehdi Snene，联合国技术特使办公室首席人工智能官。"
+      },
+      "image": "/images/speakers/confirmed/mehdi-snene.png",
+      "tags": [
+        "special-keynote"
+      ],
+      "socialLinks": {},
+      "sourceNames": [
+        "Mehdi Snene"
+      ],
+      "source": "invited",
+      "draft": false
+    },
+    {
+      "id": "lixin-shao",
+      "name": {
+        "en": "Lixin Shao",
+        "zh": "邵立欣"
+      },
+      "roleOrg": {
+        "en": "General Manager of CANN business, Huawei",
+        "zh": "华为CANN领域总经理"
+      },
+      "bio": {
+        "en": "Lixin Shao. General Manager of CANN business, Huawei.",
+        "zh": "邵立欣，华为CANN领域总经理。"
+      },
+      "image": "/images/speakers/confirmed/lixin-shao.png",
+      "tags": [
+        "special-keynote"
+      ],
+      "socialLinks": {},
+      "sourceNames": [
+        "Lixin Shao",
+        "邵立欣"
       ],
       "source": "invited",
       "draft": false

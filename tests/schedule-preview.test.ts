@@ -22,7 +22,7 @@ describe("published schedule relationships", () => {
     expect(talks.find((talk) => talk.ref === "SUMMIT-FIRESIDE-CHAT")).toMatchObject({
       speakers: ["dhh", "xudong-ren"],
       date: "2026-10-17",
-      timeSlot: "11:35-12:15",
+      timeSlot: "11:05-12:00",
     });
 
     expect(speakersEn.categories[1]).toMatchObject({
@@ -100,6 +100,35 @@ describe("published schedule relationships", () => {
       "ws-vllm",
       "ws-google-cloud",
       "ws-kvcdn",
+      "ws-gaussdb",
+      "ws-ascend",
+      "ws-cann",
+      "ws-rust-training",
+    ]);
+  });
+
+  it("publishes complete times without double-booking a speaker across tracks", () => {
+    const slots = talks.map((talk) => {
+      expect(talk.date, talk.ref).toMatch(/^2026-10-\d{2}$/);
+      expect(talk.timeSlot, talk.ref).toMatch(/^\d{2}:\d{2}-\d{2}:\d{2}$/);
+      const [start, end] = talk.timeSlot!.split("-");
+      return { ...talk, start, end };
+    });
+    for (let i = 0; i < slots.length; i++) {
+      for (const other of slots.slice(i + 1)) {
+        const talk = slots[i];
+        if (talk.date !== other.date || talk.start >= other.end || other.start >= talk.end) continue;
+        expect(talk.speakers.filter((id) => other.speakers.includes(id)), `${talk.ref} overlaps ${other.ref}`).toEqual([]);
+      }
+    }
+  });
+
+  it("exposes public activity times and excludes archived placeholders", () => {
+    const activities = schedulePreview.activities;
+    expect(activities.every((activity) => !activity.draft)).toBe(true);
+    expect(activities.some((activity) => activity.id === "closed-door-meeting-2")).toBe(false);
+    expect(activities.find((activity) => activity.id === "cruise-dinner")?.sessions).toEqual([
+      { date: "2026-10-16", startTime: "18:30" },
     ]);
   });
 });

@@ -40,7 +40,25 @@ export interface Track {
   group: string;
   notice?: LocalizedText;
   room?: LocalizedText;
+  sessions?: ProgramSession[];
   talks: Talk[];
+}
+export interface ProgramSession {
+  date: string;
+  timeSlot?: string;
+  startTime?: string;
+  title?: LocalizedText;
+}
+export interface Activity {
+  id: string;
+  name: LocalizedText;
+  group: string;
+  room?: LocalizedText;
+  notice?: LocalizedText;
+  sessions: ProgramSession[];
+  program?: ProgramSession[];
+  url?: string;
+  draft?: boolean;
 }
 
 // These are read-only language views. Edit the two JSON files, never generated copies.
@@ -48,6 +66,7 @@ export const allSpeakers = speakerData.speakers as Speaker[];
 export const allTracks = scheduleData.tracks as Track[];
 export const schedule = {
   ...scheduleData,
+  activities: (scheduleData.activities as Activity[]).filter((activity) => !activity.draft),
   tracks: allTracks.map((track) => ({
     ...track,
     talks: track.talks.filter((talk) => !talk.draft),

@@ -73,6 +73,7 @@ const workshopTracks = schedulePreview.tracks
     id: track.id,
     title: track.name[lang],
     talks: track.talks.map((talk) => talk.title[lang]),
+    summary: track.notice?.[lang] || track.sessions?.map((session) => `${session.date.slice(5).replace("-", "/")} ${session.timeSlot || ""}`).join(" · ") || "",
     link: `${lang === "zh" ? "/zh" : ""}/schedule/#${track.id}`,
   }));
 
@@ -188,10 +189,10 @@ const trackIcons = [
             >
               <div class="ps-compact-meta">
                 <span>{compactCopy.workshop}</span>
-                <span>{workshop.talks.length} {compactCopy.sessions}</span>
+                <span>{workshop.talks.length ? `${workshop.talks.length} ${compactCopy.sessions}` : compactCopy.view}</span>
               </div>
               <h4 class="ps-compact-title">{workshop.title}</h4>
-              <p class="ps-compact-text">{workshop.talks.join(" · ")}</p>
+              <p class="ps-compact-text">{workshop.talks.length ? workshop.talks.join(" · ") : workshop.summary}</p>
               <span class="ps-compact-foot" aria-hidden="true">
                 <span></span>
                 <span>{compactCopy.view}</span>
