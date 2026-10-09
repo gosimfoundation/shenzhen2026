@@ -21,3 +21,4 @@ docs/
 # Generated editing copies for speaker portraits
 speaker-photo-inbox/*
 !speaker-photo-inbox/README.md
+planning-master.xlsx
