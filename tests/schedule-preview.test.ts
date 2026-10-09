@@ -20,7 +20,7 @@ describe("published schedule relationships", () => {
       .map((track) => track.id);
     expect(dhhTrackIds).toEqual(["special-keynote", "agentic-ai-summit"]);
     expect(talks.find((talk) => talk.ref === "SUMMIT-FIRESIDE-CHAT")).toMatchObject({
-      speakers: ["dhh", "michael-yuan"],
+      speakers: ["dhh", "xudong-ren"],
       date: "2026-10-17",
       timeSlot: "11:35-12:15",
     });

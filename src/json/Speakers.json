@@ -4778,6 +4778,32 @@
         "陈海波"
       ],
       "source": "cfp"
+    },
+    {
+      "id": "xudong-ren",
+      "name": {
+        "en": "Xudong Ren",
+        "zh": "任旭东"
+      },
+      "roleOrg": {
+        "en": "Fireside Chat Speaker",
+        "zh": "炉边对谈嘉宾"
+      },
+      "bio": {
+        "en": "Xudong Ren joins David Heinemeier Hansson (DHH) for a fireside chat at GOSIM Shenzhen 2026.",
+        "zh": "任旭东将在 GOSIM 深圳 2026 与 David Heinemeier Hansson（DHH）进行炉边对谈。"
+      },
+      "image": "/images/speakers/confirmed/xudong-ren.png",
+      "tags": [
+        "sz26-agentic-ai-summit"
+      ],
+      "socialLinks": {},
+      "sourceNames": [
+        "Xudong Ren",
+        "任旭东"
+      ],
+      "source": "invited",
+      "draft": false
     }
   ]
 }

@@ -411,15 +411,15 @@
           },
           "speakers": [
             "dhh",
-            "michael-yuan"
+            "xudong-ren"
           ],
           "originalTitle": "Fireside Chat",
           "originalLanguage": "en",
-          "originalAbstract": "A fireside chat with David Heinemeier Hansson and Michael Yuan.",
+          "originalAbstract": "A fireside chat with David Heinemeier Hansson (DHH) and Xudong Ren.",
           "originalAbstractLanguage": "en",
           "overview": {
-            "en": "A fireside chat with David Heinemeier Hansson and Michael Yuan.",
-            "zh": "David Heinemeier Hansson 与 Michael Yuan 炉边对谈。"
+            "en": "A fireside chat with David Heinemeier Hansson (DHH) and Xudong Ren.",
+            "zh": "David Heinemeier Hansson（DHH）与任旭东炉边对谈。"
           },
           "date": "2026-10-17",
           "timeSlot": "11:35-12:15"
