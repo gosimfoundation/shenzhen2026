@@ -2496,12 +2496,12 @@
         "zh": "姜宁"
       },
       "roleOrg": {
-        "en": "Independent Open Source & Agentic AI Consultant",
-        "zh": "独立开源与智能体 AI 顾问"
+        "en": "Independent Open Source and Agentic AI Consultant; DeerFlow Core Contributor",
+        "zh": "独立开源与智能体AI顾问，DeerFlow核心贡献者"
       },
       "bio": {
-        "en": "Willem Jiang is an independent open-source and agentic AI consultant and a maintainer of DeerFlow. He previously worked at ByteDance's OSPO, served on the Apache Software Foundation Board of Directors, and contributed to Apache Camel, CXF, ServiceMix, and ServiceComb. His earlier roles include open-source technical expert at Huawei and Principal Engineer at Red Hat.",
-        "zh": "独立开源与智能体 AI 顾问、DeerFlow 维护者。曾任字节跳动 OSPO 开源布道师和 Apache 软件基金会董事，并长期参与 Apache Camel、CXF、ServiceMix 与 ServiceComb 等项目。此前曾任华为开源技术专家及 Red Hat 首席工程师。"
+        "en": "Willem Jiang is an independent open-source and agentic AI consultant and a core contributor to DeerFlow. He previously worked at ByteDance's OSPO, served on the Apache Software Foundation Board of Directors, and contributed to Apache Camel, CXF, ServiceMix, and ServiceComb. His earlier roles include open-source technical expert at Huawei and Principal Engineer at Red Hat.",
+        "zh": "独立开源与智能体 AI 顾问、DeerFlow 核心贡献者。曾任字节跳动 OSPO 开源布道师和 Apache 软件基金会董事，并长期参与 Apache Camel、CXF、ServiceMix 与 ServiceComb 等项目。此前曾任华为开源技术专家及 Red Hat 首席工程师。"
       },
       "tags": [
         "sz26-agentic-ai-summit"
@@ -4624,12 +4624,12 @@
         "zh": "黄佳"
       },
       "roleOrg": {
-        "en": "Chief Technology Consultant, Singularity Intelligence Research Institute",
-        "zh": "首席技术咨询师, 奇点智能研究院"
+        "en": "Lead AI Engineer, A*STAR Singapore",
+        "zh": "新加坡科技研究局（A*STAR）首席 AI 工程师"
       },
       "bio": {
-        "en": "Jia Huang is an AI researcher at A*STAR, Singapore, and a technical author who writes about how AI agents are engineered. He is the author of the Designing AI Agents, The Claude Code Operating Model,  and RAG from First Principles.\n\nHe proposed the dual-axis framework for agent design patterns, which classifies patterns by cognitive function and execution topology, and the Pattern Selection Card, a practical method for choosing patterns under real cost and latency constraints. His work focuses on the engineering that surrounds the model rather than the model itself: context, tools, execution environments, and governance. He writes in both Chinese and English.",
-        "zh": "黄佳是新加坡 A*STAR 的 AI 研究员和技术作者，著有《Designing AI Agents》《The Claude Code Operating Model》和《RAG from First Principles》。他提出了智能体设计模式双轴框架，从认知功能与执行拓扑两个维度对模式进行分类，并提出 Pattern Selection Card，帮助团队在真实成本和延迟约束下选择模式。他关注模型之外的工程体系，包括上下文、工具、执行环境与治理。"
+        "en": "Jia Huang is Lead AI Engineer at A*STAR Singapore, and a technical author who writes about how AI agents are engineered. He is the author of the Designing AI Agents, The Claude Code Operating Model,  and RAG from First Principles.\n\nHe proposed the dual-axis framework for agent design patterns, which classifies patterns by cognitive function and execution topology, and the Pattern Selection Card, a practical method for choosing patterns under real cost and latency constraints. His work focuses on the engineering that surrounds the model rather than the model itself: context, tools, execution environments, and governance. He writes in both Chinese and English.",
+        "zh": "黄佳是新加坡科技研究局（A*STAR）首席 AI 工程师和技术作者，著有《Designing AI Agents》《The Claude Code Operating Model》和《RAG from First Principles》。他提出了智能体设计模式双轴框架，从认知功能与执行拓扑两个维度对模式进行分类，并提出 Pattern Selection Card，帮助团队在真实成本和延迟约束下选择模式。他关注模型之外的工程体系，包括上下文、工具、执行环境与治理。"
       },
       "tags": [
         "sz26-agentic-ai-summit"
