@@ -4857,7 +4857,7 @@
       "sessions": [
         {
           "date": "2026-10-16",
-          "timeSlot": "10:15-12:00"
+          "timeSlot": "14:00-17:30"
         }
       ],
       "programOrder": 15,
@@ -4885,8 +4885,7 @@
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
           "previousTimeSlot": "14:00-14:35",
-          "timePending": true,
-          "programOrder": 0
+          "timeSlot": "14:00-14:35"
         },
         {
           "ref": "OPENGAUSS-MULTI-MASTER",
@@ -4911,8 +4910,7 @@
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
           "previousTimeSlot": "14:35-15:10",
-          "timePending": true,
-          "programOrder": 1
+          "timeSlot": "14:35-15:10"
         },
         {
           "ref": "OPENGAUSS-VECTOR-DATABASE",
@@ -4937,8 +4935,7 @@
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
           "previousTimeSlot": "15:10-15:45",
-          "timePending": true,
-          "programOrder": 2
+          "timeSlot": "15:10-15:45"
         },
         {
           "ref": "OPENGAUSS-TEA-BREAK",
@@ -4961,8 +4958,7 @@
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
           "previousTimeSlot": "15:45-16:00",
-          "timePending": true,
-          "programOrder": 3
+          "timeSlot": "15:45-16:00"
         },
         {
           "ref": "OPENGAUSS-VASTBASE",
@@ -4987,8 +4983,7 @@
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
           "previousTimeSlot": "16:00-16:30",
-          "timePending": true,
-          "programOrder": 4
+          "timeSlot": "16:00-16:30"
         },
         {
           "ref": "OPENGAUSS-INTARKDB",
@@ -5013,8 +5008,7 @@
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
           "previousTimeSlot": "16:30-17:00",
-          "timePending": true,
-          "programOrder": 5
+          "timeSlot": "16:30-17:00"
         },
         {
           "ref": "OPENGAUSS-ROUNDTABLE",
@@ -5043,14 +5037,9 @@
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
           "previousTimeSlot": "17:00-17:30",
-          "timePending": true,
-          "programOrder": 6
+          "timeSlot": "17:00-17:30"
         }
-      ],
-      "notice": {
-        "en": "The program window has been updated. Times for some individual sessions will be announced.",
-        "zh": "专场时间已更新，部分议题的具体时间待重新安排。"
-      }
+      ]
     },
     {
       "id": "ws-ascend",
@@ -5062,8 +5051,8 @@
       "originalName": "Huawei Ascend Workshop",
       "group": "workshops",
       "room": {
-        "en": "3F – HAI LIAO",
-        "zh": "3楼-海辽厅"
+        "en": "2F – KAI XUAN 2",
+        "zh": "2楼-凯旋2厅"
       },
       "sessions": [
         {
@@ -5251,13 +5240,13 @@
       "originalName": "Huawei CANN Workshop",
       "group": "workshops",
       "room": {
-        "en": "2F – KAI XUAN 2",
-        "zh": "2楼-凯旋2厅"
+        "en": "3F – HAI LIAO",
+        "zh": "3楼-海辽厅"
       },
       "sessions": [
         {
           "date": "2026-10-16",
-          "timeSlot": "13:30-17:30"
+          "timeSlot": "10:15-12:00"
         }
       ],
       "programOrder": 28,
@@ -5284,7 +5273,8 @@
           "originalLanguage": "zh",
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
-          "timeSlot": "13:30-13:35"
+          "timeSlot": "10:15-10:20",
+          "previousTimeSlot": "13:30-13:35"
         },
         {
           "ref": "CANN-DEEPSEEK-ASCEND",
@@ -5308,7 +5298,8 @@
           "originalLanguage": "zh",
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
-          "timeSlot": "13:35-14:00"
+          "timeSlot": "10:20-10:45",
+          "previousTimeSlot": "13:35-14:00"
         },
         {
           "ref": "CANN-DEEPEP-DEEPGEMM",
@@ -5332,7 +5323,8 @@
           "originalLanguage": "zh",
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
-          "timeSlot": "14:00-14:25"
+          "timeSlot": "10:45-11:10",
+          "previousTimeSlot": "14:00-14:25"
         },
         {
           "ref": "CANN-FLASHMLA-DEEPJIT",
@@ -5356,7 +5348,8 @@
           "originalLanguage": "zh",
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
-          "timeSlot": "14:25-14:50"
+          "timeSlot": "11:10-11:35",
+          "previousTimeSlot": "14:25-14:50"
         },
         {
           "ref": "CANN-TILELANG-TILEKERNELS",
@@ -5380,7 +5373,8 @@
           "originalLanguage": "zh",
           "originalAbstract": "",
           "originalAbstractLanguage": "zh",
-          "timeSlot": "14:50-15:15"
+          "timeSlot": "11:35-12:00",
+          "previousTimeSlot": "14:50-15:15"
         }
       ]
     },
