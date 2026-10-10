@@ -73,16 +73,29 @@
     },
     {
       "category": "gold",
+      "image": "benq.png",
+      "name": "BenQ",
+      "url": "https://www.benq.com/"
+    },
+    {
+      "category": "gold",
+      "image": "dataclawhub.png",
+      "name": "DataClawHub",
+      "logoClass": "partner-logo-wide",
+      "url": "https://dataclawhub.com/"
+    },
+    {
+      "category": "gold",
       "image": "asiainfo.png",
       "name": "AsiaInfo",
       "url": "https://www.asiainfo.com/"
     },
     {
       "category": "gold",
-      "image": "china-unidata.png",
-      "name": "China Unidata Logistics Information Co., Ltd.",
+      "image": "dexmal.png",
+      "name": "Dexmal",
       "logoClass": "partner-logo-wide",
-      "url": "https://www.chinaunidata.com/"
+      "url": "https://www.dexmal.com/"
     },
     {
       "category": "gold",
@@ -92,10 +105,11 @@
       "url": "https://www.minimax.io/"
     },
     {
-      "category": "gold",
-      "image": "benq.png",
-      "name": "BenQ",
-      "url": "https://www.benq.com/"
+      "category": "silver",
+      "image": "amd.png",
+      "name": "AMD",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.amd.com/"
     },
     {
       "category": "silver",
@@ -103,6 +117,20 @@
       "name": "TaoToken",
       "logoClass": "partner-logo-wide",
       "url": "https://taotoken.net/"
+    },
+    {
+      "category": "silver",
+      "image": "infermatrix.png",
+      "name": "InferMatrix",
+      "logoClass": "partner-logo-wide",
+      "url": "https://infermatrix.com/"
+    },
+    {
+      "category": "silver",
+      "image": "redhat.png",
+      "name": "Red Hat",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.redhat.com/"
     },
     {
       "category": "silver",
@@ -130,6 +158,13 @@
       "name": "Broadview",
       "logoClass": "partner-logo-wide",
       "url": "https://www.broadview.com.cn/"
+    },
+    {
+      "category": "silver",
+      "image": "qingzhan.png",
+      "name": "Qingzhan Intelligent Manufacturing",
+      "logoClass": "partner-logo-wide",
+      "url": "https://tsingbot.com/"
     },
     {
       "category": "silver",
@@ -170,6 +205,13 @@
       "name": "Association des Jeunes Chinois pour la Technologie et l'Innovation Scientifique en France",
       "logoClass": "partner-logo-wide",
       "url": "https://www.jeveuxaider.gouv.fr/organisations/23335-association-des-jeunes-chinois-pour-la-technologie-et-linnovation-scientifique-en-france"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "robochallenge.png",
+      "name": "RoboChallenge Community",
+      "logoClass": "partner-logo-wide",
+      "url": "https://robochallenge.ai/"
     },
     {
       "category": "supporting-organizations",
