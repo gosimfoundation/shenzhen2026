@@ -11,10 +11,16 @@ interface Props {
 
 const { lang = "en" } = Astro.props;
 
-// Helper to get localized category name
-const getCategoryName = (category: any): string => {
-    if (typeof category.name === "string") return category.name;
-    return category.name[lang] || category.name.en;
+// Sponsor boards use the bilingual labels shown in the event visual system.
+const getCategoryNames = (category: any): { zh: string; en: string } => {
+    if (typeof category.name === "string") {
+        return { zh: category.name, en: category.name };
+    }
+
+    return {
+        zh: category.name.zh || category.name[lang] || category.name.en,
+        en: category.name.en || category.name[lang] || category.name.zh,
+    };
 };
 
 // Import all images
@@ -49,8 +55,11 @@ const isRemoteImage = (image?: string): boolean =>
                                 data-filter-status="active"
                                 data-filter-category={category.id}
                             >
-                                <div class="row">
-                                    <h2 class="h3">{getCategoryName(category)}</h2>
+                                <div class="category-heading-row">
+                                    <h2 class="h3 category-heading">
+                                        <span>{getCategoryNames(category).zh}</span>
+                                        <span class="category-heading-en">{getCategoryNames(category).en}</span>
+                                    </h2>
                                 </div>
                                 <div class="row grid">
                                     {sponsorsData.partners
@@ -121,46 +130,76 @@ const isRemoteImage = (image?: string): boolean =>
     }
 
     .grid-wrap {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.25rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
     }
 
     .section-partners-grid .grid-group {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 8rem minmax(0, 1fr);
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        padding-top: 1.25rem;
-        border-top: 1px solid rgba(234, 230, 210, 0.16);
+        width: 100%;
+        gap: 0.9rem;
+        padding-top: 1.75rem;
+    }
+
+    .section-partners-grid .grid-group:first-child {
+        padding-top: 0;
     }
 
     .grid-group h2 {
         margin: 0;
-        font-size: clamp(1rem, 1.3vw, 1.2rem);
+        text-align: center;
+        font-size: clamp(1.45rem, 2.25vw, 2.25rem);
         line-height: 1.4;
     }
 
+    .section-partners-grid .category-heading-row {
+        display: grid;
+        width: 100%;
+        place-items: center;
+        text-align: center;
+    }
+
+    .category-heading {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: baseline;
+        gap: 0 0.45em;
+    }
+
+    .category-heading-en {
+        white-space: nowrap;
+    }
+
     .section-partners-grid .grid-group-featured {
-        grid-column: span 1;
-        padding-top: 0;
-        border-top: 0;
+        width: 100%;
     }
 
     .section-partners-grid .row.grid {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: min(100%, 1120px);
         gap: 0.65rem;
     }
 
     .section-partners-grid .grid-group-featured .row.grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 200px));
+        width: min(100%, 240px);
     }
 
     .section-partners-grid .row.grid > .col {
-        width: auto;
+        flex: 0 0 calc((100% - 2.6rem) / 5);
+        width: calc((100% - 2.6rem) / 5);
         min-width: 0;
+    }
+
+    .section-partners-grid .grid-group-featured .row.grid > .col {
+        flex-basis: 100%;
+        width: 100%;
     }
 
     .single-partners-card {
@@ -208,13 +247,11 @@ const isRemoteImage = (image?: string): boolean =>
     }
 
     .section-partners-grid .grid-group-featured[data-filter-category="chief"] {
-        grid-column: 1 / -1;
-        padding-top: 1.25rem;
-        border-top: 1px solid rgba(234, 230, 210, 0.16);
+        width: 100%;
     }
 
     .section-partners-grid .grid-group-featured[data-filter-category="chief"] .row.grid {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 380px));
+        width: min(100%, 380px);
     }
 
     [data-filter-category="chief"] .single-partners-card {
@@ -227,7 +264,47 @@ const isRemoteImage = (image?: string): boolean =>
 
     /* Large: chief; medium: gold; small: silver and supporting organizations. */
     .section-partners-grid [data-filter-category="gold"] .row.grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        width: min(100%, 970px);
+    }
+
+    .section-partners-grid [data-filter-category="gold"] .row.grid > .col {
+        width: auto;
+        grid-column: span 3;
+    }
+
+    /* The first row has three centered cards; the second row has four cards. */
+    .section-partners-grid [data-filter-category="gold"] .row.grid > .col:nth-child(1) {
+        grid-column: 2 / span 3;
+    }
+
+    .section-partners-grid [data-filter-category="gold"] .row.grid > .col:nth-child(2) {
+        grid-column: 5 / span 3;
+    }
+
+    .section-partners-grid [data-filter-category="gold"] .row.grid > .col:nth-child(3) {
+        grid-column: 8 / span 3;
+    }
+
+    .section-partners-grid [data-filter-category="gold"] .row.grid > .col:nth-child(4) {
+        grid-column: 1 / span 3;
+        grid-row: 2;
+    }
+
+    .section-partners-grid [data-filter-category="gold"] .row.grid > .col:nth-child(5) {
+        grid-column: 4 / span 3;
+        grid-row: 2;
+    }
+
+    .section-partners-grid [data-filter-category="gold"] .row.grid > .col:nth-child(6) {
+        grid-column: 7 / span 3;
+        grid-row: 2;
+    }
+
+    .section-partners-grid [data-filter-category="gold"] .row.grid > .col:nth-child(7) {
+        grid-column: 10 / span 3;
+        grid-row: 2;
     }
 
     [data-filter-category="gold"] .single-partners-card {
@@ -252,27 +329,44 @@ const isRemoteImage = (image?: string): boolean =>
 
     @media (max-width: 1000px) {
         .section-partners-grid .row.grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            width: 100%;
+        }
+
+        .section-partners-grid .row.grid > .col {
+            flex-basis: calc((100% - 1.3rem) / 3);
+            width: calc((100% - 1.3rem) / 3);
         }
 
         .section-partners-grid [data-filter-category="gold"] .row.grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            display: flex;
+            width: 100%;
+        }
+
+        .section-partners-grid [data-filter-category="gold"] .row.grid > .col {
+            flex-basis: calc((100% - 0.65rem) / 2);
+            width: calc((100% - 0.65rem) / 2);
+            grid-column: auto;
+            grid-row: auto;
         }
 
         .section-partners-grid .grid-group {
-            grid-template-columns: minmax(0, 1fr);
             gap: 0.65rem;
         }
     }
 
     @media (max-width: 600px) {
         .grid-wrap {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1rem;
         }
 
-        .section-partners-grid .row.grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+        .section-partners-grid .row.grid > .col {
+            flex-basis: calc((100% - 0.65rem) / 2);
+            width: calc((100% - 0.65rem) / 2);
+        }
+
+        .section-partners-grid .grid-group-featured .row.grid > .col {
+            flex-basis: 100%;
+            width: 100%;
         }
 
         .single-partners-card,
