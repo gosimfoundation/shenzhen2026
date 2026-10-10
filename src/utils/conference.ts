@@ -15,6 +15,7 @@ export interface Speaker {
   keynote?: boolean;
   source?: string;
   sourceNames?: string[];
+  legacyIds?: string[];
 }
 export interface Talk {
   ref: string;

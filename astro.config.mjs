@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
+import speakerData from './src/json/Speakers.json';
 
 const wordDocumentMime = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
 
@@ -28,6 +29,12 @@ const docxMimePlugin = {
 
 // https://astro.build/config
 export default defineConfig({
+  redirects: Object.fromEntries(speakerData.speakers.flatMap((speaker) =>
+    (speaker.legacyIds || []).flatMap((id) => ['', '/zh'].map((prefix) => [
+      `${prefix}/speakers/${id}/`,
+      `${prefix}/speakers/${speaker.id}/`,
+    ])),
+  )),
   integrations: [sitemap({
     filter: (page) => !new URL(page).pathname.replace(/\/$/, '').endsWith('/sponsors-edit'),
   })],

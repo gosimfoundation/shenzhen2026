@@ -42,8 +42,13 @@ export function validateContent(speakers, schedule) {
   const people = new Map(speakers.speakers.map((s) => [s.id, s]));
   const tags = new Set(schedule.tracks.map((t) => t.sourceId));
   const names = new Map();
+  const speakerRoutes = new Set(speakers.speakers.map((speaker) => speaker.id));
   for (const s of speakers.speakers) {
     if (!safeId(s.id)) errors.push(`Unsafe speaker ID: ${s.id}`);
+    for (const id of s.legacyIds || []) {
+      if (!safeId(id) || speakerRoutes.has(id)) errors.push(`Invalid or duplicate legacy speaker ID: ${id}`);
+      speakerRoutes.add(id);
+    }
     if (s.draft !== undefined && typeof s.draft !== 'boolean') errors.push(`${s.id}: draft must be boolean`);
     for (const field of ['name', 'roleOrg', 'bio']) text(s[field], `${s.id}.${field}`, s.draft, field === 'name');
     for (const tag of s.tags || []) if (!tags.has(tag)) errors.push(`${s.id}: unknown tag ${tag}`);
@@ -98,7 +103,7 @@ export function mergeConfirmedContent(currentSpeakers, currentSchedule, proposal
   const errors = validateContent(speakers, schedule);
   if (errors.length) throw new Error(errors.join('\n'));
   const names = new Map();
-  const ids = new Set(speakers.speakers.map((s) => s.id));
+  const ids = new Set(speakers.speakers.flatMap((s) => [s.id, ...(s.legacyIds || [])]));
   const talks = new Map(schedule.tracks.flatMap((track) => track.talks.flatMap((talk) =>
     [...new Set([talk.ref, talk.sourceRef].filter(Boolean))].map((ref) => [ref, {track, talk}]),
   )));

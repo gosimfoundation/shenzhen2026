@@ -741,8 +741,8 @@
     {
       "id": "codingma",
       "name": {
-        "en": "CodingMa",
-        "zh": "CodingMa"
+        "en": "Yongqiang Ma",
+        "zh": "马勇强"
       },
       "roleOrg": {
         "en": "Open-Source Training Software Expert, Huawei",
@@ -762,9 +762,14 @@
       "image": "/images/speakers/confirmed/codingma.png",
       "sourceNames": [
         "codingma",
-        "CodingMa"
+        "CodingMa",
+        "Yongqiang Ma",
+        "马勇强"
       ],
-      "source": "cfp"
+      "source": "cfp",
+      "legacyIds": [
+        "yongqiang-ma"
+      ]
     },
     {
       "id": "charbel-dandjinou",
@@ -903,7 +908,8 @@
       "image": "/images/speakers/confirmed/pieter-delobelle.png",
       "sourceNames": [
         "Pieter Delobelle",
-        "彼得·德洛贝勒"
+        "彼得·德洛贝勒",
+        "Pieter Delballe"
       ],
       "source": "cfp"
     },
@@ -1348,32 +1354,6 @@
       "source": "cfp"
     },
     {
-      "id": "yongqiang-ma",
-      "name": {
-        "en": "Yongqiang Ma",
-        "zh": "马勇强"
-      },
-      "roleOrg": {
-        "en": "Co-speaker",
-        "zh": "联合讲师"
-      },
-      "bio": {
-        "en": "Yongqiang Ma is a co-presenter of “TransferQueue: An Asynchronous, High-Performance Streaming Data Engine for Post-Training” at GOSIM Shenzhen 2026.",
-        "zh": "Yongqiang Ma 将在 GOSIM 深圳 2026 联合分享《TransferQueue：面向后训练的异步高性能流式数据引擎》。"
-      },
-      "tags": [
-        "sz26-open-source-model"
-      ],
-      "socialLinks": {},
-      "draft": false,
-      "image": "/images/speakers/confirmed/yongqiang-ma.png",
-      "sourceNames": [
-        "Yongqiang Ma",
-        "马勇强"
-      ],
-      "source": "cfp"
-    },
-    {
       "id": "bardia-moshiri",
       "name": {
         "en": "Bardia Moshiri",
@@ -1569,16 +1549,16 @@
     {
       "id": "rin",
       "name": {
-        "en": "Rin",
-        "zh": "Rin"
+        "en": "Claudia Wang",
+        "zh": "汪凛"
       },
       "roleOrg": {
-        "en": "Co-speaker",
-        "zh": "联合讲师"
+        "en": "Senior Algorithm Engineer, Moeru AI Ltd.",
+        "zh": "Moeru AI高级算法工程师"
       },
       "bio": {
-        "en": "Rin is a co-presenter of “Agentic AI in Games: How Far Have We Come?” at GOSIM Shenzhen 2026.",
-        "zh": "Rin 将在 GOSIM 深圳 2026 联合分享《游戏 AI 中的智能体：我们究竟走了多远？》。"
+        "en": "Claudia Wang is a Senior Algorithm Engineer at Moeru AI Ltd. and co-presents “Agentic AI in Games: How Far Have We Come?” at GOSIM Shenzhen 2026.",
+        "zh": "汪凛是 Moeru AI 高级算法工程师，将在 GOSIM 深圳 2026 联合分享《游戏 AI 的智能体化，我们走远了吗？》。"
       },
       "tags": [
         "sz26-agentic-os-app"
@@ -1587,7 +1567,9 @@
       "draft": false,
       "image": "/images/speakers/confirmed/rin.png",
       "sourceNames": [
-        "Rin"
+        "Rin",
+        "Claudia Wang",
+        "汪凛"
       ],
       "source": "cfp"
     },
@@ -4924,11 +4906,11 @@
       },
       "roleOrg": {
         "en": "Chief AI Officer, Digital infrastructure and emerging technologies, UN",
-        "zh": "联合国技术特使办公室首席人工智能官"
+        "zh": "首席人工智能官，联合国数字基础设施与新兴技术"
       },
       "bio": {
-        "en": "Mehdi Snene. Chief AI Officer, Digital infrastructure and emerging technologies, UN.",
-        "zh": "Mehdi Snene，联合国技术特使办公室首席人工智能官。"
+        "en": "Dr. Mehdi Snene is a Senior Advisor to the UN Secretary-General's Special Envoy for Digital and Emerging Technologies and a member of the UN Office for Digital and Emerging Technologies, where he leads global initiatives in AI capacity-building, digital public infrastructure, and emerging tech. He previously directed the €1 billion Human Brain Project, EPFL, advancing neuromorphic computing and brain simulation, and served as Chief AI Officer, HealthAI, overseeing the strategic development and deployment of AI in healthcare. A former Associate Professor, the University of Geneva, he founded and led a research lab focused on AI, neuroscience, and high-performance computing.",
+        "zh": "Mehdi Snene博士是联合国秘书长数字与新兴技术特使的高级顾问，也是联合国数字与新兴技术办公室的成员，负责领导人工智能能力建设、数字公共基础设施和新兴技术的全球倡议。他曾指导过欧洲洛桑联邦理工学院（EPFL）耗资10亿欧元的“人类大脑计划”，推动神经形态计算和大脑模拟的发展。他还曾担任HealthAI的首席人工智能官，负责监督人工智能在医疗保健领域的战略发展和部署。他曾是日内瓦大学的副教授，创立并领导了一个专注于人工智能、神经科学和高性能计算的研究实验室。"
       },
       "image": "/images/speakers/confirmed/mehdi-snene.png",
       "tags": [

@@ -57,6 +57,27 @@ describe("single-source CFP import", () => {
     expect(result.schedule.tracks.find((t) => t.id === "ws-vllm").talks.find((t) => t.ref === "P-999").speakers).toEqual(["sean-dong"]);
   });
 
+  it.each([
+    ["CodingMa", "codingma"], ["Yongqiang Ma", "codingma"], ["马勇强", "codingma"],
+    ["Rin", "rin"], ["Claudia Wang", "rin"], ["汪凛", "rin"],
+  ])("reuses the unified profile when importing %s", (name, id) => {
+    const result = mergeConfirmedContent(speakers, schedule, [proposal({name})]);
+    expect(result.report.newSpeakers).toEqual([]);
+    expect(result.schedule.tracks.flatMap((t) => t.talks).find((t) => t.ref === "P-999").speakers).toEqual([id]);
+  });
+
+  it("rejects conflicting legacy routes and reserves them during imports", () => {
+    const current = structuredClone(speakers);
+    const person = current.speakers[0];
+    Object.assign(person, {legacyIds: [current.speakers[1].id]});
+    expect(validateContent(current, schedule).join("\n")).toContain("Invalid or duplicate legacy speaker ID");
+    Object.assign(person, {legacyIds: ["new-presenter"]});
+    const result = mergeConfirmedContent(current, schedule, [proposal()]);
+    expect(result.report.newSpeakers).toHaveLength(1);
+    expect(result.report.newSpeakers).not.toContain("new-presenter");
+    expect(validateContent(result.speakers, result.schedule)).toEqual([]);
+  });
+
   it("merges later CFP submissions into existing manual sessions without changing their public identity", () => {
     const incoming = proposal({ref: "P-220", name: "ChenQiuji", tracks: "sz26-ws-dora-workshop"});
     const result = mergeConfirmedContent(speakers, schedule, [incoming]);

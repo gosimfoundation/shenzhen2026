@@ -22,7 +22,7 @@ describe("published schedule relationships", () => {
     expect(talks.find((talk) => talk.ref === "SUMMIT-FIRESIDE-CHAT")).toMatchObject({
       speakers: ["dhh", "xudong-ren"],
       date: "2026-10-17",
-      timeSlot: "11:10-12:00",
+      timeSlot: "11:05-12:00",
     });
 
     expect(speakersEn.categories[1]).toMatchObject({
@@ -125,8 +125,9 @@ describe("published schedule relationships", () => {
       expect(talk.timeSlot, talk.ref).toMatch(/^\d{2}:\d{2}-\d{2}:\d{2}$/);
       const [start, end] = talk.timeSlot.split("-");
       const [windowStart, windowEnd] = window!.split("-");
-      // Check-in may precede the program; every other confirmed session must fit.
-      if (talk.type !== "check-in") expect(start >= windowStart && end <= windowEnd, talk.ref).toBe(true);
+      // Off-site lunch and pre-program check-in do not extend the room's program window.
+      const offsiteBreak = talk.type === "break" && talk.room && talk.room.en !== track.room?.en;
+      if (talk.type !== "check-in" && !offsiteBreak) expect(start >= windowStart && end <= windowEnd, talk.ref).toBe(true);
       return [{ ...talk, start, end }];
     });
     for (let i = 0; i < slots.length; i++) {
