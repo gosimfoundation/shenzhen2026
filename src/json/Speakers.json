@@ -353,7 +353,7 @@
       },
       "bio": {
         "en": "Jiaqi Zheng is an associate professor and doctoral supervisor at the School of Computer Science, Nanjing University. His current research focuses on supernode interconnection systems. He has presided over projects funded by the National Natural Science Foundation of China, including the Excellent Young Scientists Fund, the General Program, and the Young Scientists Fund, as well as corporate innovation funds from Huawei, Alibaba, ByteDance, Tencent, and other companies. He has published over 100 academic papers in top-tier international venues such as SIGCOMM, NSDI, and NIPS, and has received the Best Paper Award at CCF-recommended international conferences three times. Three of his authorized patents have been transferred to Huawei Central Research Institute. His related achievements have been incorporated into core computer science curricula at leading universities in the United States, have been specially cited in the U.S. National Science Foundation's 2024 Milestone Report.",
-        "zh": "南京大学计算机学院副教授、博士生导师，研究方向聚焦超节点互连系统。主持国家自然科学基金优秀青年科学基金、面上项目和青年项目，以及华为、阿里巴巴、字节跳动、腾讯等企业创新基金；在 SIGCOMM、NSDI、NeurIPS 等国际会议发表论文百余篇，多次获得 CCF 推荐国际会议最佳论文奖。"
+        "zh": "郑嘉琦，南京大学计算机学院副教授，博导，IEEE/CCF/通信学会高级会员。目前主要研究超节点互联系统，在ACM SIGCOMM, USENIX NSDI，ACM EuroSys，ACM SIGKDD等国际刊物发表多篇高水平学术论文，3次获得CCF推荐国际会议最佳论文奖。主持国家自然科学基金优青、面上、青年项目，承担科技部重点研发计划青年科学家项目，与华为、腾讯、阿里、字节等企业进行产学研合作。曾获江苏省科学技术一等奖，华为“难题揭榜”火花奖，小米青年学者科技创新奖，CCF优博奖等荣誉，以及受到中国日报网、中国网等主流媒体的关注报道。"
       },
       "tags": [
         "sz26-open-source-model"
