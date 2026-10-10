@@ -20,6 +20,15 @@ import { groupScheduleDays } from "../src/utils/preview-schedule-days";
     expect(groups.find((group) => group.talks.length)?.date).toBe("2026-10-17");
   });
 
+  it("keeps agenda order when revised program windows invalidate individual times", () => {
+    const talks = [
+      { id: "later", date: "2026-10-16", timeSlot: "14:00-14:30", programOrder: 1 },
+      { id: "pending", date: "2026-10-16", programOrder: 0 },
+    ];
+    expect(groupScheduleDays(talks)[0].talks.map((talk) => talk.id)).toEqual(["pending", "later"]);
+    expect(talks[0].id).toBe("later");
+  });
+
   it("retains undated sessions and sessions outside the configured dates", () => {
     const talks = [{ date: "2026-10-18" }, { timeSlot: "10:00-11:00" }, {}];
     const groups = groupScheduleDays(talks);

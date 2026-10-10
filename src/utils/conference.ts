@@ -18,12 +18,16 @@ export interface Speaker {
 }
 export interface Talk {
   ref: string;
+  sourceRef?: string;
   slug: string;
   title: LocalizedText;
   overview: LocalizedText;
   speakers: string[];
   date?: string;
   timeSlot?: string;
+  timePending?: boolean;
+  previousTimeSlot?: string;
+  programOrder?: number;
   room?: LocalizedText;
   type?: string;
   draft?: boolean;

@@ -67,6 +67,7 @@ npm run validate-schedule  # Validate both canonical content files
 - New speakers and sessions are drafts. Source-language text is stored only in the matching language field; translate the other field in the same record, then publish explicitly.
 - Existing CFP session originals are refreshed for comparison; `sourceChanges` and `speakerAssignmentChanges` identify sessions needing editorial review. Existing speaker biographies and roles stay as edited; compare the new export manually if those change.
 - `sourceNames` stores CFP name aliases to avoid duplicate speaker records. Keep historical aliases when changing display names.
+- A talk's optional `sourceRef` links a later CFP submission to its existing published `ref` and slug. Set it when a manual session receives a CFP ID or a replacement submission supersedes an old one; the importer skips the superseded submission and preserves the published identity.
 - Add unknown tracks to Schedule.json before importing. Resolve changed assignments and withdrawals explicitly rather than allowing an import to remove or replace published content.
 - Optional photos are staged in `speaker-photo-inbox`; confirmed portraits are preserved.
 

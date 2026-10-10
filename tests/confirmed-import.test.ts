@@ -57,6 +57,40 @@ describe("single-source CFP import", () => {
     expect(result.schedule.tracks.find((t) => t.id === "ws-vllm").talks.find((t) => t.ref === "P-999").speakers).toEqual(["sean-dong"]);
   });
 
+  it("merges later CFP submissions into existing manual sessions without changing their public identity", () => {
+    const incoming = proposal({ref: "P-220", name: "ChenQiuji", tracks: "sz26-ws-dora-workshop"});
+    const result = mergeConfirmedContent(speakers, schedule, [incoming]);
+    const before = schedule.tracks.flatMap((t) => t.talks).find((t) => t.ref === "DORA-QIUJI-CHEN")!;
+    const after = result.schedule.tracks.flatMap((t) => t.talks).find((t) => t.ref === before.ref);
+    expect(result.report.newTalks).toEqual([]);
+    expect(result.report.newSpeakers).toEqual([]);
+    expect(after).toMatchObject({
+      ref: before.ref, slug: before.slug, date: before.date, timeSlot: before.timeSlot,
+      title: before.title, speakers: ["qiuji-chen"], originalTitle: incoming.title,
+    });
+  });
+
+  it("ignores a superseded submission regardless of import order", () => {
+    const old = proposal({ref: "P-69", name: "焦智超", title: "Old submission"});
+    const replacement = proposal({ref: "P-222", name: "Fengxiaodong", title: "Replacement submission"});
+    for (const incoming of [[old, replacement], [replacement, old]]) {
+      const result = mergeConfirmedContent(speakers, schedule, incoming);
+      const talk = result.schedule.tracks.flatMap((t) => t.talks).find((t) => t.ref === "P-69");
+      expect(talk).toMatchObject({sourceRef: "P-222", originalTitle: "Replacement submission", speakers: ["xiaodong-feng"]});
+      expect(result.report.supersededProposals).toEqual(["P-69"]);
+      expect(result.report.newTalks).toEqual([]);
+      expect(result.report.newSpeakers).toEqual([]);
+      expect(mergeConfirmedContent(result.speakers, result.schedule, incoming).schedule).toEqual(result.schedule);
+    }
+  });
+
+  it("rejects ambiguous CFP source references", () => {
+    const current = structuredClone(schedule);
+    const first = current.tracks[0].talks[0];
+    first.sourceRef = current.tracks[0].talks[1].ref;
+    expect(validateContent(speakers, current).join("\n")).toContain("Duplicate CFP reference");
+  });
+
   it("adds a changed co-presenter for review without replacing the published assignment", () => {
     const result = mergeConfirmedContent(speakers, schedule, [proposal({ref: "P-164", name: "黄梓铭", coSpeakers: [{name: "New Copresenter"}]})]);
     expect(result.report.newSpeakers).toEqual(["new-copresenter"]);

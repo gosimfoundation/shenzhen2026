@@ -2,7 +2,7 @@ import schedule from "../json/Schedule.json";
 
 export const conferenceDays = schedule.days;
 
-type ScheduledTalk = { date?: string; timeSlot?: string };
+type ScheduledTalk = { date?: string; timeSlot?: string; programOrder?: number };
 
 export function groupScheduleDays<T extends ScheduledTalk>(talks: T[]) {
   const dates = [...conferenceDays.map((day) => day.date),
@@ -11,6 +11,8 @@ export function groupScheduleDays<T extends ScheduledTalk>(talks: T[]) {
   return dates.map((date) => ({
     date,
     talks: talks.filter((talk) => (talk.date || "unscheduled") === date)
-      .sort((a, b) => (a.timeSlot || "99:99").localeCompare(b.timeSlot || "99:99")),
+      .sort((a, b) => a.programOrder !== undefined && b.programOrder !== undefined
+        ? a.programOrder - b.programOrder
+        : (a.timeSlot || "99:99").localeCompare(b.timeSlot || "99:99")),
   }));
 }

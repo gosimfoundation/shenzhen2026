@@ -2018,8 +2018,8 @@
         "zh": "Northeastern University 教授"
       },
       "bio": {
-        "en": "Yanzhi Wang is a professor of electrical and computer engineering at Northeastern University. His research focuses on real-time and energy-efficient deep learning and AI systems, particularly efficient large language models and large-scale generative AI systems.",
-        "zh": "Northeastern University 电气与计算机工程教授，研究方向包括实时与高能效深度学习和人工智能系统，尤其关注高效大语言模型及大规模生成式 AI 系统。"
+        "en": "Yanzhi Wang is Professor in the Department of Electrical and Computer Engineering and Computer Science at Northeastern University, a senior member of IEEE. His research interests focus on real-time and energy-efficient deep learning and artificial intelligence systems, especially on efficient large language models and large-scale generative AI systems. His research works have been published broadly in machine learning and architecture/system areas. His research works have been cited over 30,000 times. He has received six Best Paper Awards and another 12 Best Paper Nominations. His research work has been reported and cited by around 500 media. He has 20 academic descendents as tenure-track faculty members at University of Minnesota, University of Massachusetts Amherst, University of Arizona, Michigan State University, Zhejiang University, University of Miami, University of Georgia, etc.",
+        "zh": "王言治是美国东北大学电气与计算机工程及计算机科学领域教授、IEEE 高级会员。他的研究聚焦实时与高能效深度学习和人工智能系统，尤其关注高效大语言模型及大规模生成式 AI 系统。其研究成果广泛发表于机器学习和计算机体系结构、系统领域，累计被引用超过 30,000 次，获得 6 项最佳论文奖及 12 项最佳论文提名，并获约 500 家媒体报道和引用。他的学术后辈中已有 20 人在明尼苏达大学、马萨诸塞大学阿默斯特分校、亚利桑那大学、密歇根州立大学、浙江大学、迈阿密大学、佐治亚大学等高校担任长聘教轨教师。"
       },
       "tags": [
         "sz26-open-source-model",
@@ -4301,7 +4301,8 @@
         "zh": "Teng Ma 于 2021 年获得清华大学博士学位，致力于利用新型硬件与内核能力构建创新软件系统，研究涵盖内存解耦与大语言模型等架构。他维护并参与 Mooncake、SGLang、vLLM、Dynamo、Tokenspeed 和 AIGW 等开源项目。"
       },
       "tags": [
-        "ws-kvcdn"
+        "ws-kvcdn",
+        "ws-ascend"
       ],
       "socialLinks": {
         "website": "https://stmatengss.github.io/",
@@ -4767,8 +4768,8 @@
         "zh": "OpenHarmony 技术指导委员会主席"
       },
       "bio": {
-        "en": "Haibo Chen chairs the OpenHarmony Technical Steering Committee and ACM SIGOPS. He is an ACM Fellow, IEEE Fellow, and Distinguished Professor at Shanghai Jiao Tong University.",
-        "zh": "陈海波是 OpenHarmony 技术指导委员会主席、ACM SIGOPS 主席，ACM Fellow、IEEE Fellow，并任上海交通大学特聘教授。"
+        "zh": "开源鸿蒙项目群技术指导委员会主席，上海交通大学特聘教授，华为公司Fellow、基础软件首席科学家，ACM SIGOPS主席，ACM & IEEE Fellow",
+        "en": "Haibo Chen chairs the OpenHarmony Technical Steering Committee and ACM SIGOPS. He is a Distinguished Professor at Shanghai Jiao Tong University, a Huawei Fellow and Chief Scientist for Basic Software, and an ACM and IEEE Fellow."
       },
       "tags": [
         "special-keynote"
@@ -4895,12 +4896,12 @@
         "zh": "陈秋吉"
       },
       "roleOrg": {
-        "en": "Student, Chongqing University of Posts and Telecommunications",
-        "zh": "重庆邮电大学学生"
+        "en": "Graduate Student, Chongqing University of Posts and Telecommunications",
+        "zh": "重庆邮电大学研究生"
       },
       "bio": {
-        "en": "Qiuji Chen. Student, Chongqing University of Posts and Telecommunications.",
-        "zh": "陈秋吉，重庆邮电大学学生。"
+        "en": "Qiuji Chen is a graduate student at Chongqing University of Posts and Telecommunications, with interests in SLAM and navigation.",
+        "zh": "陈秋吉是重庆邮电大学研究生，研究兴趣包括 SLAM 与机器人导航。"
       },
       "image": "/images/speakers/confirmed/qiuji-chen.png",
       "tags": [
@@ -4909,11 +4910,11 @@
       "socialLinks": {},
       "sourceNames": [
         "Qiuji Chen",
-        "陈秋吉"
+        "陈秋吉",
+        "ChenQiuji"
       ],
       "source": "invited",
-      "draft": false,
-      "editorialNote": "Decision 12A: use the Chinese student role; English Lecturer in the source conflicts and awaits speaker confirmation."
+      "draft": false
     },
     {
       "id": "mehdi-snene",
@@ -4951,20 +4952,412 @@
         "zh": "华为CANN领域总经理"
       },
       "bio": {
-        "en": "Lixin Shao. General Manager of CANN business, Huawei.",
-        "zh": "邵立欣，华为CANN领域总经理。"
+        "en": "Lixin Shao is General Manager of CANN Business at Huawei.",
+        "zh": "邵立欣现任华为 CANN 领域总经理。"
       },
       "image": "/images/speakers/confirmed/lixin-shao.png",
       "tags": [
-        "special-keynote"
+        "special-keynote",
+        "ws-cann"
       ],
       "socialLinks": {},
       "sourceNames": [
         "Lixin Shao",
-        "邵立欣"
+        "邵立欣",
+        "SHAOLIXIN"
       ],
       "source": "invited",
       "draft": false
+    },
+    {
+      "id": "nan-zou",
+      "name": {
+        "en": "Nan Zou",
+        "zh": "邹楠"
+      },
+      "roleOrg": {
+        "en": "CANN Architect",
+        "zh": "CANN 架构师"
+      },
+      "bio": {
+        "en": "Nan Zou — CANN Architect.",
+        "zh": "邹楠，CANN 架构师。"
+      },
+      "tags": [
+        "ws-cann"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/nan-zou.png",
+      "sourceNames": [
+        "Nan Zou",
+        "邹楠"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "jianjun-chen",
+      "name": {
+        "en": "Jianjun Chen",
+        "zh": "陈建军"
+      },
+      "roleOrg": {
+        "en": "ops-transformer Committer",
+        "zh": "ops-transformer 项目 Committer"
+      },
+      "bio": {
+        "en": "Jianjun Chen — ops-transformer Committer.",
+        "zh": "陈建军，ops-transformer 项目 Committer。"
+      },
+      "tags": [
+        "ws-cann"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/jianjun-chen.png",
+      "sourceNames": [
+        "Jianjun Chen",
+        "陈建军"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "fangzheng-miao",
+      "name": {
+        "en": "Fangzheng Miao",
+        "zh": "苗方正"
+      },
+      "roleOrg": {
+        "en": "ops-transformer Committer",
+        "zh": "ops-transformer 项目 Committer"
+      },
+      "bio": {
+        "en": "Fangzheng Miao — ops-transformer Committer.",
+        "zh": "苗方正，ops-transformer 项目 Committer。"
+      },
+      "tags": [
+        "ws-cann"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/fangzheng-miao.png",
+      "sourceNames": [
+        "Fangzheng Miao",
+        "苗方正"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "yuchen-zhang",
+      "name": {
+        "en": "Yuchen Zhang",
+        "zh": "张雨晨"
+      },
+      "roleOrg": {
+        "en": "TileLang-Ascend Community Collaborator",
+        "zh": "TileLang-Ascend 社区 Collaborator"
+      },
+      "bio": {
+        "en": "Yuchen Zhang — TileLang-Ascend Community Collaborator.",
+        "zh": "张雨晨，TileLang-Ascend 社区 Collaborator。"
+      },
+      "tags": [
+        "ws-cann"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/yuchen-zhang.png",
+      "sourceNames": [
+        "Yuchen Zhang",
+        "张雨晨"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "feynman-zhou",
+      "name": {
+        "en": "Feynman Zhou",
+        "zh": "周鹏飞"
+      },
+      "roleOrg": {
+        "en": "CNCF Ambassador，Senior Product Manager for Tencent Cloud",
+        "zh": "CNCF 大使，腾讯云 Agent Runtime 高级产品专家"
+      },
+      "bio": {
+        "en": "Feynman Zhou — CNCF Ambassador，Senior Product Manager for Tencent Cloud.",
+        "zh": "周鹏飞，CNCF 大使，腾讯云 Agent Runtime 高级产品专家。"
+      },
+      "tags": [
+        "ws-ascend"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/feynman-zhou.png",
+      "sourceNames": [
+        "Feynman Zhou",
+        "周鹏飞"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "frey-tian",
+      "name": {
+        "en": "Frey Tian",
+        "zh": "田馥玮"
+      },
+      "roleOrg": {
+        "en": "Huawei Ascend Computing Inference Technology   Expert, Huawei",
+        "zh": "华为昇腾计算推理技术专家"
+      },
+      "bio": {
+        "en": "Frey Tian — Huawei Ascend Computing Inference Technology   Expert, Huawei.",
+        "zh": "田馥玮，华为昇腾计算推理技术专家。"
+      },
+      "tags": [
+        "ws-ascend"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/frey-tian.png",
+      "sourceNames": [
+        "Frey Tian",
+        "田馥玮"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "bingyang-fu",
+      "name": {
+        "en": "Fu Bingyang",
+        "zh": "付冰洋"
+      },
+      "roleOrg": {
+        "en": "Triton Operator Technical Expert, Huawei",
+        "zh": "华为Triton 算子技术专家"
+      },
+      "bio": {
+        "en": "Fu Bingyang — Triton Operator Technical Expert, Huawei.",
+        "zh": "付冰洋，华为Triton 算子技术专家。"
+      },
+      "tags": [
+        "ws-ascend"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/bingyang-fu.png",
+      "sourceNames": [
+        "Fu Bingyang",
+        "付冰洋"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "lingfei-wu",
+      "name": {
+        "en": "Wu Lingfei",
+        "zh": "吴凌飞"
+      },
+      "roleOrg": {
+        "en": "AscendNPU IR Technical Expert, Huawei Compiler Lab",
+        "zh": "华为编译器实验室AscendNPU IR技术专家"
+      },
+      "bio": {
+        "en": "Wu Lingfei — AscendNPU IR Technical Expert, Huawei Compiler Lab.",
+        "zh": "吴凌飞，华为编译器实验室AscendNPU IR技术专家。"
+      },
+      "tags": [
+        "ws-ascend"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/lingfei-wu.png",
+      "sourceNames": [
+        "Wu Lingfei",
+        "吴凌飞"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "yajun-wang",
+      "name": {
+        "en": "Wang Yajun",
+        "zh": "王亚军"
+      },
+      "roleOrg": {
+        "en": "Kunpeng AI Agent Technical Expert",
+        "zh": "鲲鹏AI Agent技术专家"
+      },
+      "bio": {
+        "en": "Wang Yajun — Kunpeng AI Agent Technical Expert.",
+        "zh": "王亚军，鲲鹏AI Agent技术专家。"
+      },
+      "tags": [
+        "ws-ascend"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/yajun-wang.png",
+      "sourceNames": [
+        "Wang Yajun",
+        "王亚军"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "zhengzhong-zhou",
+      "name": {
+        "en": "Zhengzhong Zhou",
+        "zh": "周正中"
+      },
+      "roleOrg": {
+        "en": "Council Members of the Database Open Source Development Alliance",
+        "zh": "数据库开源发展联盟理事成员"
+      },
+      "bio": {
+        "en": "Zhengzhong Zhou — Council Members of the Database Open Source Development Alliance.",
+        "zh": "周正中，数据库开源发展联盟理事成员。"
+      },
+      "tags": [
+        "ws-gaussdb"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhengzhong-zhou.png",
+      "sourceNames": [
+        "Zhengzhong Zhou",
+        "周正中"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "xiaojun-xiong",
+      "name": {
+        "en": "Xiaojun Xiong",
+        "zh": "熊小军"
+      },
+      "roleOrg": {
+        "en": "openGauss System Architect",
+        "zh": "openGauss 系统架构师"
+      },
+      "bio": {
+        "en": "Xiaojun Xiong — openGauss System Architect.",
+        "zh": "熊小军，openGauss 系统架构师。"
+      },
+      "tags": [
+        "ws-gaussdb"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/xiaojun-xiong.png",
+      "sourceNames": [
+        "Xiaojun Xiong",
+        "熊小军"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "xiaoyu-wang",
+      "name": {
+        "en": "Xiaoyu Wang",
+        "zh": "王小玉"
+      },
+      "roleOrg": {
+        "en": "Architect of CMCC Panwei Database",
+        "zh": "移动磐维数据库架构师"
+      },
+      "bio": {
+        "en": "Xiaoyu Wang — Architect of CMCC Panwei Database.",
+        "zh": "王小玉，移动磐维数据库架构师。"
+      },
+      "tags": [
+        "ws-gaussdb"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/xiaoyu-wang.png",
+      "sourceNames": [
+        "Xiaoyu Wang",
+        "王小玉"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "lihui-ouyang",
+      "name": {
+        "en": "Lihui Ouyang",
+        "zh": "欧阳丽辉"
+      },
+      "roleOrg": {
+        "en": "Ecosystem Director, South China Region",
+        "zh": "海量数据华南区生态总监"
+      },
+      "bio": {
+        "en": "Lihui Ouyang — Ecosystem Director, South China Region.",
+        "zh": "欧阳丽辉，海量数据华南区生态总监。"
+      },
+      "tags": [
+        "ws-gaussdb"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/lihui-ouyang.png",
+      "sourceNames": [
+        "Lihui Ouyang",
+        "欧阳丽辉"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "zheng-lv",
+      "name": {
+        "en": "Zheng Lv",
+        "zh": "吕政"
+      },
+      "roleOrg": {
+        "en": "CTO of the Embedded Database Product Department, Greater Bay Area National Technology Innovation Center",
+        "zh": "大湾区国创中心嵌入式数据库产品部CTO"
+      },
+      "bio": {
+        "en": "Zheng Lv — CTO of the Embedded Database Product Department, Greater Bay Area National Technology Innovation Center.",
+        "zh": "吕政，大湾区国创中心嵌入式数据库产品部CTO。"
+      },
+      "tags": [
+        "ws-gaussdb"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zheng-lv.png",
+      "sourceNames": [
+        "Zheng Lv",
+        "吕政"
+      ],
+      "source": "invited"
+    },
+    {
+      "id": "chuhui-chen",
+      "name": {
+        "en": "Chuhui Chen",
+        "zh": "陈楚晖"
+      },
+      "roleOrg": {
+        "en": "Principal Architect, Red Hat",
+        "zh": "红帽首席架构师"
+      },
+      "bio": {
+        "en": "Chuhui Chen — Principal Architect, Red Hat.",
+        "zh": "陈楚晖，红帽首席架构师。"
+      },
+      "tags": [
+        "ws-vllm"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/chuhui-chen.png",
+      "sourceNames": [
+        "Chuhui Chen",
+        "陈楚晖"
+      ],
+      "source": "invited"
     }
   ]
 }

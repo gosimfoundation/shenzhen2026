@@ -22,7 +22,7 @@ describe("published schedule relationships", () => {
     expect(talks.find((talk) => talk.ref === "SUMMIT-FIRESIDE-CHAT")).toMatchObject({
       speakers: ["dhh", "xudong-ren"],
       date: "2026-10-17",
-      timeSlot: "11:05-12:00",
+      timeSlot: "11:10-12:00",
     });
 
     expect(speakersEn.categories[1]).toMatchObject({
@@ -43,7 +43,8 @@ describe("published schedule relationships", () => {
     for (const talk of talks) {
       expect(talk.title.en.trim()).not.toBe("");
       expect(talk.title.zh.trim()).not.toBe("");
-      expect(talk.originalAbstract.trim()).not.toBe("");
+      // Organizer-supplied agendas can publish before an abstract is submitted.
+      if (!talk.manual) expect(talk.originalAbstract.trim()).not.toBe("");
       expect(["en", "zh"]).toContain(talk.originalAbstractLanguage);
       expect(talk.overview.en.trim()).not.toBe("");
       expect(talk.overview.zh.trim()).not.toBe("");
@@ -107,12 +108,26 @@ describe("published schedule relationships", () => {
     ]);
   });
 
-  it("publishes complete times without double-booking a speaker across tracks", () => {
-    const slots = talks.map((talk) => {
+  it("checks confirmed talk times and explicitly marks sessions awaiting rescheduling", () => {
+    const slots = talks.flatMap((talk) => {
       expect(talk.date, talk.ref).toMatch(/^2026-10-\d{2}$/);
+      const track = schedulePreview.tracks.find((track) => track.talks.includes(talk))!;
+      const window = track.sessions?.find((session) => session.date === talk.date)?.timeSlot;
+      if (!talk.timeSlot) {
+        expect(talk.timePending, talk.ref).toBe(true);
+        expect(talk.programOrder, talk.ref).toBeTypeOf("number");
+        expect(track.notice?.en).toContain("Times for some individual sessions will be announced");
+        expect(track.notice?.zh).toContain("具体时间待重新安排");
+        expect(window, talk.ref).toMatch(/^\d{2}:\d{2}-\d{2}:\d{2}$/);
+        return [];
+      }
+      expect(talk.timePending, talk.ref).not.toBe(true);
       expect(talk.timeSlot, talk.ref).toMatch(/^\d{2}:\d{2}-\d{2}:\d{2}$/);
-      const [start, end] = talk.timeSlot!.split("-");
-      return { ...talk, start, end };
+      const [start, end] = talk.timeSlot.split("-");
+      const [windowStart, windowEnd] = window!.split("-");
+      // Check-in may precede the program; every other confirmed session must fit.
+      if (talk.type !== "check-in") expect(start >= windowStart && end <= windowEnd, talk.ref).toBe(true);
+      return [{ ...talk, start, end }];
     });
     for (let i = 0; i < slots.length; i++) {
       for (const other of slots.slice(i + 1)) {
@@ -123,12 +138,14 @@ describe("published schedule relationships", () => {
     }
   });
 
-  it("exposes public activity times and excludes archived placeholders", () => {
+  it("uses the organizer's latest activity times", () => {
     const activities = schedulePreview.activities;
     expect(activities.every((activity) => !activity.draft)).toBe(true);
-    expect(activities.some((activity) => activity.id === "closed-door-meeting-2")).toBe(false);
+    expect(activities.find((activity) => activity.id === "closed-door-meeting-2")?.sessions).toEqual([
+      { date: "2026-10-16", timeSlot: "13:30-17:30" },
+    ]);
     expect(activities.find((activity) => activity.id === "cruise-dinner")?.sessions).toEqual([
-      { date: "2026-10-16", startTime: "18:30" },
+      { date: "2026-10-16", timeSlot: "18:00-21:00" },
     ]);
   });
 });

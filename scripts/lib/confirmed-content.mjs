@@ -55,6 +55,14 @@ export function validateContent(speakers, schedule) {
   }
   const talks = schedule.tracks.flatMap((t) => t.talks || []);
   unique(talks, 'ref', 'Talks'); unique(talks, 'slug', 'Talk routes');
+  const sourceOwners = new Map();
+  for (const talk of talks) {
+    if (talk.sourceRef !== undefined && !safeId(talk.sourceRef)) errors.push(`${talk.ref}: invalid CFP sourceRef`);
+    for (const ref of new Set([talk.ref, talk.sourceRef].filter(Boolean))) {
+      if (sourceOwners.has(ref)) errors.push(`Duplicate CFP reference: ${ref}`);
+      sourceOwners.set(ref, talk.ref);
+    }
+  }
   for (const track of schedule.tracks) {
     text(track.name, `${track.id}.name`, false);
     if (!Array.isArray(track.talks)) errors.push(`${track.id}: talks must be an array`);
@@ -91,10 +99,12 @@ export function mergeConfirmedContent(currentSpeakers, currentSchedule, proposal
   if (errors.length) throw new Error(errors.join('\n'));
   const names = new Map();
   const ids = new Set(speakers.speakers.map((s) => s.id));
-  const talks = new Map(schedule.tracks.flatMap((track) => track.talks.map((talk) => [talk.ref, {track, talk}])));
+  const talks = new Map(schedule.tracks.flatMap((track) => track.talks.flatMap((talk) =>
+    [...new Set([talk.ref, talk.sourceRef].filter(Boolean))].map((ref) => [ref, {track, talk}]),
+  )));
   const tracks = new Map(schedule.tracks.flatMap((track) => [[track.id, track], [track.sourceId, track]]));
   for (const speaker of speakers.speakers) for (const name of [...(speaker.sourceNames || []), speaker.name.en, speaker.name.zh].filter(Boolean)) names.set(speakerNameKey(name), speaker);
-  const report = { accepted: accepted.length, newSpeakers: [], newTalks: [], sourceChanges: [], speakerAssignmentChanges: [] };
+  const report = { accepted: accepted.length, newSpeakers: [], newTalks: [], sourceChanges: [], speakerAssignmentChanges: [], supersededProposals: [] };
   const seenRefs = new Set();
   const addSpeaker = (person, track, ref, coSpeaker) => {
     const name = cleanText(person.name);
@@ -129,6 +139,12 @@ export function mergeConfirmedContent(currentSpeakers, currentSchedule, proposal
     if (!ref || seenRefs.has(ref)) throw new Error(`Missing or duplicate proposal ref: ${ref}`);
     seenRefs.add(ref);
     const existing = talks.get(ref);
+    // A replacement CFP submission can keep an already-published ref and URL.
+    // The old submission must not overwrite its replacement or restore its speaker.
+    if (existing?.talk.sourceRef && existing.talk.sourceRef !== ref) {
+      report.supersededProposals.push(ref);
+      continue;
+    }
     // A manually moved session keeps its position and category on re-import.
     let track = existing?.track;
     if (!track) {
