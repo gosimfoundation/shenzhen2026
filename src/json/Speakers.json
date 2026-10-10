@@ -2496,8 +2496,8 @@
         "zh": "姜宁"
       },
       "roleOrg": {
-        "en": "Independent Open Source and Agentic AI Consultant; DeerFlow Core Contributor",
-        "zh": "独立开源与智能体AI顾问，DeerFlow核心贡献者"
+        "en": "Chief Technical Consultant, Singularity Intelligence Research Institute; AI Agent Expert",
+        "zh": "奇点智能研究院首席技术咨询师，智能体专家"
       },
       "bio": {
         "en": "Willem Jiang is an independent open-source and agentic AI consultant and a core contributor to DeerFlow. He previously worked at ByteDance's OSPO, served on the Apache Software Foundation Board of Directors, and contributed to Apache Camel, CXF, ServiceMix, and ServiceComb. His earlier roles include open-source technical expert at Huawei and Principal Engineer at Red Hat.",
@@ -4624,8 +4624,8 @@
         "zh": "黄佳"
       },
       "roleOrg": {
-        "en": "Lead AI Engineer, A*STAR Singapore",
-        "zh": "新加坡科技研究局（A*STAR）首席 AI 工程师"
+        "en": "Chief Technical Consultant, Singularity Intelligence Research Institute",
+        "zh": "奇点智能研究院首席技术咨询师"
       },
       "bio": {
         "en": "Jia Huang is Lead AI Engineer at A*STAR Singapore, and a technical author who writes about how AI agents are engineered. He is the author of the Designing AI Agents, The Claude Code Operating Model,  and RAG from First Principles.\n\nHe proposed the dual-axis framework for agent design patterns, which classifies patterns by cognitive function and execution topology, and the Pattern Selection Card, a practical method for choosing patterns under real cost and latency constraints. His work focuses on the engineering that surrounds the model rather than the model itself: context, tools, execution environments, and governance. He writes in both Chinese and English.",
