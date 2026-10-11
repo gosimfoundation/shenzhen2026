@@ -24,6 +24,22 @@ export const hackathons = [
     },
     link: "https://create.gosim.org/agenticapp26/",
   },
+  {
+    name: { en: "ADORA NANO Robot Agent", zh: "ADORA NANO 智能体" },
+    text: {
+      en: "Build autonomous industrial inspection agents on the ADORA NANO mobile robot using dora-rs and Octos, with navigation, valve operation, meter reading, and object manipulation on real hardware.",
+      zh: "基于 dora-rs 与 Octos，在 ADORA NANO 移动机器人真机上开发工业巡检智能体，完成自主导航、阀门操作、仪表识别与物料抓取放置。",
+    },
+    link: "https://doracc.com/items/adora-nano-hackathon/index.html",
+  },
+  {
+    name: { en: "Embodied AI Simulation", zh: "具身智能仿真" },
+    text: {
+      en: "Train autonomous robot locomotion policies with reinforcement learning, then test speed, stability, and terrain adaptation across flat sprints, complex terrain, and hidden courses.",
+      zh: "用强化学习训练机器人自主前进，在平地冲刺、复杂地形与隐藏赛道中检验速度、稳定性和地形适应能力。",
+    },
+    link: "https://doracc.com/items/gosim-sim-hackathon/index.html",
+  },
 ];
 
 export function hackathonHighlights(lang: "en" | "zh") {
