@@ -181,6 +181,27 @@
     },
     {
       "category": "supporting-organizations",
+      "image": "wasmedge.png",
+      "name": "WasmEdge Runtime",
+      "logoClass": "partner-logo-wide",
+      "url": "https://wasmedge.org"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "second-state.png",
+      "name": "Second State",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.secondstate.io"
+    },
+    {
+      "category": "supporting-organizations",
+      "image": "vibe.png",
+      "name": "VibeKeys",
+      "logoClass": "partner-logo-wide",
+      "url": "https://vibekeys.dev"
+    },
+    {
+      "category": "supporting-organizations",
       "image": "shenzhen-artificial-intelligence-industry-association-transparent.png",
       "name": "Shenzhen Artificial Intelligence Industry Association",
       "logoClass": "partner-logo-wide",
