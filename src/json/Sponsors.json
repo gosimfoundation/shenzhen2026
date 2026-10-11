@@ -59,6 +59,13 @@
     },
     {
       "category": "gold",
+      "image": "openjiuwen.png",
+      "name": "openJiuwen",
+      "logoClass": "partner-logo-wide",
+      "url": "https://www.openjiuwen.com/"
+    },
+    {
+      "category": "gold",
       "image": "kimi.png",
       "name": "Kimi",
       "logoClass": "partner-logo-wide",
