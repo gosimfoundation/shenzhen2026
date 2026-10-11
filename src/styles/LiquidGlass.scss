@@ -257,6 +257,32 @@ header .main-nav-bar .language-dropdown-content {
       clip-path var(--liquid-spring) !important;
 }
 
+.main-nav-bar .sub-links {
+   overflow-x: hidden !important;
+   overflow-y: auto !important;
+   overscroll-behavior: contain;
+}
+
+.main-nav-bar .sub-links > li {
+   flex-shrink: 0;
+}
+
+.main-nav-bar .sub-links .sub-links-group-label,
+.mobile-nav-box .sub-links .sub-links-group-label {
+   margin-top: 0.5rem;
+   padding: 0.65rem 0.95rem 0.35rem;
+   border-top: 1px solid rgba(255, 255, 255, 0.14);
+   color: rgba(246, 243, 231, 0.6);
+   font-size: 0.7rem;
+   font-weight: 600;
+   letter-spacing: 0.12em;
+   text-transform: uppercase;
+}
+
+.mobile-nav-box .sub-links .sub-links-group-label {
+   margin-bottom: 0.5rem;
+}
+
 @media screen and (min-width: 1071px) {
    /* Keep the parent <li> hovered while the pointer crosses from the trigger
       into the floating submenu. The submenu stays above this transparent
@@ -293,7 +319,7 @@ header .language-dropdown:focus-within .language-dropdown-content {
    visibility: visible;
    opacity: 1;
    transform: translateY(0) scale(1);
-   max-height: 24rem !important;
+   max-height: min(36rem, calc(100dvh - var(--nav-bar-height) - 5rem)) !important;
    clip-path: inset(0 0 0 0 round 1.25rem);
    pointer-events: auto;
 }

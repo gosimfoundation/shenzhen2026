@@ -14,6 +14,14 @@ navItems.forEach(item => {
       const subLinksData = JSON.parse(item.getAttribute('data-sublinks'));
       subLinksData.forEach(subLink => {
          const subLinkItem = document.createElement('li');
+
+         if (subLink.isGroupLabel) {
+            subLinkItem.classList.add('sub-links-group-label');
+            subLinkItem.textContent = subLink.text;
+            subLinksContainer.appendChild(subLinkItem);
+            return;
+         }
+
          const subLinkAnchor = document.createElement('a');
 
          subLinkItem.classList.add('link');
