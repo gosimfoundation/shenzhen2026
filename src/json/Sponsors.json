@@ -174,6 +174,13 @@
     },
     {
       "category": "supporting-organizations",
+      "image": "llm.png",
+      "name": "vLLM",
+      "logoClass": "partner-logo-wide",
+      "url": "https://vllm.ai"
+    },
+    {
+      "category": "supporting-organizations",
       "image": "shenzhen-artificial-intelligence-industry-association-transparent.png",
       "name": "Shenzhen Artificial Intelligence Industry Association",
       "logoClass": "partner-logo-wide",
