@@ -5340,6 +5340,33 @@
         "陈楚晖"
       ],
       "source": "invited"
+    },
+    {
+      "id": "zhiqiang-xiong",
+      "name": {
+        "en": "Zhiqiang Xiong",
+        "zh": "熊志强"
+      },
+      "roleOrg": {
+        "en": "ops-transformer Committer",
+        "zh": "ops-transformer 项目 Committer"
+      },
+      "bio": {
+        "en": "Zhiqiang Xiong is an ops-transformer Committer.",
+        "zh": "熊志强是 ops-transformer 项目 Committer。"
+      },
+      "tags": [
+        "ws-cann"
+      ],
+      "socialLinks": {},
+      "draft": false,
+      "image": "/images/speakers/confirmed/zhiqiang-xiong.png",
+      "sourceNames": [
+        "Zhiqiang Xiong",
+        "熊志强",
+        "hiqiang Xiong"
+      ],
+      "source": "invited"
     }
   ]
 }
