@@ -250,6 +250,13 @@
     },
     {
       "category": "supporting-organizations",
+      "image": "open-insight.png",
+      "name": "Open Insight",
+      "logoClass": "partner-logo-wide",
+      "url": "https://qiwoo.edu.cn/"
+    },
+    {
+      "category": "supporting-organizations",
       "image": "vacat.png",
       "name": "VACAT AI Visual Creative Competition",
       "logoClass": "partner-logo-wide",
