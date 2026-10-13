@@ -1,5 +1,18 @@
 import { describe, expect, it } from 'vitest';
-import { ticketPromotionPhase } from '../src/utils/ticket-promotion';
+import { conferenceDaysRemaining, ticketPromotionPhase } from '../src/utils/ticket-promotion';
+
+describe('conference countdown to October 16 in Shenzhen time', () => {
+  it.each([
+    ['2026-10-13T00:00:00+08:00', 3],
+    ['2026-10-13T23:59:59+08:00', 3],
+    ['2026-10-13T16:00:00Z', 2],
+    ['2026-10-15T23:59:59+08:00', 1],
+    ['2026-10-16T00:00:00+08:00', 0],
+    ['2026-10-17T00:00:00+08:00', 0],
+  ])('shows the remaining calendar days at %s', (now, days) => {
+    expect(conferenceDaysRemaining(Date.parse(now))).toBe(days);
+  });
+});
 
 describe('ticket promotion deadlines in Shenzhen time', () => {
   it('ends early-bird pricing exactly at the advertised cutoff', () => {

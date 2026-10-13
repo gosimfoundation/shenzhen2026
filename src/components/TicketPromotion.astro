@@ -1,11 +1,11 @@
 ---
-import { EARLY_BIRD_DEADLINE, TICKET_SALES_DEADLINE } from 'utils/ticket-promotion';
+import { EARLY_BIRD_DEADLINE } from 'utils/ticket-promotion';
 interface Props { lang: 'en' | 'zh'; }
 const { lang } = Astro.props;
 const zh = lang === 'zh';
 ---
 
-<aside class="ticket-promotion" data-ticket-promotion hidden aria-label={zh ? '限时购票优惠' : 'Ticket offers'}>
+<aside class="ticket-promotion" data-ticket-promotion hidden aria-label={zh ? '大会倒计时与购票' : 'Conference countdown and tickets'}>
   <a href="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696" target="_blank" rel="noopener noreferrer">
     <span class="promotion-message" data-ticket-phase="early" hidden>
       <strong>{zh ? '标准票／全通票早鸟减 ¥100' : 'Standard & all-access early birds: save ¥100 each'}</strong>
@@ -13,18 +13,29 @@ const zh = lang === 'zh';
       <time datetime={EARLY_BIRD_DEADLINE}>{zh ? '9 月 17 日 23:55 截止（北京时间）' : 'Ends 17 Sep, 23:55 (UTC+8)'}</time>
     </span>
     <span class="promotion-message" data-ticket-phase="standard" hidden>
-      <strong>{zh ? 'GOSIM 深圳 · 学生票 ¥99' : 'GOSIM Shenzhen · Students ¥99'}</strong>
-      <time datetime={TICKET_SALES_DEADLINE}>{zh ? '10 月 17 日 18:00 截止（北京时间）' : 'Ends 17 Oct, 18:00 (UTC+8)'}</time>
+      <strong>{zh ? 'GOSIM 深圳 · 门票热卖中' : 'GOSIM Shenzhen · Tickets on sale'}</strong>
+      <span class="promotion-detail">{zh ? '学生票仅 ¥99' : 'Student tickets only ¥99'}</span>
+      <span class="promotion-countdown" data-conference-countdown data-lang={lang}>{zh ? '大会倒计时' : 'Conference countdown'}</span>
     </span>
     <span class="promotion-cta">{zh ? '立即购票' : 'Get tickets'} <span aria-hidden="true">↗</span></span>
   </a>
 </aside>
 
 <script>
-  import { ticketPromotionPhase } from 'utils/ticket-promotion';
+  import { conferenceDaysRemaining, ticketPromotionPhase } from 'utils/ticket-promotion';
   function updateTicketPromotions() {
-    const phase = ticketPromotionPhase();
+    const now = Date.now();
+    const phase = ticketPromotionPhase(now);
+    const days = conferenceDaysRemaining(now);
     document.querySelectorAll<HTMLElement>('[data-ticket-promotion]').forEach(banner => {
+      const countdown = banner.querySelector<HTMLElement>('[data-conference-countdown]');
+      if (countdown) {
+        const zh = countdown.dataset.lang === 'zh';
+        const text = days > 0
+          ? (zh ? `大会倒计时 ${days} 天` : `Conference countdown: ${days} ${days === 1 ? 'day' : 'days'}`)
+          : (zh ? '大会已开幕' : 'The conference is underway');
+        if (countdown.textContent !== text) countdown.textContent = text;
+      }
       banner.hidden = phase === 'closed';
       banner.querySelectorAll<HTMLElement>('[data-ticket-phase]').forEach(panel => {
         panel.hidden = panel.dataset.ticketPhase !== phase;
@@ -62,6 +73,7 @@ const zh = lang === 'zh';
   a:focus-visible { outline: 3px solid currentColor; outline-offset: -4px; }
   .promotion-message { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px 18px; }
   strong { font-weight: 800; color: inherit; }
+  .promotion-countdown { white-space: nowrap; }
   .promotion-cta { flex-shrink: 0; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
   /* Keep all offer text still; animate only the background glow and CTA arrow. */
   .ticket-promotion::before {
@@ -94,6 +106,6 @@ const zh = lang === 'zh';
   @media (max-width: 700px) {
     a { padding: 7px 12px; gap: 10px; font-size: 12px; }
     .promotion-message { justify-content: flex-start; gap: 2px 10px; }
-    time { font-size: 11px; }
+    time, .promotion-countdown { font-size: 11px; }
   }
 </style>
