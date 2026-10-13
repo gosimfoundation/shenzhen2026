@@ -53,6 +53,7 @@ export interface ProgramSession {
   timeSlot?: string;
   startTime?: string;
   title?: LocalizedText;
+  url?: LocalizedText;
 }
 export interface Activity {
   id: string;

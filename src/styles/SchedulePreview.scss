@@ -177,6 +177,10 @@
   background: #201e16;
 }
 
+.preview-session-card--activity {
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+}
+
 .preview-session-cell-link {
   position: absolute;
   z-index: 1;

@@ -5244,14 +5244,252 @@
       "sessions": [
         {
           "date": "2026-10-16",
-          "timeSlot": "12:00-14:00"
+          "timeSlot": "12:30-13:30"
         },
         {
           "date": "2026-10-17",
-          "timeSlot": "12:00-14:00"
+          "timeSlot": "12:30-13:30"
         }
       ],
-      "programOrder": 19
+      "programOrder": 19,
+      "program": [
+        {
+          "date": "2026-10-16",
+          "timeSlot": "12:30-12:35",
+          "title": {
+            "en": "Spotlight introduction",
+            "zh": "Spotlight 总体介绍"
+          }
+        },
+        {
+          "date": "2026-10-16",
+          "timeSlot": "12:35-12:41",
+          "title": {
+            "en": "Petoi Quaddle",
+            "zh": "Petoi Quaddle"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-1",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-1"
+          }
+        },
+        {
+          "date": "2026-10-16",
+          "timeSlot": "12:41-12:47",
+          "title": {
+            "en": "Fugleramme",
+            "zh": "Fugleramme"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-2",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-2"
+          }
+        },
+        {
+          "date": "2026-10-16",
+          "timeSlot": "12:47-12:53",
+          "title": {
+            "en": "Tiny Engineer",
+            "zh": "Tiny Engineer"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-3",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-3"
+          }
+        },
+        {
+          "date": "2026-10-16",
+          "timeSlot": "12:53-12:59",
+          "title": {
+            "en": "XLeRobot",
+            "zh": "XLeRobot"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-4",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-4"
+          }
+        },
+        {
+          "date": "2026-10-16",
+          "timeSlot": "12:59-13:05",
+          "title": {
+            "en": "AI Desk Phone",
+            "zh": "事务官座机"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-5",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-5"
+          }
+        },
+        {
+          "date": "2026-10-16",
+          "timeSlot": "13:05-13:11",
+          "title": {
+            "en": "Redbank III",
+            "zh": "第三红岸 Redbank III"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-6",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-6"
+          }
+        },
+        {
+          "date": "2026-10-16",
+          "timeSlot": "13:11-13:17",
+          "title": {
+            "en": "reset",
+            "zh": "橘一下 reset"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-7",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-7"
+          }
+        },
+        {
+          "date": "2026-10-16",
+          "timeSlot": "13:17-13:23",
+          "title": {
+            "en": "Xiapan USB",
+            "zh": "虾盘 Xiapan USB"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-8",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-8"
+          }
+        },
+        {
+          "date": "2026-10-16",
+          "timeSlot": "13:23-13:30",
+          "title": {
+            "en": "PhyAgentOS",
+            "zh": "PhyAgentOS"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-9",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-9"
+          }
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "12:30-12:35",
+          "title": {
+            "en": "Spotlight introduction",
+            "zh": "Spotlight 总体介绍"
+          }
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "12:35-12:41",
+          "title": {
+            "en": "VACAT AI Visual Creativity Awards",
+            "zh": "AI视觉创意大赛“瓦卡奖”"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-10",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-10"
+          }
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "12:41-12:47",
+          "title": {
+            "en": "VibeKeys",
+            "zh": "VibeKeys"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-11",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-11"
+          }
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "12:47-12:53",
+          "title": {
+            "en": "Hen Local Translator",
+            "zh": "很 Local 实时翻译"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-12",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-12"
+          }
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "12:53-12:59",
+          "title": {
+            "en": "Meiso Glass",
+            "zh": "Meiso Glass"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-13",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-13"
+          }
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "12:59-13:05",
+          "title": {
+            "en": "Ingora · Qrio",
+            "zh": "Ingora · Qrio"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-14",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-14"
+          }
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "13:05-13:11",
+          "title": {
+            "en": "PoopSense",
+            "zh": "PoopSense 便知"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-15",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-15"
+          }
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "13:11-13:17",
+          "title": {
+            "en": "Mira Light",
+            "zh": "Mira Light"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-16",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-16"
+          }
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "13:17-13:23",
+          "title": {
+            "en": "Octos Learn",
+            "zh": "Octos Learn"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-17",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-17"
+          }
+        },
+        {
+          "date": "2026-10-17",
+          "timeSlot": "13:23-13:30",
+          "title": {
+            "en": "Agentero",
+            "zh": "Agentero"
+          },
+          "url": {
+            "en": "https://spotlight.gosim.org/shenzhen2026/#showcase-project-18",
+            "zh": "https://spotlight.gosim.org/zh/shenzhen2026/#showcase-project-18"
+          }
+        }
+      ],
+      "notice": {
+        "en": "Each day opens with a five-minute Spotlight introduction, followed by nine project presentations. All times are China Standard Time (UTC+8).",
+        "zh": "每天先进行 5 分钟 Spotlight 总体介绍，随后由 9 个项目依次上台演讲。所有时间均为北京时间（UTC+8）。"
+      }
     },
     {
       "id": "exhibition-3f",

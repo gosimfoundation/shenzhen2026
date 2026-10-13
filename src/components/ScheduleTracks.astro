@@ -23,6 +23,7 @@ const previewCopy = {
     sidebarAria: "Schedule categories",
     tracks: "Tracks",
     workshops: "Workshops",
+    showcases: "Spotlight",
     arrangement: "Program",
     sessions: (count: number) => `${count} session${count === 1 ? "" : "s"}`,
     summary: (talks: number, categories: number) => `${talks} sessions · ${categories} program categories`,
@@ -33,18 +34,20 @@ const previewCopy = {
     sidebarAria: "议程分类",
     tracks: "分论坛主题",
     workshops: "工作坊",
+    showcases: "Spotlight 项目演讲",
     arrangement: "活动安排",
     sessions: (count: number) => `${count} 场议程`,
     summary: (talks: number, categories: number) => `共 ${talks} 场议程 · ${categories} 个议程分类`,
     note: "所有时间均为北京时间（UTC+8）。日程如有调整将在此更新。",
   },
 }[previewLang]
+const spotlightActivity = schedulePreview.activities.find((activity) => activity.id === "spotlight-talks")
 const previewTalkCount = schedulePreview.tracks.reduce(
   (count, track) => count + track.talks.length,
   0,
-)
+) + (spotlightActivity?.program?.length || 0)
 const previewFirstTrackId = schedulePreview.tracks[0]?.id
-const previewPrograms = schedulePreview.tracks
+const previewPrograms = [...schedulePreview.tracks, ...(spotlightActivity ? [{ ...spotlightActivity, talks: [] }] : [])]
 const previewSidebarGroups = [
   {
     id: "tracks",
@@ -55,6 +58,11 @@ const previewSidebarGroups = [
     id: "workshops",
     label: previewCopy.workshops,
     tracks: previewPrograms.filter((track) => track.group === "workshops"),
+  },
+  {
+    id: "showcases",
+    label: previewCopy.showcases,
+    tracks: previewPrograms.filter((track) => track.group === "showcases"),
   },
 ].filter((group) => group.tracks.length > 0)
 const previewSpeakerData = previewLang === "zh" ? speakersZh : speakersEn
@@ -118,7 +126,8 @@ const dateLabel = (date: string) => previewLang === "zh"
           </div>
 
           {previewPrograms.map((track, trackIndex) => {
-            const groups = groupScheduleDays(track.talks)
+            const entries = [...track.talks, ...("program" in track ? track.program || [] : [])]
+            const groups = groupScheduleDays(entries)
             const firstDay = groups.find((group) => group.talks.length > 0)?.date
             return (
             <div
@@ -128,7 +137,7 @@ const dateLabel = (date: string) => previewLang === "zh"
             >
               <div class="preview-panel-header" style={`--tc: ${trackColor(track.id)}`}>
                 <h2>{track.name[previewLang]}</h2>
-                <span>{track.talks.length ? previewCopy.sessions(track.talks.length) : previewCopy.arrangement}</span>
+                <span>{entries.length ? previewCopy.sessions(entries.length) : previewCopy.arrangement}</span>
               </div>
 
               {track.room && <p class="preview-program-room">{track.room[previewLang]}</p>}
@@ -140,7 +149,7 @@ const dateLabel = (date: string) => previewLang === "zh"
               </ul>}
               {track.notice && <p class="preview-workshop-notice">{track.notice[previewLang]}</p>}
 
-              {track.talks.length > 0 && <div class="preview-day-nav" aria-label={previewLang === "zh" ? "选择日期" : "Choose day"}>
+              {entries.length > 0 && <div class="preview-day-nav" aria-label={previewLang === "zh" ? "选择日期" : "Choose day"}>
                 {groups.filter((group) => conferenceDays.some((day) => day.date === group.date) || group.talks.length > 0).map((group) => {
                   const day = conferenceDays.find((day) => day.date === group.date)
                   return (
@@ -157,25 +166,27 @@ const dateLabel = (date: string) => previewLang === "zh"
               {groups.filter((group) => group.talks.length > 0).map((group) => (
               <div class="preview-session-list" data-preview-day-panel={group.date} hidden={group.date !== firstDay}>
                 {group.talks.map((talk) => {
-                  const talkSpeakers = talk.speakers
+                  const talkSpeakers = ("speakers" in talk ? talk.speakers : [])
                     .map((speakerId) => previewSpeakerById.get(speakerId))
                     .filter(Boolean) as any[]
+                  const title = talk.title?.[previewLang] || track.name[previewLang]
+                  const url = "slug" in talk ? `${previewScheduleBasePath}${talk.slug}/` : talk.url?.[previewLang]
                   return (
-                    <article class="preview-session-card" style={`--tc: ${trackColor(track.id)}`}>
-                      <a
+                    <article class:list={["preview-session-card", { "preview-session-card--activity": !("speakers" in talk) }]} style={`--tc: ${trackColor(track.id)}`}>
+                      {url && <a
                         class="preview-session-cell-link"
-                        href={`${previewScheduleBasePath}${talk.slug}/`}
-                        aria-label={talk.title[previewLang]}
-                      ></a>
+                        href={url}
+                        aria-label={title}
+                      ></a>}
                       <div class="preview-session-time">
                         {"timeSlot" in talk && talk.timeSlot ? String(talk.timeSlot).split("-").map((time, index) => (
                           <span class={index === 0 ? "preview-time-start" : "preview-time-end"}>{time}</span>
                         )) : <span class="preview-time-pending">{previewLang === "zh" ? "时间待定" : "Time TBA"}</span>}
                       </div>
                       <div class="preview-session-content">
-                        <h3>{talk.title[previewLang]}</h3>
+                        <h3>{title}</h3>
                       </div>
-                      <div class="preview-session-speakers">
+                      {talkSpeakers.length > 0 && <div class="preview-session-speakers">
                         {talkSpeakers.map((speaker) => (
                           <a
                             class="preview-speaker-link"
@@ -193,7 +204,7 @@ const dateLabel = (date: string) => previewLang === "zh"
                             </span>
                           </a>
                         ))}
-                      </div>
+                      </div>}
                     </article>
                   )
                 })}
