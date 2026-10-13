@@ -5072,8 +5072,8 @@
           "manual": true,
           "type": "talk",
           "title": {
-            "en": "Exploring the Agent-Friendly Paradigm: Generating High-Performance Complex Operators with CANNBot",
-            "zh": "Agent-Friendly 范式探索：\n基于CANNBot的高性能复杂算子生成"
+            "en": "CANNBot-DSL: An Agent-Friendly Paradigm for High-Performance Complex Operator Development",
+            "zh": "CANNBot-DSL：Agent Friendly 复杂算子高性能开发范式"
           },
           "overview": {
             "en": "Abstract to be announced.",
