@@ -54,6 +54,8 @@ export interface ProgramSession {
   startTime?: string;
   title?: LocalizedText;
   url?: LocalizedText;
+  slug?: string;
+  overview?: LocalizedText;
 }
 export interface Activity {
   id: string;
@@ -108,7 +110,7 @@ export const speakersZh = localizeSpeakers("zh");
 
 export function getEventPaths(lang: Language) {
   const people = new Map(localizeSpeakers(lang).speakers.map((speaker) => [speaker.id, speaker]));
-  return schedule.tracks.flatMap((track) => track.talks.map((talk) => ({
+  const talkPaths = schedule.tracks.flatMap((track) => track.talks.map((talk) => ({
     params: { event: talk.slug },
     props: {
       category: track.id,
@@ -132,4 +134,27 @@ export function getEventPaths(lang: Language) {
       },
     },
   })));
+  const activityPaths = schedule.activities.flatMap((activity) => (activity.program || [])
+    .filter((session) => session.slug && session.title && session.overview)
+    .map((session) => ({
+      params: { event: session.slug! },
+      props: {
+        category: activity.id,
+        event: {
+          title: session.title![lang],
+          content: "",
+          date: session.date,
+          timeSlot: session.timeSlot || "",
+          type: "roadshow",
+          speakers: [],
+          room: activity.room?.[lang] || "",
+          slug: session.slug!,
+          categoryLabel: activity.name[lang],
+          preview: !session.timeSlot,
+          overview: session.overview![lang],
+          notice: "",
+        },
+      },
+    })));
+  return [...talkPaths, ...activityPaths];
 }

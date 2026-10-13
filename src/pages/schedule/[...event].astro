@@ -7,9 +7,7 @@ export async function getStaticPaths() {
   return getEventPaths("en");
 }
 const { event: eventDetails, category } = Astro.props;
-const allEvents = schedule.tracks.flatMap((track) =>
-  track.talks.map((talk) => ({ slug: talk.slug, title: talk.title.en })),
-);
+const allEvents = getEventPaths("en").map(({ props }) => ({ slug: props.event.slug, title: props.event.title }));
 const currentIndex = allEvents.findIndex((event) => event.slug === eventDetails.slug);
 const prevEvent = allEvents[(currentIndex - 1 + allEvents.length) % allEvents.length];
 const nextEvent = allEvents[(currentIndex + 1) % allEvents.length];
@@ -90,7 +88,7 @@ const eventCategory = eventDetails.categoryLabel;
       {eventDetails.overview && (
         <section class="ev-overview" aria-labelledby="talk-overview-heading">
           <h2 id="talk-overview-heading">Talk overview</h2>
-          <p>{eventDetails.overview}</p>
+          <p class:list={{ "ev-roadshow-description": eventDetails.type === "roadshow" }}>{eventDetails.overview}</p>
         </section>
       )}
 
@@ -297,6 +295,11 @@ const eventCategory = eventDetails.categoryLabel;
     color: rgba(246, 243, 231, 0.82);
     font-size: 0.95rem;
     line-height: 1.75;
+  }
+
+  .ev-overview .ev-roadshow-description {
+    white-space: pre-line;
+    font-variant-numeric: tabular-nums;
   }
 
   .ev-signup-btn {

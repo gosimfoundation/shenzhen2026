@@ -42,12 +42,13 @@ const previewCopy = {
   },
 }[previewLang]
 const spotlightActivity = schedulePreview.activities.find((activity) => activity.id === "spotlight-talks")
+const spotlightAwards = schedulePreview.tracks.flatMap((track) => track.talks).find((talk) => talk.ref === "SUMMIT-SPOTLIGHT-AWARDS")
 const previewTalkCount = schedulePreview.tracks.reduce(
   (count, track) => count + track.talks.length,
   0,
 ) + (spotlightActivity?.program?.length || 0)
 const previewFirstTrackId = schedulePreview.tracks[0]?.id
-const previewPrograms = [...schedulePreview.tracks, ...(spotlightActivity ? [{ ...spotlightActivity, talks: [] }] : [])]
+const previewPrograms = [...schedulePreview.tracks, ...(spotlightActivity ? [{ ...spotlightActivity, talks: spotlightAwards ? [spotlightAwards] : [] }] : [])]
 const previewSidebarGroups = [
   {
     id: "tracks",
@@ -170,7 +171,7 @@ const dateLabel = (date: string) => previewLang === "zh"
                     .map((speakerId) => previewSpeakerById.get(speakerId))
                     .filter(Boolean) as any[]
                   const title = talk.title?.[previewLang] || track.name[previewLang]
-                  const url = "slug" in talk ? `${previewScheduleBasePath}${talk.slug}/` : talk.url?.[previewLang]
+                  const url = talk.slug ? `${previewScheduleBasePath}${talk.slug}/` : ("url" in talk ? talk.url?.[previewLang] : undefined)
                   return (
                     <article class:list={["preview-session-card", { "preview-session-card--activity": !("speakers" in talk) }]} style={`--tc: ${trackColor(track.id)}`}>
                       {url && <a
