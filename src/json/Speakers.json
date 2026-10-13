@@ -606,8 +606,8 @@
         "zh": "Katarzyna Starosławska"
       },
       "roleOrg": {
-        "en": "AI, Data & HPC Expert, LUMI AI Factory / CYFRONET AGH / European Commission",
-        "zh": "LUMI AI Factory / CYFRONET AGH / 欧盟委员会 AI、数据与高性能计算专家"
+        "en": "AI, Data & HPC Expert, LUMI AI Factory / GAIA AI Factory / CYFRONET AGH / European Commission",
+        "zh": "LUMI AI Factory、GAIA AI Factory、AGH Cyfronet 超级计算中心及欧盟委员会 AI、数据与高性能计算专家"
       },
       "bio": {
         "en": "Katarzyna Starosławska is a data, AI, and high-performance computing specialist with more than 20 years of experience across technology, strategy, and innovation. She advises corporate boards, public institutions, and the European Union on data quality, interoperability, and cross-sector collaboration. Her roles include work with the European Commission’s next-generation interoperability expert group and AI in Science working groups, EuroHPC / LUMI AI Factory at CYFRONET AGH, and Poland’s Ministry of Digital Affairs. She also serves on the business council of the Speakleash / Bielik.ai Foundation and advises research and health organizations.",
@@ -633,19 +633,17 @@
         "zh": "廖勤樱"
       },
       "roleOrg": {
-        "en": "Principal Program Manager, Microsoft",
-        "zh": "微软首席项目经理"
+        "en": "Co-founder & Product Lead, Ingora",
+        "zh": "Ingora 联合创始人兼产品负责人"
       },
       "bio": {
-        "en": "Senior AI Product Leader with 10+ years at Microsoft Azure AI, specializing in Speech AI and Voice Agents. Experienced in product strategy, 0-to-1 product development, and global commercialization. Combines B2B and B2C product expertise with deep strengths in human-centered design, AI product experience, and ecosystem development to transform cutting-edge AI technologies into scalable products and lasting business value.",
-        "zh": "拥有十余年微软 Azure AI 经验的资深 AI 产品负责人，专注于语音 AI 与语音智能体。具备产品战略、从零到一产品开发和全球商业化经验，致力于将前沿 AI 技术转化为可规模化的产品和长期业务价值。"
+        "en": "Qinying is Co-founder and Product Lead at Ingora, where she focuses on building the next generation of AI to help people develop their capabilities. Before joining Ingora, she was a Principal Product Manager at Microsoft Azure AI, leading AI product initiatives across Cognitive Services, Speech AI, and Voice Agents.",
+        "zh": "廖勤樱是 Ingora 联合创始人兼产品负责人，专注于打造帮助人们提升自身能力的下一代人工智能。加入 Ingora 之前，她曾担任微软 Azure AI 首席产品经理，领导涵盖认知服务、语音 AI 和语音智能体的 AI 产品项目。"
       },
       "tags": [
         "sz26-agentic-os-app"
       ],
-      "socialLinks": {
-        "linkedin": "https://www.linkedin.com/in/qinying-liao-7458b358/"
-      },
+      "socialLinks": {},
       "draft": false,
       "image": "/images/speakers/confirmed/qinying-liao.png",
       "sourceNames": [
@@ -717,7 +715,7 @@
       },
       "roleOrg": {
         "en": "Principal, Known Unknowns GmbH",
-        "zh": "Known Unknowns GmbH 负责人"
+        "zh": "Known Unknowns GmbH 首席顾问"
       },
       "bio": {
         "en": "Igor Schwarzmann is Principal of Known Unknowns GmbH in Berlin and a strategic advisor working at the intersection of culture and technology. He has 20 years of experience across healthcare, automotive, luxury, media, and government, working with technology companies, multinationals, and institutions internationally. He runs his practice on open-source, local-first agentic AI infrastructure and hosts Follow the Rabbit, a podcast about cultural phenomena and European AI sovereignty.",
@@ -1201,12 +1199,12 @@
         "zh": "董鑫"
       },
       "roleOrg": {
-        "en": "Program Director, Huawei Programming Language Lab",
-        "zh": "华为编程语言实验室项目总监"
+        "en": "Director of Programming Languages and IDE Projects, 2012 Laboratories, Huawei",
+        "zh": "华为2012实验室编程语言与IDE项目群总监"
       },
       "bio": {
-        "en": "Sean Dong is a Program Director at Huawei Programming Language Lab, leading core technology development for programming languages and IDE infrastructure. He previously worked on Microsoft Azure and Dynamics 365, and later led initiatives across Huawei's mobile AI tools, Ascend AI toolchain, HarmonyOS toolchain, and company-wide AI development platforms.",
-        "zh": "现任华为编程语言实验室项目总监，负责编程语言与 IDE 基础软件的核心技术研发。曾参与 Microsoft Azure、Dynamics 365，以及华为移动 AI 研发工具、昇腾 AI 芯片工具链、HarmonyOS 工具链和公司级 AI 研发平台建设。"
+        "en": "Sean Dong is Director of Programming Languages and IDE Projects at Huawei’s 2012 Laboratories, leading core technology development for programming languages and IDE infrastructure. He previously worked on Microsoft Azure and Dynamics 365, and later led initiatives across Huawei's mobile AI tools, Ascend AI toolchain, HarmonyOS toolchain, and company-wide AI development platforms.",
+        "zh": "现任华为2012实验室编程语言与IDE项目群总监，负责编程语言与 IDE 基础软件的核心技术研发。曾参与 Microsoft Azure、Dynamics 365，以及华为移动 AI 研发工具、昇腾 AI 芯片工具链、HarmonyOS 工具链和公司级 AI 研发平台建设。"
       },
       "tags": [
         "sz26-agentic-ai-summit"
@@ -1227,8 +1225,8 @@
         "zh": "Birgitta Böckeler"
       },
       "roleOrg": {
-        "en": "Distinguished Engineer",
-        "zh": "杰出工程师"
+        "en": "Distinguished Engineer, Thoughtworks",
+        "zh": "Thoughtworks 杰出工程师"
       },
       "bio": {
         "en": "Birgitta is a software developer, architect and technical leader with over 20 years of experience in technology and software consulting, during which she has seen many organisations and teams succeed and fail at delivering valuable software. Most recently she worked at Thoughtworks, where she was a Distinguished Engineer and subject matter expert for AI-assisted software delivery since 2023.",
@@ -2345,8 +2343,8 @@
         "zh": "詹博华"
       },
       "roleOrg": {
-        "en": "Technical Expert, Huawei Programming Language Lab",
-        "zh": "华为编程语言实验室技术专家"
+        "en": "Technical Expert, Programming Language Lab, 2012 Laboratories, Huawei",
+        "zh": "华为2012实验室编程语言实验室技术专家"
       },
       "bio": {
         "en": "Bohua Zhan is a technical expert at Huawei Programming Language Lab. He earned his Ph.D. in mathematics from Princeton University in 2014 and later held postdoctoral positions at MIT and the Technical University of Munich. His research covers automated reasoning, interactive theorem provers, embedded-system modeling and verification, and applications in operating systems, distributed systems, and quantum programs.",
@@ -2708,12 +2706,12 @@
         "zh": "李建忠"
       },
       "roleOrg": {
-        "en": "President, Singularity Intelligence Research Institute / Senior Vice President, CSDN",
-        "zh": "奇点智能研究院院长、CSDN 合伙人兼高级副总裁"
+        "en": "President, Singularity Intelligence Research Institute; Senior Vice President, CSDN",
+        "zh": "奇点智能研究院院长、CSDN 高级副总裁"
       },
       "bio": {
-        "en": "Jianzhong Li is President of the Singularity Intelligence Research Institute and Partner and Senior Vice President at CSDN, with extensive research and industry experience in artificial intelligence, technological innovation, and industrial ecosystems. In 2016, he founded the Singularity Intelligence Technology Conference, formerly the Global Machine Learning Technology Conference, which has become an influential forum for advanced technical exchange in the AI industry. His recent research focuses on artificial-intelligence paradigms centered on large models, and he proposed the Paradigm Shift Cube framework for technological innovation. In 2005, he initiated the first Global C++ and System Software Technology Conference, and he is a member of the ISO C++ international standards committee. He also serves on the AI Expert Committee of the Science and Technology Vision Forum at the Tengchong Scientists Forum, where he joined other scientists in publishing Technology Foresight and Future Vision 2049. Through the Singularity Intelligence Research Institute, he provides AI and innovation strategy consulting to organizations including Fortune Global 500 companies.",
-        "zh": "李建忠，奇点智能研究院（Singularity Research）院长、CSDN 合伙人兼高级副总裁，在人工智能、技术创新和产业生态领域拥有丰富见解与深入研究经验。2016 年发起创办奇点智能技术大会（原全球机器学习技术大会），该大会已成为人工智能产业领域极具影响力的高端技术研讨与交流平台。近年来主要研究以大模型为主的人工智能范式，提出科技创新的“范式转换立方体”系统框架，相关研究和演讲引起业界广泛关注。2005 年发起举办第一届全球 C++ 及系统软件技术大会，并担任 ISO C++ 国际标准委员会委员。他也是腾冲科学家论坛科技愿景论坛人工智能专家委员会委员，曾联合多位科学家发布《科技预见与未来愿景 2049》。他创立的奇点智能研究院主要研究以大模型为主的人工智能范式，并为包括世界 500 强在内的多家企业提供 AI 与创新战略咨询。"
+        "en": "Jianzhong Li is President of the Singularity Intelligence Research Institute and Senior Vice President at CSDN, with extensive research and industry experience in artificial intelligence, technological innovation, and industrial ecosystems. In 2016, he founded the Singularity Intelligence Technology Conference, formerly the Global Machine Learning Technology Conference, which has become an influential forum for advanced technical exchange in the AI industry. His recent research focuses on artificial-intelligence paradigms centered on large models, and he proposed the Paradigm Shift Cube framework for technological innovation. In 2005, he initiated the first Global C++ and System Software Technology Conference, and he is a member of the ISO C++ international standards committee. He also serves on the AI Expert Committee of the Science and Technology Vision Forum at the Tengchong Scientists Forum, where he joined other scientists in publishing Technology Foresight and Future Vision 2049. Through the Singularity Intelligence Research Institute, he provides AI and innovation strategy consulting to organizations including Fortune Global 500 companies.",
+        "zh": "李建忠，奇点智能研究院（Singularity Research）院长、CSDN 高级副总裁，在人工智能、技术创新和产业生态领域拥有丰富见解与深入研究经验。2016 年发起创办奇点智能技术大会（原全球机器学习技术大会），该大会已成为人工智能产业领域极具影响力的高端技术研讨与交流平台。近年来主要研究以大模型为主的人工智能范式，提出科技创新的“范式转换立方体”系统框架，相关研究和演讲引起业界广泛关注。2005 年发起举办第一届全球 C++ 及系统软件技术大会，并担任 ISO C++ 国际标准委员会委员。他也是腾冲科学家论坛科技愿景论坛人工智能专家委员会委员，曾联合多位科学家发布《科技预见与未来愿景 2049》。他创立的奇点智能研究院主要研究以大模型为主的人工智能范式，并为包括世界 500 强在内的多家企业提供 AI 与创新战略咨询。"
       },
       "tags": [
         "sz26-agentic-ai-summit"
@@ -3854,12 +3852,12 @@
         "zh": "Slava Tykhonov"
       },
       "roleOrg": {
-        "en": "Head of AI & Interoperability, CODATA",
-        "zh": "CODATA 人工智能与互操作性负责人"
+        "en": "Head of AI, CODATA",
+        "zh": "CODATA AI 负责人"
       },
       "bio": {
-        "en": "Head of AI and Interoperability at CODATA. With over 25 years’ experience in software development, data science, and European research infrastructures (EOSC), Slava is an innovator, IT architect, and mentor who has focused much of his career on research and education through experimentation, pilot projects, and inventive problem-solving methods. He is a Harvard Dataverse Ambassador (since June 2025) and co-author of the Google-initiated CroissantML standard for AI.",
-        "zh": "Slava Tykhonov 是 CODATA 人工智能与互操作性负责人，拥有超过 25 年软件开发、数据科学及欧洲科研基础设施（EOSC）经验。他兼任技术架构师与导师，长期通过实验和试点项目推动科研与教育创新。自 2025 年 6 月起，他担任 Harvard Dataverse 大使，并参与编写由 Google 发起的 AI 数据标准 CroissantML。"
+        "en": "Head of AI at CODATA. With over 25 years’ experience in software development, data science, and European research infrastructures (EOSC), Slava is an innovator, IT architect, and mentor who has focused much of his career on research and education through experimentation, pilot projects, and inventive problem-solving methods. He is a Harvard Dataverse Ambassador (since June 2025) and co-author of the Google-initiated CroissantML standard for AI.",
+        "zh": "Slava Tykhonov 是 CODATA 人工智能负责人，拥有超过 25 年软件开发、数据科学及欧洲科研基础设施（EOSC）经验。他兼任技术架构师与导师，长期通过实验和试点项目推动科研与教育创新。自 2025 年 6 月起，他担任 Harvard Dataverse 大使，并参与编写由 Google 发起的 AI 数据标准 CroissantML。"
       },
       "tags": [
         "sz26-agentic-ai-summit"
@@ -4195,12 +4193,12 @@
         "zh": "王伟"
       },
       "roleOrg": {
-        "en": "Director, Open Source Technical Committee, Singularity Intelligence Research Institute; Professor, East China Normal University",
-        "zh": "奇点智能研究院开源技术委员会主任, 华东师范大学"
+        "en": "Director, Open Source Technical Committee, Singularity Intelligence Research Institute; Chair, Open Source Governance Standards Group, China Electronics Standardization Institute",
+        "zh": "奇点智能研究院开源技术委员会主任，工业和信息化部电子标准院开源治理标准总体组组长"
       },
       "bio": {
-        "en": "Wei Wang directs the Open Source Technical Committee at the Singularity Intelligence Research Institute and is a professor at East China Normal University. His work focuses on open-source governance and evaluation. He led the development of China's first series of open-source governance standards and has published more than 100 papers in venues including ICSE, WWW, and ACL.",
-        "zh": "王伟，奇点智能研究院开源技术委员会主任，中国软件行业协会开发者生态专业委员会副主任，中国科协联合国咨商开源创新专委会秘书长，华东师范大学教授，CCF杰出会员。牵头制定中国首套开源治理系列标准，研究聚焦开源治理与开源评价。在 ICSE、WWW、ACL 等顶会期刊发表论文百余篇，入选国家级创新人才项目、获国家级教学成果二等奖、上海开源创新卓越成果奖特等奖。"
+        "en": "Wei Wang directs the Open Source Technical Committee at the Singularity Intelligence Research Institute and chairs the Open Source Governance Standards Group at the China Electronics Standardization Institute. He is also a professor at East China Normal University. His work focuses on open-source governance and evaluation. He led the development of China's first series of open-source governance standards and has published more than 100 papers in venues including ICSE, WWW, and ACL.",
+        "zh": "王伟，奇点智能研究院开源技术委员会主任，工业和信息化部电子标准院开源治理标准总体组组长，中国软件行业协会开发者生态专业委员会副主任，中国科协联合国咨商开源创新专委会秘书长，华东师范大学教授，CCF杰出会员。牵头制定中国首套开源治理系列标准，研究聚焦开源治理与开源评价。在 ICSE、WWW、ACL 等顶会期刊发表论文百余篇，入选国家级创新人才项目、获国家级教学成果二等奖、上海开源创新卓越成果奖特等奖。"
       },
       "tags": [
         "sz26-agentic-ai-summit"
@@ -4332,8 +4330,8 @@
         "zh": "杨丽蕴"
       },
       "roleOrg": {
-        "en": "Director, Open Source Research Office, China Electronics Standardization Institute",
-        "zh": "中国电子技术标准化研究院开源研究室主任"
+        "en": "Director, Open Source Research Center, China Electronics Standardization Institute; Founder, Mulan Open Source Community",
+        "zh": "中国电子技术标准化研究院开源研究中心主任；木兰开源社区创始人"
       },
       "bio": {
         "en": "Over ten‑year track record in leading China’s cloud computing standardization, covering organization for development of more than 80 national, industrial and association standards and delivery of nearly 20 key standard projects. Past chairmanship of the ISO/IEC JTC 1/SC38 China National Mirror Committee and China’s Head of Delegation for SC38 plenary sessions, with a Chinese‑origin proposal promoted and approved as SC38 NWI in 2025. Ongoing open‑source standardization research undertaken under SC38 AG5. Founder of the Mulan Open Source Community, with delivery of MulanPSL, China’s first OSI‑approved open‑source license. Core positions held in multiple open‑source organizations, together with solid practical experience in open‑source community construction, license research and open‑source governance.",
@@ -4691,11 +4689,11 @@
       "id": "fu-tingsheng",
       "name": {
         "en": "Tingsheng Fu",
-        "zh": "Tingsheng Fu"
+        "zh": "付廷升"
       },
       "roleOrg": {
         "en": "Senior Vice President, AsiaInfo Security",
-        "zh": "高级副总裁, 亚信安全"
+        "zh": "亚信安全高级副总裁"
       },
       "bio": {
         "en": "Tingsheng Fu is Senior Vice President at AsiaInfo Security.",
@@ -4709,7 +4707,8 @@
       "image": "/images/speakers/confirmed/fu-tingsheng.png",
       "sourceNames": [
         "fu tingsheng",
-        "Tingsheng Fu"
+        "Tingsheng Fu",
+        "付廷升"
       ],
       "source": "cfp"
     },

@@ -275,7 +275,9 @@
             "zh": "本次演讲结合一线网络安全攻防经验，分析 AI 如何重塑攻击链，并基于奇安信等安全企业的实战数据与案例，提出可落地的防御建设路径。内容聚焦 AI 带来的攻防失衡，探讨如何推动防御体系从被动修补转向主动防御。"
           },
           "date": "2026-10-17",
-          "timeSlot": "17:20-17:45"
+          "timeSlot": "17:20-17:45",
+          "draft": true,
+          "editorialNote": "Removed from the published program per the organizer-approved October 13 detailed Summit agenda; retained for history."
         },
         {
           "ref": "P-30",
@@ -424,7 +426,7 @@
             "zh": "本次演讲介绍用于语言与视觉模型可审计评测的开源框架 Eclipse PanEval，讲解其解耦架构、跨区域协作方式、中立治理模式，以及社区如何共同建设共享评测基础设施。"
           },
           "date": "2026-10-17",
-          "timeSlot": "14:00-14:25"
+          "timeSlot": "14:00-14:30"
         },
         {
           "ref": "P-110",
@@ -466,7 +468,7 @@
             "zh": "本次演讲介绍 LF Research 最新发布的智能体 AI 与 AI 编程研究报告。报告涵盖两项研究：“企业向智能体 AI 时代转型”和“生成式 AI 对开源软件的影响”，重点讨论 AI 在企业系统中的演变及其对开源开发的影响。"
           },
           "date": "2026-10-17",
-          "timeSlot": "14:25-14:50"
+          "timeSlot": "14:30-15:00"
         },
         {
           "ref": "SUMMIT-FIRESIDE-CHAT",
@@ -533,7 +535,7 @@
             "zh": "随着软件进入 CPU 与大模型协同执行的新阶段，编程语言需要同时服务开发者与 AI 智能体。本次演讲介绍仓颉面向 AI 的编译器、LSP、测试基础设施、结构化技能库、可验证规格语言 Speclang，以及智能体语言的早期探索。"
           },
           "date": "2026-10-17",
-          "timeSlot": "15:15-15:40"
+          "timeSlot": "15:30-16:00"
         },
         {
           "ref": "P-29",
@@ -554,7 +556,7 @@
             "zh": "欧洲是 AI 企业拓展业务的重要市场。进入欧洲除了需要成熟的产品，也需要治理、运营和合规方面的准备。本次演讲探讨企业出海前需要厘清的监管定位、风险分类与治理要求，以及智能体 AI 等新技术如何影响市场进入策略。"
           },
           "date": "2026-10-17",
-          "timeSlot": "16:05-16:30"
+          "timeSlot": "16:30-17:00"
         },
         {
           "ref": "P-19",
@@ -575,7 +577,7 @@
             "zh": "本次演讲介绍 OpenMined 基金会的 Network-Sourced AI：通过开放的模型集成组合多种模型能力，并利用结构化透明机制与隐私增强技术支持结果复现，让数据所有者掌握访问权限。现场将展示开源工具包和公开排行榜，介绍如何在保护数据隐私的前提下构建和复现先进模型系统。"
           },
           "date": "2026-10-17",
-          "timeSlot": "14:50-15:15"
+          "timeSlot": "15:00-15:30"
         },
         {
           "ref": "P-33",
@@ -596,7 +598,7 @@
             "zh": "本次演讲探讨开源如何帮助全球南方参与塑造 AI 治理。演讲将介绍 Global AI Assembly 模式及其三大支柱：教育非技术人群、汇集用户声音，并通过结构化参与影响政府、企业和标准组织。演讲者认为，开源不只是开放代码与权重，更是让更多人共同参与 AI 决策的基础。"
           },
           "date": "2026-10-17",
-          "timeSlot": "16:30-16:55"
+          "timeSlot": "17:00-17:30"
         },
         {
           "ref": "AGENTIC-AI-SUMMIT-OCT-17-TEA-BREAK",
@@ -682,7 +684,7 @@
             "zh": "GOSIM 深圳 2026 闭幕式。"
           },
           "date": "2026-10-17",
-          "timeSlot": "18:15-18:20"
+          "timeSlot": "17:55-18:00"
         },
         {
           "ref": "P-1",
@@ -745,7 +747,7 @@
           ],
           "draft": false,
           "date": "2026-10-17",
-          "timeSlot": "15:40-16:05"
+          "timeSlot": "16:00-16:30"
         },
         {
           "ref": "P-189",
@@ -920,7 +922,8 @@
           },
           "date": "2026-10-17",
           "draft": false,
-          "timeSlot": "17:45-18:05"
+          "timeSlot": "17:30-17:50",
+          "editorialNote": "October 13 organizer-approved schedule: Yun Lin finishes the AI Education panel in HAI LIAO at 17:30 and begins the awards in ADEN 1 at 17:30. No transfer buffer; organizer coordination required. Keep published times as supplied."
         },
         {
           "ref": "SUMMIT-SPOTLIGHT-AWARDS",
@@ -942,7 +945,7 @@
           },
           "date": "2026-10-17",
           "draft": false,
-          "timeSlot": "18:05-18:15"
+          "timeSlot": "17:50-17:55"
         }
       ],
       "originalName": "Agentic AI Summit",
@@ -958,7 +961,7 @@
         },
         {
           "date": "2026-10-17",
-          "timeSlot": "10:15-18:20"
+          "timeSlot": "10:15-18:00"
         }
       ],
       "programOrder": 11
@@ -5327,8 +5330,8 @@
       ],
       "programOrder": 21,
       "notice": {
-        "en": "The hackathon awards ceremony is on October 17, 17:45–18:05, in 3F ADEN 1.",
-        "zh": "黑客松颁奖于10月17日17:45–18:05在3楼伊敦1厅举行。"
+        "en": "The hackathon awards ceremony is on October 17, 17:30–17:50, in 3F ADEN 1.",
+        "zh": "黑客松颁奖于10月17日17:30–17:50在3楼伊敦1厅举行。"
       }
     },
     {
@@ -5354,8 +5357,8 @@
       ],
       "programOrder": 22,
       "notice": {
-        "en": "The hackathon awards ceremony is on October 17, 17:45–18:05, in 3F ADEN 1.",
-        "zh": "黑客松颁奖于10月17日17:45–18:05在3楼伊敦1厅举行。"
+        "en": "The hackathon awards ceremony is on October 17, 17:30–17:50, in 3F ADEN 1.",
+        "zh": "黑客松颁奖于10月17日17:30–17:50在3楼伊敦1厅举行。"
       }
     },
     {
@@ -5381,8 +5384,8 @@
       ],
       "programOrder": 23,
       "notice": {
-        "en": "The hackathon awards ceremony is on October 17, 17:45–18:05, in 3F ADEN 1.",
-        "zh": "黑客松颁奖于10月17日17:45–18:05在3楼伊敦1厅举行。"
+        "en": "The hackathon awards ceremony is on October 17, 17:30–17:50, in 3F ADEN 1.",
+        "zh": "黑客松颁奖于10月17日17:30–17:50在3楼伊敦1厅举行。"
       }
     },
     {
@@ -5496,8 +5499,8 @@
       ],
       "programOrder": 35,
       "notice": {
-        "en": "The hackathon awards ceremony is on October 17, 17:45–18:05, in 3F ADEN 1.",
-        "zh": "黑客松颁奖于10月17日17:45–18:05在3楼伊敦1厅举行。"
+        "en": "The hackathon awards ceremony is on October 17, 17:30–17:50, in 3F ADEN 1.",
+        "zh": "黑客松颁奖于10月17日17:30–17:50在3楼伊敦1厅举行。"
       }
     },
     {
@@ -5523,8 +5526,8 @@
       ],
       "programOrder": 36,
       "notice": {
-        "en": "The hackathon awards ceremony is on October 17, 17:45–18:05, in 3F ADEN 1.",
-        "zh": "黑客松颁奖于10月17日17:45–18:05在3楼伊敦1厅举行。"
+        "en": "The hackathon awards ceremony is on October 17, 17:30–17:50, in 3F ADEN 1.",
+        "zh": "黑客松颁奖于10月17日17:30–17:50在3楼伊敦1厅举行。"
       }
     }
   ],
