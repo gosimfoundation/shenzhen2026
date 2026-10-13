@@ -5262,8 +5262,8 @@
             "zh": "Spotlight 第一天路演"
           },
           "overview": {
-            "en": "Day 1 of the Spotlight Shenzhen 2026 roadshow. The first five minutes introduce Spotlight, followed by nine project presentations. All times are China Standard Time (UTC+8).\n\nPresentation schedule:\n12:30–12:35 — Spotlight introduction\n12:35–12:41 — Petoi Quaddle\n12:41–12:47 — Fugleramme\n12:47–12:53 — Tiny Engineer\n12:53–12:59 — XLeRobot\n12:59–13:05 — AI Desk Phone\n13:05–13:11 — Redbank III\n13:11–13:17 — reset\n13:17–13:23 — Xiapan USB\n13:23–13:30 — PhyAgentOS",
-            "zh": "Spotlight Shenzhen 2026 第一天项目路演。前 5 分钟为 Spotlight 总体介绍，随后由 9 个项目依次上台演讲。以下时间均为北京时间（UTC+8）。\n\n具体路演日程：\n12:30–12:35 — Spotlight 总体介绍\n12:35–12:41 — Petoi Quaddle\n12:41–12:47 — Fugleramme\n12:47–12:53 — Tiny Engineer\n12:53–12:59 — XLeRobot\n12:59–13:05 — 事务官座机\n13:05–13:11 — 第三红岸 Redbank III\n13:11–13:17 — 橘一下 reset\n13:17–13:23 — 虾盘 Xiapan USB\n13:23–13:30 — PhyAgentOS"
+            "en": "Day 1 of the Spotlight Shenzhen 2026 roadshow. The first five minutes introduce Spotlight, followed by 8 project presentations. All times are China Standard Time (UTC+8).\n\nPresentation schedule:\n12:30–12:35 — Spotlight introduction\n12:35–12:42 — Petoi Quaddle\n12:42–12:49 — Fugleramme\n12:49–12:56 — Octos Learn\n12:56–13:03 — Redbank III\n13:03–13:10 — AI Desk Phone\n13:10–13:17 — reset\n13:17–13:24 — Xiapan USB\n13:24–13:30 — PhyAgentOS",
+            "zh": "Spotlight Shenzhen 2026 第一天项目路演。前 5 分钟为 Spotlight 总体介绍，随后由 8 个项目依次上台演讲。以下时间均为北京时间（UTC+8）。\n\n具体路演日程：\n12:30–12:35 — Spotlight 总体介绍\n12:35–12:42 — Petoi Quaddle\n12:42–12:49 — Fugleramme\n12:49–12:56 — Octos Learn\n12:56–13:03 — 第三红岸 Redbank III\n13:03–13:10 — 事务官座机\n13:10–13:17 — 橘一下 reset\n13:17–13:24 — 虾盘 Xiapan USB\n13:24–13:30 — PhyAgentOS"
           }
         },
         {
@@ -5275,14 +5275,14 @@
             "zh": "Spotlight 第二天路演"
           },
           "overview": {
-            "en": "Day 2 of the Spotlight Shenzhen 2026 roadshow. The first five minutes introduce Spotlight, followed by nine project presentations. All times are China Standard Time (UTC+8).\n\nPresentation schedule:\n12:30–12:35 — Spotlight introduction\n12:35–12:41 — VACAT AI Visual Creativity Awards\n12:41–12:47 — VibeKeys\n12:47–12:53 — Hen Local Translator\n12:53–12:59 — Meiso Glass\n12:59–13:05 — Ingora · Qrio\n13:05–13:11 — PoopSense\n13:11–13:17 — Mira Light\n13:17–13:23 — Octos Learn\n13:23–13:30 — Agentero",
-            "zh": "Spotlight Shenzhen 2026 第二天项目路演。前 5 分钟为 Spotlight 总体介绍，随后由 9 个项目依次上台演讲。以下时间均为北京时间（UTC+8）。\n\n具体路演日程：\n12:30–12:35 — Spotlight 总体介绍\n12:35–12:41 — AI视觉创意大赛“瓦卡奖”\n12:41–12:47 — VibeKeys\n12:47–12:53 — 很 Local 实时翻译\n12:53–12:59 — Meiso Glass\n12:59–13:05 — Ingora · Qrio\n13:05–13:11 — PoopSense 便知\n13:11–13:17 — Mira Light\n13:17–13:23 — Octos Learn\n13:23–13:30 — Agentero"
+            "en": "Day 2 of the Spotlight Shenzhen 2026 roadshow. The first five minutes introduce Spotlight, followed by 7 project presentations. All times are China Standard Time (UTC+8).\n\nPresentation schedule:\n12:30–12:35 — Spotlight introduction\n12:35–12:43 — VACAT AI Visual Creativity Awards\n12:43–12:51 — VibeKeys\n12:51–12:59 — Hen Local Translator\n12:59–13:07 — Meiso Glass\n13:07–13:15 — Ingora · Qrio\n13:15–13:23 — PoopSense\n13:23–13:30 — Mira Light",
+            "zh": "Spotlight Shenzhen 2026 第二天项目路演。前 5 分钟为 Spotlight 总体介绍，随后由 7 个项目依次上台演讲。以下时间均为北京时间（UTC+8）。\n\n具体路演日程：\n12:30–12:35 — Spotlight 总体介绍\n12:35–12:43 — AI视觉创意大赛“瓦卡奖”\n12:43–12:51 — VibeKeys\n12:51–12:59 — 很 Local 实时翻译\n12:59–13:07 — Meiso Glass\n13:07–13:15 — Ingora · Qrio\n13:15–13:23 — PoopSense 便知\n13:23–13:30 — Mira Light"
           }
         }
       ],
       "notice": {
-        "en": "Each day opens with a five-minute Spotlight introduction, followed by nine project presentations. All times are China Standard Time (UTC+8).",
-        "zh": "每天先进行 5 分钟 Spotlight 总体介绍，随后由 9 个项目依次上台演讲。所有时间均为北京时间（UTC+8）。"
+        "en": "Each day opens with a five-minute Spotlight introduction, followed by eight project presentations on Day 1 and seven on Day 2. All times are China Standard Time (UTC+8).",
+        "zh": "每天先进行 5 分钟 Spotlight 总体介绍，随后由项目依次上台演讲：第一天 8 个项目，第二天 7 个项目。所有时间均为北京时间（UTC+8）。"
       }
     },
     {
