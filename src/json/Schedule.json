@@ -58,8 +58,8 @@
           "originalAbstractLanguage": "en",
           "slug": "p-203-multimodel-intension-model",
           "title": {
-            "en": "Multimodal Intention Model",
-            "zh": "多模态意图模型"
+            "en": "Multimodel Intension Model",
+            "zh": "多模型意图模型"
           },
           "overview": {
             "en": "Nova presents a Multimodal Intention Model (MMIM) for On-Device Deployment. Conventional intent recognition often relies on a single modality, such as speech or text, and thus struggles to capture users' implicit emotional and social intentions. To address this limitation, MMIM integrates multimodal signals—including facial expressions, voice, language, posture, and physiological cues—into a unified intention space. It employs cross-modal alignment, temporal fusion, and context-aware reasoning to jointly infer explicit requests and implicit affective intentions. The model is designed to support empathetic, personalized, and trustworthy human–robot interaction in scenarios such as elderly care, child companionship, and mental health support. Experimental results demonstrate that MMIM improves intention recognition accuracy, robustness under missing modalities, and user-perceived naturalness compared with unimodal and conventional multimodal baselines. The proposed model offers a step toward more emotionally intelligent companion robots.",
@@ -928,8 +928,8 @@
           "manual": true,
           "type": "pending",
           "title": {
-            "en": "Spotlight Awards Ceremony",
-            "zh": "Spotlight 颁奖仪式"
+            "en": "Spotlight Shenzhen 2026: Next-Gen AI-Native Products Awards Ceremony",
+            "zh": "Spotlight Shenzhen 2026：下一代 AI 原生产品颁奖仪式"
           },
           "speakers": [],
           "originalTitle": "Spotlight Shenzhen 2026: Next-Gen AI-Native Products Awards Ceremony",
@@ -1713,8 +1713,8 @@
           "originalAbstractLanguage": "en",
           "slug": "p-67-agent-harness-for-autonomous-server-operations-an-end-to-end-approach-from-fault-detection-to-remediation-and-validation",
           "title": {
-            "en": "Agent Harness for Autonomous Server Operations: An End-to-End Approach from Fault Detection to Remediation and Validation",
-            "zh": "面向服务器自主运维的 Agent Harness：从故障检测到修复与验证的端到端实践"
+            "en": "Agent Harness for Server Firmware Development",
+            "zh": "面向服务器固件研发的 Agent Harness"
           },
           "overview": {
             "en": "In BMC firmware development and operations, general-purpose coding agents often lack a deep understanding of the openUBMC technology stack, system architecture, and diagnostic logic. As a result, troubleshooting relies heavily on trial-and-error exploration, leading to repeated failed attempts, excessive token consumption, limited support for BMC-specific commands, and poor execution observability. These limitations make it difficult to identify root causes accurately or establish a closed-loop fault-handling process.\n\nThis talk presents a domain-specific Agent Harness built on openUBMC Studio. The system integrates an openUBMC RAG knowledge base, device connectivity and state-observation capabilities, BMC-specific commands and diagnostic tools, and standardized, orchestratable agent workflows derived from expert knowledge. Together, these components equip agents with domain understanding, environment awareness, specialized tool use, and autonomous decision-making capabilities.\n\nIn server firmware development and operations, general-purpose coding agents often lack a deep understanding of BMC technologies, hardware–software architectures, and domain-specific diagnostic logic. When operating on physical devices, these agents tend to rely on trial-and-error exploration, resulting in repeated ineffective attempts, excessive token consumption, limited support for specialized debugging commands, and poor execution observability. These limitations make it difficult to identify root causes accurately or establish a reliable closed-loop fault-handling process.\n\nThis talk presents a domain-specific Agent Harness designed for server out-of-band management. The system is built around four core capabilities: domain knowledge, specialized tools, state observability, and workflow orchestration. A RAG knowledge base equips agents with server management and diagnostic expertise; standardized tools provide controlled access to device connectivity, log collection, state inspection, and firmware debugging; continuous observation captures device and task execution states; and expert troubleshooting practices are encoded into orchestratable, repeatable, and verifiable agent workflows.\n\nWith this Agent Harness, agents can autonomously execute an end-to-end process covering fault detection and reproduction, evidence collection, root-cause analysis, remediation, regression testing, and final validation. This approach advances server fault handling from assisted diagnosis toward an automated closed loop. It reduces ineffective exploration and resource consumption, accelerates fault localization and remediation, and improves end-to-end observability, traceability, and auditability. The practices presented in this talk provide a reusable and extensible engineering blueprint for applying Agent Harnesses to servers, embedded systems, and other complex hardware–software operational environments.",
@@ -1993,7 +1993,7 @@
           "originalTitle": "从听懂你，到看见你 —— 实时多模态，让AI进入真实世界 帮我改成这个题目",
           "originalLanguage": "zh",
           "title": {
-            "en": "From Understanding You to Seeing You — Real-Time Multimodality Brings AI into the Real World",
+            "en": "From Hearing You to Seeing You — Real-Time Multimodality Brings AI into the Real World",
             "zh": "从听懂你，到看见你 —— 实时多模态，让AI进入真实世界"
           },
           "slug": "p-69-open-source-hardware-integration-practices-for-agora-conversational-ai",
@@ -2595,8 +2595,8 @@
           "originalTitle": "从开源模型到开发者生产力：AI 时代的开源基础设施重构",
           "originalLanguage": "zh",
           "title": {
-            "en": "Title to Be Announced",
-            "zh": "题目待公布"
+            "en": "From Open-Source Models to Developer Productivity: Reconstructing Open-Source Infrastructure in the AI Era",
+            "zh": "从开源模型到开发者生产力：AI 时代的开源基础设施重构"
           },
           "slug": "p-152-从开源模型到开发者生产力-ai-时代的开源基础设施重构",
           "speakers": [
@@ -2686,8 +2686,7 @@
           "slug": "p-60-transferqueue-an-asynchronous-high-performance-streaming-data-engine-for-post-training",
           "speakers": [
             "chenghao-rong",
-            "yixiang-zhang",
-            "codingma"
+            "yixiang-zhang"
           ],
           "originalAbstract": "Large model workflows are becoming increasingly complex. Take post-training as an example: it requires multiple computational tasks to collaborate, with intricate data dependencies between them. Existing industry solutions do not distinguish between data flow and control flow, which easily leads to imbalanced computational load and reduced resource utilization. To address this challenge, we propose—for the first time in the industry—an asynchronous streaming data engine with data-control separation. By splitting the transfer of monolithic data blocks into sample-level data streams, it supports data routing at arbitrary granularity and minimizes task blocking. Our core idea is simple: TransferQueue acts as a transit port for data, managing where the data should come from and where it should go. Building on TransferQueue, we put forward several technical positions to guide the design of future computing systems. First, from post-training to tool calling and further to multi-agent systems, the components involved in training and inference are proliferating, and their communication patterns are becoming increasingly complex. Both upper-level frameworks and lower-level collective communication rely on static orchestration, lacking the ability to schedule dynamically at runtime. We position TransferQueue as the communication middleware of large model computing systems, decoupling these computational processes so that tasks no longer need to be manually orchestrated, thereby achieving automatic pipelining and overlap. TransferQueue also provides a panoramic data scheduling capability, delivering both efficient communication and programming simplicity—a significant advantage over mainstream industry implementations.",
           "originalAbstractLanguage": "en",
@@ -2729,7 +2728,6 @@
           },
           "slug": "p-93-c-to-rust-code-translation-a-three-stage-curriculum-of-pretraining-debugging-aware-sft-and-task-specific-sft",
           "speakers": [
-            "yanzhi-wang",
             "赵普"
           ],
           "originalAbstract": "Translating C code into safe, idiomatic Rust is a longstanding software-engineering goal because it can eliminate entire classes of memory-safety vulnerabilities while preserving the functional behavior of legacy systems. Large language models (LLMs) have shown promise for this task but typically underperform when applied off-the-shelf, since general-purpose pretraining rarely emphasizes idiomatic Rust generation, cross-language semantic equivalence, or the ability to reason about and repair compiler/runtime feedback. In this report we describe a three-stage fine-tuning curriculum applied to Qwen3-27B that is designed to progressively specialize the model for the C-to-Rust (C2Rust) translation task: (1) continued pretraining on Rust-centric corpora to strengthen the model's prior over idiomatic Rust syntax and standard-library usage; (2) supervised fine-tuning (SFT) on the microsoft/Verus_Training_Data dataset to instill debugging and self-repair behavior over Rust code; and (3) task-specific SFT on paired C/Rust solutions derived from LeetCode problems to teach direct semantic translation. We evaluate the resulting model using the agentic, static-analysis-guided verification framework of SACTOR, which performs structure-aware, two-phase (unidiomatic to idiomatic) translation with foreign-function-interface (FFI)-based end-to-end (E2E) testing. We report success rate, idiomaticity (Clippy lint counts, unsafe-code fraction), and failure-mode analyses, and compare our fine-tuned model against baseline Qwen3-27B and other LLMs evaluated under the same framework.",
@@ -3156,8 +3154,7 @@
           },
           "slug": "p-45-train-it-or-code-it-let-the-robot-decide",
           "speakers": [
-            "charbel-dandjinou",
-            "alba-maria-tellez-fernandez"
+            "charbel-dandjinou"
           ],
           "originalAbstract": "At GOSIM Paris in May, I presented Skill Foundry: an embodied learning loop in which an AI coding agent can operate across robot software, training, execution, multimodal observation, memory, and a growing library of reusable skills.\n\nIn the months since, the field has started converging rapidly toward pieces of the same direction. NVIDIA GEAR, the embodied-AI research group behind projects such as GR00T, Eureka and Voyager, introduced ASPIRE, combining multimodal execution diagnosis, autonomous program repair and a continually expanding robot skill library. The NVIDIA/CMU/Berkeley team behind ENPIRE pushed coding agents into autonomous real-world policy improvement. In parallel, RHO introduced Robotics Harness Optimization, where coding agents evolve entire multi-file robot policy repositories from execution and reward feedback.\n\nThese are no longer isolated demonstrations of LLMs writing robot code. Coding agents are becoming operators of the robot-learning process itself. But these systems still center different adaptation mechanisms: program evolution, policy improvement, or repository optimization.\n\nSkill Foundry was already asking the broader question: why should the robot have to choose one paradigm?\n\nWhen a capability is missing, should the system reuse what it already knows, compose existing skills, write a new program, or train a new policy? In Skill Foundry, the form of adaptation itself becomes a decision variable. Learned policies and written programs live behind the same callable skill abstraction, allowing the agent to choose an intervention from the failure itself rather than forcing every problem through one method.\n\nThe loop is grounded in embodied feedback. Metrics tell the agent that something changed; robot POV, scene observations, proprioception and rollout analysis help explain why. Observation can continue while execution unfolds. Memory preserves successful fixes as well as failed attempts and hypotheses. And the skill library grows toward capability coverage rather than repeatedly rediscovering or duplicating what the robot already knows.\n\nAt Shenzhen, we will show this loop running end to end: execution, failure, diagnosis, intervention selection, capability acquisition, validation, skill registration, reuse and composition. The task-agnostic framework, demo tasks and evaluation harness will be released under a permissive open-source license, with runnable code and reproducibility instructions",
           "originalAbstractLanguage": "en",
@@ -3178,8 +3175,7 @@
           },
           "slug": "p-61-from-prediction-to-consequence-a-new-evaluation-paradigm-for-embodied-ai",
           "speakers": [
-            "alba-maria-tellez-fernandez",
-            "charbel-dandjinou"
+            "alba-maria-tellez-fernandez"
           ],
           "originalAbstract": "Modern AI systems have become exceptionally good at predicting actions, trajectories, and future observations from offline data. Yet for embodied systems, prediction is only part of the problem: once a model acts, its actions change the state of the environment, which changes the observations and decisions that follow.\n\nThis creates a fundamental gap between open-loop evaluation, where predictions are compared against fixed trajectories or recorded futures, and closed-loop evaluation, where the model’s actions determine what happens next.\n\nThis talk proposes a reconciled evaluation paradigm that treats open-loop and closed-loop evaluation as complementary layers. Open-loop evaluation measures predictive capability under controlled conditions, while closed-loop evaluation measures whether that capability survives interaction with an environment. The key object of interest is the gap between prediction quality and behavioral consequence.\n\nWe will explore this transition through an autonomous-driving case study and a live closed-loop demonstration. The demonstration will show how a policy can perform well against a fixed recorded future while behaving differently once its actions are actually executed and become part of the environment dynamics.\n\nWe will then generalize the same evaluation problem to robotics, Vision-Language-Action (VLA) models, world models, and agentic systems, where the common structure is:\n\nprediction → action → state transition → new observation → prediction\n\nFinally, we will present AlpaBridge, an external-driver interface that separates policy execution from the simulation runtime, creating a reproducible boundary between the agent being evaluated and the environment evaluating it.\n\nThe central argument is that embodied AI needs an evaluation paradigm that connects prediction to consequence. Open-loop and closed-loop evaluation should not compete; they should form a coherent measurement stack for understanding whether intelligence survives interaction with the world.",
           "originalAbstractLanguage": "en",
@@ -3711,8 +3707,8 @@
       "id": "ws-dora",
       "sourceId": "ws-dora",
       "name": {
-        "en": "DORA Workshop",
-        "zh": "DORA 工作坊"
+        "en": "DORA-rs Workshop",
+        "zh": "DORA-rs 工作坊"
       },
       "talks": [
         {
@@ -4929,8 +4925,8 @@
       "id": "ws-cann",
       "sourceId": "ws-cann",
       "name": {
-        "en": "Huawei CANN Workshop",
-        "zh": "华为 CANN 工作坊"
+        "en": "CANN Workshop",
+        "zh": "CANN 工作坊"
       },
       "originalName": "Huawei CANN Workshop",
       "group": "workshops",
