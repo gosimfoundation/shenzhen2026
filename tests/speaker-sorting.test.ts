@@ -8,7 +8,7 @@ const canonicalNamesById = new Map([
 ]);
 
 describe("speaker surname sorting", () => {
-  it("places DHH, Michael Yuan and Tao Jiang first in that order", () => {
+  it("places DHH first, then other keynote speakers by surname, then regular speakers", () => {
     const speakers = [
       { id: "peng-zhang", name: "Peng Zhang", roleOrg: "Founder" },
       {
@@ -18,18 +18,20 @@ describe("speaker surname sorting", () => {
         keynote: true,
       },
       { id: "pieter-delobelle", name: "Pieter Delobelle", roleOrg: "Co-speaker" },
-      { id: "jiang-tao", name: "Tao Jiang" },
+      { id: "jiang-tao", name: "Tao Jiang", tags: ["special-keynote"] },
       { id: "michael-yuan", name: "Michael Yuan" },
+      { id: "haibo-chen", name: "Haibo Chen", tags: ["special-keynote"] },
       { id: "other-keynote", name: "Other Zulu", keynote: true },
     ];
 
     expect(speakers.sort(compareSpeakersBySurname).map((speaker) => speaker.id)).toEqual([
       "dhh",
-      "michael-yuan",
+      "haibo-chen",
       "jiang-tao",
-      "pieter-delobelle",
-      "peng-zhang",
       "other-keynote",
+      "pieter-delobelle",
+      "michael-yuan",
+      "peng-zhang",
     ]);
   });
 

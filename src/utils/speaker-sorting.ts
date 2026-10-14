@@ -3,6 +3,7 @@ type SpeakerForSorting = {
   name: string;
   roleOrg?: string;
   keynote?: boolean;
+  tags?: string[];
 };
 
 type CanonicalNamesById = ReadonlyMap<string, string>;
@@ -23,10 +24,13 @@ const surnameOverrides: Record<string, string> = {
   codingma: "Ma",
 };
 
-const featuredSpeakerIds = ["dhh", "michael-yuan", "jiang-tao"];
-const featuredRank = (id: string) => {
-  const index = featuredSpeakerIds.indexOf(id);
-  return index < 0 ? featuredSpeakerIds.length : index;
+const isKeynoteSpeaker = (speaker: SpeakerForSorting) =>
+  speaker.keynote === true || speaker.tags?.includes("special-keynote") === true;
+
+const speakerGroupRank = (speaker: SpeakerForSorting) => {
+  if (speaker.id === "dhh") return 0;
+  if (isKeynoteSpeaker(speaker)) return 1;
+  return 2;
 };
 
 const getSurname = (
@@ -46,8 +50,8 @@ export const compareSpeakersBySurname = (
   b: SpeakerForSorting,
   canonicalNamesById?: CanonicalNamesById,
 ) => {
-  const featuredOrder = featuredRank(a.id) - featuredRank(b.id);
-  if (featuredOrder !== 0) return featuredOrder;
+  const groupOrder = speakerGroupRank(a) - speakerGroupRank(b);
+  if (groupOrder !== 0) return groupOrder;
 
   const surnameOrder = surnameCollator.compare(
     getSurname(a, canonicalNamesById),
