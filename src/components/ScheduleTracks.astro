@@ -9,6 +9,7 @@ import {
 } from "utils/speaker-images"
 import { programCategoryColor } from "utils/program-colors"
 import "styles/SchedulePreview.scss"
+import ScheduleTimeline from "./ScheduleTimeline.astro"
 
 interface Props {
   lang?: "en" | "zh"
@@ -81,7 +82,12 @@ const dateLabel = (date: string) => previewLang === "zh"
 
 <section class="schedule-preview-mode" data-bg-section="lightgray" data-theme-section="light">
     <div class="preview-container">
-      <div class="preview-body">
+      <div class="schedule-view-switch" aria-label={previewLang === "zh" ? "议程视图" : "Schedule view"}>
+        <button type="button" data-schedule-view-button="time" aria-pressed="true" aria-controls="schedule-by-time">{previewLang === "zh" ? "按时间" : "By time"}</button>
+        <button type="button" data-schedule-view-button="track" aria-pressed="false" aria-controls="schedule-by-track">{previewLang === "zh" ? "按分论坛" : "By track"}</button>
+      </div>
+      <div id="schedule-by-time" data-schedule-view="time"><ScheduleTimeline lang={previewLang} /></div>
+      <div id="schedule-by-track" class="preview-body" data-schedule-view="track" hidden>
         <aside class="preview-sidebar" aria-label={previewCopy.sidebarAria}>
           <div class="preview-sidebar-heading">
             <p class="preview-sidebar-title">{previewCopy.sidebarTitle}</p>
@@ -221,9 +227,25 @@ const dateLabel = (date: string) => previewLang === "zh"
   </section>
 
 <script>
+  import { initTimeline } from "../utils/schedule-timeline-controls"
+
   function initPreviewSchedule(root: Element) {
     if (!(root instanceof HTMLElement) || root.dataset.previewInitialized === "true") return
     root.dataset.previewInitialized = "true"
+
+    const timeline = root.querySelector<HTMLElement>("[data-timeline]")
+    const viewButtons = root.querySelectorAll<HTMLButtonElement>("[data-schedule-view-button]")
+    const views = root.querySelectorAll<HTMLElement>("[data-schedule-view]")
+    const showView = (view: string) => {
+      viewButtons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.scheduleViewButton === view)))
+      views.forEach((panel) => { panel.hidden = panel.dataset.scheduleView !== view })
+    }
+    viewButtons.forEach((button) => button.addEventListener("click", () => {
+      const view = button.dataset.scheduleViewButton!
+      showView(view)
+      const activeTrack = root.querySelector<HTMLElement>("[data-preview-track-button].active")?.dataset.previewTrackButton
+      history.replaceState(null, "", view === "time" ? "#by-time" : `#${activeTrack || "by-track"}`)
+    }))
 
     const buttons = root.querySelectorAll<HTMLElement>("[data-preview-track-button]")
     const panels = root.querySelectorAll<HTMLElement>("[data-preview-track-panel]")
@@ -256,6 +278,7 @@ const dateLabel = (date: string) => previewLang === "zh"
     const showTrack = (trackId: string, updateHash = true) => {
       buttons.forEach((button) => {
         button.classList.toggle("active", button.dataset.previewTrackButton === trackId)
+        button.setAttribute("aria-pressed", String(button.dataset.previewTrackButton === trackId))
       })
       let incoming: HTMLElement | undefined
       panels.forEach((panel) => {
@@ -274,9 +297,17 @@ const dateLabel = (date: string) => previewLang === "zh"
       })
     })
 
-    const hashTrack = window.location.hash.slice(1)
     const firstTrack = panels[0]?.dataset.previewTrackPanel
-    showTrack(availableTracks.has(hashTrack) ? hashTrack : firstTrack || "", false)
+    const applyHash = () => {
+      const hashTrack = window.location.hash.slice(1)
+      const isTrack = availableTracks.has(hashTrack)
+      showView(isTrack || hashTrack === "by-track" ? "track" : "time")
+      showTrack(isTrack ? hashTrack : firstTrack || "", false)
+    }
+    applyHash()
+    window.addEventListener("hashchange", applyHash)
+    // Show the requested view before resolving #now and scrolling to its results.
+    if (timeline) initTimeline(timeline)
   }
 
   document.querySelectorAll(".schedule-preview-mode").forEach(initPreviewSchedule)

@@ -1,0 +1,119 @@
+---
+import { schedule, speakersEn, speakersZh, type Language } from "utils/conference";
+import { buildTimelineEntries, groupTimelineWindows, parseTimeSlot } from "utils/schedule-timeline";
+import { programCategoryColor } from "utils/program-colors";
+import "styles/ScheduleTimeline.scss";
+
+interface Props { lang: Language }
+const { lang } = Astro.props;
+const zh = lang === "zh";
+const copy = zh ? {
+  intro: "按时段对比同时进行的议程，选择下一场想参加的活动。",
+  day: "选择日期", time: "时段", allTimes: "全天", now: "此刻", filters: "筛选分论坛",
+  all: "全选", clear: "清空", allTracks: "全部分论坛", tracks: "主旨演讲与分论坛", workshops: "工作坊", showcases: "Spotlight",
+  pending: "时间待定", datePending: "日期待定", window: "活动时段 · 具体议程时间待定",
+  ongoing: "进行中", empty: "所选日期、时段或分论坛没有议程。请更换筛选条件。",
+  note: "所有时间均为北京时间（UTC+8）。每个时段包含正在进行的议程；跨时段议程会重复显示。",
+} : {
+  intro: "Compare sessions happening at the same time and choose where to go next.",
+  day: "Choose day", time: "Time window", allTimes: "All times", now: "Now", filters: "Filter tracks",
+  all: "Select all", clear: "Clear", allTracks: "All tracks", tracks: "Plenary & tracks", workshops: "Workshops", showcases: "Spotlight",
+  pending: "Time TBA", datePending: "Date TBA", window: "Program window · Individual session times TBA",
+  ongoing: "In progress", empty: "No sessions match this day, time, and track selection. Try changing the filters.",
+  note: "All times are China Standard Time (UTC+8). Each window includes ongoing sessions; sessions spanning windows appear in each one.",
+};
+const spotlight = schedule.activities.find((activity) => activity.id === "spotlight-talks");
+const programs = [...schedule.tracks, ...(spotlight ? [spotlight] : [])];
+const programById = new Map(programs.map((program) => [program.id, program]));
+const entries = buildTimelineEntries(schedule.tracks, schedule.activities);
+const people = new Map((zh ? speakersZh : speakersEn).speakers.map((speaker) => [speaker.id, speaker]));
+const base = zh ? "/zh" : "";
+const days = schedule.days.map((day) => ({ ...day, windows: groupTimelineWindows(entries, day.date) }));
+const groups = [
+  { id: "tracks", label: copy.tracks }, { id: "workshops", label: copy.workshops }, { id: "showcases", label: copy.showcases },
+];
+const blocks = days.flatMap((day, index) => [
+  ...day.windows.map((window) => ({ date: day.date, firstDay: index === 0, pending: false, ...window })),
+  { date: day.date, firstDay: index === 0, pending: true, start: "", end: "", entries: entries.filter((entry) => entry.date === day.date && !parseTimeSlot(entry.timeSlot)) },
+]);
+const undated = entries.filter((entry) => !entry.date);
+if (undated.length) blocks.push({ date: "unscheduled", firstDay: true, pending: true, start: "", end: "", entries: undated });
+---
+
+<div id="now" class="schedule-timeline" data-timeline data-lang={lang}>
+  <p class="timeline-intro">{copy.intro}</p>
+  <div class="timeline-toolbar">
+    <div class="timeline-time-controls">
+      <a class="timeline-now" href="#now" data-timeline-now>{copy.now}<span aria-hidden="true"> ↘</span></a>
+      <label class="timeline-time-select">
+        <span class="timeline-time-label">{copy.time}</span>
+        <select data-timeline-time>
+          <option value="all">{copy.allTimes}</option>
+          {days.flatMap((day) => day.windows.map((window) => <option value={window.start} data-date={day.date}>{window.start}–{window.end}</option>))}
+        </select>
+      </label>
+    </div>
+    <div class="timeline-days" aria-label={copy.day}>
+      {days.map((day, index) => <button type="button" data-timeline-day={day.date} aria-pressed={index === 0 ? "true" : "false"}>
+        <strong>{zh ? `第${index + 1}天` : day.label}</strong><span>{day[lang]}</span>
+      </button>)}
+    </div>
+  </div>
+
+  <details class="timeline-filters">
+    <summary>{copy.filters}<span data-timeline-selection>{copy.allTracks}</span></summary>
+    <div class="timeline-filter-actions"><button type="button" data-timeline-all>{copy.all}</button><button type="button" data-timeline-clear>{copy.clear}</button></div>
+    <div class="timeline-filter-groups">
+      {groups.map((group) => <fieldset>
+        <legend>{group.label}</legend>
+        {group.id !== "showcases" && <div class="timeline-filter-actions timeline-filter-actions--group">
+          <button type="button" data-timeline-all={group.id} aria-label={`${copy.all} — ${group.label}`}>{copy.all}</button>
+          <button type="button" data-timeline-clear={group.id} aria-label={`${copy.clear} — ${group.label}`}>{copy.clear}</button>
+        </div>}
+        {programs.filter((program) => program.group === group.id).map((program) => <label style={`--tc: ${programCategoryColor(program.id)}`}>
+          <input type="checkbox" data-timeline-track={program.id} data-timeline-group={group.id} checked />
+          <span>{program.name[lang]}</span>
+        </label>)}
+      </fieldset>)}
+    </div>
+  </details>
+  <p class="timeline-status" data-timeline-status role="status"></p>
+
+  <div class="timeline-windows">
+    {blocks.filter((block) => block.entries.length).map((block) => <section class="timeline-window" data-timeline-window data-date={block.date}
+      data-start={block.start} data-end={block.end} data-pending={block.pending ? "true" : undefined} hidden={!block.firstDay}>
+      <h2 class="timeline-window-heading">
+        {block.pending ? (block.date === "unscheduled" ? `${copy.datePending} · ${copy.pending}` : copy.pending)
+          : <><time datetime={`${block.date}T${block.start}:00+08:00`}>{block.start}</time><span>– {block.end}</span></>}
+      </h2>
+      <div class="timeline-sessions">
+        {block.entries.map((entry) => {
+          const program = programById.get(entry.trackId)!;
+          const url = entry.slug ? `${base}/schedule/${entry.slug}/` : entry.url?.[lang];
+          const speakers = entry.speakers.map((id) => people.get(id)).filter(Boolean);
+          const range = parseTimeSlot(entry.timeSlot);
+          return <article class="timeline-session" data-timeline-entry data-track={entry.trackId} style={`--tc: ${programCategoryColor(entry.trackId)}`}>
+            <div class="timeline-session-meta">
+              <span class="timeline-track-name">{program.name[lang]}</span>
+              {entry.room && <span class="timeline-room">{entry.room[lang]}</span>}
+            </div>
+            <div class="timeline-session-content">
+              <div class="timeline-session-time">
+                <span>{range ? `${range[0]}–${range[1]}` : copy.pending}</span>
+                {!block.pending && range && range[0] < block.start && <span class="timeline-ongoing">{copy.ongoing}</span>}
+              </div>
+              <h3>{url ? <a href={url}>{entry.title[lang]}</a> : entry.title[lang]}</h3>
+              {entry.programWindow && range && <p class="timeline-window-note">{copy.window}</p>}
+              {program.group === "workshops" && program.notice && <p class="timeline-window-note">{program.notice[lang]}</p>}
+              {speakers.length > 0 && <p class="timeline-speakers">{speakers.map((speaker, index) => <>
+                {index > 0 && <span aria-hidden="true"> · </span>}<a href={`${base}/speakers/${speaker!.id}/`}>{speaker!.name}</a>
+              </>)}</p>}
+            </div>
+          </article>;
+        })}
+      </div>
+    </section>)}
+  </div>
+  <p class="timeline-empty" data-timeline-empty hidden>{copy.empty}</p>
+  <p class="timeline-note">{copy.note}</p>
+</div>
