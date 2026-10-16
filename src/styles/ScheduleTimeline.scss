@@ -127,9 +127,12 @@ main:has(.schedule-preview-mode) { overflow: clip; }
 .timeline-note { margin-top: 1.25rem; color: var(--color-text); font-size: 0.75rem; line-height: 1.6; }
 .timeline-empty { padding: 2rem 0; color: var(--color-text); }
 
+@media (max-width: 1100px) {
+  .timeline-window { grid-template-columns: 5rem minmax(0, 1fr); gap: 0.75rem; }
+}
 @media (max-width: 900px) {
   .schedule-view-switch, .schedule-timeline { margin-left: var(--container-padding); margin-right: var(--container-padding); }
-  .timeline-window { grid-template-columns: 8rem minmax(0, 1fr); gap: 1rem; }
+  .timeline-window { grid-template-columns: 4.5rem minmax(0, 1fr); }
   .timeline-session { grid-template-columns: 1fr; gap: 0.65rem; }
   .timeline-session-meta { flex-direction: row; flex-wrap: wrap; gap: 0.4rem 1rem; }
   .timeline-filter-groups { grid-template-columns: 1fr 1fr; }
