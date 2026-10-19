@@ -91,7 +91,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
       <div class:list={["hero-content-row", { "hero-content-row--facts-only": !subtitle && !description }]}>
         {(subtitle || description) && (
           <div class="hero-text-left">
-            {subtitle && <h1 class="hero-subtitle">{subtitle}</h1>}
+            {subtitle && <p class="hero-subtitle">{subtitle}</p>}
             {description && <p class="hero-description">{description}</p>}
           </div>
         )}
