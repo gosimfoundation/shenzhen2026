@@ -8,9 +8,11 @@ import UNOpenSourceConvening from "components/UNOpenSourceConvening.astro"
 import VenueDetails from "components/VenueDetails.astro"
 import EventGallery from "components/EventGallery.astro"
 import PreviousEvents from "components/PreviousEvents.astro"
-import GetTickets from "components/GetTickets.astro"
+import ConferenceThanks from "components/ConferenceThanks.astro"
 import ProudlySupported from "components/ProudlySupported.astro"
 import { hackathonHighlights } from "utils/hackathons"
+import { eventPhotoAlbumUrl, eventSummary } from "utils/event-summary"
+
 
 // Images
 import GosimShanghai from "images/homepage/gosim-shanghai.png"
@@ -19,11 +21,13 @@ import GosimBeijing from "images/homepage/gosim-beijing.png"
 import GosimParis from "images/homepage/gosim-paris-min.png"
 import GosimHangzhou from "images/homepage/gosim-hangzhou.png"
 import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
+
+const copy = eventSummary.en
 ---
 
 <Layout
   title="GOSIM Shenzhen 2026"
-  description="GOSIM Shenzhen 2026 — open-source AI, robotics, edge systems, and developer infrastructure. October 16-17, 2026 at ADEN Hotel Shenzhen Nanshan."
+  description={copy.description}
   navDarkMode={true}
   navBackground="header-home"
   pageTransitionName="Home"
@@ -31,27 +35,27 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
   <Hero
     date="October 16-17, 2026"
     location="ADEN Hotel · Shenzhen"
-    subtitle="The Premier Open Source Summit"
-    description="150+ international speakers and 2,000+ developers gather for keynotes, technical forums, workshops, hackathons, and live open-source demos."
+    subtitle={copy.title}
+    description={copy.description}
     video="/videos/shenzhen-hero-compressed.mp4"
     poster="/videos/shenzhen-hero-poster.jpg"
     links={[
       {
-        text: "Call for Proposals",
-        link: "https://cfp.gosim.org",
+        text: copy.albumLabel,
+        link: eventPhotoAlbumUrl,
         openInNewTab: true,
-        class: "btn light xl btn-hover",
+        class: "btn primary xl btn-hover",
       },
       {
-        text: "Buy Tickets",
-        link: "/tickets",
+        text: "View Schedule",
+        link: "/schedule/",
         openInNewTab: false,
-        class: "btn primary xl btn-hover",
+        class: "btn light xl btn-hover",
       },
     ]}
   />
 
-  <ProudlySupported lead="2026 Sponsors & Partners" href="/sponsors" cta="View all sponsors & partners" />
+  <ProudlySupported lead="Thank You to Our Sponsors & Partners" href="/sponsors" cta="View all sponsors & partners" />
 
   <ProgramSection
     lang="en"
@@ -82,7 +86,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
       },
     ]}
     tracksTitle="Tracks"
-    tracksIntro="From open source models and agent frameworks to robotics and edge AI, the program is built to show where the stack is moving next and let developers get close to the people building it. Explore the accepted talks in each track."
+    tracksIntro="From open source models and agent frameworks to robotics and edge AI, the conference brought developers and builders together to explore the future of the stack. Browse the talks from each track."
     tracks={[
       {
         title: "Agentic AI Summit",
@@ -121,10 +125,10 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
     highlights={[
       {
         badge: "Spotlight",
-        status: "Global open call",
+        status: "Event concluded",
         title: "Spotlight Shenzhen 2026: Next-Gen AI-Native Products",
         titleLines: ["Spotlight Shenzhen 2026:", "Next-Gen AI-Native Products"],
-        text: "A global open call for next-generation AI-native products, followed by a focused Shenzhen build sprint and a live showcase at GOSIM Shenzhen 2026.",
+        text: "Spotlight Shenzhen 2026 brought together next-generation AI-native products for a focused build sprint and a live showcase at GOSIM Shenzhen 2026.",
         link: "https://spotlight.gosim.org/shenzhen2026/",
         linkLabel: "Explore Spotlight",
       },
@@ -137,12 +141,12 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
 
   <CoLocatedEventFeature
     id="rustchinaconf"
-    eyebrow="Co-located Event"
+    eyebrow="Co-located Event · Concluded"
     title="RustChinaConf 2026 · Shenzhen"
     theme="Rust and AI"
     dateLabel="Conference dates"
     date="October 15–17, 2026"
-    text="Alongside GOSIM Shenzhen 2026, RustChinaConf brings the Rust community together to explore Rust for AI, AI for Rust, and lessons from Rust in production."
+    text="Held alongside GOSIM Shenzhen 2026, RustChinaConf brought the Rust community together to explore Rust for AI, AI for Rust, and lessons from Rust in production."
     image="https://rustchinaconf.org/hero/rustchinaconf-shenzhen-2026-banner.png"
     imageAlt="RustChinaConf 2026 Shenzhen banner"
     link="https://rustchinaconf.org"
@@ -152,7 +156,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
   <VenueDetails
     eyebrow="Conference Venue"
     title="ADEN Hotel Shenzhen Nanshan"
-    venueName="Meet Us in Shenzhen"
+    venueName="Our Shenzhen Venue"
     address="No. 8 Guishan Road, Shekou, Nanshan District, Shenzhen"
     description="Set in Shekou, the conference venue is about 700 metres from Sea World Metro Station, served by Lines 2, 8 and 12, with easy access to Shenzhen's metro network and waterfront district."
     image="/images/venue/aden-hotel-shenzhen-nanshan.jpg"
@@ -220,7 +224,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
       {
         title: "GOSIM Beijing 2024",
         date: "October 17–18, 2024",
-        description: "The GOSIM Beijing conference attracted more than 1,700 attendees, making it the largest GOSIM event so far.",
+        description: "The GOSIM Beijing conference attracted more than 1,700 attendees.",
         image: GosimBeijing,
         link: "https://china2024.gosim.org/",
       },
@@ -241,15 +245,5 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
     ]}
   />
 
-  <GetTickets
-    title="Call for Proposals Now Open"
-    location="ADEN Hotel Shenzhen Nanshan"
-    date="October 16-17, 2026"
-    text="We're looking for bold ideas and fresh voices in open-source AI, robotics, edge systems, and developer infrastructure. Submit a proposal to speak at GOSIM Shenzhen 2026."
-    ctaButton={{
-      text: "Submit a Proposal",
-      link: "https://cfp.gosim.org",
-      openInNewTab: true,
-    }}
-  />
+  <ConferenceThanks lang="en" />
 </Layout>

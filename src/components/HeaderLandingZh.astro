@@ -2,10 +2,8 @@
 // Components
 import Button from "components/Button.astro";
 import Logo from "./Logo.astro";
-import NotificationBar from "components/NotificationBar.astro";
-import { hackathonNavLinks } from "utils/hackathons";
-
-const hasNotificationBar = false; // Set this to false when NotificationBar is removed or page will crash
+import { eventPhotoAlbumUrl, eventSummary } from "utils/event-summary";
+import { conferenceNavigation } from "utils/conference-navigation";
 
 const slug = Astro.url.pathname;
 const isZhPath = slug.startsWith("/zh/");
@@ -16,49 +14,8 @@ const switchPath = isZhPath ? slug.replace("/zh/", "/") : `/zh${slug}`;
 // 只有讲师列表提供移动端筛选面板；其他页面不渲染无效按钮。
 const hasFilter = basePath === "/speakers/";
 
-const links = [
-  {
-    text: "议程安排",
-    link: "/zh/schedule/",
-  },
-  {
-    text: "讲师",
-    link: "/zh/speakers/",
-  },
-  {
-    text: "赞助商",
-    link: "/zh/sponsors/",
-  },
-  {
-    text: "同场活动",
-    subLinks: [
-      {
-        text: "UN Open Source Convening · 联合国开源专题会议",
-        link: "/zh/un-open-source-convening/",
-      },
-      {
-        text: "Spotlight · Agentic 创新项目展示",
-        link: "https://spotlight.gosim.org/zh/shenzhen2026/",
-        openInNewTab: true,
-      },
-      {
-        text: "AI Vision Forum · AI 愿景论坛",
-        link: "https://shenzhen2026.visionforum.ai/zh-cn/",
-        openInNewTab: true,
-      },
-      {
-        text: "RustChinaConf 2026",
-        link: "https://rustchinaconf.org/zh-CN/",
-        openInNewTab: true,
-      },
-      ...hackathonNavLinks("zh"),
-    ],
-  },
-  {
-    text: "大会地点",
-    link: "/zh/venue/",
-  },
-];
+const links = conferenceNavigation("zh");
+const copy = eventSummary.zh;
 
 const normalizePath = (path: string) => path === "/" ? "/" : path.replace(/\/$/, "");
 const currentPath = normalizePath(slug);
@@ -70,19 +27,10 @@ const isNavigationLinkActive = (link?: string) => {
 ---
 
 <header>
-  {
-    hasNotificationBar && (
-      <NotificationBar
-        text="🎉 参加GOSIM门票 🎟 幸运抽奖！ ✨"
-        link="https://x.com/gosimfoundation/status/1912744752925282408"
-      />
-    )
-  }
-
   <div class="mobile-nav">
     <div class="overlay overlay-dark" data-navigation-toggle="close"></div>
 
-    <div class="mobile-nav-box">
+    <div class="mobile-nav-box" data-lenis-prevent>
       <div class="box-row box-row-logo">
         <a href="/zh/" aria-label="前往首页" class="logo-click">
           <Logo />
@@ -95,7 +43,7 @@ const isNavigationLinkActive = (link?: string) => {
               <li
                 class={`link link-hover ${loop.subLinks ? "has-sublinks" : ""}`}
                 data-barba-update
-                data-link-status={isNavigationLinkActive(loop.link) ? "active" : "not-active"}
+                data-link-status={(isNavigationLinkActive(loop.link) || loop.subLinks?.some(item => isNavigationLinkActive(item.link))) ? "active" : "not-active"}
                 data-has-sublinks={loop.subLinks ? "true" : "false"}
                 data-sublinks={
                   loop.subLinks ? JSON.stringify(loop.subLinks) : "[]"
@@ -146,18 +94,7 @@ const isNavigationLinkActive = (link?: string) => {
         </ul>
       </nav>
       <div class="box-row box-row-btn">
-        <Button
-          text="CFP 议题征集"
-          link="https://cfp.gosim.org"
-          openInNewTab={true}
-          class="btn light xl btn-hover"
-        />
-        <Button
-          text="购票"
-          link="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696"
-          openInNewTab={true}
-          class="btn primary glass-orange xl btn-hover"
-        />
+        <Button text={copy.albumLabel} link={eventPhotoAlbumUrl} openInNewTab={true} class="btn primary glass-orange xl btn-hover" />
       </div>
     </div>
   </div>
@@ -168,17 +105,16 @@ const isNavigationLinkActive = (link?: string) => {
       aria-label="Open menu"
       aria-expanded="false"
       data-navigation-toggle="toggle"
-      data-has-notification={hasNotificationBar}
     >
       <div class="hamburger-fill"></div>
       <div class="bar bar-top"></div>
       <div class="bar bar-bottom"></div>
     </button>
 
-    <div class="floating-ticket-button">
+    <div class="floating-photo-button">
       <Button
-        text="购票"
-        link="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696"
+        text={copy.albumLabel}
+        link={eventPhotoAlbumUrl}
         openInNewTab={true}
         class="btn primary glass-orange btn-floating btn-hover"
       />
@@ -190,8 +126,7 @@ const isNavigationLinkActive = (link?: string) => {
         aria-label="打开讲师筛选"
         aria-expanded="false"
         class="btn primary glass-orange btn-floating btn-filter btn-filter-floating btn-hover"
-        data-has-notification={hasNotificationBar}
-      >
+        >
         <div class="btn-click" data-filter-toggle="toggle">
           <div class="btn-content duplicate">
             <div class="btn-fill"></div>
@@ -206,7 +141,7 @@ const isNavigationLinkActive = (link?: string) => {
   <div
     class="main-nav-bar"
     style="opacity: 1;"
-    data-has-notification={hasNotificationBar}
+
   >
     <div class="overlay nav-fill"></div>
     <div class="row">
@@ -227,7 +162,7 @@ const isNavigationLinkActive = (link?: string) => {
                 class={`link link-hover ${loop.subLinks ? "has-sublinks" : ""}`}
                 style="position: relative;"
                 data-barba-update
-                data-link-status={isNavigationLinkActive(loop.link) ? "active" : "not-active"}
+                data-link-status={(isNavigationLinkActive(loop.link) || loop.subLinks?.some(item => isNavigationLinkActive(item.link))) ? "active" : "not-active"}
                 data-has-sublinks={loop.subLinks ? "true" : "false"}
                 data-sublinks={
                   loop.subLinks ? JSON.stringify(loop.subLinks) : "[]"
@@ -297,18 +232,7 @@ const isNavigationLinkActive = (link?: string) => {
             >
           </div>
         </div>
-        <Button
-          text="CFP 议题征集"
-          link="https://cfp.gosim.org"
-          openInNewTab={true}
-          class="btn light btn-hover"
-        />
-        <Button
-          text="购票"
-          link="https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696"
-          openInNewTab={true}
-          class="btn primary glass-orange btn-hover"
-        />
+        <Button text={copy.albumLabel} link={eventPhotoAlbumUrl} openInNewTab={true} class="btn primary glass-orange xl btn-hover" />
       </div>
       <button class="hamburger outline" type="button" aria-label="打开菜单" aria-expanded="false" data-navigation-toggle="toggle">
         <div class="hamburger-fill"></div>
@@ -330,170 +254,3 @@ const isNavigationLinkActive = (link?: string) => {
     </div>
   </div>
 </header>
-
-<style>
-  .floating-ticket-button {
-    position: relative;
-    z-index: 201;
-  }
-
-  .floating-ticket-button :global(.btn-floating) {
-    position: relative;
-    top: auto;
-    right: auto;
-  }
-
-  /* Ensure notification bar is clickable */
-  :global(.notification-bar) {
-    position: relative;
-    z-index: 20; /* Higher than other header elements */
-    width: 100%;
-    pointer-events: auto;
-  }
-
-  .main-nav-bar[data-has-notification="true"] {
-    padding-top: calc(var(--row-gap) + 45px);
-  }
-
-  .hamburger.btn-floating[data-has-notification="true"],
-  .btn.btn-filter-floating[data-has-notification="true"] {
-    margin-top: 32px;
-  }
-
-  /* Language dropdown styles */
-  .header-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: inherit; /* Ensure header buttons inherit text color for icon */
-  }
-
-  .language-dropdown {
-    position: relative;
-    display: inline-block;
-    color: inherit; /* Inherit text color from parent */
-  }
-
-  .language-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: inherit;
-    transition: color 0.3s ease;
-  }
-
-  /* Ensure the globe icon inherits the text color */
-  .language-btn svg {
-    color: inherit;
-    stroke: currentColor;
-    transition: color 0.3s;
-  }
-
-  .language-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 120px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 4px;
-    right: 0;
-  }
-
-  .language-dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .language-dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-
-  .language-dropdown-content a.active {
-    font-weight: bold;
-    background-color: #e9e9e9;
-  }
-
-  .language-dropdown:hover .language-dropdown-content {
-    display: block;
-  }
-
-  /* Mobile language menu */
-  .mobile-language-item {
-    margin-top: 15px;
-  }
-
-  .language-mobile-menu {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px 0;
-  }
-
-  .language-item {
-    padding: 5px 10px;
-    border-radius: 4px;
-    text-decoration: none;
-  }
-
-  .language-item.active {
-    font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  @media screen and (max-width: 1070px) {
-    .main-nav-bar .row {
-      display: grid;
-      grid-template-columns: auto auto minmax(0, 1fr) auto auto;
-      column-gap: clamp(0.4rem, 1.4vw, 0.8rem);
-    }
-
-    .main-nav-bar .logo {
-      grid-column: 1;
-    }
-
-    .main-nav-bar nav {
-      display: none;
-    }
-
-    .header-buttons {
-      position: relative;
-      grid-column: 2;
-      gap: 0;
-    }
-
-    .language-dropdown {
-      position: relative;
-      left: auto;
-    }
-
-    .main-nav-bar .btn-filter-static {
-      position: relative;
-      top: auto;
-      right: auto;
-      grid-column: 4;
-      grid-row: 1;
-      justify-self: end;
-    }
-
-    .main-nav-bar .hamburger.outline {
-      grid-column: 5;
-      grid-row: 1;
-      justify-self: end;
-    }
-  }
-
-  /* Keep the expanded navigation clear of the desktop CTAs on narrower
-     laptop viewports. The CFP action remains available in the mobile menu. */
-  @media screen and (min-width: 1071px) and (max-width: 1300px) {
-    .header-buttons :global(.btn.light) {
-      display: none;
-    }
-  }
-</style>

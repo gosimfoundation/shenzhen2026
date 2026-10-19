@@ -239,7 +239,7 @@
       },
       "bio": {
         "en": "Yujie Yang is a co-presenter of “KTransformers: The Fine-Tuning-to-Inference Closed Loop for Full-Precision 1T-Class MoE Models on Consumer Hardware” at GOSIM Shenzhen 2026.",
-        "zh": "Yujie Yang 将在 GOSIM 深圳 2026 联合分享《KTransformers：消费级硬件上全精度万亿参数级 MoE 模型的微调到推理闭环》。"
+        "zh": "Yujie Yang 在 GOSIM 深圳 2026 的联合分享主题为《KTransformers：消费级硬件上全精度万亿参数级 MoE 模型的微调到推理闭环》。"
       },
       "tags": [
         "sz26-agentic-ai-on-edge"
@@ -896,7 +896,7 @@
       },
       "bio": {
         "en": "Pieter Delobelle is a co-presenter of “SynthCommonCorpus: The Largest Open Synthetic Pretraining Corpus Built for Agentic Models” at GOSIM Shenzhen 2026.",
-        "zh": "Pieter Delobelle 将在 GOSIM 深圳 2026 联合分享《SynthCommonCorpus：面向智能体模型构建的最大开放合成预训练语料库》。"
+        "zh": "Pieter Delobelle 在 GOSIM 深圳 2026 的联合分享主题为《SynthCommonCorpus：面向智能体模型构建的最大开放合成预训练语料库》。"
       },
       "tags": [
         "sz26-open-source-model"
@@ -1337,7 +1337,7 @@
       },
       "bio": {
         "en": "Yixiang Zhang is a co-presenter of “TransferQueue: An Asynchronous, High-Performance Streaming Data Engine for Post-Training” at GOSIM Shenzhen 2026.",
-        "zh": "Yixiang Zhang 将在 GOSIM 深圳 2026 联合分享《TransferQueue：面向后训练的异步高性能流式数据引擎》。"
+        "zh": "Yixiang Zhang 在 GOSIM 深圳 2026 的联合分享主题为《TransferQueue：面向后训练的异步高性能流式数据引擎》。"
       },
       "tags": [
         "sz26-open-source-model"
@@ -1391,7 +1391,7 @@
       },
       "bio": {
         "en": "Wayne Connolly is a co-presenter of “Agentic AI as a Contributor to Mobile Linux” at GOSIM Shenzhen 2026.",
-        "zh": "Wayne Connolly 将在 GOSIM 深圳 2026 联合分享《智能体 AI 如何为移动 Linux 作出贡献》。"
+        "zh": "Wayne Connolly 在 GOSIM 深圳 2026 的联合分享主题为《智能体 AI 如何为移动 Linux 作出贡献》。"
       },
       "tags": [
         "sz26-agentic-device"
@@ -1556,7 +1556,7 @@
       },
       "bio": {
         "en": "Claudia Wang is a Senior Algorithm Engineer at Moeru AI Ltd. and co-presents “Agentic AI in Games: How Far Have We Come?” at GOSIM Shenzhen 2026.",
-        "zh": "汪凛是 Moeru AI 高级算法工程师，将在 GOSIM 深圳 2026 联合分享《游戏 AI 的智能体化，我们走远了吗？》。"
+        "zh": "汪凛是 Moeru AI 高级算法工程师，在 GOSIM 深圳 2026 的联合分享主题为《游戏 AI 的智能体化，我们走远了吗？》。"
       },
       "tags": [
         "sz26-agentic-os-app"
@@ -1726,7 +1726,7 @@
       },
       "bio": {
         "en": "Yanwei Huang is a co-presenter of “Building AI Agent Devices on RISC-V with DC-ROMA Mainboard III” at GOSIM Shenzhen 2026.",
-        "zh": "黄言伟 将在 GOSIM 深圳 2026 联合分享《使用 DC-ROMA Mainboard III 在 RISC-V 上构建 AI 智能体设备》。"
+        "zh": "黄言伟 在 GOSIM 深圳 2026 的联合分享主题为《使用 DC-ROMA Mainboard III 在 RISC-V 上构建 AI 智能体设备》。"
       },
       "tags": [
         "sz26-agentic-device"
@@ -2163,7 +2163,7 @@
       },
       "bio": {
         "en": "Kaiyan Zhang is a co-presenter of “Teaching AI to Improve AI: From Experimental Feedback to Meta-Evolution” at GOSIM Shenzhen 2026.",
-        "zh": "张开颜 将在 GOSIM 深圳 2026 联合分享《教 AI 改进 AI：从实验反馈到元进化》。"
+        "zh": "张开颜 在 GOSIM 深圳 2026 的联合分享主题为《教 AI 改进 AI：从实验反馈到元进化》。"
       },
       "tags": [
         "sz26-open-source-model"
@@ -2929,7 +2929,7 @@
       },
       "bio": {
         "en": "Dongbiao He is a co-presenter of “An Autonomous Runtime Shielding Agent for Linux Kernel Vulnerabilities” at GOSIM Shenzhen 2026.",
-        "zh": "Dongbiao He 将在 GOSIM 深圳 2026 联合分享《面向 Linux 内核漏洞的自主运行时防护智能体》。"
+        "zh": "Dongbiao He 在 GOSIM 深圳 2026 的联合分享主题为《面向 Linux 内核漏洞的自主运行时防护智能体》。"
       },
       "tags": [
         "sz26-agentic-os-app"
@@ -3448,7 +3448,7 @@
       },
       "bio": {
         "en": "Sheng Chen is a co-presenter of “Building Hybrid AI Systems: Edge Inference Meets Cloud Reasoning” at GOSIM Shenzhen 2026.",
-        "zh": "Sheng Chen 将在 GOSIM 深圳 2026 联合分享《构建混合 AI 系统：边缘推理与云端推理协同》。"
+        "zh": "Sheng Chen 在 GOSIM 深圳 2026 的联合分享主题为《构建混合 AI 系统：边缘推理与云端推理协同》。"
       },
       "tags": [
         "sz26-agentic-ai-on-edge"

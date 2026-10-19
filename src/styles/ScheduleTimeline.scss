@@ -30,7 +30,7 @@ main:has(.schedule-preview-mode) { overflow: clip; }
 
 .schedule-timeline {
   color: var(--color-heading);
-  scroll-margin-top: var(--timeline-sticky-top, var(--ticket-promotion-height, 0px));
+  scroll-margin-top: var(--timeline-sticky-top, var(--conference-banner-height, 0px));
   button, select, summary, input { &:focus-visible { outline: 2px solid #eeab71; outline-offset: 3px; } }
   button, select { font: inherit; font-size: 0.85rem; }
   button { cursor: pointer; }
@@ -39,8 +39,8 @@ main:has(.schedule-preview-mode) { overflow: clip; }
 .timeline-intro { margin: 0 0 1.25rem; font-size: 0.95rem; color: var(--color-text); }
 .timeline-toolbar {
   position: sticky;
-  top: var(--timeline-sticky-top, var(--ticket-promotion-height, 0px));
-  scroll-margin-top: var(--timeline-sticky-top, var(--ticket-promotion-height, 0px));
+  top: var(--timeline-sticky-top, var(--conference-banner-height, 0px));
+  scroll-margin-top: var(--timeline-sticky-top, var(--conference-banner-height, 0px));
   z-index: 5;
   display: flex;
   align-items: center;
@@ -102,7 +102,7 @@ main:has(.schedule-preview-mode) { overflow: clip; }
 .timeline-window { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--color-border); }
 .timeline-window-heading {
   position: sticky;
-  top: calc(var(--timeline-sticky-top, var(--ticket-promotion-height, 0px)) + var(--timeline-toolbar-height, 73px));
+  top: calc(var(--timeline-sticky-top, var(--conference-banner-height, 0px)) + var(--timeline-toolbar-height, 73px));
   z-index: 4;
   align-self: start;
   padding: 0.5rem 0;

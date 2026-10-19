@@ -1,7 +1,7 @@
 ---
 // Components
 import Layout from "layouts/LayoutLandingZh.astro";
-import GetTickets from "components/GetTickets.astro";
+import ConferenceThanks from "components/ConferenceThanks.astro";
 import HeroText from "components/HeroText.astro";
 import ScheduleTracks from "components/ScheduleTracks.astro";
 ---
@@ -17,15 +17,5 @@ import ScheduleTracks from "components/ScheduleTracks.astro";
 
   <ScheduleTracks lang="zh" />
 
-  <GetTickets
-    title="相约深圳"
-    location="深圳南山伊敦酒店"
-    date="2026年10月16-17日"
-    text="与开源 AI、机器人、边缘系统和开发者基础设施领域的建设者相聚 GOSIM Shenzhen 2026。"
-    ctaButton={{
-      text: "立即购票",
-      link: "https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696",
-      openInNewTab: true,
-    }}
-  />
+  <ConferenceThanks lang="zh" />
 </Layout>

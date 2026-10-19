@@ -1,7 +1,7 @@
 ---
 // Components
 import Layout from "layouts/LayoutLanding.astro"
-import GetTickets from "components/GetTickets.astro"
+import ConferenceThanks from "components/ConferenceThanks.astro"
 import HeroText from "components/HeroText.astro"
 import PastSponsors from "components/PastSponsors.astro"
 ---
@@ -22,19 +22,9 @@ import PastSponsors from "components/PastSponsors.astro"
   <PastSponsors
     title=""
     intro=""
-    contactText="Interested in sponsoring GOSIM Shenzhen 2026? We'd love to hear from you."
+    contactText="Interested in partnering with future GOSIM events? We'd love to hear from you."
     email="support@gosim.org"
   />
 
-  <GetTickets
-    title="Call for Proposals Now Open"
-    location="ADEN Hotel Shenzhen Nanshan"
-    date="October 16-17, 2026"
-    text="We're looking for bold ideas and fresh voices in open-source AI, robotics, edge systems, and developer infrastructure. Submit a proposal to speak at GOSIM Shenzhen 2026."
-    ctaButton={{
-      text: "Submit a Proposal",
-      link: "https://cfp.gosim.org",
-      openInNewTab: true,
-    }}
-  />
+  <ConferenceThanks lang="en" />
 </Layout>

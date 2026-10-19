@@ -380,16 +380,16 @@ body[data-navigation-status="active"] .floating-controls::before {
    transition: transform var(--liquid-quick), opacity var(--liquid-quick), filter var(--liquid-quick);
 }
 
-/* Keep the static and floating ticket CTAs mutually exclusive, including
+/* Keep the static and floating photo CTAs mutually exclusive, including
    during the header's scroll transition. */
-.floating-controls .floating-ticket-button {
+.floating-controls .floating-photo-button {
    opacity: 0;
    visibility: hidden;
    pointer-events: none;
 }
 
 [data-scrolling-started="true"][data-scrolling-direction="down"]
-   .floating-controls .floating-ticket-button {
+   .floating-controls .floating-photo-button {
    opacity: 1;
    visibility: visible;
    pointer-events: auto;
@@ -402,7 +402,7 @@ body[data-navigation-status="active"] .floating-controls::before {
    pointer-events: none;
 }
 
-body[data-navigation-status="active"] .floating-controls .floating-ticket-button {
+body[data-navigation-status="active"] .floating-controls .floating-photo-button {
    opacity: 0;
    visibility: hidden;
    pointer-events: none;

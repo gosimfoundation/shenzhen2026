@@ -1,0 +1,16 @@
+---
+import GetTickets from "components/GetTickets.astro";
+import { eventPhotoAlbumUrl, eventSummary } from "utils/event-summary";
+
+interface Props { lang: "en" | "zh"; }
+const { lang } = Astro.props;
+const copy = eventSummary[lang];
+---
+
+<GetTickets
+  title={copy.title}
+  location={copy.location}
+  date={copy.date}
+  text={copy.description}
+  ctaButton={{ text: copy.albumLabel, link: eventPhotoAlbumUrl, openInNewTab: true }}
+/>

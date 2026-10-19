@@ -15,7 +15,7 @@ export function initTimeline(root: HTMLElement, now: () => Date = () => new Date
   const toolbar = root.querySelector<HTMLElement>(".timeline-toolbar");
   if (toolbar) {
     const floatingNav = document.querySelector<HTMLElement>("header .floating-controls");
-    const ticketBanner = document.querySelector<HTMLElement>(".ticket-promotion");
+    const conferenceBanner = document.querySelector<HTMLElement>(".conference-banner");
     const measureToolbar = () => {
       root.style.setProperty("--timeline-toolbar-height", `${toolbar.getBoundingClientRect().height}px`);
       if (floatingNav) root.style.setProperty("--timeline-sticky-top", `${floatingNav.getBoundingClientRect().bottom + 8}px`);
@@ -25,7 +25,7 @@ export function initTimeline(root: HTMLElement, now: () => Date = () => new Date
       const observer = new ResizeObserver(measureToolbar);
       observer.observe(toolbar);
       if (floatingNav) observer.observe(floatingNav);
-      if (ticketBanner) observer.observe(ticketBanner);
+      if (conferenceBanner) observer.observe(conferenceBanner);
     }
   }
   const today = chinaClock(now()).date;

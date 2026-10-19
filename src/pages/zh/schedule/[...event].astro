@@ -73,14 +73,14 @@ const eventCategory = eventDetails.categoryLabel;
           <span class="ev-meta-item">
             <span class="ev-meta-label">地点</span>
             <span class="ev-meta-value">
-              {eventDetails.room || "待定"}
+              {eventDetails.room || "未公开"}
             </span>
           </span>
         </div>
       )}
 
       {eventDetails.preview && (
-        <p class="ev-preview-note">具体日期、时间与会场确认后将在此补充。</p>
+        <p class="ev-preview-note">本届大会未公开此场议程的具体日期、时间与会场。</p>
       )}
 
       {eventDetails.notice && <p class="ev-preview-note">{eventDetails.notice}</p>}

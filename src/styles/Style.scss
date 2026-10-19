@@ -387,7 +387,7 @@ footer {
    }
 
    /* Hide the desktop nav CTA buttons on mobile — they live in the hamburger
-      menu instead. (Covers the CFP + Buy Tickets buttons in .header-buttons.) */
+      menu instead. (Covers the photo album button in .header-buttons.) */
    .main-nav-bar .btn.outline,
    .main-nav-bar .header-buttons .btn {
       display: none;
@@ -634,7 +634,7 @@ footer {
    pointer-events: none;
 }
 .floating-controls .btn-floating,
-.floating-controls .floating-ticket-button {
+.floating-controls .floating-photo-button {
    position: relative;
    top: auto;
    right: auto;
@@ -703,11 +703,11 @@ body:not([data-navigation-status="active"]) .floating-controls .hamburger.btn-fl
 }
 
 /* When the menu is open, only the close button (hamburger) should show — keep
-   the ticket hidden even if the page was scrolled. */
-[data-navigation-status="active"] .floating-controls .floating-ticket-button {
+   the photo button hidden even if the page was scrolled. */
+[data-navigation-status="active"] .floating-controls .floating-photo-button {
    opacity: 0;
 }
-[data-navigation-status="active"] .floating-controls .floating-ticket-button .btn-floating,
+[data-navigation-status="active"] .floating-controls .floating-photo-button .btn-floating,
 [data-navigation-status="active"] .floating-controls .btn-filter-floating {
    pointer-events: none;
 }
@@ -718,15 +718,15 @@ body:not([data-navigation-status="active"]) .floating-controls .hamburger.btn-fl
    visibility: hidden;
 }
 
-.floating-ticket-button .btn-content.original span {
+.floating-photo-button .btn-content.original span {
    color: #F6F3E7 !important;
 }
 
-.floating-ticket-button .btn-content.duplicate span {
+.floating-photo-button .btn-content.duplicate span {
    color: #F6F3E7 !important;
 }
 
-.floating-ticket-button .border-box {
+.floating-photo-button .border-box {
    border-color: transparent;
 }
 

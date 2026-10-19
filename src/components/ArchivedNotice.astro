@@ -1,0 +1,24 @@
+---
+interface Props { lang?: "en" | "zh"; }
+const { lang = "en" } = Astro.props;
+---
+
+<aside class="archive-notice">
+  {lang === "zh"
+    ? "GOSIM Shenzhen 2026 已结束。本页保留作为本届大会的历史参考资料。"
+    : "GOSIM Shenzhen 2026 has concluded. This page is retained as a historical reference for the conference."}
+</aside>
+
+<style>
+  .archive-notice {
+    margin: 0 auto;
+    width: min(calc(100% - 2.5rem), 72rem);
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(255, 179, 65, 0.35);
+    border-radius: 0.75rem;
+    background: rgba(255, 179, 65, 0.08);
+    color: #eae6d2;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+</style>

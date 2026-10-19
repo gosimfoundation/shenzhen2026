@@ -73,14 +73,14 @@ const eventCategory = eventDetails.categoryLabel;
           <span class="ev-meta-item">
             <span class="ev-meta-label">Location</span>
             <span class="ev-meta-value">
-              {eventDetails.room || "TBA"}
+              {eventDetails.room || "Not published"}
             </span>
           </span>
         </div>
       )}
 
       {eventDetails.preview && (
-        <p class="ev-preview-note">Date, time, and room will be added once confirmed.</p>
+        <p class="ev-preview-note">The date, time, and room were not published in this conference archive.</p>
       )}
 
       {eventDetails.notice && <p class="ev-preview-note">{eventDetails.notice}</p>}

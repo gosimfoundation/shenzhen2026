@@ -1,0 +1,95 @@
+/* Keep the post-conference navigation compact in both languages. */
+:root { --nav-bar-height: 76px; }
+
+header .main-nav-bar {
+  padding: 14px var(--container-padding);
+}
+
+header .main-nav-bar .row {
+  display: grid;
+  grid-template-columns: 7em minmax(0, 1fr) auto;
+  column-gap: clamp(1rem, 2vw, 2rem);
+  min-height: 48px;
+}
+
+header .main-nav-bar nav {
+  position: static;
+  width: auto;
+  min-width: 0;
+  transform: none;
+  justify-self: center;
+}
+
+header .main-nav-bar nav > ul {
+  gap: clamp(0.75rem, 1.6vw, 1.75rem);
+  white-space: nowrap;
+}
+
+header .main-nav-bar .border-bottom { bottom: -14px; }
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: inherit;
+}
+
+.header-buttons .btn .btn-content { padding-inline: 1.1rem; }
+.language-dropdown { position: relative; color: inherit; }
+.language-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.language-btn svg { color: inherit; stroke: currentColor; }
+.language-dropdown-content {
+  display: block;
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.language-dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  text-align: left;
+  text-decoration: none;
+}
+.language-dropdown-content a.active { font-weight: 700; }
+.mobile-language-item { margin-top: 15px; }
+.language-mobile-menu { display: flex; justify-content: center; gap: 15px; padding: 10px 0; }
+.language-item { padding: 5px 10px; border-radius: 4px; text-decoration: none; }
+.language-item.active { font-weight: 700; background: rgba(255, 255, 255, 0.1); }
+
+.floating-photo-button { position: relative; z-index: 201; }
+.floating-photo-button .btn-floating { position: relative; top: auto; right: auto; }
+body[data-navigation-status="active"] header .floating-controls .floating-photo-button { display: none; }
+
+@media (max-width: 1070px) {
+  :root { --nav-bar-height: 68px; }
+  header .main-nav-bar { padding-block: 10px; }
+  header .main-nav-bar .row {
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    column-gap: 0.5rem;
+  }
+  header .main-nav-bar .logo { grid-column: 1; }
+  header .main-nav-bar nav { display: none; }
+  header .main-nav-bar .header-buttons { grid-column: 2; justify-self: end; }
+  header .main-nav-bar .btn-filter-static { position: relative; top: auto; right: auto; grid-column: 3; grid-row: 1; }
+  header .main-nav-bar .hamburger.outline { grid-column: 4; grid-row: 1; justify-self: end; }
+  header .main-nav-bar .border-bottom { bottom: -10px; }
+  header .mobile-nav-box {
+    max-height: calc(100dvh - var(--conference-banner-height, 40px));
+    overscroll-behavior: contain;
+  }
+  .mobile-nav-box .sub-links { text-align: left; }
+  .mobile-nav-box .sub-links li { margin-bottom: 4px; }
+  .mobile-nav-box .sub-links li a { font-size: 0.95rem; padding-block: 5px; }
+}

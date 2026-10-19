@@ -3,8 +3,8 @@ export const hackathons = [
   {
     name: { en: "Agentic Software Factory Hackathon", zh: "智能体软件工厂黑客松" },
     text: {
-      en: "A global Harness Engineering competition with an online qualifier and Grand Challenge leading to Demo Day at GOSIM Shenzhen 2026.",
-      zh: "面向全球的 Harness Engineering 竞赛，从线上初赛与大奖赛一路走向 GOSIM 深圳 2026 现场 Demo Day。",
+      en: "A global Harness Engineering competition featuring an online qualifier, Grand Challenge, and Demo Day at GOSIM Shenzhen 2026.",
+      zh: "面向全球的 Harness Engineering 竞赛，涵盖线上初赛、大奖赛与 GOSIM 深圳 2026 现场 Demo Day。",
     },
     link: "https://create.gosim.org/factory26/",
   },
@@ -45,6 +45,7 @@ export const hackathons = [
 export function hackathonHighlights(lang: "en" | "zh") {
   return hackathons.map(({ name, text, link }) => ({
     badge: lang === "zh" ? "黑客松" : "Hackathon",
+    status: lang === "zh" ? "活动已结束" : "Event concluded",
     title: name[lang],
     text: text[lang],
     link,

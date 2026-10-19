@@ -1,6 +1,7 @@
 ---
 // layouts
 import Layout from "layouts/LayoutLanding.astro"
+import ArchivedNotice from "components/ArchivedNotice.astro"
 import HeroText from "components/HeroText.astro"
 
 // components
@@ -44,6 +45,8 @@ const mapMarkers = [
   navBackground="header-home"
 >
   <HeroText title="General Travel Info" text="" lightgray />
+
+  <ArchivedNotice lang="en" />
 
   <section
     class="section travel-section"

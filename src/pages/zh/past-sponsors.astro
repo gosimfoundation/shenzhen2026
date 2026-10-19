@@ -1,7 +1,7 @@
 ---
 // Components
 import Layout from "layouts/LayoutLandingZh.astro";
-import GetTickets from "components/GetTickets.astro";
+import ConferenceThanks from "components/ConferenceThanks.astro";
 import HeroText from "components/HeroText.astro";
 import PastSponsors from "components/PastSponsors.astro";
 ---
@@ -22,19 +22,9 @@ import PastSponsors from "components/PastSponsors.astro";
   <PastSponsors
     title=""
     intro=""
-    contactText="有兴趣赞助 GOSIM Shenzhen 2026？欢迎随时联系我们。"
+    contactText="欢迎联系洽谈未来 GOSIM 活动的赞助与合作。"
     email="support@gosim.org"
   />
 
-  <GetTickets
-    title="CFP 议题征集 进行中"
-    location="深圳南山伊敦酒店"
-    date="2026年10月16-17日"
-    text="我们正在寻找开源 AI、机器人、边缘系统与开发者基础设施领域的大胆想法与新声音。欢迎提交议题，登上 GOSIM Shenzhen 2026 的舞台。"
-    ctaButton={{
-      text: "提交议题",
-      link: "https://cfp.gosim.org",
-      openInNewTab: true,
-    }}
-  />
+  <ConferenceThanks lang="zh" />
 </Layout>

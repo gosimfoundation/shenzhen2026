@@ -1,6 +1,8 @@
 ---
 // Hero Lab — test page with 4 hero variants inspired by SaaS hero designs.
 // Not linked from the site nav; visit /hero-lab directly.
+import { eventPhotoAlbumUrl } from "utils/event-summary";
+
 const VIDEO = "/videos/shenzhen-hero-compressed.mp4"
 const POSTER = "/videos/shenzhen-hero-poster.jpg"
 ---
@@ -28,7 +30,7 @@ const POSTER = "/videos/shenzhen-hero-poster.jpg"
     <nav class="mini-nav">
       <span class="brand"><span class="gosim-mark"></span><span class="brand-city">深圳</span></span>
       <div class="nav-right">
-        <a class="pill pill-white" href="https://cfp.gosim.org" target="_blank" rel="noopener">Call for Proposals</a>
+        <a class="pill pill-white" href="/schedule/" target="_blank" rel="noopener">View Schedule</a>
       </div>
     </nav>
 
@@ -39,8 +41,8 @@ const POSTER = "/videos/shenzhen-hero-poster.jpg"
       </h1>
       <p class="v1-sub">Two days of talks, demos, and hands-on building across<br class="desktop-br" /> AI, robotics, open models, and edge systems.</p>
       <div class="v1-cta">
-        <a class="pill pill-orange lg" href="/tickets">Buy Tickets</a>
-        <a class="pill pill-orange circle lg" href="https://cfp.gosim.org" target="_blank" rel="noopener" aria-label="Call for proposals">↗</a>
+        <a class="pill pill-orange lg" href={eventPhotoAlbumUrl} target="_blank" rel="noopener noreferrer">View Photos</a>
+        <a class="pill pill-orange circle lg" href="/schedule/" target="_blank" rel="noopener" aria-label="View schedule">↗</a>
       </div>
     </div>
 
@@ -62,18 +64,18 @@ const POSTER = "/videos/shenzhen-hero-poster.jpg"
         <a href="/schedule">Schedule</a><a href="/speakers">Speakers</a><a href="/faq">FAQ</a>
       </div>
       <div class="nav-right">
-        <a class="pill pill-glass" href="/tickets">Buy Tickets</a>
+        <a class="pill pill-glass" href={eventPhotoAlbumUrl} target="_blank" rel="noopener noreferrer">View Photos</a>
       </div>
     </nav>
 
     <div class="left-stack">
       <h1 class="v2-headline">Build the<br />open future.</h1>
-      <p class="v2-sub">The world's leading developers gather in Shenzhen —<br class="desktop-br" /> October 16–17, 2026.</p>
+      <p class="v2-sub">Over 2,500 attendees came together in Shenzhen —<br class="desktop-br" /> October 16–17, 2026.</p>
       <div class="v2-cta">
-        <a class="pill pill-dark lg" href="/tickets">Get your ticket</a>
-        <a class="pill pill-dark circle lg" href="/tickets" aria-label="Get your ticket">↗</a>
+        <a class="pill pill-dark lg" href={eventPhotoAlbumUrl} target="_blank" rel="noopener noreferrer">View event photos</a>
+        <a class="pill pill-dark circle lg" href={eventPhotoAlbumUrl} target="_blank" rel="noopener noreferrer" aria-label="View event photos">↗</a>
       </div>
-      <a class="v2-secondary" href="https://cfp.gosim.org" target="_blank" rel="noopener">Or submit a talk — CFP is open →</a>
+      <a class="v2-secondary" href="/schedule/" target="_blank" rel="noopener">Explore the conference schedule →</a>
     </div>
 
     <div class="bottom-strip">
@@ -91,9 +93,9 @@ const POSTER = "/videos/shenzhen-hero-poster.jpg"
     <nav class="mini-nav dark-text">
       <span class="brand"><span class="gosim-mark dark"></span><span class="brand-city dark">深圳</span></span>
       <div class="nav-links">
-        <a href="/schedule">SCHEDULE</a><a href="/speakers">SPEAKERS</a><a href="/tickets">TICKETS</a>
+        <a href="/schedule">SCHEDULE</a><a href="/speakers">SPEAKERS</a><a href={eventPhotoAlbumUrl} target="_blank" rel="noopener noreferrer">PHOTOS</a>
       </div>
-      <div class="nav-right"><a class="v3-login" href="https://cfp.gosim.org" target="_blank" rel="noopener">CFP →</a></div>
+      <div class="nav-right"><a class="v3-login" href="/schedule/" target="_blank" rel="noopener">Schedule →</a></div>
     </nav>
 
     <div class="center-stack">
@@ -103,7 +105,7 @@ const POSTER = "/videos/shenzhen-hero-poster.jpg"
       </h1>
       <p class="v3-sub">Talks, workshops, and live demos from the builders shaping open AI —<br class="desktop-br" /> October 16–17, 2026 in Shenzhen, China.</p>
       <div class="v3-cta">
-        <a class="pill pill-dark" href="/tickets">Get tickets →</a>
+        <a class="pill pill-dark" href={eventPhotoAlbumUrl} target="_blank" rel="noopener noreferrer">View photos →</a>
       </div>
     </div>
 
@@ -125,7 +127,7 @@ const POSTER = "/videos/shenzhen-hero-poster.jpg"
         <a href="/schedule">Schedule</a><a href="/speakers">Speakers</a><a href="/faq">FAQ</a>
       </div>
       <div class="nav-right">
-        <a class="pill pill-white" href="/tickets">Buy Tickets ✦</a>
+        <a class="pill pill-white" href={eventPhotoAlbumUrl} target="_blank" rel="noopener noreferrer">View Photos ✦</a>
       </div>
     </nav>
 
@@ -134,8 +136,8 @@ const POSTER = "/videos/shenzhen-hero-poster.jpg"
       <h1 class="v4-headline">The summit where<br /><span class="accent">open source</span> ships.</h1>
       <p class="v4-sub">GOSIM brings together the people building open AI, robotics, and<br class="desktop-br" /> developer infrastructure — for two days of talks, demos, and hacking.</p>
       <div class="v4-combo">
-        <a class="combo-left" href="https://cfp.gosim.org" target="_blank" rel="noopener">Submit a proposal</a>
-        <a class="combo-right" href="/tickets">Buy Tickets ›</a>
+        <a class="combo-left" href="/schedule/" target="_blank" rel="noopener">View schedule</a>
+        <a class="combo-right" href={eventPhotoAlbumUrl} target="_blank" rel="noopener noreferrer">View Photos ›</a>
       </div>
     </div>
 

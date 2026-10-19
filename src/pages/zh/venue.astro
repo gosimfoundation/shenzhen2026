@@ -1,5 +1,6 @@
 ---
 import Layout from "layouts/LayoutLandingZh.astro"
+import ArchivedNotice from "components/ArchivedNotice.astro"
 import HeroText from "components/HeroText.astro"
 import VenueInfo from "components/VenueInfo.astro"
 ---
@@ -12,6 +13,8 @@ import VenueInfo from "components/VenueInfo.astro"
   pageTransitionName="Venue"
 >
   <HeroText title="深圳南山伊敦酒店" lightgray video={false} />
+
+  <ArchivedNotice lang="zh" />
 
   <VenueInfo
     subtitle="大会地点"

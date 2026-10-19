@@ -1,5 +1,6 @@
 ---
 import Layout from "layouts/LayoutLanding.astro"
+import ArchivedNotice from "components/ArchivedNotice.astro"
 import HeroText from "components/HeroText.astro"
 import VenueInfo from "components/VenueInfo.astro"
 ---
@@ -12,6 +13,8 @@ import VenueInfo from "components/VenueInfo.astro"
   pageTransitionName="Venue"
 >
   <HeroText title="ADEN Hotel Shenzhen Nanshan" lightgray video={false} />
+
+  <ArchivedNotice lang="en" />
 
   <VenueInfo
     subtitle="Venue"

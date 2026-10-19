@@ -8,9 +8,11 @@ import UNOpenSourceConvening from "components/UNOpenSourceConvening.astro"
 import VenueDetails from "components/VenueDetails.astro"
 import EventGallery from "components/EventGallery.astro"
 import PreviousEvents from "components/PreviousEvents.astro"
-import GetTickets from "components/GetTickets.astro"
+import ConferenceThanks from "components/ConferenceThanks.astro"
 import ProudlySupported from "components/ProudlySupported.astro"
 import { hackathonHighlights } from "utils/hackathons"
+import { eventPhotoAlbumUrl, eventSummary } from "utils/event-summary"
+
 
 // Images
 import GosimShanghai from "images/homepage/gosim-shanghai.png"
@@ -19,11 +21,13 @@ import GosimBeijing from "images/homepage/gosim-beijing.png"
 import GosimParis from "images/homepage/gosim-paris-min.png"
 import GosimHangzhou from "images/homepage/gosim-hangzhou.png"
 import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
+
+const copy = eventSummary.zh
 ---
 
 <Layout
   title="GOSIM Shenzhen 2026"
-  description="GOSIM Shenzhen 2026 — 开源 AI、机器人、边缘系统与开发者基础设施大会。2026年10月16-17日，深圳南山伊敦酒店。"
+  description={copy.description}
   navDarkMode={true}
   navBackground="header-home"
   pageTransitionName="Home"
@@ -31,27 +35,27 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
   <Hero
     date="2026年10月16-17日"
     location="深圳南山伊敦酒店"
-    subtitle="全球顶级开源技术盛会"
-    description="150+ 国际讲师与 2000+ 全球开发者齐聚深圳，带来 Keynote、技术论坛、Workshop、Hackathon 与开源项目现场演示。"
+    subtitle={copy.title}
+    description={copy.description}
     video="/videos/shenzhen-hero-compressed.mp4"
     poster="/videos/shenzhen-hero-poster.jpg"
     links={[
       {
-        text: "CFP 议题征集",
-        link: "https://cfp.gosim.org",
+        text: copy.albumLabel,
+        link: eventPhotoAlbumUrl,
         openInNewTab: true,
-        class: "btn light xl btn-hover",
+        class: "btn primary xl btn-hover",
       },
       {
-        text: "购票",
-        link: "/zh/tickets",
+        text: "查看议程",
+        link: "/zh/schedule/",
         openInNewTab: false,
-        class: "btn primary xl btn-hover",
+        class: "btn light xl btn-hover",
       },
     ]}
   />
 
-  <ProudlySupported lead="本届大会赞助商及合作单位" href="/zh/sponsors" cta="查看全部赞助商及合作单位" />
+  <ProudlySupported lead="感谢本届大会赞助商及合作单位" href="/zh/sponsors" cta="查看全部赞助商及合作单位" />
 
   <ProgramSection
     lang="zh"
@@ -82,7 +86,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
       },
     ]}
     tracksTitle="分论坛主题"
-    tracksIntro="从开源模型、智能体框架到机器人与边缘 AI，大会议程旨在展示技术栈的下一步走向，让开发者与构建者面对面交流。现在可以查看各分论坛已确认的演讲题目。"
+    tracksIntro="从开源模型、智能体框架到机器人与边缘 AI，本届大会汇聚开发者与构建者，交流技术栈的下一步走向。欢迎查阅各分论坛的演讲与议程。"
     exploreLabel="查看日程"
     enterLabel="了解更多"
     tracks={[
@@ -123,10 +127,10 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
     highlights={[
       {
         badge: "Spotlight",
-        status: "全球项目征集",
+        status: "活动已结束",
         title: "Spotlight Shenzhen 2026：下一代 AI 原生产品",
         titleLines: ["Spotlight Shenzhen 2026：", "下一代 AI 原生产品"],
-        text: "面向全球征集下一代 AI 原生产品，入选团队将在深圳集中共创，并于 GOSIM Shenzhen 2026 现场展示。",
+        text: "Spotlight Shenzhen 2026 汇聚下一代 AI 原生产品，入选团队在深圳集中共创，并在 GOSIM Shenzhen 2026 现场展示。",
         link: "https://spotlight.gosim.org/zh/shenzhen2026/",
         linkLabel: "了解 Spotlight",
       },
@@ -138,12 +142,12 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
 
   <CoLocatedEventFeature
     id="rustchinaconf"
-    eyebrow="同期活动"
+    eyebrow="同期活动 · 已结束"
     title="RustChinaConf 2026 · 深圳"
     theme="Rust and AI"
     dateLabel="大会时间"
     date="2026 年 10 月 15–17 日"
-    text="RustChinaConf 与 GOSIM Shenzhen 2026 同期举办，聚焦 Rust for AI、AI for Rust 与 Rust in Production，汇聚 Rust 开发者、开源维护者与产业实践者。"
+    text="RustChinaConf 已与 GOSIM Shenzhen 2026 同期举办，围绕 Rust for AI、AI for Rust 与 Rust in Production，汇聚了 Rust 开发者、开源维护者与产业实践者。"
     image="https://rustchinaconf.org/hero/rustchinaconf-shenzhen-2026-banner.png"
     imageAlt="RustChinaConf 2026 深圳大会主视觉"
     link="https://rustchinaconf.org/zh-CN/"
@@ -153,7 +157,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
   <VenueDetails
     eyebrow="大会地点"
     title="深圳南山伊敦酒店"
-    venueName="相聚深圳"
+    venueName="本届大会会场"
     address="深圳市南山区蛇口龟山路8号"
     description="大会地点位于深圳蛇口，距离海上世界地铁站约 700 米，可乘坐 2 号线、8 号线和 12 号线，步行即可到达蛇口海滨片区。"
     image="/images/venue/aden-hotel-shenzhen-nanshan.jpg"
@@ -221,7 +225,7 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
       {
         title: "GOSIM Beijing 2024",
         date: "2024年10月17-18日",
-        description: "GOSIM 北京大会吸引了超过 1700 名参会者，是迄今为止规模最大的 GOSIM 活动。",
+        description: "GOSIM 北京大会吸引了超过 1700 名参会者。",
         image: GosimBeijing,
         link: "https://china2024.gosim.org/",
       },
@@ -242,15 +246,5 @@ import GosimParis2026 from "images/homepage/gosim-paris-2026.jpg"
     ]}
   />
 
-  <GetTickets
-    title="CFP 议题征集 进行中"
-    location="深圳南山伊敦酒店"
-    date="2026年10月16-17日"
-    text="我们正在寻找开源 AI、机器人、边缘系统与开发者基础设施领域的大胆想法与新声音。欢迎提交议题，登上 GOSIM Shenzhen 2026 的舞台。"
-    ctaButton={{
-      text: "提交议题",
-      link: "https://cfp.gosim.org",
-      openInNewTab: true,
-    }}
-  />
+  <ConferenceThanks lang="zh" />
 </Layout>

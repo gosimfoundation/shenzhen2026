@@ -2,34 +2,35 @@
 // Components
 import Layout from "layouts/LayoutLandingZh.astro"
 import HeroText from "components/HeroText.astro"
-import Tickets from "components/Tickets.astro"
-import GetTickets from "components/GetTickets.astro"
+import Button from "components/Button.astro"
+import { eventSummary } from "utils/event-summary"
+
+import ConferenceThanks from "components/ConferenceThanks.astro"
+
+const copy = eventSummary.zh
 ---
 
 <Layout
-  title="购票 – GOSIM Shenzhen 2026"
-  description="GOSIM Shenzhen 2026 门票注册与购买 —— 2026年10月16-17日，深圳南山伊敦酒店。"
+  title={`${copy.closedTitle} – GOSIM Shenzhen 2026`}
+  description={copy.closedDescription}
   navDarkMode={true}
   navBackground="header-home"
   pageTransitionName="Tickets"
 >
   <HeroText
-    title="购票"
-    text="立即锁定你的 GOSIM Shenzhen 2026 席位。在下方查看当前票价并选择票种。门票注册由百格（BagEvent）安全提供。"
+    title={copy.closedTitle}
+    text={copy.closedDescription}
     lightgray
   />
 
-  <Tickets />
+  <div class="archive-actions">
+    <Button text="查看议程" link="/zh/schedule/" class="btn light xl btn-hover" />
+    <Button text="查看讲师" link="/zh/speakers/" class="btn light xl btn-hover" />
+  </div>
 
-  <GetTickets
-    title="CFP 议题征集 进行中"
-    location="深圳南山伊敦酒店"
-    date="2026年10月16-17日"
-    text="我们正在寻找开源 AI、机器人、边缘系统与开发者基础设施领域的大胆想法与新声音。欢迎提交议题，登上 GOSIM Shenzhen 2026 的舞台。"
-    ctaButton={{
-      text: "提交议题",
-      link: "https://cfp.gosim.org",
-      openInNewTab: true,
-    }}
-  />
+  <ConferenceThanks lang="zh" />
 </Layout>
+
+<style>
+  .archive-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; padding: 2rem 1.25rem; background: #100e09; }
+</style>

@@ -1,0 +1,58 @@
+---
+import { eventPhotoAlbumUrl, eventSummary } from "utils/event-summary";
+interface Props { lang: "en" | "zh"; }
+const { lang } = Astro.props;
+const copy = eventSummary[lang];
+---
+
+<aside class="conference-banner" data-conference-banner aria-label={lang === "zh" ? "大会致谢" : "Conference thanks"}>
+  <a href={eventPhotoAlbumUrl} target="_blank" rel="noopener noreferrer">
+    <strong>{copy.banner}</strong>
+    <span class="banner-cta">{copy.albumLabel} <span aria-hidden="true">↗</span></span>
+  </a>
+</aside>
+
+<script>
+  const syncBannerHeight = () => {
+    const banner = document.querySelector<HTMLElement>("[data-conference-banner]");
+    document.documentElement.style.setProperty("--conference-banner-height", `${banner?.getBoundingClientRect().height ?? 0}px`);
+  };
+  const banner = document.querySelector<HTMLElement>("[data-conference-banner]");
+  if (banner && typeof ResizeObserver !== "undefined") new ResizeObserver(syncBannerHeight).observe(banner);
+  syncBannerHeight();
+  window.addEventListener("resize", syncBannerHeight);
+  document.addEventListener("astro:page-load", syncBannerHeight);
+</script>
+
+<style>
+  .conference-banner {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 202;
+    background: #ffb341;
+    color: #241507;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    min-height: 40px;
+    padding: 8px 20px;
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  a:hover { background: rgba(255, 255, 255, 0.16); }
+  a:focus-visible { outline: 3px solid currentColor; outline-offset: -4px; }
+  strong { color: inherit; font-weight: 750; }
+  .banner-cta { flex-shrink: 0; font-weight: 750; text-decoration: underline; text-underline-offset: 3px; }
+  :global(body) { padding-top: var(--conference-banner-height, 40px); }
+  :global(body > header) { top: var(--conference-banner-height, 40px); }
+  @media (max-width: 700px) {
+    a { gap: 0.65rem; padding: 8px 12px; font-size: 12px; }
+    strong { max-width: 31em; }
+  }
+</style>

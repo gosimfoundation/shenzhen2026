@@ -2,34 +2,35 @@
 // Components
 import Layout from "layouts/LayoutLanding.astro"
 import HeroText from "components/HeroText.astro"
-import Tickets from "components/Tickets.astro"
-import GetTickets from "components/GetTickets.astro"
+import Button from "components/Button.astro"
+import { eventSummary } from "utils/event-summary"
+
+import ConferenceThanks from "components/ConferenceThanks.astro"
+
+const copy = eventSummary.en
 ---
 
 <Layout
-  title="Tickets – GOSIM Shenzhen 2026"
-  description="Register and buy tickets for GOSIM Shenzhen 2026 — October 16-17, 2026 at ADEN Hotel Shenzhen Nanshan."
+  title={`${copy.closedTitle} – GOSIM Shenzhen 2026`}
+  description={copy.closedDescription}
   navDarkMode={true}
   navBackground="header-home"
   pageTransitionName="Tickets"
 >
   <HeroText
-    title="Tickets"
-    text="Secure your spot at GOSIM Shenzhen 2026. See current prices and choose your pass below. Registration is handled securely by BagEvent."
+    title={copy.closedTitle}
+    text={copy.closedDescription}
     lightgray
   />
 
-  <Tickets />
+  <div class="archive-actions">
+    <Button text="View Schedule" link="/schedule/" class="btn light xl btn-hover" />
+    <Button text="View Speakers" link="/speakers/" class="btn light xl btn-hover" />
+  </div>
 
-  <GetTickets
-    title="Call for Proposals Now Open"
-    location="ADEN Hotel Shenzhen Nanshan"
-    date="October 16-17, 2026"
-    text="We're looking for bold ideas and fresh voices in open-source AI, robotics, edge systems, and developer infrastructure. Submit a proposal to speak at GOSIM Shenzhen 2026."
-    ctaButton={{
-      text: "Submit a Proposal",
-      link: "https://cfp.gosim.org",
-      openInNewTab: true,
-    }}
-  />
+  <ConferenceThanks lang="en" />
 </Layout>
+
+<style>
+  .archive-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; padding: 2rem 1.25rem; background: #100e09; }
+</style>

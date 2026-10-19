@@ -1,9 +1,10 @@
 ---
 import Layout from "layouts/LayoutLanding.astro";
+import ArchivedNotice from "components/ArchivedNotice.astro";
 import HeroText from "components/HeroText.astro";
 import TextAndImageVisa from "components/TextAndImageVisa.astro";
 import TextAndImage from "components/TextAndImage.astro";
-import GetTickets from "components/GetTickets.astro";
+import ConferenceThanks from "components/ConferenceThanks.astro";
 import VisaTypes from "components/VisaTypes.astro";
 
 // Images
@@ -23,6 +24,8 @@ import VisaTraditional from "images/subpages/visa-traditional.png";
     text="Most attendees are now eligible for visa-free entry or transit. Some may still need a visa depending on their nationality and travel plans. Please read the updated requirements below and contact your local Chinese embassy or consulate for precise instructions."
     lightgray
   />
+
+  <ArchivedNotice lang="en" />
   <VisaTypes />
   <!-- Visa-Free Entry Section -->
   <section class="" data-theme-section="light" data-bg-section="lightgray">
@@ -95,28 +98,14 @@ import VisaTraditional from "images/subpages/visa-traditional.png";
   </section>
   <TextAndImage
     id="invitation-letter"
-    title="Invitation Letter"
-    text="After completing your registration, GOSIM can provide an invitation letter to support your visa application. Please email us with your passport name, nationality, and registration confirmation if needed. Allow sufficient time — visa processing may take 7–10 business days or longer."
-    imageAlt="Visa Invitation"
+    title="Invitation Requests Closed"
+    text="GOSIM Shenzhen 2026 has concluded. Visa invitation requests for this conference are closed. This page is retained as a historical travel reference."
+    imageAlt="Conference visa information"
     dataBgSection="light"
     dataThemeSection="light"
-    ctaButton={{
-      text: "Request Invitation Letter",
-      link: "mailto:travel@gosim.org",
-      openInNewTab: true,
-    }}
   />
-  <GetTickets
-    title="Call for Proposals Now Open"
-    location="ADEN Hotel Shenzhen Nanshan"
-    date="October 16-17, 2026"
-    text="We're looking for bold ideas and fresh voices in open-source AI, robotics, edge systems, and developer infrastructure. Submit a proposal to speak at GOSIM Shenzhen 2026."
-    ctaButton={{
-      text: "Submit a Proposal",
-      link: "https://cfp.gosim.org",
-      openInNewTab: true,
-    }}
-  />
+
+  <ConferenceThanks lang="en" />
 </Layout>
 <style>
   .visa-container {

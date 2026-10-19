@@ -28,7 +28,7 @@ const previewCopy = {
     arrangement: "Program",
     sessions: (count: number) => `${count} session${count === 1 ? "" : "s"}`,
     summary: (talks: number, categories: number) => `${talks} sessions · ${categories} program categories`,
-    note: "All times are China Standard Time (UTC+8). The program is subject to updates.",
+    note: "Archived schedule for GOSIM Shenzhen 2026. All times are China Standard Time (UTC+8).",
   },
   zh: {
     sidebarTitle: "筛选议程",
@@ -39,7 +39,7 @@ const previewCopy = {
     arrangement: "活动安排",
     sessions: (count: number) => `${count} 场议程`,
     summary: (talks: number, categories: number) => `共 ${talks} 场议程 · ${categories} 个议程分类`,
-    note: "所有时间均为北京时间（UTC+8）。日程如有调整将在此更新。",
+    note: "本页为 GOSIM Shenzhen 2026 历史议程，所有时间均为北京时间（UTC+8）。",
   },
 }[previewLang]
 const spotlightActivity = schedulePreview.activities.find((activity) => activity.id === "spotlight-talks")
@@ -151,7 +151,7 @@ const dateLabel = (date: string) => previewLang === "zh"
               {track.sessions && <ul class="preview-program-times">
                 {track.sessions.map((session) => <li>
                   <time datetime={session.date}>{dateLabel(session.date)}</time>
-                  <span>{session.timeSlot?.replace("-", "–") || (session.startTime ? `${session.startTime} ${previewLang === "zh" ? "开始" : "onwards"}` : (previewLang === "zh" ? "时间待定" : "Time TBA"))}</span>
+                  <span>{session.timeSlot?.replace("-", "–") || (session.startTime ? `${session.startTime} ${previewLang === "zh" ? "开始" : "onwards"}` : (previewLang === "zh" ? "时间未公开" : "Time not published"))}</span>
                 </li>)}
               </ul>}
               {track.notice && <p class="preview-workshop-notice">{track.notice[previewLang]}</p>}
@@ -164,7 +164,7 @@ const dateLabel = (date: string) => previewLang === "zh"
                       data-preview-day-button={group.date}
                       aria-pressed={group.date === firstDay ? "true" : "false"}
                       disabled={group.talks.length === 0}>
-                      <strong>{day?.label || (group.date === "unscheduled" ? (previewLang === "zh" ? "日期待定" : "Date TBA") : group.date)}</strong>
+                      <strong>{day?.label || (group.date === "unscheduled" ? (previewLang === "zh" ? "日期未公开" : "Date not published") : group.date)}</strong>
                       {day && <span>{day[previewLang]}</span>}
                     </button>
                   )
@@ -188,7 +188,7 @@ const dateLabel = (date: string) => previewLang === "zh"
                       <div class="preview-session-time">
                         {"timeSlot" in talk && talk.timeSlot ? String(talk.timeSlot).split("-").map((time, index) => (
                           <span class={index === 0 ? "preview-time-start" : "preview-time-end"}>{time}</span>
-                        )) : <span class="preview-time-pending">{previewLang === "zh" ? "时间待定" : "Time TBA"}</span>}
+                        )) : <span class="preview-time-pending">{previewLang === "zh" ? "时间未公开" : "Time not published"}</span>}
                       </div>
                       <div class="preview-session-content">
                         <h3>{title}</h3>

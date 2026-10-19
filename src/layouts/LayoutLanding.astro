@@ -1,6 +1,6 @@
 ---
 // Components
-import TicketPromotion from "components/TicketPromotion.astro";
+import ConferenceBanner from "components/ConferenceBanner.astro";
 import Header from "components/HeaderLanding.astro";
 import Footer from "components/Footer.astro";
 import Seo from "components/Seo.astro";
@@ -13,6 +13,7 @@ import "styles/Style.scss";
 import "styles/Components.scss";
 import "styles/Flickity.scss";
 import "styles/LiquidGlass.scss";
+import "styles/ConferenceNavigation.scss";
 
 interface Props {
   title: string;
@@ -111,7 +112,7 @@ const {
     data-scrolling-direction="down"
     data-barba="wrapper"
   >
-    <TicketPromotion lang="en" />
+    <ConferenceBanner lang="en" />
     <Header />
 
     <main

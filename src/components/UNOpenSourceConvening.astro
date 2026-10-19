@@ -3,6 +3,7 @@ import Button from "components/Button.astro";
 import { Picture } from "astro:assets";
 import unHeadquarters from "images/events/un-headquarters.jpg";
 import { schedule } from "utils/conference";
+import { eventPhotoAlbumUrl } from "utils/event-summary";
 
 interface Props {
   lang: "en" | "zh";
@@ -13,8 +14,6 @@ const { lang, compact = false } = Astro.props;
 const isZh = lang === "zh";
 const conveningTime = schedule.activities.find((activity) => activity.id === "un-open-source-convening")!.sessions[0].timeSlot!.replace("-", "–");
 const detailsPath = `${isZh ? "/zh" : ""}/un-open-source-convening/`;
-const registrationUrl = "https://www.bagevent.com/event/9228523?discountCode=UNOPENSOURCECONVENTING";
-const ticketsUrl = "https://www.bagevent.com/event/gosimshenzhen2026#website_moduleId_1164696";
 const photoSourceUrl = "https://www.facebook.com/photo/?fbid=10160988638280820&set=a.577863084369721";
 const copy = isZh
   ? {
@@ -24,12 +23,12 @@ const copy = isZh
       photoAlt: "纽约联合国总部大楼及各国国旗",
       photoCaption: "联合国总部 · 纽约",
       photoSourceLabel: "查看 Facebook 原图 · UN Photo/Rick Bajornas",
-      summary: "GOSIM Shenzhen 2026 大会官方同期高端边会，面向全球开源、AI 与数字技术领域的产业决策者、科研专家及国际合作机构，探讨联合国开源工作与国际协作机遇。参会须经审核，凭正式确认通知入场。",
+      summary: "GOSIM Shenzhen 2026 大会官方同期高端边会，面向全球开源、AI 与数字技术领域的产业决策者、科研专家及国际合作机构，探讨联合国开源工作与国际协作机遇。活动已结束，参会申请已关闭。",
       introductionLabel: "会议背景",
-      introduction: "本次会议为 GOSIM Shenzhen 2026 大会官方同期高端边会，旨在面向全球开源生态、人工智能、数字技术领域的产业决策者、顶尖科研专家与国际合作机构，搭建联合国主导的开源治理与国际协作交流平台。会议将系统发布联合国现阶段开源体系建设成果，凝聚全球核心参与主体，共同规划未来开源生态建设路径、探索跨国产学研协同合作机遇。",
+      introduction: "本次会议为 GOSIM Shenzhen 2026 大会官方同期高端边会，旨在面向全球开源生态、人工智能、数字技术领域的产业决策者、顶尖科研专家与国际合作机构，搭建联合国主导的开源治理与国际协作交流平台。会议围绕联合国现阶段开源体系建设成果、未来开源生态建设路径与跨国产学研协同合作机遇展开交流。",
       introductionNotes: [
-        "名额有限，请点击“申请参会”提交申请，我们将对您的申请进行审核。审核通过后，GOSIM 大会组委会将向您发送后续邮件，告知会议地点。",
-        "这是了解联合国对开源的支持，以及您如何参与联合国未来开源倡议的良好机会。",
+        "本次会议已结束，参会申请已关闭。感谢各位嘉宾的参与与支持。",
+        "本页保留本次会议的背景与议题资料，供会后查阅。",
       ],
       dateLabel: "活动日期",
       date: "2026 年 10 月 16 日",
@@ -37,13 +36,12 @@ const copy = isZh
       time: `${conveningTime}（北京时间，UTC+8）`,
       locationLabel: "活动地点",
       location: "中国 · 深圳",
-      admissionNote: "接受参会申请；须通过审核并收到主办方正式邀请后，凭邀请通知入场。",
+      admissionNote: "本次活动已结束，参会申请已关闭。",
       details: "查看活动详情",
-      register: "申请参会",
-      tickets: "购买大会门票",
-      registrationNote: "进入百格大会购票页面后，请选择 UN Open Source Convening 的单独审核通道提交报名。",
+      album: "查看大会相册",
+      registrationNote: "感谢各位嘉宾的参与，欢迎浏览大会相册。",
       topicsLabel: "核心研讨内容",
-      topicsIntro: "本次专题会议将集中展示与深度研讨联合国开源生态重点工作，核心议题包括：",
+      topicsIntro: "本次专题会议围绕联合国开源生态重点工作展开，核心议题包括：",
       topics: [
         {
           title: "联合国开源周",
@@ -64,9 +62,9 @@ const copy = isZh
       ],
       hostLabel: "主办机构",
       organizer: "联合国数字与新兴技术办公室",
-      participationLabel: "参会报名说明",
-      participation: "本次会议对外开放报名，面向全球开源领域中高端专业人士，重点邀请企业开源负责人、技术决策者、C 级高管，可对企业高层决策产生影响力的产业领袖，以及高校、科研机构的资深科研负责人与学科带头人，同时包含行业组织负责人与国际机构代表。所有报名参会人员将进行审核制，审核通过后，主办方将统一发送正式参会确认通知，凭通知入场参会。",
-      invitation: "会议诚挚邀请各界核心决策者参会交流，汇聚全球顶层智慧，共建开放、合规、普惠的全球开源与 AI 创新生态。",
+      participationLabel: "参会信息（存档）",
+      participation: "本次会议面向全球开源领域的企业开源负责人、技术决策者、产业领袖、高校与科研机构代表、行业组织及国际机构代表。活动已结束，报名通道已关闭。",
+      invitation: "感谢各位嘉宾对全球开源与 AI 创新交流的参与和支持。",
     }
   : {
       eyebrow: "Side Event of GOSIM Shenzhen 2026",
@@ -75,12 +73,12 @@ const copy = isZh
       photoAlt: "United Nations Headquarters in New York with national flags in the foreground",
       photoCaption: "United Nations Headquarters · New York",
       photoSourceLabel: "View original photo on Facebook · UN Photo/Rick Bajornas",
-      summary: "An official high-level side event of GOSIM Shenzhen 2026 for industry decision-makers, leading researchers and international organisations to explore UN open source initiatives and collaboration. Applications are subject to review; an official confirmation notice is required for entry.",
+      summary: "An official high-level side event of GOSIM Shenzhen 2026 for industry decision-makers, leading researchers and international organisations to explore UN open source initiatives and collaboration. The event has concluded and applications are closed.",
       introductionLabel: "Event Introduction",
-      introduction: "This convening is an official high-level side event of GOSIM Shenzhen 2026. It creates a UN-lead platform for industry decision-makers, leading researchers and international collaborative organisations within the global open source, AI and digital technology ecosystem. The session will share progress of ongoing UN open source initiatives, bring together key global stakeholders to shape the roadmap of open source ecosystem development, and identify cross-border, academia-industry-research collaboration opportunities.",
+      introduction: "This convening was an official high-level side event of GOSIM Shenzhen 2026. It provided a UN-led platform for industry decision-makers, leading researchers and international collaborative organisations within the global open source, AI and digital technology ecosystem. The session focused on ongoing UN open source initiatives, the roadmap for open source ecosystem development, and cross-border collaboration between industry and research institutions.",
       introductionNotes: [
-        "The space is limited. Please “Apply to attend” and your application will be reviewed. Once it’s approved, the GOSIM Event Committee will send you a follow-up email with the meeting location.",
-        "This is a great opportunity to learn about United Nation’s support in Open Source and how you can play a part in future United Nation’s Open Source initiatives.",
+        "This event has concluded and applications are closed. Thank you for your participation.",
+        "The meeting background and topics are retained here for reference.",
       ],
       dateLabel: "Date",
       date: "October 16, 2026",
@@ -88,13 +86,12 @@ const copy = isZh
       time: `${conveningTime} (China Standard Time, UTC+8)`,
       locationLabel: "Location",
       location: "Shenzhen, China",
-      admissionNote: "Applications are welcome. Admission requires approval and an official invitation from the organisers.",
+      admissionNote: "This event has concluded and applications are closed.",
       details: "Explore the convening",
-      register: "Apply to attend",
-      tickets: "Buy conference tickets",
-      registrationNote: "On the BagEvent conference ticketing page, select the separate application option for UN Open Source Convening to submit your registration for review.",
+      album: "View Event Photos",
+      registrationNote: "Thank you for joining us. Explore the conference photo album.",
       topicsLabel: "Key Discussion Topics",
-      topicsIntro: "The convening will showcase and dive deep into priority UN open source workstreams, covering:",
+      topicsIntro: "The convening focused on priority UN open source workstreams, covering:",
       topics: [
         {
           title: "UN Open Source Week",
@@ -115,9 +112,9 @@ const copy = isZh
       ],
       hostLabel: "Host",
       organizer: "United Nations Office for Digital and Emerging Technologies",
-      participationLabel: "Participation Notice",
-      participation: "This event is open for applications. We target senior professionals across the global open source ecosystem, with priority given to enterprise open source leads, technical decision-makers, C-suite executives, industry leaders with influence over corporate strategic decisions, principal investigators and academic leaders from universities and research institutions, as well as heads of industry associations and representatives of international organisations. All applications will undergo a formal eligibility review. Upon approval, applicants will receive an official confirmation notice from the organisers, which is required for on-site entry.",
-      invitation: "We warmly invite cross-sector decision-makers to join this exchange. Together we leverage global insights to build an open, compliant and inclusive global open source and AI innovation ecosystem.",
+      participationLabel: "Participation Information (Archive)",
+      participation: "The convening was intended for enterprise open source leads, technical decision-makers, industry leaders, researchers, academic leaders, and representatives of industry associations and international organisations. The event has concluded and applications are closed.",
+      invitation: "Thank you to everyone who supported this exchange on global open source and AI innovation.",
     };
 const Heading = compact ? "h2" : "h1";
 ---
@@ -167,12 +164,11 @@ const Heading = compact ? "h2" : "h1";
         <div class="event-attendance">
           <div class="event-actions">
             <Button
-              text={compact ? copy.details : copy.register}
-              link={compact ? detailsPath : registrationUrl}
+              text={compact ? copy.details : copy.album}
+              link={compact ? detailsPath : eventPhotoAlbumUrl}
               openInNewTab={!compact}
               class="btn primary xl btn-hover glass-orange"
             />
-            {!compact && <a class="event-tickets" href={ticketsUrl} target="_blank" rel="noopener noreferrer">{copy.tickets} ↗</a>}
           </div>
           <div class="event-logistics">
             <dl class="event-facts">

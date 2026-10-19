@@ -90,7 +90,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     <div class="container">
       <div class="hero-content-row">
         <div class="hero-text-left">
-          {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+          {subtitle && <h1 class="hero-subtitle">{subtitle}</h1>}
           {description && <p class="hero-description">{description}</p>}
         </div>
 
@@ -137,14 +137,31 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
   }
 
   .section-home-header {
-    min-height: 44rem;
+    display: flex;
+    flex-direction: column;
+    min-height: max(calc(100svh - var(--conference-banner-height, 40px)), 44rem);
   }
 
-  .section-home-header .container > .row {
-    min-height: max(100vh, 44rem);
+  .section-home-header > .container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-top: calc(var(--nav-bar-height, 76px) + 2rem);
+    padding-bottom: 2.5rem;
+  }
+
+  .section-home-header > .container > .row {
+    width: 100%;
+    min-height: 0;
+    padding: 0;
   }
 
   .section-home-header .logo-gosim-scroll {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-inline: auto;
     z-index: 5;
   }
 
@@ -199,10 +216,8 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
   }
 
   .hero-bottom-box {
-    position: absolute;
-    bottom: 2rem;
-    left: 0;
-    right: 0;
+    position: relative;
+    padding-bottom: 2rem;
     z-index: 2;
     pointer-events: none;
   }
@@ -421,7 +436,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     }
 
     .hero-bottom-box {
-      bottom: 1.5rem;
+      padding-bottom: 1.5rem;
     }
 
     /* Smaller bottom block so it doesn't eat a third of the screen */
@@ -457,7 +472,6 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
 
   @media (max-height: 760px) {
     .section-home-header .logo-gosim-scroll {
-      top: 40%;
       gap: 0.75rem;
     }
 
@@ -478,13 +492,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     }
 
     .hero-bottom-box {
-      bottom: 1.25rem;
-    }
-  }
-
-  @media (max-height: 640px) {
-    .section-home-header .logo-gosim-scroll {
-      top: 37%;
+      padding-bottom: 1.25rem;
     }
   }
 
