@@ -2,6 +2,7 @@
 // Components
 import Layout from "layouts/LayoutLandingZh.astro"
 import Hero from "components/Hero.astro"
+import ConferenceAlbum from "components/ConferenceAlbum.astro"
 import ProgramSection from "components/ProgramSection.astro"
 import CoLocatedEventFeature from "components/CoLocatedEventFeature.astro"
 import UNOpenSourceConvening from "components/UNOpenSourceConvening.astro"
@@ -35,8 +36,6 @@ const copy = eventSummary.zh
   <Hero
     date="2026年10月16-17日"
     location="深圳南山伊敦酒店"
-    subtitle={copy.title}
-    description={copy.description}
     video="/videos/shenzhen-hero-compressed.mp4"
     poster="/videos/shenzhen-hero-poster.jpg"
     links={[
@@ -54,6 +53,8 @@ const copy = eventSummary.zh
       },
     ]}
   />
+
+  <ConferenceAlbum lang="zh" />
 
   <ProudlySupported lead="感谢本届大会赞助商及合作单位" href="/zh/sponsors" cta="查看全部赞助商及合作单位" />
 

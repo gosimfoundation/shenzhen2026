@@ -88,11 +88,13 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
 
   <div class="hero-bottom-box">
     <div class="container">
-      <div class="hero-content-row">
-        <div class="hero-text-left">
-          {subtitle && <h1 class="hero-subtitle">{subtitle}</h1>}
-          {description && <p class="hero-description">{description}</p>}
-        </div>
+      <div class:list={["hero-content-row", { "hero-content-row--facts-only": !subtitle && !description }]}>
+        {(subtitle || description) && (
+          <div class="hero-text-left">
+            {subtitle && <h1 class="hero-subtitle">{subtitle}</h1>}
+            {description && <p class="hero-description">{description}</p>}
+          </div>
+        )}
 
         {(date || location) && (
           <div class="hero-date-block">
@@ -508,4 +510,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
       gap: 0.65rem;
     }
   }
+
+  .hero-content-row--facts-only { justify-content: center; align-items: center; }
+  .hero-content-row--facts-only .hero-date-block { text-align: center; }
 </style>

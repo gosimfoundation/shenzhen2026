@@ -2,6 +2,7 @@
 // Components
 import Layout from "layouts/LayoutLanding.astro"
 import Hero from "components/Hero.astro"
+import ConferenceAlbum from "components/ConferenceAlbum.astro"
 import ProgramSection from "components/ProgramSection.astro"
 import CoLocatedEventFeature from "components/CoLocatedEventFeature.astro"
 import UNOpenSourceConvening from "components/UNOpenSourceConvening.astro"
@@ -35,8 +36,6 @@ const copy = eventSummary.en
   <Hero
     date="October 16-17, 2026"
     location="ADEN Hotel · Shenzhen"
-    subtitle={copy.title}
-    description={copy.description}
     video="/videos/shenzhen-hero-compressed.mp4"
     poster="/videos/shenzhen-hero-poster.jpg"
     links={[
@@ -54,6 +53,8 @@ const copy = eventSummary.en
       },
     ]}
   />
+
+  <ConferenceAlbum lang="en" />
 
   <ProudlySupported lead="Thank You to Our Sponsors & Partners" href="/sponsors" cta="View all sponsors & partners" />
 

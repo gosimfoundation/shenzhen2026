@@ -1,0 +1,222 @@
+---
+import { Image } from "astro:assets";
+import Button from "components/Button.astro";
+import { eventPhotoAlbumUrl, eventSummary } from "utils/event-summary";
+import audience from "images/homepage/shenzhen2026/audience.webp";
+import keynote from "images/homepage/shenzhen2026/keynote.webp";
+import firesideChat from "images/homepage/shenzhen2026/fireside-chat.webp";
+import roboticsTalk from "images/homepage/shenzhen2026/robotics-talk.webp";
+import exhibition from "images/homepage/shenzhen2026/exhibition.webp";
+import robotBuilder from "images/homepage/shenzhen2026/robot-builder.webp";
+import hackathons from "images/homepage/shenzhen2026/hackathons.webp";
+import venue from "images/homepage/shenzhen2026/venue.webp";
+import groupPhoto from "images/homepage/shenzhen2026/group-photo.webp";
+
+interface Props { lang: "en" | "zh"; }
+const { lang } = Astro.props;
+const zh = lang === "zh";
+const copy = eventSummary[lang];
+const photos = [
+  { image: audience, en: "A room full of open-source enthusiasm", zh: "满场的开源热情", alt: { en: "Attendees gathered in the main conference hall at GOSIM Shenzhen 2026", zh: "GOSIM Shenzhen 2026 主会场座无虚席的观众席" } },
+  { image: keynote, en: "Ideas on the main stage", zh: "主舞台上的思想碰撞", alt: { en: "A keynote presentation about Omarchy on the GOSIM Shenzhen stage", zh: "GOSIM 深圳大会主舞台上的 Omarchy 主题演讲" } },
+  { image: firesideChat, en: "Conversations that bring us together", zh: "连接彼此的炉边对谈", alt: { en: "Speakers and attendees during a fireside chat in the main hall", zh: "主会场炉边对谈中的讲师与现场观众" } },
+  { image: roboticsTalk, en: "Exploring open-source robotics", zh: "一起探索开源机器人", alt: { en: "A robotics talk with attendees taking notes and photographing the presentation", zh: "开源机器人论坛中认真听讲、记录与拍照的参会者" } },
+  { image: exhibition, en: "Where the community connects", zh: "热闹的现场，开放的交流", alt: { en: "Attendees meeting and exploring project demonstrations in the exhibition area", zh: "展区内参会者交流、体验开源项目演示的现场" } },
+  { image: robotBuilder, en: "The people building what comes next", zh: "让创意成为现实的构建者", alt: { en: "A conference participant holding a yellow robot in the exhibition area", zh: "一位参会者在展区展示手中的黄色机器人" } },
+  { image: hackathons, en: "Building, experimenting, sharing", zh: "动手创造，分享灵感", alt: { en: "Four views of hackathon teams working on laptops and robotics projects", zh: "黑客松团队使用电脑与机器人协作开发的四幅现场照片" } },
+  { image: venue, en: "Shenzhen, our meeting place", zh: "深圳，我们相聚的地方", alt: { en: "Conference flags outside ADEN Hotel Shenzhen Nanshan", zh: "深圳南山伊敦酒店外的 GOSIM Shenzhen 2026 大会旗帜" } },
+  { image: groupPhoto, en: "One community, so many possibilities", zh: "一张合影，无数种可能", alt: { en: "GOSIM Shenzhen 2026 participants posing for a group photograph in front of the main stage", zh: "GOSIM Shenzhen 2026 参会者在主舞台前的大合影" } },
+];
+const cards = photos.map((photo, index) => {
+  const offset = index <= Math.floor(photos.length / 2) ? index : index - photos.length;
+  return { ...photo, offset, distance: Math.abs(offset) };
+});
+---
+
+<section
+  id="memories"
+  class="section conference-album"
+  data-theme-section="dark"
+  data-bg-section="dark"
+  aria-labelledby="conference-album-title"
+>
+  <div class="album-intro container">
+    <p class="album-eyebrow">GOSIM SHENZHEN 2026 <span aria-hidden="true">/</span> {zh ? "镜头里的大会" : "IN PICTURES"}</p>
+    <h1 id="conference-album-title">{copy.title}</h1>
+    <p class="album-description">{copy.description}</p>
+  </div>
+
+  <div
+    class="album-coverflow"
+    data-coverflow
+    role="region"
+    aria-roledescription={zh ? "照片轮播" : "carousel"}
+    aria-label={zh ? "GOSIM 深圳 2026 大会相册" : "GOSIM Shenzhen 2026 photo album"}
+  >
+    <div class="album-stage" data-coverflow-stage>
+      {cards.map(({ offset, distance, ...photo }, index) => (
+          <button
+            type="button"
+            class:list={["album-slide", { "is-active": index === 0 }]}
+            data-coverflow-slide
+            data-caption={photo[lang]}
+            data-full-src={photo.image.src}
+            data-photo-alt={photo.alt[lang]}
+            data-select-label={zh ? "选择照片" : "Select photo"}
+            data-open-label={zh ? "放大查看照片" : "Enlarge photo"}
+            aria-label={`${index === 0 ? (zh ? "放大查看照片" : "Enlarge photo") : (zh ? "选择照片" : "Select photo")}: ${photo[lang]}`}
+            aria-current={index === 0 ? "true" : undefined}
+            aria-hidden={distance > 2 ? "true" : undefined}
+            tabindex={index === 0 ? 0 : -1}
+            style={`--offset: ${offset}; --distance: ${distance}; --angle: ${offset === 0 ? 0 : offset < 0 ? 46 : -46}deg; --slide-opacity: ${distance > 2 ? 0 : distance === 0 ? 1 : distance === 1 ? 0.8 : 0.48}; --slide-depth: ${10 - distance};`}
+          >
+            <Image
+              src={photo.image}
+              widths={[480, 800, 1200]}
+              sizes="(max-width: 600px) 78vw, (max-width: 1000px) 64vw, 640px"
+              format="webp"
+              quality={84}
+              alt={photo.alt[lang]}
+              loading="lazy"
+              decoding="async"
+              draggable="false"
+            />
+            <span class="slide-enlarge" aria-hidden="true">↗</span>
+          </button>
+      ))}
+    </div>
+
+    <div class="album-controls">
+      <button type="button" class="album-arrow" data-coverflow-prev aria-label={zh ? "上一张照片" : "Previous photo"}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>
+      </button>
+      <div class="album-caption" aria-live="polite" aria-atomic="true">
+        <span class="album-count" data-coverflow-count>01 <span>/ {String(photos.length).padStart(2, "0")}</span></span>
+        <p data-coverflow-caption>{photos[0][lang]}</p>
+      </div>
+      <button type="button" class="album-arrow" data-coverflow-next aria-label={zh ? "下一张照片" : "Next photo"}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m10 6 6 6-6 6" /></svg>
+      </button>
+    </div>
+
+    <div class="album-dots" role="group" aria-label={zh ? "选择照片" : "Select a photo"}>
+      {photos.map((photo, index) => (
+        <button type="button" class:list={["album-dot", { "is-active": index === 0 }]} data-coverflow-dot aria-label={`${index + 1}. ${photo[lang]}`} aria-pressed={index === 0 ? "true" : "false"}><span></span></button>
+      ))}
+    </div>
+
+    <dialog class="album-lightbox" data-coverflow-dialog aria-label={zh ? "大会照片大图" : "Conference photo viewer"} data-lenis-prevent>
+      <button type="button" class="lightbox-close" data-coverflow-close aria-label={zh ? "关闭大图" : "Close photo"}>×</button>
+      <button type="button" class="album-arrow lightbox-prev" data-coverflow-lightbox-prev aria-label={zh ? "上一张照片" : "Previous photo"}>‹</button>
+      <img data-coverflow-full-image alt="" />
+      <button type="button" class="album-arrow lightbox-next" data-coverflow-lightbox-next aria-label={zh ? "下一张照片" : "Next photo"}>›</button>
+      <p data-coverflow-full-caption></p>
+    </dialog>
+  </div>
+
+  <div class="album-link">
+    <Button text={zh ? "浏览完整大会相册 ↗" : "Explore the Full Photo Album ↗"} link={eventPhotoAlbumUrl} openInNewTab={true} class="btn light xl btn-hover" />
+  </div>
+</section>
+
+<script>
+  import { setupCoverFlows } from "../scripts/coverflow";
+  setupCoverFlows();
+  document.addEventListener("astro:page-load", () => setupCoverFlows());
+</script>
+
+<style>
+  .conference-album {
+    position: relative;
+    isolation: isolate;
+    overflow: clip;
+    padding: clamp(3.5rem, 6vw, 6rem) 0 clamp(3rem, 5vw, 5rem);
+    background: #100f0b;
+    scroll-margin-top: calc(var(--conference-banner-height, 40px) + 1rem);
+  }
+  .conference-album::before {
+    content: "";
+    position: absolute;
+    inset: 15% 0 0;
+    z-index: -1;
+    background: radial-gradient(ellipse at 50% 47%, rgba(168, 98, 48, 0.15), transparent 61%);
+    pointer-events: none;
+  }
+  .album-intro { text-align: center; }
+  .album-eyebrow { margin: 0 0 1rem; color: #b7a787; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; }
+  .album-eyebrow span { margin-inline: 0.6rem; color: #f87c43; }
+  .album-intro h1 { max-width: 66rem; margin: 0 auto; color: #f4f0e6; font-size: clamp(2rem, 3.8vw, 3.6rem); font-weight: 600; line-height: 1.22; letter-spacing: -0.045em; text-wrap: balance; }
+  .album-description { max-width: 53rem; margin: 1.1rem auto 0; color: #b9b3a6; font-size: clamp(0.96rem, 1.2vw, 1.08rem); line-height: 1.8; text-wrap: pretty; }
+  .album-coverflow { --cover-width: min(64vw, 640px); --cover-step: min(25vw, 340px); margin-top: 2.2rem; }
+  .album-stage { position: relative; height: calc(var(--cover-width) / 1.5 + 3rem); perspective: 1300px; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+  .album-slide {
+    position: absolute;
+    top: 0.8rem;
+    left: 50%;
+    display: block;
+    width: var(--cover-width);
+    aspect-ratio: 3 / 2;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    background: #25231c;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    opacity: var(--slide-opacity);
+    z-index: var(--slide-depth);
+    transform: translateX(-50%) translateX(calc(var(--offset) * var(--cover-step))) translateZ(calc(var(--distance) * -160px)) rotateY(var(--angle));
+    transform-origin: center;
+    transition: transform 650ms cubic-bezier(0.22, 0.68, 0, 1), opacity 450ms ease, border-color 450ms ease;
+    cursor: pointer;
+    -webkit-box-reflect: below 10px linear-gradient(transparent 73%, rgba(255, 255, 255, 0.09));
+  }
+  .album-slide[aria-hidden="true"] { pointer-events: none; }
+  .album-slide img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: inherit; pointer-events: none; }
+  .album-slide.is-active { border-color: rgba(255, 194, 122, 0.5); cursor: zoom-in; }
+  .album-slide:focus-visible { outline: 2px solid #ffb341; outline-offset: 5px; }
+  .slide-enlarge { position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; color: white; background: rgba(0,0,0,.4); opacity: 0; transition: opacity 180ms ease; }
+  .is-active:hover .slide-enlarge, .is-active:focus-visible .slide-enlarge { opacity: 1; }
+  .album-controls { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 4vw, 3rem); margin-top: 0.4rem; }
+  .album-arrow { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; padding: 10px; border: 1px solid #51493a; border-radius: 50%; color: #f4f0e6; background: rgba(255,255,255,.025); cursor: pointer; transition: background 180ms ease, border-color 180ms ease; }
+  .album-arrow svg { width: 22px; height: 22px; }
+  .album-arrow:hover { border-color: #df9b5d; background: rgba(248, 122, 65, 0.13); }
+  .album-arrow:focus-visible, .album-dot:focus-visible, .lightbox-close:focus-visible { outline: 2px solid #ffb341; outline-offset: 4px; }
+  .album-caption { width: min(65vw, 24rem); text-align: center; }
+  .album-count { color: #f3c797; font-size: 0.72rem; letter-spacing: 0.13em; font-variant-numeric: tabular-nums; }
+  .album-count span { color: #716c60; }
+  .album-caption p { margin: 0.4rem 0 0; color: #d0c8b8; font-size: 0.88rem; line-height: 1.5; }
+  .album-dots { display: flex; justify-content: center; align-items: center; gap: 1px; margin: 0.6rem 0 0; }
+  .album-dot { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 0; border-radius: 4px; background: transparent; cursor: pointer; }
+  .album-dot span { width: 5px; height: 5px; border-radius: 999px; background: #625c4e; transition: width 300ms ease, background 300ms ease; }
+  .album-dot.is-active span { width: 20px; background: #ed9d5f; }
+  .album-link { display: flex; justify-content: center; margin-top: 1.3rem; }
+  .album-lightbox { position: fixed; inset: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 4rem 5rem; border: 0; color: #f4f0e6; background: rgba(10, 9, 6, 0.97); }
+  .album-lightbox::backdrop { background: rgba(0, 0, 0, 0.85); }
+  .album-lightbox[open] { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }
+  .album-lightbox img { display: block; max-width: 100%; max-height: calc(100dvh - 10rem); object-fit: contain; }
+  .album-lightbox p { margin: 0; color: #d0c8b8; text-align: center; font-size: 0.9rem; }
+  .lightbox-close { position: absolute; top: 1rem; right: 1.2rem; width: 44px; height: 44px; padding: 0; border: 1px solid #625c4e; border-radius: 50%; background: #211e17; color: white; font-size: 1.8rem; cursor: pointer; }
+  .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); font-size: 1.8rem; line-height: 1; }
+  .lightbox-prev { left: 1rem; }
+  .lightbox-next { right: 1rem; }
+  @media (max-width: 600px) {
+    .album-intro { padding-inline: 1.3rem; }
+    .album-intro h1 { font-size: clamp(1.9rem, 7vw, 2.5rem); }
+    .album-eyebrow { font-size: 0.62rem; letter-spacing: 0.12em; }
+    .album-description { font-size: 0.92rem; line-height: 1.75; }
+    .album-coverflow { --cover-width: 78vw; --cover-step: 53vw; margin-top: 1.8rem; }
+    .album-stage { height: calc(var(--cover-width) / 1.5 + 2.5rem); perspective: 950px; }
+    .album-slide { border-radius: 8px; }
+    .album-controls { gap: 0.6rem; padding-inline: 0.9rem; }
+    .album-caption { width: 62vw; }
+    .album-caption p { font-size: 0.8rem; }
+    .album-arrow { width: 40px; height: 40px; }
+    .album-lightbox { padding: 4rem 0.75rem 6rem; }
+    .album-lightbox img { max-height: calc(100dvh - 12rem); }
+    .lightbox-prev, .lightbox-next { top: auto; bottom: 1.2rem; transform: none; }
+    .lightbox-prev { left: calc(50% - 3.2rem); }
+    .lightbox-next { right: calc(50% - 3.2rem); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .album-slide, .album-dot span, .slide-enlarge, .album-arrow { transition: none; }
+  }
+</style>
