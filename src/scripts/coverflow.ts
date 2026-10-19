@@ -6,12 +6,17 @@ export function setupCoverFlows(scope: ParentNode = document) {
     const dots = [...root.querySelectorAll<HTMLButtonElement>("[data-coverflow-dot]")];
     if (!slides.length) return;
     const stage = root.querySelector<HTMLElement>("[data-coverflow-stage]")!;
-    const count = root.querySelector<HTMLElement>("[data-coverflow-count]")!;
-    const caption = root.querySelector<HTMLElement>("[data-coverflow-caption]")!;
     const dialog = root.querySelector<HTMLDialogElement>("[data-coverflow-dialog]")!;
     const fullImage = root.querySelector<HTMLImageElement>("[data-coverflow-full-image]")!;
-    const fullCaption = root.querySelector<HTMLElement>("[data-coverflow-full-caption]")!;
+    const autoplayButton = root.querySelector<HTMLButtonElement>("[data-coverflow-autoplay]")!;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let active = 0;
+    let pausedByUser = reducedMotion.matches;
+    let hovered = false;
+    let focused = root.contains(document.activeElement);
+    let inView = typeof IntersectionObserver === "undefined";
+    let timer: ReturnType<typeof window.setTimeout> | undefined;
+    let pointer: { id: number; x: number; y: number } | null = null;
 
     const update = (index: number) => {
       active = ((index % slides.length) + slides.length) % slides.length;
@@ -37,19 +42,61 @@ export function setupCoverFlows(scope: ParentNode = document) {
         dot.classList.toggle("is-active", index === active);
         dot.setAttribute("aria-pressed", String(index === active));
       });
-      count.replaceChildren(`${String(active + 1).padStart(2, "0")} `);
-      const total = document.createElement("span");
-      total.textContent = `/ ${String(slides.length).padStart(2, "0")}`;
-      count.appendChild(total);
-      caption.textContent = slides[active].dataset.caption || "";
       if (dialog.open) updateFullImage();
+      syncAutoplay();
     };
 
     const updateFullImage = () => {
       fullImage.src = slides[active].dataset.fullSrc || "";
       fullImage.alt = slides[active].dataset.photoAlt || "";
-      fullCaption.textContent = slides[active].dataset.caption || "";
     };
+    const stopAutoplay = () => {
+      window.clearTimeout(timer);
+      timer = undefined;
+    };
+    const canAutoplay = () => root.isConnected && slides.length > 1 && inView && !pausedByUser && !hovered && !focused && !document.hidden && !dialog.open && !pointer;
+    const syncAutoplay = () => {
+      stopAutoplay();
+      const playing = canAutoplay();
+      root.dataset.autoplayState = playing ? "playing" : "paused";
+      autoplayButton.dataset.paused = String(pausedByUser);
+      autoplayButton.setAttribute("aria-pressed", String(!pausedByUser));
+      autoplayButton.setAttribute("aria-label", (pausedByUser ? autoplayButton.dataset.playLabel : autoplayButton.dataset.pauseLabel) || "");
+      if (playing) timer = window.setTimeout(() => {
+        if (canAutoplay()) update(active + 1);
+        else syncAutoplay();
+      }, 4000);
+    };
+    autoplayButton.addEventListener("click", () => {
+      pausedByUser = !pausedByUser;
+      syncAutoplay();
+    });
+    root.addEventListener("pointerenter", event => {
+      if (event.pointerType !== "mouse") return;
+      hovered = true;
+      syncAutoplay();
+    });
+    root.addEventListener("pointerleave", event => {
+      if (event.pointerType !== "mouse") return;
+      hovered = false;
+      syncAutoplay();
+    });
+    root.addEventListener("focusin", () => { focused = true; syncAutoplay(); });
+    root.addEventListener("focusout", event => {
+      if (root.contains(event.relatedTarget as Node | null)) return;
+      focused = false;
+      syncAutoplay();
+    });
+    const onMotionChange = (event: MediaQueryListEvent) => {
+      if (event.matches) pausedByUser = true;
+      syncAutoplay();
+    };
+    reducedMotion.addEventListener("change", onMotionChange);
+    document.addEventListener("visibilitychange", syncAutoplay);
+    const observer = typeof IntersectionObserver === "undefined" ? null : new IntersectionObserver(entries => {
+      inView = entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.2);
+      syncAutoplay();
+    }, { threshold: 0.2 });
     root.querySelector("[data-coverflow-prev]")?.addEventListener("click", () => update(active - 1));
     root.querySelector("[data-coverflow-next]")?.addEventListener("click", () => update(active + 1));
     dots.forEach((dot, index) => dot.addEventListener("click", () => update(index)));
@@ -61,6 +108,7 @@ export function setupCoverFlows(scope: ParentNode = document) {
       else {
         updateFullImage();
         dialog.showModal();
+        syncAutoplay();
       }
     }));
     root.addEventListener("keydown", event => {
@@ -72,24 +120,28 @@ export function setupCoverFlows(scope: ParentNode = document) {
       slides[active].focus({ preventScroll: true });
     });
 
-    let pointer: { id: number; x: number; y: number } | null = null;
     stage.addEventListener("pointerdown", event => {
       if (!event.isPrimary || event.button !== 0) return;
       pointer = { id: event.pointerId, x: event.clientX, y: event.clientY };
+      syncAutoplay();
     });
-    stage.addEventListener("pointercancel", () => { pointer = null; });
+    stage.addEventListener("pointercancel", () => { pointer = null; syncAutoplay(); });
     stage.addEventListener("pointerup", event => {
       if (!pointer || pointer.id !== event.pointerId) return;
       const dx = event.clientX - pointer.x;
       const dy = event.clientY - pointer.y;
       pointer = null;
-      if (Math.abs(dx) < 40 || Math.abs(dx) <= Math.abs(dy)) return;
+      if (Math.abs(dx) < 40 || Math.abs(dx) <= Math.abs(dy)) {
+        syncAutoplay();
+        return;
+      }
       suppressClickUntil = performance.now() + 350;
       update(active + (dx < 0 ? 1 : -1));
     });
     stage.addEventListener("dragstart", event => event.preventDefault());
 
     root.querySelector("[data-coverflow-close]")?.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("close", syncAutoplay);
     root.querySelector("[data-coverflow-lightbox-prev]")?.addEventListener("click", () => update(active - 1));
     root.querySelector("[data-coverflow-lightbox-next]")?.addEventListener("click", () => update(active + 1));
     dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
@@ -100,5 +152,12 @@ export function setupCoverFlows(scope: ParentNode = document) {
       update(active + (event.key === "ArrowLeft" ? -1 : 1));
     });
     update(0);
+    observer?.observe(root);
+    document.addEventListener("astro:before-swap", () => {
+      stopAutoplay();
+      observer?.disconnect();
+      document.removeEventListener("visibilitychange", syncAutoplay);
+      reducedMotion.removeEventListener("change", onMotionChange);
+    }, { once: true });
   });
 }
