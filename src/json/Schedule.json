@@ -58,8 +58,8 @@
           "originalAbstractLanguage": "en",
           "slug": "p-203-multimodel-intension-model",
           "title": {
-            "en": "Multimodel Intension Model",
-            "zh": "多模型意图模型"
+            "en": "NovaCore: Brain-Aligned Intent Model for Multimodal Real-Time Interaction Experiences That Are More Attuned to People.",
+            "zh": "NovaCore：同脑意图模型，打造更懂人的多模态实时交互体验"
           },
           "overview": {
             "en": "Nova presents a Multimodal Intention Model (MMIM) for On-Device Deployment. Conventional intent recognition often relies on a single modality, such as speech or text, and thus struggles to capture users' implicit emotional and social intentions. To address this limitation, MMIM integrates multimodal signals—including facial expressions, voice, language, posture, and physiological cues—into a unified intention space. It employs cross-modal alignment, temporal fusion, and context-aware reasoning to jointly infer explicit requests and implicit affective intentions. The model is designed to support empathetic, personalized, and trustworthy human–robot interaction in scenarios such as elderly care, child companionship, and mental health support. Experimental results demonstrate that MMIM improves intention recognition accuracy, robustness under missing modalities, and user-perceived naturalness compared with unimodal and conventional multimodal baselines. The proposed model offers a step toward more emotionally intelligent companion robots.",
@@ -100,12 +100,12 @@
           "manual": true,
           "type": "talk",
           "title": {
-            "en": "Keynote — Topic to Be Announced",
-            "zh": "主旨演讲：题目待公布"
+            "en": "UN ODET Open Source Strategy and Planning",
+            "zh": "联合国数字和新兴技术办公室（ODET）开源战略与规划"
           },
           "overview": {
-            "en": "Keynote by Mehdi Snene. The topic will be announced.",
-            "zh": "Mehdi Snene 主旨演讲，具体题目待公布。"
+            "en": "Mehdi Snene presents the open source strategy and planning of the UN Office for Digital and Emerging Technologies (ODET).",
+            "zh": "Mehdi Snene 介绍联合国数字和新兴技术办公室（ODET）的开源战略与规划。"
           },
           "speakers": [
             "mehdi-snene"
