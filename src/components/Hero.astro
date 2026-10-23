@@ -15,6 +15,8 @@ interface Props {
     text: string
     link: string
     openInNewTab: boolean
+    download?: boolean
+    mimeType?: string
     class?: string
   }>
   note?: string
@@ -69,12 +71,14 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
         </div>
 
           {(links && links.length > 0) || note ? (
-            <div class="hero-cta">
+            <div class:list={["hero-cta", { "hero-cta--three": links?.length === 3 }]}>
               {links?.map((loop) => (
                 <Button
                   text={loop.text}
                   link={loop.link}
                   openInNewTab={loop?.openInNewTab}
+                  download={loop.download}
+                  mimeType={loop.mimeType}
                   class={loop.class || "btn outline xl btn-hover"}
                 />
               ))}
@@ -382,8 +386,8 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
 
   @media (max-width: 768px) {
     .section-home-header .logo-gosim-scroll {
-      width: 100vw;
-      max-width: none;
+      width: 100%;
+      max-width: 100%;
     }
 
     /* Romanisation: tighter tracking so it reads as a tidy caption under 深圳 */
@@ -416,6 +420,10 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
       min-width: 0;
     }
 
+    .hero-cta--three :global(.btn:last-child) {
+      grid-column: 1 / -1;
+    }
+
     .hero-cta :global(.btn .btn-click) {
       width: 100%;
       justify-content: center;
@@ -426,6 +434,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
        showing as a ring around the button. */
     .hero-cta :global(.btn .btn-content) {
       width: 100%;
+      padding-inline: 0.75rem;
     }
 
     /* Match the note's text size to the CFP button so the two pills look equal */

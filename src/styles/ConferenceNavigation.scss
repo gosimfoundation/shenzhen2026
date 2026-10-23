@@ -68,7 +68,13 @@ header .main-nav-bar .border-bottom { bottom: -14px; }
 .language-item { padding: 5px 10px; border-radius: 4px; text-decoration: none; }
 .language-item.active { font-weight: 700; background: rgba(255, 255, 255, 0.1); }
 
-.floating-photo-button { position: relative; z-index: 201; }
+.floating-photo-button {
+  position: relative;
+  z-index: 201;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .floating-photo-button .btn-floating { position: relative; top: auto; right: auto; }
 body[data-navigation-status="active"] header .floating-controls .floating-photo-button { display: none; }
 
