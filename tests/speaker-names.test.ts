@@ -22,7 +22,7 @@ const bilingualNames: Record<string, [english: string, chinese: string]> = {
   "quanshi-zhang": ["Quanshi Zhang", "张拳石"],
   "sean-dong": ["Sean Dong", "董鑫"],
   "shiwei-liu": ["Shiwei Liu", "刘世伟"],
-  "shuyue-hu": ["Shuyue Hu", "胡舒悦"],
+  "shuyue-hu": ["Hangfan Zhang", "张航帆"],
   "tong-ling": ["Tong Ling", "凌通"],
   "weiqi-zhao": ["Weiqi Zhao", "赵维奇"],
   "wilson-wang": ["Wilson Wang", "王潇爽"],

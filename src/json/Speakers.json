@@ -1051,36 +1051,6 @@
       "source": "cfp"
     },
     {
-      "id": "yuxuan-zhang",
-      "name": {
-        "en": "Yuxuan Zhang",
-        "zh": "张昱轩"
-      },
-      "roleOrg": {
-        "en": "Technology Evangelist, Zhipu AI",
-        "zh": "智谱 AI 技术布道师"
-      },
-      "bio": {
-        "en": "Yuxuan Zhang is a Technology Evangelist at Zhipu AI.",
-        "zh": "智谱 AI 技术布道师。"
-      },
-      "tags": [
-        "sz26-open-source-model"
-      ],
-      "socialLinks": {
-        "github": "https://github.com/zRzRzRzRzRzRzR",
-        "twitter": "https://x.com/zRdianjiao",
-        "linkedin": "https://www.linkedin.com/in/yuxuan-zhang-86a124282/"
-      },
-      "draft": false,
-      "image": "/images/speakers/confirmed/yuxuan-zhang.png",
-      "sourceNames": [
-        "Yuxuan Zhang",
-        "张昱轩"
-      ],
-      "source": "cfp"
-    },
-    {
       "id": "susanna-wong",
       "name": {
         "en": "Susanna Wong",
@@ -2101,16 +2071,16 @@
     {
       "id": "shuyue-hu",
       "name": {
-        "en": "Shuyue Hu",
-        "zh": "胡舒悦"
+        "en": "Hangfan Zhang",
+        "zh": "张航帆"
       },
       "roleOrg": {
-        "en": "Research Scientist, Shanghai AI Lab",
-        "zh": "上海人工智能实验室研究科学家"
+        "en": "Researcher, Shanghai AI Laboratory",
+        "zh": "上海人工智能实验室研究员"
       },
       "bio": {
-        "en": "Shuyue Hu is a research scientist at Shanghai Artificial Intelligence Laboratory. Her research focuses on agents, multi-agent systems, large language models, and game theory. She received her Ph.D. from the Chinese University of Hong Kong in 2019 and was a research fellow at the National University of Singapore. Her work has received the First Prize of the Natural Science Award from the Chinese Institute of Electronics, the DAI 2025 Best Paper Award, an AAMAS 2026 Best Student Paper nomination, and the AAMAS 2026 Best System Demonstration Award.",
-        "zh": "上海人工智能实验室研究科学家，研究方向包括智能体、多智能体系统、大语言模型和博弈论。2019 年获香港中文大学博士学位，曾任新加坡国立大学研究员。其研究获得中国电子学会自然科学一等奖、DAI 2025 最佳论文奖、AAMAS 2026 最佳学生论文提名和最佳系统演示奖。"
+        "en": "Hangfan Zhang is a Researcher at Shanghai AI Laboratory.",
+        "zh": "张航帆是上海人工智能实验室研究员。"
       },
       "tags": [
         "sz26-open-source-model"
@@ -2121,7 +2091,9 @@
       "sourceNames": [
         "shuyue hu",
         "Shuyue Hu",
-        "胡舒悦"
+        "胡舒悦",
+        "Hangfan Zhang",
+        "张航帆"
       ],
       "source": "cfp"
     },

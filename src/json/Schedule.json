@@ -2489,27 +2489,6 @@
           "timeSlot": "14:00-14:35"
         },
         {
-          "ref": "P-22",
-          "originalTitle": "从适配到共建：GLM 与开源社区的协作实践",
-          "originalLanguage": "zh",
-          "title": {
-            "en": "From Adaptation to Co-Building: GLM’s Collaboration with the Open Source Community",
-            "zh": "从适配到共建：GLM 与开源社区的协作实践"
-          },
-          "slug": "p-22-从适配到共建-glm-与开源社区的协作实践",
-          "speakers": [
-            "yuxuan-zhang"
-          ],
-          "originalAbstract": "本次演讲将回顾 2026 年以来的多次深度协作。在模型研发阶段，我们即与 SGLang、vLLM 等推理框架同步推进适配，使新模型在发布当天具备可用的高性能推理支持；围绕投机解码、量化、PD 分离部署等关键路径，我们和社区一起，贡献了大量优化、精度对齐与性能调优，这些工作合入了框架主干，惠及所有模型的使用者。我们也希望让共建的收益尽可能外溢，通过开放模型权重与技术报告，分享模型部署踩的最佳实践，让高性能，高质量推理和模型体验不仅属于少数人，最后将分享我们的社区建设路线与未来展望。",
-          "originalAbstractLanguage": "zh",
-          "overview": {
-            "en": "This talk reviews GLM's collaboration with inference communities including SGLang and vLLM. It covers release-day model support, speculative decoding, quantization, Prefill–Decode disaggregation, accuracy alignment, performance tuning, and how upstream contributions and open technical reports make high-quality inference practices available to the broader ecosystem.",
-            "zh": "本次演讲回顾 GLM 与 SGLang、vLLM 等推理框架社区的深度协作，涵盖模型发布日适配、投机解码、量化、Prefill–Decode 分离、精度对齐和性能调优，并介绍如何通过上游贡献、开放模型权重与技术报告，让高性能推理实践惠及更广泛的开源生态。"
-          },
-          "date": "2026-10-16",
-          "timeSlot": "16:00-16:30"
-        },
-        {
           "ref": "P-11",
           "originalTitle": "机理合规审计与内生安全加固",
           "originalLanguage": "zh",
