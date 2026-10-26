@@ -211,7 +211,7 @@
       },
       "bio": {
         "en": "Peilin Li is a Ph.D. student at Tsinghua University, supervised by Mingxing Zhang, and a core contributor to KTransformers and LLaMA-Factory. His research focuses on inference and fine-tuning on heterogeneous GPU–CPU systems and inference optimization for large-scale clusters.",
-        "zh": "清华大学博士生，师从张明兴教授，也是 KTransformers 与 LLaMA-Factory 等开源项目的核心贡献者。研究方向包括 GPU–CPU 异构系统上的推理与微调，以及大规模集群推理优化。"
+        "zh": "清华大学博士生，师从章明星教授，也是 KTransformers 与 LLaMA-Factory 等开源项目的核心贡献者。研究方向包括 GPU–CPU 异构系统上的推理与微调，以及大规模集群推理优化。"
       },
       "tags": [
         "sz26-agentic-ai-on-edge"
