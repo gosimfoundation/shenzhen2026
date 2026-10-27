@@ -5,6 +5,7 @@ interface Props {
     openInNewTab?: boolean,
     download?: boolean | string,
     mimeType?: string,
+    slidesDownload?: boolean,
     class?: string,
 }
 
@@ -14,6 +15,7 @@ const {
     openInNewTab = false,
     download = false,
     mimeType,
+    slidesDownload = false,
     class: className,
 } = Astro.props;
 ---
@@ -26,6 +28,9 @@ const {
         rel={openInNewTab ? "noopener noreferrer" : undefined}
         download={download || undefined}
         type={mimeType}
+        data-slides-download={slidesDownload || undefined}
+        aria-haspopup={slidesDownload ? "dialog" : undefined}
+        aria-controls={slidesDownload ? "slides-download-dialog" : undefined}
     >
         <div class="btn-content duplicate">
             <div class="btn-fill"></div>

@@ -17,6 +17,7 @@ interface Props {
     openInNewTab: boolean
     download?: boolean
     mimeType?: string
+    slidesDownload?: boolean
     class?: string
   }>
   note?: string
@@ -79,6 +80,7 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
                   openInNewTab={loop?.openInNewTab}
                   download={loop.download}
                   mimeType={loop.mimeType}
+                  slidesDownload={loop.slidesDownload}
                   class={loop.class || "btn outline xl btn-hover"}
                 />
               ))}
@@ -359,9 +361,9 @@ const { date, location, subtitle, description, video, poster, image, imageAlt, l
     -webkit-backdrop-filter: blur(6px) saturate(210%) brightness(1.12);
     backdrop-filter: blur(6px) saturate(210%) brightness(1.12);
   }
-  /* Orange glass on the primary (ticket) button. */
-  .hero-cta :global(.btn.primary .btn-fill) {
-    background: linear-gradient(180deg, rgba(255, 122, 48, 0.72), rgba(240, 78, 22, 0.78)) !important;
+  /* Use the same orange glass as the header actions. */
+  .hero-cta :global(.btn.primary:not(.glass-orange) .btn-fill) {
+    background: linear-gradient(180deg, rgba(255, 122, 48, 0.74), rgba(240, 78, 22, 0.8)) !important;
   }
   /* Secondary CFP button (.light): translucent frosted white glass — the same
      see-through liquid-glass look as the bottom "Submit a Proposal" button,

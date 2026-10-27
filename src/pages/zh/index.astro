@@ -12,7 +12,7 @@ import PreviousEvents from "components/PreviousEvents.astro"
 import ConferenceThanks from "components/ConferenceThanks.astro"
 import ProudlySupported from "components/ProudlySupported.astro"
 import { hackathonHighlights } from "utils/hackathons"
-import { eventPhotoAlbumUrl, eventSlidesDownloadUrl, eventSummary } from "utils/event-summary"
+import { eventPhotoAlbumUrl, eventSummary } from "utils/event-summary"
 
 
 // Images
@@ -45,21 +45,14 @@ const copy = eventSummary.zh
         text: copy.albumLabel,
         link: eventPhotoAlbumUrl,
         openInNewTab: true,
-        class: "btn primary xl btn-hover",
+        class: "btn primary glass-orange xl btn-hover",
       },
       {
         text: copy.slidesLabel,
-        link: eventSlidesDownloadUrl,
-        openInNewTab: true,
-        download: true,
-        mimeType: "application/zip",
-        class: "btn light xl btn-hover",
-      },
-      {
-        text: "查看议程",
-        link: "/zh/schedule/",
+        link: copy.slidesDownloadPath,
         openInNewTab: false,
-        class: "btn light xl btn-hover",
+        slidesDownload: true,
+        class: "btn primary glass-orange xl btn-hover",
       },
     ]}
   />

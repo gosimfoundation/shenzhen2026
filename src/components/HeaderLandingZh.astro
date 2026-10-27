@@ -2,7 +2,7 @@
 // Components
 import Button from "components/Button.astro";
 import Logo from "./Logo.astro";
-import { eventPhotoAlbumUrl, eventSlidesDownloadUrl, eventSummary } from "utils/event-summary";
+import { eventPhotoAlbumUrl, eventSummary } from "utils/event-summary";
 import { conferenceNavigation } from "utils/conference-navigation";
 
 const slug = Astro.url.pathname;
@@ -95,7 +95,7 @@ const isNavigationLinkActive = (link?: string) => {
       </nav>
       <div class="box-row box-row-btn">
         <Button text={copy.albumLabel} link={eventPhotoAlbumUrl} openInNewTab={true} class="btn primary glass-orange xl btn-hover" />
-        <Button text={copy.slidesLabel} link={eventSlidesDownloadUrl} openInNewTab={true} download={true} mimeType="application/zip" class="btn primary glass-orange xl btn-hover" />
+        <Button text={copy.slidesLabel} link={copy.slidesDownloadPath} slidesDownload={true} class="btn primary glass-orange xl btn-hover" />
       </div>
     </div>
   </div>
@@ -121,10 +121,8 @@ const isNavigationLinkActive = (link?: string) => {
       />
       <Button
         text={copy.slidesShortLabel}
-        link={eventSlidesDownloadUrl}
-        openInNewTab={true}
-        download={true}
-        mimeType="application/zip"
+        link={copy.slidesDownloadPath}
+        slidesDownload={true}
         class="btn primary glass-orange btn-floating btn-hover"
       />
     </div>
@@ -242,7 +240,7 @@ const isNavigationLinkActive = (link?: string) => {
           </div>
         </div>
         <Button text={copy.albumLabel} link={eventPhotoAlbumUrl} openInNewTab={true} class="btn primary glass-orange xl btn-hover" />
-        <Button text={copy.slidesLabel} link={eventSlidesDownloadUrl} openInNewTab={true} download={true} mimeType="application/zip" class="btn primary glass-orange xl btn-hover" />
+        <Button text={copy.slidesLabel} link={copy.slidesDownloadPath} slidesDownload={true} class="btn primary glass-orange xl btn-hover" />
       </div>
       <button class="hamburger outline" type="button" aria-label="打开菜单" aria-expanded="false" data-navigation-toggle="toggle">
         <div class="hamburger-fill"></div>

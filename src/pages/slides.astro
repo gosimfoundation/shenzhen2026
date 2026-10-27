@@ -1,0 +1,18 @@
+---
+import Layout from "layouts/LayoutLanding.astro";
+import SlidesDownloadOptions from "components/SlidesDownloadOptions.astro";
+import { slidesDownloadCopy } from "utils/event-summary";
+const copy = slidesDownloadCopy.en;
+---
+
+<Layout title="Download Slides — GOSIM Shenzhen 2026" description={copy.description} navDarkMode={false}>
+  <section class="slides-page">
+    <h1>{copy.title}</h1>
+    <SlidesDownloadOptions lang="en" />
+  </section>
+</Layout>
+
+<style>
+  .slides-page { width: min(42rem, calc(100% - 2rem)); margin: 0 auto; padding: calc(var(--nav-bar-height, 76px) + 4rem) 0 5rem; }
+  h1 { color: #24241f; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; margin: 0 0 1.5rem; }
+</style>
