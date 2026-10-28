@@ -15,8 +15,8 @@ const zh = lang === "zh";
     <iframe
       src={`https://www.youtube-nocookie.com/embed/${youtubeVideoId}?rel=0&hl=${zh ? "zh-CN" : "en"}`}
       title={`${zh ? "演讲视频" : "Talk recording"}: ${title}`}
-      width="960"
-      height="540"
+      width="640"
+      height="360"
       loading="lazy"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin"
@@ -29,8 +29,8 @@ const zh = lang === "zh";
 )}
 
 <style>
-  .talk-video { max-width: 960px; margin: 0 0 2.5rem; }
+  .talk-video { max-width: 640px; margin: 0 0 2.5rem; }
   .talk-video h2 { margin: 0 0 1rem; color: #f6f3e7; font-size: 1.15rem; line-height: 1.4; }
-  .talk-video iframe { display: block; width: 100%; height: auto; min-height: 200px; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; background: #000; }
+  .talk-video iframe { display: block; width: 100%; height: auto; min-height: 200px; max-height: 360px; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; background: #000; }
   .talk-video a { display: inline-block; margin-top: 0.75rem; color: #f6f3e7; text-underline-offset: 0.2em; }
 </style>
