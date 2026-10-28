@@ -24,6 +24,7 @@ export interface Talk {
   title: LocalizedText;
   overview: LocalizedText;
   slidesUrl?: string;
+  youtubeVideoId?: string;
   speakers: string[];
   date?: string;
   timeSlot?: string;
@@ -132,6 +133,7 @@ export function getEventPaths(lang: Language) {
         preview: !(talk.date && talk.timeSlot),
         overview: talk.overview[lang],
         slidesUrl: talk.slidesUrl,
+        youtubeVideoId: talk.youtubeVideoId,
         notice: track.notice?.[lang] || "",
       },
     },

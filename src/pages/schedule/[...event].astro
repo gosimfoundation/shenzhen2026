@@ -1,6 +1,7 @@
 ---
 import Layout from "layouts/LayoutLanding.astro";
 import TalkSlides from "components/TalkSlides.astro";
+import TalkVideo from "components/TalkVideo.astro";
 import { getEventPaths, speakersEn as speakers, schedule } from "utils/conference";
 import { getSpeakerImagePath, SPEAKER_IMAGE_FALLBACK_HANDLER } from "utils/speaker-images";
 
@@ -93,6 +94,7 @@ const eventCategory = eventDetails.categoryLabel;
         </section>
       )}
 
+      <TalkVideo youtubeVideoId={eventDetails.youtubeVideoId} title={eventDetails.title} lang="en" />
       <TalkSlides slidesUrl={eventDetails.slidesUrl} lang="en" />
 
       {eventDetails.signupUrl && (

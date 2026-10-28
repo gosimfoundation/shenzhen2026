@@ -1,0 +1,36 @@
+---
+interface Props {
+  youtubeVideoId?: string;
+  title: string;
+  lang: "en" | "zh";
+}
+
+const { youtubeVideoId, title, lang } = Astro.props;
+const zh = lang === "zh";
+---
+
+{youtubeVideoId && (
+  <section class="talk-video" aria-labelledby="talk-video-heading">
+    <h2 id="talk-video-heading">{zh ? "演讲视频" : "Watch the talk"}</h2>
+    <iframe
+      src={`https://www.youtube-nocookie.com/embed/${youtubeVideoId}?rel=0&hl=${zh ? "zh-CN" : "en"}`}
+      title={`${zh ? "演讲视频" : "Talk recording"}: ${title}`}
+      width="960"
+      height="540"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+    <a href={`https://www.youtube.com/watch?v=${youtubeVideoId}`} target="_blank" rel="noopener noreferrer">
+      {zh ? "在 YouTube 上观看 ↗" : "Watch on YouTube ↗"}
+    </a>
+  </section>
+)}
+
+<style>
+  .talk-video { max-width: 960px; margin: 0 0 2.5rem; }
+  .talk-video h2 { margin: 0 0 1rem; color: #f6f3e7; font-size: 1.15rem; line-height: 1.4; }
+  .talk-video iframe { display: block; width: 100%; height: auto; min-height: 200px; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; background: #000; }
+  .talk-video a { display: inline-block; margin-top: 0.75rem; color: #f6f3e7; text-underline-offset: 0.2em; }
+</style>
