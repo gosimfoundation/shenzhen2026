@@ -23,6 +23,7 @@ export interface Talk {
   slug: string;
   title: LocalizedText;
   overview: LocalizedText;
+  slidesUrl?: string;
   speakers: string[];
   date?: string;
   timeSlot?: string;
@@ -130,6 +131,7 @@ export function getEventPaths(lang: Language) {
         categoryLabel: track.name[lang],
         preview: !(talk.date && talk.timeSlot),
         overview: talk.overview[lang],
+        slidesUrl: talk.slidesUrl,
         notice: track.notice?.[lang] || "",
       },
     },

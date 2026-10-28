@@ -1,5 +1,6 @@
 ---
 import Layout from "layouts/LayoutLandingZh.astro";
+import TalkSlides from "components/TalkSlides.astro";
 import { getEventPaths, speakersZh as speakers, schedule } from "utils/conference";
 import { getSpeakerImagePath, SPEAKER_IMAGE_FALLBACK_HANDLER } from "utils/speaker-images";
 
@@ -91,6 +92,8 @@ const eventCategory = eventDetails.categoryLabel;
           <p class:list={{ "ev-roadshow-description": eventDetails.type === "roadshow" }}>{eventDetails.overview}</p>
         </section>
       )}
+
+      <TalkSlides slidesUrl={eventDetails.slidesUrl} lang="zh" />
 
       {eventDetails.content && (
         <div class="ev-description styled-content">

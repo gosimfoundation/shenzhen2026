@@ -1,0 +1,29 @@
+---
+import Button from "components/Button.astro";
+
+interface Props {
+  slidesUrl?: string;
+  lang: "en" | "zh";
+}
+const { slidesUrl, lang } = Astro.props;
+const zh = lang === "zh";
+---
+
+{slidesUrl && (
+  <section class="talk-slides" aria-labelledby="talk-slides-heading">
+    <h2 id="talk-slides-heading">{zh ? "演讲幻灯片" : "Presentation slides"}</h2>
+    <Button
+      text={zh ? "下载幻灯片 (PDF)" : "Download slides (PDF)"}
+      link={slidesUrl}
+      download={true}
+      mimeType="application/pdf"
+      class="btn primary glass-orange xl btn-hover"
+    />
+  </section>
+)}
+
+<style>
+  .talk-slides { margin: 0 0 2.5rem; }
+  .talk-slides h2 { margin: 0 0 1rem; color: #f6f3e7; font-size: 1.15rem; line-height: 1.4; }
+  .talk-slides :global(.btn) { display: inline-flex; width: fit-content; max-width: 100%; }
+</style>

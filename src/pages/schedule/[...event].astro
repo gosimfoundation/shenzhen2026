@@ -1,5 +1,6 @@
 ---
 import Layout from "layouts/LayoutLanding.astro";
+import TalkSlides from "components/TalkSlides.astro";
 import { getEventPaths, speakersEn as speakers, schedule } from "utils/conference";
 import { getSpeakerImagePath, SPEAKER_IMAGE_FALLBACK_HANDLER } from "utils/speaker-images";
 
@@ -91,6 +92,8 @@ const eventCategory = eventDetails.categoryLabel;
           <p class:list={{ "ev-roadshow-description": eventDetails.type === "roadshow" }}>{eventDetails.overview}</p>
         </section>
       )}
+
+      <TalkSlides slidesUrl={eventDetails.slidesUrl} lang="en" />
 
       {eventDetails.signupUrl && (
         <a href={eventDetails.signupUrl} target="_blank" rel="noopener" class="ev-signup-btn">Sign Up for This Event &rarr;</a>
